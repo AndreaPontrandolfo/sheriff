@@ -6,13 +6,13 @@
 ## 📜 <a href="#table-of-contents">Table of Contents</a>
 
 1. [Table of Contents](#table-of-contents)
-1. [Description](#description)
-2. [Usage](#usage)
-3. [Techs](#techs)
-4. [Requirements](#requirements)
-5. [Eslint plugins](#eslint-plugins)
-6. [Roadmap](#roadmap)
-7. [Acknowledgments](#acknowledgments)
+2. [Description](#description)
+3. [Usage](#usage)
+4. [Techs](#techs)
+5. [Requirements](#requirements)
+6. [Eslint plugins](#eslint-plugins)
+7. [Roadmap](#roadmap)
+8. [Acknowledgments](#acknowledgments)
 
 ## 📖  <a href="#description">Description</a>
 
