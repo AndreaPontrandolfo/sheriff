@@ -3,7 +3,7 @@
 
 # Sheriff
 
-## <a name="#table-of-contents"></a>📜 Table of Contents
+## <a name="table-of-contents"></a>📜 Table of Contents
 
 1. [Table of Contents](#table-of-contents)
 2. [Description](#description)
@@ -19,12 +19,12 @@
 This is a comprehensive Eslint configuration offered as a template.<br>
 It takes into account various technologies.
 
-## <a name="#usage"></a>✨ Usage
+## <a name="usage"></a>✨ Usage
 
 Copy and paste the parts of the config that interest you and makes sense for your project.<br>
 This config is **highly** opinionated, make sure to meet the [hard requirements](#hard-requirements) in your project.
 
-## <a name="#techs"></a>🖥️ Techs
+## <a name="techs"></a>🖥️ Techs
 
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
@@ -33,7 +33,7 @@ This config is **highly** opinionated, make sure to meet the [hard requirements]
 - [Lodash](https://lodash.com/) (*optional*)
 - [Playwright](https://playwright.dev/) (*optional*)
 
-## <a name="#techs"></a>🔑 Requirements
+## <a name="techs"></a>🔑 Requirements
  
 ### Hard requirements
 - Node 16+
@@ -47,7 +47,7 @@ This config is **highly** opinionated, make sure to meet the [hard requirements]
 - VScode prettier extension
 - Node 18+
 
-## <a name="#eslint-plugins"></a>🐙 Eslint plugins 
+## <a name="eslint-plugins"></a>🐙 Eslint plugins 
 
 - prettier ([plugin](https://github.com/prettier/eslint-plugin-prettier)/[config](https://github.com/prettier/eslint-config-prettier))
 - [@typescript/eslint](https://github.com/typescript-eslint/typescript-eslint)
@@ -60,10 +60,10 @@ This config is **highly** opinionated, make sure to meet the [hard requirements]
 - [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
 - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)
 
-## <a name="#roadmap"></a>🚀 Roadmap
+## <a name="roadmap"></a>🚀 Roadmap
 
 I plan to transform this into an actual npm package, once Eslint fully rolls out the new "Flat Config" system.
 
-## <a name="#acknowledgments"></a>🙏 Acknowledgments
+## <a name="acknowledgments"></a>🙏 Acknowledgments
 
 For some of this config i partially used as a base [eslint-config-red](https://github.com/GrosSacASac/JavaScript-Set-Up/blob/master/js/red-javascript-style-guide/index.js).
