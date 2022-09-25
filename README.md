@@ -17,12 +17,13 @@
 ## <a href="description"></a>📖 Description
 
 This is a comprehensive Eslint configuration offered as a template.<br>
+This config supports only modern Ecmascript and Typescript codebases.<br>
 It takes into account various technologies.
 
 ## <a name="usage"></a>✨ Usage
 
 Copy and paste the parts of the config that interest you and makes sense for your project.<br>
-This config is **highly** opinionated, make sure to meet the [hard requirements](#hard-requirements) in your project.
+This config is **highly** opinionated, so make sure to meet the [hard requirements](#hard-requirements) in your project.
 
 ## <a name="techs"></a>🖥️ Techs
 
@@ -33,7 +34,7 @@ This config is **highly** opinionated, make sure to meet the [hard requirements]
 - [Lodash](https://lodash.com/) (*optional*)
 - [Playwright](https://playwright.dev/) (*optional*)
 
-## <a name="techs"></a>🔑 Requirements
+## <a name="requirements"></a>🔑 Requirements
  
 ### Hard requirements
 - Node 16+

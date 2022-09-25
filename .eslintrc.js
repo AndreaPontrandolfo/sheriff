@@ -13,21 +13,10 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    ecmaFeatures: { modules: true, jsx: true },
+    ecmaFeatures: { modules: true },
     project: './tsconfig.json',
   },
-  plugins: [
-    '@typescript-eslint',
-    'react',
-    'react-hooks',
-    'jsx-a11y',
-    'import',
-    'sonarjs',
-    'unicorn',
-    'lodash-f',
-    'prefer-optional-chaining',
-    'jsdoc',
-  ],
+  plugins: ['import', 'unicorn', 'lodash-f', 'jsdoc'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -216,6 +205,7 @@ module.exports = {
     '@typescript-eslint/no-array-constructor': 0, // this is unnecessary because we are already using the basic eslint version in conjunction with @typescript-eslint/array-type
     '@typescript-eslint/array-type': 2,
     '@typescript-eslint/no-empty-function': 2,
+    '@typescript-eslint/prefer-optional-chain': 2,
     '@typescript-eslint/dot-notation': 2,
     '@typescript-eslint/no-unsafe-assignment': 0,
     '@typescript-eslint/no-shadow': [
@@ -229,16 +219,15 @@ module.exports = {
     ],
     // #endregion
     // #region React
-    'react/no-unstable-nested-components': 0,
     'react/prop-types': 0,
     'react/jsx-filename-extension': [2, { extensions: ['.tsx'] }],
+    'react/no-unstable-nested-components': [2, { allowAsProps: false }],
     'react/jsx-boolean-value': 2,
+    'react/destructuring-assignment': 2,
     'react/boolean-prop-naming': 2,
     'react/no-multi-comp': 2,
+    'react/no-array-index-key': 2,
     'react/jsx-props-no-spreading': 2,
-    // #endregion
-    // #region Prefer optional chaining
-    'prefer-optional-chaining/prefer-optional-chaining': 2,
     // #endregion
     // #region JSDoc
     'jsdoc/check-types': 1,
