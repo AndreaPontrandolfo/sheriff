@@ -83,6 +83,7 @@ module.exports = {
     'no-promise-executor-return': 2,
     'no-unreachable-loop': 2,
     'no-caller': 2,
+    'no-restricted-imports': [2, { paths: ['prop-types'] }],
     'no-extend-native': 2,
     'no-extra-bind': 2,
     'no-extra-label': 2,
@@ -171,6 +172,19 @@ module.exports = {
       {
         selector: "UnaryExpression[operator='delete']",
         message: 'Unallowed use of delete.',
+      },
+      {
+        selector: "Identifier[name='PropTypes']",
+        message: 'No PropTypes. Use Typescript instead.',
+      },
+      {
+        selector: "Identifier[name='propTypes']",
+        message: 'No PropTypes. Use Typescript instead.',
+      },
+      {
+        selector: "Identifier[name='createContext']",
+        message:
+          'No React Context. Use component composition instead (https://it.reactjs.org/docs/context.html#before-you-use-context), or a "Global State Mamanement" solution.',
       },
     ],
     'no-undef': 0, // typescript already takes care of this. See: https://typescript-eslint.io/docs/linting/troubleshooting/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
