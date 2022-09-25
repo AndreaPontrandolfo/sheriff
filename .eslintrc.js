@@ -4,30 +4,41 @@ const noAccessModifiersMessage =
 module.exports = {
   root: true,
   env: { commonjs: true, node: true, browser: true, es2021: true },
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    'plugin:lodash-f/recommended',
-    'plugin:sonarjs/recommended',
-    'plugin:playwright/playwright-test',
-    'plugin:prettier/recommended',
-  ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    ecmaFeatures: { modules: true },
+    ecmaFeatures: { modules: true, jsx: true },
     project: './tsconfig.json',
   },
   plugins: [
     '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'jsx-a11y',
     'import',
     'sonarjs',
     'unicorn',
     'lodash-f',
     'prefer-optional-chaining',
     'jsdoc',
+  ],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:lodash-f/recommended',
+    'plugin:sonarjs/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:playwright/playwright-test',
+    'plugin:prettier/recommended',
   ],
   // beware:
   // - https://github.com/prettier/eslint-config-prettier#special-rules
@@ -202,6 +213,15 @@ module.exports = {
         ignoreFunctionTypeParameterNameValueShadow: true,
       },
     ],
+    // #endregion
+    // #region React
+    'react/no-unstable-nested-components': 0,
+    'react/prop-types': 0,
+    'react/jsx-filename-extension': [2, { extensions: ['.tsx'] }],
+    'react/jsx-boolean-value': 2,
+    'react/boolean-prop-naming': 2,
+    'react/no-multi-comp': 2,
+    'react/jsx-props-no-spreading': 2,
     // #endregion
     // #region Prefer optional chaining
     'prefer-optional-chaining/prefer-optional-chaining': 2,

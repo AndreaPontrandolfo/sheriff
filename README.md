@@ -14,7 +14,7 @@
 7. [Roadmap](#roadmap)
 8. [Acknowledgments](#acknowledgments)
 
-## <a href="#description"></a>📖 Description
+## <a href="description"></a>📖 Description
 
 This is a comprehensive Eslint configuration offered as a template.<br>
 It takes into account various technologies.
