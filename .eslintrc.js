@@ -220,11 +220,9 @@ module.exports = {
     // #endregion
     // #region React
     'react/prop-types': 0,
-    'react/jsx-filename-extension': [2, { extensions: ['.tsx'] }],
     'react/no-unstable-nested-components': [2, { allowAsProps: false }],
     'react/jsx-boolean-value': 2,
     'react/destructuring-assignment': 2,
-    'react/boolean-prop-naming': 2,
     'react/no-multi-comp': 2,
     'react/no-array-index-key': 2,
     'react/jsx-props-no-spreading': 2,

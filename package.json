@@ -3,6 +3,17 @@
   "version": "1.0.0",
   "description": "A comprehensive Eslint configuration.",
   "main": "index.js",
+  "exports": {
+    ".": {
+      "require": "./index.js"
+    },
+    "./recommended": "./configs/eslint.config.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "configs"
+  ],
   "scripts": {
   },
   "dependencies": {
