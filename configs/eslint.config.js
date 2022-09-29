@@ -1,5 +1,8 @@
 const typescriptParser = require('@typescript-eslint/parser');
 const typescript = require('@typescript-eslint/eslint-plugin');
+const react = require('eslint-plugin-react');
+const reactAccessibility = require('eslint-plugin-jsx-a11y');
+const reactHooks = require('eslint-plugin-react-hooks');
 const unicorn = require('eslint-plugin-unicorn');
 const sonarjs = require('eslint-plugin-sonarjs');
 const playwright = require('eslint-plugin-playwright');
@@ -10,6 +13,10 @@ const messages = {
   NO_ACCESS_MODIFIER:
     'There is no need to limit developer access to properties.',
 };
+
+// beware:
+// - https://github.com/prettier/eslint-config-prettier#special-rules
+// - https://github.com/prettier/eslint-config-prettier#other-rules-worth-mentioning
 
 const baseEslintHandPickedRules = {
   // curly: error,
@@ -275,6 +282,33 @@ const jsdocHandPickedRules = {
   'jsdoc/require-param-description': 2,
 };
 
+const reactHandPickedRules = {
+  'react/prop-types': 0,
+  'react/no-unstable-nested-components': [2, { allowAsProps: false }],
+  'react/jsx-boolean-value': 2,
+  'react/destructuring-assignment': 2,
+  'react/no-multi-comp': 2,
+  'react/no-array-index-key': 2,
+  'react/jsx-props-no-spreading': 2,
+};
+
+const languageOptionsTypescript = {
+  parser: typescriptParser,
+  parserOptions: {
+    ecmaFeatures: { modules: true },
+    project: './tsconfig.json',
+  },
+};
+
+const languageOptionsTypescriptReact = {
+  parser: typescriptParser,
+  parserOptions: {
+    ecmaFeatures: { modules: true, jsx: true },
+    project: './tsconfig.json',
+    jsxPragma: null, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
+  },
+};
+
 module.exports = [
   'eslint:recommended',
   {
@@ -282,13 +316,7 @@ module.exports = [
   },
   {
     files: ['**/*{js,ts,jsx,tsx}'],
-    languageOptions: {
-      parser: typescriptParser,
-      parserOptions: {
-        ecmaFeatures: { modules: true },
-        project: './tsconfig.json',
-      },
-    },
+    languageOptions: languageOptionsTypescript,
   },
   {
     files: ['**/*{js,ts,jsx,tsx}'],
@@ -305,6 +333,37 @@ module.exports = [
   {
     files: ['**/*{js,ts,jsx,tsx}'],
     rules: baseEslintHandPickedRules,
+  },
+  {
+    files: ['**/*{js,ts,jsx,tsx}'],
+    plugins: {
+      react,
+    },
+    languageOptions: languageOptionsTypescriptReact,
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+    rules: {
+      ...react.configs.recommended.rules,
+      ...react.configs['jsx-runtime'].rules, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
+      ...reactHandPickedRules,
+    },
+  },
+  {
+    files: ['**/*{js,ts,jsx,tsx}'],
+    plugins: {
+      'jsx-a11y': reactAccessibility,
+    },
+    rules: reactAccessibility.configs.recommended.rules,
+  },
+  {
+    files: ['**/*{js,ts,jsx,tsx}'],
+    plugins: {
+      'react-hooks': reactHooks,
+    },
+    rules: reactHooks.configs.recommended.rules,
   },
   {
     files: ['**/*{js,ts,jsx,tsx}'],
