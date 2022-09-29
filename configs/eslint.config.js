@@ -259,13 +259,6 @@ const lodashHandPickedRules = {
 };
 
 const jsdocHandPickedRules = {
-  'jsdoc/require-jsdoc': [
-    2,
-    {
-      publicOnly: true,
-      require: { ArrowFunctionExpression: true, FunctionDeclaration: true },
-    },
-  ],
   'jsdoc/require-description': 2,
   'jsdoc/require-description-complete-sentence': 2,
   'jsdoc/no-multi-asterisks': 2,
