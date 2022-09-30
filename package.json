@@ -3,8 +3,18 @@
   "version": "1.0.0",
   "description": "A comprehensive Eslint configuration.",
   "main": "index.js",
-  "scripts": {
+  "exports": {
+    ".": {
+      "require": "./index.js"
+    },
+    "./recommended": "./configs/eslint.config.js",
+    "./package.json": "./package.json"
   },
+  "files": [
+    "index.js",
+    "configs"
+  ],
+  "scripts": {},
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
@@ -15,15 +25,13 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-lodash-f": "^7.5.2",
     "eslint-plugin-playwright": "^0.11.1",
-    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-sonarjs": "^0.15.0",
     "eslint-plugin-unicorn": "^43.0.2"
   },
   "peerDependencies": {
-    "prettier": "^2.7.1",
-    "typescript": "^4.8.2"
+    "typescript": ">=4.8.2"
   },
   "author": "AndreaPontrandolfo",
   "license": "MIT"
