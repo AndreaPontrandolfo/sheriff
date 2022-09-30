@@ -7,7 +7,9 @@ const unicorn = require('eslint-plugin-unicorn');
 const sonarjs = require('eslint-plugin-sonarjs');
 const playwright = require('eslint-plugin-playwright');
 const jsdoc = require('eslint-plugin-jsdoc');
+const pluginImport = require('eslint-plugin-import');
 const lodash = require('eslint-plugin-lodash-f');
+const prettierConfig = require('eslint-config-prettier');
 
 const messages = {
   NO_ACCESS_MODIFIER:
@@ -19,6 +21,7 @@ const messages = {
 // - https://github.com/prettier/eslint-config-prettier#other-rules-worth-mentioning
 
 const baseEslintHandPickedRules = {
+  // TODO
   // curly: error,
   // quotes: [error, 'backtick', { avoidEscape: false }],
   // semi: [error, 'always'],
@@ -275,6 +278,20 @@ const jsdocHandPickedRules = {
   'jsdoc/require-param-description': 2,
 };
 
+const importHandPickedRules = {
+  'import/first': 2,
+  'import/order': [2, { 'newlines-between': 'never' }],
+  'import/named': 2,
+  'import/no-duplicates': 2,
+  'import/no-unused-modules': [
+    2,
+    { missingExports: true, unusedExports: true },
+  ],
+  'import/namespace': 2,
+  'import/no-default-export': 2,
+  'import/no-useless-path-segments': [2, { noUselessIndex: true }],
+};
+
 const reactHandPickedRules = {
   'react/prop-types': 0,
   'react/no-unstable-nested-components': [2, { allowAsProps: false }],
@@ -375,6 +392,14 @@ module.exports = [
       ...sonarjsHandPickedRules,
     },
   },
+  // TODO
+  // {
+  //   files: ['**/*{js,ts,jsx,tsx}'],
+  //   plugins: {
+  //     import: pluginImport,
+  //   },
+  //   rules: importHandPickedRules,
+  // },
   {
     files: ['**/*{js,ts,jsx,tsx}'],
     plugins: {
@@ -406,5 +431,9 @@ module.exports = [
       ...playwright.configs['playwright-test'].rules,
       ...playwrightHandPickedRules,
     },
+  },
+  prettierConfig,
+  {
+    ignores: ['node_modules/', 'dist/', 'build/', 'artifacts/'],
   },
 ];
