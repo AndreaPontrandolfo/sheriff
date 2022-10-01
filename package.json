@@ -1,6 +1,6 @@
 {
   "name": "sheriff",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "A comprehensive Eslint configuration.",
   "main": "index.js",
   "exports": {
@@ -32,7 +32,9 @@
     "unicorn",
     "react"
   ],
-  "scripts": {},
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
@@ -51,5 +53,8 @@
   "peerDependencies": {
     "typescript": ">=4.8.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "semantic-release": "^19.0.5"
+  }
 }
