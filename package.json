@@ -14,6 +14,24 @@
     "index.js",
     "configs"
   ],
+  "author": {
+    "name": "Andrea Pontrandolfo",
+    "email": "andrea.pontra@gmail.com",
+    "url": "https://github.com/AndreaPontrandolfo"
+  },
+  "repository": "https://github.com/AndreaPontrandolfo/sheriff",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "eslint",
+    "prettier",
+    "playwright",
+    "jsdoc",
+    "lodash",
+    "sonarjs",
+    "unicorn",
+    "react"
+  ],
   "scripts": {},
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.36.1",
@@ -33,6 +51,5 @@
   "peerDependencies": {
     "typescript": ">=4.8.2"
   },
-  "author": "AndreaPontrandolfo",
   "license": "MIT"
 }
