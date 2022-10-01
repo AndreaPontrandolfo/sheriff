@@ -1,5 +1,5 @@
 {
-  "name": "sheriff",
+  "name": "eslint-config-sheriff",
   "version": "0.0.0-development",
   "description": "A comprehensive Eslint configuration.",
   "main": "index.js",
