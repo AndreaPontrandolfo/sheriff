@@ -18,9 +18,9 @@
 
 ## <a href="description"></a>📖 Description
 
-This is a comprehensive Eslint configuration.<br>
+`sheriff` is a comprehensive Eslint configuration.<br>
 It takes into account various technologies (see: [techs](#techs)).<br>
->⚠️ At the moment, this config supports only Typescript codebases with modern Ecmascript standards. Maybe in the future i'll take in consideration support for vanilla Javascript. Refer to the [roadmap](#roadmap).
+>⚠️ At the moment, `sheriff` supports only Typescript codebases with modern Ecmascript standards. Maybe in the future i'll take in consideration support for vanilla Javascript. Refer to the [roadmap](#roadmap).
 
 ## <a href="philosophy"></a>💭 Why / Philosophy
 
@@ -48,8 +48,8 @@ pnpm add -D eslint-config-sheriff
 
 This config is **highly** opinionated, so make sure to meet the [hard requirements](#hard-requirements) in your project.
 Then, follow these steps:
-- [Install](#installation) the package from [npm](https://www.npmjs.com/package/eslint-config-sheriff).
-- Create a 	`eslint.config.js` [^1] file and copy/paste the contents of this snippet: 
+1. [Install](#installation) the package from [npm](https://www.npmjs.com/package/eslint-config-sheriff).
+2. Create a 	`eslint.config.js` [^1] file and copy/paste the contents of this snippet: 
     ```js
     // eslint.config.js
 
@@ -75,8 +75,8 @@ Then, follow these steps:
     ];
     ```
 
-- Configure `sheriff` as desired in the `sheriff.config.js` file. (*optional*)
-- Override any sheriff rule as desired in the `eslint.config.js` file. (*optional*)
+3. Configure `sheriff` as desired in the `sheriff.config.js` file. (*optional*)
+4. Override any sheriff rule as desired in the `eslint.config.js` file. (*optional*)
 
 [^1]: `sheriff` is based on the [new format of Eslint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend `sheriff` from a [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
 
@@ -93,25 +93,25 @@ Then, follow these steps:
 ## <a name="requirements"></a>🔑 Requirements
  
 ### Hard requirements
-- Node 16+
+- [Node >16](https://nodejs.org/en/)
 - [Eslint >8.23.0](https://eslint.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
 
 ### Recommendations
+- [Node >18](https://nodejs.org/en/)
 - [VScode](https://code.visualstudio.com/)
-- VScode eslint extension
-- VScode prettier extension
-- Node 18+
+- [VScode eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [VScode prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
 ## <a name="eslint-plugins"></a>🐙 Eslint plugins 
 
-- prettier ([plugin](https://github.com/prettier/eslint-plugin-prettier)/[config](https://github.com/prettier/eslint-config-prettier))
 - [@typescript/eslint](https://github.com/typescript-eslint/typescript-eslint)
+- [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
+- [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
 - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
 - [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs)
 - [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)
-- [eslint-plugin-prefer-optional-chaining](https://github.com/horacio-penya/eslint-plugin-prefer-optional-chaining)
 - [eslint-plugin-lodash-f](https://github.com/AndreaPontrandolfo/eslint-plugin-lodash)
     - my fork of [eslint-plugin-lodash](https://github.com/wix/eslint-plugin-lodash)
 - [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
@@ -120,9 +120,13 @@ Then, follow these steps:
 ## <a name="roadmap"></a>🚀 Roadmap
 
 - [ ] Consider more rules
-- [ ] Create a documentation website
+- [ ] `eslint-plugin-n`
+- [ ] `eslint-plugin-next`
+- [ ] Create the `sheriff.config.js file`
 - [ ] Create a cli ala `create-react-app`
+- [ ] Remove `react` as a hard requirement
+- [ ] Create a documentation website
 
 ## <a name="acknowledgments"></a>🙏 Acknowledgments
 
-For some of this config i partially used as a base [eslint-config-red](https://github.com/GrosSacASac/JavaScript-Set-Up/blob/master/js/red-javascript-style-guide/index.js).
+For some of this config i partially used [eslint-config-red](https://github.com/GrosSacASac/JavaScript-Set-Up/blob/master/js/red-javascript-style-guide/index.js) as a base.
