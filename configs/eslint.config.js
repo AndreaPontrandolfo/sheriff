@@ -232,6 +232,7 @@ const unicornHandPickedRules = {
   'unicorn/prefer-native-coercion-functions': 2,
   'unicorn/prefer-logical-operator-over-ternary': 2,
   'unicorn/prefer-event-target': 2,
+  'unicorn/no-await-expression-member': 2,
   'unicorn/no-new-array': 2,
   'unicorn/throw-new-error': 2,
   'unicorn/no-array-reduce': 2,
