@@ -297,11 +297,25 @@ const importHandPickedRules = {
 const reactHandPickedRules = {
   'react/prop-types': 0,
   'react/no-unstable-nested-components': [2, { allowAsProps: false }],
+  'react/jsx-no-useless-fragment': [2, { allowExpressions: true }],
   'react/jsx-boolean-value': 2,
+  'react/jsx-fragments': 2,
   'react/destructuring-assignment': 2,
   'react/no-multi-comp': 2,
   'react/no-array-index-key': 2,
   'react/jsx-props-no-spreading': 2,
+  'react/jsx-sort-props': [
+    2,
+    {
+      callbacksLast: true,
+      shorthandFirst: true,
+      shorthandLast: false,
+      ignoreCase: true,
+      noSortAlphabetically: true,
+      multiline: 'last',
+      reservedFirst: false,
+    },
+  ],
 };
 
 const languageOptionsTypescript = {
