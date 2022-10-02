@@ -66,6 +66,7 @@ const baseEslintHandPickedRules = {
   'no-extra-label': 2,
   'no-implicit-coercion': 2,
   'no-multi-str': 2,
+  'no-negated-condition': 2,
   'no-new-wrappers': 2,
   'no-new-object': 2,
   strict: [2, 'never'],
