@@ -7,11 +7,10 @@ const unicorn = require('eslint-plugin-unicorn');
 const sonarjs = require('eslint-plugin-sonarjs');
 const playwright = require('eslint-plugin-playwright');
 const jsdoc = require('eslint-plugin-jsdoc');
-const pluginImport = require('eslint-plugin-import');
 const lodash = require('eslint-plugin-lodash-f');
-const nextjs = require('@next/eslint-plugin-next');
-console.log('🚀 ~ file: eslint.config.js ~ line 13 ~ nextjs', nextjs);
 const prettierConfig = require('eslint-config-prettier');
+const pluginImport = require('eslint-plugin-import');
+const nextjs = require('@next/eslint-plugin-next');
 
 const messages = {
   NO_ACCESS_MODIFIER:
