@@ -16,14 +16,67 @@
 
 ## <a href="description"></a>📖 Description
 
-This is a comprehensive Eslint configuration offered as a template.<br>
-This config supports only modern Ecmascript and Typescript codebases.<br>
-It takes into account various technologies.
+This is a comprehensive Eslint configuration.<br>
+It takes into account various technologies.<br>
+>==⚠️ At the moment, this config supports only Typescript codebases with modern Ecmascript standards. Maybe in the future i'll take in consideration support for vanilla Javascript. Refer to the [roadmap](#roadmap).==
+
+## <a href="philosophy"></a>📖 Philosophy
+
+This library is very opinionated, but it's for the better. I took a lot of decisions so you don't have too [^2]. You can now quickstart static analysis in all your Typescript projects with ease. It's just 1 `npm install`.<br>
+And if you don't like something, you can easily override it (see: [usage](#usage)).
+
+[^2]: This config is particularly useful for big teams with developers of various skill levels. I worked in a lot of different projects and teams through the years and i got accustomed to seeing all kinds of mistake being made. "sheriff" was made to prevent all of those mistakes. It is battle-tested in real-world scenarios, and shines especially in such scenarios.
+
+
+## <a name="installation"></a>🛠️ Installation
+
+```bash
+# npm
+npm install -D eslint-config-sheriff
+
+# yarn
+yarn add -D eslint-config-sheriff
+
+# pnpm
+pnpm add -D eslint-config-sheriff
+```
 
 ## <a name="usage"></a>✨ Usage
 
-Copy and paste the parts of the config that interest you and makes sense for your project.<br>
 This config is **highly** opinionated, so make sure to meet the [hard requirements](#hard-requirements) in your project.
+Then, follow these steps:
+- [Install](#installation) the package from [npm](https://www.npmjs.com/package/eslint-config-sheriff).
+- Create a 	`eslint.config.js` [^1] file and copy/paste the contents of this snippet: 
+    ```js
+    // eslint.config.js
+
+    import sheriff from 'eslint-config-sheriff/recommended';
+
+    export default [
+        ...sheriff,
+        {
+            files: ['**/*{js,ts,jsx,tsx}'],
+        },
+    ];
+    ```
+    or, if you already have a `eslint.config.js` in your project, just append "sheriff" to the configs array, like this:
+    ```js
+    // eslint.config.js
+
+    import sheriff from 'eslint-config-sheriff/recommended';
+    // my other imports...
+
+    export default [
+        // my other configurations...
+        ...sheriff,
+    ];
+    ```
+
+- Configure "sheriff" as desired in the `sheriff.config.js` file. (*optional*)
+- Override any sheriff rule as desired in the `eslint.config.js` file. (*optional*)
+
+[^1]: "sheriff" is based on the [new format of Eslint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend "sheriff" from a [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
+
 
 ## <a name="techs"></a>🖥️ Techs
 
@@ -63,7 +116,9 @@ This config is **highly** opinionated, so make sure to meet the [hard requiremen
 
 ## <a name="roadmap"></a>🚀 Roadmap
 
-I plan to transform this into an actual npm package, once Eslint fully rolls out the new "Flat Config" system.
+- [ ] Consider more rules
+- [ ] Create a documentation website
+- [ ] Create a cli ala `create-react-app`
 
 ## <a name="acknowledgments"></a>🙏 Acknowledgments
 
