@@ -1,3 +1,4 @@
+const { cosmiconfigSync } = require('cosmiconfig');
 const typescriptParser = require('@typescript-eslint/parser');
 const typescript = require('@typescript-eslint/eslint-plugin');
 const react = require('eslint-plugin-react');
@@ -11,6 +12,8 @@ const lodash = require('eslint-plugin-lodash-f');
 const prettierConfig = require('eslint-config-prettier');
 const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
+
+const ignores = ['node_modules/', 'dist/', 'build/', 'artifacts/'];
 
 const messages = {
   NO_ACCESS_MODIFIER:
@@ -331,7 +334,40 @@ const languageOptionsTypescriptReact = {
   },
 };
 
-module.exports = [
+const lodashConfig = {
+  files: ['**/*{js,ts,jsx,tsx}'],
+  plugins: {
+    'lodash-f': lodash,
+  },
+  rules: {
+    ...lodash.configs.recommended.rules,
+    ...lodashHandPickedRules,
+  },
+};
+
+const nextjsConfig = {
+  files: ['**/*{js,ts,jsx,tsx}'],
+  plugins: {
+    '@next/next': nextjs,
+  },
+  rules: {
+    ...nextjs.configs.recommended.rules,
+    ...nextjs.configs['core-web-vitals'].rules,
+  },
+};
+
+const playwrightConfig = {
+  files: ['**/*{js,ts}'],
+  plugins: {
+    playwright,
+  },
+  rules: {
+    ...playwright.configs['playwright-test'].rules,
+    ...playwrightHandPickedRules,
+  },
+};
+
+const baseConfig = [
   'eslint:recommended',
   {
     files: ['**/*{js,ts,jsx,tsx}'],
@@ -424,41 +460,40 @@ module.exports = [
       },
     },
   },
-  // TODO requires the sheriff.config.js file
-  {
-    files: ['**/*{js,ts,jsx,tsx}'],
-    plugins: {
-      'lodash-f': lodash,
-    },
-    rules: {
-      ...lodash.configs.recommended.rules,
-      ...lodashHandPickedRules,
-    },
-  },
-  // TODO requires the sheriff.config.js file
-  // {
-  //   files: ['**/*{js,ts,jsx,tsx}'],
-  //   plugins: {
-  //     '@next/next': nextjs,
-  //   },
-  //   rules: {
-  //     ...nextjs.configs.recommended.rules,
-  //     ...nextjs.configs['core-web-vitals'].rules,
-  //   },
-  // },
-  // TODO requires the sheriff.config.js file
-  {
-    files: ['**/*{js,ts}'],
-    plugins: {
-      playwright,
-    },
-    rules: {
-      ...playwright.configs['playwright-test'].rules,
-      ...playwrightHandPickedRules,
-    },
-  },
-  prettierConfig,
-  {
-    ignores: ['node_modules/', 'dist/', 'build/', 'artifacts/'],
-  },
 ];
+
+const exportableConfig = baseConfig;
+
+const explorerSync = cosmiconfigSync('sheriff');
+let userConfigChoices = {};
+
+try {
+  userConfigChoices = explorerSync.search();
+} catch (error) {
+  throw new Error(
+    `Encountered a problem while searching for the eslint-config-sheriff: ${error}`,
+  );
+}
+
+if (
+  userConfigChoices &&
+  !userConfigChoices.isEmpty &&
+  userConfigChoices.config
+) {
+  if (userConfigChoices.config.lodash) {
+    exportableConfig.push(lodashConfig);
+  }
+
+  if (userConfigChoices.config.next) {
+    exportableConfig.push(nextjsConfig);
+  }
+
+  if (userConfigChoices.config.playwright) {
+    exportableConfig.push(playwrightConfig);
+  }
+}
+
+exportableConfig.push(prettierConfig);
+exportableConfig.push({ ignores });
+
+module.exports = exportableConfig;
