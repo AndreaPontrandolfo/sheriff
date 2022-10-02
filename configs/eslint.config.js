@@ -9,6 +9,8 @@ const playwright = require('eslint-plugin-playwright');
 const jsdoc = require('eslint-plugin-jsdoc');
 const pluginImport = require('eslint-plugin-import');
 const lodash = require('eslint-plugin-lodash-f');
+const nextjs = require('@next/eslint-plugin-next');
+console.log('🚀 ~ file: eslint.config.js ~ line 13 ~ nextjs', nextjs);
 const prettierConfig = require('eslint-config-prettier');
 
 const messages = {
@@ -24,11 +26,6 @@ const baseEslintHandPickedRules = {
   // TODO
   // curly: error,
   // quotes: [error, 'backtick', { avoidEscape: false }],
-  // semi: [error, 'always'],
-  // 'comma-dangle': [error, 'always-multiline'],
-  // 'semi-style': [error, 'last'],
-  // 'space-infix-ops': [error, { int32Hint: false }],
-  // 'new-parens': 2,
   // 'no-else-return': [error, { allowElseIf: false }],
   // 'object-shorthand': [error, 'properties'],
   // 'prefer-const': [warning, { ignoreReadBeforeAssign: false }],
@@ -428,6 +425,7 @@ module.exports = [
       },
     },
   },
+  // TODO requires the sheriff.config.js file
   {
     files: ['**/*{js,ts,jsx,tsx}'],
     plugins: {
@@ -438,6 +436,18 @@ module.exports = [
       ...lodashHandPickedRules,
     },
   },
+  // TODO requires the sheriff.config.js file
+  // {
+  //   files: ['**/*{js,ts,jsx,tsx}'],
+  //   plugins: {
+  //     '@next/next': nextjs,
+  //   },
+  //   rules: {
+  //     ...nextjs.configs.recommended.rules,
+  //     ...nextjs.configs['core-web-vitals'].rules,
+  //   },
+  // },
+  // TODO requires the sheriff.config.js file
   {
     files: ['**/*{js,ts}'],
     plugins: {
