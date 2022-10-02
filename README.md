@@ -7,23 +7,26 @@
 
 1. [Table of Contents](#table-of-contents)
 2. [Description](#description)
-3. [Usage](#usage)
-4. [Techs](#techs)
-5. [Requirements](#requirements)
-6. [Eslint plugins](#eslint-plugins)
-7. [Roadmap](#roadmap)
-8. [Acknowledgments](#acknowledgments)
+3. [Philosophy](#philosophy)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Techs](#techs)
+7. [Requirements](#requirements)
+8. [Eslint plugins](#eslint-plugins)
+9. [Roadmap](#roadmap)
+10. [Acknowledgments](#acknowledgments)
 
 ## <a href="description"></a>📖 Description
 
 This is a comprehensive Eslint configuration.<br>
-It takes into account various technologies.<br>
->==⚠️ At the moment, this config supports only Typescript codebases with modern Ecmascript standards. Maybe in the future i'll take in consideration support for vanilla Javascript. Refer to the [roadmap](#roadmap).==
+It takes into account various technologies (see: [techs](#techs)).<br>
+>⚠️ At the moment, this config supports only Typescript codebases with modern Ecmascript standards. Maybe in the future i'll take in consideration support for vanilla Javascript. Refer to the [roadmap](#roadmap).
 
-## <a href="philosophy"></a>📖 Philosophy
+## <a href="philosophy"></a>💭 Why / Philosophy
 
 This library is very opinionated, but it's for the better. I took a lot of decisions so you don't have too [^2]. You can now quickstart static analysis in all your Typescript projects with ease. It's just 1 `npm install`.<br>
-And if you don't like something, you can easily override it (see: [usage](#usage)).
+You can think of "sheriff" like `prettier` or `create-react-app`. It's a tool that tool that comes battery-packed with optimal defaults. It remove configuration decisions from the equation, so you or your team can focus on developing the actual product.<br>
+And if you don't like something, you can easily override it, and just as easily you can extend it (see: [usage](#usage)).
 
 [^2]: This config is particularly useful for big teams with developers of various skill levels. I worked in a lot of different projects and teams through the years and i got accustomed to seeing all kinds of mistake being made. "sheriff" was made to prevent all of those mistakes. It is battle-tested in real-world scenarios, and shines especially in such scenarios.
 
