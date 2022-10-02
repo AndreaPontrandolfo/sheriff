@@ -22,7 +22,7 @@
 It takes into account various technologies (see: [techs](#techs)).<br>
 >⚠️ At the moment, `sheriff` supports only Typescript codebases with modern Ecmascript standards. Maybe in the future i'll take in consideration support for vanilla Javascript. Refer to the [roadmap](#roadmap).
 
-## <a href="philosophy"></a>💭 Why / Philosophy
+## <a href="philosophy"></a>💭 Philosophy / Why / Motivations
 
 This library is very opinionated, but it's for the better. I took a lot of decisions so you don't have too [^2]. You can now quickstart static analysis in all your Typescript projects with ease. It's just 1 `npm install`.<br>
 You can think of `sheriff` like `prettier` or `create-react-app`. It's a tool that tool that comes battery-packed with optimal defaults. It remove configuration decisions from the equation, so you or your team can focus on developing the actual product.<br>
@@ -129,4 +129,5 @@ Then, follow these steps:
 
 ## <a name="acknowledgments"></a>🙏 Acknowledgments
 
-For some of this config i partially used [eslint-config-red](https://github.com/GrosSacASac/JavaScript-Set-Up/blob/master/js/red-javascript-style-guide/index.js) as a base.
+For some of this config i partially used [eslint-config-red](https://github.com/GrosSacASac/JavaScript-Set-Up/blob/master/js/red-javascript-style-guide/index.js) as a base.<br>
+I don't take any attribution for the rules in the various eslint-plugins used here. Please consider starring the respective projects for the awesome work their authors made. The full list of the plugins used is [here](#eslint-plugins).
