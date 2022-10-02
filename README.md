@@ -25,10 +25,10 @@ It takes into account various technologies (see: [techs](#techs)).<br>
 ## <a href="philosophy"></a>💭 Why / Philosophy
 
 This library is very opinionated, but it's for the better. I took a lot of decisions so you don't have too [^2]. You can now quickstart static analysis in all your Typescript projects with ease. It's just 1 `npm install`.<br>
-You can think of "sheriff" like `prettier` or `create-react-app`. It's a tool that tool that comes battery-packed with optimal defaults. It remove configuration decisions from the equation, so you or your team can focus on developing the actual product.<br>
+You can think of `sheriff` like `prettier` or `create-react-app`. It's a tool that tool that comes battery-packed with optimal defaults. It remove configuration decisions from the equation, so you or your team can focus on developing the actual product.<br>
 And if you don't like something, you can easily override it, and just as easily you can extend it (see: [usage](#usage)).
 
-[^2]: This config is particularly useful for big teams with developers of various skill levels. I worked in a lot of different projects and teams through the years and i got accustomed to seeing all kinds of mistake being made. "sheriff" was made to prevent all of those mistakes. It is battle-tested in real-world scenarios, and shines especially in such scenarios.
+[^2]: This config is particularly useful for big teams with developers of various skill levels. I worked in a lot of different projects and teams through the years and i got accustomed to seeing all kinds of mistake being made. `sheriff` was made to prevent all of those mistakes. It is battle-tested in real-world scenarios, and shines especially in such scenarios.
 
 
 ## <a name="installation"></a>🛠️ Installation
@@ -62,7 +62,7 @@ Then, follow these steps:
         },
     ];
     ```
-    or, if you already have a `eslint.config.js` in your project, just append "sheriff" to the configs array, like this:
+    or, if you already have a `eslint.config.js` in your project, just append `sheriff` to the configs array, like this:
     ```js
     // eslint.config.js
 
@@ -75,10 +75,10 @@ Then, follow these steps:
     ];
     ```
 
-- Configure "sheriff" as desired in the `sheriff.config.js` file. (*optional*)
+- Configure `sheriff` as desired in the `sheriff.config.js` file. (*optional*)
 - Override any sheriff rule as desired in the `eslint.config.js` file. (*optional*)
 
-[^1]: "sheriff" is based on the [new format of Eslint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend "sheriff" from a [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
+[^1]: `sheriff` is based on the [new format of Eslint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend `sheriff` from a [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
 
 
 ## <a name="techs"></a>🖥️ Techs
@@ -94,7 +94,7 @@ Then, follow these steps:
  
 ### Hard requirements
 - Node 16+
-- [Eslint](https://eslint.org/)
+- [Eslint >8.23.0](https://eslint.org/)
 - [Typescript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
 
