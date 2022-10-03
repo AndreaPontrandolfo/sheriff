@@ -16,13 +16,13 @@
 9. [Roadmap](#roadmap)
 10. [Acknowledgments](#acknowledgments)
 
-## <a href="description"></a>📖 Description
+## <a name="description"></a>📖 Description
 
 `sheriff` is a comprehensive Eslint configuration.<br>
 It takes into account various technologies (see: [techs](#techs)).<br>
 >⚠️ At the moment, `sheriff` supports only Typescript codebases with modern Ecmascript standards. Maybe in the future i'll take in consideration support for vanilla Javascript. Refer to the [roadmap](#roadmap).
 
-## <a href="philosophy"></a>💭 Philosophy / Why / Motivations
+## <a name="philosophy"></a>💭 Philosophy / Why / Motivations
 
 This library is very opinionated, but it's for the better. I took a lot of decisions so you don't have too [^2]. You can now quickstart static analysis in all your Typescript projects with ease. It's just 1 `npm install`.<br>
 You can think of `sheriff` like `prettier` or `create-react-app`. It's a tool that tool that comes battery-packed with optimal defaults. It remove configuration decisions from the equation, so you or your team can focus on developing the actual product.<br>
@@ -87,19 +87,20 @@ Then, follow these steps:
 - [Prettier](https://prettier.io/)
 - [Typescript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
+- [Next](https://nextjs.org/) (*optional*)
 - [Lodash](https://lodash.com/) (*optional*)
 - [Playwright](https://playwright.dev/) (*optional*)
 
 ## <a name="requirements"></a>🔑 Requirements
  
 ### Hard requirements
-- [Node >16](https://nodejs.org/en/)
-- [Eslint >8.23.0](https://eslint.org/)
+- [Node >=16](https://nodejs.org/en/)
+- [Eslint >=8.23.0](https://eslint.org/)
 - [Typescript](https://www.typescriptlang.org/)
-- [React](https://reactjs.org/)
+- [React >=17](https://reactjs.org/)
 
 ### Recommendations
-- [Node >18](https://nodejs.org/en/)
+- [Node >=18](https://nodejs.org/en/)
 - [VScode](https://code.visualstudio.com/)
 - [VScode eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [VScode prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
@@ -121,8 +122,8 @@ Then, follow these steps:
 
 - [ ] Consider more rules
 - [ ] `eslint-plugin-n`
-- [ ] `eslint-plugin-next`
-- [ ] Create the `sheriff.config.js file`
+- [x] `eslint-plugin-next`
+- [x] Create the `sheriff.config.js` file support
 - [ ] Create a cli ala `create-react-app`
 - [ ] Remove `react` as a hard requirement
 - [ ] Create a documentation website
