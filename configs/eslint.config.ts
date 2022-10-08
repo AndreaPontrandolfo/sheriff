@@ -1,19 +1,48 @@
-const { cosmiconfigSync } = require('cosmiconfig');
-const typescriptParser = require('@typescript-eslint/parser');
-const typescript = require('@typescript-eslint/eslint-plugin');
-const react = require('eslint-plugin-react');
-const reactAccessibility = require('eslint-plugin-jsx-a11y');
-const reactHooks = require('eslint-plugin-react-hooks');
-const unicorn = require('eslint-plugin-unicorn');
-const sonarjs = require('eslint-plugin-sonarjs');
-const playwright = require('eslint-plugin-playwright');
-const jsdoc = require('eslint-plugin-jsdoc');
-const lodash = require('eslint-plugin-lodash-f');
-const prettierConfig = require('eslint-config-prettier');
-const pluginImport = require('eslint-plugin-import');
-const nextjs = require('@next/eslint-plugin-next');
+import { cosmiconfigSync } from 'cosmiconfig';
+import typescriptParser from '@typescript-eslint/parser';
+import typescript from '@typescript-eslint/eslint-plugin';
+// @ts-ignore
+import react from 'eslint-plugin-react';
+// @ts-ignore
+import reactAccessibility from 'eslint-plugin-jsx-a11y';
+// @ts-ignore
+import reactHooks from 'eslint-plugin-react-hooks';
+// @ts-ignore
+import unicorn from 'eslint-plugin-unicorn';
+// @ts-ignore
+import sonarjs from 'eslint-plugin-sonarjs';
+// @ts-ignore
+import playwright from 'eslint-plugin-playwright';
+// @ts-ignore
+import jsdoc from 'eslint-plugin-jsdoc';
+// @ts-ignore
+import lodash from 'eslint-plugin-lodash-f';
+// @ts-ignore
+import prettierConfig from 'eslint-config-prettier';
+// @ts-ignore
+import nextjs from '@next/eslint-plugin-next';
+// import pluginImport from 'eslint-plugin-import';
 
-const ignores = ['node_modules/', 'dist/', 'build/', 'artifacts/'];
+type SheriffConfig = (
+  | string
+  | {
+      files?: string[];
+      languageOptions?: any;
+      ignores?: string[];
+      rules?: any;
+      plugins?: any;
+      settings?: any;
+    }
+)[];
+
+const ignores = [
+  'node_modules/',
+  'dist/',
+  'build/',
+  'artifacts/',
+  'coverage/',
+  '.git/',
+];
 
 const messages = {
   NO_ACCESS_MODIFIER:
@@ -398,15 +427,15 @@ const baseConfig = [
       react,
     },
     languageOptions: languageOptionsTypescriptReact,
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
     rules: {
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
       ...reactHandPickedRules,
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
   },
   {
@@ -430,16 +459,16 @@ const baseConfig = [
     },
     rules: unicornHandPickedRules,
   },
-  {
-    files: ['**/*{js,ts,jsx,tsx}'],
-    plugins: {
-      sonarjs,
-    },
-    rules: {
-      ...sonarjs.configs.recommended.rules,
-      ...sonarjsHandPickedRules,
-    },
-  },
+  // {
+  //   files: ['**/*{js,ts,jsx,tsx}'],
+  //   plugins: {
+  //     sonarjs,
+  //   },
+  //   rules: {
+  //     ...sonarjs.configs.recommended.rules,
+  //     ...sonarjsHandPickedRules,
+  //   },
+  // },
   // TODO
   // {
   //   files: ['**/*{js,ts,jsx,tsx}'],
@@ -462,38 +491,37 @@ const baseConfig = [
   },
 ];
 
-const exportableConfig = baseConfig;
+const exportableConfig: SheriffConfig = [...baseConfig];
 
 const explorerSync = cosmiconfigSync('sheriff');
-let userConfigChoices = {};
+let userConfigChoices;
 
 try {
   userConfigChoices = explorerSync.search();
+  if (
+    userConfigChoices &&
+    !userConfigChoices.isEmpty &&
+    userConfigChoices.config
+  ) {
+    if (userConfigChoices.config.lodash) {
+      exportableConfig.push(lodashConfig);
+    }
+
+    if (userConfigChoices.config.next) {
+      exportableConfig.push(nextjsConfig);
+    }
+
+    if (userConfigChoices.config.playwright) {
+      exportableConfig.push(playwrightConfig);
+    }
+  }
+
+  exportableConfig.push(prettierConfig);
+  exportableConfig.push({ ignores });
 } catch (error) {
   throw new Error(
     `Encountered a problem while searching for the eslint-config-sheriff: ${error}`,
   );
 }
 
-if (
-  userConfigChoices &&
-  !userConfigChoices.isEmpty &&
-  userConfigChoices.config
-) {
-  if (userConfigChoices.config.lodash) {
-    exportableConfig.push(lodashConfig);
-  }
-
-  if (userConfigChoices.config.next) {
-    exportableConfig.push(nextjsConfig);
-  }
-
-  if (userConfigChoices.config.playwright) {
-    exportableConfig.push(playwrightConfig);
-  }
-}
-
-exportableConfig.push(prettierConfig);
-exportableConfig.push({ ignores });
-
-module.exports = exportableConfig;
+export { exportableConfig as recommended };

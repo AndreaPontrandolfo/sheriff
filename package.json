@@ -2,17 +2,18 @@
   "name": "eslint-config-sheriff",
   "version": "0.0.0-development",
   "description": "A comprehensive Eslint configuration.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./index.js"
+      "require": "./dist/index.js"
     },
-    "./recommended": "./configs/eslint.config.js",
+    "./recommended": "./dist/configs/eslint.config.js",
     "./package.json": "./package.json"
   },
   "files": [
-    "index.js",
-    "configs"
+    "dist/index.js",
+    "dist/configs"
   ],
   "author": {
     "name": "Andrea Pontrandolfo",
@@ -32,8 +33,19 @@
     "unicorn",
     "react"
   ],
+  "tsup": {
+    "entry": [
+      "index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": false,
+    "clean": true
+  },
   "scripts": {
-    "semantic-release": "semantic-release"
+    "preinstall": "npx only-allow pnpm",
+    "semantic-release": "semantic-release",
+    "update-types": "typesync",
+    "build": "tsc"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^12.3.1",
@@ -57,7 +69,11 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/eslint": "^8.4.6",
+    "@types/node": "^18.8.3",
     "semantic-release": "^19.0.5",
-    "typescript": "^4.8.4"
+    "tsup": "^6.2.3",
+    "typescript": "^4.8.4",
+    "typesync": "^0.9.2"
   }
 }
