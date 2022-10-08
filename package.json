@@ -3,6 +3,7 @@
   "version": "0.0.0-development",
   "description": "A comprehensive Eslint configuration.",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "exports": {
     ".": {
       "require": "./index.js"
@@ -12,7 +13,8 @@
   },
   "files": [
     "index.js",
-    "configs"
+    "configs",
+    "types"
   ],
   "author": {
     "name": "Andrea Pontrandolfo",
@@ -33,7 +35,9 @@
     "react"
   ],
   "scripts": {
-    "semantic-release": "semantic-release"
+    "preinstall": "npx only-allow pnpm",
+    "semantic-release": "semantic-release",
+    "generate-typings": "tsc --declaration --allowJs --emitDeclarationOnly --declarationMap --outDir types"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^12.3.1",

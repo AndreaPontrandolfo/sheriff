@@ -23,6 +23,8 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
+      - name: Generate typescript declaration files
+        run: pnpm generate-typings
       - name: Release
         run: pnpm semantic-release
         env:
