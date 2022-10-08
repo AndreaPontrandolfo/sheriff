@@ -1,3 +1,3 @@
-const recommended = require('./configs/eslint.config.js');
+const config = require('./configs/eslint.config.js');
 
-module.exports = recommended;
+module.exports = config;

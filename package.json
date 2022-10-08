@@ -6,9 +6,9 @@
   "types": "types/index.d.ts",
   "exports": {
     ".": {
-      "require": "./index.js"
+      "require": "./index.js",
+      "import": "./index.js"
     },
-    "./recommended": "./configs/eslint.config.js",
     "./package.json": "./package.json"
   },
   "files": [

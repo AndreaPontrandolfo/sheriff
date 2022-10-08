@@ -469,7 +469,7 @@ const baseConfig = [
   },
 ];
 
-const exportableConfig = baseConfig;
+const exportableConfig = [...baseConfig];
 
 const explorerSync = cosmiconfigSync('sheriff');
 let userConfigChoices = {};
