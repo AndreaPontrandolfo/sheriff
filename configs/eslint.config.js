@@ -341,6 +341,40 @@ const languageOptionsTypescriptReact = {
   },
 };
 
+const reactConfig = [
+  {
+    files: ['**/*{js,ts,jsx,tsx}'],
+    plugins: {
+      react,
+    },
+    languageOptions: languageOptionsTypescriptReact,
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+    rules: {
+      ...react.configs.recommended.rules,
+      ...react.configs['jsx-runtime'].rules, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
+      ...reactHandPickedRules,
+    },
+  },
+  {
+    files: ['**/*{js,ts,jsx,tsx}'],
+    plugins: {
+      'jsx-a11y': reactAccessibility,
+    },
+    rules: reactAccessibility.configs.recommended.rules,
+  },
+  {
+    files: ['**/*{js,ts,jsx,tsx}'],
+    plugins: {
+      'react-hooks': reactHooks,
+    },
+    rules: reactHooks.configs.recommended.rules,
+  },
+];
+
 const lodashConfig = {
   files: ['**/*{js,ts,jsx,tsx}'],
   plugins: {
@@ -399,37 +433,7 @@ const baseConfig = [
     files: ['**/*{js,ts,jsx,tsx}'],
     rules: baseEslintHandPickedRules,
   },
-  {
-    files: ['**/*{js,ts,jsx,tsx}'],
-    plugins: {
-      react,
-    },
-    languageOptions: languageOptionsTypescriptReact,
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
-    rules: {
-      ...react.configs.recommended.rules,
-      ...react.configs['jsx-runtime'].rules, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
-      ...reactHandPickedRules,
-    },
-  },
-  {
-    files: ['**/*{js,ts,jsx,tsx}'],
-    plugins: {
-      'jsx-a11y': reactAccessibility,
-    },
-    rules: reactAccessibility.configs.recommended.rules,
-  },
-  {
-    files: ['**/*{js,ts,jsx,tsx}'],
-    plugins: {
-      'react-hooks': reactHooks,
-    },
-    rules: reactHooks.configs.recommended.rules,
-  },
+
   {
     files: ['**/*{js,ts,jsx,tsx}'],
     plugins: {
@@ -477,22 +481,23 @@ let userConfigChoices = {};
 try {
   userConfigChoices = explorerSync.search();
 } catch (error) {
-  throw new Error(
-    `Encountered a problem while searching for the eslint-config-sheriff: ${error}`,
+  console.warn(
+    "Encountered a problem while searching for the 'sheriff' config file. The user choices will not be respected.",
   );
+  throw new Error(error);
 }
 
-if (
-  userConfigChoices &&
-  !userConfigChoices.isEmpty &&
-  userConfigChoices.config
-) {
-  if (userConfigChoices.config.lodash) {
-    exportableConfig.push(lodashConfig);
+if (!userConfigChoices?.isEmpty && userConfigChoices?.config) {
+  if (userConfigChoices.config.react || userConfigChoices.config.next) {
+    exportableConfig = [...exportableConfig, ...reactConfig];
   }
 
   if (userConfigChoices.config.next) {
     exportableConfig.push(nextjsConfig);
+  }
+
+  if (userConfigChoices.config.lodash) {
+    exportableConfig.push(lodashConfig);
   }
 
   if (userConfigChoices.config.playwright) {
