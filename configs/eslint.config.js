@@ -13,7 +13,14 @@ const prettierConfig = require('eslint-config-prettier');
 const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
 
-const ignores = ['node_modules/', 'dist/', 'build/', 'artifacts/'];
+const ignores = [
+  'node_modules/',
+  'dist/',
+  'build/',
+  'artifacts/',
+  'coverage/',
+  '.git/',
+];
 
 const messages = {
   NO_ACCESS_MODIFIER:
