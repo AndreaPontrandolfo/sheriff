@@ -32,8 +32,10 @@
     "lodash",
     "sonarjs",
     "unicorn",
-    "react"
+    "react",
+    "next"
   ],
+  "bug": "https://github.com/AndreaPontrandolfo/sheriff/issues",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "semantic-release": "semantic-release",
@@ -58,8 +60,14 @@
     "eslint-plugin-unicorn": "^44.0.0"
   },
   "peerDependencies": {
-    "typescript": ">=4.8.2"
+    "typescript": ">=4.0.8",
+    "eslint": ">=8.23.0"
   },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  },
+  "packageManager": ">=pnpm@7.0.0",
   "license": "MIT",
   "devDependencies": {
     "semantic-release": "19.0.5",
