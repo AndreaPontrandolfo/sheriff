@@ -13,6 +13,8 @@ const prettierConfig = require('eslint-config-prettier');
 const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
 
+const supportedFileTypes = '**/*{js,ts,jsx,tsx}';
+
 const ignores = [
   'node_modules/',
   'dist/',
@@ -172,6 +174,7 @@ const baseEslintHandPickedRules = {
     },
   ],
   'no-undef': 0, // typescript already takes care of this. See: https://typescript-eslint.io/docs/linting/troubleshooting/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
+  'no-dupe-class-members': 0, // typescript already takes care of this.
   'no-return-await': 0, // we are using the @typescript/eslint version
   'no-throw-literal': 0, // we are using the @typescript/eslint version
   'no-use-before-define': 0, // we are using the @typescript/eslint version
@@ -287,16 +290,26 @@ const jsdocHandPickedRules = {
 };
 
 const importHandPickedRules = {
+  'import/named': 0, // unnecessary. Feature already provided by Typescript.
+  'import/namespace': 0, // unnecessary. Feature already provided by Typescript.
+  'import/default': 0, // unnecessary. Feature already provided by Typescript.
+  'import/no-named-as-default-member': 0, // unnecessary. Feature already provided by Typescript.
+  'import/no-unresolved': [2, { commonjs: true }], // required by eslint-import-resolver-typescript.
   'import/first': 2,
   'import/order': [2, { 'newlines-between': 'never' }],
   'import/named': 2,
+  'import/no-default-export': 2,
+  'import/no-named-as-default': 2,
   'import/no-duplicates': 2,
+  'import/newline-after-import': [2, { considerComments: true }],
   'import/no-unused-modules': [
     2,
-    { missingExports: true, unusedExports: true },
+    {
+      missingExports: true,
+      unusedExports: true,
+      ignoreExports: '**/*.config.{js,ts,jsx,tsx}',
+    },
   ],
-  'import/namespace': 2,
-  'import/no-default-export': 2,
   'import/no-useless-path-segments': [2, { noUselessIndex: true }],
 };
 
@@ -343,7 +356,7 @@ const languageOptionsTypescriptReact = {
 
 const reactConfig = [
   {
-    files: ['**/*{js,ts,jsx,tsx}'],
+    files: [supportedFileTypes],
     plugins: {
       react,
     },
@@ -360,14 +373,14 @@ const reactConfig = [
     },
   },
   {
-    files: ['**/*{js,ts,jsx,tsx}'],
+    files: [supportedFileTypes],
     plugins: {
       'jsx-a11y': reactAccessibility,
     },
     rules: reactAccessibility.configs.recommended.rules,
   },
   {
-    files: ['**/*{js,ts,jsx,tsx}'],
+    files: [supportedFileTypes],
     plugins: {
       'react-hooks': reactHooks,
     },
@@ -376,7 +389,7 @@ const reactConfig = [
 ];
 
 const lodashConfig = {
-  files: ['**/*{js,ts,jsx,tsx}'],
+  files: [supportedFileTypes],
   plugins: {
     'lodash-f': lodash,
   },
@@ -387,7 +400,7 @@ const lodashConfig = {
 };
 
 const nextjsConfig = {
-  files: ['**/*{js,ts,jsx,tsx}'],
+  files: [supportedFileTypes],
   plugins: {
     '@next/next': nextjs,
   },
@@ -411,14 +424,14 @@ const playwrightConfig = {
 const baseConfig = [
   'eslint:recommended',
   {
-    files: ['**/*{js,ts,jsx,tsx}'],
+    files: [supportedFileTypes],
   },
   {
-    files: ['**/*{js,ts,jsx,tsx}'],
+    files: [supportedFileTypes],
     languageOptions: languageOptionsTypescript,
   },
   {
-    files: ['**/*{js,ts,jsx,tsx}'],
+    files: [supportedFileTypes],
     plugins: {
       '@typescript-eslint': typescript,
     },
@@ -430,19 +443,19 @@ const baseConfig = [
     },
   },
   {
-    files: ['**/*{js,ts,jsx,tsx}'],
+    files: [supportedFileTypes],
     rules: baseEslintHandPickedRules,
   },
 
   {
-    files: ['**/*{js,ts,jsx,tsx}'],
+    files: [supportedFileTypes],
     plugins: {
       unicorn,
     },
     rules: unicornHandPickedRules,
   },
   {
-    files: ['**/*{js,ts,jsx,tsx}'],
+    files: [supportedFileTypes],
     plugins: {
       sonarjs,
     },
@@ -451,16 +464,32 @@ const baseConfig = [
       ...sonarjsHandPickedRules,
     },
   },
-  // TODO
-  // {
-  //   files: ['**/*{js,ts,jsx,tsx}'],
-  //   plugins: {
-  //     import: pluginImport,
-  //   },
-  //   rules: importHandPickedRules,
-  // },
   {
-    files: ['**/*{js,ts,jsx,tsx}'],
+    files: [supportedFileTypes],
+    plugins: {
+      import: pluginImport,
+    },
+    rules: importHandPickedRules,
+    settings: {
+      'import/parsers': {
+        '@typescript-eslint/parser': ['.ts', '.tsx'],
+      },
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+        },
+        node: true,
+      },
+    },
+  },
+  {
+    files: ['**/*.config.{js,ts,jsx,tsx}'],
+    rules: {
+      'import/no-default-export': 0,
+    },
+  },
+  {
+    files: [supportedFileTypes],
     plugins: {
       jsdoc,
     },
