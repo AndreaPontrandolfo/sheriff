@@ -89,7 +89,7 @@ Then, follow these steps:
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 - [Typescript](https://www.typescriptlang.org/)
-- [React](https://reactjs.org/)
+- [React](https://reactjs.org/) (_optional_)
 - [Next](https://nextjs.org/) (_optional_)
 - [Lodash](https://lodash.com/) (_optional_)
 - [Playwright](https://playwright.dev/) (_optional_)
@@ -115,13 +115,24 @@ Then, follow these steps:
 - [@typescript/eslint](https://github.com/typescript-eslint/typescript-eslint)
 - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
 - [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
+- [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
+- [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks)
+- [@next/eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next)
 - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
 - [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs)
-- [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)
+- [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import) with [eslint-import-resolver-typescript](https://github.com/import-js/eslint-import-resolver-typescript)
 - [eslint-plugin-lodash-f](https://github.com/AndreaPontrandolfo/eslint-plugin-lodash)
   - my fork of [eslint-plugin-lodash](https://github.com/wix/eslint-plugin-lodash)
 - [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
 - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)
+
+## <a name="rules"></a>🚀 Rules
+
+See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules).
+
+## <a name="changelog"></a>🚀 Changelog
+
+See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 
 ## <a name="roadmap"></a>🚀 Roadmap
 

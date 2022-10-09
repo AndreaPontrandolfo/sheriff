@@ -39,7 +39,8 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "semantic-release": "semantic-release",
-    "generate-typings": "tsc --declaration --allowJs --emitDeclarationOnly --declarationMap --outDir types"
+    "generate-typings": "tsc --declaration --allowJs --emitDeclarationOnly --declarationMap --outDir types",
+    "generate-rules-file": "node ./utils/extractRules.js"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^12.3.1",
@@ -60,8 +61,8 @@
     "eslint-plugin-unicorn": "^44.0.0"
   },
   "peerDependencies": {
-    "typescript": ">=4.0.8",
-    "eslint": ">=8.23.0"
+    "eslint": ">=8.23.0",
+    "typescript": ">=4.0.8"
   },
   "engines": {
     "node": ">=16",

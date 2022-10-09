@@ -25,6 +25,8 @@ jobs:
         run: pnpm install
       - name: Generate typescript declaration files
         run: pnpm generate-typings
+      - name: Update rules docs
+        run: pnpm generate-rules-file
       - name: Release
         run: pnpm semantic-release
         env:
