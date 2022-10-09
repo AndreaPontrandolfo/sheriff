@@ -129,8 +129,12 @@ Then, follow these steps:
 - [ ] `eslint-plugin-n`
 - [x] `eslint-plugin-next`
 - [x] Create the `sheriff.config.js` file support
-- [ ] Create a cli ala `create-react-app`
-- [ ] Remove `react` as a hard requirement
+- [x] Create a cli ala `create-react-app`
+- [x] Remove `react` as a hard requirement
+- [ ] Svelte support
+- [ ] Solid support
+- [ ] Vue support
+- [ ] Astro support
 - [ ] Create a documentation website
 
 ## <a name="acknowledgments"></a>🙏 Acknowledgments
