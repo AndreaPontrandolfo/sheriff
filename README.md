@@ -171,14 +171,14 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
 - Configure `sheriff` as desired in the `sheriffrc.json` file [^3].<br>
   Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default.
 
-  ```json
+  ```json5
   // sheriffrc.json (default)
 
   {
-    "react": false,
-    "next": false,
-    "lodash": false,
-    "playwright": false
+    react: false,
+    next: false,
+    lodash: false,
+    playwright: false,
   }
   ```
 
