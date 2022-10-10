@@ -35,7 +35,7 @@
     "react",
     "next"
   ],
-  "bug": "https://github.com/AndreaPontrandolfo/sheriff/issues",
+  "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "semantic-release": "semantic-release",

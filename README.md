@@ -14,11 +14,12 @@
 7. [🧳 Eslint plugins](#eslint-plugins)
 8. [🧶 Rules](#rules)
 9. [🧠 Configuration](#configuration)
-10. [♻ Migration guide](#migration-guide)
-11. [🌤 Changelog](#changelog)
-12. [📋 License](#license)
-13. [🚀 Roadmap](#roadmap)
-14. [💌 Acknowledgments](#acknowledgments)
+10. [🧐 Prior art](#prior-art)
+11. [♻ Migration guide](#migration-guide)
+12. [🌤 Changelog](#changelog)
+13. [📋 License](#license)
+14. [🚀 Roadmap](#roadmap)
+15. [💌 Acknowledgments](#acknowledgments)
 
 ## <a name="description"></a>📖 Description
 
@@ -46,12 +47,12 @@ And if you don't like something, you can easily override it, and just as easily 
 
 ## <a name="setup"></a>🛠️ Setup
 
-This config is **highly** opinionated, so make sure to meet the [hard requirements](#hard-requirements) in your project.
-Then, follow these steps:
+This config is **highly** opinionated, so make sure to meet the [hard requirements](#hard-requirements) in your project.<br>
+Then, let `create-sheriff-config` handle the whole setup for you autonomatically, or do it yourself manually.
 
 ### 🤖 Automatic setup (_recommended_)
 
-Just execute this command in your terminal:
+Let the CLI take care of everything! Just run this command in your terminal:
 
 ```bash
 ❯  npx create-sheriff-config
@@ -60,6 +61,8 @@ Just execute this command in your terminal:
 ...and your good to go!
 
 ### 😫 Manual setup
+
+Follow these steps:
 
 1. Install the package from [npm](https://www.npmjs.com/package/eslint-config-sheriff).
 
@@ -114,7 +117,7 @@ Just execute this command in your terminal:
 - 🏑 **Frictionless by design**: to setup `sheriff` and take off, the only input required from the user is running the command `npx create-sheriff-config`. The command will automatically infer the details of your project and figure out the optimal `sheriff` configuration by itself.
 - ⇆ **Interoperability**: you can plop `sheriff` in your project at any moment. `create-sheriff-config` will config automatically everything for you and will warn you if you need take any special precautions. Bottomline: it's never to late too install `sheriff`.
 - 🏔 **Cutting-edge**: `sheriff` is one of the first attempts in the wild to adhere to the new eslint configuration format, the `FlatConfig`. You can use `sheriff` to easily and safely migrate your project to the new config format without effort. See: [migration guide](#migration-guide).
-- 🗄️ **Configurable**: `sheriff` is fully configurable with it's own config file `sheriff.config.js`. See: [configuration](#configuration).<br>
+- 🗄️ **Configurable**: `sheriff` is fully configurable with it's own config file `sheriffrc.json`. See: [configuration](#configuration).<br>
   `sheriff` has opt-in support for a wide array of libraries. See: [techs](#techs).
 - ✍ **SemVer**: `sheriff` [releases](https://github.com/AndreaPontrandolfo/sheriff/releases) follows [Semantic Versioning](https://semver.org/) with [Conventional Commits](https://www.conventionalcommits.org/) standards.
 
@@ -165,10 +168,38 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
 
 ## <a name="configuration"></a>🧠 Configuration
 
-- Configure `sheriff` as desired in the `sheriff.config.js` file.
+- Configure `sheriff` as desired in the `sheriffrc.json` file [^3].<br>
+  Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default.
+
+  ```json
+  // sheriffrc.json (default)
+
+  {
+    "react": false,
+    "next": false,
+    "lodash": false,
+    "playwright": false
+  }
+  ```
+
+[^3]: `sheriff` utilizes [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) under-the-hood to power-up the `sheriff` configuration. You are not forced to call the config file "sheriffrc.json", you can choose one of the alternative filetypes. See [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for details.
+
 - Override any `sheriff` rule as desired in the `eslint.config.js` file.
 
+## <a name="prior-art"></a>🧐 Prior art / Related projects
+
+- [https://github.com/ljosberinn/eslint-config-galex](eslint-config-galex)
+- [https://github.com/eslint-kit/eslint-kit](eslint-kit)
+- [https://github.com/locol23/eslint-config-everywhere](eslint-config-everywhere)
+- [https://github.com/xojs/xo](xo)
+- [https://github.com/moia-oss/eslint-prettier-typescript-config](eslint-prettier-typescript-config)
+- [https://github.com/iamturns/eslint-config-airbnb-typescript](eslint-config-airbnb-typescript)
+
 ## <a name="migration-guide"></a>♻ Migration guide
+
+TODO
+
+## <a name="contributing"></a>📋 Contributing
 
 TODO
 
@@ -185,7 +216,7 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 - [ ] Consider more rules
 - [ ] `eslint-plugin-n`
 - [x] `eslint-plugin-next`
-- [x] Create the `sheriff.config.js` file support
+- [x] Create the `sheriffrc.json` file support
 - [x] Create a cli ala `create-react-app`
 - [x] Remove `react` as a hard requirement
 - [ ] Svelte support
