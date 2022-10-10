@@ -16,10 +16,11 @@
 9. [🧠 Configuration](#configuration)
 10. [🧐 Prior art](#prior-art)
 11. [♻ Migration guide](#migration-guide)
-12. [🌤 Changelog](#changelog)
-13. [📋 License](#license)
-14. [🚀 Roadmap](#roadmap)
-15. [💌 Acknowledgments](#acknowledgments)
+12. [🧡 Contributing](#contributing)
+13. [🌤 Changelog](#changelog)
+14. [📋 License](#license)
+15. [🚀 Roadmap](#roadmap)
+16. [💌 Acknowledgments](#acknowledgments)
 
 ## <a name="description"></a>📖 Description
 
@@ -188,18 +189,18 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
 
 ## <a name="prior-art"></a>🧐 Prior art / Related projects
 
-- [https://github.com/ljosberinn/eslint-config-galex](eslint-config-galex)
-- [https://github.com/eslint-kit/eslint-kit](eslint-kit)
-- [https://github.com/locol23/eslint-config-everywhere](eslint-config-everywhere)
-- [https://github.com/xojs/xo](xo)
-- [https://github.com/moia-oss/eslint-prettier-typescript-config](eslint-prettier-typescript-config)
-- [https://github.com/iamturns/eslint-config-airbnb-typescript](eslint-config-airbnb-typescript)
+- [eslint-config-galex](https://github.com/ljosberinn/eslint-config-galex)
+- [eslint-kit](https://github.com/eslint-kit/eslint-kit)
+- [eslint-config-everywhere](https://github.com/locol23/eslint-config-everywhere)
+- [xo](https://github.com/xojs/xo)
+- [eslint-prettier-typescript-config](https://github.com/moia-oss/eslint-prettier-typescript-config)
+- [eslint-config-airbnb-typescript](https://github.com/iamturns/eslint-config-airbnb-typescript)
 
 ## <a name="migration-guide"></a>♻ Migration guide
 
 TODO
 
-## <a name="contributing"></a>📋 Contributing
+## <a name="contributing"></a>🧡 Contributing
 
 TODO
 
@@ -214,7 +215,6 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 ## <a name="roadmap"></a>🚀 Roadmap
 
 - [ ] Consider more rules
-- [ ] `eslint-plugin-n`
 - [x] `eslint-plugin-next`
 - [x] Create the `sheriffrc.json` file support
 - [x] Create a cli ala `create-react-app`
