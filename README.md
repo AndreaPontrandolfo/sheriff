@@ -27,7 +27,7 @@
 ### <a name="introduction"></a>🥳 Introduction
 
 `sheriff` is a comprehensive Eslint configuration.<br>
-It takes into account various technologies. See: [techs](#techs).<br>
+It supports [various technologies](#techs).<br>
 `sheriff` is very easy top get started with and use. It promotes a _“zero overhead approach”_. See: [philosophy](#philosophy). <br>
 It’s a [_"plug & play"_](#automatic-setup) solution but you can customize it as much as you want. See: [features](#features).
 
@@ -49,7 +49,7 @@ And if you don't like something, you can easily override it, and just as easily 
 ## <a name="setup"></a>🛠️ Setup
 
 This config is **highly** opinionated, so make sure to meet the [hard requirements](#hard-requirements) in your project.<br>
-Then, let `create-sheriff-config` handle the whole setup for you autonomatically, or do it yourself manually.
+Then, let `create-sheriff-config` handle the whole setup for you automatically, or do it yourself manually.
 
 ### <a name="automatic-setup"></a>🤖 Automatic setup (_recommended_)
 
@@ -119,7 +119,7 @@ Follow these steps:
 - ⇆ **Interoperability**: you can plop `sheriff` in your project at any moment. `create-sheriff-config` will config automatically everything for you and will warn you if you need take any special precautions. Bottomline: it's never to late too install `sheriff`.
 - 🏔 **Cutting-edge**: `sheriff` is one of the first attempts in the wild to adhere to the new eslint configuration format, the `FlatConfig`. You can use `sheriff` to easily and safely migrate your project to the new config format without effort. See: [migration guide](#migration-guide).
 - 🗄️ **Configurable**: `sheriff` is fully configurable with it's own config file `sheriffrc.json`. See: [configuration](#configuration).
-- 🐙 **Modular**: `sheriff` has opt-in support for a wide array of libraries. See: [techs](#techs).
+- 🐙 **Modular**: `sheriff` has opt-in support for a [wide array of libraries](#techs).
 - ✍ **SemVer**: `sheriff` [releases](https://github.com/AndreaPontrandolfo/sheriff/releases) follows [Semantic Versioning](https://semver.org/) with [Conventional Commits](https://www.conventionalcommits.org/) standards.
 
 ## <a name="techs"></a>🖥️ Techs
