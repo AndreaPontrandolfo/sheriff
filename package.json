@@ -35,6 +35,7 @@
     "react",
     "next"
   ],
+  "homepage": "https://sheriffrc.gitbook.io/sheriff/",
   "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
