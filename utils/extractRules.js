@@ -1,5 +1,6 @@
 const config = require('../configs/eslint.config.js');
 const fs = require('fs');
+const eslintReccomendedRules = require('./eslintReccomendedRules.json');
 
 const printRules = () => {
   const fullRulesList = config
@@ -14,8 +15,12 @@ const printRules = () => {
       }
     });
   const fullRulesListFlattened = Object.assign(...fullRulesList);
+  const fullRulesListFlattenedWithBase = {
+    ...eslintReccomendedRules,
+    ...fullRulesListFlattened,
+  };
   const fullRulesListFlattenedWithTransformedSeverity = {};
-  for (let [key, value] of Object.entries(fullRulesListFlattened)) {
+  for (let [key, value] of Object.entries(fullRulesListFlattenedWithBase)) {
     if (value === 'error') {
       fullRulesListFlattenedWithTransformedSeverity[key] = 2;
     }

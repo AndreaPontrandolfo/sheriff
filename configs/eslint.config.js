@@ -502,7 +502,7 @@ const baseConfig = [
   },
 ];
 
-const exportableConfig = [...baseConfig];
+let exportableConfig = [...baseConfig];
 
 const explorerSync = cosmiconfigSync('sheriff');
 let userConfigChoices = {};

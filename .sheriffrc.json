@@ -1,0 +1,6 @@
+{
+  "react:": true,
+  "next": true,
+  "lodash": true,
+  "playwright": true
+}

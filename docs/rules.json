@@ -1,4 +1,65 @@
 {
+  "constructor-super": 2,
+  "for-direction": 2,
+  "getter-return": 2,
+  "no-async-promise-executor": 2,
+  "no-case-declarations": 2,
+  "no-class-assign": 2,
+  "no-compare-neg-zero": 2,
+  "no-cond-assign": 2,
+  "no-const-assign": 2,
+  "no-constant-condition": 2,
+  "no-control-regex": 2,
+  "no-debugger": 2,
+  "no-delete-var": 2,
+  "no-dupe-args": 2,
+  "no-dupe-class-members": 0,
+  "no-dupe-else-if": 2,
+  "no-dupe-keys": 2,
+  "no-duplicate-case": 2,
+  "no-empty": 2,
+  "no-empty-character-class": 2,
+  "no-empty-pattern": 0,
+  "no-ex-assign": 2,
+  "no-extra-boolean-cast": 2,
+  "no-extra-semi": 0,
+  "no-fallthrough": 2,
+  "no-func-assign": 2,
+  "no-global-assign": 2,
+  "no-import-assign": 2,
+  "no-inner-declarations": 2,
+  "no-invalid-regexp": 2,
+  "no-irregular-whitespace": 2,
+  "no-loss-of-precision": 0,
+  "no-misleading-character-class": 2,
+  "no-mixed-spaces-and-tabs": 0,
+  "no-new-symbol": 2,
+  "no-nonoctal-decimal-escape": 2,
+  "no-obj-calls": 2,
+  "no-octal": 2,
+  "no-prototype-builtins": 2,
+  "no-redeclare": 2,
+  "no-regex-spaces": 2,
+  "no-self-assign": 2,
+  "no-setter-return": 2,
+  "no-shadow-restricted-names": 2,
+  "no-sparse-arrays": 2,
+  "no-this-before-super": 2,
+  "no-undef": 0,
+  "no-unexpected-multiline": 0,
+  "no-unreachable": 2,
+  "no-unsafe-finally": 2,
+  "no-unsafe-negation": 2,
+  "no-unsafe-optional-chaining": 2,
+  "no-unused-labels": 2,
+  "no-unused-vars": 0,
+  "no-useless-backreference": 2,
+  "no-useless-catch": 2,
+  "no-useless-escape": 2,
+  "no-with": 2,
+  "require-yield": 2,
+  "use-isnan": 2,
+  "valid-typeof": 2,
   "@typescript-eslint/adjacent-overload-signatures": 2,
   "@typescript-eslint/ban-ts-comment": 2,
   "@typescript-eslint/ban-types": 2,
@@ -9,10 +70,8 @@
   "@typescript-eslint/no-empty-interface": 2,
   "@typescript-eslint/no-explicit-any": 1,
   "@typescript-eslint/no-extra-non-null-assertion": 2,
-  "no-extra-semi": 0,
   "@typescript-eslint/no-extra-semi": 0,
   "@typescript-eslint/no-inferrable-types": 2,
-  "no-loss-of-precision": 0,
   "@typescript-eslint/no-loss-of-precision": 2,
   "@typescript-eslint/no-misused-new": 2,
   "@typescript-eslint/no-namespace": 2,
@@ -20,7 +79,6 @@
   "@typescript-eslint/no-non-null-assertion": 1,
   "@typescript-eslint/no-this-alias": 2,
   "@typescript-eslint/no-unnecessary-type-constraint": 2,
-  "no-unused-vars": 0,
   "@typescript-eslint/no-unused-vars": 1,
   "@typescript-eslint/no-var-requires": 2,
   "@typescript-eslint/prefer-as-const": 2,
@@ -153,7 +211,6 @@
   "prefer-spread": 2,
   "prefer-object-spread": 2,
   "no-param-reassign": 2,
-  "no-redeclare": 2,
   "array-callback-return": [
     2,
     {
@@ -232,8 +289,6 @@
       "message": "No React Context. Use component composition instead (https://it.reactjs.org/docs/context.html#before-you-use-context), or a \"Global State Mamanement\" solution."
     }
   ],
-  "no-undef": 0,
-  "no-dupe-class-members": 0,
   "no-return-await": 0,
   "no-throw-literal": 0,
   "no-use-before-define": 0,
@@ -373,13 +428,375 @@
   "jsdoc/no-types": 2,
   "jsdoc/require-param-name": 2,
   "jsdoc/require-param-description": 2,
+  "react/display-name": 2,
+  "react/jsx-key": 2,
+  "react/jsx-no-comment-textnodes": 2,
+  "react/jsx-no-duplicate-props": 2,
+  "react/jsx-no-target-blank": 2,
+  "react/jsx-no-undef": 2,
+  "react/jsx-uses-react": 0,
+  "react/jsx-uses-vars": 2,
+  "react/no-children-prop": 2,
+  "react/no-danger-with-children": 2,
+  "react/no-deprecated": 2,
+  "react/no-direct-mutation-state": 2,
+  "react/no-find-dom-node": 2,
+  "react/no-is-mounted": 2,
+  "react/no-render-return-value": 2,
+  "react/no-string-refs": 2,
+  "react/no-unescaped-entities": 2,
+  "react/no-unknown-property": 2,
+  "react/no-unsafe": 0,
+  "react/prop-types": 0,
+  "react/react-in-jsx-scope": 0,
+  "react/require-render-return": 2,
+  "react/no-unstable-nested-components": [
+    2,
+    {
+      "allowAsProps": false
+    }
+  ],
+  "react/jsx-no-useless-fragment": [
+    2,
+    {
+      "allowExpressions": true
+    }
+  ],
+  "react/jsx-boolean-value": 2,
+  "react/jsx-fragments": 2,
+  "react/destructuring-assignment": 2,
+  "react/no-multi-comp": 2,
+  "react/no-array-index-key": 2,
+  "react/jsx-props-no-spreading": 2,
+  "react/jsx-sort-props": [
+    2,
+    {
+      "callbacksLast": true,
+      "shorthandFirst": true,
+      "shorthandLast": false,
+      "ignoreCase": true,
+      "noSortAlphabetically": true,
+      "multiline": "last",
+      "reservedFirst": false
+    }
+  ],
+  "jsx-a11y/alt-text": 2,
+  "jsx-a11y/anchor-has-content": 2,
+  "jsx-a11y/anchor-is-valid": 2,
+  "jsx-a11y/aria-activedescendant-has-tabindex": 2,
+  "jsx-a11y/aria-props": 2,
+  "jsx-a11y/aria-proptypes": 2,
+  "jsx-a11y/aria-role": 2,
+  "jsx-a11y/aria-unsupported-elements": 2,
+  "jsx-a11y/autocomplete-valid": 2,
+  "jsx-a11y/click-events-have-key-events": 2,
+  "jsx-a11y/control-has-associated-label": [
+    "off",
+    {
+      "ignoreElements": [
+        "audio",
+        "canvas",
+        "embed",
+        "input",
+        "textarea",
+        "tr",
+        "video"
+      ],
+      "ignoreRoles": [
+        "grid",
+        "listbox",
+        "menu",
+        "menubar",
+        "radiogroup",
+        "row",
+        "tablist",
+        "toolbar",
+        "tree",
+        "treegrid"
+      ],
+      "includeRoles": [
+        "alert",
+        "dialog"
+      ]
+    }
+  ],
+  "jsx-a11y/heading-has-content": 2,
+  "jsx-a11y/html-has-lang": 2,
+  "jsx-a11y/iframe-has-title": 2,
+  "jsx-a11y/img-redundant-alt": 2,
+  "jsx-a11y/interactive-supports-focus": [
+    "error",
+    {
+      "tabbable": [
+        "button",
+        "checkbox",
+        "link",
+        "searchbox",
+        "spinbutton",
+        "switch",
+        "textbox"
+      ]
+    }
+  ],
+  "jsx-a11y/label-has-associated-control": 2,
+  "jsx-a11y/label-has-for": 0,
+  "jsx-a11y/media-has-caption": 2,
+  "jsx-a11y/mouse-events-have-key-events": 2,
+  "jsx-a11y/no-access-key": 2,
+  "jsx-a11y/no-autofocus": 2,
+  "jsx-a11y/no-distracting-elements": 2,
+  "jsx-a11y/no-interactive-element-to-noninteractive-role": [
+    "error",
+    {
+      "tr": [
+        "none",
+        "presentation"
+      ],
+      "canvas": [
+        "img"
+      ]
+    }
+  ],
+  "jsx-a11y/no-noninteractive-element-interactions": [
+    "error",
+    {
+      "handlers": [
+        "onClick",
+        "onError",
+        "onLoad",
+        "onMouseDown",
+        "onMouseUp",
+        "onKeyPress",
+        "onKeyDown",
+        "onKeyUp"
+      ],
+      "alert": [
+        "onKeyUp",
+        "onKeyDown",
+        "onKeyPress"
+      ],
+      "body": [
+        "onError",
+        "onLoad"
+      ],
+      "dialog": [
+        "onKeyUp",
+        "onKeyDown",
+        "onKeyPress"
+      ],
+      "iframe": [
+        "onError",
+        "onLoad"
+      ],
+      "img": [
+        "onError",
+        "onLoad"
+      ]
+    }
+  ],
+  "jsx-a11y/no-noninteractive-element-to-interactive-role": [
+    "error",
+    {
+      "ul": [
+        "listbox",
+        "menu",
+        "menubar",
+        "radiogroup",
+        "tablist",
+        "tree",
+        "treegrid"
+      ],
+      "ol": [
+        "listbox",
+        "menu",
+        "menubar",
+        "radiogroup",
+        "tablist",
+        "tree",
+        "treegrid"
+      ],
+      "li": [
+        "menuitem",
+        "option",
+        "row",
+        "tab",
+        "treeitem"
+      ],
+      "table": [
+        "grid"
+      ],
+      "td": [
+        "gridcell"
+      ],
+      "fieldset": [
+        "radiogroup",
+        "presentation"
+      ]
+    }
+  ],
+  "jsx-a11y/no-noninteractive-tabindex": [
+    "error",
+    {
+      "tags": [],
+      "roles": [
+        "tabpanel"
+      ],
+      "allowExpressionValues": true
+    }
+  ],
+  "jsx-a11y/no-redundant-roles": 2,
+  "jsx-a11y/no-static-element-interactions": [
+    "error",
+    {
+      "allowExpressionValues": true,
+      "handlers": [
+        "onClick",
+        "onMouseDown",
+        "onMouseUp",
+        "onKeyPress",
+        "onKeyDown",
+        "onKeyUp"
+      ]
+    }
+  ],
+  "jsx-a11y/role-has-required-aria-props": 2,
+  "jsx-a11y/role-supports-aria-props": 2,
+  "jsx-a11y/scope": 2,
+  "jsx-a11y/tabindex-no-positive": 2,
+  "react-hooks/rules-of-hooks": 2,
+  "react-hooks/exhaustive-deps": 1,
+  "@next/next/google-font-display": 1,
+  "@next/next/google-font-preconnect": 1,
+  "@next/next/next-script-for-ga": 1,
+  "@next/next/no-before-interactive-script-outside-document": 1,
+  "@next/next/no-css-tags": 1,
+  "@next/next/no-head-element": 1,
+  "@next/next/no-html-link-for-pages": 2,
+  "@next/next/no-img-element": 1,
+  "@next/next/no-page-custom-font": 1,
+  "@next/next/no-styled-jsx-in-document": 1,
+  "@next/next/no-sync-scripts": 2,
+  "@next/next/no-title-in-document-head": 1,
+  "@next/next/no-typos": 1,
+  "@next/next/no-unwanted-polyfillio": 1,
+  "@next/next/inline-script-id": 2,
+  "@next/next/no-assign-module-variable": 2,
+  "@next/next/no-document-import-in-page": 2,
+  "@next/next/no-duplicate-head": 2,
+  "@next/next/no-head-import-in-document": 2,
+  "@next/next/no-script-component-in-head": 2,
+  "lodash-f/callback-binding": 1,
+  "lodash-f/chain-style": [
+    1,
+    "as-needed"
+  ],
+  "lodash-f/chaining": 1,
+  "lodash-f/collection-method-value": 1,
+  "lodash-f/collection-ordering": 1,
+  "lodash-f/collection-return": 1,
+  "lodash-f/consistent-compose": [
+    1,
+    "flow"
+  ],
+  "lodash-f/identity-shorthand": [
+    1,
+    "always"
+  ],
+  "lodash-f/import-scope": [
+    2,
+    "member"
+  ],
+  "lodash-f/matches-prop-shorthand": [
+    1,
+    "always"
+  ],
+  "lodash-f/matches-shorthand": [
+    1,
+    "always",
+    3
+  ],
+  "lodash-f/no-commit": 1,
+  "lodash-f/no-double-unwrap": 1,
+  "lodash-f/no-extra-args": 1,
+  "lodash-f/no-unbound-this": 1,
+  "lodash-f/path-style": [
+    1,
+    "string"
+  ],
+  "lodash-f/prefer-compact": 1,
+  "lodash-f/prefer-constant": 1,
+  "lodash-f/prefer-filter": [
+    2,
+    3
+  ],
+  "lodash-f/prefer-find": 1,
+  "lodash-f/prefer-flat-map": 1,
+  "lodash-f/prefer-get": [
+    2,
+    3
+  ],
+  "lodash-f/prefer-immutable-method": 1,
+  "lodash-f/prefer-includes": [
+    1,
+    {
+      "includeNative": true
+    }
+  ],
+  "lodash-f/prefer-invoke-map": 1,
+  "lodash-f/prefer-is-empty": 1,
+  "lodash-f/prefer-is-nil": 1,
+  "lodash-f/prefer-lodash-chain": 1,
+  "lodash-f/prefer-lodash-method": 0,
+  "lodash-f/prefer-lodash-typecheck": 1,
+  "lodash-f/prefer-map": 1,
+  "lodash-f/prefer-matches": [
+    2,
+    3
+  ],
+  "lodash-f/prefer-nullish-coalescing": 1,
+  "lodash-f/prefer-noop": 1,
+  "lodash-f/prefer-over-quantifier": 1,
+  "lodash-f/prefer-reject": [
+    2,
+    3
+  ],
+  "lodash-f/prefer-some": [
+    1,
+    {
+      "includeNative": true
+    }
+  ],
+  "lodash-f/prefer-startswith": 1,
+  "lodash-f/prefer-thru": 1,
+  "lodash-f/prefer-times": 1,
+  "lodash-f/prefer-wrapper-method": 1,
+  "lodash-f/preferred-alias": 1,
+  "lodash-f/prop-shorthand": [
+    1,
+    "always"
+  ],
+  "lodash-f/unwrap": 1,
+  "playwright/missing-playwright-await": 2,
+  "playwright/no-page-pause": 1,
+  "playwright/no-element-handle": 1,
+  "playwright/no-eval": 1,
+  "playwright/no-focused-test": 2,
+  "playwright/no-skipped-test": 1,
+  "playwright/no-wait-for-timeout": 1,
+  "playwright/no-force-option": 0,
+  "playwright/max-nested-describe": 1,
+  "playwright/no-conditional-in-test": 1,
+  "playwright/no-useless-not": 1,
+  "playwright/valid-expect": 2,
+  "playwright/prefer-lowercase-title": 2,
+  "playwright/prefer-to-have-length": 2,
+  "playwright/require-top-level-describe": 2,
   "curly": 0,
   "lines-around-comment": 0,
   "max-len": 0,
   "no-confusing-arrow": 0,
   "no-mixed-operators": 0,
   "no-tabs": 0,
-  "no-unexpected-multiline": 0,
   "quotes": 0,
   "@typescript-eslint/quotes": 0,
   "babel/quotes": 0,
@@ -416,7 +833,6 @@
   "no-comma-dangle": 0,
   "no-extra-parens": 0,
   "no-floating-decimal": 0,
-  "no-mixed-spaces-and-tabs": 0,
   "no-multi-spaces": 0,
   "no-multiple-empty-lines": 0,
   "no-reserved-keys": 0,
