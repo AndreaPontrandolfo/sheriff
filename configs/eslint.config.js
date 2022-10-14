@@ -29,42 +29,8 @@ const messages = {
     'There is no need to limit developer access to properties.',
 };
 
-// beware:
-// - https://github.com/prettier/eslint-config-prettier#special-rules
-// - https://github.com/prettier/eslint-config-prettier#other-rules-worth-mentioning
-
 const baseEslintHandPickedRules = {
-  // TODO
-  // curly: error,
-  // quotes: [error, 'backtick', { avoidEscape: false }],
-  // 'no-else-return': [error, { allowElseIf: false }],
-  // 'object-shorthand': [error, 'properties'],
-  // 'prefer-const': [warning, { ignoreReadBeforeAssign: false }],
-  //     'no-restricted-syntax': [
-  //       'error',
-  //       {
-  //         selector: 'FunctionDeclaration',
-  //         message: `Do not use a function declaration. Use a function expression instead:
-  // const x = function () {
-  // };
-  // `,
-  //       },
-  //       {
-  //         selector: 'ExportDefaultDeclaration',
-  //         message: 'Do not use default export. Use named exports instead.',
-  //       },
-  //       {
-  //         selector: 'YieldExpression',
-  //         message:
-  //           'Use regular functions that return a functions that closes over a variable instead of generators',
-  //       },
-  //       'WithStatement',
-  //       "BinaryExpression[operator='in']",
-  //       'ClassDeclaration',
-  //       'ClassExpression',
-  //       'SwitchStatement',
-  //       'ThisExpression',
-  //     ],
+  'func-style': 2,
   'no-promise-executor-return': 2,
   'no-unreachable-loop': 2,
   'no-caller': 2,
@@ -77,10 +43,43 @@ const baseEslintHandPickedRules = {
   'no-negated-condition': 2,
   'no-new-wrappers': 2,
   'no-new-object': 2,
+  'no-restricted-properties': [
+    2,
+    {
+      object: 'global',
+      property: 'isFinite',
+      message: 'Please use Number.isFinite instead',
+    },
+    {
+      object: 'self',
+      property: 'isFinite',
+      message: 'Please use Number.isFinite instead',
+    },
+    {
+      object: 'window',
+      property: 'isFinite',
+      message: 'Please use Number.isFinite instead',
+    },
+    {
+      object: 'global',
+      property: 'isNaN',
+      message: 'Please use Number.isNaN instead',
+    },
+    {
+      object: 'self',
+      property: 'isNaN',
+      message: 'Please use Number.isNaN instead',
+    },
+    {
+      object: 'window',
+      property: 'isNaN',
+      message: 'Please use Number.isNaN instead',
+    },
+  ],
   strict: [2, 'never'],
   'no-octal-escape': 2,
   'no-proto': 2,
-  'no-sequences': 2,
+  'no-sequences': [2, { allowInParentheses: false }],
   'no-unmodified-loop-condition': 2,
   'no-void': 2,
   'max-statements-per-line': [2, { max: 1 }],
@@ -107,7 +106,7 @@ const baseEslintHandPickedRules = {
   'prefer-const': 2,
   'prefer-rest-params': 2,
   'no-return-assign': [2, 'always'],
-  'no-else-return': 2,
+  'no-else-return': [2, { allowElseIf: false }],
   'prefer-template': 2,
   'operator-assignment': [2, 'never'],
   'logical-assignment-operators': [2, 'never'],
@@ -126,9 +125,18 @@ const baseEslintHandPickedRules = {
   'arrow-body-style': [2, 'as-needed'], // we keep this rule enabled but beware https://github.com/prettier/eslint-config-prettier#arrow-body-style-and-prefer-arrow-callback
   'no-restricted-syntax': [
     2,
-    'WithStatement',
     'ClassDeclaration',
     'ClassExpression',
+    {
+      selector: 'LabeledStatement',
+      message:
+        'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+    },
+    {
+      selector: 'ForInStatement',
+      message:
+        'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+    },
     {
       selector: "Identifier[name='Reflect']",
       message:
@@ -170,7 +178,7 @@ const baseEslintHandPickedRules = {
     {
       selector: "Identifier[name='createContext']",
       message:
-        'No React Context. Use component composition instead (https://it.reactjs.org/docs/context.html#before-you-use-context), or a "Global State Mamanement" solution.',
+        'No React Context. Use component composition instead (https://it.reactjs.org/docs/context.html#before-you-use-context), or a "Global State Management" solution.',
     },
   ],
   'no-undef': 0, // typescript already takes care of this. See: https://typescript-eslint.io/docs/linting/troubleshooting/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
@@ -191,7 +199,11 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/no-throw-literal': 2,
   '@typescript-eslint/no-use-before-define': 2,
   '@typescript-eslint/consistent-type-assertions': 2,
+  '@typescript-eslint/consistent-type-imports': 2,
   '@typescript-eslint/explicit-module-boundary-types': 2,
+  '@typescript-eslint/prefer-readonly-parameter-types': 2,
+  '@typescript-eslint/no-invalid-void-type': 2,
+  '@typescript-eslint/no-unnecessary-condition': 2,
   '@typescript-eslint/no-unused-expressions': [
     2,
     {
@@ -421,6 +433,13 @@ const playwrightConfig = {
   },
 };
 
+const prettierOverrides = {
+  files: [supportedFileTypes],
+  rules: {
+    curly: [2, 'all'],
+  },
+};
+
 const baseConfig = [
   'eslint:recommended',
   {
@@ -535,6 +554,7 @@ if (!userConfigChoices?.isEmpty && userConfigChoices?.config) {
 }
 
 exportableConfig.push(prettierConfig);
+exportableConfig.push(prettierOverrides);
 exportableConfig.push({ ignores });
 
 module.exports = exportableConfig;
