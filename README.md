@@ -275,7 +275,10 @@ To enforce Prettier in CI, see the [CLI docs](https://prettier.io/docs/en/cli.ht
 
 ## <a name="migration-guide"></a>♻ Migration guide
 
-TODO
+1. Start by running the `create-sheriff-config` command and follow the advices that it prints in the console.
+2. If you are setting up `sheriff` in a already enstablished codebase, make sure that the only eslint config file present in the whole project is the `eslint.config.js`.
+3. If you want to keep your existing custom rules on-top of `sheriff`, move them in the `eslint.config.js`, after the `sheriff` config array. Refer to the [configuration instructions](#configuration).
+4. Make sure to uninstall all the packages that `sheriff` already incorporates out-of-the-box. [Here](#eslint-plugins) is the list.
 
 ## <a name="contributing"></a>🧡 Contributing
 
