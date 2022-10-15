@@ -14,26 +14,32 @@
 7. [🧳 Eslint plugins](#eslint-plugins)
 8. [🧶 Rules](#rules)
 9. [🧠 Configuration](#configuration)
-10. [🧐 Prior art](#prior-art)
-11. [♻ Migration guide](#migration-guide)
-12. [🧡 Contributing](#contributing)
-13. [🌤 Changelog](#changelog)
-14. [📋 License](#license)
-15. [🚀 Roadmap](#roadmap)
-16. [💌 Acknowledgments](#acknowledgments)
+10. [💅 Prettier support](#prettier-support)
+11. [🧐 Prior art](#prior-art)
+12. [♻ Migration guide](#migration-guide)
+13. [🧡 Contributing](#contributing)
+14. [🌤 Changelog](#changelog)
+15. [📋 License](#license)
+16. [🚀 Roadmap](#roadmap)
+17. [💌 Acknowledgments](#acknowledgments)
 
 ## <a name="description"></a>📖 Description
 
-### <a name="introduction"></a>🥳 Introduction
+### 🥳 Introduction
 
-`sheriff` is a comprehensive Eslint configuration.<br>
-It supports [various technologies](#techs).<br>
-`sheriff` is very easy top get started with and use. It promotes a _“zero overhead approach”_. See: [philosophy](#philosophy). <br>
-It’s a [_"plug & play"_](#automatic-setup) solution but you can customize it as much as you want. See: [features](#features).
+`sheriff` is a comprehensive Eslint configuration. It supports [various popular technologies](#techs).<br>
 
 > ⚠️ At the moment, `sheriff` supports only Typescript codebases with modern Ecmascript standards. Maybe in the future i'll take in consideration support for vanilla Javascript. See: [roadmap](#roadmap).
 
-### <a name="why"></a>🤔 Why / Motivations
+For better readability, explore the [official docs](https://sheriffrc.gitbook.io/sheriff/).
+
+### 🔑 Key points
+
+- This library is pioneering in the adoption of the Eslint `FlatConfig`, [introduced in Eslint v8.23.0](https://eslint.org/blog/2022/08/eslint-v8.23.0-released/).<br>
+- `sheriff` is very easy to get started with and use. It promotes a _“zero overhead approach”_. See: [philosophy](#philosophy). <br>
+- It’s a [_"plug & play"_](#automatic-setup) solution but you can customize it as much as you want. See: [features](#features).
+
+### 🤔 Why / Motivations
 
 Managing a complex eslint configurazione takes time and effort. `sheriff` does it for you.
 
@@ -83,7 +89,7 @@ Follow these steps:
    ```js
    // eslint.config.js
 
-   import sheriff from 'eslint-config-sheriff/recommended';
+   import sheriff from 'eslint-config-sheriff';
 
    export default [
      ...sheriff,
@@ -98,7 +104,7 @@ Follow these steps:
    ```js
    // eslint.config.js
 
-   import sheriff from 'eslint-config-sheriff/recommended';
+   import sheriff from 'eslint-config-sheriff';
    // my other imports...
 
    export default [
@@ -108,16 +114,18 @@ Follow these steps:
    ```
 
 3. [Configure sheriff](#configuration) (_optional_)
+4. [Setup prettier](#prettier-support) (_optional_)
 
 [^1]: `sheriff` is based on the [new format of Eslint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend `sheriff` from a [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
 
 ## <a name="features"></a>✨ Features
 
 - ⚡ **Batteries included**: `sheriff` is a all-in-one solution. You don't need to install or configure separately anything else. Everything is included here.
-- 🔓 **No lock-in**: `sheriff` is not a framework. You can extend the `eslint.config.js` beyond `sheriff` as much as you like, just like you normally would. Or you can disable any rule `sheriff` comes with. `sheriff` doesn't impose any limitation.
+- 🔓 **No lock-in**: `sheriff` is not a framework. You can extend the `eslint.config.js` beyond `sheriff` as much as you like, just like you normally would. Or you can disable any rule `sheriff` comes with. `sheriff` doesn't impose any limitation. See: [configuration](#configuration).
 - 🏑 **Frictionless by design**: to setup `sheriff` and take off, the only input required from the user is running the command `npx create-sheriff-config`. The command will automatically infer the details of your project and figure out the optimal `sheriff` configuration by itself.
 - ⇆ **Interoperability**: you can plop `sheriff` in your project at any moment. `create-sheriff-config` will config automatically everything for you and will warn you if you need take any special precautions. Bottomline: it's never to late too install `sheriff`.
 - 🏔 **Cutting-edge**: `sheriff` is one of the first attempts in the wild to adhere to the new eslint configuration format, the `FlatConfig`. You can use `sheriff` to easily and safely migrate your project to the new config format without effort. See: [migration guide](#migration-guide).
+- 👊 **Sensible**: Almost all of the rules I hand-picked in `sheriff` were chosen to counter some problematic real-world scenarios that have occurred in some projects. No bloat here.
 - 🗄️ **Configurable**: `sheriff` is fully configurable with it's own config file `sheriffrc.json`. See: [configuration](#configuration).
 - 🐙 **Modular**: `sheriff` has opt-in support for a [wide array of libraries](#techs).
 - ✍ **SemVer**: `sheriff` [releases](https://github.com/AndreaPontrandolfo/sheriff/releases) follows [Semantic Versioning](https://semver.org/) with [Conventional Commits](https://www.conventionalcommits.org/) standards.
@@ -185,7 +193,76 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
 
 [^3]: `sheriff` utilizes [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) under-the-hood to power-up the `sheriff` configuration. You are not forced to call the config file "sheriffrc.json", you can choose one of the alternative filetypes. See [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for details.
 
-- Override any `sheriff` rule as desired in the `eslint.config.js` file.
+- Override any `sheriff` rule as desired in the `eslint.config.js` file.<br>
+  For example:
+
+  ```js
+  // eslint.config.js
+
+  import sheriff from 'eslint-config-sheriff';
+
+  export default [
+    ...sheriff,
+    {
+      files: ['**/*{js,ts,jsx,tsx}'],
+    },
+  ];
+  ```
+
+  Let's say you want to disable a `sheriff` rule, like `import/first`:
+
+  ```js
+  // eslint.config.js
+
+  import sheriff from 'eslint-config-sheriff';
+
+  export default [
+    ...sheriff,
+    {
+      files: ['**/*{js,ts,jsx,tsx}'],
+    },
+    {
+      rules: {
+        'import/first': 0, // adding this, 'import/first' is now disabled everywhere.
+      },
+    },
+  ];
+  ```
+
+  Likewise, let's say you want to enable a new rule:
+
+  ```js
+  // eslint.config.js
+
+  import sheriff from 'eslint-config-sheriff';
+
+  export default [
+    ...sheriff,
+    {
+      files: ['**/*{js,ts,jsx,tsx}'],
+    },
+    {
+      rules: {
+        'no-undef': 2,
+      },
+    },
+  ];
+  ```
+
+  This is just the standard behaviour of the new configuration system of Eslint, that i'm illustrating here for your convenience. `sheriff` doesn't alter this in any way.<br>
+  For more in-depth informations, refer to the [official docs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new).
+
+## <a name="prettier-support"></a>💅 Prettier support
+
+`sheriff` tries to incorporate [prettier](https://prettier.io/) out-of-the-box.<br>
+The `create-sheriff-config` command will spin-up for you a default `.prettierrc.json` configuration. You _can_ modify it if you need, but [it is discouraged](https://prettier.io/docs/en/option-philosophy.html). Act with caution.<br>
+If you don't use the `create-sheriff-config` command, you will have to provide a prettier config yourself. Also don't forget the [.prettierignore file](https://prettier.io/docs/en/ignore.html).<br>
+If you already have a prettier config in your project, the `create-sheriff-config` command won't create a new prettier config, nor will attempt to modify the existing one.<br>
+`sheriff` comes with the rules of [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) out-of-the-box.<br>
+By design, `sheriff` **doesn't** incorporate [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier). It's use is discouraged by the prettier team itself, [as it just slows down your editor](https://prettier.io/docs/en/integrating-with-linters.html#notes).<br>
+Instead, for your local editing experience, it's recommended to install a [editor extension](https://prettier.io/docs/en/editors.html).<br>
+If you want to enforce Prettier at pre-commit stage, see the [official docs](https://prettier.io/docs/en/option-philosophy.html).<br>
+To enforce Prettier in CI, see the [CLI docs](https://prettier.io/docs/en/cli.html).
 
 ## <a name="prior-art"></a>🧐 Prior art / Related projects
 
@@ -214,19 +291,19 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 
 ## <a name="roadmap"></a>🚀 Roadmap
 
-- [ ] Consider more rules
 - [x] `eslint-plugin-next`
 - [x] Create the `sheriffrc.json` file support
 - [x] Create a cli ala `create-react-app`
 - [x] Remove `react` as a hard requirement
+- [x] Create a documentation website
 - [ ] Svelte support
 - [ ] Solid support
 - [ ] Vue support
 - [ ] Astro support
-- [ ] Create a documentation website
 
 ## <a name="acknowledgments"></a>💌 Acknowledgments
 
 For some of this config i partially used [eslint-config-red](https://github.com/GrosSacASac/JavaScript-Set-Up/blob/master/js/red-javascript-style-guide/index.js) as a base.<br>
+Also took inspiration from [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) for some of the rules in `no-restricted-syntax`.<br>
 I don't take any attribution for the rules in the various eslint-plugins used here (expect for the few that i personally created). Please consider starring the respective projects for the awesome work their authors made. `sheriff` wouldn't be possible without their efforts. <br>
 The full list of the plugins used is [here](#eslint-plugins).
