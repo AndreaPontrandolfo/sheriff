@@ -29,9 +29,9 @@
 
 `sheriff` is a comprehensive Eslint configuration. It supports [various popular technologies](#techs).<br>
 
-> ⚠️ At the moment, `sheriff` supports only Typescript codebases with modern Ecmascript standards. Maybe in the future i'll take in consideration support for vanilla Javascript. See: [roadmap](#roadmap).
+> ⚠️ At the moment, `sheriff` supports only Typescript codebases with modern Ecmascript standards. Support for vanilla Javascript will come at a later time. See: [roadmap](#roadmap).
 
-For better readability, explore the [official docs](https://sheriffrc.gitbook.io/sheriff/).
+For a better reading experience, explore the [official docs](https://sheriffrc.gitbook.io/sheriff/).
 
 ### 🔑 Key points
 
@@ -41,13 +41,13 @@ For better readability, explore the [official docs](https://sheriffrc.gitbook.io
 
 ### 🤔 Why / Motivations
 
-Managing a complex eslint configurazione takes time and effort. `sheriff` does it for you.
+Managing a complex Eslint configuration takes time and effort. **`sheriff` does it for you**.
 
 ### <a name="philosophy"></a>💭 Philosophy / Criteria
 
 This library is very opinionated, but it's for the better. I took a lot of decisions so you don't have to [^2].<br>
 You can now quickstart static analysis in all your Typescript projects with ease. It's just 1 `create-sheriff-config`.<br>
-You can think of `sheriff` like `prettier` or `create-react-app`. It's a tool that comes battery-packed with optimal defaults. It remove configuration decisions from the equation, so you or your team can focus on developing the actual product.<br>
+You can think of `sheriff` like `prettier` or `create-react-app`. It's a tool that comes battery-packed with optimal defaults. It removes configuration decisions from the equation, so you or your team can focus on developing the actual product.<br>
 And if you don't like something, you can easily override it, and just as easily you can extend it. See: [configuration](#configuration).
 
 [^2]: This config is particularly useful for big teams with developers of various skill levels. I worked in a lot of different projects and teams through the years and i got accustomed to seeing all kinds of mistake being made. `sheriff` was made to prevent all of those mistakes. It is battle-tested in real-world scenarios, and shines especially in such.
@@ -299,6 +299,7 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 - [x] Create a cli ala `create-react-app`
 - [x] Remove `react` as a hard requirement
 - [x] Create a documentation website
+- [ ] Vanilla JS (typescipt opt-in) support
 - [ ] Svelte support
 - [ ] Solid support
 - [ ] Vue support
