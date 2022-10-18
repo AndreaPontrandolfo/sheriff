@@ -23,6 +23,9 @@
 16. [🚀 Roadmap](#roadmap)
 17. [💌 Acknowledgments](#acknowledgments)
 
+> **Note**
+> For a better reading experience, explore the [official docs](https://sheriffrc.gitbook.io/sheriff/).
+
 ## <a name="description"></a>📖 Description
 
 ### 🥳 Introduction
@@ -30,8 +33,6 @@
 `sheriff` is a comprehensive Eslint configuration. It supports [various popular technologies](#techs).<br>
 
 > ⚠️ At the moment, `sheriff` supports only Typescript codebases with modern Ecmascript standards. Support for vanilla Javascript will come at a later time. See: [roadmap](#roadmap).
-
-For a better reading experience, explore the [official docs](https://sheriffrc.gitbook.io/sheriff/).
 
 ### 🔑 Key points
 
