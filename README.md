@@ -50,7 +50,7 @@ You can now quickstart static analysis in all your Typescript projects with ease
 You can think of `sheriff` like `prettier` or `create-react-app`. It's a tool that comes battery-packed with optimal defaults. It removes configuration decisions from the equation, so you or your team can focus on developing the actual product.<br>
 And if you don't like something, you can easily override it, and just as easily you can extend it. See: [configuration](#configuration).
 
-[^2]: This config is particularly useful for big teams with developers of various skill levels. I worked in a lot of different projects and teams through the years and i got accustomed to seeing all kinds of mistake being made. `sheriff` was made to prevent all of those mistakes. It is battle-tested in real-world scenarios, and shines especially in such.
+[^2]: This config is particularly useful for big teams with developers of various skill levels. I worked on a lot of different projects and teams through the years and I got accustomed to seeing all kinds of mistakes being made. `sheriff` was made to prevent all of those mistakes. It is battle-tested in real-world scenarios and shines especially in such.
 
 ## <a name="setup"></a>🛠️ Setup
 
@@ -65,7 +65,7 @@ Let the CLI take care of everything! Just run this command in your terminal:
 ❯  npx create-sheriff-config
 ```
 
-...and your good to go! Happy hacking 🎉
+...and you are good to go! Happy hacking 🎉
 
 ### 😫 Manual setup
 
@@ -123,10 +123,10 @@ Follow these steps:
 - ⚡ **Batteries included**: `sheriff` is a all-in-one solution. You don't need to install or configure separately anything else. Everything is included here.
 - 🔓 **No lock-in**: `sheriff` is not a framework. You can extend the `eslint.config.js` beyond `sheriff` as much as you like, just like you normally would. Or you can disable any rule `sheriff` comes with. `sheriff` doesn't impose any limitation. See: [configuration](#configuration).
 - 🏑 **Frictionless by design**: to setup `sheriff` and take off, the only input required from the user is running the command `npx create-sheriff-config`. The command will automatically infer the details of your project and figure out the optimal `sheriff` configuration by itself.
-- ⇆ **Interoperability**: you can plop `sheriff` in your project at any moment. `create-sheriff-config` will config automatically everything for you and will warn you if you need take any special precautions. Bottomline: it's never to late too install `sheriff`.
+- ⇆ **Interoperability**: you can plop `sheriff` in your project at any moment. `create-sheriff-config` will config automatically everything for you and will warn you if you need to take any special precautions. Bottom line: it's never too late to install `sheriff`.
 - 🏔 **Cutting-edge**: `sheriff` is one of the first attempts in the wild to adhere to the new eslint configuration format, the `FlatConfig`. You can use `sheriff` to easily and safely migrate your project to the new config format without effort. See: [migration guide](#migration-guide).
 - 👊 **Sensible**: Almost all of the rules I hand-picked in `sheriff` were chosen to counter some problematic real-world scenarios that have occurred in some projects. No bloat here.
-- 🗄️ **Configurable**: `sheriff` is fully configurable with it's own config file `sheriffrc.json`. See: [configuration](#configuration).
+- 🗄️ **Configurable**: `sheriff` is fully configurable with its own config file `sheriffrc.json`. See: [configuration](#configuration).
 - 🐙 **Modular**: `sheriff` has opt-in support for a [wide array of libraries](#techs).
 - ✍ **SemVer**: `sheriff` [releases](https://github.com/AndreaPontrandolfo/sheriff/releases) follows [Semantic Versioning](https://semver.org/) with [Conventional Commits](https://www.conventionalcommits.org/) standards.
 
@@ -191,7 +191,7 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
   }
   ```
 
-[^3]: `sheriff` utilizes [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) under-the-hood to power-up the `sheriff` configuration. You are not forced to call the config file "sheriffrc.json", you can choose one of the alternative filetypes. See [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for details.
+[^3]: `sheriff` utilizes [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) under-the-hood to power-up the `sheriff` configuration. You are not forced to call the config file "sheriffrc.json", you can choose one of the alternative file types. See [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for details.
 
 - Override any `sheriff` rule as desired in the `eslint.config.js` file.<br>
   For example:
@@ -249,17 +249,17 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
   ];
   ```
 
-  This is just the standard behaviour of the new configuration system of Eslint, that i'm illustrating here for your convenience. `sheriff` doesn't alter this in any way.<br>
-  For more in-depth informations, refer to the [official docs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new).
+  This is just the standard behavior of the new configuration system of Eslint, which I'm illustrating here for your convenience. `sheriff` doesn't alter this in any way.<br>
+  For more in-depth information, refer to the [official docs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new).
 
 ## <a name="prettier-support"></a>💅 Prettier support
 
 `sheriff` tries to incorporate [prettier](https://prettier.io/) out-of-the-box.<br>
-The `create-sheriff-config` command will spin-up for you a default `.prettierrc.json` configuration. You _can_ modify it if you need, but [it is discouraged](https://prettier.io/docs/en/option-philosophy.html). Act with caution.<br>
+The `create-sheriff-config` command will spin up for you a default `.prettierrc.json` configuration. You _can_ modify it if you need to, but [it is discouraged](https://prettier.io/docs/en/option-philosophy.html). Act with caution.<br>
 If you don't use the `create-sheriff-config` command, you will have to provide a prettier config yourself. Also don't forget the [.prettierignore file](https://prettier.io/docs/en/ignore.html).<br>
 If you already have a prettier config in your project, the `create-sheriff-config` command won't create a new prettier config, nor will attempt to modify the existing one.<br>
 `sheriff` comes with the rules of [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) out-of-the-box.<br>
-By design, `sheriff` **doesn't** incorporate [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier). It's use is discouraged by the prettier team itself, [as it just slows down your editor](https://prettier.io/docs/en/integrating-with-linters.html#notes).<br>
+By design, `sheriff` **doesn't** incorporate [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier). Its use is discouraged by the prettier team itself, [as it just slows down your editor](https://prettier.io/docs/en/integrating-with-linters.html#notes).<br>
 Instead, for your local editing experience, it's recommended to install a [editor extension](https://prettier.io/docs/en/editors.html).<br>
 If you want to enforce Prettier at pre-commit stage, see the [official docs](https://prettier.io/docs/en/option-philosophy.html).<br>
 To enforce Prettier in CI, see the [CLI docs](https://prettier.io/docs/en/cli.html).
@@ -276,8 +276,8 @@ To enforce Prettier in CI, see the [CLI docs](https://prettier.io/docs/en/cli.ht
 ## <a name="migration-guide"></a>♻ Migration guide
 
 1. Start by running the `create-sheriff-config` command and follow the advices that it prints in the console.
-2. If you are setting up `sheriff` in a already enstablished codebase, make sure that the only eslint config file present in the whole project is the `eslint.config.js`.
-3. If you want to keep your existing custom rules on-top of `sheriff`, move them in the `eslint.config.js`, after the `sheriff` config array. Refer to the [configuration instructions](#configuration).
+2. If you are setting up `sheriff` in an already established codebase, make sure that the only eslint config file present in the whole project is the `eslint.config.js`.
+3. If you want to keep your existing custom rules on-top of `sheriff`, move them to the `eslint.config.js`, after the `sheriff` config array. Refer to the [configuration instructions](#configuration).
 4. Make sure to uninstall all the packages that `sheriff` already incorporates out-of-the-box. [Here](#eslint-plugins) is the list.
 
 ## <a name="contributing"></a>🧡 Contributing
@@ -309,5 +309,5 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 
 For some of this config i partially used [eslint-config-red](https://github.com/GrosSacASac/JavaScript-Set-Up/blob/master/js/red-javascript-style-guide/index.js) as a base.<br>
 Also took inspiration from [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) for some of the rules in `no-restricted-syntax`.<br>
-I don't take any attribution for the rules in the various eslint-plugins used here (expect for the few that i personally created). Please consider starring the respective projects for the awesome work their authors made. `sheriff` wouldn't be possible without their efforts. <br>
+I don't take any attribution for the rules in the various eslint-plugins used here (except for the few that I personally created). Please consider starring the respective projects for the awesome work their authors made. `sheriff` wouldn't be possible without their efforts. <br>
 The full list of the plugins used is [here](#eslint-plugins).
