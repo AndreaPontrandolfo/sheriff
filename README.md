@@ -3,6 +3,9 @@
 
 # Sheriff
 
+> **Note**
+> For a better reading experience, explore the [official docs](https://sheriffrc.gitbook.io/sheriff/).
+
 ## <a name="table-of-contents"></a>📜 Table of Contents
 
 1. [📜 Table of Contents](#table-of-contents)
@@ -22,9 +25,6 @@
 15. [📋 License](#license)
 16. [🚀 Roadmap](#roadmap)
 17. [💌 Acknowledgments](#acknowledgments)
-
-> **Note**
-> For a better reading experience, explore the [official docs](https://sheriffrc.gitbook.io/sheriff/).
 
 ## <a name="description"></a>📖 Description
 
