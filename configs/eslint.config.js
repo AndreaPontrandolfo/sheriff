@@ -12,6 +12,7 @@ const lodash = require('eslint-plugin-lodash-f');
 const prettierConfig = require('eslint-config-prettier');
 const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
+const fp = require('eslint-plugin-fp');
 
 const supportedFileTypes = '**/*{js,ts,jsx,tsx}';
 
@@ -140,8 +141,6 @@ const baseEslintHandPickedRules = {
   'arrow-body-style': [2, 'as-needed'], // we keep this rule enabled but beware https://github.com/prettier/eslint-config-prettier#arrow-body-style-and-prefer-arrow-callback
   'no-restricted-syntax': [
     2,
-    'ClassDeclaration',
-    'ClassExpression',
     {
       selector: 'LabeledStatement',
       message:
@@ -158,11 +157,6 @@ const baseEslintHandPickedRules = {
         'Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development',
     },
     {
-      selector: "Identifier[name='Proxy']",
-      message:
-        'Avoid the Proxy API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development',
-    },
-    {
       selector: "BinaryExpression[operator='in']",
       message: 'Prefer Object.hasOwn().',
     },
@@ -177,10 +171,6 @@ const baseEslintHandPickedRules = {
     {
       selector: "PropertyDefinition[accessibility='private']",
       message: messages.NO_ACCESS_MODIFIER,
-    },
-    {
-      selector: "UnaryExpression[operator='delete']",
-      message: 'Unallowed use of delete.',
     },
     {
       selector: "Identifier[name='PropTypes']",
@@ -316,6 +306,13 @@ const jsdocHandPickedRules = {
   'jsdoc/no-types': 2,
   'jsdoc/require-param-name': 2,
   'jsdoc/require-param-description': 2,
+};
+
+const fpHandPickedRules = {
+  'fp/no-arguments': 2,
+  'fp/no-class': 2,
+  'fp/no-delete': 2,
+  'fp/no-proxy': 2,
 };
 
 const importHandPickedRules = {
@@ -482,7 +479,11 @@ const baseConfig = [
     files: [supportedFileTypes],
     rules: baseEslintHandPickedRules,
   },
-
+  {
+    files: [supportedFileTypes],
+    plugins: { fp },
+    rules: fpHandPickedRules,
+  },
   {
     files: [supportedFileTypes],
     plugins: {
@@ -492,9 +493,7 @@ const baseConfig = [
   },
   {
     files: [supportedFileTypes],
-    plugins: {
-      sonarjs,
-    },
+    plugins: { sonarjs },
     rules: {
       ...sonarjs.configs.recommended.rules,
       ...sonarjsHandPickedRules,
