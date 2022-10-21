@@ -280,6 +280,8 @@ const unicornHandPickedRules = {
   'unicorn/no-unsafe-regex': 2,
   'unicorn/prefer-query-selector': 2,
   'unicorn/prefer-string-replace-all': 2,
+  'unicorn/prefer-switch': [2, { emptyDefaultCase: 'do-nothing-comment' }],
+  'unicorn/switch-case-braces': 2,
 };
 
 const sonarjsHandPickedRules = {
