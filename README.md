@@ -24,7 +24,8 @@
 14. [🌤 Changelog](#changelog)
 15. [📋 License](#license)
 16. [🚀 Roadmap](#roadmap)
-17. [💌 Acknowledgments](#acknowledgments)
+17. [👉 Faq](#faq)
+18. [💌 Acknowledgments](#acknowledgments)
 
 ## <a name="description"></a>📖 Description
 
@@ -265,14 +266,22 @@ Instead, for your local editing experience, it's recommended to install a [edito
 If you want to enforce Prettier at pre-commit stage, see the [official docs](https://prettier.io/docs/en/option-philosophy.html).<br>
 To enforce Prettier in CI, see the [CLI docs](https://prettier.io/docs/en/cli.html).
 
-## <a name="prior-art"></a>🧐 Prior art / Related projects
+## <a name="prior-art"></a>🧐 Prior art
+
+### Related projects
 
 - [eslint-config-galex](https://github.com/ljosberinn/eslint-config-galex)
 - [eslint-kit](https://github.com/eslint-kit/eslint-kit)
 - [eslint-config-everywhere](https://github.com/locol23/eslint-config-everywhere)
 - [xo](https://github.com/xojs/xo)
+- [eslint-plugin-canonical](https://github.com/gajus/eslint-plugin-canonical)
 - [eslint-prettier-typescript-config](https://github.com/moia-oss/eslint-prettier-typescript-config)
 - [eslint-config-airbnb-typescript](https://github.com/iamturns/eslint-config-airbnb-typescript)
+
+### Comparisons
+
+The main difference between `sheriff` and the other projects is that `sheriff` is updated to the most recent version of Eslint and supports the new `FlatConfig` instead of relying on weird hacks using the [@rushstack/eslint-patch](https://www.npmjs.com/package/@rushstack/eslint-patch).<br>
+There are of course other differences as well, but you can get an idea for yourself by reading their READMEs.
 
 ## <a name="migration-guide"></a>♻ Migration guide
 
@@ -305,6 +314,12 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 - [ ] Solid support
 - [ ] Vue support
 - [ ] Astro support
+
+## <a name="faq"></a>👉 FAQ
+
+- Why you didn’t include Eslint plugins/rules for "X" library?
+  - [Cypress](https://github.com/cypress-io/eslint-plugin-cypress) ➜ Don't use Cypress. Use [Playwright](https://playwright.dev/) instead.
+  - [Storybook](https://github.com/storybookjs/eslint-plugin-storybook) ➜ Storybook is still quite a niche library. Support for Storybook may come at a later time. Keep an eye on the [roadmap](#roadmap).
 
 ## <a name="acknowledgments"></a>💌 Acknowledgments
 
