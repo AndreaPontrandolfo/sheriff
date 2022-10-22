@@ -323,17 +323,16 @@ const importHandPickedRules = {
   'import/no-unresolved': [2, { commonjs: true }], // required by eslint-import-resolver-typescript.
   'import/first': 2,
   'import/order': [2, { 'newlines-between': 'never' }],
-  'import/named': 2,
   'import/no-default-export': 2,
   'import/no-named-as-default': 2,
   'import/no-duplicates': 2,
-  'import/newline-after-import': [2, { considerComments: true }],
+  'import/newline-after-import': 2,
   'import/no-unused-modules': [
     2,
     {
       missingExports: true,
       unusedExports: true,
-      ignoreExports: '**/*.config.{js,ts,jsx,tsx}',
+      ignoreExports: ['**/*.config.{js,ts,jsx,tsx}'],
     },
   ],
   'import/no-useless-path-segments': [2, { noUselessIndex: true }],
