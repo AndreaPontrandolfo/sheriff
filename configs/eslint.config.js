@@ -13,16 +13,19 @@ const prettierConfig = require('eslint-config-prettier');
 const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
 const fp = require('eslint-plugin-fp');
+const jest = require('eslint-plugin-jest');
+console.log('🚀 ~ file: eslint.config.js ~ line 17 ~ jest', jest);
 
-const supportedFileTypes = '**/*{js,ts,jsx,tsx}';
+const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx';
+const supportedFileTypes = `**/*{${allJsExtensions}}`;
 
 const ignores = [
-  'node_modules/',
-  'dist/',
-  'build/',
-  'artifacts/',
-  'coverage/',
-  '.git/',
+  '**/node_modules/**',
+  '.git/**',
+  '**/dist/**',
+  '**/build/**',
+  '**/artifacts/**',
+  '**/coverage/**',
 ];
 
 const messages = {
@@ -206,9 +209,11 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/consistent-type-assertions': 2,
   '@typescript-eslint/consistent-type-imports': 2,
   '@typescript-eslint/explicit-module-boundary-types': 2,
+  '@typescript-eslint/switch-exhaustiveness-check': 2,
   '@typescript-eslint/prefer-readonly-parameter-types': 2,
   '@typescript-eslint/no-invalid-void-type': 2,
   '@typescript-eslint/no-unnecessary-condition': 2,
+  '@typescript-eslint/unified-signatures': 2,
   '@typescript-eslint/no-unused-expressions': [
     2,
     {
@@ -289,6 +294,34 @@ const playwrightHandPickedRules = {
 const lodashHandPickedRules = {
   'lodash-f/prefer-lodash-method': 0,
   'lodash-f/import-scope': [2, 'member'],
+};
+
+const jestHandPickedRules = {
+  'jest/no-conditional-expect': 2,
+  'jest/no-conditional-in-test': 2,
+  'jest/no-alias-methods': 2,
+  'jest/no-export': 2,
+  'jest/no-duplicate-hooks': 2,
+  'jest/no-done-callback': 2,
+  'jest/no-identical-title': 2,
+  'jest/no-focused-tests': 2,
+  'jest/no-jasmine-globals': 2,
+  'jest/no-standalone-expect': 2,
+  'jest/no-test-return-statement': 2,
+  'jest/valid-describe-callback': 2,
+  'jest/no-test-prefixes': 2,
+  'jest/require-top-level-describe': 2,
+  'jest/prefer-comparison-matcher': 2,
+  'jest/prefer-equality-matcher': 2,
+  'jest/prefer-expect-resolves': 2,
+  'jest/prefer-hooks-on-top': 2,
+  'jest/prefer-hooks-in-order': 2,
+  'jest/require-hook': 2,
+  'jest/prefer-strict-equal': 2,
+  'jest/valid-title': 2,
+  'jest/valid-expect-in-promise': 2,
+  'jest/valid-expect': 2,
+  'jest/consistent-test-it': [2, { fn: 'test', withinDescribe: 'test' }], // with this we have an api consistent with Playwright.
 };
 
 const jsdocHandPickedRules = {
@@ -446,6 +479,26 @@ const playwrightConfig = {
   },
 };
 
+const jestConfig = {
+  files: [
+    `**/*.{test,spec}.{${allJsExtensions}}`,
+    `**/tests/**`,
+    `**/__tests__/**`,
+  ],
+  plugins: {
+    jest,
+  },
+  languageOptions: {
+    globals: jest.environments.globals.globals,
+  },
+  rules: {
+    ...jest.configs.style.rules,
+    ...jestHandPickedRules,
+    '@typescript-eslint/unbound-method': 0, // see reference: https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
+    'jest/unbound-method': 2, // we need to overwrite @typescript-eslint/unbound-method
+  },
+};
+
 const prettierOverrides = {
   files: [supportedFileTypes],
   rules: {
@@ -517,7 +570,7 @@ const baseConfig = [
     },
   },
   {
-    files: ['**/*.config.{js,ts,jsx,tsx}'],
+    files: [`**/*.config.{${allJsExtensions}}`],
     rules: {
       'import/no-default-export': 0,
     },
@@ -552,7 +605,12 @@ try {
 
 if (!userConfigChoices?.isEmpty && userConfigChoices?.config) {
   if (userConfigChoices.config.react || userConfigChoices.config.next) {
+    // we insert reactConfig this way because it's an array. it's an array because it actually contains 3 configs: react, react-hooks, react-a11y.
     exportableConfig = [...exportableConfig, ...reactConfig];
+  }
+
+  if (userConfigChoices.config.jest || userConfigChoices.config.vitest) {
+    exportableConfig.push(jestConfig);
   }
 
   if (userConfigChoices.config.next) {

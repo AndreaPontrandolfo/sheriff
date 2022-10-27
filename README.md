@@ -141,6 +141,8 @@ Follow these steps:
 - [Next](https://nextjs.org/) (_opt-in_)
 - [Lodash](https://lodash.com/) (_opt-in_)
 - [Playwright](https://playwright.dev/) (_opt-in_)
+- [Jest](https://jestjs.io/) (_opt-in_)
+- [Vitest](https://vitest.dev/) (_opt-in_)
 
 ## <a name="requirements"></a>🔑 Requirements
 
@@ -167,6 +169,7 @@ Follow these steps:
 - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
 - [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs)
 - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)
+- [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
 - [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import) with [eslint-import-resolver-typescript](https://github.com/import-js/eslint-import-resolver-typescript)
 - [eslint-plugin-lodash-f](https://github.com/AndreaPontrandolfo/eslint-plugin-lodash)
   - my fork of [eslint-plugin-lodash](https://github.com/wix/eslint-plugin-lodash)
@@ -190,6 +193,8 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
     next: false,
     lodash: false,
     playwright: false,
+    jest: false,
+    vitest: false,
   }
   ```
 
