@@ -128,7 +128,7 @@ Follow these steps:
 - ⇆ **Interoperability**: you can plop Sheriff in your project at any moment. `create-sheriff-config` will config automatically everything for you and will warn you if you need to take any special precautions. Bottom line: it's never too late to install Sheriff.
 - 🏔 **Cutting-edge**: Sheriff is one of the first attempts in the wild to adhere to the new eslint configuration format, the `FlatConfig`. You can use Sheriff to easily and safely migrate your project to the new config format without effort. See: [migration guide](#migration-guide).
 - 👊 **Sensible**: Almost all of the rules I hand-picked in Sheriff were chosen to counter some problematic real-world scenarios that have occurred in some projects. No bloat here.
-- 🗄️ **Configurable**: Sheriff is fully configurable with its own config file `sheriffrc.json`. See: [configuration](#configuration).
+- 🗄️ **Configurable**: Sheriff is fully configurable with its own config file `.sheriffrc.json`. See: [configuration](#configuration).
 - 🐙 **Modular**: Sheriff has opt-in support for a [wide array of libraries](#techs).
 - ✍ **SemVer**: Sheriff [releases](https://github.com/AndreaPontrandolfo/sheriff/releases) follows [Semantic Versioning](https://semver.org/) with [Conventional Commits](https://www.conventionalcommits.org/) standards.
 
@@ -182,11 +182,11 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
 
 ## <a name="configuration"></a>🧠 Configuration
 
-- Configure Sheriff as desired in the `sheriffrc.json` file [^3].<br>
+- Configure Sheriff as desired in the `.sheriffrc.json` file [^3].<br>
   Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default.
 
   ```json5
-  // sheriffrc.json (default)
+  // .sheriffrc.json (default)
 
   {
     react: false,
@@ -198,7 +198,7 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
   }
   ```
 
-[^3]: Sheriff utilizes [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) under-the-hood to power-up the Sheriff configuration. You are not forced to call the config file "sheriffrc.json", you can choose one of the alternative file types. See [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for details.
+[^3]: Sheriff utilizes [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) under-the-hood to power-up the Sheriff configuration. You are not forced to call the config file ".sheriffrc.json", you can choose one of the alternative file types. See [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for details.
 
 - Override any Sheriff rule as desired in the `eslint.config.js` file.<br>
   For example:
@@ -310,7 +310,7 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 ## <a name="roadmap"></a>🚀 Roadmap
 
 - [x] `eslint-plugin-next`
-- [x] Create the `sheriffrc.json` file support
+- [x] Create the `.sheriffrc.json` file support
 - [x] Create a cli ala `create-react-app`
 - [x] Remove `react` as a hard requirement
 - [x] Create a documentation website

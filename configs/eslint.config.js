@@ -14,7 +14,6 @@ const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
 const fp = require('eslint-plugin-fp');
 const jest = require('eslint-plugin-jest');
-console.log('🚀 ~ file: eslint.config.js ~ line 17 ~ jest', jest);
 
 const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx';
 const supportedFileTypes = `**/*{${allJsExtensions}}`;
