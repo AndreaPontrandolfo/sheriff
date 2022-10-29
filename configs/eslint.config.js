@@ -14,6 +14,7 @@ const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
 const fp = require('eslint-plugin-fp');
 const jest = require('eslint-plugin-jest');
+const onlyError = require('eslint-plugin-only-error');
 
 const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx';
 const supportedFileTypes = `**/*{${allJsExtensions}}`;
@@ -446,6 +447,13 @@ const reactConfig = [
   },
 ];
 
+const onlyErrorConfig = {
+  files: [supportedFileTypes],
+  plugins: {
+    'only-error': onlyError,
+  },
+};
+
 const lodashConfig = {
   files: [supportedFileTypes],
   plugins: {
@@ -628,6 +636,7 @@ if (!userConfigChoices?.isEmpty && userConfigChoices?.config) {
 
 exportableConfig.push(prettierConfig);
 exportableConfig.push(prettierOverrides);
+exportableConfig.push(onlyErrorConfig);
 exportableConfig.push({ ignores });
 
 module.exports = exportableConfig;
