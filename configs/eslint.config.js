@@ -15,7 +15,7 @@ const nextjs = require('@next/eslint-plugin-next');
 const fp = require('eslint-plugin-fp');
 const jest = require('eslint-plugin-jest');
 
-const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx';
+const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx';
 const supportedFileTypes = `**/*{${allJsExtensions}}`;
 
 const ignores = [
@@ -376,6 +376,7 @@ const reactHandPickedRules = {
   'react/jsx-no-useless-fragment': [2, { allowExpressions: true }],
   'react/jsx-boolean-value': 2,
   'react/jsx-fragments': 2,
+  'react/hook-use-state': [2, { allowDestructuredState: false }],
   'react/destructuring-assignment': 2,
   'react/no-multi-comp': 2,
   'react/no-array-index-key': 2,
@@ -604,7 +605,7 @@ try {
 
 if (!userConfigChoices?.isEmpty && userConfigChoices?.config) {
   if (userConfigChoices.config.react || userConfigChoices.config.next) {
-    // we insert reactConfig this way because it's an array. it's an array because it actually contains 3 configs: react, react-hooks, react-a11y.
+    // we insert reactConfig this way because it's an array. It's an array because it contains 3 configs: react, react-hooks, react-a11y.
     exportableConfig = [...exportableConfig, ...reactConfig];
   }
 
