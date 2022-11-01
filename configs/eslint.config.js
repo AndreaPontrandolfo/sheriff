@@ -377,7 +377,7 @@ const reactHandPickedRules = {
   'react/jsx-no-useless-fragment': [2, { allowExpressions: true }],
   'react/jsx-boolean-value': 2,
   'react/jsx-fragments': 2,
-  'react/hook-use-state': [2, { allowDestructuredState: false }],
+  'react/hook-use-state': 2,
   'react/destructuring-assignment': 2,
   'react/no-multi-comp': 2,
   'react/no-array-index-key': 2,
