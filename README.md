@@ -297,7 +297,16 @@ There are of course other differences as well, but you can get an idea for yours
 
 ## <a name="contributing"></a>🧡 Contributing
 
-TODO
+### Suggestions
+
+Feel free to propose suggestions about new rules to implement, or tweaks to existing rules.<br>
+Please use the discussions tab or the issues tab for new rules proposals.
+
+### Development
+
+1. Clone the repo
+2. Install the dependencies with pnpm
+3. Do the changes
 
 ## <a name="license"></a>📋 License
 
