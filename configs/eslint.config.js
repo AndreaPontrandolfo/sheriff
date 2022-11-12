@@ -14,7 +14,6 @@ const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
 const fp = require('eslint-plugin-fp');
 const jest = require('eslint-plugin-jest');
-const onlyError = require('eslint-plugin-only-error');
 
 const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx';
 const supportedFileTypes = `**/*{${allJsExtensions}}`;
@@ -100,7 +99,6 @@ const baseEslintHandPickedRules = {
       enforceForRenamedProperties: false,
     },
   ],
-  camelcase: [2, { properties: 'never' }],
   'no-useless-call': 2,
   'prefer-object-has-own': 2,
   'no-constant-binary-expression': 2,
@@ -203,6 +201,40 @@ const baseEslintHandPickedRules = {
 };
 
 const typescriptHandPickedRules = {
+  '@typescript-eslint/naming-convention': [
+    'error',
+    {
+      selector: 'default',
+      format: ['strictCamelCase'],
+    },
+    {
+      selector: 'variable',
+      modifiers: ['const'],
+      type: ['boolean', 'string', 'number'],
+      format: ['strictCamelCase', 'UPPER_CASE'],
+    },
+    {
+      selector: 'parameter',
+      format: ['strictCamelCase'],
+      leadingUnderscore: 'allow',
+    },
+    {
+      selector: 'typeLike',
+      format: ['StrictPascalCase'],
+    },
+    // https://typescript-eslint.io/rules/naming-convention/#enforce-that-boolean-variables-are-prefixed-with-an-allowed-verb
+    {
+      selector: 'variable',
+      types: ['boolean'],
+      format: ['StrictPascalCase'],
+      prefix: ['is', 'has', 'should', 'can'],
+    },
+    {
+      selector: 'variable',
+      modifiers: ['destructured'],
+      format: null,
+    },
+  ],
   '@typescript-eslint/return-await': 2,
   '@typescript-eslint/no-throw-literal': 2,
   '@typescript-eslint/no-use-before-define': 2,
@@ -212,6 +244,10 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/switch-exhaustiveness-check': 2,
   '@typescript-eslint/prefer-readonly-parameter-types': 2,
   '@typescript-eslint/no-invalid-void-type': 2,
+  '@typescript-eslint/prefer-nullish-coalescing': [
+    2,
+    { ignoreTernaryTests: false },
+  ],
   '@typescript-eslint/no-unnecessary-condition': 2,
   '@typescript-eslint/unified-signatures': 2,
   '@typescript-eslint/no-unused-expressions': [
@@ -358,6 +394,8 @@ const importHandPickedRules = {
   'import/order': [2, { 'newlines-between': 'never' }],
   'import/no-default-export': 2,
   'import/no-named-as-default': 2,
+  'import/consistent-type-specifier-style': 2,
+  'import/no-namespace': 2,
   'import/no-duplicates': 2,
   'import/newline-after-import': 2,
   'import/no-unused-modules': [
@@ -446,13 +484,6 @@ const reactConfig = [
     rules: reactHooks.configs.recommended.rules,
   },
 ];
-
-const onlyErrorConfig = {
-  files: [supportedFileTypes],
-  plugins: {
-    'only-error': onlyError,
-  },
-};
 
 const lodashConfig = {
   files: [supportedFileTypes],
@@ -636,7 +667,6 @@ if (!userConfigChoices?.isEmpty && userConfigChoices?.config) {
 
 exportableConfig.push(prettierConfig);
 exportableConfig.push(prettierOverrides);
-exportableConfig.push(onlyErrorConfig);
 exportableConfig.push({ ignores });
 
 module.exports = exportableConfig;
