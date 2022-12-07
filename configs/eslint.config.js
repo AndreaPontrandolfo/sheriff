@@ -236,6 +236,8 @@ const typescriptHandPickedRules = {
     },
   ],
   '@typescript-eslint/return-await': 2,
+  '@typescript-eslint/no-redundant-type-constituents': 2,
+  '@typescript-eslint/no-unnecessary-boolean-literal-compare': 2,
   '@typescript-eslint/no-throw-literal': 2,
   '@typescript-eslint/no-use-before-define': 2,
   '@typescript-eslint/consistent-type-assertions': 2,
@@ -398,14 +400,15 @@ const importHandPickedRules = {
   'import/no-namespace': 2,
   'import/no-duplicates': 2,
   'import/newline-after-import': 2,
-  'import/no-unused-modules': [
-    2,
-    {
-      missingExports: true,
-      unusedExports: true,
-      ignoreExports: ['**/*.config.{js,ts,jsx,tsx}'],
-    },
-  ],
+  // TODO: seems to cause a bug. Needs monitoring. See: https://github.com/eslint/eslint/issues/16485
+  // 'import/no-unused-modules': [
+  //   2,
+  //   {
+  //     missingExports: true,
+  //     unusedExports: true,
+  //     ignoreExports: ['**/*.config.{js,ts,jsx,tsx}'],
+  //   },
+  // ],
   'import/no-useless-path-segments': [2, { noUselessIndex: true }],
 };
 
