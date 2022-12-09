@@ -93,12 +93,7 @@ Follow these steps:
 
    import sheriff from 'eslint-config-sheriff';
 
-   export default [
-     ...sheriff,
-     {
-       files: ['**/*{js,ts,jsx,tsx}'],
-     },
-   ];
+   export default [...sheriff];
    ```
 
    or, if you already have a `eslint.config.js` in your project, just append `sheriff` to the configs array, like this:
@@ -208,12 +203,7 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
 
   import sheriff from 'eslint-config-sheriff';
 
-  export default [
-    ...sheriff,
-    {
-      files: ['**/*{js,ts,jsx,tsx}'],
-    },
-  ];
+  export default [...sheriff];
   ```
 
   Let's say you want to disable a Sheriff rule, like `import/first`:
@@ -226,11 +216,8 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
   export default [
     ...sheriff,
     {
-      files: ['**/*{js,ts,jsx,tsx}'],
-    },
-    {
       rules: {
-        'import/first': 0, // adding this, 'import/first' is now disabled everywhere.
+        'import/first': 0, // 👉 'import/first' is now disabled everywhere.
       },
     },
   ];
@@ -245,9 +232,6 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
 
   export default [
     ...sheriff,
-    {
-      files: ['**/*{js,ts,jsx,tsx}'],
-    },
     {
       rules: {
         'no-undef': 2,
