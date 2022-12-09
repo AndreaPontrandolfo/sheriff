@@ -202,16 +202,16 @@ const baseEslintHandPickedRules = {
 
 const typescriptHandPickedRules = {
   '@typescript-eslint/naming-convention': [
-    'error',
+    2,
     {
       selector: 'default',
       format: ['strictCamelCase'],
     },
     {
       selector: 'variable',
-      modifiers: ['const'],
-      type: ['boolean', 'string', 'number'],
       format: ['strictCamelCase', 'UPPER_CASE'],
+      modifiers: ['const'],
+      types: ['boolean', 'string', 'number'],
     },
     {
       selector: 'parameter',
@@ -332,6 +332,8 @@ const playwrightHandPickedRules = {
 const lodashHandPickedRules = {
   'lodash-f/prefer-lodash-method': 0,
   'lodash-f/import-scope': [2, 'member'],
+  'unicorn/no-instanceof-array': 0, // if we want to enable prefer-lodash-typecheck, we need to disable this
+  'lodash-f/prefer-lodash-typecheck': 2,
 };
 
 const jestHandPickedRules = {
@@ -396,7 +398,7 @@ const importHandPickedRules = {
   'import/order': [2, { 'newlines-between': 'never' }],
   'import/no-default-export': 2,
   'import/no-named-as-default': 2,
-  'import/consistent-type-specifier-style': 2,
+  // 'import/consistent-type-specifier-style': 2, // This is yet to be released. Should be enabled with next version of eslint-plugin-import.
   'import/no-namespace': 2,
   'import/no-duplicates': 2,
   'import/newline-after-import': 2,
