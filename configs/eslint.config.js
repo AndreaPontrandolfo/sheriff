@@ -14,6 +14,7 @@ const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
 const fp = require('eslint-plugin-fp');
 const jest = require('eslint-plugin-jest');
+const noEnumsPlugin = require('eslint-plugin-typescript-enum');
 
 const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx';
 const supportedFileTypes = `**/*{${allJsExtensions}}`;
@@ -238,6 +239,7 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/return-await': 2,
   '@typescript-eslint/no-redundant-type-constituents': 2,
   '@typescript-eslint/no-unnecessary-boolean-literal-compare': 2,
+  '@typescript-eslint/prefer-ts-expect-error': 2,
   '@typescript-eslint/no-throw-literal': 2,
   '@typescript-eslint/no-use-before-define': 2,
   '@typescript-eslint/consistent-type-assertions': 2,
@@ -568,6 +570,13 @@ const baseConfig = [
       ...typescript.configs['recommended-requiring-type-checking'].rules,
       ...typescriptHandPickedRules,
     },
+  },
+  {
+    files: [supportedFileTypes],
+    plugins: {
+      'typescript-enum': noEnumsPlugin,
+    },
+    rules: noEnumsPlugin.configs.recommended.rules,
   },
   {
     files: [supportedFileTypes],
