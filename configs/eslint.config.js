@@ -26,6 +26,7 @@ const ignores = [
   '**/build/**',
   '**/artifacts/**',
   '**/coverage/**',
+  'eslint.config.js', // we currently cannot lint the eslint.config.js itself. It is currently only provided as a .js file amd this config currently only supports .ts files. Therefore, eslint.config.js can only be re-enabled once this config support pure .js files too, or the Eslitn team support the eslint.config.ts file.
 ];
 
 const messages = {
@@ -221,13 +222,13 @@ const typescriptHandPickedRules = {
     },
     {
       selector: 'typeLike',
-      format: ['StrictPascalCase'],
+      format: ['PascalCase'],
     },
     // https://typescript-eslint.io/rules/naming-convention/#enforce-that-boolean-variables-are-prefixed-with-an-allowed-verb
     {
       selector: 'variable',
       types: ['boolean'],
-      format: ['StrictPascalCase'],
+      format: ['PascalCase'],
       prefix: ['is', 'has', 'should', 'can'],
     },
     {
