@@ -4,7 +4,7 @@ specifiers:
   '@next/eslint-plugin-next': ^12.3.1
   '@typescript-eslint/eslint-plugin': ^5.46.0
   '@typescript-eslint/parser': ^5.46.0
-  cosmiconfig: ^7.0.1
+  cosmiconfig: ^8.0.0
   eslint: 8.28.0
   eslint-config-prettier: ^8.5.0
   eslint-import-resolver-typescript: ^3.5.1
@@ -27,7 +27,7 @@ dependencies:
   '@next/eslint-plugin-next': 12.3.4
   '@typescript-eslint/eslint-plugin': 5.46.1_6imfxu3hnp753w3gacyo5svn2y
   '@typescript-eslint/parser': 5.46.1_zksrc6ykdxhogxjbhb5axiabwi
-  cosmiconfig: 7.1.0
+  cosmiconfig: 8.0.0
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0_eslint@8.28.0
   eslint-import-resolver-typescript: 3.5.2_ktrec6dplf4now6nlbc6d67jee
@@ -414,6 +414,7 @@ packages:
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
+    dev: true
 
   /@types/retry/0.12.0:
     resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
@@ -934,6 +935,17 @@ packages:
       parse-json: 5.2.0
       path-type: 4.0.0
       yaml: 1.10.2
+    dev: true
+
+  /cosmiconfig/8.0.0:
+    resolution: {integrity: sha512-da1EafcpH6b/TD8vDRaWV7xFINlHlF6zKsGwS1TsuVJTZRkquaS5HTMq7uq6h31619QjbsYl21gVDOm32KM1vQ==}
+    engines: {node: '>=14'}
+    dependencies:
+      import-fresh: 3.3.0
+      js-yaml: 4.1.0
+      parse-json: 5.2.0
+      path-type: 4.0.0
+    dev: false
 
   /create-eslint-index/1.0.0:
     resolution: {integrity: sha512-nXvJjnfDytOOaPOonX0h0a1ggMoqrhdekGeZkD6hkcWYvlCWhU719tKFVh8eU04CnMwu3uwe1JjwuUF2C3k2qg==}
@@ -3633,6 +3645,7 @@ packages:
   /yaml/1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
     engines: {node: '>= 6'}
+    dev: true
 
   /yargs-parser/20.2.9:
     resolution: {integrity: sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==}
