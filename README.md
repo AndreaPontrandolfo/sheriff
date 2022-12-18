@@ -157,12 +157,14 @@ Follow these steps:
 ## <a name="eslint-plugins"></a>🧳 Eslint plugins
 
 - [@typescript/eslint](https://github.com/typescript-eslint/typescript-eslint)
+- [eslint-plugin-etc](https://github.com/cartant/eslint-plugin-etc)
 - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
 - [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
 - [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
 - [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks)
 - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
 - [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs)
+- [eslint-plugin-fp](https://github.com/jfmengels/eslint-plugin-fp)
 - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)
 - [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
 - [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import) with [eslint-import-resolver-typescript](https://github.com/import-js/eslint-import-resolver-typescript)

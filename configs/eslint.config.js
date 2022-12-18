@@ -14,7 +14,7 @@ const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
 const fp = require('eslint-plugin-fp');
 const jest = require('eslint-plugin-jest');
-const noEnumsPlugin = require('eslint-plugin-typescript-enum');
+const etc = require('eslint-plugin-etc');
 
 const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx';
 const supportedFileTypes = `**/*{${allJsExtensions}}`;
@@ -334,6 +334,11 @@ const sonarjsHandPickedRules = {
   'sonarjs/prefer-immediate-return': 0,
 };
 
+const etcHandPickedRules = {
+  'etc/no-enum': 2,
+  'etc/no-misused-generics': 2,
+};
+
 const playwrightHandPickedRules = {
   'playwright/no-force-option': 0,
   'playwright/prefer-lowercase-title': 2,
@@ -582,13 +587,6 @@ const baseConfig = [
   },
   {
     files: [supportedFileTypes],
-    plugins: {
-      'typescript-enum': noEnumsPlugin,
-    },
-    rules: noEnumsPlugin.configs.recommended.rules,
-  },
-  {
-    files: [supportedFileTypes],
     rules: baseEslintHandPickedRules,
   },
   {
@@ -598,9 +596,12 @@ const baseConfig = [
   },
   {
     files: [supportedFileTypes],
-    plugins: {
-      unicorn,
-    },
+    plugins: { etc },
+    rules: etcHandPickedRules,
+  },
+  {
+    files: [supportedFileTypes],
+    plugins: { unicorn },
     rules: unicornHandPickedRules,
   },
   {
