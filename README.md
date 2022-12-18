@@ -3,7 +3,7 @@
 
 # Sheriff
 
-> **Note**
+> **Note:**
 > For a better reading experience, checkout the [official docs](https://sheriffrc.gitbook.io/sheriff/).
 
 ## <a name="table-of-contents"></a>📜 Table of Contents
@@ -52,7 +52,7 @@ You can now quickstart static analysis in all your Typescript projects with ease
 You can think of Sheriff like `prettier` or `create-react-app`. It's a tool that comes battery-packed with optimal defaults. It removes configuration decisions from the equation, so you or your team can focus on developing the actual product.<br>
 And if you don't like something, you can easily override it, and just as easily you can extend it. See: [configuration](#configuration).
 
-[^2]: This config is particularly useful for big teams with developers of various skill levels. I worked on a lot of different projects and teams through the years and I got accustomed to seeing all kinds of mistakes being made. Sheriff was made to prevent all of those mistakes. It is battle-tested in real-world scenarios and shines especially in such.
+[^2]: This config is particularly useful for big teams with developers of various skill levels. Sheriff was made to prevent all kind of mistakes and to align the team on the same playing field. It is battle-tested in real-world scenarios and shines especially in such.
 
 ## <a name="setup"></a>🛠️ Setup
 
@@ -122,7 +122,7 @@ Follow these steps:
 - 🏑 **Frictionless by design**: to setup Sheriff and take off, the only input required from the user is running the command `npx create-sheriff-config`. The command will automatically infer the details of your project and figure out the optimal Sheriff configuration by itself.
 - ⇆ **Interoperability**: you can plop Sheriff in your project at any moment. `create-sheriff-config` will config automatically everything for you and will warn you if you need to take any special precautions. Bottom line: it's never too late to install Sheriff.
 - 🏔 **Cutting-edge**: Sheriff is one of the first attempts in the wild to adhere to the new eslint configuration format, the `FlatConfig`. You can use Sheriff to easily and safely migrate your project to the new config format without effort. See: [migration guide](#migration-guide).
-- 👊 **Sensible**: Almost all of the rules I hand-picked in Sheriff were chosen to counter some problematic real-world scenarios that have occurred in some projects. No bloat here.
+- 👊 **Sensible**: Almost all of the rules that were hand-picked in Sheriff were chosen to counter some problematic real-world scenarios that can occur in production projects. No bloat here.
 - 🗄️ **Configurable**: Sheriff is fully configurable with its own config file `.sheriffrc.json`. See: [configuration](#configuration).
 - 🐙 **Modular**: Sheriff has opt-in support for a [wide array of libraries](#techs).
 - ✍ **SemVer**: Sheriff [releases](https://github.com/AndreaPontrandolfo/sheriff/releases) follows [Semantic Versioning](https://semver.org/) with [Conventional Commits](https://www.conventionalcommits.org/) standards.
@@ -180,16 +180,16 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
 - Configure Sheriff as desired in the `.sheriffrc.json` file [^3].<br>
   Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default.
 
-  ```json5
+  ```json
   // .sheriffrc.json (default)
 
   {
-    react: false,
-    next: false,
-    lodash: false,
-    playwright: false,
-    jest: false,
-    vitest: false,
+    "react": false,
+    "next": false,
+    "lodash": false,
+    "playwright": false,
+    "jest": false,
+    "vitest": false
   }
   ```
 
@@ -274,10 +274,34 @@ There are of course other differences as well, but you can get an idea for yours
 
 ## <a name="migration-guide"></a>♻ Migration guide
 
+If you are setting up Sheriff in an already established codebase, follow these steps:
+
 1. Start by running the `create-sheriff-config` command and follow the advices that it prints in the console.
-2. If you are setting up Sheriff in an already established codebase, make sure that the only eslint config file present in the whole project is the `eslint.config.js`.
-3. If you want to keep your existing custom rules on-top of Sheriff, move them to the `eslint.config.js`, after the `sheriff` config array. Refer to the [configuration instructions](#configuration).
+2. Make sure that the only eslint config file present in the whole project is the `eslint.config.js`.
+3. If you want to keep your existing custom rules on-top of Sheriff, move them to the `eslint.config.js`, after the `sheriff` config. Refer to the [configuration instructions](#configuration).
 4. Make sure to uninstall all the packages that Sheriff already incorporates out-of-the-box. [Here](#eslint-plugins) is the list.
+5. In massive codebases it can be troublesome to adapt to all these rules all at once. It is preferable to progressively fix the errors at your own pace, possibly with atomic commits. You can achieve leveraging 2 techniques:
+
+   - open the `.sheriffrc.json` file and add a key `files` in the JSON object. The value accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax. Only the matching files found in this array will be linted. See example below:
+
+     ```json
+     // .sheriffrc.json
+
+     {
+       "files": ["./src/**/*"],
+       "react": false,
+       "next": false,
+       "lodash": false,
+       "playwright": false,
+       "jest": false,
+       "vitest": false
+     }
+     ```
+
+     > **Note:**
+     > By deafult the `files` key is absent in the object and every js/ts file will be linted. Use this only if you want to specifically lint only a subsection of the codebase.
+
+   - use [eslint-interactive](https://github.com/mizdra/eslint-interactive).
 
 ## <a name="contributing"></a>🧡 Contributing
 
