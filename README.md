@@ -3,7 +3,7 @@
 
 # Sheriff
 
-> **Note:**
+> **Note**
 > For a better reading experience, checkout the [official docs](https://sheriffrc.gitbook.io/sheriff/).
 
 ## <a name="table-of-contents"></a>📜 Table of Contents
@@ -298,7 +298,7 @@ If you are setting up Sheriff in an already established codebase, follow these s
      }
      ```
 
-     > **Note:**
+     > **Note**
      > By deafult the `files` key is absent in the object and every js/ts file will be linted. Use this only if you want to specifically lint only a subsection of the codebase.
 
    - use [eslint-interactive](https://github.com/mizdra/eslint-interactive).
