@@ -256,7 +256,6 @@ const typescriptHandPickedRules = {
   ],
   '@typescript-eslint/explicit-module-boundary-types': 2,
   '@typescript-eslint/switch-exhaustiveness-check': 2,
-  '@typescript-eslint/prefer-readonly-parameter-types': 2,
   '@typescript-eslint/no-invalid-void-type': 2,
   '@typescript-eslint/prefer-nullish-coalescing': [
     2,
@@ -567,9 +566,6 @@ const baseConfig = [
   'eslint:recommended',
   {
     files: [supportedFileTypes],
-  },
-  {
-    files: [supportedFileTypes],
     languageOptions: languageOptionsTypescript,
   },
   {
@@ -694,9 +690,13 @@ exportableConfig.push(prettierConfig);
 exportableConfig.push(prettierOverrides);
 exportableConfig.push({ ignores });
 if (userConfigChoices.config.files) {
-  exportableConfig.map((configSlice, index) => {
+  exportableConfig = exportableConfig.map((configSlice, index) => {
     // the first item in the config is the eslintRecommendedConfig. Because it cannot be filtered (current eslintFlatConfig limitation), we are returning it as-is.
     if (index === 0) {
+      return configSlice;
+    }
+
+    if (configSlice.ignores?.length > 0) {
       return configSlice;
     }
 
