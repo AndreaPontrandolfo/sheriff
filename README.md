@@ -180,7 +180,7 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
 - Configure Sheriff as desired in the `.sheriffrc.json` file [^3].<br>
   Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default.
 
-  ```json
+  ```JSONC
   // .sheriffrc.json (default)
 
   {
@@ -280,11 +280,11 @@ If you are setting up Sheriff in an already established codebase, follow these s
 2. Make sure that the only eslint config file present in the whole project is the `eslint.config.js`.
 3. If you want to keep your existing custom rules on-top of Sheriff, move them to the `eslint.config.js`, after the `sheriff` config. Refer to the [configuration instructions](#configuration).
 4. Make sure to uninstall all the packages that Sheriff already incorporates out-of-the-box. [Here](#eslint-plugins) is the list.
-5. In massive codebases it can be troublesome to adapt to all these rules all at once. It is preferable to progressively fix the errors at your own pace, possibly with atomic commits. You can achieve leveraging 2 techniques:
+5. In massive codebases it can be troublesome to adapt to all these rules all at once. It is preferable to progressively fix the errors at your own pace, possibly with atomic commits. You can achieve this by leveraging 2 techniques:
 
    - open the `.sheriffrc.json` file and add a key `files` in the JSON object. The value accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax. Only the matching files found in this array will be linted. See example below:
 
-     ```json
+     ```JSONC
      // .sheriffrc.json
 
      {
