@@ -257,6 +257,7 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/explicit-module-boundary-types': 2,
   '@typescript-eslint/switch-exhaustiveness-check': 2,
   '@typescript-eslint/no-invalid-void-type': 2,
+  '@typescript-eslint/no-confusing-void-expression': 2,
   '@typescript-eslint/prefer-nullish-coalescing': [
     2,
     { ignoreTernaryTests: false },
@@ -337,6 +338,7 @@ const sonarjsHandPickedRules = {
 const etcHandPickedRules = {
   'etc/no-enum': 2,
   'etc/no-misused-generics': 2,
+  'etc/no-assign-mutated-array': 2,
 };
 
 const playwrightHandPickedRules = {
