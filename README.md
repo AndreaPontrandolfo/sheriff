@@ -301,7 +301,7 @@ If you are setting up Sheriff in an already established codebase, follow these s
      ```
 
      > **Note**
-     > By deafult the `files` key is absent in the object and every js/ts file will be linted. Use this only if you want to specifically lint only a subsection of the codebase.
+     > By default, the `files` key is absent in the object and every js/ts file will be linted. Use this only if you want to specifically lint just a subsection of the codebase.
 
    - use [eslint-interactive](https://github.com/mizdra/eslint-interactive).
 
