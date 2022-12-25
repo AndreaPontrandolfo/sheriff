@@ -34,6 +34,62 @@ const messages = {
     'There is no need to limit developer access to properties.',
 };
 
+const getTsNamingConventionRule = ({ isTsx }) => {
+  return {
+    '@typescript-eslint/naming-convention': [
+      2,
+      {
+        selector: 'default',
+        format: ['strictCamelCase', isTsx && 'StrictPascalCase'].filter(
+          Boolean,
+        ),
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      {
+        selector: 'variable',
+        format: ['strictCamelCase', 'UPPER_CASE'],
+        modifiers: ['const'],
+        types: ['boolean', 'string', 'number'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      {
+        selector: objectLiteralProperty,
+        format: null,
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      // {
+      //   selector: 'parameter',
+      //   format: ['strictCamelCase'],
+      //   leadingUnderscore: 'allow',
+      //   trailingUnderscore: 'forbid',
+      // },
+      {
+        selector: 'typeLike',
+        format: ['PascalCase'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      // https://typescript-eslint.io/rules/naming-convention/#enforce-that-boolean-variables-are-prefixed-with-an-allowed-verb
+      {
+        selector: 'variable',
+        types: ['boolean'],
+        format: ['PascalCase'],
+        prefix: ['is', 'has', 'should', 'can'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      {
+        selector: 'variable',
+        modifiers: ['destructured'],
+        format: null,
+      },
+    ],
+  };
+};
+
 const baseEslintHandPickedRules = {
   'func-style': 2,
   'no-promise-executor-return': 2,
@@ -203,40 +259,6 @@ const baseEslintHandPickedRules = {
 };
 
 const typescriptHandPickedRules = {
-  '@typescript-eslint/naming-convention': [
-    2,
-    {
-      selector: 'default',
-      format: ['strictCamelCase'],
-    },
-    {
-      selector: 'variable',
-      format: ['strictCamelCase', 'UPPER_CASE'],
-      modifiers: ['const'],
-      types: ['boolean', 'string', 'number'],
-    },
-    {
-      selector: 'parameter',
-      format: ['strictCamelCase'],
-      leadingUnderscore: 'allow',
-    },
-    {
-      selector: 'typeLike',
-      format: ['PascalCase'],
-    },
-    // https://typescript-eslint.io/rules/naming-convention/#enforce-that-boolean-variables-are-prefixed-with-an-allowed-verb
-    {
-      selector: 'variable',
-      types: ['boolean'],
-      format: ['PascalCase'],
-      prefix: ['is', 'has', 'should', 'can'],
-    },
-    {
-      selector: 'variable',
-      modifiers: ['destructured'],
-      format: null,
-    },
-  ],
   '@typescript-eslint/return-await': 2,
   '@typescript-eslint/no-redundant-type-constituents': 2,
   '@typescript-eslint/no-unnecessary-boolean-literal-compare': 2,
@@ -257,6 +279,7 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/explicit-module-boundary-types': 2,
   '@typescript-eslint/switch-exhaustiveness-check': 2,
   '@typescript-eslint/no-invalid-void-type': 2,
+  '@typescript-eslint/method-signature-style': 2,
   '@typescript-eslint/no-confusing-void-expression': 2,
   '@typescript-eslint/prefer-nullish-coalescing': [
     2,
@@ -440,7 +463,15 @@ const reactHandPickedRules = {
   'react/jsx-boolean-value': 2,
   'react/jsx-fragments': 2,
   'react/hook-use-state': 2,
+  'react/jsx-no-leaked-render': [2, { validStrategies: ['coerce', 'ternary'] }],
   'react/destructuring-assignment': 2,
+  'react/jsx-filename-extension': [
+    2,
+    {
+      extensions: ['.tsx'],
+      allow: 'as-needed',
+    },
+  ],
   'react/no-multi-comp': 2,
   'react/no-array-index-key': 2,
   'react/jsx-props-no-spreading': 2,
@@ -492,6 +523,10 @@ const reactConfig = [
       ...react.configs['jsx-runtime'].rules, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
       ...reactHandPickedRules,
     },
+  },
+  {
+    files: ['**/*{jsx,tsx}'],
+    rules: getTsNamingConventionRule({ isTsx: true }),
   },
   {
     files: [supportedFileTypes],
@@ -585,6 +620,7 @@ const baseConfig = [
       ...typescript.configs.recommended.rules,
       ...typescript.configs['recommended-requiring-type-checking'].rules,
       ...typescriptHandPickedRules,
+      ...getTsNamingConventionRule({ isTsx: false }),
     },
   },
   {
