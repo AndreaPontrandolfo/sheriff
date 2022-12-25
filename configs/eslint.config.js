@@ -55,7 +55,7 @@ const getTsNamingConventionRule = ({ isTsx }) => {
         trailingUnderscore: 'forbid',
       },
       {
-        selector: objectLiteralProperty,
+        selector: 'objectLiteralProperty',
         format: null,
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
