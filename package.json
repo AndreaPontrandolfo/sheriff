@@ -41,7 +41,8 @@
     "preinstall": "npx only-allow pnpm",
     "semantic-release": "semantic-release",
     "generate-typings": "tsc --declaration --allowJs --emitDeclarationOnly --declarationMap --outDir types",
-    "generate-rules-file": "node ./utils/extractRules.js"
+    "generate-rules-file": "node ./utils/extractRules.js",
+    "prepush": "pnpm generate-typings && pnpm generate-rules-file"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^12.3.1",
