@@ -15,6 +15,7 @@ const nextjs = require('@next/eslint-plugin-next');
 const fp = require('eslint-plugin-fp');
 const jest = require('eslint-plugin-jest');
 const etc = require('eslint-plugin-etc');
+const reactRefresh = require('eslint-plugin-react-refresh');
 
 const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx';
 const supportedFileTypes = `**/*{${allJsExtensions}}`;
@@ -527,6 +528,13 @@ const reactConfig = [
   {
     files: ['**/*{jsx,tsx}'],
     rules: getTsNamingConventionRule({ isTsx: true }),
+  },
+  {
+    files: ['**/*{jsx,tsx}'],
+    plugins: { 'react-refresh': reactRefresh },
+    rules: {
+      'react-refresh/only-export-components': 2,
+    },
   },
   {
     files: [supportedFileTypes],
