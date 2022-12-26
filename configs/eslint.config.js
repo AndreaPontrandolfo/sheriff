@@ -531,9 +531,9 @@ const reactConfig = [
   },
   {
     files: ['**/*{jsx,tsx}'],
-    plugins: { 'react-refresh': reactRefresh },
+    plugins: { 'only-export-components': reactRefresh },
     rules: {
-      'react-refresh/only-export-components': 2,
+      'only-export-components/only-export-components': 2,
     },
   },
   {
