@@ -21,6 +21,7 @@ specifiers:
   eslint-plugin-react-refresh: ^0.3.2
   eslint-plugin-sonarjs: ^0.15.0
   eslint-plugin-unicorn: ^45.0.1
+  husky: ^8.0.0
   semantic-release: 19.0.5
   typescript: 4.9.4
 
@@ -47,6 +48,7 @@ dependencies:
   eslint-plugin-unicorn: 45.0.2_eslint@8.30.0
 
 devDependencies:
+  husky: 8.0.2
   semantic-release: 19.0.5
   typescript: 4.9.4
 
@@ -2028,6 +2030,12 @@ packages:
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
+    dev: true
+
+  /husky/8.0.2:
+    resolution: {integrity: sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /ignore/5.2.1:
