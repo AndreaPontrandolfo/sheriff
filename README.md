@@ -58,6 +58,7 @@ And if you don't like something, you can easily override it, and just as easily 
 
 This config is **highly** opinionated, so make sure to meet the [hard requirements](#hard-requirements) in your project.<br>
 Then, let `create-sheriff-config` handle the whole setup for you automatically, or do it yourself manually.
+For greenfield projects, the below setup will be enough. However, for already established codebases, you should also follow the instructions for the [migration path](#migration-guide).
 
 ### <a name="automatic-setup"></a>🤖 Automatic setup (_recommended_)
 
@@ -343,7 +344,7 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 
 - Why you didn’t include Eslint plugins/rules for "X" library?
   - [Cypress](https://github.com/cypress-io/eslint-plugin-cypress) ➜ Don't use Cypress. Use [Playwright](https://playwright.dev/) instead.
-  - [Storybook](https://github.com/storybookjs/eslint-plugin-storybook) ➜ Storybook is still quite a niche library. Support for Storybook may come at a later time. Keep an eye on the [roadmap](#roadmap).
+  - [Testing library](https://github.com/testing-library/eslint-plugin-testing-library) ➜ I believe [testing library](https://github.com/testing-library) is one of least efficient ways to test. In most codebases it does more harm than good. You can use [Storybook](https://github.com/storybookjs/storybook) to test and develop components in isolation.
 
 ## <a name="acknowledgments"></a>💌 Acknowledgments
 
