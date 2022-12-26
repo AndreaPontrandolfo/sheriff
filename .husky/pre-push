@@ -3,4 +3,3 @@
 
 pnpm generate-typings
 pnpm generate-rules-file
-pnpm commit-artifacts

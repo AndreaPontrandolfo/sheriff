@@ -42,7 +42,6 @@
     "semantic-release": "semantic-release",
     "generate-typings": "tsc --declaration --allowJs --emitDeclarationOnly --declarationMap --outDir types",
     "generate-rules-file": "node ./utils/extractRules.js",
-    "commit-artifacts": "./scripts/commit-artifacts.sh",
     "prepare": "husky install"
   },
   "dependencies": {

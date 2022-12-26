@@ -100,12 +100,39 @@
   "@typescript-eslint/require-await": 2,
   "@typescript-eslint/restrict-plus-operands": 2,
   "@typescript-eslint/restrict-template-expressions": 2,
-  "@typescript-eslint/unbound-method": 2,
+  "@typescript-eslint/unbound-method": 0,
   "@typescript-eslint/return-await": 2,
+  "@typescript-eslint/no-redundant-type-constituents": 2,
+  "@typescript-eslint/no-unnecessary-boolean-literal-compare": 2,
+  "@typescript-eslint/prefer-ts-expect-error": 2,
   "@typescript-eslint/no-throw-literal": 2,
   "@typescript-eslint/no-use-before-define": 2,
   "@typescript-eslint/consistent-type-assertions": 2,
+  "@typescript-eslint/consistent-type-imports": [
+    2,
+    {
+      "fixStyle": "inline-type-imports"
+    }
+  ],
+  "@typescript-eslint/consistent-type-exports": [
+    2,
+    {
+      "fixMixedExportsWithInlineTypeSpecifier": true
+    }
+  ],
   "@typescript-eslint/explicit-module-boundary-types": 2,
+  "@typescript-eslint/switch-exhaustiveness-check": 2,
+  "@typescript-eslint/no-invalid-void-type": 2,
+  "@typescript-eslint/method-signature-style": 2,
+  "@typescript-eslint/no-confusing-void-expression": 2,
+  "@typescript-eslint/prefer-nullish-coalescing": [
+    2,
+    {
+      "ignoreTernaryTests": false
+    }
+  ],
+  "@typescript-eslint/no-unnecessary-condition": 2,
+  "@typescript-eslint/unified-signatures": 2,
   "@typescript-eslint/no-unused-expressions": [
     2,
     {
@@ -134,6 +161,74 @@
       "ignoreFunctionTypeParameterNameValueShadow": true
     }
   ],
+  "@typescript-eslint/naming-convention": [
+    2,
+    {
+      "selector": "default",
+      "format": [
+        "strictCamelCase",
+        "StrictPascalCase"
+      ],
+      "leadingUnderscore": "forbid",
+      "trailingUnderscore": "forbid"
+    },
+    {
+      "selector": "variable",
+      "format": [
+        "strictCamelCase",
+        "UPPER_CASE"
+      ],
+      "modifiers": [
+        "const"
+      ],
+      "types": [
+        "boolean",
+        "string",
+        "number"
+      ],
+      "leadingUnderscore": "forbid",
+      "trailingUnderscore": "forbid"
+    },
+    {
+      "selector": "objectLiteralProperty",
+      "format": null,
+      "leadingUnderscore": "forbid",
+      "trailingUnderscore": "forbid"
+    },
+    {
+      "selector": "typeLike",
+      "format": [
+        "PascalCase"
+      ],
+      "leadingUnderscore": "forbid",
+      "trailingUnderscore": "forbid"
+    },
+    {
+      "selector": "variable",
+      "types": [
+        "boolean"
+      ],
+      "format": [
+        "PascalCase"
+      ],
+      "prefix": [
+        "is",
+        "has",
+        "should",
+        "can"
+      ],
+      "leadingUnderscore": "forbid",
+      "trailingUnderscore": "forbid"
+    },
+    {
+      "selector": "variable",
+      "modifiers": [
+        "destructured"
+      ],
+      "format": null
+    }
+  ],
+  "func-style": 2,
   "no-promise-executor-return": 2,
   "no-unreachable-loop": 2,
   "no-caller": 2,
@@ -153,13 +248,51 @@
   "no-negated-condition": 2,
   "no-new-wrappers": 2,
   "no-new-object": 2,
+  "no-restricted-properties": [
+    2,
+    {
+      "object": "global",
+      "property": "isFinite",
+      "message": "Please use Number.isFinite instead"
+    },
+    {
+      "object": "self",
+      "property": "isFinite",
+      "message": "Please use Number.isFinite instead"
+    },
+    {
+      "object": "window",
+      "property": "isFinite",
+      "message": "Please use Number.isFinite instead"
+    },
+    {
+      "object": "global",
+      "property": "isNaN",
+      "message": "Please use Number.isNaN instead"
+    },
+    {
+      "object": "self",
+      "property": "isNaN",
+      "message": "Please use Number.isNaN instead"
+    },
+    {
+      "object": "window",
+      "property": "isNaN",
+      "message": "Please use Number.isNaN instead"
+    }
+  ],
   "strict": [
     2,
     "never"
   ],
   "no-octal-escape": 2,
   "no-proto": 2,
-  "no-sequences": 2,
+  "no-sequences": [
+    2,
+    {
+      "allowInParentheses": false
+    }
+  ],
   "no-unmodified-loop-condition": 2,
   "no-void": 2,
   "max-statements-per-line": [
@@ -180,12 +313,6 @@
       "enforceForRenamedProperties": false
     }
   ],
-  "camelcase": [
-    2,
-    {
-      "properties": "never"
-    }
-  ],
   "no-useless-call": 2,
   "prefer-object-has-own": 2,
   "no-constant-binary-expression": 2,
@@ -198,7 +325,12 @@
     2,
     "always"
   ],
-  "no-else-return": 2,
+  "no-else-return": [
+    2,
+    {
+      "allowElseIf": false
+    }
+  ],
   "prefer-template": 2,
   "operator-assignment": [
     2,
@@ -207,6 +339,33 @@
   "logical-assignment-operators": [
     2,
     "never"
+  ],
+  "padding-line-between-statements": [
+    2,
+    {
+      "blankLine": "always",
+      "prev": [
+        "const",
+        "let"
+      ],
+      "next": "*"
+    },
+    {
+      "blankLine": "any",
+      "prev": [
+        "const",
+        "let"
+      ],
+      "next": [
+        "const",
+        "let"
+      ]
+    },
+    {
+      "blankLine": "always",
+      "prev": "*",
+      "next": "return"
+    }
   ],
   "prefer-spread": 2,
   "prefer-object-spread": 2,
@@ -245,16 +404,17 @@
   ],
   "no-restricted-syntax": [
     2,
-    "WithStatement",
-    "ClassDeclaration",
-    "ClassExpression",
+    {
+      "selector": "LabeledStatement",
+      "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+    },
+    {
+      "selector": "ForInStatement",
+      "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+    },
     {
       "selector": "Identifier[name='Reflect']",
       "message": "Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development"
-    },
-    {
-      "selector": "Identifier[name='Proxy']",
-      "message": "Avoid the Proxy API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development"
     },
     {
       "selector": "BinaryExpression[operator='in']",
@@ -273,10 +433,6 @@
       "message": "There is no need to limit developer access to properties."
     },
     {
-      "selector": "UnaryExpression[operator='delete']",
-      "message": "Unallowed use of delete."
-    },
-    {
       "selector": "Identifier[name='PropTypes']",
       "message": "No PropTypes. Use Typescript instead."
     },
@@ -286,7 +442,7 @@
     },
     {
       "selector": "Identifier[name='createContext']",
-      "message": "No React Context. Use component composition instead (https://it.reactjs.org/docs/context.html#before-you-use-context), or a \"Global State Mamanement\" solution."
+      "message": "No React Context. Use component composition instead (https://it.reactjs.org/docs/context.html#before-you-use-context), or a \"Global State Management\" solution."
     }
   ],
   "no-return-await": 0,
@@ -295,6 +451,13 @@
   "no-unused-expressions": 0,
   "dot-notation": 0,
   "no-shadow": 0,
+  "fp/no-arguments": 2,
+  "fp/no-class": 2,
+  "fp/no-delete": 2,
+  "fp/no-proxy": 2,
+  "etc/no-enum": 2,
+  "etc/no-misused-generics": 2,
+  "etc/no-assign-mutated-array": 2,
   "unicorn/better-regex": 2,
   "unicorn/explicit-length-check": 2,
   "unicorn/consistent-function-scoping": 2,
@@ -311,9 +474,10 @@
   "unicorn/no-useless-spread": 2,
   "unicorn/no-useless-undefined": 2,
   "unicorn/no-for-loop": 2,
+  "unicorn/prefer-set-size": 2,
   "unicorn/prefer-type-error": 2,
   "unicorn/prefer-object-from-entries": 2,
-  "unicorn/no-instanceof-array": 2,
+  "unicorn/no-instanceof-array": 0,
   "unicorn/prefer-native-coercion-functions": 2,
   "unicorn/prefer-logical-operator-over-ternary": 2,
   "unicorn/prefer-event-target": 2,
@@ -334,6 +498,13 @@
   "unicorn/no-unsafe-regex": 2,
   "unicorn/prefer-query-selector": 2,
   "unicorn/prefer-string-replace-all": 2,
+  "unicorn/prefer-switch": [
+    2,
+    {
+      "emptyDefaultCase": "do-nothing-comment"
+    }
+  ],
+  "unicorn/switch-case-braces": 2,
   "sonarjs/cognitive-complexity": 0,
   "sonarjs/elseif-without-else": 0,
   "sonarjs/max-switch-cases": 2,
@@ -366,7 +537,7 @@
   "sonarjs/prefer-object-literal": 2,
   "sonarjs/prefer-single-boolean-return": 2,
   "sonarjs/prefer-while": 2,
-  "import/named": 2,
+  "import/named": 0,
   "import/namespace": 0,
   "import/default": 0,
   "import/no-named-as-default-member": 0,
@@ -385,21 +556,9 @@
   ],
   "import/no-default-export": 0,
   "import/no-named-as-default": 2,
+  "import/no-namespace": 2,
   "import/no-duplicates": 2,
-  "import/newline-after-import": [
-    2,
-    {
-      "considerComments": true
-    }
-  ],
-  "import/no-unused-modules": [
-    2,
-    {
-      "missingExports": true,
-      "unusedExports": true,
-      "ignoreExports": "**/*.config.{js,ts,jsx,tsx}"
-    }
-  ],
+  "import/newline-after-import": 2,
   "import/no-useless-path-segments": [
     2,
     {
@@ -464,7 +623,26 @@
   ],
   "react/jsx-boolean-value": 2,
   "react/jsx-fragments": 2,
+  "react/hook-use-state": 2,
+  "react/jsx-no-leaked-render": [
+    2,
+    {
+      "validStrategies": [
+        "coerce",
+        "ternary"
+      ]
+    }
+  ],
   "react/destructuring-assignment": 2,
+  "react/jsx-filename-extension": [
+    2,
+    {
+      "extensions": [
+        ".tsx"
+      ],
+      "allow": "as-needed"
+    }
+  ],
   "react/no-multi-comp": 2,
   "react/no-array-index-key": 2,
   "react/jsx-props-no-spreading": 2,
@@ -480,6 +658,7 @@
       "reservedFirst": false
     }
   ],
+  "only-export-components/only-export-components": 2,
   "jsx-a11y/alt-text": 2,
   "jsx-a11y/anchor-has-content": 2,
   "jsx-a11y/anchor-is-valid": 2,
@@ -665,6 +844,41 @@
   "jsx-a11y/tabindex-no-positive": 2,
   "react-hooks/rules-of-hooks": 2,
   "react-hooks/exhaustive-deps": 1,
+  "jest/no-alias-methods": 2,
+  "jest/prefer-to-be": 2,
+  "jest/prefer-to-contain": 2,
+  "jest/prefer-to-have-length": 2,
+  "jest/no-conditional-expect": 2,
+  "jest/no-conditional-in-test": 2,
+  "jest/no-export": 2,
+  "jest/no-duplicate-hooks": 2,
+  "jest/no-done-callback": 2,
+  "jest/no-identical-title": 2,
+  "jest/no-focused-tests": 2,
+  "jest/no-jasmine-globals": 2,
+  "jest/no-standalone-expect": 2,
+  "jest/no-test-return-statement": 2,
+  "jest/valid-describe-callback": 2,
+  "jest/no-test-prefixes": 2,
+  "jest/require-top-level-describe": 2,
+  "jest/prefer-comparison-matcher": 2,
+  "jest/prefer-equality-matcher": 2,
+  "jest/prefer-expect-resolves": 2,
+  "jest/prefer-hooks-on-top": 2,
+  "jest/prefer-hooks-in-order": 2,
+  "jest/require-hook": 2,
+  "jest/prefer-strict-equal": 2,
+  "jest/valid-title": 2,
+  "jest/valid-expect-in-promise": 2,
+  "jest/valid-expect": 2,
+  "jest/consistent-test-it": [
+    2,
+    {
+      "fn": "test",
+      "withinDescribe": "test"
+    }
+  ],
+  "jest/unbound-method": 2,
   "@next/next/google-font-display": 1,
   "@next/next/google-font-preconnect": 1,
   "@next/next/next-script-for-ga": 1,
@@ -747,7 +961,7 @@
   "lodash-f/prefer-is-nil": 1,
   "lodash-f/prefer-lodash-chain": 1,
   "lodash-f/prefer-lodash-method": 0,
-  "lodash-f/prefer-lodash-typecheck": 1,
+  "lodash-f/prefer-lodash-typecheck": 2,
   "lodash-f/prefer-map": 1,
   "lodash-f/prefer-matches": [
     2,
@@ -791,7 +1005,10 @@
   "playwright/prefer-lowercase-title": 2,
   "playwright/prefer-to-have-length": 2,
   "playwright/require-top-level-describe": 2,
-  "curly": 0,
+  "curly": [
+    2,
+    "all"
+  ],
   "lines-around-comment": 0,
   "max-len": 0,
   "no-confusing-arrow": 0,
