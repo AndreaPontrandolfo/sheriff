@@ -343,8 +343,8 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 ## <a name="faq"></a>👉 FAQ
 
 - Why you didn’t include Eslint plugins/rules for "X" library?
-  - [Cypress](https://github.com/cypress-io/eslint-plugin-cypress) ➜ Don't use Cypress. Use [Playwright](https://playwright.dev/) instead.
-  - [Testing library](https://github.com/testing-library/eslint-plugin-testing-library) ➜ I believe [testing library](https://github.com/testing-library) is one of least efficient ways to test. In most codebases it does more harm than good. You can use [Storybook](https://github.com/storybookjs/storybook) to test and develop components in isolation.
+  - [Cypress](https://github.com/cypress-io/eslint-plugin-cypress) ➜ Don't use [Cypress](https://www.cypress.io/). Use [Playwright](https://playwright.dev/) instead.
+  - [Testing library](https://github.com/testing-library/eslint-plugin-testing-library) ➜ I believe [testing library](https://github.com/testing-library) is one of the least efficient ways to test. In most codebases it does more harm than good. You can use [Storybook](https://github.com/storybookjs/storybook) to test and develop components in isolation.
 
 ## <a name="acknowledgments"></a>💌 Acknowledgments
 
