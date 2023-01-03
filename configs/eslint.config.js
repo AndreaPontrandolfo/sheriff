@@ -16,6 +16,7 @@ const fp = require('eslint-plugin-fp');
 const jest = require('eslint-plugin-jest');
 const etc = require('eslint-plugin-etc');
 const reactRefresh = require('eslint-plugin-react-refresh');
+const shopify = require('@shopify/eslint-plugin');
 
 const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx';
 const supportedFileTypes = `**/*{${allJsExtensions}}`;
@@ -648,6 +649,11 @@ const baseConfig = [
     files: [supportedFileTypes],
     plugins: { etc },
     rules: etcHandPickedRules,
+  },
+  {
+    files: [supportedFileTypes],
+    plugins: { '@shopify': shopify },
+    rules: { '@shopify/prefer-early-return': 2 },
   },
   {
     files: [supportedFileTypes],

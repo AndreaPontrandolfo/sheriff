@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^12.3.1",
+    "@shopify/eslint-plugin": "^42.0.2",
     "@typescript-eslint/eslint-plugin": "^5.46.0",
     "@typescript-eslint/parser": "^5.46.0",
     "cosmiconfig": "^8.0.0",
