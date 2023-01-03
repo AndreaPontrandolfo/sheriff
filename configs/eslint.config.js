@@ -17,6 +17,7 @@ const jest = require('eslint-plugin-jest');
 const etc = require('eslint-plugin-etc');
 const reactRefresh = require('eslint-plugin-react-refresh');
 const shopify = require('@shopify/eslint-plugin');
+const tsdoc = require('eslint-plugin-tsdoc');
 
 const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx';
 const supportedFileTypes = `**/*{${allJsExtensions}}`;
@@ -627,6 +628,7 @@ const baseConfig = [
     files: [supportedFileTypes],
     plugins: {
       '@typescript-eslint': typescript,
+      tsdoc,
     },
     rules: {
       ...typescript.configs['eslint-recommended'].rules,
@@ -634,6 +636,7 @@ const baseConfig = [
       ...typescript.configs['recommended-requiring-type-checking'].rules,
       ...typescriptHandPickedRules,
       ...getTsNamingConventionRule({ isTsx: false }),
+      'tsdoc/syntax': 2,
     },
   },
   {
