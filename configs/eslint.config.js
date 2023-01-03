@@ -461,6 +461,10 @@ const reactHandPickedRules = {
   'react/prop-types': 0,
   'react/no-unstable-nested-components': [2, { allowAsProps: false }],
   'react/jsx-no-useless-fragment': [2, { allowExpressions: true }],
+  'react/function-component-definition': [
+    2,
+    { namedComponents: 'arrow-function' },
+  ],
   'react/jsx-boolean-value': 2,
   'react/jsx-fragments': 2,
   'react/hook-use-state': 2,
