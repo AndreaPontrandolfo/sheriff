@@ -283,6 +283,7 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/switch-exhaustiveness-check': 2,
   '@typescript-eslint/no-invalid-void-type': 2,
   '@typescript-eslint/method-signature-style': 2,
+  '@typescript-eslint/non-nullable-type-assertion-style': 2,
   '@typescript-eslint/no-confusing-void-expression': 2,
   '@typescript-eslint/prefer-nullish-coalescing': [
     2,
