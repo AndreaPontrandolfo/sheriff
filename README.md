@@ -18,13 +18,14 @@
 8. [🧶 Rules](#rules)
 9. [🧠 Configuration](#configuration)
 10. [💅 Prettier support](#prettier-support)
-11. [🧐 Prior art](#prior-art)
-12. [♻ Migration guide](#migration-guide)
-13. [🧡 Contributing](#contributing)
-14. [🌤 Changelog](#changelog)
-15. [📋 License](#license)
-16. [👉 Faq](#faq)
-17. [💌 Acknowledgments](#acknowledgments)
+11. [🌎 Monorepo support](#monorepo-support)
+12. [🧐 Prior art](#prior-art)
+13. [♻ Migration guide](#migration-guide)
+14. [🧡 Contributing](#contributing)
+15. [🌤 Changelog](#changelog)
+16. [📋 License](#license)
+17. [👉 Faq](#faq)
+18. [💌 Acknowledgments](#acknowledgments)
 
 ## <a name="description"></a>📖 Description
 
@@ -167,7 +168,9 @@ Follow these steps:
 - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
 - [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs)
 - [eslint-plugin-fp](https://github.com/jfmengels/eslint-plugin-fp)
+- [@shopify/eslint-plugin](https://www.npmjs.com/package/@shopify/eslint-plugin)
 - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)
+- [eslint-plugin-tsdoc](https://www.npmjs.com/package/eslint-plugin-tsdoc)
 - [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
 - [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import) with [eslint-import-resolver-typescript](https://github.com/import-js/eslint-import-resolver-typescript)
 - [eslint-plugin-lodash-f](https://github.com/AndreaPontrandolfo/eslint-plugin-lodash)
@@ -260,6 +263,11 @@ Instead, for your local editing experience, it's recommended to install a [edito
 If you want to enforce Prettier at pre-commit stage, see the [official docs](https://prettier.io/docs/en/option-philosophy.html).<br>
 To enforce Prettier in CI, see the [CLI docs](https://prettier.io/docs/en/cli.html).
 
+## <a name="monorepo-support"></a>🌎 Monorepo support
+
+While Sheriff can be made to work at the _root_ of monorepos, it is highly advisible to not do so.<br>
+It works fine in singular packages inside monorepos. To make use of the [Eslint VScode Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) in monorepos, use the setting: [eslint.workingDirectories](https://github.com/microsoft/vscode-eslint#mono-repository-setup)
+
 ## <a name="prior-art"></a>🧐 Prior art
 
 ### Related projects
@@ -333,7 +341,16 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 
 - Why you didn’t include Eslint plugins/rules for "X" library?
   - [Cypress](https://github.com/cypress-io/eslint-plugin-cypress) ➜ Don't use [Cypress](https://www.cypress.io/). Use [Playwright](https://playwright.dev/) instead.
-  - [Testing library](https://github.com/testing-library/eslint-plugin-testing-library) ➜ I believe [testing library](https://github.com/testing-library) is one of the least efficient ways to test. In most codebases it does more harm than good. You can use [Storybook](https://github.com/storybookjs/storybook) to test and develop components in isolation.
+  - [Testing library](https://github.com/testing-library/eslint-plugin-testing-library) ➜ I believe [testing library](https://github.com/testing-library) is one of the least efficient ways to test UIs. In most codebases it does more harm than good. You can use [Storybook](https://github.com/storybookjs/storybook) to test and develop components in isolation.
+- Is Sheriff compatible with "X"?
+  - [Vite](https://vitejs.dev/) ➜ Yes.
+  - [CRA](https://create-react-app.dev/) ➜ Yes. Just add this line to your `.env` file:
+    ```
+    DISABLE_ESLINT_PLUGIN=true
+    ```
+  - [Rome](https://rome.tools/) ➜ No. Rome is not compatible with Eslint in the first place.
+  - [Deno](https://deno.land/) ➜ No. Deno is not compatible with Eslint in the first place.
+  - [Bun](https://bun.sh/) ➜ Untested.
 
 ## <a name="acknowledgments"></a>💌 Acknowledgments
 
