@@ -18,6 +18,7 @@ const etc = require('eslint-plugin-etc');
 const reactRefresh = require('eslint-plugin-react-refresh');
 const shopify = require('@shopify/eslint-plugin');
 const tsdoc = require('eslint-plugin-tsdoc');
+const storybook = require('eslint-plugin-storybook');
 
 const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx';
 const supportedFileTypes = `**/*{${allJsExtensions}}`;
@@ -674,9 +675,7 @@ const baseConfig = [
   },
   {
     files: [supportedFileTypes],
-    plugins: {
-      import: pluginImport,
-    },
+    plugins: { import: pluginImport },
     rules: importHandPickedRules,
     settings: {
       'import/parsers': {
@@ -691,21 +690,33 @@ const baseConfig = [
     },
   },
   {
-    files: [`**/*.config.{${allJsExtensions}}`],
+    files: [
+      '**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)',
+      '**/*.story.@(ts|tsx|js|jsx|mjs|cjs)',
+      '**/.storybook/**/*',
+    ],
+    plugins: { storybook },
     rules: {
+      ...storybook.configs.recommended.rules,
+      ...storybook.configs.csf.rules,
+      ...storybook.configs['csf-strict'].rules,
       'import/no-default-export': 0,
     },
   },
   {
     files: [supportedFileTypes],
-    plugins: {
-      jsdoc,
-    },
+    plugins: { jsdoc },
     rules: jsdocHandPickedRules,
     settings: {
       jsdoc: {
         mode: 'typescript',
       },
+    },
+  },
+  {
+    files: [`**/*.config.{${allJsExtensions}}`],
+    rules: {
+      'import/no-default-export': 0,
     },
   },
 ];

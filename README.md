@@ -23,9 +23,8 @@
 13. [🧡 Contributing](#contributing)
 14. [🌤 Changelog](#changelog)
 15. [📋 License](#license)
-16. [🚀 Roadmap](#roadmap)
-17. [👉 Faq](#faq)
-18. [💌 Acknowledgments](#acknowledgments)
+16. [👉 Faq](#faq)
+17. [💌 Acknowledgments](#acknowledgments)
 
 ## <a name="description"></a>📖 Description
 
@@ -132,7 +131,8 @@ Follow these steps:
 
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-- [Typescript](https://www.typescriptlang.org/)
+- [Typescript](https://www.typescriptlang.org/) (_out of the box support_)
+- [Storybook](https://storybook.js.org/) (_out of the box support_)
 - [React](https://reactjs.org/) (_opt-in_)
 - [Next](https://nextjs.org/) (_opt-in_)
 - [Lodash](https://lodash.com/) (_opt-in_)
@@ -174,6 +174,7 @@ Follow these steps:
   - my fork of [eslint-plugin-lodash](https://github.com/wix/eslint-plugin-lodash)
 - [@next/eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next)
 - [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
+- [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook)
 
 ## <a name="rules"></a>🧶 Rules
 
@@ -327,19 +328,6 @@ Please use the discussions tab or the issues tab for new rules proposals.
 ## <a name="changelog"></a>🌤 Changelog
 
 See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
-
-## <a name="roadmap"></a>🚀 Roadmap
-
-- [x] `eslint-plugin-next`
-- [x] Create the `.sheriffrc.json` file support
-- [x] Create a cli ala `create-react-app`
-- [x] Remove `react` as a hard requirement
-- [x] Create a documentation website
-- [ ] Vanilla JS (typescipt opt-in) support
-- [ ] Svelte support
-- [ ] Solid support
-- [ ] Vue support
-- [ ] Astro support
 
 ## <a name="faq"></a>👉 FAQ
 

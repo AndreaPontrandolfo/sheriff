@@ -21,6 +21,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.6.0
   eslint-plugin-react-refresh: ^0.3.2
   eslint-plugin-sonarjs: ^0.15.0
+  eslint-plugin-storybook: ^0.6.8
   eslint-plugin-tsdoc: ^0.2.17
   eslint-plugin-unicorn: ^45.0.1
   husky: ^8.0.0
@@ -48,6 +49,7 @@ dependencies:
   eslint-plugin-react-hooks: 4.6.0_eslint@8.30.0
   eslint-plugin-react-refresh: 0.3.2_eslint@8.30.0
   eslint-plugin-sonarjs: 0.15.0_eslint@8.30.0
+  eslint-plugin-storybook: 0.6.8_lzzuuodtsqwxnvqeq4g4likcqa
   eslint-plugin-tsdoc: 0.2.17
   eslint-plugin-unicorn: 45.0.2_eslint@8.30.0
 
@@ -491,6 +493,12 @@ packages:
       - prettier
       - supports-color
       - typescript
+    dev: false
+
+  /@storybook/csf/0.0.1:
+    resolution: {integrity: sha512-USTLkZze5gkel8MYCujSRBVIrUQ3YPBrLOx7GNk/0wttvVtlzWXAq9eLbQ4p/NicGxP+3T7KPEMVV//g+yubpw==}
+    dependencies:
+      lodash: 4.17.21
     dev: false
 
   /@tootallnate/once/2.0.0:
@@ -1769,6 +1777,22 @@ packages:
       eslint: '>=0.8.0'
     dependencies:
       eslint: 8.30.0
+    dev: false
+
+  /eslint-plugin-storybook/0.6.8_lzzuuodtsqwxnvqeq4g4likcqa:
+    resolution: {integrity: sha512-57vyICs19ODx0ql+shM0hKFn4Nvwcrdw29KJbj6QKGZ+Y47aDws/lvBx65++F0vpEsr0lkZljSdUbxWjIP2+Rw==}
+    engines: {node: 12.x || 14.x || >= 16}
+    peerDependencies:
+      eslint: '>=6'
+    dependencies:
+      '@storybook/csf': 0.0.1
+      '@typescript-eslint/utils': 5.46.1_lzzuuodtsqwxnvqeq4g4likcqa
+      eslint: 8.30.0
+      requireindex: 1.2.0
+      ts-dedent: 2.2.0
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
     dev: false
 
   /eslint-plugin-tsdoc/0.2.17:
@@ -3906,6 +3930,11 @@ packages:
     resolution: {integrity: sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==}
     engines: {node: '>=8'}
     dev: true
+
+  /ts-dedent/2.2.0:
+    resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
+    engines: {node: '>=6.10'}
+    dev: false
 
   /tsconfig-paths/3.14.1:
     resolution: {integrity: sha512-fxDhWnFSLt3VuTwtvJt5fpwxBHg5AdKWMsgcPOOIilyjymcYVZoCQF8fvFRezCNfblEXmi+PcM1eYHeOAgXCOQ==}
