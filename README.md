@@ -68,6 +68,12 @@ Let the CLI take care of everything! Just run this command in your terminal:
 ❯  npx create-sheriff-config
 ```
 
+or
+
+```bash
+❯  pnpx create-sheriff-config
+```
+
 ...and you are good to go! Happy hacking 🎉
 
 ### 😫 Manual setup
