@@ -16,7 +16,7 @@ specifiers:
   eslint-plugin-jsdoc: ^39.3.6
   eslint-plugin-jsx-a11y: ^6.4.1
   eslint-plugin-lodash-f: ^7.5.2
-  eslint-plugin-playwright: ^0.11.1
+  eslint-plugin-playwright: ^0.12.0
   eslint-plugin-react: ^7.31.8
   eslint-plugin-react-hooks: ^4.6.0
   eslint-plugin-react-refresh: ^0.3.2
@@ -44,7 +44,7 @@ dependencies:
   eslint-plugin-jsdoc: 39.6.4_eslint@8.30.0
   eslint-plugin-jsx-a11y: 6.6.1_eslint@8.30.0
   eslint-plugin-lodash-f: 7.5.3_eslint@8.30.0
-  eslint-plugin-playwright: 0.11.2_pqyegp3yvvzjkfbuuxga6rd3bm
+  eslint-plugin-playwright: 0.12.0_pqyegp3yvvzjkfbuuxga6rd3bm
   eslint-plugin-react: 7.31.11_eslint@8.30.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.30.0
   eslint-plugin-react-refresh: 0.3.2_eslint@8.30.0
@@ -1682,8 +1682,8 @@ packages:
       semver: 6.3.0
     dev: false
 
-  /eslint-plugin-playwright/0.11.2_pqyegp3yvvzjkfbuuxga6rd3bm:
-    resolution: {integrity: sha512-uRLRLk7uTzc8NE6t4wBU8dijQwHvC66R/h7xwdM779jsJjMUtSmeaB8ayRkkpfwi+UU5BEfwvDANwmE+ccMVDw==}
+  /eslint-plugin-playwright/0.12.0_pqyegp3yvvzjkfbuuxga6rd3bm:
+    resolution: {integrity: sha512-KXuzQjVzca5irMT/7rvzJKsVDGbQr43oQPc8i+SLEBqmfrTxlwMwRqfv9vtZqh4hpU0jmrnA/EOfwtls+5QC1w==}
     peerDependencies:
       eslint: '>=7'
       eslint-plugin-jest: '>=24'
