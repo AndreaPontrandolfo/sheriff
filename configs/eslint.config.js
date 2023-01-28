@@ -633,7 +633,6 @@ const baseConfig = [
       tsdoc,
     },
     rules: {
-      ...typescript.configs['eslint-recommended'].rules,
       ...typescript.configs.recommended.rules,
       ...typescript.configs['recommended-requiring-type-checking'].rules,
       ...typescriptHandPickedRules,
