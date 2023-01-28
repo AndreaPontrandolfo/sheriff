@@ -689,18 +689,19 @@ const baseConfig = [
     },
   },
   {
-    files: [
-      '**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)',
-      '**/*.story.@(ts|tsx|js|jsx|mjs|cjs)',
-      '**/.storybook/**/*',
-    ],
+    files: storybook.configs.recommended.overrides[0].files,
     plugins: { storybook },
     rules: {
-      ...storybook.configs.recommended.rules,
-      ...storybook.configs.csf.rules,
+      ...storybook.configs.recommended.overrides[0].rules,
+      ...storybook.configs.csf.overrides[0].rules,
       ...storybook.configs['csf-strict'].rules,
       'import/no-default-export': 0,
     },
+  },
+  {
+    files: storybook.configs.recommended.overrides[1].files,
+    plugins: { storybook },
+    rules: storybook.configs.recommended.overrides[1].rules,
   },
   {
     files: [supportedFileTypes],
