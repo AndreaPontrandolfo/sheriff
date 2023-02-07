@@ -44,15 +44,13 @@ const getTsNamingConventionRule = ({ isTsx }) => {
       2,
       {
         selector: 'default',
-        format: ['strictCamelCase', isTsx && 'StrictPascalCase'].filter(
-          Boolean,
-        ),
+        format: ['camelCase', isTsx && 'StrictPascalCase'].filter(Boolean),
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
       },
       {
         selector: 'variable',
-        format: ['strictCamelCase', 'UPPER_CASE'],
+        format: ['camelCase', 'UPPER_CASE'],
         modifiers: ['const'],
         types: ['boolean', 'string', 'number'],
         leadingUnderscore: 'forbid',
@@ -80,7 +78,7 @@ const getTsNamingConventionRule = ({ isTsx }) => {
       {
         selector: 'variable',
         types: ['boolean'],
-        format: ['PascalCase'],
+        format: ['camelCase'],
         prefix: ['is', 'has', 'should', 'can'],
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
