@@ -167,7 +167,7 @@
     {
       "selector": "default",
       "format": [
-        "strictCamelCase",
+        "camelCase",
         "StrictPascalCase"
       ],
       "leadingUnderscore": "forbid",
@@ -176,7 +176,7 @@
     {
       "selector": "variable",
       "format": [
-        "strictCamelCase",
+        "camelCase",
         "UPPER_CASE"
       ],
       "modifiers": [
@@ -210,7 +210,7 @@
         "boolean"
       ],
       "format": [
-        "PascalCase"
+        "camelCase"
       ],
       "prefix": [
         "is",
