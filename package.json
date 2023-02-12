@@ -3,7 +3,6 @@
   "version": "0.0.0-development",
   "description": "A comprehensive Eslint configuration.",
   "main": "index.js",
-  "types": "types/index.d.ts",
   "exports": {
     ".": {
       "require": "./index.js",
@@ -13,8 +12,7 @@
   },
   "files": [
     "index.js",
-    "configs",
-    "types"
+    "configs"
   ],
   "author": {
     "name": "Andrea Pontrandolfo",

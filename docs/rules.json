@@ -889,7 +889,6 @@
   "jest/prefer-expect-resolves": 2,
   "jest/prefer-hooks-on-top": 2,
   "jest/prefer-hooks-in-order": 2,
-  "jest/require-hook": 2,
   "jest/prefer-strict-equal": 2,
   "jest/valid-title": 2,
   "jest/valid-expect-in-promise": 2,

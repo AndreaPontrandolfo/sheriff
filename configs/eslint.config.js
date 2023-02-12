@@ -736,8 +736,8 @@ const baseConfig = [
   },
 ];
 
-const getExportableConfig = (userConfigChoices) => {
-  const exportableConfig = [...baseConfig];
+const getExportableConfig = (userConfigChoices = {}) => {
+  let exportableConfig = [...baseConfig];
 
   if (userConfigChoices.react || userConfigChoices.next) {
     // we insert reactConfig this way because it's an array. It's an array because it contains 3 configs: react, react-hooks, react-a11y.
