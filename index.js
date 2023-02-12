@@ -1,3 +1,3 @@
-const config = require('./configs/eslint.config.js');
+const getSheriffConfig = require('./configs/eslint.config.js');
 
-module.exports = config;
+module.exports = getSheriffConfig;

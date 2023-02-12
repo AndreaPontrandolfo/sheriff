@@ -1,4 +1,3 @@
-const { cosmiconfigSync } = require('cosmiconfig');
 const typescriptParser = require('@typescript-eslint/parser');
 const typescript = require('@typescript-eslint/eslint-plugin');
 const react = require('eslint-plugin-react');
@@ -737,66 +736,57 @@ const baseConfig = [
   },
 ];
 
-let exportableConfig = [...baseConfig];
+const getExportableConfig = (userConfigChoices) => {
+  const exportableConfig = [...baseConfig];
 
-const explorerSync = cosmiconfigSync('sheriff');
-let userConfigChoices = {};
-
-try {
-  userConfigChoices = explorerSync.search();
-} catch (error) {
-  console.warn(
-    "Encountered a problem while searching for the 'sheriff' config file. The user choices will not be respected.",
-  );
-  throw new Error(error);
-}
-
-if (!userConfigChoices?.isEmpty && userConfigChoices?.config) {
-  if (userConfigChoices.config.react || userConfigChoices.config.next) {
+  if (userConfigChoices.react || userConfigChoices.next) {
     // we insert reactConfig this way because it's an array. It's an array because it contains 3 configs: react, react-hooks, react-a11y.
     exportableConfig = [...exportableConfig, ...reactConfig];
   }
 
-  if (userConfigChoices.config.jest) {
+  if (userConfigChoices.jest) {
     exportableConfig.push(jestConfig);
   }
 
-  if (userConfigChoices.config.vitest) {
+  if (userConfigChoices.vitest) {
     exportableConfig.push(vitestConfig);
   }
 
-  if (userConfigChoices.config.next) {
+  if (userConfigChoices.next) {
     exportableConfig.push(nextjsConfig);
   }
 
-  if (userConfigChoices.config.lodash) {
+  if (userConfigChoices.lodash) {
     exportableConfig.push(lodashConfig);
   }
 
-  if (userConfigChoices.config.playwright) {
+  if (userConfigChoices.playwright) {
     exportableConfig.push(playwrightConfig);
   }
-}
 
-exportableConfig.push(prettierConfig);
-exportableConfig.push(prettierOverrides);
-exportableConfig.push({ ignores });
-if (userConfigChoices.config.files) {
-  exportableConfig = exportableConfig.map((configSlice, index) => {
-    // the first item in the config is the eslintRecommendedConfig. Because it cannot be filtered (current eslintFlatConfig limitation), we are returning it as-is.
-    if (index === 0) {
-      return configSlice;
-    }
+  exportableConfig.push(prettierConfig);
+  exportableConfig.push(prettierOverrides);
+  exportableConfig.push({ ignores });
 
-    if (configSlice.ignores?.length > 0) {
-      return configSlice;
-    }
+  if (userConfigChoices.files) {
+    exportableConfig = exportableConfig.map((configSlice, index) => {
+      // the first item in the config is the eslintRecommendedConfig. Because it cannot be filtered (current eslintFlatConfig limitation), we are returning it as-is.
+      if (index === 0) {
+        return configSlice;
+      }
 
-    return {
-      ...configSlice,
-      files: userConfigChoices.config.files,
-    };
-  });
-}
+      if (configSlice.ignores?.length > 0) {
+        return configSlice;
+      }
 
-module.exports = exportableConfig;
+      return {
+        ...configSlice,
+        files: userConfigChoices.files,
+      };
+    });
+  }
+
+  return exportableConfig;
+};
+
+module.exports = getExportableConfig;

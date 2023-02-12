@@ -1,6 +1,14 @@
-const config = require('../configs/eslint.config.js');
+const getSheriffConfig = require('../configs/eslint.config.js');
 const fs = require('fs');
 const eslintRecommendedRules = require('./eslintRecommendedRules.json');
+
+const config = getSheriffConfig({
+  react: true,
+  next: true,
+  lodash: true,
+  playwright: true,
+  jest: true,
+});
 
 const printRules = () => {
   const fullRulesList = config
