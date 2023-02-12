@@ -403,7 +403,6 @@ const jestHandPickedRules = {
   'jest/prefer-expect-resolves': 2,
   'jest/prefer-hooks-on-top': 2,
   'jest/prefer-hooks-in-order': 2,
-  'jest/require-hook': 2,
   'jest/prefer-strict-equal': 2,
   'jest/valid-title': 2,
   'jest/valid-expect-in-promise': 2,
@@ -613,6 +612,23 @@ const jestConfig = {
   },
 };
 
+const vitestConfig = {
+  files: [
+    `**/*.{test,spec}.{${allJsExtensions}}`,
+    `**/tests/**`,
+    `**/__tests__/**`,
+  ],
+  plugins: {
+    jest,
+  },
+  rules: {
+    ...jest.configs.style.rules,
+    ...jestHandPickedRules,
+    '@typescript-eslint/unbound-method': 0, // see reference: https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
+    'jest/unbound-method': 2, // we need to overwrite @typescript-eslint/unbound-method
+  },
+};
+
 const prettierOverrides = {
   files: [supportedFileTypes],
   rules: {
@@ -741,8 +757,12 @@ if (!userConfigChoices?.isEmpty && userConfigChoices?.config) {
     exportableConfig = [...exportableConfig, ...reactConfig];
   }
 
-  if (userConfigChoices.config.jest || userConfigChoices.config.vitest) {
+  if (userConfigChoices.config.jest) {
     exportableConfig.push(jestConfig);
+  }
+
+  if (userConfigChoices.config.vitest) {
+    exportableConfig.push(vitestConfig);
   }
 
   if (userConfigChoices.config.next) {
