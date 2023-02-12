@@ -44,15 +44,13 @@ const getTsNamingConventionRule = ({ isTsx }) => {
       2,
       {
         selector: 'default',
-        format: ['strictCamelCase', isTsx && 'StrictPascalCase'].filter(
-          Boolean,
-        ),
+        format: ['camelCase', isTsx && 'StrictPascalCase'].filter(Boolean),
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
       },
       {
         selector: 'variable',
-        format: ['strictCamelCase', 'UPPER_CASE'],
+        format: ['camelCase', 'UPPER_CASE'],
         modifiers: ['const'],
         types: ['boolean', 'string', 'number'],
         leadingUnderscore: 'forbid',
@@ -80,7 +78,7 @@ const getTsNamingConventionRule = ({ isTsx }) => {
       {
         selector: 'variable',
         types: ['boolean'],
-        format: ['PascalCase'],
+        format: ['camelCase'],
         prefix: ['is', 'has', 'should', 'can'],
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
@@ -374,6 +372,8 @@ const playwrightHandPickedRules = {
   'playwright/prefer-lowercase-title': 2,
   'playwright/prefer-to-have-length': 2,
   'playwright/require-top-level-describe': 2,
+  'playwright/prefer-to-be': 2,
+  'playwright/prefer-strict-equal': 2,
 };
 
 const lodashHandPickedRules = {
@@ -649,7 +649,6 @@ const baseConfig = [
       tsdoc,
     },
     rules: {
-      ...typescript.configs['eslint-recommended'].rules,
       ...typescript.configs.recommended.rules,
       ...typescript.configs['recommended-requiring-type-checking'].rules,
       ...typescriptHandPickedRules,
@@ -706,18 +705,19 @@ const baseConfig = [
     },
   },
   {
-    files: [
-      '**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)',
-      '**/*.story.@(ts|tsx|js|jsx|mjs|cjs)',
-      '**/.storybook/**/*',
-    ],
+    files: storybook.configs.recommended.overrides[0].files,
     plugins: { storybook },
     rules: {
-      ...storybook.configs.recommended.rules,
-      ...storybook.configs.csf.rules,
+      ...storybook.configs.recommended.overrides[0].rules,
+      ...storybook.configs.csf.overrides[0].rules,
       ...storybook.configs['csf-strict'].rules,
       'import/no-default-export': 0,
     },
+  },
+  {
+    files: storybook.configs.recommended.overrides[1].files,
+    plugins: { storybook },
+    rules: storybook.configs.recommended.overrides[1].rules,
   },
   {
     files: [supportedFileTypes],
