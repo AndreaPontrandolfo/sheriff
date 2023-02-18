@@ -10,22 +10,23 @@
 
 1. [📜 Table of Contents](#table-of-contents)
 2. [📖 Description](#description)
-3. [🛠️ Setup](#setup)
-4. [✨ Features](#features)
+3. [✨ Features](#features)
+4. [🛠️ Setup](#setup)
 5. [🖥️ Techs](#techs)
 6. [🔑 Requirements](#requirements)
-7. [🧳 Eslint plugins](#eslint-plugins)
+7. [🔌 Eslint plugins](#eslint-plugins)
 8. [🧶 Rules](#rules)
 9. [🧠 Configuration](#configuration)
 10. [💅 Prettier support](#prettier-support)
-11. [🌎 Monorepo support](#monorepo-support)
-12. [🧐 Prior art](#prior-art)
-13. [♻ Migration guide](#migration-guide)
-14. [🧡 Contributing](#contributing)
-15. [🌤 Changelog](#changelog)
-16. [📋 License](#license)
-17. [👉 Faq](#faq)
-18. [💌 Acknowledgments](#acknowledgments)
+11. [🚀 VSCode support](#vscode-support)
+12. [🌎 Monorepo support](#monorepo-support)
+13. [🧐 Prior art](#prior-art)
+14. [♻ Migration guide](#migration-guide)
+15. [🧡 Contributing](#contributing)
+16. [🌤 Changelog](#changelog)
+17. [📋 License](#license)
+18. [👉 Faq](#faq)
+19. [💌 Acknowledgments](#acknowledgments)
 
 ## <a name="description"></a>📖 Description
 
@@ -53,6 +54,18 @@ You can think of Sheriff like `prettier` or `create-react-app`. It's a tool that
 And if you don't like something, you can easily override it, and just as easily you can extend it. See: [configuration](#configuration).
 
 [^2]: This config is particularly useful for big teams with developers of various skill levels. Sheriff was made to prevent all kind of mistakes and to align the team on the same playing field. It is battle-tested in real-world scenarios and shines especially in such.
+
+## <a name="features"></a>✨ Features
+
+- ⚡ **Batteries included**: Sheriff is a all-in-one solution. You don't need to install or configure separately anything else. Everything is included here.
+- 🔓 **No lock-in**: Sheriff is not a framework. You can extend the `eslint.config.js` beyond Sheriff as much as you like, just like you normally would. Or you can disable any rule Sheriff comes with. Sheriff doesn't impose any limitation. See: [configuration](#configuration).
+- 🏑 **Frictionless by design**: to setup Sheriff and take off, the only input required from the user is running the command `npx create-sheriff-config`. The command will automatically infer the details of your project and figure out the optimal Sheriff configuration by itself.
+- ⇆ **Interoperability**: you can plop Sheriff in your project at any moment. `create-sheriff-config` will config automatically everything for you and will warn you if you need to take any special precautions. Bottom line: it's never too late to install Sheriff.
+- 🏔 **Cutting-edge**: Sheriff is one of the first attempts in the wild to adhere to the new eslint configuration format, the `FlatConfig`. You can use Sheriff to easily and safely migrate your project to the new config format without effort. See: [migration guide](#migration-guide).
+- 👊 **Sensible**: Almost all of the rules that were hand-picked in Sheriff were chosen to counter some problematic real-world scenarios that can occur in production projects and to ensure maximum style consistency. No bloat here.
+- 🗄️ **Configurable**: Sheriff is fully configurable with its own config object. See: [configuration](#configuration).
+- 🐙 **Modular**: Sheriff has opt-in support for a [wide array of libraries](#techs).
+- ✍ **SemVer**: Sheriff [releases](https://github.com/AndreaPontrandolfo/sheriff/releases) follows [Semantic Versioning](https://semver.org/) with [Conventional Commits](https://www.conventionalcommits.org/) standards.
 
 ## <a name="setup"></a>🛠️ Setup
 
@@ -93,46 +106,56 @@ Follow these steps:
    ❯  pnpm add -D eslint-config-sheriff
    ```
 
-2. Create a `eslint.config.js` [^1] file at the root of your project and copy/paste the contents of this snippet:
+2. Create a `eslint.config.js` [^1] file at the root of your project and copy/paste the contents of the following snippet of code:
 
    ```js
    // eslint.config.js
 
    import sheriff from 'eslint-config-sheriff';
+   import { defineFlatConfig } from 'eslint-define-config';
 
-   export default [...sheriff];
+   const sheriffOptions = {
+     react: false,
+     next: false,
+     lodash: false,
+     playwright: false,
+     jest: false,
+     vitest: false,
+   };
+
+   export default defineFlatConfig([...sheriff(sheriffOptions)]);
    ```
 
-   or, if you already have a `eslint.config.js` in your project, just append `sheriff` to the configs array, like this:
+   or, if you already have a `eslint.config.js` in your project, add the Sheriff support, like this:
 
    ```js
    // eslint.config.js
 
-   import sheriff from 'eslint-config-sheriff';
+   import sheriff from 'eslint-config-sheriff'; // add this
+   import { defineFlatConfig } from 'eslint-define-config'; // add this
    // my other imports...
 
+   // add this
+   const sheriffOptions = {
+     react: false,
+     next: false,
+     lodash: false,
+     playwright: false,
+     jest: false,
+     vitest: false,
+   };
+
    export default [
+     ...sheriff(sheriffOptions), // add this
      // my other configurations...
-     ...sheriff,
    ];
    ```
 
 3. [Configure Sheriff](#configuration) (_optional_)
 4. [Setup prettier](#prettier-support) (_optional_)
+5. [Setup VSCode support](#vscode-support) (_optional_)
 
 [^1]: Sheriff is based on the [new format of Eslint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend Sheriff from a [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
-
-## <a name="features"></a>✨ Features
-
-- ⚡ **Batteries included**: Sheriff is a all-in-one solution. You don't need to install or configure separately anything else. Everything is included here.
-- 🔓 **No lock-in**: Sheriff is not a framework. You can extend the `eslint.config.js` beyond Sheriff as much as you like, just like you normally would. Or you can disable any rule Sheriff comes with. Sheriff doesn't impose any limitation. See: [configuration](#configuration).
-- 🏑 **Frictionless by design**: to setup Sheriff and take off, the only input required from the user is running the command `npx create-sheriff-config`. The command will automatically infer the details of your project and figure out the optimal Sheriff configuration by itself.
-- ⇆ **Interoperability**: you can plop Sheriff in your project at any moment. `create-sheriff-config` will config automatically everything for you and will warn you if you need to take any special precautions. Bottom line: it's never too late to install Sheriff.
-- 🏔 **Cutting-edge**: Sheriff is one of the first attempts in the wild to adhere to the new eslint configuration format, the `FlatConfig`. You can use Sheriff to easily and safely migrate your project to the new config format without effort. See: [migration guide](#migration-guide).
-- 👊 **Sensible**: Almost all of the rules that were hand-picked in Sheriff were chosen to counter some problematic real-world scenarios that can occur in production projects. No bloat here.
-- 🗄️ **Configurable**: Sheriff is fully configurable with its own config object. Just pass it to the `sheriff` function. See: [configuration](#configuration).
-- 🐙 **Modular**: Sheriff has opt-in support for a [wide array of libraries](#techs).
-- ✍ **SemVer**: Sheriff [releases](https://github.com/AndreaPontrandolfo/sheriff/releases) follows [Semantic Versioning](https://semver.org/) with [Conventional Commits](https://www.conventionalcommits.org/) standards.
 
 ## <a name="techs"></a>🖥️ Techs
 
@@ -162,7 +185,7 @@ Follow these steps:
 - [VScode eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [VScode prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
-## <a name="eslint-plugins"></a>🧳 Eslint plugins
+## <a name="eslint-plugins"></a>🔌 Eslint plugins
 
 - [@typescript/eslint](https://github.com/typescript-eslint/typescript-eslint)
 - [eslint-plugin-etc](https://github.com/cartant/eslint-plugin-etc)
@@ -191,50 +214,55 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
 
 ## <a name="configuration"></a>🧠 Configuration
 
-- Configure Sheriff as desired in the `.sheriffrc.json` file [^3].<br>
+- The `eslint-config-sheriff` package exports a `sheriff` function.<br>
+  You can configure Sheriff as desired using a simple javascript object as the first input parameter of the `sheriff` function.<br>
   Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default.
 
-  ```JSONC
-  // .sheriffrc.json (default)
+  ```js
+  // eslint.config.js
 
-  {
-    "react": false,
-    "next": false,
-    "lodash": false,
-    "playwright": false,
-    "jest": false,
-    "vitest": false
-  }
+  import sheriff from 'eslint-config-sheriff';
+  import { defineFlatConfig } from 'eslint-define-config';
+
+  // 👇 Sheriff configuration object
+  const sheriffOptions = {
+    react: false,
+    next: false,
+    lodash: false,
+    playwright: false,
+    jest: false,
+    vitest: false,
+  };
+
+  export default defineFlatConfig([...sheriff(sheriffOptions)]);
   ```
 
-[^3]: Sheriff utilizes [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) under-the-hood to power-up the Sheriff configuration. You are not forced to call the config file ".sheriffrc.json", you can choose one of the alternative file types. See [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for details.
-
-- Override any Sheriff rule as desired in the `eslint.config.js` file.<br>
-  For example:
+- You can override any Sheriff rule as desired in the `eslint.config.js` file.<br>
+  For example, let's say you want to disable a Sheriff rule, like `import/first`:
 
   ```js
   // eslint.config.js
 
   import sheriff from 'eslint-config-sheriff';
+  import { defineFlatConfig } from 'eslint-define-config';
 
-  export default [...sheriff];
-  ```
+  const sheriffOptions = {
+    react: false,
+    next: false,
+    lodash: false,
+    playwright: false,
+    jest: false,
+    vitest: false,
+  };
 
-  Let's say you want to disable a Sheriff rule, like `import/first`:
-
-  ```js
-  // eslint.config.js
-
-  import sheriff from 'eslint-config-sheriff';
-
-  export default [
-    ...sheriff,
+  export default defineFlatConfig([
+    ...sheriff(sheriffOptions),
     {
       rules: {
         'import/first': 0, // 👉 'import/first' is now disabled everywhere.
       },
     },
-  ];
+  ]);
   ```
 
   Likewise, let's say you want to enable a new rule:
@@ -243,15 +271,25 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
   // eslint.config.js
 
   import sheriff from 'eslint-config-sheriff';
+  import { defineFlatConfig } from 'eslint-define-config';
 
-  export default [
-    ...sheriff,
+  const sheriffOptions = {
+    react: false,
+    next: false,
+    lodash: false,
+    playwright: false,
+    jest: false,
+    vitest: false,
+  };
+
+  export default defineFlatConfig([
+    ...sheriff(sheriffOptions),
     {
       rules: {
-        'no-undef': 2,
+        'import/first': 2, // 👉 'import/first' is now enabled everywhere.
       },
     },
-  ];
+  ]);
   ```
 
   This is just the standard behavior of the new configuration system of Eslint, which I'm illustrating here for your convenience. Sheriff doesn't alter this in any way.<br>
@@ -269,10 +307,27 @@ Instead, for your local editing experience, it's recommended to install a [edito
 If you want to enforce Prettier at pre-commit stage, see the [official docs](https://prettier.io/docs/en/option-philosophy.html).<br>
 To enforce Prettier in CI, see the [CLI docs](https://prettier.io/docs/en/cli.html).
 
+## <a name="vscode-support"></a>🚀 VSCode support
+
+The Eslint `FlatConfig` support is currently not enabled by default by the [VSCode Eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). It needs to be enabled manually with a flag.
+It's advisable to enable it at the workspace level, meaning in the project `.vscode/settings.json`, like so:
+
+```JSONC
+// settings.json
+
+{
+  "eslint.experimental.useFlatConfig": true
+}
+```
+
 ## <a name="monorepo-support"></a>🌎 Monorepo support
 
 While Sheriff can be made to work at the _root_ of monorepos, it is highly advisible to not do so.<br>
-It works fine in singular packages inside monorepos. To make use of the [Eslint VScode Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) in monorepos, use the setting: [eslint.workingDirectories](https://github.com/microsoft/vscode-eslint#mono-repository-setup)
+It works fine in singular packages inside monorepos.
+
+### Monorepo support in VSCode
+
+To make use of the [Eslint VScode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) in monorepos, use the [eslint.workingDirectories](https://github.com/microsoft/vscode-eslint#mono-repository-setup) setting.
 
 ## <a name="prior-art"></a>🧐 Prior art
 
@@ -301,20 +356,25 @@ If you are setting up Sheriff in an already established codebase, follow these s
 4. Make sure to uninstall all the packages that Sheriff already incorporates out-of-the-box. [Here](#eslint-plugins) is the list.
 5. In massive codebases it can be troublesome to adapt to all these rules all at once. It is preferable to progressively fix the errors at your own pace, possibly with atomic commits. You can achieve this by leveraging 2 techniques:
 
-   - open the `.sheriffrc.json` file and add a key `files` in the JSON object. The value accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax. Only the matching files found in this array will be linted. See example below:
+   - open the `eslint.config.js` file and add a key `files` in the `sheriffOptions` object. The value accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax. Only the matching files found in this array will be linted. See example below:
 
-     ```JSONC
-     // .sheriffrc.json
+     ```js
+     // eslint.config.js
 
-     {
-       "files": ["./src/**/*"],
-       "react": false,
-       "next": false,
-       "lodash": false,
-       "playwright": false,
-       "jest": false,
-       "vitest": false
-     }
+     import sheriff from 'eslint-config-sheriff';
+     import { defineFlatConfig } from 'eslint-define-config';
+
+     const sheriffOptions = {
+       files: ['./src/**/*'], // 👉 Only the files in the src directory will be linted.
+       react: false,
+       next: false,
+       lodash: false,
+       playwright: false,
+       jest: false,
+       vitest: false,
+     };
+
+     export default defineFlatConfig([...sheriff(sheriffOptions)]);
      ```
 
      > **Note**
