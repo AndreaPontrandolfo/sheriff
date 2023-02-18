@@ -3,7 +3,6 @@
   "version": "0.0.0-development",
   "description": "A comprehensive Eslint configuration.",
   "main": "index.js",
-  "types": "types/index.d.ts",
   "exports": {
     ".": {
       "require": "./index.js",
@@ -13,8 +12,7 @@
   },
   "files": [
     "index.js",
-    "configs",
-    "types"
+    "configs"
   ],
   "author": {
     "name": "Andrea Pontrandolfo",
@@ -49,7 +47,6 @@
     "@shopify/eslint-plugin": "^42.0.2",
     "@typescript-eslint/eslint-plugin": "^5.46.0",
     "@typescript-eslint/parser": "^5.46.0",
-    "cosmiconfig": "^8.0.0",
     "eslint": "8.33.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.3",
