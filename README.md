@@ -33,7 +33,7 @@
 
 Sheriff is a comprehensive Eslint configuration. It supports [various popular technologies](#techs).<br>
 
-> ⚠️ At the moment, Sheriff supports only Typescript codebases with modern Ecmascript standards. Support for vanilla Javascript will come at a later time. See: [roadmap](#roadmap).
+> ⚠️ At the moment, Sheriff supports only Typescript codebases with modern Ecmascript standards. Support for vanilla Javascript will come at a later time.
 
 ### 🔑 Key points
 
@@ -48,7 +48,7 @@ Managing a complex Eslint configuration takes time and effort. **Sheriff does it
 ### <a name="philosophy"></a>💭 Philosophy / Criteria
 
 This library is very opinionated, but it's for the better. I took a lot of decisions so you don't have to [^2].<br>
-You can now quickstart static analysis in all your Typescript projects with ease. It's just 1 `create-sheriff-config`.<br>
+You can now quickstart static analysis in all your Typescript projects with ease. Just type `create-sheriff-config` in a CLI and you are good to go.<br>
 You can think of Sheriff like `prettier` or `create-react-app`. It's a tool that comes battery-packed with optimal defaults. It removes configuration decisions from the equation, so you or your team can focus on developing the actual product.<br>
 And if you don't like something, you can easily override it, and just as easily you can extend it. See: [configuration](#configuration).
 
@@ -130,7 +130,7 @@ Follow these steps:
 - ⇆ **Interoperability**: you can plop Sheriff in your project at any moment. `create-sheriff-config` will config automatically everything for you and will warn you if you need to take any special precautions. Bottom line: it's never too late to install Sheriff.
 - 🏔 **Cutting-edge**: Sheriff is one of the first attempts in the wild to adhere to the new eslint configuration format, the `FlatConfig`. You can use Sheriff to easily and safely migrate your project to the new config format without effort. See: [migration guide](#migration-guide).
 - 👊 **Sensible**: Almost all of the rules that were hand-picked in Sheriff were chosen to counter some problematic real-world scenarios that can occur in production projects. No bloat here.
-- 🗄️ **Configurable**: Sheriff is fully configurable with its own config file `.sheriffrc.json`. See: [configuration](#configuration).
+- 🗄️ **Configurable**: Sheriff is fully configurable with its own config object. Just pass it to the `sheriff` function. See: [configuration](#configuration).
 - 🐙 **Modular**: Sheriff has opt-in support for a [wide array of libraries](#techs).
 - ✍ **SemVer**: Sheriff [releases](https://github.com/AndreaPontrandolfo/sheriff/releases) follows [Semantic Versioning](https://semver.org/) with [Conventional Commits](https://www.conventionalcommits.org/) standards.
 
