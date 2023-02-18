@@ -261,6 +261,9 @@ const baseEslintHandPickedRules = {
 };
 
 const typescriptHandPickedRules = {
+  '@typescript-eslint/ban-ts-comment': 0,
+  '@typescript-eslint/no-unsafe-assignment': 0,
+  '@typescript-eslint/no-array-constructor': 0, // this is unnecessary because we are already using the basic eslint version in conjunction with @typescript-eslint/array-type
   '@typescript-eslint/return-await': 2,
   '@typescript-eslint/no-redundant-type-constituents': 2,
   '@typescript-eslint/no-unnecessary-boolean-literal-compare': 2,
@@ -299,12 +302,10 @@ const typescriptHandPickedRules = {
       enforceForJSX: true,
     },
   ],
-  '@typescript-eslint/no-array-constructor': 0, // this is unnecessary because we are already using the basic eslint version in conjunction with @typescript-eslint/array-type
   '@typescript-eslint/array-type': 2,
   '@typescript-eslint/no-empty-function': 2,
   '@typescript-eslint/prefer-optional-chain': 2,
   '@typescript-eslint/dot-notation': 2,
-  '@typescript-eslint/no-unsafe-assignment': 0,
   '@typescript-eslint/no-shadow': [
     2,
     {
@@ -440,16 +441,20 @@ const importHandPickedRules = {
   'import/namespace': 0, // unnecessary. Feature already provided by Typescript.
   'import/default': 0, // unnecessary. Feature already provided by Typescript.
   'import/no-named-as-default-member': 0, // unnecessary. Feature already provided by Typescript.
-  'import/no-unresolved': [2, { commonjs: true }], // required by eslint-import-resolver-typescript.
+  'import/no-unresolved': [2, { commonjs: true, caseSensitiveStrict: true }], // required by eslint-import-resolver-typescript.
   'import/first': 2,
   'import/order': [2, { 'newlines-between': 'never' }],
   'import/no-default-export': 2,
   'import/no-named-as-default': 2,
-  // 'import/consistent-type-specifier-style': 2, // This is yet to be released. Should be enabled with next version of eslint-plugin-import.
+  'import/consistent-type-specifier-style': 2,
   'import/no-namespace': 2,
-  'import/no-duplicates': 2,
-  'import/newline-after-import': 2,
-  // TODO: seems to cause a bug. Needs monitoring. See: https://github.com/eslint/eslint/issues/16485
+  'import/no-duplicates': [2, { 'prefer-inline': true }],
+  'import/newline-after-import': [2, { considerComments: true }],
+  // TODO: seems to cause a bug. Needs monitoring.
+  // See:
+  //  - https://github.com/eslint/eslint/issues/16485
+  //  - https://github.com/import-js/eslint-plugin-import/issues?q=is%3Aissue+is%3Aopen+no-unused-modules
+  //    - https://github.com/import-js/eslint-plugin-import/issues/2678
   // 'import/no-unused-modules': [
   //   2,
   //   {
