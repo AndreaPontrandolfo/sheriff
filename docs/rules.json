@@ -61,7 +61,7 @@
   "use-isnan": 2,
   "valid-typeof": 2,
   "@typescript-eslint/adjacent-overload-signatures": 2,
-  "@typescript-eslint/ban-ts-comment": 2,
+  "@typescript-eslint/ban-ts-comment": 0,
   "@typescript-eslint/ban-types": 2,
   "no-array-constructor": 2,
   "@typescript-eslint/no-array-constructor": 0,
@@ -547,7 +547,8 @@
   "import/no-unresolved": [
     2,
     {
-      "commonjs": true
+      "commonjs": true,
+      "caseSensitiveStrict": true
     }
   ],
   "import/first": 2,
@@ -559,9 +560,20 @@
   ],
   "import/no-default-export": 0,
   "import/no-named-as-default": 2,
+  "import/consistent-type-specifier-style": 2,
   "import/no-namespace": 2,
-  "import/no-duplicates": 2,
-  "import/newline-after-import": 2,
+  "import/no-duplicates": [
+    2,
+    {
+      "prefer-inline": true
+    }
+  ],
+  "import/newline-after-import": [
+    2,
+    {
+      "considerComments": true
+    }
+  ],
   "import/no-useless-path-segments": [
     2,
     {
