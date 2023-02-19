@@ -31,7 +31,10 @@
     "sonarjs",
     "unicorn",
     "react",
-    "next"
+    "next",
+    "storybook",
+    "jest",
+    "vitest"
   ],
   "homepage": "https://sheriffrc.gitbook.io/sheriff/",
   "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",

@@ -1,5 +1,5 @@
 <br>
-<p align="center"><img src="https://github.com/AndreaPontrandolfo/sheriff/blob/master/assets/images/sheriff_icon.png" width="148"></p>
+<p align="center"><img src="https://github.com/AndreaPontrandolfo/sheriff/blob/master/assets/images/Sheriff_Logo_v4.png" width="148"></p>
 
 # Sheriff
 
