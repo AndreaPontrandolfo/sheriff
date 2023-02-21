@@ -75,17 +75,21 @@ For greenfield projects, the below setup will be enough. However, for already es
 
 ### <a name="automatic-setup"></a>🤖 Automatic setup (_recommended_)
 
-Let the CLI take care of everything! Just run this command in your terminal:
+Let the CLI take care of everything!
 
-```bash
-❯  npx create-sheriff-config
-```
+1. Just run this command in your terminal:
 
-or
+   ```bash
+   ❯  npx create-sheriff-config
+   ```
 
-```bash
-❯  pnpx create-sheriff-config
-```
+   or
+
+   ```bash
+   ❯  pnpx create-sheriff-config
+   ```
+
+2. [Setup VSCode support](#vscode-support) (_optional_)
 
 ...and you are good to go! Happy hacking 🎉
 
