@@ -560,7 +560,10 @@
   ],
   "import/no-default-export": 0,
   "import/no-named-as-default": 2,
-  "import/consistent-type-specifier-style": 2,
+  "import/consistent-type-specifier-style": [
+    2,
+    "prefer-inline"
+  ],
   "import/no-namespace": 2,
   "import/no-duplicates": [
     2,
@@ -672,10 +675,10 @@
   "react/jsx-filename-extension": [
     2,
     {
+      "allow": "always",
       "extensions": [
         ".tsx"
-      ],
-      "allow": "as-needed"
+      ]
     }
   ],
   "react/no-multi-comp": 2,
@@ -693,7 +696,7 @@
       "reservedFirst": false
     }
   ],
-  "only-export-components/only-export-components": 2,
+  "only-export-components/only-export-components": 0,
   "jsx-a11y/alt-text": 2,
   "jsx-a11y/anchor-has-content": 2,
   "jsx-a11y/anchor-is-valid": 2,
