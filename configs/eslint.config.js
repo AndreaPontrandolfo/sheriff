@@ -444,7 +444,7 @@ const importHandPickedRules = {
   'import/order': [2, { 'newlines-between': 'never' }],
   'import/no-default-export': 2,
   'import/no-named-as-default': 2,
-  'import/consistent-type-specifier-style': 2,
+  'import/consistent-type-specifier-style': [2, 'prefer-inline'],
   'import/no-namespace': 2,
   'import/no-duplicates': [2, { 'prefer-inline': true }],
   'import/newline-after-import': [2, { considerComments: true }],
@@ -560,6 +560,18 @@ const reactConfig = [
       'react-hooks': reactHooks,
     },
     rules: reactHooks.configs.recommended.rules,
+  },
+  // Specific overrides for storybook
+  {
+    files: ['**/*.stories.tsx'],
+    plugins: { 'only-export-components': reactRefresh },
+    rules: {
+      'only-export-components/only-export-components': 0,
+      'react/jsx-filename-extension': [
+        2,
+        { allow: 'always', extensions: ['.tsx'] },
+      ],
+    },
   },
 ];
 
