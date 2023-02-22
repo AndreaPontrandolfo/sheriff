@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@next/eslint-plugin-next': ^12.3.1
+  '@next/eslint-plugin-next': ^13.0.0
   '@shopify/eslint-plugin': ^42.0.2
   '@typescript-eslint/eslint-plugin': ^5.46.0
   '@typescript-eslint/parser': ^5.46.0
@@ -28,7 +28,7 @@ specifiers:
   typescript: 4.9.4
 
 dependencies:
-  '@next/eslint-plugin-next': 12.3.4
+  '@next/eslint-plugin-next': 13.1.6
   '@shopify/eslint-plugin': 42.0.2_b5a7xwzuauwkatyw76kaoqyhwu
   '@typescript-eslint/eslint-plugin': 5.46.1_m25rxqdlhbmd4b333dnrgl4wmm
   '@typescript-eslint/parser': 5.46.1_zkdaqh7it7uc4cvz2haft7rc6u
@@ -192,8 +192,8 @@ packages:
     resolution: {integrity: sha512-9b8mPpKrfeGRuhFH5iO1iwCLeIIsV6+H1sRfxbkoGXIyQE2BTsPd9zqSqQJ+pv5sJ/hT5M1zvOFL02MnEezFug==}
     dev: false
 
-  /@next/eslint-plugin-next/12.3.4:
-    resolution: {integrity: sha512-BFwj8ykJY+zc1/jWANsDprDIu2MgwPOIKxNVnrKvPs+f5TPegrVnem8uScND+1veT4B7F6VeqgaNLFW1Hzl9Og==}
+  /@next/eslint-plugin-next/13.1.6:
+    resolution: {integrity: sha512-o7cauUYsXjzSJkay8wKjpKJf2uLzlggCsGUkPu3lP09Pv97jYlekTC20KJrjQKmSv5DXV0R/uks2ZXhqjNkqAw==}
     dependencies:
       glob: 7.1.7
     dev: false
