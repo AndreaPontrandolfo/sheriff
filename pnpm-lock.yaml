@@ -22,7 +22,7 @@ specifiers:
   eslint-plugin-sonarjs: ^0.15.0
   eslint-plugin-storybook: ^0.6.8
   eslint-plugin-tsdoc: ^0.2.17
-  eslint-plugin-unicorn: ^45.0.1
+  eslint-plugin-unicorn: ^46.0.0
   husky: ^8.0.0
   semantic-release: 19.0.5
   typescript: 4.9.4
@@ -49,7 +49,7 @@ dependencies:
   eslint-plugin-sonarjs: 0.15.0_eslint@8.33.0
   eslint-plugin-storybook: 0.6.8_zkdaqh7it7uc4cvz2haft7rc6u
   eslint-plugin-tsdoc: 0.2.17
-  eslint-plugin-unicorn: 45.0.2_eslint@8.33.0
+  eslint-plugin-unicorn: 46.0.0_eslint@8.33.0
 
 devDependencies:
   husky: 8.0.2
@@ -1843,8 +1843,8 @@ packages:
       '@microsoft/tsdoc-config': 0.16.2
     dev: false
 
-  /eslint-plugin-unicorn/45.0.2_eslint@8.33.0:
-    resolution: {integrity: sha512-Y0WUDXRyGDMcKLiwgL3zSMpHrXI00xmdyixEGIg90gHnj0PcHY4moNv3Ppje/kDivdAy5vUeUr7z211ImPv2gw==}
+  /eslint-plugin-unicorn/46.0.0_eslint@8.33.0:
+    resolution: {integrity: sha512-j07WkC+PFZwk8J33LYp6JMoHa1lXc1u6R45pbSAipjpfpb7KIGr17VE2D685zCxR5VL4cjrl65kTJflziQWMDA==}
     engines: {node: '>=14.18'}
     peerDependencies:
       eslint: '>=8.28.0'
