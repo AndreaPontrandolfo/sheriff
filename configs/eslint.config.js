@@ -1,3 +1,4 @@
+const eslintRecommended = require('@eslint/js');
 const typescriptParser = require('@typescript-eslint/parser');
 const typescript = require('@typescript-eslint/eslint-plugin');
 const react = require('eslint-plugin-react');
@@ -29,7 +30,7 @@ const ignores = [
   '**/build/**',
   '**/artifacts/**',
   '**/coverage/**',
-  'eslint.config.js', // we currently cannot lint the eslint.config.js itself. It is currently only provided as a .js file amd this config currently only supports .ts files. Therefore, eslint.config.js can only be re-enabled once this config support pure .js files too, or the Eslitn team support the eslint.config.ts file.
+  'eslint.config.js', // we currently cannot lint the eslint.config.js itself. It is currently only provided as a .js file amd this config currently only supports .ts files. Therefore, eslint.config.js can only be re-enabled once this config support pure .js files too, or the Eslint team support the eslint.config.ts file.
 ];
 
 const messages = {
@@ -658,7 +659,10 @@ const prettierOverrides = {
 };
 
 const baseConfig = [
-  'eslint:recommended',
+  {
+    files: [supportedFileTypes],
+    rules: eslintRecommended.configs.recommended.rules,
+  },
   {
     files: [supportedFileTypes],
     languageOptions: languageOptionsTypescript,
@@ -769,7 +773,7 @@ const getExportableConfig = (userConfigChoices = {}) => {
   let exportableConfig = [...baseConfig];
 
   if (userConfigChoices.react || userConfigChoices.next) {
-    // we insert reactConfig this way because it's an array. It's an array because it contains 3 configs: react, react-hooks, react-a11y.
+    // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and only-export-components.
     exportableConfig = [...exportableConfig, ...reactConfig];
   }
 
@@ -798,12 +802,7 @@ const getExportableConfig = (userConfigChoices = {}) => {
   exportableConfig.push({ ignores });
 
   if (userConfigChoices.files) {
-    exportableConfig = exportableConfig.map((configSlice, index) => {
-      // the first item in the config is the eslintRecommendedConfig. Because it cannot be filtered (current eslintFlatConfig limitation), we are returning it as-is.
-      if (index === 0) {
-        return configSlice;
-      }
-
+    exportableConfig = exportableConfig.map((configSlice) => {
       if (configSlice.ignores?.length > 0) {
         return configSlice;
       }
