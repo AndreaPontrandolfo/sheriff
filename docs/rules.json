@@ -460,7 +460,12 @@
   "etc/no-enum": 2,
   "etc/no-misused-generics": 2,
   "etc/no-assign-mutated-array": 2,
-  "@shopify/prefer-early-return": 2,
+  "@regru/prefer-early-return/prefer-early-return": [
+    2,
+    {
+      "maximumStatements": 1
+    }
+  ],
   "unicorn/better-regex": 2,
   "unicorn/explicit-length-check": 2,
   "unicorn/consistent-function-scoping": 2,
@@ -698,6 +703,7 @@
   ],
   "only-export-components/only-export-components": 0,
   "jsx-a11y/alt-text": 2,
+  "jsx-a11y/anchor-ambiguous-text": 0,
   "jsx-a11y/anchor-has-content": 2,
   "jsx-a11y/anchor-is-valid": 2,
   "jsx-a11y/aria-activedescendant-has-tabindex": 2,
@@ -982,15 +988,12 @@
   ],
   "lodash-f/prefer-find": 1,
   "lodash-f/prefer-flat-map": 1,
-  "lodash-f/prefer-get": [
-    2,
-    3
-  ],
+  "lodash-f/prefer-get": 0,
   "lodash-f/prefer-immutable-method": 1,
   "lodash-f/prefer-includes": [
-    1,
+    2,
     {
-      "includeNative": true
+      "includeNative": false
     }
   ],
   "lodash-f/prefer-invoke-map": 1,
@@ -998,23 +1001,20 @@
   "lodash-f/prefer-is-nil": 1,
   "lodash-f/prefer-lodash-chain": 1,
   "lodash-f/prefer-lodash-method": 0,
-  "lodash-f/prefer-lodash-typecheck": 2,
+  "lodash-f/prefer-lodash-typecheck": 1,
   "lodash-f/prefer-map": 1,
-  "lodash-f/prefer-matches": [
-    2,
-    3
-  ],
+  "lodash-f/prefer-matches": 0,
   "lodash-f/prefer-nullish-coalescing": 1,
-  "lodash-f/prefer-noop": 1,
-  "lodash-f/prefer-over-quantifier": 1,
+  "lodash-f/prefer-noop": 0,
+  "lodash-f/prefer-over-quantifier": 0,
   "lodash-f/prefer-reject": [
     2,
     3
   ],
   "lodash-f/prefer-some": [
-    1,
+    2,
     {
-      "includeNative": true
+      "includeNative": false
     }
   ],
   "lodash-f/prefer-startswith": 1,

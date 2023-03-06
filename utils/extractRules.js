@@ -21,7 +21,10 @@ const printRules = () => {
         return element;
       }
     });
-  const fullRulesListFlattened = Object.assign(...fullRulesList);
+  let fullRulesListFlattened = {};
+  for (const configSlice of fullRulesList) {
+    Object.assign(fullRulesListFlattened, configSlice);
+  }
   const fullRulesListFlattenedWithTransformedSeverity = {};
   for (let [key, value] of Object.entries(fullRulesListFlattened)) {
     if (value === 'error') {
