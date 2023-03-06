@@ -1,6 +1,5 @@
 const getSheriffConfig = require('../configs/eslint.config.js');
 const fs = require('fs');
-const eslintRecommendedRules = require('./eslintRecommendedRules.json');
 
 const config = getSheriffConfig({
   react: true,
@@ -23,12 +22,8 @@ const printRules = () => {
       }
     });
   const fullRulesListFlattened = Object.assign(...fullRulesList);
-  const fullRulesListFlattenedWithBase = {
-    ...eslintRecommendedRules,
-    ...fullRulesListFlattened,
-  };
   const fullRulesListFlattenedWithTransformedSeverity = {};
-  for (let [key, value] of Object.entries(fullRulesListFlattenedWithBase)) {
+  for (let [key, value] of Object.entries(fullRulesListFlattened)) {
     if (value === 'error') {
       fullRulesListFlattenedWithTransformedSeverity[key] = 2;
     }
