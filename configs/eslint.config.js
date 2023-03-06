@@ -15,7 +15,7 @@ const fp = require('eslint-plugin-fp');
 const jest = require('eslint-plugin-jest');
 const etc = require('eslint-plugin-etc');
 const reactRefresh = require('eslint-plugin-react-refresh');
-const shopify = require('@shopify/eslint-plugin');
+const preferEarlyReturn = require('@regru/eslint-plugin-prefer-early-return');
 const tsdoc = require('eslint-plugin-tsdoc');
 const storybook = require('eslint-plugin-storybook');
 
@@ -377,10 +377,15 @@ const playwrightHandPickedRules = {
 };
 
 const lodashHandPickedRules = {
-  'lodash-f/prefer-lodash-method': 0,
   'lodash-f/import-scope': [2, 'member'],
-  'unicorn/no-instanceof-array': 0, // if we want to enable prefer-lodash-typecheck, we need to disable this
-  'lodash-f/prefer-lodash-typecheck': 2,
+  'lodash-f/prefer-some': [2, { includeNative: false }],
+  'lodash-f/prefer-includes': [2, { includeNative: false }],
+  'lodash-f/prefer-lodash-method': 0,
+  'lodash-f/prefer-noop': 0,
+  'lodash-f/prefer-matches': 0,
+  'lodash-f/prefer-over-quantifier': 0,
+  'lodash-f/prefer-get': 0,
+  'unicorn/no-instanceof-array': 0, // we are enabling "prefer-lodash-typecheck", therefore we need to disable this.
 };
 
 const jestHandPickedRules = {
@@ -688,8 +693,15 @@ const baseConfig = [
   },
   {
     files: [supportedFileTypes],
-    plugins: { '@shopify': shopify },
-    rules: { '@shopify/prefer-early-return': 2 },
+    plugins: { '@regru/prefer-early-return': preferEarlyReturn },
+    rules: {
+      '@regru/prefer-early-return/prefer-early-return': [
+        2,
+        {
+          maximumStatements: 1,
+        },
+      ],
+    },
   },
   {
     files: [supportedFileTypes],
