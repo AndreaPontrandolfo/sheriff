@@ -370,6 +370,14 @@ If you are setting up Sheriff in an already established codebase, follow these s
 
      const sheriffOptions = {
        files: ['./src/**/*'], // 👉 Only the files in the src directory will be linted.
+       ignores: [
+        '**/node_modules/**"',
+        '.git/**',
+        '**/dist/**',
+        '**/build/**',
+        '**/artifacts/**',
+        '**/coverage/**',
+       ],
        react: false,
        next: false,
        lodash: false,

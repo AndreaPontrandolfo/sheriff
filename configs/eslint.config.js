@@ -799,7 +799,7 @@ const getExportableConfig = (userConfigChoices = {}) => {
 
   exportableConfig.push(prettierConfig);
   exportableConfig.push(prettierOverrides);
-  exportableConfig.push({ ignores });
+  exportableConfig.push({ ignores: userConfigChoices.ignores ?? ignores });
 
   if (userConfigChoices.files) {
     exportableConfig = exportableConfig.map((configSlice) => {
