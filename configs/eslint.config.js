@@ -30,7 +30,7 @@ const ignores = [
   '**/build/**',
   '**/artifacts/**',
   '**/coverage/**',
-  'eslint.config.js', // we currently cannot lint the eslint.config.js itself. It is currently only provided as a .js file amd this config currently only supports .ts files. Therefore, eslint.config.js can only be re-enabled once this config support pure .js files too, or the Eslint team support the eslint.config.ts file.
+  'eslint.config.js', // we currently cannot lint the eslint.config.js itself. It is currently only provided as a .js file and this config currently only supports .ts files. Therefore, eslint.config.js can only be re-enabled once this config support pure .js files too, or the Eslint team support the eslint.config.ts file.
 ];
 
 const messages = {
@@ -507,79 +507,85 @@ const reactHandPickedRules = {
   ],
 };
 
-const languageOptionsTypescript = {
-  parser: typescriptParser,
-  parserOptions: {
-    ecmaFeatures: { modules: true },
-    project: './tsconfig.json',
-  },
-};
-
-const languageOptionsTypescriptReact = {
-  parser: typescriptParser,
-  parserOptions: {
-    ecmaFeatures: { modules: true, jsx: true },
-    project: './tsconfig.json',
-    jsxPragma: null, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
-  },
-};
-
-const reactConfig = [
-  {
-    files: [supportedFileTypes],
-    plugins: {
-      react,
+const getLanguageOptionsTypescript = (userChosenTSConfig) => {
+  return {
+    parser: typescriptParser,
+    parserOptions: {
+      ecmaFeatures: { modules: true },
+      project: userChosenTSConfig || './tsconfig.json',
     },
-    languageOptions: languageOptionsTypescriptReact,
-    settings: {
-      react: {
-        version: 'detect',
+  };
+};
+
+const getLanguageOptionsTypescriptReact = (userChosenTSConfig) => {
+  return {
+    parser: typescriptParser,
+    parserOptions: {
+      ecmaFeatures: { modules: true, jsx: true },
+      project: userChosenTSConfig || './tsconfig.json',
+      jsxPragma: null, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
+    },
+  };
+};
+
+const getReactConfig = (customTSConfigPath) => {
+  return [
+    {
+      files: [supportedFileTypes],
+      plugins: {
+        react,
+      },
+      languageOptions: getLanguageOptionsTypescriptReact(customTSConfigPath),
+      settings: {
+        react: {
+          version: 'detect',
+        },
+      },
+      rules: {
+        ...react.configs.recommended.rules,
+        ...react.configs['jsx-runtime'].rules, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
+        ...reactHandPickedRules,
       },
     },
-    rules: {
-      ...react.configs.recommended.rules,
-      ...react.configs['jsx-runtime'].rules, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
-      ...reactHandPickedRules,
+    {
+      files: ['**/*{jsx,tsx}'],
+      rules: getTsNamingConventionRule({ isTsx: true }),
     },
-  },
-  {
-    files: ['**/*{jsx,tsx}'],
-    rules: getTsNamingConventionRule({ isTsx: true }),
-  },
-  {
-    files: ['**/*{jsx,tsx}'],
-    plugins: { 'only-export-components': reactRefresh },
-    rules: {
-      'only-export-components/only-export-components': 2,
+    {
+      files: ['**/*{jsx,tsx}'],
+      plugins: { 'only-export-components': reactRefresh },
+      rules: {
+        'only-export-components/only-export-components': 2,
+      },
     },
-  },
-  {
-    files: [supportedFileTypes],
-    plugins: {
-      'jsx-a11y': reactAccessibility,
+    {
+      files: [supportedFileTypes],
+      plugins: {
+        'jsx-a11y': reactAccessibility,
+      },
+      rules: reactAccessibility.configs.recommended.rules,
     },
-    rules: reactAccessibility.configs.recommended.rules,
-  },
-  {
-    files: [supportedFileTypes],
-    plugins: {
-      'react-hooks': reactHooks,
+    {
+      files: [supportedFileTypes],
+      plugins: {
+        'react-hooks': reactHooks,
+      },
+      rules: reactHooks.configs.recommended.rules,
     },
-    rules: reactHooks.configs.recommended.rules,
-  },
-  // Specific overrides for storybook
-  {
-    files: ['**/*.stories.tsx'],
-    plugins: { 'only-export-components': reactRefresh },
-    rules: {
-      'only-export-components/only-export-components': 0,
-      'react/jsx-filename-extension': [
-        2,
-        { allow: 'always', extensions: ['.tsx'] },
-      ],
+    // Specific overrides for storybook
+    {
+      files: ['**/*.stories.tsx'],
+      plugins: { 'only-export-components': reactRefresh },
+      rules: {
+        'only-export-components/only-export-components': 0,
+        'react/jsx-filename-extension': [
+          2,
+          { allow: 'always', extensions: ['.tsx'] },
+        ],
+      },
     },
-  },
-];
+  ];
+};
 
 const lodashConfig = {
   files: [supportedFileTypes],
@@ -658,123 +664,130 @@ const prettierOverrides = {
   },
 };
 
-const baseConfig = [
-  {
-    files: [supportedFileTypes],
-    rules: eslintRecommended.configs.recommended.rules,
-  },
-  {
-    files: [supportedFileTypes],
-    languageOptions: languageOptionsTypescript,
-  },
-  {
-    files: [supportedFileTypes],
-    plugins: {
-      '@typescript-eslint': typescript,
-      tsdoc,
+const getBaseConfig = (customTSConfigPath) => {
+  return [
+    {
+      files: [supportedFileTypes],
+      rules: eslintRecommended.configs.recommended.rules,
     },
-    rules: {
-      ...typescript.configs.recommended.rules,
-      ...typescript.configs['recommended-requiring-type-checking'].rules,
-      ...typescriptHandPickedRules,
-      ...getTsNamingConventionRule({ isTsx: false }),
-      'tsdoc/syntax': 2,
+    {
+      files: [supportedFileTypes],
+      languageOptions: getLanguageOptionsTypescript(customTSConfigPath),
     },
-  },
-  {
-    files: [supportedFileTypes],
-    rules: baseEslintHandPickedRules,
-  },
-  {
-    files: [supportedFileTypes],
-    plugins: { fp },
-    rules: fpHandPickedRules,
-  },
-  {
-    files: [supportedFileTypes],
-    plugins: { etc },
-    rules: etcHandPickedRules,
-  },
-  {
-    files: [supportedFileTypes],
-    plugins: { '@regru/prefer-early-return': preferEarlyReturn },
-    rules: {
-      '@regru/prefer-early-return/prefer-early-return': [
-        2,
-        {
-          maximumStatements: 1,
+    {
+      files: [supportedFileTypes],
+      plugins: {
+        '@typescript-eslint': typescript,
+        tsdoc,
+      },
+      rules: {
+        ...typescript.configs.recommended.rules,
+        ...typescript.configs['recommended-requiring-type-checking'].rules,
+        ...typescriptHandPickedRules,
+        ...getTsNamingConventionRule({ isTsx: false }),
+        'tsdoc/syntax': 2,
+      },
+    },
+    {
+      files: [supportedFileTypes],
+      rules: baseEslintHandPickedRules,
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: { fp },
+      rules: fpHandPickedRules,
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: { etc },
+      rules: etcHandPickedRules,
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: { '@regru/prefer-early-return': preferEarlyReturn },
+      rules: {
+        '@regru/prefer-early-return/prefer-early-return': [
+          2,
+          {
+            maximumStatements: 1,
+          },
+        ],
+      },
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: { unicorn },
+      rules: unicornHandPickedRules,
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: { sonarjs },
+      rules: {
+        ...sonarjs.configs.recommended.rules,
+        ...sonarjsHandPickedRules,
+      },
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: { import: pluginImport },
+      rules: importHandPickedRules,
+      settings: {
+        'import/parsers': {
+          '@typescript-eslint/parser': ['.ts', '.tsx'],
         },
-      ],
-    },
-  },
-  {
-    files: [supportedFileTypes],
-    plugins: { unicorn },
-    rules: unicornHandPickedRules,
-  },
-  {
-    files: [supportedFileTypes],
-    plugins: { sonarjs },
-    rules: {
-      ...sonarjs.configs.recommended.rules,
-      ...sonarjsHandPickedRules,
-    },
-  },
-  {
-    files: [supportedFileTypes],
-    plugins: { import: pluginImport },
-    rules: importHandPickedRules,
-    settings: {
-      'import/parsers': {
-        '@typescript-eslint/parser': ['.ts', '.tsx'],
-      },
-      'import/resolver': {
-        typescript: {
-          alwaysTryTypes: true,
+        'import/resolver': {
+          typescript: {
+            alwaysTryTypes: true,
+          },
+          node: true,
         },
-        node: true,
       },
     },
-  },
-  {
-    files: storybook.configs.recommended.overrides[0].files,
-    plugins: { storybook },
-    rules: {
-      ...storybook.configs.recommended.overrides[0].rules,
-      ...storybook.configs.csf.overrides[0].rules,
-      ...storybook.configs['csf-strict'].rules,
-      'import/no-default-export': 0,
-    },
-  },
-  {
-    files: storybook.configs.recommended.overrides[1].files,
-    plugins: { storybook },
-    rules: storybook.configs.recommended.overrides[1].rules,
-  },
-  {
-    files: [supportedFileTypes],
-    plugins: { jsdoc },
-    rules: jsdocHandPickedRules,
-    settings: {
-      jsdoc: {
-        mode: 'typescript',
+    {
+      files: storybook.configs.recommended.overrides[0].files,
+      plugins: { storybook },
+      rules: {
+        ...storybook.configs.recommended.overrides[0].rules,
+        ...storybook.configs.csf.overrides[0].rules,
+        ...storybook.configs['csf-strict'].rules,
+        'import/no-default-export': 0,
       },
     },
-  },
-  {
-    files: [`**/*.config.{${allJsExtensions}}`],
-    rules: {
-      'import/no-default-export': 0,
+    {
+      files: storybook.configs.recommended.overrides[1].files,
+      plugins: { storybook },
+      rules: storybook.configs.recommended.overrides[1].rules,
     },
-  },
-];
+    {
+      files: [supportedFileTypes],
+      plugins: { jsdoc },
+      rules: jsdocHandPickedRules,
+      settings: {
+        jsdoc: {
+          mode: 'typescript',
+        },
+      },
+    },
+    {
+      files: [`**/*.config.{${allJsExtensions}}`],
+      rules: {
+        'import/no-default-export': 0,
+      },
+    },
+  ];
+};
 
 const getExportableConfig = (userConfigChoices = {}) => {
-  let exportableConfig = [...baseConfig];
+  let exportableConfig = [
+    ...getBaseConfig(userConfigChoices.customTSConfigPath),
+  ];
 
   if (userConfigChoices.react || userConfigChoices.next) {
     // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and only-export-components.
-    exportableConfig = [...exportableConfig, ...reactConfig];
+    exportableConfig = [
+      ...exportableConfig,
+      ...getReactConfig(userConfigChoices.customTSConfigPath),
+    ];
   }
 
   if (userConfigChoices.jest) {
