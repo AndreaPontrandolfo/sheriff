@@ -59,15 +59,9 @@ const getTsNamingConventionRule = ({ isTsx }) => {
       {
         selector: 'objectLiteralProperty',
         format: null,
-        leadingUnderscore: 'forbid',
+        leadingUnderscore: 'allowSingleOrDouble',
         trailingUnderscore: 'forbid',
       },
-      // {
-      //   selector: 'parameter',
-      //   format: ['strictCamelCase'],
-      //   leadingUnderscore: 'allow',
-      //   trailingUnderscore: 'forbid',
-      // },
       {
         selector: 'typeLike',
         format: ['PascalCase'],
@@ -86,6 +80,10 @@ const getTsNamingConventionRule = ({ isTsx }) => {
       {
         selector: 'variable',
         modifiers: ['destructured'],
+        format: null,
+      },
+      {
+        selector: 'typeProperty',
         format: null,
       },
     ],
