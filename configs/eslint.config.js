@@ -738,7 +738,6 @@ const getBaseConfig = (customTSConfigPath) => {
       },
     },
     {
-      files: storybook.configs.recommended.overrides[0].files,
       plugins: { storybook },
       rules: {
         ...storybook.configs.recommended.overrides[0].rules,
