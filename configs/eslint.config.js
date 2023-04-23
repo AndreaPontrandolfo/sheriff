@@ -300,6 +300,7 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/no-empty-function': 2,
   '@typescript-eslint/prefer-optional-chain': 2,
   '@typescript-eslint/dot-notation': 2,
+  '@typescript-eslint/no-import-type-side-effects': 2,
   '@typescript-eslint/no-shadow': [
     2,
     {
@@ -444,10 +445,11 @@ const importHandPickedRules = {
   'import/order': [2, { 'newlines-between': 'never' }],
   'import/no-default-export': 2,
   'import/no-named-as-default': 2,
-  'import/consistent-type-specifier-style': [2, 'prefer-inline'],
   'import/no-namespace': 2,
   'import/no-duplicates': [2, { 'prefer-inline': true }],
   'import/newline-after-import': [2, { considerComments: true }],
+  'import/no-useless-path-segments': [2, { noUselessIndex: true }],
+  // 'import/consistent-type-specifier-style': [2, 'prefer-inline'], // this is not actually needed when "@typescript-eslint/no-import-type-side-effects is set. Explanation here: https://github.com/import-js/eslint-plugin-import/issues/2676#issuecomment-1407107260
   // TODO: seems to cause a bug. Needs monitoring.
   // See:
   //  - https://github.com/eslint/eslint/issues/16485
@@ -461,7 +463,6 @@ const importHandPickedRules = {
   //     ignoreExports: ['**/*.config.{js,ts,jsx,tsx}'],
   //   },
   // ],
-  'import/no-useless-path-segments': [2, { noUselessIndex: true }],
 };
 
 const reactHandPickedRules = {
