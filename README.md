@@ -201,7 +201,7 @@ Follow these steps:
 - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
 - [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs)
 - [eslint-plugin-fp](https://github.com/jfmengels/eslint-plugin-fp)
-- [@shopify/eslint-plugin](https://www.npmjs.com/package/@shopify/eslint-plugin)
+- [@regru/eslint-plugin-prefer-early-return](https://github.com/regru/eslint-plugin-prefer-early-return)
 - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)
 - [eslint-plugin-tsdoc](https://www.npmjs.com/package/eslint-plugin-tsdoc)
 - [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
@@ -298,6 +298,38 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
 
   This is just the standard behavior of the new configuration system of Eslint, which I'm illustrating here for your convenience. Sheriff doesn't alter this in any way.<br>
   For more in-depth information, refer to the [official docs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new).
+
+### Extra configuration options
+
+These are kind of hidden configuration options. They are useful only for a niche handful of users, made to cover specific usecases. Use these only if you need them.
+
+#### "files" option
+
+Covered here: [♻ Migration guide](#migration-guide)
+
+#### "customTSConfigPath" option
+
+If you have multiple `tsconfig.json` files in your project (like `tsconfig.json`, `tsconfig.eslint.json`, `tsconfig.node.json`, etc...) you can specify which config Sheriff will pickup with the `customTSConfigPath` option.
+You can pass the path to it as a string in the `sheriffOptions` object. Example:
+
+```js
+// eslint.config.js
+
+import sheriff from 'eslint-config-sheriff';
+import { defineFlatConfig } from 'eslint-define-config';
+
+const sheriffOptions = {
+  customTSConfigPath: './tsconfig.eslint.json',
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+};
+
+export default defineFlatConfig([...sheriff(sheriffOptions)]);
+```
 
 ## <a name="prettier-support"></a>💅 Prettier support
 
@@ -414,6 +446,7 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
   - [Testing library](https://github.com/testing-library/eslint-plugin-testing-library) ➜ I believe [testing library](https://github.com/testing-library) is one of the least efficient ways to test UIs. In most codebases it does more harm than good. You can use [Storybook](https://github.com/storybookjs/storybook) to test and develop components in isolation.
 - Is Sheriff compatible with "X"?
   - [Vite](https://vitejs.dev/) ➜ Yes.
+  - [Next.js](https://github.com/vercel/next.js) ➜ Yes. Sheriff has explicit support for Next.js. You can enable it in the Sheriff config options.
   - [CRA](https://create-react-app.dev/) ➜ Yes. Just add this line to your `.env` file:
     ```
     DISABLE_ESLINT_PLUGIN=true
