@@ -219,7 +219,8 @@ const baseEslintHandPickedRules = {
     },
     {
       selector: "BinaryExpression[operator='in']",
-      message: 'Prefer Object.hasOwn().',
+      message:
+        "In real-world scenarios there is rarely a need for this operator. For most usecases, basic property access is all you need. For every other case, use the Object.hasOwn() method. In the really niche cases where you actually need to check for the existence of a property both in the object itself AND in it's prototype chain, feel free to disable this rule with the inline eslint-disable syntax.",
     },
     {
       selector: "PropertyDefinition[accessibility='public']",
@@ -240,11 +241,6 @@ const baseEslintHandPickedRules = {
     {
       selector: "Identifier[name='propTypes']",
       message: 'No PropTypes. Use Typescript instead.',
-    },
-    {
-      selector: "Identifier[name='createContext']",
-      message:
-        'No React Context. Use component composition instead (https://it.reactjs.org/docs/context.html#before-you-use-context), or a "Global State Management" solution.',
     },
   ],
   'no-undef': 0, // typescript already takes care of this. See: https://typescript-eslint.io/docs/linting/troubleshooting/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
