@@ -51,7 +51,7 @@
     "@regru/eslint-plugin-prefer-early-return": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
-    "eslint": "8.37.0",
+    "eslint": "8.39.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.3",
     "eslint-plugin-etc": "^2.0.2",
