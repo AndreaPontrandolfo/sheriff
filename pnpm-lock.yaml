@@ -19,7 +19,7 @@ specifiers:
   eslint-plugin-playwright: ^0.12.0
   eslint-plugin-react: ^7.31.8
   eslint-plugin-react-hooks: ^4.6.0
-  eslint-plugin-react-refresh: ^0.3.4
+  eslint-plugin-react-refresh: ^0.4.0
   eslint-plugin-sonarjs: ^0.19.0
   eslint-plugin-storybook: ^0.6.11
   eslint-plugin-tsdoc: ^0.2.17
@@ -47,7 +47,7 @@ dependencies:
   eslint-plugin-playwright: 0.12.0_yubcyjumpdc5pjqnjgbheszoiu
   eslint-plugin-react: 7.31.11_eslint@8.39.0
   eslint-plugin-react-hooks: 4.6.0_eslint@8.39.0
-  eslint-plugin-react-refresh: 0.3.4_eslint@8.39.0
+  eslint-plugin-react-refresh: 0.4.0_eslint@8.39.0
   eslint-plugin-sonarjs: 0.19.0_eslint@8.39.0
   eslint-plugin-storybook: 0.6.11_iacogk7kkaymxepzhgcbytyi7q
   eslint-plugin-tsdoc: 0.2.17
@@ -1697,8 +1697,8 @@ packages:
       eslint: 8.39.0
     dev: false
 
-  /eslint-plugin-react-refresh/0.3.4_eslint@8.39.0:
-    resolution: {integrity: sha512-E0ViBglxSQAERBp6eTj5fPgtCRtDonnbCFiVQBhf4Dto2blJRxg1dFUMdMh7N6ljTI4UwPhHwYDQ3Dyo4m6bwA==}
+  /eslint-plugin-react-refresh/0.4.0_eslint@8.39.0:
+    resolution: {integrity: sha512-mV5V77NNutkhOgg2TCVvSx8BO2jJ46Oq7j9/xNInYxqrO2EWsLRgdYOPcIAwaZwJhfhjdAtfACLdyCA6ja8sEg==}
     peerDependencies:
       eslint: '>=7'
     dependencies:
