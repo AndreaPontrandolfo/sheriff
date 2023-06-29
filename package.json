@@ -88,6 +88,6 @@
   "devDependencies": {
     "husky": "^8.0.0",
     "semantic-release": "19.0.5",
-    "typescript": "5.0.4"
+    "typescript": "5.1.6"
   }
 }
