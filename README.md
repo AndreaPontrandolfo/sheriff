@@ -392,7 +392,7 @@ If you are setting up Sheriff in an already established codebase, follow these s
 4. Make sure to uninstall all the packages that Sheriff already incorporates out-of-the-box. [Here](#eslint-plugins) is the list.
 5. In massive codebases it can be troublesome to adapt to all these rules all at once. It is preferable to progressively fix the errors at your own pace, possibly with atomic commits. You can achieve this by leveraging 2 techniques:
 
-   - open the `eslint.config.js` file and add a key `files` in the `sheriffOptions` object. The value accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax. Only the matching files found in this array will be linted. See example below:
+   - open the `eslint.config.js` file and add a key `files` in the `sheriffOptions` object. The value accepts an array of filepaths, dictated by [minimatch](https://github.com/isaacs/minimatch) syntax. Only the matching files found in this array will be linted. See example below:
 
      ```js
      // eslint.config.js
