@@ -3,16 +3,19 @@
   "version": "0.0.0-development",
   "description": "A comprehensive Eslint configuration.",
   "main": "index.js",
+  "types": "./types/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
+      "types": "./types/index.d.ts",
       "require": "./index.js",
       "import": "./index.js"
     }
   },
   "files": [
     "index.js",
-    "configs"
+    "configs",
+    "types"
   ],
   "author": {
     "name": "Andrea Pontrandolfo",
@@ -43,7 +46,8 @@
     "semantic-release": "semantic-release",
     "generate-typings": "tsc --declaration --allowJs --emitDeclarationOnly --declarationMap --outDir types",
     "generate-rules-file": "node ./utils/extractRules.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "publint": "pnpx publint"
   },
   "dependencies": {
     "@eslint/js": "^8.44.0",
