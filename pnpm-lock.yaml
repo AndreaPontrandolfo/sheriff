@@ -23,7 +23,7 @@ specifiers:
   eslint-plugin-sonarjs: ^0.19.0
   eslint-plugin-storybook: ^0.6.11
   eslint-plugin-tsdoc: ^0.2.17
-  eslint-plugin-unicorn: ^47.0.0
+  eslint-plugin-unicorn: ^48.0.0
   husky: ^8.0.0
   semantic-release: 19.0.5
   typescript: 5.1.6
@@ -51,7 +51,7 @@ dependencies:
   eslint-plugin-sonarjs: 0.19.0_eslint@8.44.0
   eslint-plugin-storybook: 0.6.11_iqf7tbmerllfqanu4l3d6aqdn4
   eslint-plugin-tsdoc: 0.2.17
-  eslint-plugin-unicorn: 47.0.0_eslint@8.44.0
+  eslint-plugin-unicorn: 48.0.0_eslint@8.44.0
 
 devDependencies:
   husky: 8.0.2
@@ -410,7 +410,7 @@ packages:
       read-pkg: 5.2.0
       registry-auth-token: 4.2.2
       semantic-release: 19.0.5
-      semver: 7.3.8
+      semver: 7.5.4
       tempy: 1.0.1
     dev: true
 
@@ -1756,11 +1756,11 @@ packages:
       '@microsoft/tsdoc-config': 0.16.2
     dev: false
 
-  /eslint-plugin-unicorn/47.0.0_eslint@8.44.0:
-    resolution: {integrity: sha512-ivB3bKk7fDIeWOUmmMm9o3Ax9zbMz1Bsza/R2qm46ufw4T6VBFBaJIR1uN3pCKSmSXm8/9Nri8V+iUut1NhQGA==}
+  /eslint-plugin-unicorn/48.0.0_eslint@8.44.0:
+    resolution: {integrity: sha512-8fk/v3p1ro34JSVDBEmtOq6EEQRpMR0iTir79q69KnXFZ6DJyPkT3RAi+ZoTqhQMdDSpGh8BGR68ne1sP5cnAA==}
     engines: {node: '>=16'}
     peerDependencies:
-      eslint: '>=8.38.0'
+      eslint: '>=8.44.0'
     dependencies:
       '@babel/helper-validator-identifier': 7.22.5
       '@eslint-community/eslint-utils': 4.4.0_eslint@8.44.0
@@ -1776,7 +1776,6 @@ packages:
       read-pkg-up: 7.0.1
       regexp-tree: 0.1.27
       regjsparser: 0.10.0
-      safe-regex: 2.1.1
       semver: 7.5.4
       strip-indent: 3.0.0
     dev: false
@@ -2962,7 +2961,7 @@ packages:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.12.1
-      semver: 7.3.8
+      semver: 7.5.4
       validate-npm-package-license: 3.0.4
     dev: true
 
@@ -3546,12 +3545,6 @@ packages:
       is-regex: 1.1.4
     dev: false
 
-  /safe-regex/2.1.1:
-    resolution: {integrity: sha512-rx+x8AMzKb5Q5lQ95Zoi6ZbJqwCLkqi3XuJXp5P3rT8OEc6sZCJG5AE5dU3lsgRr/F4Bs31jSlVN+j5KrsGu9A==}
-    dependencies:
-      regexp-tree: 0.1.27
-    dev: false
-
   /semantic-release/19.0.5:
     resolution: {integrity: sha512-NMPKdfpXTnPn49FDogMBi36SiBfXkSOJqCkk0E4iWOY1tusvvgBwqUmxTX1kmlT6kIYed9YwNKD1sfPpqa5yaA==}
     engines: {node: '>=16 || ^14.17'}
@@ -3623,7 +3616,6 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
-    dev: false
 
   /shebang-command/2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
