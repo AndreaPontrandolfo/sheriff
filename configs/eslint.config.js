@@ -187,7 +187,7 @@ const baseEslintHandPickedRules = {
   ],
   'prefer-spread': 2,
   'prefer-object-spread': 2,
-  'no-param-reassign': 2,
+  'no-param-reassign': [2, { props: true }],
   'no-redeclare': 2, // we are not using the @typescript-eslint version on purpose, because we want to disallow function overloading entirely.
   'array-callback-return': [2, { allowImplicit: true, checkForEach: true }],
   'object-shorthand': 2,
@@ -351,6 +351,7 @@ const unicornHandPickedRules = {
   'unicorn/prefer-string-replace-all': 2,
   'unicorn/prefer-switch': [2, { emptyDefaultCase: 'do-nothing-comment' }],
   'unicorn/switch-case-braces': 2,
+  'unicorn/catch-error-name': 2,
 };
 
 const sonarjsHandPickedRules = {
