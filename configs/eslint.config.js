@@ -452,7 +452,6 @@ const importHandPickedRules = {
   'import/order': [2, { 'newlines-between': 'never' }],
   'import/no-default-export': 2,
   'import/no-named-as-default': 2,
-  'import/no-namespace': 2,
   'import/no-duplicates': [2, { 'prefer-inline': true }],
   'import/newline-after-import': [2, { considerComments: true }],
   'import/no-useless-path-segments': [2, { noUselessIndex: true }],
