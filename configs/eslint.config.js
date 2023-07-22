@@ -745,6 +745,10 @@ const getBaseConfig = (customTSConfigPath) => {
       },
     },
     {
+      files: [
+        '**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)',
+        '**/*.story.@(ts|tsx|js|jsx|mjs|cjs)',
+      ],
       plugins: { storybook },
       rules: {
         ...storybook.configs.recommended.overrides[0].rules,
@@ -754,7 +758,7 @@ const getBaseConfig = (customTSConfigPath) => {
       },
     },
     {
-      files: storybook.configs.recommended.overrides[1].files,
+      files: ['**/.storybook/main.@(js|cjs|mjs|ts)'],
       plugins: { storybook },
       rules: storybook.configs.recommended.overrides[1].rules,
     },
