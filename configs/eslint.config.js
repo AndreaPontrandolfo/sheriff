@@ -187,7 +187,7 @@ const baseEslintHandPickedRules = {
   ],
   'prefer-spread': 2,
   'prefer-object-spread': 2,
-  'no-param-reassign': 2,
+  'no-param-reassign': [2, { props: true }],
   'no-redeclare': 2, // we are not using the @typescript-eslint version on purpose, because we want to disallow function overloading entirely.
   'array-callback-return': [2, { allowImplicit: true, checkForEach: true }],
   'object-shorthand': 2,
@@ -252,6 +252,7 @@ const baseEslintHandPickedRules = {
   'no-unused-vars': 0, // we are using the @typescript/eslint version
   'dot-notation': 0, // we are using the @typescript/eslint version
   'no-shadow': 0, // we are using the @typescript/eslint version
+  'default-param-last': 0, // we are using the @typescript/eslint version
 };
 
 const typescriptHandPickedRules = {
@@ -301,6 +302,7 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/prefer-optional-chain': 2,
   '@typescript-eslint/dot-notation': 2,
   '@typescript-eslint/no-import-type-side-effects': 2,
+  '@typescript-eslint/default-param-last': 2,
   '@typescript-eslint/no-shadow': [
     2,
     {
@@ -345,11 +347,11 @@ const unicornHandPickedRules = {
   'unicorn/prefer-date-now': 2,
   'unicorn/prefer-export-from': [2, { ignoreUsedVariables: true }],
   'unicorn/no-new-buffer': 2,
-  'unicorn/no-unsafe-regex': 2,
   'unicorn/prefer-query-selector': 2,
   'unicorn/prefer-string-replace-all': 2,
   'unicorn/prefer-switch': [2, { emptyDefaultCase: 'do-nothing-comment' }],
   'unicorn/switch-case-braces': 2,
+  'unicorn/catch-error-name': 2,
 };
 
 const sonarjsHandPickedRules = {
