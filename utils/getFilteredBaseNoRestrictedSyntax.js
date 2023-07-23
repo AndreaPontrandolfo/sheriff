@@ -16,4 +16,4 @@ const getFilteredBaseNoRestrictedSyntax = (
   return filteredList;
 };
 
-module.exports = getFilteredBaseNoRestrictedSyntax;
+module.exports = { getFilteredBaseNoRestrictedSyntax };
