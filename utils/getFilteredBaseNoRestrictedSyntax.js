@@ -1,4 +1,4 @@
-export const getFilteredBaseNoRestrictedSyntax = (
+const getFilteredBaseNoRestrictedSyntax = (
   baseNoRestrictedSyntaxRules,
   userProvidedNoRestrictedSyntaxSelectors,
 ) => {
@@ -15,3 +15,5 @@ export const getFilteredBaseNoRestrictedSyntax = (
 
   return filteredList;
 };
+
+module.exports = getFilteredBaseNoRestrictedSyntax;
