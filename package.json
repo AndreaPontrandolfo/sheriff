@@ -12,7 +12,8 @@
   },
   "files": [
     "index.js",
-    "configs"
+    "configs",
+    "utils"
   ],
   "author": {
     "name": "Andrea Pontrandolfo",
