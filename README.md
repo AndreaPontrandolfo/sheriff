@@ -184,10 +184,11 @@ Follow these steps:
 
 ### Recommendations
 
-- [Node >=18](https://nodejs.org/en/)
+- [Node >=20](https://nodejs.org/en/)
 - [VScode](https://code.visualstudio.com/)
 - [VScode eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [VScode prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- Either `strict: true` or atleast `strictNullChecks: true` in `tsconfig`. Some `@typescript/eslint` rules requires `strictNullChecks` turned on. This shouldn't be a problem because Sheriff is meant to be used with `strict` turned on anyway.
 
 ## <a name="eslint-plugins"></a>🔌 Eslint plugins
 
