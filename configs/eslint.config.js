@@ -19,6 +19,9 @@ const reactRefresh = require('eslint-plugin-react-refresh');
 const preferEarlyReturn = require('@regru/eslint-plugin-prefer-early-return');
 const tsdoc = require('eslint-plugin-tsdoc');
 const storybook = require('eslint-plugin-storybook');
+const {
+  getFilteredBaseNoRestrictedSyntax,
+} = require('../utils/getFilteredBaseNoRestrictedSyntax');
 
 const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx';
 const supportedFileTypes = `**/*{${allJsExtensions}}`;
@@ -35,8 +38,51 @@ const ignores = [
 
 const messages = {
   NO_ACCESS_MODIFIER:
-    'There is no need to limit developer access to properties.',
+    'Avoid access modifiers. In Javascript modules there is no need to limit developer access to properties.',
 };
+
+const baseNoRestrictedSyntaxRules = [
+  {
+    selector: 'LabeledStatement',
+    message:
+      'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+  },
+  {
+    selector: 'ForInStatement',
+    message:
+      'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+  },
+  {
+    selector: "Identifier[name='Reflect']",
+    message:
+      'Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development.',
+  },
+  {
+    selector: "BinaryExpression[operator='in']",
+    message:
+      "Avoid the 'in' operator. In real-world scenarios there is rarely a need for this operator. For most usecases, basic property access is all you need. For every other case, use the Object.hasOwn() method. In the really niche cases where you actually need to check for the existence of a property both in the object itself AND in it's prototype chain, feel free to disable this rule with the inline eslint-disable syntax.",
+  },
+  {
+    selector: "PropertyDefinition[accessibility='public']",
+    message: messages.NO_ACCESS_MODIFIER,
+  },
+  {
+    selector: "PropertyDefinition[accessibility='protected']",
+    message: messages.NO_ACCESS_MODIFIER,
+  },
+  {
+    selector: "PropertyDefinition[accessibility='private']",
+    message: messages.NO_ACCESS_MODIFIER,
+  },
+  {
+    selector: "Identifier[name='PropTypes']",
+    message: 'Avoid PropTypes. Use Typescript instead.',
+  },
+  {
+    selector: "Identifier[name='propTypes']",
+    message: 'Avoid PropTypes. Use Typescript instead.',
+  },
+];
 
 const getTsNamingConventionRule = ({ isTsx }) => {
   return {
@@ -90,169 +136,138 @@ const getTsNamingConventionRule = ({ isTsx }) => {
   };
 };
 
-const baseEslintHandPickedRules = {
-  'func-style': 2,
-  'no-promise-executor-return': 2,
-  'no-unreachable-loop': 2,
-  'no-caller': 2,
-  'no-restricted-imports': [2, { paths: ['prop-types'] }],
-  'no-extend-native': 2,
-  'no-extra-bind': 2,
-  'no-extra-label': 2,
-  'no-implicit-coercion': 2,
-  'no-multi-str': 2,
-  'no-negated-condition': 2,
-  'no-new-wrappers': 2,
-  'no-new-object': 2,
-  'no-restricted-properties': [
-    2,
-    {
-      object: 'global',
-      property: 'isFinite',
-      message: 'Please use Number.isFinite instead',
-    },
-    {
-      object: 'self',
-      property: 'isFinite',
-      message: 'Please use Number.isFinite instead',
-    },
-    {
-      object: 'window',
-      property: 'isFinite',
-      message: 'Please use Number.isFinite instead',
-    },
-    {
-      object: 'global',
-      property: 'isNaN',
-      message: 'Please use Number.isNaN instead',
-    },
-    {
-      object: 'self',
-      property: 'isNaN',
-      message: 'Please use Number.isNaN instead',
-    },
-    {
-      object: 'window',
-      property: 'isNaN',
-      message: 'Please use Number.isNaN instead',
-    },
-  ],
-  strict: [2, 'never'],
-  'no-octal-escape': 2,
-  'no-proto': 2,
-  'no-sequences': [2, { allowInParentheses: false }],
-  'no-unmodified-loop-condition': 2,
-  'no-void': 2,
-  'max-statements-per-line': [2, { max: 1 }],
-  'no-array-constructor': 2,
-  'no-multi-assign': 2,
-  'no-plusplus': 2,
-  'prefer-destructuring': [
-    2,
-    {
-      array: false,
-      object: true,
-    },
-    {
-      enforceForRenamedProperties: false,
-    },
-  ],
-  'no-useless-call': 2,
-  'prefer-object-has-own': 2,
-  'no-constant-binary-expression': 2,
-  'no-lone-blocks': 2,
-  'no-var': 2,
-  'no-eval': 2,
-  'prefer-const': 2,
-  'prefer-rest-params': 2,
-  'no-return-assign': [2, 'always'],
-  'no-else-return': [2, { allowElseIf: false }],
-  'prefer-template': 2,
-  'operator-assignment': [2, 'never'],
-  'logical-assignment-operators': [2, 'never'],
+const getBaseEslintHandPickedRules = (noRestrictedSyntaxOverride) => {
+  return {
+    'func-style': 2,
+    'no-promise-executor-return': 2,
+    'no-unreachable-loop': 2,
+    'no-caller': 2,
+    'no-restricted-imports': [2, { paths: ['prop-types'] }],
+    'no-extend-native': 2,
+    'no-extra-bind': 2,
+    'no-extra-label': 2,
+    'no-implicit-coercion': 2,
+    'no-multi-str': 2,
+    'no-negated-condition': 2,
+    'no-new-wrappers': 2,
+    'no-new-object': 2,
+    'no-restricted-properties': [
+      2,
+      {
+        object: 'global',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'self',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'window',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'global',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+      {
+        object: 'self',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+      {
+        object: 'window',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+    ],
+    strict: [2, 'never'],
+    'no-octal-escape': 2,
+    'no-proto': 2,
+    'no-sequences': [2, { allowInParentheses: false }],
+    'no-unmodified-loop-condition': 2,
+    'no-void': 2,
+    'max-statements-per-line': [2, { max: 1 }],
+    'no-array-constructor': 2,
+    'no-multi-assign': 2,
+    'no-plusplus': 2,
+    'prefer-destructuring': [
+      2,
+      {
+        array: false,
+        object: true,
+      },
+      {
+        enforceForRenamedProperties: false,
+      },
+    ],
+    'no-useless-call': 2,
+    'prefer-object-has-own': 2,
+    'no-constant-binary-expression': 2,
+    'no-lone-blocks': 2,
+    'no-var': 2,
+    'no-eval': 2,
+    'prefer-const': 2,
+    'prefer-rest-params': 2,
+    'no-return-assign': [2, 'always'],
+    'no-else-return': [2, { allowElseIf: false }],
+    'prefer-template': 2,
+    'operator-assignment': [2, 'never'],
+    'logical-assignment-operators': [2, 'never'],
 
-  // Prettier doesn't have strong opinions about emptyLines. See: https://prettier.io/docs/en/rationale.html#empty-lines.
-  'padding-line-between-statements': [
-    2,
-    // blank lines after every sequence of variable declarations, like the newline-after-var rule.
-    { blankLine: 'always', prev: ['const', 'let'], next: '*' },
-    {
-      blankLine: 'any',
-      prev: ['const', 'let'],
-      next: ['const', 'let'],
-    },
+    // Prettier doesn't have strong opinions about emptyLines. See: https://prettier.io/docs/en/rationale.html#empty-lines.
+    'padding-line-between-statements': [
+      2,
+      // blank lines after every sequence of variable declarations, like the newline-after-var rule.
+      { blankLine: 'always', prev: ['const', 'let'], next: '*' },
+      {
+        blankLine: 'any',
+        prev: ['const', 'let'],
+        next: ['const', 'let'],
+      },
 
-    //require blank lines before all return statements, like the newline-before-return rule.
-    { blankLine: 'always', prev: '*', next: 'return' },
-  ],
-  'prefer-spread': 2,
-  'prefer-object-spread': 2,
-  'no-param-reassign': [2, { props: true }],
-  'no-redeclare': 2, // we are not using the @typescript-eslint version on purpose, because we want to disallow function overloading entirely.
-  'array-callback-return': [2, { allowImplicit: true, checkForEach: true }],
-  'object-shorthand': 2,
-  'no-unneeded-ternary': [2, { defaultAssignment: false }],
-  'require-atomic-updates': 2,
-  'no-nested-ternary': 2,
-  'no-console': [2, { allow: ['warn', 'error', 'debug'] }],
-  eqeqeq: 2,
-  'prefer-arrow-callback': 2, // we keep this rule enabled but beware https://github.com/prettier/eslint-config-prettier#arrow-body-style-and-prefer-arrow-callback
-  'arrow-body-style': [2, 'as-needed'], // we keep this rule enabled but beware https://github.com/prettier/eslint-config-prettier#arrow-body-style-and-prefer-arrow-callback
-  'no-restricted-syntax': [
-    2,
-    {
-      selector: 'LabeledStatement',
-      message:
-        'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
-    },
-    {
-      selector: 'ForInStatement',
-      message:
-        'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
-    },
-    {
-      selector: "Identifier[name='Reflect']",
-      message:
-        'Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development',
-    },
-    {
-      selector: "BinaryExpression[operator='in']",
-      message:
-        "In real-world scenarios there is rarely a need for this operator. For most usecases, basic property access is all you need. For every other case, use the Object.hasOwn() method. In the really niche cases where you actually need to check for the existence of a property both in the object itself AND in it's prototype chain, feel free to disable this rule with the inline eslint-disable syntax.",
-    },
-    {
-      selector: "PropertyDefinition[accessibility='public']",
-      message: messages.NO_ACCESS_MODIFIER,
-    },
-    {
-      selector: "PropertyDefinition[accessibility='protected']",
-      message: messages.NO_ACCESS_MODIFIER,
-    },
-    {
-      selector: "PropertyDefinition[accessibility='private']",
-      message: messages.NO_ACCESS_MODIFIER,
-    },
-    {
-      selector: "Identifier[name='PropTypes']",
-      message: 'No PropTypes. Use Typescript instead.',
-    },
-    {
-      selector: "Identifier[name='propTypes']",
-      message: 'No PropTypes. Use Typescript instead.',
-    },
-  ],
-  'no-undef': 0, // typescript already takes care of this. See: https://typescript-eslint.io/docs/linting/troubleshooting/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
-  'no-dupe-class-members': 0, // typescript already takes care of this.
-  'no-return-await': 0, // we are using the @typescript/eslint version
-  'no-throw-literal': 0, // we are using the @typescript/eslint version
-  'no-use-before-define': 0, // we are using the @typescript/eslint version
-  'no-unused-expressions': 0, // we are using the @typescript/eslint version
-  'no-empty-function': 0, // we are using the @typescript/eslint version
-  'require-await': 0, // we are using the @typescript/eslint version
-  'no-unused-vars': 0, // we are using the @typescript/eslint version
-  'dot-notation': 0, // we are using the @typescript/eslint version
-  'no-shadow': 0, // we are using the @typescript/eslint version
-  'default-param-last': 0, // we are using the @typescript/eslint version
+      //require blank lines before all return statements, like the newline-before-return rule.
+      { blankLine: 'always', prev: '*', next: 'return' },
+    ],
+    'prefer-spread': 2,
+    'prefer-object-spread': 2,
+    'no-param-reassign': [2, { props: true }],
+    'no-redeclare': 2, // we are not using the @typescript-eslint version on purpose, because we want to disallow function overloading entirely.
+    'array-callback-return': [2, { allowImplicit: true, checkForEach: true }],
+    'object-shorthand': 2,
+    'no-unneeded-ternary': [2, { defaultAssignment: false }],
+    'require-atomic-updates': 2,
+    'no-nested-ternary': 2,
+    'no-console': [2, { allow: ['warn', 'error', 'debug'] }],
+    eqeqeq: 2,
+    'prefer-arrow-callback': 2, // we keep this rule enabled but beware https://github.com/prettier/eslint-config-prettier#arrow-body-style-and-prefer-arrow-callback
+    'arrow-body-style': [2, 'as-needed'], // we keep this rule enabled but beware https://github.com/prettier/eslint-config-prettier#arrow-body-style-and-prefer-arrow-callback
+    'no-restricted-syntax': [
+      2,
+      ...getFilteredBaseNoRestrictedSyntax(
+        baseNoRestrictedSyntaxRules,
+        noRestrictedSyntaxOverride?.allows,
+      ),
+      ...(noRestrictedSyntaxOverride?.adjuncts
+        ? noRestrictedSyntaxOverride.adjuncts
+        : []),
+    ],
+    'no-undef': 0, // typescript already takes care of this. See: https://typescript-eslint.io/docs/linting/troubleshooting/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
+    'no-dupe-class-members': 0, // typescript already takes care of this.
+    'no-return-await': 0, // we are using the @typescript/eslint version
+    'no-throw-literal': 0, // we are using the @typescript/eslint version
+    'no-use-before-define': 0, // we are using the @typescript/eslint version
+    'no-unused-expressions': 0, // we are using the @typescript/eslint version
+    'no-empty-function': 0, // we are using the @typescript/eslint version
+    'require-await': 0, // we are using the @typescript/eslint version
+    'no-unused-vars': 0, // we are using the @typescript/eslint version
+    'dot-notation': 0, // we are using the @typescript/eslint version
+    'no-shadow': 0, // we are using the @typescript/eslint version
+    'default-param-last': 0, // we are using the @typescript/eslint version
+  };
 };
 
 const typescriptHandPickedRules = {
@@ -665,7 +680,7 @@ const prettierOverrides = {
   },
 };
 
-const getBaseConfig = (customTSConfigPath) => {
+const getBaseConfig = (customTSConfigPath, noRestrictedSyntaxOverride) => {
   return [
     {
       files: [supportedFileTypes],
@@ -691,7 +706,7 @@ const getBaseConfig = (customTSConfigPath) => {
     },
     {
       files: [supportedFileTypes],
-      rules: baseEslintHandPickedRules,
+      rules: getBaseEslintHandPickedRules(noRestrictedSyntaxOverride),
     },
     {
       files: [supportedFileTypes],
@@ -783,7 +798,10 @@ const getBaseConfig = (customTSConfigPath) => {
 
 const getExportableConfig = (userConfigChoices = {}) => {
   let exportableConfig = [
-    ...getBaseConfig(userConfigChoices.customTSConfigPath),
+    ...getBaseConfig(
+      userConfigChoices.customTSConfigPath,
+      userConfigChoices.noRestrictedSyntaxOverride,
+    ),
   ];
 
   if (userConfigChoices.react || userConfigChoices.next) {

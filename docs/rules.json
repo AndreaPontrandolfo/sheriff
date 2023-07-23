@@ -147,6 +147,7 @@
   "@typescript-eslint/prefer-optional-chain": 2,
   "@typescript-eslint/dot-notation": 2,
   "@typescript-eslint/no-import-type-side-effects": 2,
+  "@typescript-eslint/default-param-last": 2,
   "@typescript-eslint/no-shadow": [
     2,
     {
@@ -376,7 +377,12 @@
   ],
   "prefer-spread": 2,
   "prefer-object-spread": 2,
-  "no-param-reassign": 2,
+  "no-param-reassign": [
+    2,
+    {
+      "props": true
+    }
+  ],
   "array-callback-return": [
     2,
     {
@@ -454,6 +460,7 @@
   "no-unused-expressions": 0,
   "dot-notation": 0,
   "no-shadow": 0,
+  "default-param-last": 0,
   "fp/no-arguments": 2,
   "fp/no-class": 2,
   "fp/no-delete": 2,
@@ -504,7 +511,6 @@
     }
   ],
   "unicorn/no-new-buffer": 2,
-  "unicorn/no-unsafe-regex": 2,
   "unicorn/prefer-query-selector": 2,
   "unicorn/prefer-string-replace-all": 2,
   "unicorn/prefer-switch": [
@@ -514,6 +520,7 @@
     }
   ],
   "unicorn/switch-case-braces": 2,
+  "unicorn/catch-error-name": 2,
   "sonarjs/cognitive-complexity": 0,
   "sonarjs/elseif-without-else": 0,
   "sonarjs/max-switch-cases": 2,
@@ -566,7 +573,6 @@
   ],
   "import/no-default-export": 0,
   "import/no-named-as-default": 2,
-  "import/no-namespace": 2,
   "import/no-duplicates": [
     2,
     {
@@ -601,8 +607,22 @@
   "storybook/no-uninstalled-addons": 2,
   "jsdoc/require-description": 2,
   "jsdoc/require-description-complete-sentence": 2,
+  "jsdoc/require-hyphen-before-param-description": 2,
+  "jsdoc/require-returns-description": 2,
+  "jsdoc/require-param-name": 2,
+  "jsdoc/require-param-description": 2,
+  "jsdoc/require-asterisk-prefix": 2,
+  "jsdoc/no-types": 2,
   "jsdoc/no-multi-asterisks": 2,
   "jsdoc/no-defaults": 2,
+  "jsdoc/no-blank-block-descriptions": 2,
+  "jsdoc/check-indentation": 2,
+  "jsdoc/check-tag-names": [
+    2,
+    {
+      "jsxTags": true
+    }
+  ],
   "jsdoc/check-param-names": [
     2,
     {
@@ -610,17 +630,14 @@
       "enableFixer": false
     }
   ],
-  "jsdoc/newline-after-description": 2,
-  "jsdoc/require-returns-description": 2,
-  "jsdoc/check-tag-names": [
+  "jsdoc/sort-tags": 2,
+  "jsdoc/tag-lines": [
     2,
+    "any",
     {
-      "jsxTags": true
+      "startLines": 1
     }
   ],
-  "jsdoc/no-types": 2,
-  "jsdoc/require-param-name": 2,
-  "jsdoc/require-param-description": 2,
   "react/display-name": 2,
   "react/jsx-key": 2,
   "react/jsx-no-comment-textnodes": 2,
