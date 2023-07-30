@@ -14,6 +14,7 @@ const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
 const fp = require('eslint-plugin-fp');
 const jest = require('eslint-plugin-jest');
+const vitest = require('eslint-plugin-vitest');
 const etc = require('eslint-plugin-etc');
 const reactRefresh = require('eslint-plugin-react-refresh');
 const preferEarlyReturn = require('@regru/eslint-plugin-prefer-early-return');
@@ -426,6 +427,45 @@ const jestHandPickedRules = {
   'jest/valid-expect-in-promise': 2,
   'jest/valid-expect': 2,
   'jest/consistent-test-it': [2, { fn: 'test', withinDescribe: 'test' }], // with this we have an api consistent with Playwright.
+  'jest/unbound-method': 2, // we need to overwrite @typescript-eslint/unbound-method.
+};
+
+const vitestHandPickedRules = {
+  'vitest/consistent-test-it': [2, { fn: 'test', withinDescribe: 'test' }], // with this we have an api consistent with Playwright.
+  'vitest/expect-expect': 2,
+  'vitest/no-commented-out-tests': 2,
+  'vitest/no-conditional-expect': 2,
+  'vitest/no-conditional-in-test': 2,
+  'vitest/no-disabled-tests': 2,
+  'vitest/no-done-callback': 2,
+  'vitest/no-duplicate-hooks': 2,
+  'vitest/no-identical-title': 2,
+  'vitest/no-focused-tests': 2,
+  'vitest/no-standalone-expect': 2,
+  'vitest/no-test-prefixes': 2,
+  'vitest/no-test-return-statement': 2,
+  'vitest/prefer-comparison-matcher': 2,
+  'vitest/prefer-each': 2,
+  'vitest/prefer-equality-matcher': 2,
+  'vitest/prefer-expect-resolves': 2,
+  'vitest/prefer-hooks-in-order': 2,
+  'vitest/prefer-hooks-on-top': 2,
+  'vitest/prefer-lowercase-title': 2,
+  'vitest/prefer-mock-promise-shorthand': 2,
+  'vitest/prefer-spy-on': 2,
+  'vitest/prefer-strict-equal': 2,
+  'vitest/prefer-to-be': 2,
+  'vitest/prefer-to-be-falsy': 2,
+  'vitest/prefer-to-be-object': 2,
+  'vitest/prefer-to-be-truthy': 2,
+  'vitest/prefer-to-contain': 2,
+  'vitest/prefer-to-have-length': 2,
+  'vitest/prefer-todo': 2,
+  'vitest/require-hook': 2,
+  'vitest/require-to-throw-message': 2,
+  'vitest/require-top-level-describe': 2,
+  'vitest/valid-describe-callback': 2,
+  'vitest/valid-expect': 2,
 };
 
 const jsdocHandPickedRules = {
@@ -652,7 +692,6 @@ const jestConfig = {
     ...jest.configs.style.rules,
     ...jestHandPickedRules,
     '@typescript-eslint/unbound-method': 0, // see reference: https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
-    'jest/unbound-method': 2, // we need to overwrite @typescript-eslint/unbound-method
   },
 };
 
@@ -663,14 +702,9 @@ const vitestConfig = {
     `**/__tests__/**`,
   ],
   plugins: {
-    jest,
+    vitest,
   },
-  rules: {
-    ...jest.configs.style.rules,
-    ...jestHandPickedRules,
-    '@typescript-eslint/unbound-method': 0, // see reference: https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
-    'jest/unbound-method': 2, // we need to overwrite @typescript-eslint/unbound-method
-  },
+  rules: vitestHandPickedRules,
 };
 
 const prettierOverrides = {
@@ -812,6 +846,12 @@ const getExportableConfig = (userConfigChoices = {}) => {
     ];
   }
 
+  if (userConfigChoices.jest && userConfigChoices.vitest) {
+    throw new Error(
+      'Jest and Vitest support cannot be activated at once. Please choose one or the other.',
+    );
+  }
+
   if (userConfigChoices.jest) {
     exportableConfig.push(jestConfig);
   }
@@ -842,9 +882,13 @@ const getExportableConfig = (userConfigChoices = {}) => {
         return configSlice;
       }
 
+      const allowedPatterns = userConfigChoices.files.map(
+        (globPattern) => `!${globPattern}`,
+      );
+
       return {
         ...configSlice,
-        files: userConfigChoices.files,
+        ignores: ['**/*', ...allowedPatterns],
       };
     });
   }
