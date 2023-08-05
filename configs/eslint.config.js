@@ -9,7 +9,7 @@ const sonarjs = require('eslint-plugin-sonarjs');
 const playwright = require('eslint-plugin-playwright');
 const jsdoc = require('eslint-plugin-jsdoc');
 const lodash = require('eslint-plugin-lodash-f');
-const prettierConfig = require('eslint-config-prettier');
+const eslintConfigPrettier = require('eslint-config-prettier');
 const pluginImport = require('eslint-plugin-import');
 const nextjs = require('@next/eslint-plugin-next');
 const fp = require('eslint-plugin-fp');
@@ -872,7 +872,7 @@ const getExportableConfig = (userConfigChoices = {}) => {
     exportableConfig.push(playwrightConfig);
   }
 
-  exportableConfig.push(prettierConfig);
+  exportableConfig.push(eslintConfigPrettier);
   exportableConfig.push(prettierOverrides);
   exportableConfig.push({ ignores });
 
