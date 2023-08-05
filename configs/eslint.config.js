@@ -874,7 +874,6 @@ const getExportableConfig = (userConfigChoices = {}) => {
 
   exportableConfig.push(eslintConfigPrettier);
   exportableConfig.push(prettierOverrides);
-  exportableConfig.push({ ignores });
 
   if (userConfigChoices.files) {
     exportableConfig = exportableConfig.map((configSlice) => {
@@ -892,6 +891,8 @@ const getExportableConfig = (userConfigChoices = {}) => {
       };
     });
   }
+
+  exportableConfig.push({ ignores });
 
   return exportableConfig;
 };
