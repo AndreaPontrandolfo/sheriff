@@ -179,7 +179,7 @@ Follow these steps:
 ### Hard requirements
 
 - [Node >=16](https://nodejs.org/en/)
-- [Eslint >=8.23.0](https://eslint.org/)
+- [Eslint >=8.38.0](https://eslint.org/)
 - [Typescript](https://www.typescriptlang.org/)
 
 ### Recommendations
