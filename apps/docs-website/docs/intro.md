@@ -2,46 +2,25 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# 🥳 Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+This is the official website of the open-source library **Sheriff**.
 
-## Getting Started
+- [Github](https://github.com/AndreaPontrandolfo/sheriff)
+- [npm](https://www.npmjs.com/package/eslint-config-sheriff)
 
-Get started by **creating a new site**.
+## What is Sheriff?
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Sheriff is a comprehensive Eslint configuration. It supports [various popular technologies](#techs).
 
-### What you'll need
+:::caution
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+At the moment, Sheriff supports only Typescript codebases with modern Ecmascript standards. Support for vanilla Javascript will come at a later time.
 
-## Generate a new site
+:::
 
-Generate a new Docusaurus site using the **classic template**.
+## 🔑 Key points
 
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- This library is pioneering in the adoption of the Eslint `FlatConfig`, [introduced in Eslint v8.23.0](https://eslint.org/blog/2022/08/eslint-v8.23.0-released/).
+- Sheriff is very easy to get started with and use. It promotes a _“zero overhead approach”_. See: [philosophy](#philosophy).
+- It’s a [_"plug & play"_](#automatic-setup) solution but you can customize it as much as you want. See: [features](#features).
