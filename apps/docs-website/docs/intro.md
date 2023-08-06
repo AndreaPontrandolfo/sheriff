@@ -9,7 +9,7 @@ This is the official website of the open-source library **Sheriff**.
 - [Github](https://github.com/AndreaPontrandolfo/sheriff)
 - [npm](https://www.npmjs.com/package/eslint-config-sheriff)
 
-## What is Sheriff?
+## 🤔 What is Sheriff?
 
 Sheriff is a comprehensive Eslint configuration. It supports [various popular technologies](#techs).
 
