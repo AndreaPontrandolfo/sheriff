@@ -1,0 +1,8 @@
+{
+  "label": "Setup",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "This config is highly opinionated, so make sure to meet the hard requirements in your project. Then, let create-sheriff-config handle the whole setup for you automatically, or do it yourself manually. For greenfield projects, the below setup will be enough. However, for already established codebases, you should also follow the instructions for the migration path."
+  }
+}
