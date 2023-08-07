@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+description: 📐 What opinions should you expect from Sheriff
 ---
 
 # Ruleset design
