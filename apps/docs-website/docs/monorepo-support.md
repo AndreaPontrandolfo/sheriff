@@ -4,8 +4,8 @@ sidebar_position: 11
 
 # 🌎 Monorepo support
 
-While Sheriff can be made to work at the _root_ of monorepos, it is highly advisible to not do so.<br />
-It works fine in singular packages inside monorepos.
+While Sheriff can technically be used at the _root_ of monorepos, it's not recommended.<br />
+It works best when applied to individual packages _within_ a monorepo.
 
 ## Examples
 

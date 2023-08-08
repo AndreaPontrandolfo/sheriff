@@ -67,7 +67,7 @@ const config = {
         title: 'Sheriff',
         logo: {
           alt: 'Sheriff Logo',
-          src: 'img/logo.svg',
+          src: 'img/sheriff_logo.png',
         },
         items: [
           {
