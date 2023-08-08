@@ -130,7 +130,7 @@ Follow these steps:
    export default defineFlatConfig([...sheriff(sheriffOptions)]);
    ```
 
-   or, if you already have a `eslint.config.js` in your project, add the Sheriff support, like this:
+   or, if you already have a `eslint.config.js` in your project, just append Sheriff to the configs array, like this:
 
    ```js
    // eslint.config.js

@@ -19,7 +19,7 @@ Follow these steps:
    ❯  pnpm add -D eslint-config-sheriff
    ```
 
-2. Create a `eslint.config.js` [^1] file at the root of your project and copy/paste the contents of the following snippet of code:
+2. Create a `eslint.config.js` file at the root of your project and copy/paste the contents of the following snippet of code:
 
    ```js
    // eslint.config.js
@@ -39,7 +39,7 @@ Follow these steps:
    export default defineFlatConfig([...sheriff(sheriffOptions)]);
    ```
 
-   or, if you already have a `eslint.config.js` in your project, add the Sheriff support, like this:
+   or, if you already have a `eslint.config.js` in your project, just append Sheriff to the configs array, like this:
 
    ```js
    // eslint.config.js
