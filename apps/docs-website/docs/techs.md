@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Techs
+# 🖥️ Techs
 
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)

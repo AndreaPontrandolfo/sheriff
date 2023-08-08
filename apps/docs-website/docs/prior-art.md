@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
 
-# Prior art
+# 🧐 Prior art
 
 ## Related projects
 

@@ -2,7 +2,7 @@
 sidebar_position: 13
 ---
 
-# Migration guide
+# ♻ Migration guide
 
 If you are setting up Sheriff in an already established codebase, follow these steps:
 

@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# Prettier support
+# 💅 Prettier support
 
 Sheriff tries to incorporate [prettier](https://prettier.io/) out-of-the-box.<br />
 The `create-sheriff-config` command will spin up for you a default `.prettierrc.json` configuration. You _can_ modify it if you need to, but [it is discouraged](https://prettier.io/docs/en/option-philosophy.html). Act with caution.<br />

@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# Configuration
+# 🧠 Configuration
 
 ## Base options
 

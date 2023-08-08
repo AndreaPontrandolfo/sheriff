@@ -2,7 +2,7 @@
 sidebar_position: 15
 ---
 
-# Contributing
+# 🧡 Contributing
 
 ## Suggestions
 

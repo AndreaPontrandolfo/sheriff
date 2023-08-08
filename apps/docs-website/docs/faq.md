@@ -2,7 +2,7 @@
 sidebar_position: 14
 ---
 
-# FAQ
+# 📚 FAQ
 
 ## Why you didn’t include Eslint plugins/rules for "X" library?
 
