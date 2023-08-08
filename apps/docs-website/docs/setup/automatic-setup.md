@@ -18,6 +18,6 @@ Let the CLI take care of everything!
    ❯  pnpx create-sheriff-config
    ```
 
-2. [Setup VSCode support](#vscode-support) (_optional_)
+2. [Setup VSCode support](../vscode-support.md) (_optional_)
 
 ...and you are good to go! Happy hacking 🎉

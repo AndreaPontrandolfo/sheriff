@@ -65,9 +65,9 @@ Follow these steps:
    ];
    ```
 
-3. [Configure Sheriff](#configuration) (_optional_)
-4. [Setup prettier](#prettier-support) (_optional_)
-5. [Setup VSCode support](#vscode-support) (_optional_)
+3. [Configure Sheriff](../configuration.md) (_optional_)
+4. [Setup prettier](../prettier-support.md) (_optional_)
+5. [Setup VSCode support](../vscode-support.md) (_optional_)
 
 :::caution
 

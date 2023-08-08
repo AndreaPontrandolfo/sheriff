@@ -6,16 +6,16 @@ description: 🔥 Hot takes!
 # Stylistic choices
 
 - no classes
-  - https://github.com/GrosSacASac/JavaScript-Set-Up/blob/master/js/red-javascript-style-guide/why-disallow-class.md
+  - [red-javascript-style-guide - why disallow class](https://github.com/GrosSacASac/JavaScript-Set-Up/blob/master/js/red-javascript-style-guide/why-disallow-class.md)
   - Sheriff is trying to promote a "light functional" approach. Javascript classes don't fit such design.
 - no reduce
-  - https://www.youtube.com/watch?v=qaGjS7-qWzg
-  - https://tkdodo.eu/blog/why-i-dont-like-reduce
+  - [Is reduce() bad? - HTTP 203](https://www.youtube.com/watch?v=qaGjS7-qWzg)
+  - [TkDodo - Why i dont like reduce](https://www.youtube.com/watch?v=qaGjS7-qWzg)
 - no enums
-  - https://github.com/shian15810/eslint-plugin-typescript-enum/blob/main/README.md
-  - https://www.youtube.com/watch?v=jjMbPt_H3RQ
-  - https://www.youtube.com/watch?v=pWPClHdcvVg
-  - https://www.youtube.com/watch?v=Anu8vHXsavo
+  - [eslint-plugin-typescript-enum - README](https://github.com/shian15810/eslint-plugin-typescript-enum/blob/main/README.md)
+  - [Enums considered harmful](https://www.youtube.com/watch?v=jjMbPt_H3RQ)
+  - [How to use TypeScript Enums and why not to, maybe](https://www.youtube.com/watch?v=pWPClHdcvVg)
+  - [Let's Talk About TypeScript's Worst Feature](https://www.youtube.com/watch?v=Anu8vHXsavo)
 - no overloads
   - generics supersedes them. overloads are a legacy feature that was made available in Typescript before generics were a thing. Overloads are mostly a C#/Angular leftover. Simply put: there are no problems that function overloads solve better than generics.
   - overloads clutter the code and make it more verbose and harder to read, which increase the cognitive overload.

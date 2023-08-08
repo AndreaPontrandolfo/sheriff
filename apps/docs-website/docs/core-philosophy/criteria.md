@@ -9,7 +9,7 @@ This library is very opinionated, but it's for the better. I took a lot of decis
 You can now quickstart static analysis in all your Typescript projects with ease. Just type `create-sheriff-config` in a CLI and you are good to go.<br />
 Easiness of use without compromises is the N.1 priority of Sheriff. The basic principle behind many design decisions of Sheriff is to require as less inputs from the user as possible.
 You can think of Sheriff like `prettier` or `create-react-app`. It's a tool that comes battery-packed with optimal defaults. It removes configuration decisions from the equation, so you or your team can focus on developing the actual product.<br />
-And if you don't like something, you can easily override it, and just as easily you can extend it. See: [configuration](#configuration).
+And if you don't like something, you can easily override it, and just as easily you can extend it. See: [configuration](../configuration.md).
 
 :::info
 

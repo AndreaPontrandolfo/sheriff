@@ -93,7 +93,7 @@ These are kind of hidden configuration options. They are useful only for a niche
 
 ### "files" option
 
-Covered here: [♻ Migration guide](#migration-guide)
+Covered here: [♻ Migration guide](./migration-guide.md)
 
 ### "customTSConfigPath" option
 
