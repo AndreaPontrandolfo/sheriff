@@ -79,8 +79,8 @@ const config = {
           { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/AndreaPontrandolfo/sheriff',
-            label: 'GitHub',
             position: 'right',
+            className: 'navbar-github-link',
           },
         ],
       },
