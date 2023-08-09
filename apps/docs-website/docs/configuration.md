@@ -8,7 +8,7 @@ sidebar_position: 8
 
 - The `eslint-config-sheriff` package exports a `sheriff` function.<br />
   You can configure Sheriff as desired using a simple javascript object as the first input parameter of the `sheriff` function.<br />
-  Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default.
+  Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with `create-sheriff-config` some of these values will be inferred automatically from your project.
 
   ```js
   // eslint.config.js
@@ -89,7 +89,7 @@ sidebar_position: 8
 
 ## Extra configuration options
 
-These are kind of hidden configuration options. They are useful only for a niche handful of users, made to cover specific usecases. Use these only if you need them.
+The upcoming configuration options are kind of hidden options, tailored to serve only a niche group of users and designed to address specific use cases. **Use these only if you end up needing them**.
 
 ### "files" option
 
@@ -121,10 +121,10 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 
 ### "noRestrictedSyntaxOverride" option
 
-Eslint has a very useful rule called `no-restricted-syntax`. It accepts an array of objects. Each object represent a specific Javascript syntax feature that you want to opt-out.
+Eslint has a very useful rule called `no-restricted-syntax`. It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to opt-out.
 Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, if you need to customize it, you have a few options:
 
-- override the rule in full: you provide your own `no-restricted-syntax` rule. You can do this as normal, appending the rule to the FlatConfig array.
+- override the rule in full: you provide your own `no-restricted-syntax` rule. You can do this as normal, appending the rule to the `FlatConfig` array.
 - extend the Sheriff version of `no-restricted-syntax`: use the key `noRestrictedSyntaxOverride.adjuncts` in the Sheriff configuration object. Example:
 
   ```js
