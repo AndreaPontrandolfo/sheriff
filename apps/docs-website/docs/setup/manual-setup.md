@@ -9,22 +9,13 @@ Follow these steps:
 
 1. Install the package from [npm](https://www.npmjs.com/package/eslint-config-sheriff).
 
-   ```bash
-   # npm
-   ❯  npm install -D eslint-config-sheriff
-
-   # yarn
-   ❯  yarn add -D eslint-config-sheriff
-
-   # pnpm
-   ❯  pnpm add -D eslint-config-sheriff
+   ```bash npm2yarn
+   npm install -D eslint-config-sheriff
    ```
 
 2. Create a `eslint.config.js` file at the root of your project and copy/paste the contents of the following snippet of code:
 
-   ```js
-   // eslint.config.js
-
+   ```js title="eslint.config.js"
    import sheriff from 'eslint-config-sheriff';
    import { defineFlatConfig } from 'eslint-define-config';
 
@@ -42,13 +33,14 @@ Follow these steps:
 
    or, if you already have a `eslint.config.js` in your project, just append Sheriff to the configs array, like this:
 
-   ```js
-   // eslint.config.js
-
+   ```js title="eslint.config.js"
+   // highlight-next-line
    import sheriff from 'eslint-config-sheriff'; // add this
+   // highlight-next-line
    import { defineFlatConfig } from 'eslint-define-config'; // add this
    // my other imports...
 
+   // highlight-start
    // add this
    const sheriffOptions = {
      react: false,
@@ -58,8 +50,10 @@ Follow these steps:
      jest: false,
      vitest: false,
    };
+   // highlight-end
 
    export default [
+     // highlight-next-line
      ...sheriff(sheriffOptions), // add this
      // my other configurations...
    ];

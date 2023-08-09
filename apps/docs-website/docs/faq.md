@@ -14,9 +14,11 @@ sidebar_position: 14
 - [Vite](https://vitejs.dev/) ➜ Yes.
 - [Next.js](https://github.com/vercel/next.js) ➜ Yes. Sheriff has explicit support for Next.js. You can enable it in the Sheriff config options.
 - [CRA](https://create-react-app.dev/) ➜ Yes. Just add this line to your `.env` file:
-  ```.env
+
+  ```.env title=".env"
   DISABLE_ESLINT_PLUGIN=true
   ```
+
 - [Rome](https://rome.tools/) ➜ No. Rome is not compatible with Eslint in the first place.
 - [Deno](https://deno.land/) ➜ No. Deno is not compatible with Eslint in the first place.
 - [Bun](https://bun.sh/) ➜ Untested.

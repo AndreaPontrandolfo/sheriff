@@ -13,20 +13,20 @@ It works best when applied to individual packages _within_ a monorepo.
 ├── apps
 │   ├── website
 // highlight-next-line
-│   │   ├── eslint.config.js
+│   │   └── eslint.config.js
 │   ├── docs
 // highlight-next-line
-│   │   ├── eslint.config.js
+│   │   └── eslint.config.js
 ├── packages
 │   ├── ui
 // highlight-next-line
-│   │   ├── eslint.config.js
+│   │   └── eslint.config.js
 │   ├── utils
 // highlight-next-line
-│   │   ├── eslint.config.js
+│   │   └── eslint.config.js
 │   ├── types
 // highlight-next-line
-│   │   ├── eslint.config.js
+│   │   └── eslint.config.js
 ├── node_modules
 ├── README
 ├── package.json

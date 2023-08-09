@@ -16,14 +16,13 @@ If you are setting up Sheriff in an already established codebase, follow these s
    - open the `eslint.config.js` file and add a key `files` in the `sheriffOptions` object. The value accepts an array of filepaths, dictated by [minimatch](https://github.com/isaacs/minimatch) syntax. Only the matching files found in this array will be linted. <br />
      See example below:
 
-     ```js
-     // eslint.config.js
-
+     ```js title="eslint.config.js"
      import sheriff from 'eslint-config-sheriff';
      import { defineFlatConfig } from 'eslint-define-config';
 
      const sheriffOptions = {
-       files: ['./src/**/*'], // 👉 Only the files in the src directory will be linted.
+       // highlight-next-line
+       files: ['./src/**/*'], // Only the files in the /src directory will be linted.
        react: false,
        next: false,
        lodash: false,

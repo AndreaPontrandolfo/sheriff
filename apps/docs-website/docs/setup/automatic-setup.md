@@ -9,13 +9,13 @@ Let the CLI take care of everything!
 1. Just run this command in your terminal:
 
    ```bash
-   ❯  npx create-sheriff-config
+   npx create-sheriff-config
    ```
 
    or
 
    ```bash
-   ❯  pnpx create-sheriff-config
+   pnpm dlx create-sheriff-config
    ```
 
 2. [Setup VSCode support](../vscode-support.md) (_optional_)

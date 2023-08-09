@@ -10,13 +10,12 @@ sidebar_position: 8
   You can configure Sheriff as desired using a simple javascript object as the first input parameter of the `sheriff` function.<br />
   Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with `create-sheriff-config` some of these values will be inferred automatically from your project.
 
-  ```js
-  // eslint.config.js
-
+  ```js title="eslint.config.js"
   import sheriff from 'eslint-config-sheriff';
   import { defineFlatConfig } from 'eslint-define-config';
 
-  // 👇 Sheriff configuration object
+  // highlight-start
+  // Sheriff configuration object
   const sheriffOptions = {
     react: false,
     next: false,
@@ -25,6 +24,7 @@ sidebar_position: 8
     jest: false,
     vitest: false,
   };
+  // highlight-end
 
   export default defineFlatConfig([...sheriff(sheriffOptions)]);
   ```
@@ -32,9 +32,7 @@ sidebar_position: 8
 - You can override any Sheriff rule as desired in the `eslint.config.js` file.<br />
   For example, let's say you want to disable a Sheriff rule, like `import/first`:
 
-  ```js
-  // eslint.config.js
-
+  ```js title="eslint.config.js"
   import sheriff from 'eslint-config-sheriff';
   import { defineFlatConfig } from 'eslint-define-config';
 
@@ -51,7 +49,8 @@ sidebar_position: 8
     ...sheriff(sheriffOptions),
     {
       rules: {
-        'import/first': 0, // 👉 'import/first' is now disabled everywhere.
+        // highlight-next-line
+        'import/first': 0, // 'import/first' is now disabled everywhere.
       },
     },
   ]);
@@ -59,9 +58,7 @@ sidebar_position: 8
 
   Likewise, let's say you want to enable a new rule:
 
-  ```js
-  // eslint.config.js
-
+  ```js title="eslint.config.js"
   import sheriff from 'eslint-config-sheriff';
   import { defineFlatConfig } from 'eslint-define-config';
 
@@ -78,7 +75,8 @@ sidebar_position: 8
     ...sheriff(sheriffOptions),
     {
       rules: {
-        'import/first': 2, // 👉 'import/first' is now enabled everywhere.
+        // highlight-next-line
+        'import/first': 2, // 'import/first' is now enabled everywhere.
       },
     },
   ]);
@@ -100,9 +98,7 @@ Covered here: [♻ Migration guide](./migration-guide.md)
 If you have multiple `tsconfig.json` files in your project (like `tsconfig.json`, `tsconfig.eslint.json`, `tsconfig.node.json`, etc...) you can specify which config Sheriff will pickup with the `customTSConfigPath` option.
 You can pass the path to it as a string in the `sheriffOptions` object. Example:
 
-```js
-// eslint.config.js
-
+```js title="eslint.config.js"
 import sheriff from 'eslint-config-sheriff';
 import { defineFlatConfig } from 'eslint-define-config';
 
@@ -113,6 +109,7 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
+  // highlight-next-line
   customTSConfigPath: './tsconfig.eslint.json',
 };
 
@@ -127,9 +124,7 @@ Sheriff already come with a preconfigured `no-restricted-syntax` entry. However,
 - override the rule in full: you provide your own `no-restricted-syntax` rule. You can do this as normal, appending the rule to the `FlatConfig` array.
 - extend the Sheriff version of `no-restricted-syntax`: use the key `noRestrictedSyntaxOverride.adjuncts` in the Sheriff configuration object. Example:
 
-  ```js
-  // eslint.config.js
-
+  ```js title="eslint.config.js"
   import sheriff from 'eslint-config-sheriff';
   import { defineFlatConfig } from 'eslint-define-config';
 
@@ -140,6 +135,7 @@ Sheriff already come with a preconfigured `no-restricted-syntax` entry. However,
     playwright: false,
     jest: false,
     vitest: false,
+    // highlight-start
     noRestrictedSyntaxOverride: {
       adjuncts: [
         {
@@ -159,6 +155,7 @@ Sheriff already come with a preconfigured `no-restricted-syntax` entry. However,
         },
       ],
     },
+    // highlight-end
   };
 
   export default defineFlatConfig([...sheriff(sheriffOptions)]);
@@ -166,9 +163,7 @@ Sheriff already come with a preconfigured `no-restricted-syntax` entry. However,
 
 - shrink the Sheriff version of `no-restricted-syntax`: use the key `noRestrictedSyntaxOverride.allows` in the Sheriff configuration object. Example:
 
-  ```js
-  // eslint.config.js
-
+  ```js title="eslint.config.js"
   import sheriff from 'eslint-config-sheriff';
   import { defineFlatConfig } from 'eslint-define-config';
 
@@ -179,6 +174,7 @@ Sheriff already come with a preconfigured `no-restricted-syntax` entry. However,
     playwright: false,
     jest: false,
     vitest: false,
+    // highlight-start
     noRestrictedSyntaxOverride: {
       allows: [
         'LabeledStatement',
@@ -186,6 +182,7 @@ Sheriff already come with a preconfigured `no-restricted-syntax` entry. However,
         "Identifier[name='Reflect']",
       ],
     },
+    // highlight-end
   };
 
   export default defineFlatConfig([...sheriff(sheriffOptions)]);
