@@ -1,6 +1,6 @@
 {
   "include": ["**/*.js"],
-  "exclude": ["dist", "node_modules"],
+  "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
