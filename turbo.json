@@ -10,6 +10,13 @@
     "start": {
       "cache": false,
       "persistent": true
+    },
+    "publint": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["build"]
+    },
+    "clean": {
+      "cache": false
     }
   }
 }

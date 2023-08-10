@@ -44,7 +44,8 @@
     "semantic-release": "semantic-release",
     "generate-typings": "tsc --declaration --allowJs --emitDeclarationOnly --declarationMap --outDir types",
     "generate-rules-file": "node ./utils/extractRules.js",
-    "publint": "pnpx publint"
+    "publint": "publint",
+    "clean": "rm -rf .turbo && rm -rf dist "
   },
   "dependencies": {
     "@eslint/js": "^8.44.0",
@@ -82,6 +83,7 @@
   "license": "MIT",
   "devDependencies": {
     "husky": "^8.0.0",
+    "publint": "^0.2.0",
     "semantic-release": "19.0.5",
     "typescript": "5.1.6"
   }
