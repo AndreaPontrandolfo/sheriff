@@ -1,0 +1,8 @@
+{
+  "react": false,
+  "lodash": true,
+  "next": false,
+  "playwright": false,
+  "jest": false,
+  "vitest": false
+}
