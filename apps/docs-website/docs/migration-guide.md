@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 14
 ---
 
 # ♻ Migration guide
@@ -17,12 +17,12 @@ If you are setting up Sheriff in an already established codebase, follow these s
      See example below:
 
      ```js title="eslint.config.js"
-     import sheriff from 'eslint-config-sheriff';
-     import { defineFlatConfig } from 'eslint-define-config';
+     import sheriff from "eslint-config-sheriff";
+     import { defineFlatConfig } from "eslint-define-config";
 
      const sheriffOptions = {
        // highlight-next-line
-       files: ['./src/**/*'], // Only the files in the /src directory will be linted.
+       files: ["./src/**/*"], // Only the files in the /src directory will be linted.
        react: false,
        next: false,
        lodash: false,
