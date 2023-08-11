@@ -11,8 +11,8 @@ sidebar_position: 8
   Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with `create-sheriff-config` some of these values will be inferred automatically from your project.
 
   ```js title="eslint.config.js"
-  import sheriff from 'eslint-config-sheriff';
-  import { defineFlatConfig } from 'eslint-define-config';
+  import sheriff from "eslint-config-sheriff";
+  import { defineFlatConfig } from "eslint-define-config";
 
   // highlight-start
   // Sheriff configuration object
@@ -33,8 +33,8 @@ sidebar_position: 8
   For example, let's say you want to disable a Sheriff rule, like `import/first`:
 
   ```js title="eslint.config.js"
-  import sheriff from 'eslint-config-sheriff';
-  import { defineFlatConfig } from 'eslint-define-config';
+  import sheriff from "eslint-config-sheriff";
+  import { defineFlatConfig } from "eslint-define-config";
 
   const sheriffOptions = {
     react: false,
@@ -50,7 +50,7 @@ sidebar_position: 8
     {
       rules: {
         // highlight-next-line
-        'import/first': 0, // 'import/first' is now disabled everywhere.
+        "import/first": 0, // 'import/first' is now disabled everywhere.
       },
     },
   ]);
@@ -59,8 +59,8 @@ sidebar_position: 8
   Likewise, let's say you want to enable a new rule:
 
   ```js title="eslint.config.js"
-  import sheriff from 'eslint-config-sheriff';
-  import { defineFlatConfig } from 'eslint-define-config';
+  import sheriff from "eslint-config-sheriff";
+  import { defineFlatConfig } from "eslint-define-config";
 
   const sheriffOptions = {
     react: false,
@@ -76,7 +76,7 @@ sidebar_position: 8
     {
       rules: {
         // highlight-next-line
-        'import/first': 2, // 'import/first' is now enabled everywhere.
+        "import/first": 2, // 'import/first' is now enabled everywhere.
       },
     },
   ]);
@@ -85,7 +85,7 @@ sidebar_position: 8
   This is just the standard behavior of the new configuration system of Eslint, which I'm illustrating here for your convenience. Sheriff doesn't alter this in any way.<br />
   For more in-depth information, refer to the [official docs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new).
 
-## Extra configuration options
+## Advanced configuration options
 
 The upcoming configuration options are kind of hidden options, tailored to serve only a niche group of users and designed to address specific use cases. **Use these only if you end up needing them**.
 
@@ -99,8 +99,8 @@ If you have multiple `tsconfig.json` files in your project (like `tsconfig.json`
 You can pass the path to it as a string in the `sheriffOptions` object. Example:
 
 ```js title="eslint.config.js"
-import sheriff from 'eslint-config-sheriff';
-import { defineFlatConfig } from 'eslint-define-config';
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
 
 const sheriffOptions = {
   react: false,
@@ -110,7 +110,7 @@ const sheriffOptions = {
   jest: false,
   vitest: false,
   // highlight-next-line
-  customTSConfigPath: './tsconfig.eslint.json',
+  customTSConfigPath: "./tsconfig.eslint.json",
 };
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
@@ -125,8 +125,8 @@ Sheriff already come with a preconfigured `no-restricted-syntax` entry. However,
 - extend the Sheriff version of `no-restricted-syntax`: use the key `noRestrictedSyntaxOverride.adjuncts` in the Sheriff configuration object. Example:
 
   ```js title="eslint.config.js"
-  import sheriff from 'eslint-config-sheriff';
-  import { defineFlatConfig } from 'eslint-define-config';
+  import sheriff from "eslint-config-sheriff";
+  import { defineFlatConfig } from "eslint-define-config";
 
   const sheriffOptions = {
     react: false,
@@ -139,19 +139,19 @@ Sheriff already come with a preconfigured `no-restricted-syntax` entry. However,
     noRestrictedSyntaxOverride: {
       adjuncts: [
         {
-          selector: 'LabeledStatement',
+          selector: "LabeledStatement",
           message:
-            'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+            "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
         },
         {
-          selector: 'ForInStatement',
+          selector: "ForInStatement",
           message:
-            'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+            "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",
         },
         {
           selector: "Identifier[name='Reflect']",
           message:
-            'Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development.',
+            "Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development.",
         },
       ],
     },
@@ -164,8 +164,8 @@ Sheriff already come with a preconfigured `no-restricted-syntax` entry. However,
 - shrink the Sheriff version of `no-restricted-syntax`: use the key `noRestrictedSyntaxOverride.allows` in the Sheriff configuration object. Example:
 
   ```js title="eslint.config.js"
-  import sheriff from 'eslint-config-sheriff';
-  import { defineFlatConfig } from 'eslint-define-config';
+  import sheriff from "eslint-config-sheriff";
+  import { defineFlatConfig } from "eslint-define-config";
 
   const sheriffOptions = {
     react: false,
@@ -177,8 +177,8 @@ Sheriff already come with a preconfigured `no-restricted-syntax` entry. However,
     // highlight-start
     noRestrictedSyntaxOverride: {
       allows: [
-        'LabeledStatement',
-        'ForInStatement',
+        "LabeledStatement",
+        "ForInStatement",
         "Identifier[name='Reflect']",
       ],
     },
