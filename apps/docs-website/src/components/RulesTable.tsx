@@ -9,6 +9,7 @@ import {
 interface Entry {
   ruleName: string;
   parentPluginName: string;
+  severity: string;
   ruleOptions: string;
   affectedFiles: string;
   docsLink: string;
@@ -18,6 +19,7 @@ const defaultData: Entry[] = [
   {
     ruleName: "react/jsx-child-element-spacing",
     parentPluginName: "eslint-plugin-react",
+    severity: "error",
     ruleOptions: "full",
     affectedFiles: "js, ts, tsx",
     docsLink: "http//eslint.org/docs/rules/react/jsx-boolean-value",
@@ -25,6 +27,7 @@ const defaultData: Entry[] = [
   {
     ruleName: "react/jsx-boolean-value",
     parentPluginName: "eslint-plugin-react",
+    severity: "error",
     ruleOptions: "full",
     affectedFiles: "js, ts, tsx",
     docsLink: "http//eslint.org/docs/rules/react/jsx-boolean-value",
@@ -32,6 +35,7 @@ const defaultData: Entry[] = [
   {
     ruleName: "jsx-closing-tag-location",
     parentPluginName: "eslint-plugin-react",
+    severity: "error",
     ruleOptions: "full",
     affectedFiles: "js, ts, tsx",
     docsLink: "http//eslint.org/docs/rules/react/jsx-boolean-value",
@@ -47,6 +51,10 @@ const columns = [
   }),
   columnHelper.accessor("parentPluginName", {
     header: () => "Parent Plugin",
+    cell: (info) => info.getValue(),
+  }),
+  columnHelper.accessor("severity", {
+    header: () => "Severity",
     cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("ruleOptions", {

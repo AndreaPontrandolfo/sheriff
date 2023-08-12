@@ -6,7 +6,7 @@ const config = getSheriffConfig({
   next: true,
   lodash: true,
   playwright: true,
-  jest: true,
+  vitest: true,
 });
 
 const printRules = () => {

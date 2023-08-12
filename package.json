@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "start:rulesgen": "turbo run start --filter=@sheriff/utils",
     "start:docs": "turbo run start --filter=docs-website",
+    "rulesgen": "turbo run rulesgen --filter=@sheriff/utils",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "publint": "turbo run publint --concurrency=1",

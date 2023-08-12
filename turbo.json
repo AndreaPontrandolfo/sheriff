@@ -9,7 +9,11 @@
     "lint": {},
     "start": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "outputs": ["./src/rules.json"]
+    },
+    "rulesgen": {
+      "outputs": ["./src/rules.json"]
     },
     "publint": {
       "outputs": ["dist/**"],

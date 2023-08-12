@@ -609,9 +609,9 @@ const getReactConfig = (customTSConfigPath) => {
     },
     {
       files: ['**/*{jsx,tsx}'],
-      plugins: { 'only-export-components': reactRefresh },
+      plugins: { 'react-refresh': reactRefresh },
       rules: {
-        'only-export-components/only-export-components': 2,
+        'react-refresh/only-export-components': 2,
       },
     },
     {
@@ -631,9 +631,9 @@ const getReactConfig = (customTSConfigPath) => {
     // Specific overrides for storybook
     {
       files: ['**/*.stories.tsx'],
-      plugins: { 'only-export-components': reactRefresh },
+      plugins: { 'react-refresh': reactRefresh },
       rules: {
-        'only-export-components/only-export-components': 0,
+        'react-refresh/only-export-components': 0,
         'react/jsx-filename-extension': [
           2,
           { allow: 'always', extensions: ['.tsx'] },
@@ -839,7 +839,7 @@ const getExportableConfig = (userConfigChoices = {}) => {
   ];
 
   if (userConfigChoices.react || userConfigChoices.next) {
-    // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and only-export-components.
+    // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
     exportableConfig = [
       ...exportableConfig,
       ...getReactConfig(userConfigChoices.customTSConfigPath),
