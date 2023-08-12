@@ -5,52 +5,18 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-
-interface Entry {
-  ruleName: string;
-  parentPluginName: string;
-  severity: string;
-  ruleOptions: string;
-  affectedFiles: string;
-  docsLink: string;
-}
-
-const defaultData: Entry[] = [
-  {
-    ruleName: "react/jsx-child-element-spacing",
-    parentPluginName: "eslint-plugin-react",
-    severity: "error",
-    ruleOptions: "full",
-    affectedFiles: "js, ts, tsx",
-    docsLink: "http//eslint.org/docs/rules/react/jsx-boolean-value",
-  },
-  {
-    ruleName: "react/jsx-boolean-value",
-    parentPluginName: "eslint-plugin-react",
-    severity: "error",
-    ruleOptions: "full",
-    affectedFiles: "js, ts, tsx",
-    docsLink: "http//eslint.org/docs/rules/react/jsx-boolean-value",
-  },
-  {
-    ruleName: "jsx-closing-tag-location",
-    parentPluginName: "eslint-plugin-react",
-    severity: "error",
-    ruleOptions: "full",
-    affectedFiles: "js, ts, tsx",
-    docsLink: "http//eslint.org/docs/rules/react/jsx-boolean-value",
-  },
-];
+import { ruleset } from "@sheriff/utils";
+import type { Entry } from "@sheriff/types";
 
 const columnHelper = createColumnHelper<Entry>();
 
 const columns = [
   columnHelper.accessor("ruleName", {
-    header: () => "Name",
+    header: () => "Rule",
     cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("parentPluginName", {
-    header: () => "Parent Plugin",
+    header: () => "Plugin",
     cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("severity", {
@@ -61,18 +27,22 @@ const columns = [
     header: () => "Options",
     cell: (info) => info.getValue(),
   }),
+  columnHelper.accessor("docs", {
+    header: "Docs",
+    cell: (info) => (
+      <a href={info.getValue().url}>
+        {info.getValue().description || info.getValue().url}
+      </a>
+    ),
+  }),
   columnHelper.accessor("affectedFiles", {
     header: "Affected Files",
-    cell: (info) => info.getValue(),
-  }),
-  columnHelper.accessor("docsLink", {
-    header: "Docs",
     cell: (info) => info.getValue(),
   }),
 ];
 
 export const RulesTable = (): JSX.Element => {
-  const [data, setData] = useState(() => [...defaultData]);
+  const [data, setData] = useState(() => [...ruleset]);
   const table = useReactTable({
     data,
     columns,
@@ -91,7 +61,7 @@ export const RulesTable = (): JSX.Element => {
                     ? null
                     : flexRender(
                         header.column.columnDef.header,
-                        header.getContext()
+                        header.getContext(),
                       )}
                 </th>
               ))}

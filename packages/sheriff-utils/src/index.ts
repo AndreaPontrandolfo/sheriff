@@ -1,1 +1,1 @@
-export { ruleset } from './ruleset.js';
+export { ruleset } from './ruleset';

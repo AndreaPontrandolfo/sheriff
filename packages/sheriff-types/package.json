@@ -1,6 +1,6 @@
 {
-  "name": "@sheriff/utils",
-  "description": "Sheriff utility functions.",
+  "name": "@sheriff/types",
+  "description": "Sheriff types.",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -18,22 +18,16 @@
     }
   },
   "scripts": {
-    "start": "tsx watch ./src/generateRulesDataset.ts",
-    "rulesgen": "tsx ./src/generateRulesDataset.ts",
     "publint": "publint",
     "clean": "rm -rf .turbo && rm -rf dist "
   },
   "devDependencies": {
-    "@sheriff/types": "workspace:*",
-    "@types/lodash-es": "^4.17.6",
     "@types/node": "20.4.0",
     "eslint": "^8.47.0",
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^1.23.0",
-    "lodash-es": "^4.17.21",
     "prettier": "^3.0.0",
     "publint": "^0.1.11",
-    "tsx": "^3.9.0",
     "type-fest": "^3.9.0",
     "typescript": "5.1.6"
   }

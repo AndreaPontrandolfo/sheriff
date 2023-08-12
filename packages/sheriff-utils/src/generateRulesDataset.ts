@@ -2,31 +2,18 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import fs from 'fs';
 import getSheriffConfig from 'eslint-config-sheriff';
-import { isEmpty, last } from 'lodash-es';
+import { isArray, isEmpty, last } from 'lodash-es';
 import { Linter } from 'eslint';
+import type {
+  Severity,
+  Plugins,
+  NumericSeverity,
+  Entry,
+  BarebonesConfigAtom,
+  RuleOptions,
+} from '@sheriff/types';
 
 const linter = new Linter();
-
-type NumericSeverity = 0 | 1 | 2;
-type Severity = NumericSeverity | 'error' | 'warn' | 'off';
-type Plugins =
-  | {
-      [key: string]:
-        | {
-            files: string[];
-            rules: any;
-            configs: any;
-          }
-        | undefined;
-    }
-  | null
-  | undefined;
-
-interface BarebonesConfigAtom {
-  rules: Record<string, NumericSeverity> | undefined;
-  plugins: Plugins;
-  files: string[] | undefined;
-}
 
 const getParentpluginName = (rule: string): string => {
   if (rule.includes('/')) {
@@ -106,17 +93,15 @@ const barebonesConfig: BarebonesConfigAtom[] = getSheriffConfig({
   vitest: true,
 });
 
-interface Entry {
-  ruleName: string;
-  parentPluginName: string;
-  severity: NumericSeverity;
-  ruleOptions: string;
-  affectedFiles: string;
-  docs: {
-    description: string;
-    url: string;
-  };
-}
+const extractNumericSeverityFromRuleOptions = (
+  ruleOptions: RuleOptions,
+): NumericSeverity => {
+  if (isArray(ruleOptions)) {
+    return severityRemapper(ruleOptions[0]);
+  }
+
+  return severityRemapper(ruleOptions);
+};
 
 const generateRulesDataset = () => {
   const compiledConfig = barebonesConfig.flatMap((configAtom) => {
@@ -126,11 +111,11 @@ const generateRulesDataset = () => {
       return atomRemappedRecords;
     }
 
-    for (const [ruleName, severity] of Object.entries(configAtom.rules)) {
+    for (const [ruleName, ruleOptions] of Object.entries(configAtom.rules)) {
       const ruleRecord: Entry = {
         ruleName,
         parentPluginName: getParentpluginName(ruleName),
-        severity: severityRemapper(severity),
+        severity: extractNumericSeverityFromRuleOptions(ruleOptions),
         ruleOptions: '',
         affectedFiles: configAtom.files ? configAtom.files.join(', ') : '*',
         docs: getDocs(ruleName, configAtom.plugins),

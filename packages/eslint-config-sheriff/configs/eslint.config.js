@@ -300,7 +300,7 @@ const typescriptHandPickedRules = {
   '@typescript-eslint/no-confusing-void-expression': 2,
   '@typescript-eslint/prefer-nullish-coalescing': [
     2,
-    { ignoreTernaryTests: false },
+    { ignorePrimitives: { string: true } },
   ],
   '@typescript-eslint/no-unnecessary-condition': 2,
   '@typescript-eslint/unified-signatures': 2,
