@@ -92,39 +92,9 @@ const generateRulesDataset = () => {
   });
 
   return compiledConfig;
-  // const fullRulesList = config
-  //   .map((element) => {
-  //     if (element.rules) {
-  //       return element.rules;
-  //     }
-  //   })
-  //   .filter((element) => {
-  //     if (element) {
-  //       return element;
-  //     }
-  //   });
-  // const fullRulesListFlattened = {};
-  // for (const configSlice of fullRulesList) {
-  //   Object.assign(fullRulesListFlattened, configSlice);
-  // }
-  // const fullRulesListFlattenedWithTransformedSeverity = {};
-  // for (const [key, value] of Object.entries(fullRulesListFlattened)) {
-  //   if (value === 'error') {
-  //     fullRulesListFlattenedWithTransformedSeverity[key] = 2;
-  //   }
-  //   if (value === 'warn') {
-  //     fullRulesListFlattenedWithTransformedSeverity[key] = 1;
-  //   }
-  //   if (value === 'off') {
-  //     fullRulesListFlattenedWithTransformedSeverity[key] = 0;
-  //   }
-  //   if (value !== 'error' && value !== 'warn' && value !== 'off') {
-  //     fullRulesListFlattenedWithTransformedSeverity[key] = value;
-  //   }
-  // }
 };
 
 fs.writeFileSync(
-  './src/rules.json',
-  JSON.stringify(generateRulesDataset(), null, 2),
+  './src/rules.ts',
+  `export const ruleset = ${JSON.stringify(generateRulesDataset(), null, 2)}`,
 );

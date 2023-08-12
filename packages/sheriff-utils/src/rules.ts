@@ -1,4 +1,4 @@
-[
+export const ruleset = [
   {
     "ruleName": "constructor-super",
     "parentPluginName": "@eslint/js",
