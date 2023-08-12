@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
+
 import fs from 'fs';
 import getSheriffConfig from 'eslint-config-sheriff';
 import { isArray, isEmpty, last } from 'lodash-es';
@@ -11,6 +12,7 @@ import type {
   Entry,
   BarebonesConfigAtom,
   RuleOptions,
+  RuleOptionsConfig,
 } from '@sheriff/types';
 
 const linter = new Linter();
@@ -93,6 +95,16 @@ const barebonesConfig: BarebonesConfigAtom[] = getSheriffConfig({
   vitest: true,
 });
 
+const extractOptionsFromRuleEntry = (
+  ruleEntry: RuleOptions,
+): RuleOptionsConfig => {
+  if (isArray(ruleEntry)) {
+    return ruleEntry[1];
+  }
+
+  return '';
+};
+
 const extractNumericSeverityFromRuleOptions = (
   ruleOptions: RuleOptions,
 ): NumericSeverity => {
@@ -116,7 +128,7 @@ const generateRulesDataset = () => {
         ruleName,
         parentPluginName: getParentpluginName(ruleName),
         severity: extractNumericSeverityFromRuleOptions(ruleOptions),
-        ruleOptions: '',
+        ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
         affectedFiles: configAtom.files ? configAtom.files.join(', ') : '*',
         docs: getDocs(ruleName, configAtom.plugins),
       };
@@ -132,5 +144,9 @@ const generateRulesDataset = () => {
 
 fs.writeFileSync(
   './src/ruleset.ts',
-  `export const ruleset = ${JSON.stringify(generateRulesDataset(), null, 2)}`,
+  `export const ruleset = ${JSON.stringify(
+    generateRulesDataset(),
+    null,
+    2,
+  )} as const;`,
 );

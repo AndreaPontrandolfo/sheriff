@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-table";
 import { ruleset } from "@sheriff/utils";
 import type { Entry } from "@sheriff/types";
+import styles from "./RulesTable.module.css";
 
 const columnHelper = createColumnHelper<Entry>();
 
@@ -25,7 +26,7 @@ const columns = [
   }),
   columnHelper.accessor("ruleOptions", {
     header: () => "Options",
-    cell: (info) => info.getValue(),
+    cell: (info) => (info.getValue() ? JSON.stringify(info.getValue()) : ""),
   }),
   columnHelper.accessor("docs", {
     header: "Docs",
@@ -56,7 +57,7 @@ export const RulesTable = (): JSX.Element => {
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th key={header.id}>
+                <th key={header.id} className={styles.th}>
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -70,9 +71,9 @@ export const RulesTable = (): JSX.Element => {
         </thead>
         <tbody>
           {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
+            <tr key={row.id} className={styles.tr}>
               {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>
+                <td key={cell.id} className={styles.td}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}

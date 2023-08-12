@@ -2,7 +2,7 @@ export interface Entry {
   ruleName: string;
   parentPluginName: string;
   severity: NumericSeverity;
-  ruleOptions: string;
+  ruleOptions: RuleOptionsConfig;
   affectedFiles: string;
   docs: {
     description: string;
@@ -34,3 +34,5 @@ export interface BarebonesConfigAtom {
   plugins: Plugins;
   files: string[] | undefined;
 }
+
+export type RuleOptionsConfig = Record<string, any> | '';

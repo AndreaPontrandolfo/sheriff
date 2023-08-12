@@ -1261,7 +1261,9 @@ export const ruleset = [
     ruleName: '@typescript-eslint/consistent-type-imports',
     parentPluginName: '@typescript-eslint/eslint-plugin',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      fixStyle: 'inline-type-imports',
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Enforce consistent usage of type imports',
@@ -1272,7 +1274,9 @@ export const ruleset = [
     ruleName: '@typescript-eslint/consistent-type-exports',
     parentPluginName: '@typescript-eslint/eslint-plugin',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      fixMixedExportsWithInlineTypeSpecifier: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Enforce consistent usage of type exports',
@@ -1352,7 +1356,11 @@ export const ruleset = [
     ruleName: '@typescript-eslint/prefer-nullish-coalescing',
     parentPluginName: '@typescript-eslint/eslint-plugin',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      ignorePrimitives: {
+        string: true,
+      },
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -1388,7 +1396,12 @@ export const ruleset = [
     ruleName: '@typescript-eslint/no-unused-expressions',
     parentPluginName: '@typescript-eslint/eslint-plugin',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      allowShortCircuit: true,
+      allowTernary: true,
+      allowTaggedTemplates: true,
+      enforceForJSX: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow unused expressions',
@@ -1457,7 +1470,12 @@ export const ruleset = [
     ruleName: '@typescript-eslint/no-shadow',
     parentPluginName: '@typescript-eslint/eslint-plugin',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      hoist: 'all',
+      allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
+      ignoreTypeValueShadow: true,
+      ignoreFunctionTypeParameterNameValueShadow: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -1469,7 +1487,12 @@ export const ruleset = [
     ruleName: '@typescript-eslint/naming-convention',
     parentPluginName: '@typescript-eslint/eslint-plugin',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      selector: 'default',
+      format: ['camelCase'],
+      leadingUnderscore: 'forbid',
+      trailingUnderscore: 'forbid',
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -1539,7 +1562,9 @@ export const ruleset = [
     ruleName: 'no-restricted-imports',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      paths: ['prop-types'],
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow specified modules when loaded by `import`',
@@ -1639,7 +1664,11 @@ export const ruleset = [
     ruleName: 'no-restricted-properties',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      object: 'global',
+      property: 'isFinite',
+      message: 'Please use Number.isFinite instead',
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow certain properties on certain objects',
@@ -1650,7 +1679,7 @@ export const ruleset = [
     ruleName: 'strict',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: 'never',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Require or disallow strict mode directives',
@@ -1683,7 +1712,9 @@ export const ruleset = [
     ruleName: 'no-sequences',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      allowInParentheses: false,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow comma operators',
@@ -1716,7 +1747,9 @@ export const ruleset = [
     ruleName: 'max-statements-per-line',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      max: 1,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Enforce a maximum number of statements allowed per line',
@@ -1760,7 +1793,10 @@ export const ruleset = [
     ruleName: 'prefer-destructuring',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      array: false,
+      object: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Require destructuring from arrays and/or objects',
@@ -1862,7 +1898,7 @@ export const ruleset = [
     ruleName: 'no-return-assign',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: 'always',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow assignment operators in `return` statements',
@@ -1873,7 +1909,9 @@ export const ruleset = [
     ruleName: 'no-else-return',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      allowElseIf: false,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -1896,7 +1934,7 @@ export const ruleset = [
     ruleName: 'operator-assignment',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: 'never',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -1908,7 +1946,7 @@ export const ruleset = [
     ruleName: 'logical-assignment-operators',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: 'never',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Require or disallow logical assignment operator shorthand',
@@ -1919,7 +1957,11 @@ export const ruleset = [
     ruleName: 'padding-line-between-statements',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      blankLine: 'always',
+      prev: ['const', 'let'],
+      next: '*',
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Require or disallow padding lines between statements',
@@ -1953,7 +1995,9 @@ export const ruleset = [
     ruleName: 'no-param-reassign',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      props: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow reassigning `function` parameters',
@@ -1975,7 +2019,10 @@ export const ruleset = [
     ruleName: 'array-callback-return',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      allowImplicit: true,
+      checkForEach: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Enforce `return` statements in callbacks of array methods',
@@ -1998,7 +2045,9 @@ export const ruleset = [
     ruleName: 'no-unneeded-ternary',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      defaultAssignment: false,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow ternary operators when simpler alternatives exist',
@@ -2032,7 +2081,9 @@ export const ruleset = [
     ruleName: 'no-console',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      allow: ['warn', 'error', 'debug'],
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow the use of `console`',
@@ -2065,7 +2116,7 @@ export const ruleset = [
     ruleName: 'arrow-body-style',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: 'as-needed',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Require braces around arrow function bodies',
@@ -2076,7 +2127,11 @@ export const ruleset = [
     ruleName: 'no-restricted-syntax',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      selector: 'LabeledStatement',
+      message:
+        'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow specified syntax',
@@ -2299,7 +2354,9 @@ export const ruleset = [
     ruleName: '@regru/prefer-early-return/prefer-early-return',
     parentPluginName: '@regru/eslint-plugin-prefer-early-return',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      maximumStatements: 1,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -2655,7 +2712,9 @@ export const ruleset = [
     ruleName: 'unicorn/prefer-export-from',
     parentPluginName: 'eslint-plugin-unicorn',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      ignoreUsedVariables: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Prefer `export…from` when re-exporting.',
@@ -2702,7 +2761,9 @@ export const ruleset = [
     ruleName: 'unicorn/prefer-switch',
     parentPluginName: 'eslint-plugin-unicorn',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      emptyDefaultCase: 'do-nothing-comment',
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Prefer `switch` over multiple `else-if`.',
@@ -3145,7 +3206,10 @@ export const ruleset = [
     ruleName: 'import/no-unresolved',
     parentPluginName: 'eslint-plugin-import',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      commonjs: true,
+      caseSensitiveStrict: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -3168,7 +3232,9 @@ export const ruleset = [
     ruleName: 'import/order',
     parentPluginName: 'eslint-plugin-import',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      'newlines-between': 'never',
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Enforce a convention in module import order.',
@@ -3202,7 +3268,9 @@ export const ruleset = [
     ruleName: 'import/no-duplicates',
     parentPluginName: 'eslint-plugin-import',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      'prefer-inline': true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -3214,7 +3282,9 @@ export const ruleset = [
     ruleName: 'import/newline-after-import',
     parentPluginName: 'eslint-plugin-import',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      considerComments: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Enforce a newline after import statements.',
@@ -3225,7 +3295,9 @@ export const ruleset = [
     ruleName: 'import/no-useless-path-segments',
     parentPluginName: 'eslint-plugin-import',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      noUselessIndex: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -3555,7 +3627,9 @@ export const ruleset = [
     ruleName: 'jsdoc/check-tag-names',
     parentPluginName: 'eslint-plugin-jsdoc',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      jsxTags: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Reports invalid block tag names.',
@@ -3566,7 +3640,10 @@ export const ruleset = [
     ruleName: 'jsdoc/check-param-names',
     parentPluginName: 'eslint-plugin-jsdoc',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      checkDestructured: false,
+      enableFixer: false,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -3589,7 +3666,7 @@ export const ruleset = [
     ruleName: 'jsdoc/tag-lines',
     parentPluginName: 'eslint-plugin-jsdoc',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: 'any',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Enforces lines (or no lines) between tags.',
@@ -3860,7 +3937,9 @@ export const ruleset = [
     ruleName: 'react/no-unstable-nested-components',
     parentPluginName: 'eslint-plugin-react',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      allowAsProps: false,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow creating unstable components inside components',
@@ -3871,7 +3950,9 @@ export const ruleset = [
     ruleName: 'react/jsx-no-useless-fragment',
     parentPluginName: 'eslint-plugin-react',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      allowExpressions: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow unnecessary fragments',
@@ -3882,7 +3963,9 @@ export const ruleset = [
     ruleName: 'react/function-component-definition',
     parentPluginName: 'eslint-plugin-react',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      namedComponents: 'arrow-function',
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Enforce a specific function type for function components',
@@ -3927,7 +4010,9 @@ export const ruleset = [
     ruleName: 'react/jsx-no-leaked-render',
     parentPluginName: 'eslint-plugin-react',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      validStrategies: ['coerce', 'ternary'],
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow problematic leaked values from being rendered',
@@ -3950,7 +4035,10 @@ export const ruleset = [
     ruleName: 'react/jsx-filename-extension',
     parentPluginName: 'eslint-plugin-react',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      extensions: ['.tsx'],
+      allow: 'as-needed',
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Disallow file extensions that may contain JSX',
@@ -3994,7 +4082,15 @@ export const ruleset = [
     ruleName: 'react/jsx-sort-props',
     parentPluginName: 'eslint-plugin-react',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      callbacksLast: true,
+      shorthandFirst: true,
+      shorthandLast: false,
+      ignoreCase: true,
+      noSortAlphabetically: true,
+      multiline: 'last',
+      reservedFirst: false,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Enforce props alphabetical sorting',
@@ -4005,7 +4101,12 @@ export const ruleset = [
     ruleName: '@typescript-eslint/naming-convention',
     parentPluginName: '@typescript-eslint/eslint-plugin',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      selector: 'default',
+      format: ['camelCase', 'StrictPascalCase'],
+      leadingUnderscore: 'forbid',
+      trailingUnderscore: 'forbid',
+    },
     affectedFiles: '**/*{jsx,tsx}',
     docs: {
       description: '',
@@ -4153,7 +4254,30 @@ export const ruleset = [
     ruleName: 'jsx-a11y/control-has-associated-label',
     parentPluginName: 'eslint-plugin-jsx-a11y',
     severity: 0,
-    ruleOptions: '',
+    ruleOptions: {
+      ignoreElements: [
+        'audio',
+        'canvas',
+        'embed',
+        'input',
+        'textarea',
+        'tr',
+        'video',
+      ],
+      ignoreRoles: [
+        'grid',
+        'listbox',
+        'menu',
+        'menubar',
+        'radiogroup',
+        'row',
+        'tablist',
+        'toolbar',
+        'tree',
+        'treegrid',
+      ],
+      includeRoles: ['alert', 'dialog'],
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -4211,7 +4335,17 @@ export const ruleset = [
     ruleName: 'jsx-a11y/interactive-supports-focus',
     parentPluginName: 'eslint-plugin-jsx-a11y',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      tabbable: [
+        'button',
+        'checkbox',
+        'link',
+        'searchbox',
+        'spinbutton',
+        'switch',
+        'textbox',
+      ],
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -4304,7 +4438,10 @@ export const ruleset = [
     ruleName: 'jsx-a11y/no-interactive-element-to-noninteractive-role',
     parentPluginName: 'eslint-plugin-jsx-a11y',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      tr: ['none', 'presentation'],
+      canvas: ['img'],
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -4316,7 +4453,23 @@ export const ruleset = [
     ruleName: 'jsx-a11y/no-noninteractive-element-interactions',
     parentPluginName: 'eslint-plugin-jsx-a11y',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      handlers: [
+        'onClick',
+        'onError',
+        'onLoad',
+        'onMouseDown',
+        'onMouseUp',
+        'onKeyPress',
+        'onKeyDown',
+        'onKeyUp',
+      ],
+      alert: ['onKeyUp', 'onKeyDown', 'onKeyPress'],
+      body: ['onError', 'onLoad'],
+      dialog: ['onKeyUp', 'onKeyDown', 'onKeyPress'],
+      iframe: ['onError', 'onLoad'],
+      img: ['onError', 'onLoad'],
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -4328,7 +4481,30 @@ export const ruleset = [
     ruleName: 'jsx-a11y/no-noninteractive-element-to-interactive-role',
     parentPluginName: 'eslint-plugin-jsx-a11y',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      ul: [
+        'listbox',
+        'menu',
+        'menubar',
+        'radiogroup',
+        'tablist',
+        'tree',
+        'treegrid',
+      ],
+      ol: [
+        'listbox',
+        'menu',
+        'menubar',
+        'radiogroup',
+        'tablist',
+        'tree',
+        'treegrid',
+      ],
+      li: ['menuitem', 'option', 'row', 'tab', 'treeitem'],
+      table: ['grid'],
+      td: ['gridcell'],
+      fieldset: ['radiogroup', 'presentation'],
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -4340,7 +4516,11 @@ export const ruleset = [
     ruleName: 'jsx-a11y/no-noninteractive-tabindex',
     parentPluginName: 'eslint-plugin-jsx-a11y',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      tags: [],
+      roles: ['tabpanel'],
+      allowExpressionValues: true,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -4364,7 +4544,17 @@ export const ruleset = [
     ruleName: 'jsx-a11y/no-static-element-interactions',
     parentPluginName: 'eslint-plugin-jsx-a11y',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      allowExpressionValues: true,
+      handlers: [
+        'onClick',
+        'onMouseDown',
+        'onMouseUp',
+        'onKeyPress',
+        'onKeyDown',
+        'onKeyUp',
+      ],
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description:
@@ -4456,7 +4646,10 @@ export const ruleset = [
     ruleName: 'react/jsx-filename-extension',
     parentPluginName: 'eslint-plugin-react',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      allow: 'always',
+      extensions: ['.tsx'],
+    },
     affectedFiles: '**/*.stories.tsx',
     docs: {
       description: '',
@@ -4467,7 +4660,10 @@ export const ruleset = [
     ruleName: 'vitest/consistent-test-it',
     parentPluginName: 'eslint-plugin-vitest',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      fn: 'test',
+      withinDescribe: 'test',
+    },
     affectedFiles:
       '**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**',
     docs: {
@@ -5127,7 +5323,7 @@ export const ruleset = [
     ruleName: 'lodash-f/chain-style',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 1,
-    ruleOptions: '',
+    ruleOptions: 'as-needed',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -5182,7 +5378,7 @@ export const ruleset = [
     ruleName: 'lodash-f/consistent-compose',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 1,
-    ruleOptions: '',
+    ruleOptions: 'flow',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -5193,7 +5389,7 @@ export const ruleset = [
     ruleName: 'lodash-f/identity-shorthand',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 1,
-    ruleOptions: '',
+    ruleOptions: 'always',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -5204,7 +5400,7 @@ export const ruleset = [
     ruleName: 'lodash-f/import-scope',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: 'member',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -5215,7 +5411,7 @@ export const ruleset = [
     ruleName: 'lodash-f/matches-prop-shorthand',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 1,
-    ruleOptions: '',
+    ruleOptions: 'always',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -5226,7 +5422,7 @@ export const ruleset = [
     ruleName: 'lodash-f/matches-shorthand',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 1,
-    ruleOptions: '',
+    ruleOptions: 'always',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -5281,7 +5477,7 @@ export const ruleset = [
     ruleName: 'lodash-f/path-style',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 1,
-    ruleOptions: '',
+    ruleOptions: 'string',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -5314,7 +5510,7 @@ export const ruleset = [
     ruleName: 'lodash-f/prefer-filter',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: 3,
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -5369,7 +5565,9 @@ export const ruleset = [
     ruleName: 'lodash-f/prefer-includes',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      includeNative: false,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -5501,7 +5699,7 @@ export const ruleset = [
     ruleName: 'lodash-f/prefer-reject',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: 3,
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -5512,7 +5710,9 @@ export const ruleset = [
     ruleName: 'lodash-f/prefer-some',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: {
+      includeNative: false,
+    },
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -5578,7 +5778,7 @@ export const ruleset = [
     ruleName: 'lodash-f/prop-shorthand',
     parentPluginName: 'eslint-plugin-lodash-f',
     severity: 1,
-    ruleOptions: '',
+    ruleOptions: 'always',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: '',
@@ -7781,7 +7981,7 @@ export const ruleset = [
     ruleName: 'curly',
     parentPluginName: '@eslint/js',
     severity: 2,
-    ruleOptions: '',
+    ruleOptions: 'all',
     affectedFiles: '**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
     docs: {
       description: 'Enforce consistent brace style for all control statements',
