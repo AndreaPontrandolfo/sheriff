@@ -728,13 +728,20 @@ const getBaseConfig = (customTSConfigPath, noRestrictedSyntaxOverride) => {
       files: [supportedFileTypes],
       plugins: {
         '@typescript-eslint': typescript,
-        tsdoc,
       },
       rules: {
         ...typescript.configs.recommended.rules,
         ...typescript.configs['recommended-requiring-type-checking'].rules,
         ...typescriptHandPickedRules,
         ...getTsNamingConventionRule({ isTsx: false }),
+      },
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: {
+        tsdoc,
+      },
+      rules: {
         'tsdoc/syntax': 2,
       },
     },

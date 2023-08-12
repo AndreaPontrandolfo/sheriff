@@ -2,14 +2,29 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import fs from 'fs';
 import getSheriffConfig from 'eslint-config-sheriff';
-import { isEmpty } from 'lodash-es';
+import { isEmpty, last } from 'lodash-es';
+import { Linter } from 'eslint';
+
+const linter = new Linter();
 
 type NumericSeverity = 0 | 1 | 2;
 type Severity = NumericSeverity | 'error' | 'warn' | 'off';
+type Plugins =
+  | {
+      [key: string]:
+        | {
+            files: string[];
+            rules: any;
+            configs: any;
+          }
+        | undefined;
+    }
+  | null
+  | undefined;
 
 interface BarebonesConfigAtom {
   rules: Record<string, NumericSeverity> | undefined;
-  plugins: Record<string, unknown> | undefined;
+  plugins: Plugins;
   files: string[] | undefined;
 }
 
@@ -50,6 +65,39 @@ const severityRemapper = (severity: Severity): NumericSeverity => {
   }
 };
 
+const getDocs = (ruleName: string, plugins: Plugins) => {
+  const docs = {
+    description: '',
+    url: '',
+  };
+
+  if (plugins) {
+    for (const pluginContents of Object.values(plugins)) {
+      if (pluginContents) {
+        const ruleNameWithoutPrefix = last(ruleName.split('/'));
+
+        if (ruleNameWithoutPrefix) {
+          docs.description =
+            pluginContents.rules[ruleNameWithoutPrefix]?.meta?.docs
+              ?.description ?? '';
+          docs.url =
+            pluginContents.rules[ruleNameWithoutPrefix]?.meta?.docs?.url ?? '';
+        }
+      }
+    }
+  }
+
+  const isEslintRule = ruleName.includes('/');
+
+  if (!plugins && !isEslintRule) {
+    docs.description =
+      linter.getRules().get(ruleName)?.meta?.docs?.description ?? '';
+    docs.url = linter.getRules().get(ruleName)?.meta?.docs?.url ?? '';
+  }
+
+  return docs;
+};
+
 const barebonesConfig: BarebonesConfigAtom[] = getSheriffConfig({
   react: true,
   next: true,
@@ -64,7 +112,10 @@ interface Entry {
   severity: NumericSeverity;
   ruleOptions: string;
   affectedFiles: string;
-  docsLink: string;
+  docs: {
+    description: string;
+    url: string;
+  };
 }
 
 const generateRulesDataset = () => {
@@ -82,7 +133,7 @@ const generateRulesDataset = () => {
         severity: severityRemapper(severity),
         ruleOptions: '',
         affectedFiles: configAtom.files ? configAtom.files.join(', ') : '*',
-        docsLink: '',
+        docs: getDocs(ruleName, configAtom.plugins),
       };
 
       atomRemappedRecords.push(ruleRecord);
@@ -95,6 +146,6 @@ const generateRulesDataset = () => {
 };
 
 fs.writeFileSync(
-  './src/rules.ts',
+  './src/ruleset.ts',
   `export const ruleset = ${JSON.stringify(generateRulesDataset(), null, 2)}`,
 );

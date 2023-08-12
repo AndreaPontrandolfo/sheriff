@@ -5,7 +5,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require `super()` calls in constructors",
+      "url": "https://eslint.org/docs/latest/rules/constructor-super"
+    }
   },
   {
     "ruleName": "for-direction",
@@ -13,7 +16,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce \"for\" loop update clause moving the counter in the right direction",
+      "url": "https://eslint.org/docs/latest/rules/for-direction"
+    }
   },
   {
     "ruleName": "getter-return",
@@ -21,7 +27,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce `return` statements in getters",
+      "url": "https://eslint.org/docs/latest/rules/getter-return"
+    }
   },
   {
     "ruleName": "no-async-promise-executor",
@@ -29,7 +38,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow using an async function as a Promise executor",
+      "url": "https://eslint.org/docs/latest/rules/no-async-promise-executor"
+    }
   },
   {
     "ruleName": "no-case-declarations",
@@ -37,7 +49,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow lexical declarations in case clauses",
+      "url": "https://eslint.org/docs/latest/rules/no-case-declarations"
+    }
   },
   {
     "ruleName": "no-class-assign",
@@ -45,7 +60,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow reassigning class members",
+      "url": "https://eslint.org/docs/latest/rules/no-class-assign"
+    }
   },
   {
     "ruleName": "no-compare-neg-zero",
@@ -53,7 +71,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow comparing against -0",
+      "url": "https://eslint.org/docs/latest/rules/no-compare-neg-zero"
+    }
   },
   {
     "ruleName": "no-cond-assign",
@@ -61,7 +82,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow assignment operators in conditional expressions",
+      "url": "https://eslint.org/docs/latest/rules/no-cond-assign"
+    }
   },
   {
     "ruleName": "no-const-assign",
@@ -69,7 +93,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow reassigning `const` variables",
+      "url": "https://eslint.org/docs/latest/rules/no-const-assign"
+    }
   },
   {
     "ruleName": "no-constant-condition",
@@ -77,7 +104,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow constant expressions in conditions",
+      "url": "https://eslint.org/docs/latest/rules/no-constant-condition"
+    }
   },
   {
     "ruleName": "no-control-regex",
@@ -85,7 +115,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow control characters in regular expressions",
+      "url": "https://eslint.org/docs/latest/rules/no-control-regex"
+    }
   },
   {
     "ruleName": "no-debugger",
@@ -93,7 +126,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the use of `debugger`",
+      "url": "https://eslint.org/docs/latest/rules/no-debugger"
+    }
   },
   {
     "ruleName": "no-delete-var",
@@ -101,7 +137,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow deleting variables",
+      "url": "https://eslint.org/docs/latest/rules/no-delete-var"
+    }
   },
   {
     "ruleName": "no-dupe-args",
@@ -109,7 +148,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow duplicate arguments in `function` definitions",
+      "url": "https://eslint.org/docs/latest/rules/no-dupe-args"
+    }
   },
   {
     "ruleName": "no-dupe-class-members",
@@ -117,7 +159,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow duplicate class members",
+      "url": "https://eslint.org/docs/latest/rules/no-dupe-class-members"
+    }
   },
   {
     "ruleName": "no-dupe-else-if",
@@ -125,7 +170,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow duplicate conditions in if-else-if chains",
+      "url": "https://eslint.org/docs/latest/rules/no-dupe-else-if"
+    }
   },
   {
     "ruleName": "no-dupe-keys",
@@ -133,7 +181,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow duplicate keys in object literals",
+      "url": "https://eslint.org/docs/latest/rules/no-dupe-keys"
+    }
   },
   {
     "ruleName": "no-duplicate-case",
@@ -141,7 +192,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow duplicate case labels",
+      "url": "https://eslint.org/docs/latest/rules/no-duplicate-case"
+    }
   },
   {
     "ruleName": "no-empty",
@@ -149,7 +203,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow empty block statements",
+      "url": "https://eslint.org/docs/latest/rules/no-empty"
+    }
   },
   {
     "ruleName": "no-empty-character-class",
@@ -157,7 +214,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow empty character classes in regular expressions",
+      "url": "https://eslint.org/docs/latest/rules/no-empty-character-class"
+    }
   },
   {
     "ruleName": "no-empty-pattern",
@@ -165,7 +225,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow empty destructuring patterns",
+      "url": "https://eslint.org/docs/latest/rules/no-empty-pattern"
+    }
   },
   {
     "ruleName": "no-ex-assign",
@@ -173,7 +236,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow reassigning exceptions in `catch` clauses",
+      "url": "https://eslint.org/docs/latest/rules/no-ex-assign"
+    }
   },
   {
     "ruleName": "no-extra-boolean-cast",
@@ -181,7 +247,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary boolean casts",
+      "url": "https://eslint.org/docs/latest/rules/no-extra-boolean-cast"
+    }
   },
   {
     "ruleName": "no-extra-semi",
@@ -189,7 +258,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary semicolons",
+      "url": "https://eslint.org/docs/latest/rules/no-extra-semi"
+    }
   },
   {
     "ruleName": "no-fallthrough",
@@ -197,7 +269,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow fallthrough of `case` statements",
+      "url": "https://eslint.org/docs/latest/rules/no-fallthrough"
+    }
   },
   {
     "ruleName": "no-func-assign",
@@ -205,7 +280,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow reassigning `function` declarations",
+      "url": "https://eslint.org/docs/latest/rules/no-func-assign"
+    }
   },
   {
     "ruleName": "no-global-assign",
@@ -213,7 +291,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow assignments to native objects or read-only global variables",
+      "url": "https://eslint.org/docs/latest/rules/no-global-assign"
+    }
   },
   {
     "ruleName": "no-import-assign",
@@ -221,7 +302,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow assigning to imported bindings",
+      "url": "https://eslint.org/docs/latest/rules/no-import-assign"
+    }
   },
   {
     "ruleName": "no-inner-declarations",
@@ -229,7 +313,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow variable or `function` declarations in nested blocks",
+      "url": "https://eslint.org/docs/latest/rules/no-inner-declarations"
+    }
   },
   {
     "ruleName": "no-invalid-regexp",
@@ -237,7 +324,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow invalid regular expression strings in `RegExp` constructors",
+      "url": "https://eslint.org/docs/latest/rules/no-invalid-regexp"
+    }
   },
   {
     "ruleName": "no-irregular-whitespace",
@@ -245,7 +335,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow irregular whitespace",
+      "url": "https://eslint.org/docs/latest/rules/no-irregular-whitespace"
+    }
   },
   {
     "ruleName": "no-loss-of-precision",
@@ -253,7 +346,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow literal numbers that lose precision",
+      "url": "https://eslint.org/docs/latest/rules/no-loss-of-precision"
+    }
   },
   {
     "ruleName": "no-misleading-character-class",
@@ -261,7 +357,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow characters which are made with multiple code points in character class syntax",
+      "url": "https://eslint.org/docs/latest/rules/no-misleading-character-class"
+    }
   },
   {
     "ruleName": "no-mixed-spaces-and-tabs",
@@ -269,7 +368,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow mixed spaces and tabs for indentation",
+      "url": "https://eslint.org/docs/latest/rules/no-mixed-spaces-and-tabs"
+    }
   },
   {
     "ruleName": "no-new-symbol",
@@ -277,7 +379,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `new` operators with the `Symbol` object",
+      "url": "https://eslint.org/docs/latest/rules/no-new-symbol"
+    }
   },
   {
     "ruleName": "no-nonoctal-decimal-escape",
@@ -285,7 +390,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `\\8` and `\\9` escape sequences in string literals",
+      "url": "https://eslint.org/docs/latest/rules/no-nonoctal-decimal-escape"
+    }
   },
   {
     "ruleName": "no-obj-calls",
@@ -293,7 +401,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow calling global object properties as functions",
+      "url": "https://eslint.org/docs/latest/rules/no-obj-calls"
+    }
   },
   {
     "ruleName": "no-octal",
@@ -301,7 +412,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow octal literals",
+      "url": "https://eslint.org/docs/latest/rules/no-octal"
+    }
   },
   {
     "ruleName": "no-prototype-builtins",
@@ -309,7 +423,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow calling some `Object.prototype` methods directly on objects",
+      "url": "https://eslint.org/docs/latest/rules/no-prototype-builtins"
+    }
   },
   {
     "ruleName": "no-redeclare",
@@ -317,7 +434,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow variable redeclaration",
+      "url": "https://eslint.org/docs/latest/rules/no-redeclare"
+    }
   },
   {
     "ruleName": "no-regex-spaces",
@@ -325,7 +445,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow multiple spaces in regular expressions",
+      "url": "https://eslint.org/docs/latest/rules/no-regex-spaces"
+    }
   },
   {
     "ruleName": "no-self-assign",
@@ -333,7 +456,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow assignments where both sides are exactly the same",
+      "url": "https://eslint.org/docs/latest/rules/no-self-assign"
+    }
   },
   {
     "ruleName": "no-setter-return",
@@ -341,7 +467,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow returning values from setters",
+      "url": "https://eslint.org/docs/latest/rules/no-setter-return"
+    }
   },
   {
     "ruleName": "no-shadow-restricted-names",
@@ -349,7 +478,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow identifiers from shadowing restricted names",
+      "url": "https://eslint.org/docs/latest/rules/no-shadow-restricted-names"
+    }
   },
   {
     "ruleName": "no-sparse-arrays",
@@ -357,7 +489,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow sparse arrays",
+      "url": "https://eslint.org/docs/latest/rules/no-sparse-arrays"
+    }
   },
   {
     "ruleName": "no-this-before-super",
@@ -365,7 +500,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `this`/`super` before calling `super()` in constructors",
+      "url": "https://eslint.org/docs/latest/rules/no-this-before-super"
+    }
   },
   {
     "ruleName": "no-undef",
@@ -373,7 +511,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the use of undeclared variables unless mentioned in `/*global */` comments",
+      "url": "https://eslint.org/docs/latest/rules/no-undef"
+    }
   },
   {
     "ruleName": "no-unexpected-multiline",
@@ -381,7 +522,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow confusing multiline expressions",
+      "url": "https://eslint.org/docs/latest/rules/no-unexpected-multiline"
+    }
   },
   {
     "ruleName": "no-unreachable",
@@ -389,7 +533,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unreachable code after `return`, `throw`, `continue`, and `break` statements",
+      "url": "https://eslint.org/docs/latest/rules/no-unreachable"
+    }
   },
   {
     "ruleName": "no-unsafe-finally",
@@ -397,7 +544,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow control flow statements in `finally` blocks",
+      "url": "https://eslint.org/docs/latest/rules/no-unsafe-finally"
+    }
   },
   {
     "ruleName": "no-unsafe-negation",
@@ -405,7 +555,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow negating the left operand of relational operators",
+      "url": "https://eslint.org/docs/latest/rules/no-unsafe-negation"
+    }
   },
   {
     "ruleName": "no-unsafe-optional-chaining",
@@ -413,7 +566,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow use of optional chaining in contexts where the `undefined` value is not allowed",
+      "url": "https://eslint.org/docs/latest/rules/no-unsafe-optional-chaining"
+    }
   },
   {
     "ruleName": "no-unused-labels",
@@ -421,7 +577,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unused labels",
+      "url": "https://eslint.org/docs/latest/rules/no-unused-labels"
+    }
   },
   {
     "ruleName": "no-unused-vars",
@@ -429,7 +588,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unused variables",
+      "url": "https://eslint.org/docs/latest/rules/no-unused-vars"
+    }
   },
   {
     "ruleName": "no-useless-backreference",
@@ -437,7 +599,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow useless backreferences in regular expressions",
+      "url": "https://eslint.org/docs/latest/rules/no-useless-backreference"
+    }
   },
   {
     "ruleName": "no-useless-catch",
@@ -445,7 +610,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary `catch` clauses",
+      "url": "https://eslint.org/docs/latest/rules/no-useless-catch"
+    }
   },
   {
     "ruleName": "no-useless-escape",
@@ -453,7 +621,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary escape characters",
+      "url": "https://eslint.org/docs/latest/rules/no-useless-escape"
+    }
   },
   {
     "ruleName": "no-with",
@@ -461,7 +632,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `with` statements",
+      "url": "https://eslint.org/docs/latest/rules/no-with"
+    }
   },
   {
     "ruleName": "require-yield",
@@ -469,7 +643,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require generator functions to contain `yield`",
+      "url": "https://eslint.org/docs/latest/rules/require-yield"
+    }
   },
   {
     "ruleName": "use-isnan",
@@ -477,7 +654,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require calls to `isNaN()` when checking for `NaN`",
+      "url": "https://eslint.org/docs/latest/rules/use-isnan"
+    }
   },
   {
     "ruleName": "valid-typeof",
@@ -485,7 +665,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce comparing `typeof` expressions against valid strings",
+      "url": "https://eslint.org/docs/latest/rules/valid-typeof"
+    }
   },
   {
     "ruleName": "@typescript-eslint/adjacent-overload-signatures",
@@ -493,7 +676,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require that function overload signatures be consecutive",
+      "url": "https://typescript-eslint.io/rules/adjacent-overload-signatures"
+    }
   },
   {
     "ruleName": "@typescript-eslint/ban-ts-comment",
@@ -501,7 +687,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `@ts-<directive>` comments or require descriptions after directives",
+      "url": "https://typescript-eslint.io/rules/ban-ts-comment"
+    }
   },
   {
     "ruleName": "@typescript-eslint/ban-types",
@@ -509,7 +698,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow certain types",
+      "url": "https://typescript-eslint.io/rules/ban-types"
+    }
   },
   {
     "ruleName": "no-array-constructor",
@@ -517,7 +709,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow generic `Array` constructors",
+      "url": "https://typescript-eslint.io/rules/no-array-constructor"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-array-constructor",
@@ -525,7 +720,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow generic `Array` constructors",
+      "url": "https://typescript-eslint.io/rules/no-array-constructor"
+    }
   },
   {
     "ruleName": "no-empty-function",
@@ -533,7 +731,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow empty functions",
+      "url": "https://typescript-eslint.io/rules/no-empty-function"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-empty-function",
@@ -541,7 +742,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow empty functions",
+      "url": "https://typescript-eslint.io/rules/no-empty-function"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-empty-interface",
@@ -549,7 +753,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the declaration of empty interfaces",
+      "url": "https://typescript-eslint.io/rules/no-empty-interface"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-explicit-any",
@@ -557,7 +764,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the `any` type",
+      "url": "https://typescript-eslint.io/rules/no-explicit-any"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-extra-non-null-assertion",
@@ -565,7 +775,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow extra non-null assertions",
+      "url": "https://typescript-eslint.io/rules/no-extra-non-null-assertion"
+    }
   },
   {
     "ruleName": "no-extra-semi",
@@ -573,7 +786,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary semicolons",
+      "url": "https://typescript-eslint.io/rules/no-extra-semi"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-extra-semi",
@@ -581,7 +797,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary semicolons",
+      "url": "https://typescript-eslint.io/rules/no-extra-semi"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-inferrable-types",
@@ -589,7 +808,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow explicit type declarations for variables or parameters initialized to a number, string, or boolean",
+      "url": "https://typescript-eslint.io/rules/no-inferrable-types"
+    }
   },
   {
     "ruleName": "no-loss-of-precision",
@@ -597,7 +819,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow literal numbers that lose precision",
+      "url": "https://typescript-eslint.io/rules/no-loss-of-precision"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-loss-of-precision",
@@ -605,7 +830,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow literal numbers that lose precision",
+      "url": "https://typescript-eslint.io/rules/no-loss-of-precision"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-misused-new",
@@ -613,7 +841,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce valid definition of `new` and `constructor`",
+      "url": "https://typescript-eslint.io/rules/no-misused-new"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-namespace",
@@ -621,7 +852,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow TypeScript namespaces",
+      "url": "https://typescript-eslint.io/rules/no-namespace"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-non-null-asserted-optional-chain",
@@ -629,7 +863,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow non-null assertions after an optional chain expression",
+      "url": "https://typescript-eslint.io/rules/no-non-null-asserted-optional-chain"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-non-null-assertion",
@@ -637,7 +874,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow non-null assertions using the `!` postfix operator",
+      "url": "https://typescript-eslint.io/rules/no-non-null-assertion"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-this-alias",
@@ -645,7 +885,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow aliasing `this`",
+      "url": "https://typescript-eslint.io/rules/no-this-alias"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-unnecessary-type-constraint",
@@ -653,7 +896,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary constraints on generic types",
+      "url": "https://typescript-eslint.io/rules/no-unnecessary-type-constraint"
+    }
   },
   {
     "ruleName": "no-unused-vars",
@@ -661,7 +907,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unused variables",
+      "url": "https://typescript-eslint.io/rules/no-unused-vars"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-unused-vars",
@@ -669,7 +918,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unused variables",
+      "url": "https://typescript-eslint.io/rules/no-unused-vars"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-var-requires",
@@ -677,7 +929,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `require` statements except in import statements",
+      "url": "https://typescript-eslint.io/rules/no-var-requires"
+    }
   },
   {
     "ruleName": "@typescript-eslint/prefer-as-const",
@@ -685,7 +940,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce the use of `as const` over literal type",
+      "url": "https://typescript-eslint.io/rules/prefer-as-const"
+    }
   },
   {
     "ruleName": "@typescript-eslint/prefer-namespace-keyword",
@@ -693,7 +951,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require using `namespace` keyword over `module` keyword to declare custom TypeScript modules",
+      "url": "https://typescript-eslint.io/rules/prefer-namespace-keyword"
+    }
   },
   {
     "ruleName": "@typescript-eslint/triple-slash-reference",
@@ -701,7 +962,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow certain triple slash directives in favor of ES6-style import declarations",
+      "url": "https://typescript-eslint.io/rules/triple-slash-reference"
+    }
   },
   {
     "ruleName": "@typescript-eslint/await-thenable",
@@ -709,7 +973,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow awaiting a value that is not a Thenable",
+      "url": "https://typescript-eslint.io/rules/await-thenable"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-floating-promises",
@@ -717,7 +984,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require Promise-like statements to be handled appropriately",
+      "url": "https://typescript-eslint.io/rules/no-floating-promises"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-for-in-array",
@@ -725,7 +995,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow iterating over an array with a for-in loop",
+      "url": "https://typescript-eslint.io/rules/no-for-in-array"
+    }
   },
   {
     "ruleName": "no-implied-eval",
@@ -733,7 +1006,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the use of `eval()`-like methods",
+      "url": "https://typescript-eslint.io/rules/no-implied-eval"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-implied-eval",
@@ -741,7 +1017,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the use of `eval()`-like methods",
+      "url": "https://typescript-eslint.io/rules/no-implied-eval"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-misused-promises",
@@ -749,7 +1028,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow Promises in places not designed to handle them",
+      "url": "https://typescript-eslint.io/rules/no-misused-promises"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-unnecessary-type-assertion",
@@ -757,7 +1039,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow type assertions that do not change the type of an expression",
+      "url": "https://typescript-eslint.io/rules/no-unnecessary-type-assertion"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-unsafe-argument",
@@ -765,7 +1050,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow calling a function with a value with type `any`",
+      "url": "https://typescript-eslint.io/rules/no-unsafe-argument"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-unsafe-assignment",
@@ -773,7 +1061,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow assigning a value with type `any` to variables and properties",
+      "url": "https://typescript-eslint.io/rules/no-unsafe-assignment"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-unsafe-call",
@@ -781,7 +1072,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow calling a value with type `any`",
+      "url": "https://typescript-eslint.io/rules/no-unsafe-call"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-unsafe-member-access",
@@ -789,7 +1083,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow member access on a value with type `any`",
+      "url": "https://typescript-eslint.io/rules/no-unsafe-member-access"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-unsafe-return",
@@ -797,7 +1094,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow returning a value with type `any` from a function",
+      "url": "https://typescript-eslint.io/rules/no-unsafe-return"
+    }
   },
   {
     "ruleName": "require-await",
@@ -805,7 +1105,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow async functions which have no `await` expression",
+      "url": "https://typescript-eslint.io/rules/require-await"
+    }
   },
   {
     "ruleName": "@typescript-eslint/require-await",
@@ -813,7 +1116,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow async functions which have no `await` expression",
+      "url": "https://typescript-eslint.io/rules/require-await"
+    }
   },
   {
     "ruleName": "@typescript-eslint/restrict-plus-operands",
@@ -821,7 +1127,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require both operands of addition to be the same type and be `bigint`, `number`, or `string`",
+      "url": "https://typescript-eslint.io/rules/restrict-plus-operands"
+    }
   },
   {
     "ruleName": "@typescript-eslint/restrict-template-expressions",
@@ -829,7 +1138,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce template literal expressions to be of `string` type",
+      "url": "https://typescript-eslint.io/rules/restrict-template-expressions"
+    }
   },
   {
     "ruleName": "@typescript-eslint/unbound-method",
@@ -837,7 +1149,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce unbound methods are called with their expected scope",
+      "url": "https://typescript-eslint.io/rules/unbound-method"
+    }
   },
   {
     "ruleName": "@typescript-eslint/return-await",
@@ -845,7 +1160,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent returning of awaited values",
+      "url": "https://typescript-eslint.io/rules/return-await"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-redundant-type-constituents",
@@ -853,7 +1171,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow members of unions and intersections that do nothing or override type information",
+      "url": "https://typescript-eslint.io/rules/no-redundant-type-constituents"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-unnecessary-boolean-literal-compare",
@@ -861,7 +1182,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary equality comparisons against boolean literals",
+      "url": "https://typescript-eslint.io/rules/no-unnecessary-boolean-literal-compare"
+    }
   },
   {
     "ruleName": "@typescript-eslint/prefer-ts-expect-error",
@@ -869,7 +1193,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce using `@ts-expect-error` over `@ts-ignore`",
+      "url": "https://typescript-eslint.io/rules/prefer-ts-expect-error"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-throw-literal",
@@ -877,7 +1204,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow throwing literals as exceptions",
+      "url": "https://typescript-eslint.io/rules/no-throw-literal"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-use-before-define",
@@ -885,7 +1215,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the use of variables before they are defined",
+      "url": "https://typescript-eslint.io/rules/no-use-before-define"
+    }
   },
   {
     "ruleName": "@typescript-eslint/consistent-type-assertions",
@@ -893,7 +1226,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent usage of type assertions",
+      "url": "https://typescript-eslint.io/rules/consistent-type-assertions"
+    }
   },
   {
     "ruleName": "@typescript-eslint/consistent-type-imports",
@@ -906,7 +1242,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent usage of type imports",
+      "url": "https://typescript-eslint.io/rules/consistent-type-imports"
+    }
   },
   {
     "ruleName": "@typescript-eslint/consistent-type-exports",
@@ -919,7 +1258,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent usage of type exports",
+      "url": "https://typescript-eslint.io/rules/consistent-type-exports"
+    }
   },
   {
     "ruleName": "@typescript-eslint/explicit-module-boundary-types",
@@ -927,7 +1269,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require explicit return and argument types on exported functions' and classes' public class methods",
+      "url": "https://typescript-eslint.io/rules/explicit-module-boundary-types"
+    }
   },
   {
     "ruleName": "@typescript-eslint/switch-exhaustiveness-check",
@@ -935,7 +1280,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require switch-case statements to be exhaustive with union type",
+      "url": "https://typescript-eslint.io/rules/switch-exhaustiveness-check"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-invalid-void-type",
@@ -943,7 +1291,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `void` type outside of generic or return types",
+      "url": "https://typescript-eslint.io/rules/no-invalid-void-type"
+    }
   },
   {
     "ruleName": "@typescript-eslint/method-signature-style",
@@ -951,7 +1302,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce using a particular method signature syntax",
+      "url": "https://typescript-eslint.io/rules/method-signature-style"
+    }
   },
   {
     "ruleName": "@typescript-eslint/non-nullable-type-assertion-style",
@@ -959,7 +1313,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce non-null assertions over explicit type casts",
+      "url": "https://typescript-eslint.io/rules/non-nullable-type-assertion-style"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-confusing-void-expression",
@@ -967,7 +1324,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require expressions of type void to appear in statement position",
+      "url": "https://typescript-eslint.io/rules/no-confusing-void-expression"
+    }
   },
   {
     "ruleName": "@typescript-eslint/prefer-nullish-coalescing",
@@ -980,7 +1340,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce using the nullish coalescing operator instead of logical chaining",
+      "url": "https://typescript-eslint.io/rules/prefer-nullish-coalescing"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-unnecessary-condition",
@@ -988,7 +1351,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow conditionals where the type is always truthy or always falsy",
+      "url": "https://typescript-eslint.io/rules/no-unnecessary-condition"
+    }
   },
   {
     "ruleName": "@typescript-eslint/unified-signatures",
@@ -996,7 +1362,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow two overloads that could be unified into one with a union or an optional/rest parameter",
+      "url": "https://typescript-eslint.io/rules/unified-signatures"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-unused-expressions",
@@ -1012,7 +1381,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unused expressions",
+      "url": "https://typescript-eslint.io/rules/no-unused-expressions"
+    }
   },
   {
     "ruleName": "@typescript-eslint/array-type",
@@ -1020,7 +1392,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require consistently using either `T[]` or `Array<T>` for arrays",
+      "url": "https://typescript-eslint.io/rules/array-type"
+    }
   },
   {
     "ruleName": "@typescript-eslint/prefer-optional-chain",
@@ -1028,7 +1403,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce using concise optional chain expressions instead of chained logical ands, negated logical ors, or empty objects",
+      "url": "https://typescript-eslint.io/rules/prefer-optional-chain"
+    }
   },
   {
     "ruleName": "@typescript-eslint/dot-notation",
@@ -1036,7 +1414,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce dot notation whenever possible",
+      "url": "https://typescript-eslint.io/rules/dot-notation"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-import-type-side-effects",
@@ -1044,7 +1425,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce the use of top-level import type qualifier when an import only has specifiers with inline type qualifiers",
+      "url": "https://typescript-eslint.io/rules/no-import-type-side-effects"
+    }
   },
   {
     "ruleName": "@typescript-eslint/default-param-last",
@@ -1052,7 +1436,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce default parameters to be last",
+      "url": "https://typescript-eslint.io/rules/default-param-last"
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-shadow",
@@ -1075,7 +1462,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow variable declarations from shadowing variables declared in the outer scope",
+      "url": "https://typescript-eslint.io/rules/no-shadow"
+    }
   },
   {
     "ruleName": "@typescript-eslint/naming-convention",
@@ -1152,7 +1542,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce naming conventions for everything across a codebase",
+      "url": "https://typescript-eslint.io/rules/naming-convention"
+    }
   },
   {
     "ruleName": "tsdoc/syntax",
@@ -1160,7 +1553,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Validates that TypeScript documentation comments conform to the TSDoc standard",
+      "url": "https://tsdoc.org/pages/packages/eslint-plugin-tsdoc"
+    }
   },
   {
     "ruleName": "func-style",
@@ -1168,7 +1564,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce the consistent use of either `function` declarations or expressions",
+      "url": "https://eslint.org/docs/latest/rules/func-style"
+    }
   },
   {
     "ruleName": "no-promise-executor-return",
@@ -1176,7 +1575,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow returning values from Promise executor functions",
+      "url": "https://eslint.org/docs/latest/rules/no-promise-executor-return"
+    }
   },
   {
     "ruleName": "no-unreachable-loop",
@@ -1184,7 +1586,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow loops with a body that allows only one iteration",
+      "url": "https://eslint.org/docs/latest/rules/no-unreachable-loop"
+    }
   },
   {
     "ruleName": "no-caller",
@@ -1192,7 +1597,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the use of `arguments.caller` or `arguments.callee`",
+      "url": "https://eslint.org/docs/latest/rules/no-caller"
+    }
   },
   {
     "ruleName": "no-restricted-imports",
@@ -1207,7 +1615,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow specified modules when loaded by `import`",
+      "url": "https://eslint.org/docs/latest/rules/no-restricted-imports"
+    }
   },
   {
     "ruleName": "no-extend-native",
@@ -1215,7 +1626,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow extending native types",
+      "url": "https://eslint.org/docs/latest/rules/no-extend-native"
+    }
   },
   {
     "ruleName": "no-extra-bind",
@@ -1223,7 +1637,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary calls to `.bind()`",
+      "url": "https://eslint.org/docs/latest/rules/no-extra-bind"
+    }
   },
   {
     "ruleName": "no-extra-label",
@@ -1231,7 +1648,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary labels",
+      "url": "https://eslint.org/docs/latest/rules/no-extra-label"
+    }
   },
   {
     "ruleName": "no-implicit-coercion",
@@ -1239,7 +1659,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow shorthand type conversions",
+      "url": "https://eslint.org/docs/latest/rules/no-implicit-coercion"
+    }
   },
   {
     "ruleName": "no-multi-str",
@@ -1247,7 +1670,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow multiline strings",
+      "url": "https://eslint.org/docs/latest/rules/no-multi-str"
+    }
   },
   {
     "ruleName": "no-negated-condition",
@@ -1255,7 +1681,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow negated conditions",
+      "url": "https://eslint.org/docs/latest/rules/no-negated-condition"
+    }
   },
   {
     "ruleName": "no-new-wrappers",
@@ -1263,7 +1692,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `new` operators with the `String`, `Number`, and `Boolean` objects",
+      "url": "https://eslint.org/docs/latest/rules/no-new-wrappers"
+    }
   },
   {
     "ruleName": "no-new-object",
@@ -1271,7 +1703,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `Object` constructors",
+      "url": "https://eslint.org/docs/latest/rules/no-new-object"
+    }
   },
   {
     "ruleName": "no-restricted-properties",
@@ -1311,7 +1746,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow certain properties on certain objects",
+      "url": "https://eslint.org/docs/latest/rules/no-restricted-properties"
+    }
   },
   {
     "ruleName": "strict",
@@ -1322,7 +1760,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow strict mode directives",
+      "url": "https://eslint.org/docs/latest/rules/strict"
+    }
   },
   {
     "ruleName": "no-octal-escape",
@@ -1330,7 +1771,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow octal escape sequences in string literals",
+      "url": "https://eslint.org/docs/latest/rules/no-octal-escape"
+    }
   },
   {
     "ruleName": "no-proto",
@@ -1338,7 +1782,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the use of the `__proto__` property",
+      "url": "https://eslint.org/docs/latest/rules/no-proto"
+    }
   },
   {
     "ruleName": "no-sequences",
@@ -1351,7 +1798,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow comma operators",
+      "url": "https://eslint.org/docs/latest/rules/no-sequences"
+    }
   },
   {
     "ruleName": "no-unmodified-loop-condition",
@@ -1359,7 +1809,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unmodified loop conditions",
+      "url": "https://eslint.org/docs/latest/rules/no-unmodified-loop-condition"
+    }
   },
   {
     "ruleName": "no-void",
@@ -1367,7 +1820,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `void` operators",
+      "url": "https://eslint.org/docs/latest/rules/no-void"
+    }
   },
   {
     "ruleName": "max-statements-per-line",
@@ -1380,7 +1836,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce a maximum number of statements allowed per line",
+      "url": "https://eslint.org/docs/latest/rules/max-statements-per-line"
+    }
   },
   {
     "ruleName": "no-array-constructor",
@@ -1388,7 +1847,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `Array` constructors",
+      "url": "https://eslint.org/docs/latest/rules/no-array-constructor"
+    }
   },
   {
     "ruleName": "no-multi-assign",
@@ -1396,7 +1858,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow use of chained assignment expressions",
+      "url": "https://eslint.org/docs/latest/rules/no-multi-assign"
+    }
   },
   {
     "ruleName": "no-plusplus",
@@ -1404,7 +1869,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the unary operators `++` and `--`",
+      "url": "https://eslint.org/docs/latest/rules/no-plusplus"
+    }
   },
   {
     "ruleName": "prefer-destructuring",
@@ -1421,7 +1889,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require destructuring from arrays and/or objects",
+      "url": "https://eslint.org/docs/latest/rules/prefer-destructuring"
+    }
   },
   {
     "ruleName": "no-useless-call",
@@ -1429,7 +1900,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary calls to `.call()` and `.apply()`",
+      "url": "https://eslint.org/docs/latest/rules/no-useless-call"
+    }
   },
   {
     "ruleName": "prefer-object-has-own",
@@ -1437,7 +1911,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn()`",
+      "url": "https://eslint.org/docs/latest/rules/prefer-object-has-own"
+    }
   },
   {
     "ruleName": "no-constant-binary-expression",
@@ -1445,7 +1922,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow expressions where the operation doesn't affect the value",
+      "url": "https://eslint.org/docs/latest/rules/no-constant-binary-expression"
+    }
   },
   {
     "ruleName": "no-lone-blocks",
@@ -1453,7 +1933,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary nested blocks",
+      "url": "https://eslint.org/docs/latest/rules/no-lone-blocks"
+    }
   },
   {
     "ruleName": "no-var",
@@ -1461,7 +1944,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require `let` or `const` instead of `var`",
+      "url": "https://eslint.org/docs/latest/rules/no-var"
+    }
   },
   {
     "ruleName": "no-eval",
@@ -1469,7 +1955,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the use of `eval()`",
+      "url": "https://eslint.org/docs/latest/rules/no-eval"
+    }
   },
   {
     "ruleName": "prefer-const",
@@ -1477,7 +1966,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require `const` declarations for variables that are never reassigned after declared",
+      "url": "https://eslint.org/docs/latest/rules/prefer-const"
+    }
   },
   {
     "ruleName": "prefer-rest-params",
@@ -1485,7 +1977,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require rest parameters instead of `arguments`",
+      "url": "https://eslint.org/docs/latest/rules/prefer-rest-params"
+    }
   },
   {
     "ruleName": "no-return-assign",
@@ -1496,7 +1991,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow assignment operators in `return` statements",
+      "url": "https://eslint.org/docs/latest/rules/no-return-assign"
+    }
   },
   {
     "ruleName": "no-else-return",
@@ -1509,7 +2007,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `else` blocks after `return` statements in `if` statements",
+      "url": "https://eslint.org/docs/latest/rules/no-else-return"
+    }
   },
   {
     "ruleName": "prefer-template",
@@ -1517,7 +2018,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require template literals instead of string concatenation",
+      "url": "https://eslint.org/docs/latest/rules/prefer-template"
+    }
   },
   {
     "ruleName": "operator-assignment",
@@ -1528,7 +2032,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow assignment operator shorthand where possible",
+      "url": "https://eslint.org/docs/latest/rules/operator-assignment"
+    }
   },
   {
     "ruleName": "logical-assignment-operators",
@@ -1539,7 +2046,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow logical assignment operator shorthand",
+      "url": "https://eslint.org/docs/latest/rules/logical-assignment-operators"
+    }
   },
   {
     "ruleName": "padding-line-between-statements",
@@ -1573,7 +2083,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow padding lines between statements",
+      "url": "https://eslint.org/docs/latest/rules/padding-line-between-statements"
+    }
   },
   {
     "ruleName": "prefer-spread",
@@ -1581,7 +2094,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require spread operators instead of `.apply()`",
+      "url": "https://eslint.org/docs/latest/rules/prefer-spread"
+    }
   },
   {
     "ruleName": "prefer-object-spread",
@@ -1589,7 +2105,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow using Object.assign with an object literal as the first argument and prefer the use of object spread instead",
+      "url": "https://eslint.org/docs/latest/rules/prefer-object-spread"
+    }
   },
   {
     "ruleName": "no-param-reassign",
@@ -1602,7 +2121,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow reassigning `function` parameters",
+      "url": "https://eslint.org/docs/latest/rules/no-param-reassign"
+    }
   },
   {
     "ruleName": "no-redeclare",
@@ -1610,7 +2132,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow variable redeclaration",
+      "url": "https://eslint.org/docs/latest/rules/no-redeclare"
+    }
   },
   {
     "ruleName": "array-callback-return",
@@ -1624,7 +2149,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce `return` statements in callbacks of array methods",
+      "url": "https://eslint.org/docs/latest/rules/array-callback-return"
+    }
   },
   {
     "ruleName": "object-shorthand",
@@ -1632,7 +2160,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow method and property shorthand syntax for object literals",
+      "url": "https://eslint.org/docs/latest/rules/object-shorthand"
+    }
   },
   {
     "ruleName": "no-unneeded-ternary",
@@ -1645,7 +2176,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow ternary operators when simpler alternatives exist",
+      "url": "https://eslint.org/docs/latest/rules/no-unneeded-ternary"
+    }
   },
   {
     "ruleName": "require-atomic-updates",
@@ -1653,7 +2187,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow assignments that can lead to race conditions due to usage of `await` or `yield`",
+      "url": "https://eslint.org/docs/latest/rules/require-atomic-updates"
+    }
   },
   {
     "ruleName": "no-nested-ternary",
@@ -1661,7 +2198,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow nested ternary expressions",
+      "url": "https://eslint.org/docs/latest/rules/no-nested-ternary"
+    }
   },
   {
     "ruleName": "no-console",
@@ -1678,7 +2218,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the use of `console`",
+      "url": "https://eslint.org/docs/latest/rules/no-console"
+    }
   },
   {
     "ruleName": "eqeqeq",
@@ -1686,7 +2229,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require the use of `===` and `!==`",
+      "url": "https://eslint.org/docs/latest/rules/eqeqeq"
+    }
   },
   {
     "ruleName": "prefer-arrow-callback",
@@ -1694,7 +2240,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require using arrow functions for callbacks",
+      "url": "https://eslint.org/docs/latest/rules/prefer-arrow-callback"
+    }
   },
   {
     "ruleName": "arrow-body-style",
@@ -1705,7 +2254,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require braces around arrow function bodies",
+      "url": "https://eslint.org/docs/latest/rules/arrow-body-style"
+    }
   },
   {
     "ruleName": "no-restricted-syntax",
@@ -1751,7 +2303,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow specified syntax",
+      "url": "https://eslint.org/docs/latest/rules/no-restricted-syntax"
+    }
   },
   {
     "ruleName": "no-undef",
@@ -1759,7 +2314,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the use of undeclared variables unless mentioned in `/*global */` comments",
+      "url": "https://eslint.org/docs/latest/rules/no-undef"
+    }
   },
   {
     "ruleName": "no-dupe-class-members",
@@ -1767,7 +2325,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow duplicate class members",
+      "url": "https://eslint.org/docs/latest/rules/no-dupe-class-members"
+    }
   },
   {
     "ruleName": "no-return-await",
@@ -1775,7 +2336,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary `return await`",
+      "url": "https://eslint.org/docs/latest/rules/no-return-await"
+    }
   },
   {
     "ruleName": "no-throw-literal",
@@ -1783,7 +2347,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow throwing literals as exceptions",
+      "url": "https://eslint.org/docs/latest/rules/no-throw-literal"
+    }
   },
   {
     "ruleName": "no-use-before-define",
@@ -1791,7 +2358,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow the use of variables before they are defined",
+      "url": "https://eslint.org/docs/latest/rules/no-use-before-define"
+    }
   },
   {
     "ruleName": "no-unused-expressions",
@@ -1799,7 +2369,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unused expressions",
+      "url": "https://eslint.org/docs/latest/rules/no-unused-expressions"
+    }
   },
   {
     "ruleName": "no-empty-function",
@@ -1807,7 +2380,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow empty functions",
+      "url": "https://eslint.org/docs/latest/rules/no-empty-function"
+    }
   },
   {
     "ruleName": "require-await",
@@ -1815,7 +2391,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow async functions which have no `await` expression",
+      "url": "https://eslint.org/docs/latest/rules/require-await"
+    }
   },
   {
     "ruleName": "no-unused-vars",
@@ -1823,7 +2402,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unused variables",
+      "url": "https://eslint.org/docs/latest/rules/no-unused-vars"
+    }
   },
   {
     "ruleName": "dot-notation",
@@ -1831,7 +2413,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce dot notation whenever possible",
+      "url": "https://eslint.org/docs/latest/rules/dot-notation"
+    }
   },
   {
     "ruleName": "no-shadow",
@@ -1839,7 +2424,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow variable declarations from shadowing variables declared in the outer scope",
+      "url": "https://eslint.org/docs/latest/rules/no-shadow"
+    }
   },
   {
     "ruleName": "default-param-last",
@@ -1847,7 +2435,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce default parameters to be last",
+      "url": "https://eslint.org/docs/latest/rules/default-param-last"
+    }
   },
   {
     "ruleName": "fp/no-arguments",
@@ -1855,7 +2446,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbid the use of `arguments`.",
+      "url": ""
+    }
   },
   {
     "ruleName": "fp/no-class",
@@ -1863,7 +2457,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbid the use of `class`.",
+      "url": ""
+    }
   },
   {
     "ruleName": "fp/no-delete",
@@ -1871,7 +2468,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbid the use of `delete`.",
+      "url": ""
+    }
   },
   {
     "ruleName": "fp/no-proxy",
@@ -1879,7 +2479,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbid the use of `Proxy`.",
+      "url": ""
+    }
   },
   {
     "ruleName": "etc/no-enum",
@@ -1887,7 +2490,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbids the use of `enum`.",
+      "url": "https://github.com/cartant/eslint-plugin-etc/tree/main/docs/rules/no-enum.md"
+    }
   },
   {
     "ruleName": "etc/no-misused-generics",
@@ -1895,7 +2501,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbids type parameters without inference sites and type parameters that don't add type safety to declarations.",
+      "url": "https://github.com/cartant/eslint-plugin-etc/tree/main/docs/rules/no-misused-generics.md"
+    }
   },
   {
     "ruleName": "etc/no-assign-mutated-array",
@@ -1903,7 +2512,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbids the assignment of returned, mutated arrays.",
+      "url": "https://github.com/cartant/eslint-plugin-etc/tree/main/docs/rules/no-assign-mutated-array.md"
+    }
   },
   {
     "ruleName": "@regru/prefer-early-return/prefer-early-return",
@@ -1916,7 +2528,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer early returns over full-body conditional wrapping in function declarations.",
+      "url": ""
+    }
   },
   {
     "ruleName": "unicorn/better-regex",
@@ -1924,7 +2539,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Improve regexes by making them shorter, consistent, and safer.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/better-regex.md"
+    }
   },
   {
     "ruleName": "unicorn/explicit-length-check",
@@ -1932,7 +2550,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce explicitly comparing the `length` or `size` property of a value.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/explicit-length-check.md"
+    }
   },
   {
     "ruleName": "unicorn/consistent-function-scoping",
@@ -1940,7 +2561,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Move function definitions to the highest possible scope.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/consistent-function-scoping.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-default-parameters",
@@ -1948,7 +2572,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer default parameters over reassignment.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-default-parameters.md"
+    }
   },
   {
     "ruleName": "unicorn/no-array-push-push",
@@ -1956,7 +2583,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce combining multiple `Array#push()` into one call.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-array-push-push.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-array-index-of",
@@ -1964,7 +2594,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `Array#{indexOf,lastIndexOf}()` over `Array#{findIndex,findLastIndex}()` when looking for the index of an item.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-array-index-of.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-array-flat-map",
@@ -1972,7 +2605,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `.flatMap(…)` over `.map(…).flat()`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-array-flat-map.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-array-some",
@@ -1980,7 +2616,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `.some(…)` over `.filter(…).length` check and `.{find,findLast}(…)`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-array-some.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-array-find",
@@ -1988,7 +2627,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `.find(…)` and `.findLast(…)` over the first or last element from `.filter(…)`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-array-find.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-array-flat",
@@ -1996,7 +2638,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `Array#flat()` over legacy techniques to flatten arrays.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-array-flat.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-includes",
@@ -2004,7 +2649,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-includes.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-top-level-await",
@@ -2012,7 +2660,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer top-level await over top-level promises and async function calls.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-top-level-await.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-spread",
@@ -2020,7 +2671,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer the spread operator over `Array.from(…)`, `Array#concat(…)`, `Array#{slice,toSpliced}()` and `String#split('')`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-spread.md"
+    }
   },
   {
     "ruleName": "unicorn/no-useless-spread",
@@ -2028,7 +2682,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary spread.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-useless-spread.md"
+    }
   },
   {
     "ruleName": "unicorn/no-useless-undefined",
@@ -2036,7 +2693,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow useless `undefined`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-useless-undefined.md"
+    }
   },
   {
     "ruleName": "unicorn/no-for-loop",
@@ -2044,7 +2704,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Do not use a `for` loop that can be replaced with a `for-of` loop.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-for-loop.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-set-size",
@@ -2052,7 +2715,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer using `Set#size` instead of `Array#length`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-set-size.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-type-error",
@@ -2060,7 +2726,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce throwing `TypeError` in type checking conditions.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-type-error.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-object-from-entries",
@@ -2068,7 +2737,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer using `Object.fromEntries(…)` to transform a list of key-value pairs into an object.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-object-from-entries.md"
+    }
   },
   {
     "ruleName": "unicorn/no-instanceof-array",
@@ -2076,7 +2748,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require `Array.isArray()` instead of `instanceof Array`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-instanceof-array.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-native-coercion-functions",
@@ -2084,7 +2759,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-native-coercion-functions.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-logical-operator-over-ternary",
@@ -2092,7 +2770,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer using a logical operator over a ternary.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-logical-operator-over-ternary.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-event-target",
@@ -2100,7 +2781,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `EventTarget` over `EventEmitter`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-event-target.md"
+    }
   },
   {
     "ruleName": "unicorn/no-await-expression-member",
@@ -2108,7 +2792,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow member access from await expression.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-await-expression-member.md"
+    }
   },
   {
     "ruleName": "unicorn/no-new-array",
@@ -2116,7 +2803,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `new Array()`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-new-array.md"
+    }
   },
   {
     "ruleName": "unicorn/throw-new-error",
@@ -2124,7 +2814,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require `new` when throwing an error.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/throw-new-error.md"
+    }
   },
   {
     "ruleName": "unicorn/no-array-reduce",
@@ -2132,7 +2825,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `Array#reduce()` and `Array#reduceRight()`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-array-reduce.md"
+    }
   },
   {
     "ruleName": "unicorn/no-useless-length-check",
@@ -2140,7 +2836,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow useless array length check.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-useless-length-check.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-prototype-methods",
@@ -2148,7 +2847,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer borrowing methods from the prototype instead of the instance.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-prototype-methods.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-date-now",
@@ -2156,7 +2858,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-date-now.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-export-from",
@@ -2169,7 +2874,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `export…from` when re-exporting.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-export-from.md"
+    }
   },
   {
     "ruleName": "unicorn/no-new-buffer",
@@ -2177,7 +2885,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-new-buffer.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-query-selector",
@@ -2185,7 +2896,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `.querySelector()` over `.getElementById()`, `.querySelectorAll()` over `.getElementsByClassName()` and `.getElementsByTagName()`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-query-selector.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-string-replace-all",
@@ -2193,7 +2907,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `String#replaceAll()` over regex searches with the global flag.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-string-replace-all.md"
+    }
   },
   {
     "ruleName": "unicorn/prefer-switch",
@@ -2206,7 +2923,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `switch` over multiple `else-if`.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/prefer-switch.md"
+    }
   },
   {
     "ruleName": "unicorn/switch-case-braces",
@@ -2214,7 +2934,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent brace style for `case` clauses.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/switch-case-braces.md"
+    }
   },
   {
     "ruleName": "unicorn/catch-error-name",
@@ -2222,7 +2945,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce a specific parameter name in catch clauses.",
+      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/catch-error-name.md"
+    }
   },
   {
     "ruleName": "sonarjs/cognitive-complexity",
@@ -2230,7 +2956,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Cognitive Complexity of functions should not be too high",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/cognitive-complexity.md"
+    }
   },
   {
     "ruleName": "sonarjs/elseif-without-else",
@@ -2238,7 +2967,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "\"if ... else if\" constructs should end with \"else\" clauses",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/elseif-without-else.md"
+    }
   },
   {
     "ruleName": "sonarjs/max-switch-cases",
@@ -2246,7 +2978,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "\"switch\" statements should not have too many \"case\" clauses",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/max-switch-cases.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-all-duplicated-branches",
@@ -2254,7 +2989,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "All branches in a conditional structure should not have exactly the same implementation",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-all-duplicated-branches.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-collapsible-if",
@@ -2262,7 +3000,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Collapsible \"if\" statements should be merged",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-collapsible-if.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-collection-size-mischeck",
@@ -2270,7 +3011,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Collection sizes and array length comparisons should make sense",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-collection-size-mischeck.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-duplicate-string",
@@ -2278,7 +3022,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "String literals should not be duplicated",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-duplicate-string.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-duplicated-branches",
@@ -2286,7 +3033,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Two branches in a conditional structure should not have exactly the same implementation",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-duplicated-branches.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-element-overwrite",
@@ -2294,7 +3044,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Collection elements should not be replaced unconditionally",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-element-overwrite.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-empty-collection",
@@ -2302,7 +3055,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Empty collections should not be accessed or iterated",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-empty-collection.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-extra-arguments",
@@ -2310,7 +3066,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Function calls should not pass extra arguments",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-extra-arguments.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-gratuitous-expressions",
@@ -2318,7 +3077,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Boolean expressions should not be gratuitous",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-gratuitous-expressions.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-identical-conditions",
@@ -2326,7 +3088,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Related \"if-else-if\" and \"switch-case\" statements should not have the same condition",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-identical-conditions.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-identical-expressions",
@@ -2334,7 +3099,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Identical expressions should not be used on both sides of a binary operator",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-identical-expressions.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-identical-functions",
@@ -2342,7 +3110,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Functions should not have identical implementations",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-identical-functions.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-ignored-return",
@@ -2350,7 +3121,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Return values from functions without side effects should not be ignored",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-ignored-return.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-inverted-boolean-check",
@@ -2358,7 +3132,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Boolean checks should not be inverted",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-inverted-boolean-check.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-nested-switch",
@@ -2366,7 +3143,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "\"switch\" statements should not be nested",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-nested-switch.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-nested-template-literals",
@@ -2374,7 +3154,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Template literals should not be nested",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-nested-template-literals.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-one-iteration-loop",
@@ -2382,7 +3165,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Loops with at most one iteration should be refactored",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-one-iteration-loop.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-redundant-boolean",
@@ -2390,7 +3176,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Boolean literals should not be redundant",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-redundant-boolean.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-redundant-jump",
@@ -2398,7 +3187,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Jump statements should not be redundant",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-redundant-jump.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-same-line-conditional",
@@ -2406,7 +3198,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Conditionals should start on new lines",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-same-line-conditional.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-small-switch",
@@ -2414,7 +3209,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "\"switch\" statements should have at least 3 \"case\" clauses",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-small-switch.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-unused-collection",
@@ -2422,7 +3220,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Collection and array contents should be used",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-unused-collection.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-use-of-empty-return-value",
@@ -2430,7 +3231,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "The output of functions that don't return anything should not be used",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-use-of-empty-return-value.md"
+    }
   },
   {
     "ruleName": "sonarjs/no-useless-catch",
@@ -2438,7 +3242,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "\"catch\" clauses should do more than rethrow",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/no-useless-catch.md"
+    }
   },
   {
     "ruleName": "sonarjs/non-existent-operator",
@@ -2446,7 +3253,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Non-existent operators \"=+\", \"=-\" and \"=!\" should not be used",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/non-existent-operator.md"
+    }
   },
   {
     "ruleName": "sonarjs/prefer-immediate-return",
@@ -2454,7 +3264,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Local variables should not be declared and then immediately returned or thrown",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/prefer-immediate-return.md"
+    }
   },
   {
     "ruleName": "sonarjs/prefer-object-literal",
@@ -2462,7 +3275,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Object literal syntax should be used",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/prefer-object-literal.md"
+    }
   },
   {
     "ruleName": "sonarjs/prefer-single-boolean-return",
@@ -2470,7 +3286,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Return of boolean expressions should not be wrapped into an \"if-then-else\" statement",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/prefer-single-boolean-return.md"
+    }
   },
   {
     "ruleName": "sonarjs/prefer-while",
@@ -2478,7 +3297,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "A \"while\" loop should be used instead of a \"for\" loop",
+      "url": "https://github.com/SonarSource/eslint-plugin-sonarjs/blob/master/docs/rules/prefer-while.md"
+    }
   },
   {
     "ruleName": "import/named",
@@ -2486,7 +3308,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Ensure named imports correspond to a named export in the remote file.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/named.md"
+    }
   },
   {
     "ruleName": "import/namespace",
@@ -2494,7 +3319,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Ensure imported namespaces contain dereferenced properties as they are dereferenced.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/namespace.md"
+    }
   },
   {
     "ruleName": "import/default",
@@ -2502,7 +3330,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Ensure a default export is present, given a default import.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/default.md"
+    }
   },
   {
     "ruleName": "import/no-named-as-default-member",
@@ -2510,7 +3341,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbid use of exported name as property of default export.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-named-as-default-member.md"
+    }
   },
   {
     "ruleName": "import/no-unresolved",
@@ -2524,7 +3358,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Ensure imports point to a file/module that can be resolved.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-unresolved.md"
+    }
   },
   {
     "ruleName": "import/first",
@@ -2532,7 +3369,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Ensure all imports appear before other statements.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/first.md"
+    }
   },
   {
     "ruleName": "import/order",
@@ -2545,7 +3385,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce a convention in module import order.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/order.md"
+    }
   },
   {
     "ruleName": "import/no-default-export",
@@ -2553,7 +3396,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbid default exports.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-default-export.md"
+    }
   },
   {
     "ruleName": "import/no-named-as-default",
@@ -2561,7 +3407,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbid use of exported name as identifier of default export.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-named-as-default.md"
+    }
   },
   {
     "ruleName": "import/no-duplicates",
@@ -2574,7 +3423,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbid repeated import of the same module in multiple places.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-duplicates.md"
+    }
   },
   {
     "ruleName": "import/newline-after-import",
@@ -2587,7 +3439,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce a newline after import statements.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/newline-after-import.md"
+    }
   },
   {
     "ruleName": "import/no-useless-path-segments",
@@ -2600,7 +3455,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Forbid unnecessary path segments in import and require statements.",
+      "url": "https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-useless-path-segments.md"
+    }
   },
   {
     "ruleName": "import/no-anonymous-default-export",
@@ -2608,7 +3466,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "storybook/await-interactions",
@@ -2616,7 +3477,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "Interactions should be awaited",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/await-interactions.md"
+    }
   },
   {
     "ruleName": "storybook/context-in-play-function",
@@ -2624,7 +3488,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "Pass a context when invoking play function of another story",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/context-in-play-function.md"
+    }
   },
   {
     "ruleName": "storybook/default-exports",
@@ -2632,7 +3499,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "Story files should have a default export",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/default-exports.md"
+    }
   },
   {
     "ruleName": "storybook/hierarchy-separator",
@@ -2640,7 +3510,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "Deprecated hierarchy separator in title property",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/hierarchy-separator.md"
+    }
   },
   {
     "ruleName": "storybook/no-redundant-story-name",
@@ -2648,7 +3521,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "A story should not have a redundant name property",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-redundant-story-name.md"
+    }
   },
   {
     "ruleName": "storybook/prefer-pascal-case",
@@ -2656,7 +3532,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "Stories should use PascalCase",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/prefer-pascal-case.md"
+    }
   },
   {
     "ruleName": "storybook/story-exports",
@@ -2664,7 +3543,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "A story file must contain at least one story export",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/story-exports.md"
+    }
   },
   {
     "ruleName": "storybook/use-storybook-expect",
@@ -2672,7 +3554,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "Use expect from `@storybook/jest`",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-expect.md"
+    }
   },
   {
     "ruleName": "storybook/use-storybook-testing-library",
@@ -2680,7 +3565,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "Do not use testing-library directly on stories",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/use-storybook-testing-library.md"
+    }
   },
   {
     "ruleName": "storybook/csf-component",
@@ -2688,7 +3576,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "The component property should be set",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/csf-component.md"
+    }
   },
   {
     "ruleName": "storybook/no-stories-of",
@@ -2696,7 +3587,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "storiesOf is deprecated and should not be used",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-stories-of.md"
+    }
   },
   {
     "ruleName": "storybook/no-title-property-in-meta",
@@ -2704,7 +3598,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "Do not define a title in meta",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-title-property-in-meta.md"
+    }
   },
   {
     "ruleName": "import/no-default-export",
@@ -2712,7 +3609,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "storybook/no-uninstalled-addons",
@@ -2720,7 +3620,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/.storybook/main.@(js|cjs|mjs|ts)",
-    "docsLink": ""
+    "docs": {
+      "description": "This rule identifies storybook addons that are invalid because they are either not installed or contain a typo in their name.",
+      "url": "https://github.com/storybookjs/eslint-plugin-storybook/blob/main/docs/rules/no-uninstalled-addons.md"
+    }
   },
   {
     "ruleName": "jsdoc/require-description",
@@ -2728,7 +3631,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Requires that all functions have a description.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-description.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/require-description-complete-sentence",
@@ -2736,7 +3642,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Requires that block description, explicit `@description`, and `@param`/`@returns` tag descriptions are written in complete sentences.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-description-complete-sentence.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/require-hyphen-before-param-description",
@@ -2744,7 +3653,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Requires a hyphen before the `@param` description.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-hyphen-before-param-description.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/require-returns-description",
@@ -2752,7 +3664,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Requires that the `@returns` tag has a `description` value.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-returns-description.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/require-param-name",
@@ -2760,7 +3675,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Requires that all function parameters have names.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-param-name.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/require-param-description",
@@ -2768,7 +3686,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Requires that each `@param` tag has a `description` value.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-param-description.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/require-asterisk-prefix",
@@ -2776,7 +3697,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Requires that each JSDoc line starts with an `*`.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-asterisk-prefix.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/no-types",
@@ -2784,7 +3708,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "This rule reports types being used on `@param` or `@returns`.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-types.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/no-multi-asterisks",
@@ -2792,7 +3719,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-multi-asterisks.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/no-defaults",
@@ -2800,7 +3730,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "This rule reports defaults being used on the relevant portion of `@param` or `@default`.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-defaults.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/no-blank-block-descriptions",
@@ -2808,7 +3741,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Detects and removes extra lines of a blank block description",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/no-blank-block-descriptions.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/check-indentation",
@@ -2816,7 +3752,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Reports invalid padding inside JSDoc blocks.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-indentation.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/check-tag-names",
@@ -2829,7 +3768,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Reports invalid block tag names.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-tag-names.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/check-param-names",
@@ -2843,7 +3785,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Ensures that parameter names in JSDoc match those in the function declaration.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/check-param-names.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/sort-tags",
@@ -2851,7 +3796,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Sorts tags by a specified sequence according to tag name.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/sort-tags.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "jsdoc/tag-lines",
@@ -2865,7 +3813,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforces lines (or no lines) between tags.",
+      "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/tag-lines.md#repos-sticky-header"
+    }
   },
   {
     "ruleName": "import/no-default-export",
@@ -2873,7 +3824,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*.config.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/display-name",
@@ -2881,7 +3835,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow missing displayName in a React component definition",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/display-name.md"
+    }
   },
   {
     "ruleName": "react/jsx-key",
@@ -2889,7 +3846,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow missing `key` props in iterators/collection literals",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-key.md"
+    }
   },
   {
     "ruleName": "react/jsx-no-comment-textnodes",
@@ -2897,7 +3857,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow comments from being inserted as text nodes",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-no-comment-textnodes.md"
+    }
   },
   {
     "ruleName": "react/jsx-no-duplicate-props",
@@ -2905,7 +3868,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow duplicate properties in JSX",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-no-duplicate-props.md"
+    }
   },
   {
     "ruleName": "react/jsx-no-target-blank",
@@ -2913,7 +3879,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow `target=\"_blank\"` attribute without `rel=\"noreferrer\"`",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-no-target-blank.md"
+    }
   },
   {
     "ruleName": "react/jsx-no-undef",
@@ -2921,7 +3890,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow undeclared variables in JSX",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-no-undef.md"
+    }
   },
   {
     "ruleName": "react/jsx-uses-react",
@@ -2929,7 +3901,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow React to be incorrectly marked as unused",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-uses-react.md"
+    }
   },
   {
     "ruleName": "react/jsx-uses-vars",
@@ -2937,7 +3912,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow variables used in JSX to be incorrectly marked as unused",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-uses-vars.md"
+    }
   },
   {
     "ruleName": "react/no-children-prop",
@@ -2945,7 +3923,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow passing of children as props",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-children-prop.md"
+    }
   },
   {
     "ruleName": "react/no-danger-with-children",
@@ -2953,7 +3934,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow when a DOM element is using both children and dangerouslySetInnerHTML",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-danger-with-children.md"
+    }
   },
   {
     "ruleName": "react/no-deprecated",
@@ -2961,7 +3945,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow usage of deprecated methods",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-deprecated.md"
+    }
   },
   {
     "ruleName": "react/no-direct-mutation-state",
@@ -2969,7 +3956,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow direct mutation of this.state",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-direct-mutation-state.md"
+    }
   },
   {
     "ruleName": "react/no-find-dom-node",
@@ -2977,7 +3967,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow usage of findDOMNode",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-find-dom-node.md"
+    }
   },
   {
     "ruleName": "react/no-is-mounted",
@@ -2985,7 +3978,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow usage of isMounted",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-is-mounted.md"
+    }
   },
   {
     "ruleName": "react/no-render-return-value",
@@ -2993,7 +3989,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow usage of the return value of ReactDOM.render",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-render-return-value.md"
+    }
   },
   {
     "ruleName": "react/no-string-refs",
@@ -3001,7 +4000,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow using string references",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-string-refs.md"
+    }
   },
   {
     "ruleName": "react/no-unescaped-entities",
@@ -3009,7 +4011,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unescaped HTML entities from appearing in markup",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-unescaped-entities.md"
+    }
   },
   {
     "ruleName": "react/no-unknown-property",
@@ -3017,7 +4022,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow usage of unknown DOM property",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-unknown-property.md"
+    }
   },
   {
     "ruleName": "react/no-unsafe",
@@ -3025,7 +4033,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow usage of unsafe lifecycle methods",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-unsafe.md"
+    }
   },
   {
     "ruleName": "react/prop-types",
@@ -3033,7 +4044,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow missing props validation in a React component definition",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/prop-types.md"
+    }
   },
   {
     "ruleName": "react/react-in-jsx-scope",
@@ -3041,7 +4055,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow missing React when using JSX",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/react-in-jsx-scope.md"
+    }
   },
   {
     "ruleName": "react/require-render-return",
@@ -3049,7 +4066,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce ES5 or ES6 class for returning value in render function",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/require-render-return.md"
+    }
   },
   {
     "ruleName": "react/no-unstable-nested-components",
@@ -3062,7 +4082,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow creating unstable components inside components",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-unstable-nested-components.md"
+    }
   },
   {
     "ruleName": "react/jsx-no-useless-fragment",
@@ -3075,7 +4098,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary fragments",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-no-useless-fragment.md"
+    }
   },
   {
     "ruleName": "react/function-component-definition",
@@ -3088,7 +4114,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce a specific function type for function components",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/function-component-definition.md"
+    }
   },
   {
     "ruleName": "react/jsx-boolean-value",
@@ -3096,7 +4125,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce boolean attributes notation in JSX",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-boolean-value.md"
+    }
   },
   {
     "ruleName": "react/jsx-fragments",
@@ -3104,7 +4136,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce shorthand or standard form for React fragments",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-fragments.md"
+    }
   },
   {
     "ruleName": "react/hook-use-state",
@@ -3112,7 +4147,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Ensure destructuring and symmetric naming of useState hook value and setter variables",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/hook-use-state.md"
+    }
   },
   {
     "ruleName": "react/jsx-no-leaked-render",
@@ -3128,7 +4166,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow problematic leaked values from being rendered",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-no-leaked-render.md"
+    }
   },
   {
     "ruleName": "react/destructuring-assignment",
@@ -3136,7 +4177,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent usage of destructuring assignment of props, state, and context",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/destructuring-assignment.md"
+    }
   },
   {
     "ruleName": "react/jsx-filename-extension",
@@ -3152,7 +4196,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow file extensions that may contain JSX",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-filename-extension.md"
+    }
   },
   {
     "ruleName": "react/no-multi-comp",
@@ -3160,7 +4207,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow multiple component definition per file",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-multi-comp.md"
+    }
   },
   {
     "ruleName": "react/no-array-index-key",
@@ -3168,7 +4218,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow usage of Array index in keys",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-array-index-key.md"
+    }
   },
   {
     "ruleName": "react/jsx-props-no-spreading",
@@ -3176,7 +4229,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow JSX prop spreading",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-props-no-spreading.md"
+    }
   },
   {
     "ruleName": "react/jsx-sort-props",
@@ -3195,7 +4251,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce props alphabetical sorting",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-sort-props.md"
+    }
   },
   {
     "ruleName": "@typescript-eslint/naming-convention",
@@ -3273,7 +4332,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{jsx,tsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react-refresh/only-export-components",
@@ -3281,7 +4343,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{jsx,tsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "jsx-a11y/alt-text",
@@ -3289,7 +4354,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce all elements that require alternative text have meaningful information to relay back to end user.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/alt-text.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/anchor-ambiguous-text",
@@ -3297,7 +4365,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce `<a>` text to not exactly match \"click here\", \"here\", \"link\", or \"a link\".",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-ambiguous-text.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/anchor-has-content",
@@ -3305,7 +4376,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce all anchors to contain accessible content.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-has-content.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/anchor-is-valid",
@@ -3313,7 +4387,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce all anchors are valid, navigable elements.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-is-valid.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/aria-activedescendant-has-tabindex",
@@ -3321,7 +4398,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce elements with aria-activedescendant are tabbable.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-activedescendant-has-tabindex.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/aria-props",
@@ -3329,7 +4409,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce all `aria-*` props are valid.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-props.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/aria-proptypes",
@@ -3337,7 +4420,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce ARIA state and property values are valid.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-proptypes.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/aria-role",
@@ -3345,7 +4431,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that elements with ARIA roles must use a valid, non-abstract ARIA role.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-role.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/aria-unsupported-elements",
@@ -3353,7 +4442,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that elements that do not support ARIA roles, states, and properties do not have those attributes.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-unsupported-elements.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/autocomplete-valid",
@@ -3361,7 +4453,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that autocomplete attributes are used correctly.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/autocomplete-valid.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/click-events-have-key-events",
@@ -3369,7 +4464,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce a clickable non-interactive element has at least one keyboard event listener.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/click-events-have-key-events.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/control-has-associated-label",
@@ -3406,7 +4504,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that a control (an interactive element) has a text label.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/control-has-associated-label.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/heading-has-content",
@@ -3414,7 +4515,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce heading (`h1`, `h2`, etc) elements contain accessible content.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/heading-has-content.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/html-has-lang",
@@ -3422,7 +4526,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce `<html>` element has `lang` prop.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/html-has-lang.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/iframe-has-title",
@@ -3430,7 +4537,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce iframe elements have a title attribute.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/iframe-has-title.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/img-redundant-alt",
@@ -3438,7 +4548,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce `<img>` alt prop does not contain the word \"image\", \"picture\", or \"photo\".",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/img-redundant-alt.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/interactive-supports-focus",
@@ -3459,7 +4572,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that elements with interactive handlers like `onClick` must be focusable.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/interactive-supports-focus.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/label-has-associated-control",
@@ -3467,7 +4583,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that a `label` tag has a text label and an associated control.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/label-has-associated-control.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/label-has-for",
@@ -3475,7 +4594,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that `<label>` elements have the `htmlFor` prop.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/label-has-for.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/media-has-caption",
@@ -3483,7 +4605,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforces that `<audio>` and `<video>` elements must have a `<track>` for captions.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/media-has-caption.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/mouse-events-have-key-events",
@@ -3491,7 +4616,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that `onMouseOver`/`onMouseOut` are accompanied by `onFocus`/`onBlur` for keyboard-only users.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/mouse-events-have-key-events.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/no-access-key",
@@ -3499,7 +4627,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that the `accessKey` prop is not used on any element to avoid complications with keyboard commands used by a screenreader.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-access-key.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/no-autofocus",
@@ -3507,7 +4638,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce autoFocus prop is not used.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-autofocus.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/no-distracting-elements",
@@ -3515,7 +4649,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce distracting elements are not used.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-distracting-elements.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/no-interactive-element-to-noninteractive-role",
@@ -3534,7 +4671,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Interactive elements should not be assigned non-interactive roles.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-interactive-element-to-noninteractive-role.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/no-noninteractive-element-interactions",
@@ -3578,7 +4718,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Non-interactive elements should not be assigned mouse or keyboard event listeners.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-noninteractive-element-interactions.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/no-noninteractive-element-to-interactive-role",
@@ -3625,7 +4768,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Non-interactive elements should not be assigned interactive roles.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-noninteractive-element-to-interactive-role.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/no-noninteractive-tabindex",
@@ -3642,7 +4788,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "`tabIndex` should only be declared on interactive elements.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-noninteractive-tabindex.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/no-redundant-roles",
@@ -3650,7 +4799,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce explicit role property is not the same as implicit/default role property on element.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-redundant-roles.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/no-static-element-interactions",
@@ -3671,7 +4823,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that non-interactive, visible elements (such as `<div>`) that have click handlers use the role attribute.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-static-element-interactions.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/role-has-required-aria-props",
@@ -3679,7 +4834,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that elements with ARIA roles must have all required attributes for that role.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/role-has-required-aria-props.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/role-supports-aria-props",
@@ -3687,7 +4845,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that elements with explicit or implicit roles defined contain only `aria-*` properties supported by that `role`.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/role-supports-aria-props.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/scope",
@@ -3695,7 +4856,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce `scope` prop is only used on `<th>` elements.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/scope.md"
+    }
   },
   {
     "ruleName": "jsx-a11y/tabindex-no-positive",
@@ -3703,7 +4867,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce `tabIndex` value is not greater than zero.",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/tabindex-no-positive.md"
+    }
   },
   {
     "ruleName": "react-hooks/rules-of-hooks",
@@ -3711,7 +4878,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "enforces the Rules of Hooks",
+      "url": "https://reactjs.org/docs/hooks-rules.html"
+    }
   },
   {
     "ruleName": "react-hooks/exhaustive-deps",
@@ -3719,7 +4889,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "verifies the list of dependencies for Hooks like useEffect and similar",
+      "url": "https://github.com/facebook/react/issues/14920"
+    }
   },
   {
     "ruleName": "react-refresh/only-export-components",
@@ -3727,7 +4900,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.tsx",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-filename-extension",
@@ -3743,7 +4919,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*.stories.tsx",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vitest/consistent-test-it",
@@ -3757,7 +4936,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer test or it but not both",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/consistent-test-it.md"
+    }
   },
   {
     "ruleName": "vitest/expect-expect",
@@ -3765,7 +4947,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce having expectation in test body",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/expect-expect.md"
+    }
   },
   {
     "ruleName": "vitest/no-commented-out-tests",
@@ -3773,7 +4958,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow commented out tests",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-commented-out-tests.md"
+    }
   },
   {
     "ruleName": "vitest/no-conditional-expect",
@@ -3781,7 +4969,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow conditional expects",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-conditional-expect.md"
+    }
   },
   {
     "ruleName": "vitest/no-conditional-in-test",
@@ -3789,7 +4980,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow conditional tests",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-conditional-in-test.md"
+    }
   },
   {
     "ruleName": "vitest/no-disabled-tests",
@@ -3797,7 +4991,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow disabled tests",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-disabled-tests.md"
+    }
   },
   {
     "ruleName": "vitest/no-done-callback",
@@ -3805,7 +5002,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow using a callback in asynchronous tests and hooks",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-done-callback.md"
+    }
   },
   {
     "ruleName": "vitest/no-duplicate-hooks",
@@ -3813,7 +5013,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow duplicate hooks and teardown hooks",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-duplicate-hooks.md"
+    }
   },
   {
     "ruleName": "vitest/no-identical-title",
@@ -3821,7 +5024,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow identical titles",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-identical-title.md"
+    }
   },
   {
     "ruleName": "vitest/no-focused-tests",
@@ -3829,7 +5035,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow focused tests",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-focused-tests.md"
+    }
   },
   {
     "ruleName": "vitest/no-standalone-expect",
@@ -3837,7 +5046,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow using `expect` outside of `it` or `test` blocks",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-standalone-expect.md"
+    }
   },
   {
     "ruleName": "vitest/no-test-prefixes",
@@ -3845,7 +5057,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow using `test` as a prefix",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-test-prefixes.md"
+    }
   },
   {
     "ruleName": "vitest/no-test-return-statement",
@@ -3853,7 +5068,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow return statements in tests",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-test-return-statement.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-comparison-matcher",
@@ -3861,7 +5079,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using the built-in comparison matchers",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-comparison-matcher.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-each",
@@ -3869,7 +5090,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `each` rather than manual loops",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-each.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-equality-matcher",
@@ -3877,7 +5101,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using the built-in quality matchers",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-equality-matcher.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-expect-resolves",
@@ -3885,7 +5112,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using `expect().resolves` over `expect(await ...)` syntax",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-expect-resolves.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-hooks-in-order",
@@ -3893,7 +5123,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer having hooks in consistent order",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-hooks-in-order.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-hooks-on-top",
@@ -3901,7 +5134,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest having hooks before any test cases",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-hooks-on-top.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-lowercase-title",
@@ -3909,7 +5145,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce lowercase titles",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-lowercase-title.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-mock-promise-shorthand",
@@ -3917,7 +5156,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer mock resolved/rejected shorthands for promises",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-mock-promise-shorthand.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-spy-on",
@@ -3925,7 +5167,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using `vi.spyOn`",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-spy-on.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-strict-equal",
@@ -3933,7 +5178,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer strict equal over equal",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-strict-equal.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-to-be",
@@ -3941,7 +5189,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using toBe()",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-to-be-falsy",
@@ -3949,7 +5200,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using toBeFalsy()",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be-falsy.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-to-be-object",
@@ -3957,7 +5211,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer toBeObject()",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be-object.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-to-be-truthy",
@@ -3965,7 +5222,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using `toBeTruthy`",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be-truthy.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-to-contain",
@@ -3973,7 +5233,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer using toContain()",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-contain.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-to-have-length",
@@ -3981,7 +5244,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using toHaveLength()",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-have-length.md"
+    }
   },
   {
     "ruleName": "vitest/prefer-todo",
@@ -3989,7 +5255,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using `test.todo`",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-todo.md"
+    }
   },
   {
     "ruleName": "vitest/require-hook",
@@ -3997,7 +5266,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Require setup and teardown to be within a hook",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/require-hook.md"
+    }
   },
   {
     "ruleName": "vitest/require-to-throw-message",
@@ -4005,7 +5277,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Require toThrow() to be called with an error message",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/require-to-throw-message.md"
+    }
   },
   {
     "ruleName": "vitest/require-top-level-describe",
@@ -4013,7 +5288,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce that all tests are in a top-level describe",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/require-top-level-describe.md"
+    }
   },
   {
     "ruleName": "vitest/valid-describe-callback",
@@ -4021,7 +5299,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce valid describe callback",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/valid-describe-callback.md"
+    }
   },
   {
     "ruleName": "vitest/valid-expect",
@@ -4029,7 +5310,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce valid `expect()` usage",
+      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/valid-expect.md"
+    }
   },
   {
     "ruleName": "@next/next/google-font-display",
@@ -4037,7 +5321,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce font-display behavior with Google Fonts.",
+      "url": "https://nextjs.org/docs/messages/google-font-display"
+    }
   },
   {
     "ruleName": "@next/next/google-font-preconnect",
@@ -4045,7 +5332,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Ensure `preconnect` is used with Google Fonts.",
+      "url": "https://nextjs.org/docs/messages/google-font-preconnect"
+    }
   },
   {
     "ruleName": "@next/next/next-script-for-ga",
@@ -4053,7 +5343,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prefer `next/script` component when using the inline script for Google Analytics.",
+      "url": "https://nextjs.org/docs/messages/next-script-for-ga"
+    }
   },
   {
     "ruleName": "@next/next/no-before-interactive-script-outside-document",
@@ -4061,7 +5354,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of `next/script`'s `beforeInteractive` strategy outside of `pages/_document.js`.",
+      "url": "https://nextjs.org/docs/messages/no-before-interactive-script-outside-document"
+    }
   },
   {
     "ruleName": "@next/next/no-css-tags",
@@ -4069,7 +5365,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent manual stylesheet tags.",
+      "url": "https://nextjs.org/docs/messages/no-css-tags"
+    }
   },
   {
     "ruleName": "@next/next/no-head-element",
@@ -4077,7 +5376,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of `<head>` element.",
+      "url": "https://nextjs.org/docs/messages/no-head-element"
+    }
   },
   {
     "ruleName": "@next/next/no-html-link-for-pages",
@@ -4085,7 +5387,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of `<a>` elements to navigate to internal Next.js pages.",
+      "url": "https://nextjs.org/docs/messages/no-html-link-for-pages"
+    }
   },
   {
     "ruleName": "@next/next/no-img-element",
@@ -4093,7 +5398,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of `<img>` element due to slower LCP and higher bandwidth.",
+      "url": "https://nextjs.org/docs/messages/no-img-element"
+    }
   },
   {
     "ruleName": "@next/next/no-page-custom-font",
@@ -4101,7 +5409,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent page-only custom fonts.",
+      "url": "https://nextjs.org/docs/messages/no-page-custom-font"
+    }
   },
   {
     "ruleName": "@next/next/no-styled-jsx-in-document",
@@ -4109,7 +5420,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of `styled-jsx` in `pages/_document.js`.",
+      "url": "https://nextjs.org/docs/messages/no-styled-jsx-in-document"
+    }
   },
   {
     "ruleName": "@next/next/no-sync-scripts",
@@ -4117,7 +5431,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent synchronous scripts.",
+      "url": "https://nextjs.org/docs/messages/no-sync-scripts"
+    }
   },
   {
     "ruleName": "@next/next/no-title-in-document-head",
@@ -4125,7 +5442,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of `<title>` with `Head` component from `next/document`.",
+      "url": "https://nextjs.org/docs/messages/no-title-in-document-head"
+    }
   },
   {
     "ruleName": "@next/next/no-typos",
@@ -4133,7 +5453,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent common typos in Next.js data fetching functions.",
+      "url": ""
+    }
   },
   {
     "ruleName": "@next/next/no-unwanted-polyfillio",
@@ -4141,7 +5464,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent duplicate polyfills from Polyfill.io.",
+      "url": "https://nextjs.org/docs/messages/no-unwanted-polyfillio"
+    }
   },
   {
     "ruleName": "@next/next/inline-script-id",
@@ -4149,7 +5475,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce `id` attribute on `next/script` components with inline content.",
+      "url": "https://nextjs.org/docs/messages/inline-script-id"
+    }
   },
   {
     "ruleName": "@next/next/no-assign-module-variable",
@@ -4157,7 +5486,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent assignment to the `module` variable.",
+      "url": "https://nextjs.org/docs/messages/no-assign-module-variable"
+    }
   },
   {
     "ruleName": "@next/next/no-document-import-in-page",
@@ -4165,7 +5497,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent importing `next/document` outside of `pages/_document.js`.",
+      "url": "https://nextjs.org/docs/messages/no-document-import-in-page"
+    }
   },
   {
     "ruleName": "@next/next/no-duplicate-head",
@@ -4173,7 +5508,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent duplicate usage of `<Head>` in `pages/_document.js`.",
+      "url": "https://nextjs.org/docs/messages/no-duplicate-head"
+    }
   },
   {
     "ruleName": "@next/next/no-head-import-in-document",
@@ -4181,7 +5519,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of `next/head` in `pages/_document.js`.",
+      "url": "https://nextjs.org/docs/messages/no-head-import-in-document"
+    }
   },
   {
     "ruleName": "@next/next/no-script-component-in-head",
@@ -4189,7 +5530,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of `next/script` in `next/head` component.",
+      "url": "https://nextjs.org/docs/messages/no-script-component-in-head"
+    }
   },
   {
     "ruleName": "lodash-f/callback-binding",
@@ -4197,7 +5541,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/callback-binding.md"
+    }
   },
   {
     "ruleName": "lodash-f/chain-style",
@@ -4208,7 +5555,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/chain-style.md"
+    }
   },
   {
     "ruleName": "lodash-f/chaining",
@@ -4216,7 +5566,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/chaining.md"
+    }
   },
   {
     "ruleName": "lodash-f/collection-method-value",
@@ -4224,7 +5577,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/collection-method-value.md"
+    }
   },
   {
     "ruleName": "lodash-f/collection-ordering",
@@ -4232,7 +5588,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/collection-ordering.md"
+    }
   },
   {
     "ruleName": "lodash-f/collection-return",
@@ -4240,7 +5599,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/collection-return.md"
+    }
   },
   {
     "ruleName": "lodash-f/consistent-compose",
@@ -4251,7 +5613,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/consistent-compose.md"
+    }
   },
   {
     "ruleName": "lodash-f/identity-shorthand",
@@ -4262,7 +5627,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/identity-shorthand.md"
+    }
   },
   {
     "ruleName": "lodash-f/import-scope",
@@ -4273,7 +5641,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/import-scope.md"
+    }
   },
   {
     "ruleName": "lodash-f/matches-prop-shorthand",
@@ -4284,7 +5655,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/matches-prop-shorthand.md"
+    }
   },
   {
     "ruleName": "lodash-f/matches-shorthand",
@@ -4296,7 +5670,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/matches-shorthand.md"
+    }
   },
   {
     "ruleName": "lodash-f/no-commit",
@@ -4304,7 +5681,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/no-commit.md"
+    }
   },
   {
     "ruleName": "lodash-f/no-double-unwrap",
@@ -4312,7 +5692,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/no-double-unwrap.md"
+    }
   },
   {
     "ruleName": "lodash-f/no-extra-args",
@@ -4320,7 +5703,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/no-extra-args.md"
+    }
   },
   {
     "ruleName": "lodash-f/no-unbound-this",
@@ -4328,7 +5714,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/no-unbound-this.md"
+    }
   },
   {
     "ruleName": "lodash-f/path-style",
@@ -4339,7 +5728,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/path-style.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-compact",
@@ -4347,7 +5739,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-compact.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-constant",
@@ -4355,7 +5750,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-constant.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-filter",
@@ -4366,7 +5764,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-filter.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-find",
@@ -4374,7 +5775,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-find.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-flat-map",
@@ -4382,7 +5786,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-flat-map.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-get",
@@ -4390,7 +5797,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-get.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-immutable-method",
@@ -4398,7 +5808,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-immutable-method.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-includes",
@@ -4411,7 +5824,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-includes.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-invoke-map",
@@ -4419,7 +5835,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-invoke-map.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-is-empty",
@@ -4427,7 +5846,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-is-empty.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-is-nil",
@@ -4435,7 +5857,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-is-nil.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-lodash-chain",
@@ -4443,7 +5868,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-lodash-chain.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-lodash-method",
@@ -4451,7 +5879,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-lodash-method.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-lodash-typecheck",
@@ -4459,7 +5890,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-lodash-typecheck.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-map",
@@ -4467,7 +5901,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-map.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-matches",
@@ -4475,7 +5912,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-matches.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-nullish-coalescing",
@@ -4483,7 +5923,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-nullish-coalescing.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-noop",
@@ -4491,7 +5934,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-noop.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-over-quantifier",
@@ -4499,7 +5945,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-over-quantifier.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-reject",
@@ -4510,7 +5959,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-reject.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-some",
@@ -4523,7 +5975,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-some.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-startswith",
@@ -4531,7 +5986,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-startswith.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-thru",
@@ -4539,7 +5997,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-thru.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-times",
@@ -4547,7 +6008,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-times.md"
+    }
   },
   {
     "ruleName": "lodash-f/prefer-wrapper-method",
@@ -4555,7 +6019,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prefer-wrapper-method.md"
+    }
   },
   {
     "ruleName": "lodash-f/preferred-alias",
@@ -4563,7 +6030,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/preferred-alias.md"
+    }
   },
   {
     "ruleName": "lodash-f/prop-shorthand",
@@ -4574,7 +6044,10 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/prop-shorthand.md"
+    }
   },
   {
     "ruleName": "lodash-f/unwrap",
@@ -4582,7 +6055,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": "https://github.com/wix/eslint-plugin-lodash/blob/v7.5.3/docs/rules/unwrap.md"
+    }
   },
   {
     "ruleName": "unicorn/no-instanceof-array",
@@ -4590,7 +6066,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "no-empty-pattern",
@@ -4598,7 +6077,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "playwright/missing-playwright-await",
@@ -4606,7 +6088,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Identify false positives when async Playwright APIs are not properly awaited.",
+      "url": ""
+    }
   },
   {
     "ruleName": "playwright/no-page-pause",
@@ -4614,7 +6099,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of page.pause()",
+      "url": ""
+    }
   },
   {
     "ruleName": "playwright/no-element-handle",
@@ -4622,7 +6110,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "The use of ElementHandle is discouraged, use Locator instead",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-element-handle.md"
+    }
   },
   {
     "ruleName": "playwright/no-eval",
@@ -4630,7 +6121,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "The use of `page.$eval` and `page.$$eval` are discouraged, use `locator.evaluate` or `locator.evaluateAll` instead",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-eval.md"
+    }
   },
   {
     "ruleName": "playwright/no-focused-test",
@@ -4638,7 +6132,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of `.only()` focus test annotation",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-focused-test.md"
+    }
   },
   {
     "ruleName": "playwright/no-skipped-test",
@@ -4646,7 +6143,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of the `.skip()` skip test annotation.",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-skipped-test.md"
+    }
   },
   {
     "ruleName": "playwright/no-wait-for-timeout",
@@ -4654,7 +6154,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of page.waitForTimeout()",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-wait-for-timeout.md"
+    }
   },
   {
     "ruleName": "playwright/no-force-option",
@@ -4662,7 +6165,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Prevent usage of `{ force: true }` option.",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-force-option.md"
+    }
   },
   {
     "ruleName": "playwright/max-nested-describe",
@@ -4670,7 +6176,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforces a maximum depth to nested describe calls",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/max-nested-describe.md"
+    }
   },
   {
     "ruleName": "playwright/no-conditional-in-test",
@@ -4678,7 +6187,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow conditional logic in tests",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-conditional-in-test.md"
+    }
   },
   {
     "ruleName": "playwright/no-useless-not",
@@ -4686,7 +6198,10 @@ export const ruleset = [
     "severity": 1,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow usage of 'not' matchers when a more specific matcher exists",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-useless-not.md"
+    }
   },
   {
     "ruleName": "playwright/valid-expect",
@@ -4694,7 +6209,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce valid `expect()` usage",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/valid-expect.md"
+    }
   },
   {
     "ruleName": "playwright/prefer-lowercase-title",
@@ -4702,7 +6220,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce lowercase test names",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-lowercase-title.md"
+    }
   },
   {
     "ruleName": "playwright/prefer-to-have-length",
@@ -4710,7 +6231,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using `toHaveLength()`",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-to-have-length.md"
+    }
   },
   {
     "ruleName": "playwright/require-top-level-describe",
@@ -4718,7 +6242,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Require test cases and hooks to be inside a `test.describe` block",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/require-top-level-describe.md"
+    }
   },
   {
     "ruleName": "playwright/prefer-to-be",
@@ -4726,7 +6253,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using `toBe()` for primitive literals",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-to-be.md"
+    }
   },
   {
     "ruleName": "playwright/prefer-strict-equal",
@@ -4734,7 +6264,10 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": "",
     "affectedFiles": "**/*{js,ts}",
-    "docsLink": ""
+    "docs": {
+      "description": "Suggest using `toStrictEqual()`",
+      "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-strict-equal.md"
+    }
   },
   {
     "ruleName": "curly",
@@ -4742,7 +6275,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent brace style for all control statements",
+      "url": "https://eslint.org/docs/latest/rules/curly"
+    }
   },
   {
     "ruleName": "lines-around-comment",
@@ -4750,7 +6286,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require empty lines around comments",
+      "url": "https://eslint.org/docs/latest/rules/lines-around-comment"
+    }
   },
   {
     "ruleName": "max-len",
@@ -4758,7 +6297,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce a maximum line length",
+      "url": "https://eslint.org/docs/latest/rules/max-len"
+    }
   },
   {
     "ruleName": "no-confusing-arrow",
@@ -4766,7 +6308,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow arrow functions where they could be confused with comparisons",
+      "url": "https://eslint.org/docs/latest/rules/no-confusing-arrow"
+    }
   },
   {
     "ruleName": "no-mixed-operators",
@@ -4774,7 +6319,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow mixed binary operators",
+      "url": "https://eslint.org/docs/latest/rules/no-mixed-operators"
+    }
   },
   {
     "ruleName": "no-tabs",
@@ -4782,7 +6330,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow all tabs",
+      "url": "https://eslint.org/docs/latest/rules/no-tabs"
+    }
   },
   {
     "ruleName": "no-unexpected-multiline",
@@ -4790,7 +6341,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow confusing multiline expressions",
+      "url": "https://eslint.org/docs/latest/rules/no-unexpected-multiline"
+    }
   },
   {
     "ruleName": "quotes",
@@ -4798,7 +6352,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce the consistent use of either backticks, double, or single quotes",
+      "url": "https://eslint.org/docs/latest/rules/quotes"
+    }
   },
   {
     "ruleName": "@typescript-eslint/lines-around-comment",
@@ -4806,7 +6363,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/quotes",
@@ -4814,7 +6374,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "babel/quotes",
@@ -4822,7 +6385,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/html-self-closing",
@@ -4830,7 +6396,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/max-len",
@@ -4838,7 +6407,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "array-bracket-newline",
@@ -4846,7 +6418,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce linebreaks after opening and before closing array brackets",
+      "url": "https://eslint.org/docs/latest/rules/array-bracket-newline"
+    }
   },
   {
     "ruleName": "array-bracket-spacing",
@@ -4854,7 +6429,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing inside array brackets",
+      "url": "https://eslint.org/docs/latest/rules/array-bracket-spacing"
+    }
   },
   {
     "ruleName": "array-element-newline",
@@ -4862,7 +6440,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce line breaks after each array element",
+      "url": "https://eslint.org/docs/latest/rules/array-element-newline"
+    }
   },
   {
     "ruleName": "arrow-parens",
@@ -4870,7 +6451,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require parentheses around arrow function arguments",
+      "url": "https://eslint.org/docs/latest/rules/arrow-parens"
+    }
   },
   {
     "ruleName": "arrow-spacing",
@@ -4878,7 +6462,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing before and after the arrow in arrow functions",
+      "url": "https://eslint.org/docs/latest/rules/arrow-spacing"
+    }
   },
   {
     "ruleName": "block-spacing",
@@ -4886,7 +6473,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow or enforce spaces inside of blocks after opening block and before closing block",
+      "url": "https://eslint.org/docs/latest/rules/block-spacing"
+    }
   },
   {
     "ruleName": "brace-style",
@@ -4894,7 +6484,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent brace style for blocks",
+      "url": "https://eslint.org/docs/latest/rules/brace-style"
+    }
   },
   {
     "ruleName": "comma-dangle",
@@ -4902,7 +6495,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow trailing commas",
+      "url": "https://eslint.org/docs/latest/rules/comma-dangle"
+    }
   },
   {
     "ruleName": "comma-spacing",
@@ -4910,7 +6506,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing before and after commas",
+      "url": "https://eslint.org/docs/latest/rules/comma-spacing"
+    }
   },
   {
     "ruleName": "comma-style",
@@ -4918,7 +6517,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent comma style",
+      "url": "https://eslint.org/docs/latest/rules/comma-style"
+    }
   },
   {
     "ruleName": "computed-property-spacing",
@@ -4926,7 +6528,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing inside computed property brackets",
+      "url": "https://eslint.org/docs/latest/rules/computed-property-spacing"
+    }
   },
   {
     "ruleName": "dot-location",
@@ -4934,7 +6539,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent newlines before and after dots",
+      "url": "https://eslint.org/docs/latest/rules/dot-location"
+    }
   },
   {
     "ruleName": "eol-last",
@@ -4942,7 +6550,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow newline at the end of files",
+      "url": "https://eslint.org/docs/latest/rules/eol-last"
+    }
   },
   {
     "ruleName": "func-call-spacing",
@@ -4950,7 +6561,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow spacing between function identifiers and their invocations",
+      "url": "https://eslint.org/docs/latest/rules/func-call-spacing"
+    }
   },
   {
     "ruleName": "function-call-argument-newline",
@@ -4958,7 +6572,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce line breaks between arguments of a function call",
+      "url": "https://eslint.org/docs/latest/rules/function-call-argument-newline"
+    }
   },
   {
     "ruleName": "function-paren-newline",
@@ -4966,7 +6583,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent line breaks inside function parentheses",
+      "url": "https://eslint.org/docs/latest/rules/function-paren-newline"
+    }
   },
   {
     "ruleName": "generator-star-spacing",
@@ -4974,7 +6594,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing around `*` operators in generator functions",
+      "url": "https://eslint.org/docs/latest/rules/generator-star-spacing"
+    }
   },
   {
     "ruleName": "implicit-arrow-linebreak",
@@ -4982,7 +6605,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce the location of arrow function bodies",
+      "url": "https://eslint.org/docs/latest/rules/implicit-arrow-linebreak"
+    }
   },
   {
     "ruleName": "indent",
@@ -4990,7 +6616,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent indentation",
+      "url": "https://eslint.org/docs/latest/rules/indent"
+    }
   },
   {
     "ruleName": "jsx-quotes",
@@ -4998,7 +6627,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce the consistent use of either double or single quotes in JSX attributes",
+      "url": "https://eslint.org/docs/latest/rules/jsx-quotes"
+    }
   },
   {
     "ruleName": "key-spacing",
@@ -5006,7 +6638,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing between keys and values in object literal properties",
+      "url": "https://eslint.org/docs/latest/rules/key-spacing"
+    }
   },
   {
     "ruleName": "keyword-spacing",
@@ -5014,7 +6649,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing before and after keywords",
+      "url": "https://eslint.org/docs/latest/rules/keyword-spacing"
+    }
   },
   {
     "ruleName": "linebreak-style",
@@ -5022,7 +6660,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent linebreak style",
+      "url": "https://eslint.org/docs/latest/rules/linebreak-style"
+    }
   },
   {
     "ruleName": "max-statements-per-line",
@@ -5030,7 +6671,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce a maximum number of statements allowed per line",
+      "url": "https://eslint.org/docs/latest/rules/max-statements-per-line"
+    }
   },
   {
     "ruleName": "multiline-ternary",
@@ -5038,7 +6682,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce newlines between operands of ternary expressions",
+      "url": "https://eslint.org/docs/latest/rules/multiline-ternary"
+    }
   },
   {
     "ruleName": "newline-per-chained-call",
@@ -5046,7 +6693,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require a newline after each call in a method chain",
+      "url": "https://eslint.org/docs/latest/rules/newline-per-chained-call"
+    }
   },
   {
     "ruleName": "new-parens",
@@ -5054,7 +6704,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce or disallow parentheses when invoking a constructor with no arguments",
+      "url": "https://eslint.org/docs/latest/rules/new-parens"
+    }
   },
   {
     "ruleName": "no-extra-parens",
@@ -5062,7 +6715,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary parentheses",
+      "url": "https://eslint.org/docs/latest/rules/no-extra-parens"
+    }
   },
   {
     "ruleName": "no-extra-semi",
@@ -5070,7 +6726,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow unnecessary semicolons",
+      "url": "https://eslint.org/docs/latest/rules/no-extra-semi"
+    }
   },
   {
     "ruleName": "no-floating-decimal",
@@ -5078,7 +6737,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow leading or trailing decimal points in numeric literals",
+      "url": "https://eslint.org/docs/latest/rules/no-floating-decimal"
+    }
   },
   {
     "ruleName": "no-mixed-spaces-and-tabs",
@@ -5086,7 +6748,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow mixed spaces and tabs for indentation",
+      "url": "https://eslint.org/docs/latest/rules/no-mixed-spaces-and-tabs"
+    }
   },
   {
     "ruleName": "no-multi-spaces",
@@ -5094,7 +6759,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow multiple spaces",
+      "url": "https://eslint.org/docs/latest/rules/no-multi-spaces"
+    }
   },
   {
     "ruleName": "no-multiple-empty-lines",
@@ -5102,7 +6770,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow multiple empty lines",
+      "url": "https://eslint.org/docs/latest/rules/no-multiple-empty-lines"
+    }
   },
   {
     "ruleName": "no-trailing-spaces",
@@ -5110,7 +6781,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow trailing whitespace at the end of lines",
+      "url": "https://eslint.org/docs/latest/rules/no-trailing-spaces"
+    }
   },
   {
     "ruleName": "no-whitespace-before-property",
@@ -5118,7 +6792,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow whitespace before properties",
+      "url": "https://eslint.org/docs/latest/rules/no-whitespace-before-property"
+    }
   },
   {
     "ruleName": "nonblock-statement-body-position",
@@ -5126,7 +6803,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce the location of single-line statements",
+      "url": "https://eslint.org/docs/latest/rules/nonblock-statement-body-position"
+    }
   },
   {
     "ruleName": "object-curly-newline",
@@ -5134,7 +6814,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent line breaks after opening and before closing braces",
+      "url": "https://eslint.org/docs/latest/rules/object-curly-newline"
+    }
   },
   {
     "ruleName": "object-curly-spacing",
@@ -5142,7 +6825,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing inside braces",
+      "url": "https://eslint.org/docs/latest/rules/object-curly-spacing"
+    }
   },
   {
     "ruleName": "object-property-newline",
@@ -5150,7 +6836,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce placing object properties on separate lines",
+      "url": "https://eslint.org/docs/latest/rules/object-property-newline"
+    }
   },
   {
     "ruleName": "one-var-declaration-per-line",
@@ -5158,7 +6847,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow newlines around variable declarations",
+      "url": "https://eslint.org/docs/latest/rules/one-var-declaration-per-line"
+    }
   },
   {
     "ruleName": "operator-linebreak",
@@ -5166,7 +6858,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent linebreak style for operators",
+      "url": "https://eslint.org/docs/latest/rules/operator-linebreak"
+    }
   },
   {
     "ruleName": "padded-blocks",
@@ -5174,7 +6869,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow padding within blocks",
+      "url": "https://eslint.org/docs/latest/rules/padded-blocks"
+    }
   },
   {
     "ruleName": "quote-props",
@@ -5182,7 +6880,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require quotes around object literal property names",
+      "url": "https://eslint.org/docs/latest/rules/quote-props"
+    }
   },
   {
     "ruleName": "rest-spread-spacing",
@@ -5190,7 +6891,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce spacing between rest and spread operators and their expressions",
+      "url": "https://eslint.org/docs/latest/rules/rest-spread-spacing"
+    }
   },
   {
     "ruleName": "semi",
@@ -5198,7 +6902,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow semicolons instead of ASI",
+      "url": "https://eslint.org/docs/latest/rules/semi"
+    }
   },
   {
     "ruleName": "semi-spacing",
@@ -5206,7 +6913,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing before and after semicolons",
+      "url": "https://eslint.org/docs/latest/rules/semi-spacing"
+    }
   },
   {
     "ruleName": "semi-style",
@@ -5214,7 +6924,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce location of semicolons",
+      "url": "https://eslint.org/docs/latest/rules/semi-style"
+    }
   },
   {
     "ruleName": "space-before-blocks",
@@ -5222,7 +6935,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing before blocks",
+      "url": "https://eslint.org/docs/latest/rules/space-before-blocks"
+    }
   },
   {
     "ruleName": "space-before-function-paren",
@@ -5230,7 +6946,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing before `function` definition opening parenthesis",
+      "url": "https://eslint.org/docs/latest/rules/space-before-function-paren"
+    }
   },
   {
     "ruleName": "space-in-parens",
@@ -5238,7 +6957,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing inside parentheses",
+      "url": "https://eslint.org/docs/latest/rules/space-in-parens"
+    }
   },
   {
     "ruleName": "space-infix-ops",
@@ -5246,7 +6968,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require spacing around infix operators",
+      "url": "https://eslint.org/docs/latest/rules/space-infix-ops"
+    }
   },
   {
     "ruleName": "space-unary-ops",
@@ -5254,7 +6979,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent spacing before or after unary operators",
+      "url": "https://eslint.org/docs/latest/rules/space-unary-ops"
+    }
   },
   {
     "ruleName": "switch-colon-spacing",
@@ -5262,7 +6990,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce spacing around colons of switch statements",
+      "url": "https://eslint.org/docs/latest/rules/switch-colon-spacing"
+    }
   },
   {
     "ruleName": "template-curly-spacing",
@@ -5270,7 +7001,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow spacing around embedded expressions of template strings",
+      "url": "https://eslint.org/docs/latest/rules/template-curly-spacing"
+    }
   },
   {
     "ruleName": "template-tag-spacing",
@@ -5278,7 +7012,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow spacing between template tags and their literals",
+      "url": "https://eslint.org/docs/latest/rules/template-tag-spacing"
+    }
   },
   {
     "ruleName": "wrap-iife",
@@ -5286,7 +7023,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require parentheses around immediate `function` invocations",
+      "url": "https://eslint.org/docs/latest/rules/wrap-iife"
+    }
   },
   {
     "ruleName": "wrap-regex",
@@ -5294,7 +7034,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require parenthesis around regex literals",
+      "url": "https://eslint.org/docs/latest/rules/wrap-regex"
+    }
   },
   {
     "ruleName": "yield-star-spacing",
@@ -5302,7 +7045,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Require or disallow spacing around the `*` in `yield*` expressions",
+      "url": "https://eslint.org/docs/latest/rules/yield-star-spacing"
+    }
   },
   {
     "ruleName": "@babel/object-curly-spacing",
@@ -5310,7 +7056,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@babel/semi",
@@ -5318,7 +7067,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/block-spacing",
@@ -5326,7 +7078,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/brace-style",
@@ -5334,7 +7089,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/comma-dangle",
@@ -5342,7 +7100,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/comma-spacing",
@@ -5350,7 +7111,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/func-call-spacing",
@@ -5358,7 +7122,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/indent",
@@ -5366,7 +7133,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/key-spacing",
@@ -5374,7 +7144,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/keyword-spacing",
@@ -5382,7 +7155,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/member-delimiter-style",
@@ -5390,7 +7166,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-extra-parens",
@@ -5398,7 +7177,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/no-extra-semi",
@@ -5406,7 +7188,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/object-curly-spacing",
@@ -5414,7 +7199,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/semi",
@@ -5422,7 +7210,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/space-before-blocks",
@@ -5430,7 +7221,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/space-before-function-paren",
@@ -5438,7 +7232,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/space-infix-ops",
@@ -5446,7 +7243,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "@typescript-eslint/type-annotation-spacing",
@@ -5454,7 +7254,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "babel/object-curly-spacing",
@@ -5462,7 +7265,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "babel/semi",
@@ -5470,7 +7276,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "flowtype/boolean-style",
@@ -5478,7 +7287,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "flowtype/delimiter-dangle",
@@ -5486,7 +7298,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "flowtype/generic-spacing",
@@ -5494,7 +7309,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "flowtype/object-type-curly-spacing",
@@ -5502,7 +7320,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "flowtype/object-type-delimiter",
@@ -5510,7 +7331,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "flowtype/quotes",
@@ -5518,7 +7342,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "flowtype/semi",
@@ -5526,7 +7353,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "flowtype/space-after-type-colon",
@@ -5534,7 +7364,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "flowtype/space-before-generic-bracket",
@@ -5542,7 +7375,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "flowtype/space-before-type-colon",
@@ -5550,7 +7386,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "flowtype/union-intersection-spacing",
@@ -5558,7 +7397,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-child-element-spacing",
@@ -5566,7 +7408,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-closing-bracket-location",
@@ -5574,7 +7419,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-closing-tag-location",
@@ -5582,7 +7430,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-curly-newline",
@@ -5590,7 +7441,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-curly-spacing",
@@ -5598,7 +7452,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-equals-spacing",
@@ -5606,7 +7463,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-first-prop-new-line",
@@ -5614,7 +7474,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-indent",
@@ -5622,7 +7485,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-indent-props",
@@ -5630,7 +7496,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-max-props-per-line",
@@ -5638,7 +7507,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-newline",
@@ -5646,7 +7518,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-one-expression-per-line",
@@ -5654,7 +7529,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-props-no-multi-spaces",
@@ -5662,7 +7540,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-tag-spacing",
@@ -5670,7 +7551,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-wrap-multilines",
@@ -5678,7 +7562,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "standard/array-bracket-even-spacing",
@@ -5686,7 +7573,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "standard/computed-property-even-spacing",
@@ -5694,7 +7584,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "standard/object-curly-even-spacing",
@@ -5702,7 +7595,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "unicorn/empty-brace-spaces",
@@ -5710,7 +7606,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "unicorn/no-nested-ternary",
@@ -5718,7 +7617,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "unicorn/number-literal-case",
@@ -5726,7 +7628,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/array-bracket-newline",
@@ -5734,7 +7639,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/array-bracket-spacing",
@@ -5742,7 +7650,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/array-element-newline",
@@ -5750,7 +7661,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/arrow-spacing",
@@ -5758,7 +7672,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/block-spacing",
@@ -5766,7 +7683,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/block-tag-newline",
@@ -5774,7 +7694,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/brace-style",
@@ -5782,7 +7705,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/comma-dangle",
@@ -5790,7 +7716,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/comma-spacing",
@@ -5798,7 +7727,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/comma-style",
@@ -5806,7 +7738,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/dot-location",
@@ -5814,7 +7749,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/func-call-spacing",
@@ -5822,7 +7760,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/html-closing-bracket-newline",
@@ -5830,7 +7771,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/html-closing-bracket-spacing",
@@ -5838,7 +7782,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/html-end-tags",
@@ -5846,7 +7793,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/html-indent",
@@ -5854,7 +7804,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/html-quotes",
@@ -5862,7 +7815,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/key-spacing",
@@ -5870,7 +7826,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/keyword-spacing",
@@ -5878,7 +7837,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/max-attributes-per-line",
@@ -5886,7 +7848,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/multiline-html-element-content-newline",
@@ -5894,7 +7859,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/multiline-ternary",
@@ -5902,7 +7870,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/mustache-interpolation-spacing",
@@ -5910,7 +7881,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/no-extra-parens",
@@ -5918,7 +7892,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/no-multi-spaces",
@@ -5926,7 +7903,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/no-spaces-around-equal-signs-in-attribute",
@@ -5934,7 +7914,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/object-curly-newline",
@@ -5942,7 +7925,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/object-curly-spacing",
@@ -5950,7 +7936,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/object-property-newline",
@@ -5958,7 +7947,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/operator-linebreak",
@@ -5966,7 +7958,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/quote-props",
@@ -5974,7 +7969,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/script-indent",
@@ -5982,7 +7980,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/singleline-html-element-content-newline",
@@ -5990,7 +7991,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/space-in-parens",
@@ -5998,7 +8002,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/space-infix-ops",
@@ -6006,7 +8013,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/space-unary-ops",
@@ -6014,7 +8024,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "vue/template-curly-spacing",
@@ -6022,7 +8035,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "generator-star",
@@ -6030,7 +8046,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "indent-legacy",
@@ -6038,7 +8057,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent indentation",
+      "url": "https://eslint.org/docs/latest/rules/indent-legacy"
+    }
   },
   {
     "ruleName": "no-arrow-condition",
@@ -6046,7 +8068,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "no-comma-dangle",
@@ -6054,7 +8079,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "no-reserved-keys",
@@ -6062,7 +8090,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "no-space-before-semi",
@@ -6070,7 +8101,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "no-spaced-func",
@@ -6078,7 +8112,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "Disallow spacing between function identifiers and their applications (deprecated)",
+      "url": "https://eslint.org/docs/latest/rules/no-spaced-func"
+    }
   },
   {
     "ruleName": "no-wrap-func",
@@ -6086,7 +8123,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "space-after-function-name",
@@ -6094,7 +8134,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "space-after-keywords",
@@ -6102,7 +8145,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "space-before-function-parentheses",
@@ -6110,7 +8156,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "space-before-keywords",
@@ -6118,7 +8167,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "space-in-brackets",
@@ -6126,7 +8178,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "space-return-throw-case",
@@ -6134,7 +8189,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "space-unary-word-ops",
@@ -6142,7 +8200,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "react/jsx-space-before-closing",
@@ -6150,7 +8211,10 @@ export const ruleset = [
     "severity": 0,
     "ruleOptions": "",
     "affectedFiles": "*",
-    "docsLink": ""
+    "docs": {
+      "description": "",
+      "url": ""
+    }
   },
   {
     "ruleName": "curly",
@@ -6161,6 +8225,9 @@ export const ruleset = [
     ],
     "ruleOptions": "",
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docsLink": ""
+    "docs": {
+      "description": "Enforce consistent brace style for all control statements",
+      "url": "https://eslint.org/docs/latest/rules/curly"
+    }
   }
 ]

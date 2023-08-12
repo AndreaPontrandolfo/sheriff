@@ -13,6 +13,6 @@ const sheriffOptions = {
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
   {
-    ignores: ['src/rules.ts'],
+    ignores: ['src/ruleset.ts'],
   },
 ]);

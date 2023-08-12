@@ -1,1 +1,1 @@
-export { generateRulesDataset } from './generateRulesDataset.ts';
+export { ruleset } from './ruleset.js';
