@@ -6,19 +6,10 @@ import {
   getFilteredRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ruleset } from "@sheriff/utils";
+import { ruleset, pluginsNames } from "@sheriff/utils";
 import type { Entry } from "@sheriff/types";
 import Select from "react-select";
 import styles from "./RulesTable.module.css";
-
-const options = [
-  { value: "@eslint/js", label: "@eslint/js" },
-  { value: "eslint-plugin-unicorn", label: "eslint-plugin-unicorn" },
-  {
-    value: "@typescript-eslint/eslint-plugin",
-    label: "@typescript-eslint/eslint-plugin",
-  },
-];
 
 const columnHelper = createColumnHelper<Entry>();
 
@@ -82,7 +73,10 @@ export const RulesTable = (): JSX.Element => {
         <Select
           isSearchable
           placeholder="Select a plugin from the list..."
-          options={options}
+          options={pluginsNames.map((pluginName) => ({
+            value: pluginName,
+            label: pluginName,
+          }))}
           styles={{
             control: (baseStyles, state) => ({
               ...baseStyles,
@@ -90,7 +84,7 @@ export const RulesTable = (): JSX.Element => {
             }),
           }}
           onChange={(inputText) => {
-            setFilter(inputText?.value || null);
+            setFilter(inputText?.value ?? "");
           }}
         />
       </div>

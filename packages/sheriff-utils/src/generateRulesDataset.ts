@@ -3,7 +3,7 @@
 
 import fs from 'fs';
 import getSheriffConfig from 'eslint-config-sheriff';
-import { isArray, isEmpty, last } from 'lodash-es';
+import { isArray, isEmpty, last, uniq } from 'lodash-es';
 import { Linter } from 'eslint';
 import type {
   Severity,
@@ -17,7 +17,7 @@ import type {
 
 const linter = new Linter();
 
-const getParentpluginName = (rule: string): string => {
+const getParentPluginName = (rule: string): string => {
   if (rule.includes('/')) {
     const ruleParts = rule.split('/');
 
@@ -116,6 +116,7 @@ const extractNumericSeverityFromRuleOptions = (
 };
 
 const generateRulesDataset = () => {
+  const pluginsNames: string[] = [];
   const compiledConfig = barebonesConfig.flatMap((configAtom) => {
     const atomRemappedRecords: Entry[] = [];
 
@@ -124,9 +125,12 @@ const generateRulesDataset = () => {
     }
 
     for (const [ruleName, ruleOptions] of Object.entries(configAtom.rules)) {
+      const parentPluginName = getParentPluginName(ruleName);
+
+      pluginsNames.push(parentPluginName);
       const ruleRecord: Entry = {
         ruleName,
-        parentPluginName: getParentpluginName(ruleName),
+        parentPluginName,
         severity: extractNumericSeverityFromRuleOptions(ruleOptions),
         ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
         affectedFiles: configAtom.files ? configAtom.files.join(', ') : '*',
@@ -139,14 +143,19 @@ const generateRulesDataset = () => {
     return atomRemappedRecords;
   });
 
-  return compiledConfig;
+  return { compiledConfig, pluginsNames: uniq(pluginsNames) };
 };
 
 fs.writeFileSync(
   './src/ruleset.ts',
   `export const ruleset = ${JSON.stringify(
-    generateRulesDataset(),
+    generateRulesDataset().compiledConfig,
     null,
     2,
-  )} as const;`,
+  )} as const;
+
+    export const pluginsNames = ${JSON.stringify(
+      generateRulesDataset().pluginsNames,
+    )} as const;
+  `,
 );

@@ -1,1 +1,1 @@
-export { ruleset } from './ruleset';
+export { ruleset, pluginsNames } from './ruleset';
