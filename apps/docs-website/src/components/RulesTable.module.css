@@ -1,6 +1,6 @@
 .td,
 .th {
-  max-width: 200px;
+  max-width: 210px;
 }
 
 .tr td {
@@ -12,4 +12,23 @@
 .tr:hover td {
   overflow: auto;
   white-space: normal;
+}
+
+.filtersContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  justify-content: flex-end;
+}
+
+.filterInput {
+  width: 100%;
+  min-height: 38px;
+  padding: 2px 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+  max-width: 300px;
 }

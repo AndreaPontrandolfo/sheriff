@@ -3,11 +3,22 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import { ruleset } from "@sheriff/utils";
 import type { Entry } from "@sheriff/types";
+import Select from "react-select";
 import styles from "./RulesTable.module.css";
+
+const options = [
+  { value: "@eslint/js", label: "@eslint/js" },
+  { value: "eslint-plugin-unicorn", label: "eslint-plugin-unicorn" },
+  {
+    value: "@typescript-eslint/eslint-plugin",
+    label: "@typescript-eslint/eslint-plugin",
+  },
+];
 
 const columnHelper = createColumnHelper<Entry>();
 
@@ -44,14 +55,45 @@ const columns = [
 
 export const RulesTable = (): JSX.Element => {
   const [data, setData] = useState(() => [...ruleset]);
+  const [filter, setFilter] = useState<string[] | string | null>(null);
+
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    state: {
+      globalFilter: filter,
+    },
+    onGlobalFilterChange: setFilter,
   });
 
   return (
     <div>
+      <div className={styles.filtersContainer}>
+        <input
+          className={styles.filterInput}
+          type="text"
+          placeholder="Filter by searching any therm..."
+          onChange={(e) => {
+            setFilter(e.target.value);
+          }}
+        />
+        <Select
+          isSearchable
+          placeholder="Select a plugin from the list..."
+          options={options}
+          styles={{
+            control: (baseStyles, state) => ({
+              ...baseStyles,
+              minWidth: "300px",
+            }),
+          }}
+          onChange={(inputText) => {
+            setFilter(inputText?.value || null);
+          }}
+        />
+      </div>
       <table>
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
