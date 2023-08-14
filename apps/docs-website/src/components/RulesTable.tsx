@@ -6,7 +6,12 @@ import {
   getFilteredRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ruleset, pluginsNames } from "@sheriff/utils";
+import {
+  pluginsNamesWIthJest,
+  pluginsNamesWIthVitest,
+  rulesetWithJest,
+  rulesetWithVitest,
+} from "@sheriff/utils";
 import type { Entry } from "@sheriff/types";
 import { isEmpty } from "lodash-es";
 import Select from "react-select";
@@ -30,9 +35,7 @@ const columns = [
   columnHelper.accessor("ruleOptions", {
     header: "Options",
     cell: (info) =>
-      info.getValue() && !isEmpty(info.getValue())
-        ? JSON.stringify(info.getValue())
-        : "No options",
+      isEmpty(info.getValue()) ? "No options" : JSON.stringify(info.getValue()),
   }),
   columnHelper.accessor("docs", {
     header: "Docs",
@@ -49,8 +52,10 @@ const columns = [
 ];
 
 export const RulesTable = (): JSX.Element => {
-  const [data, setData] = useState(() => [...ruleset]);
+  const [data, setData] = useState(() => [...rulesetWithVitest]);
   const [filter, setFilter] = useState<string | null>(null);
+  const [isVitestChecked, setIsVitestChecked] = useState<boolean>(true);
+  const [isJestChecked, setIsJestChecked] = useState<boolean>(false);
   const [tableMaximumAllowedWidth, setTableMaximumAllowedWidth] =
     useState<number>(0);
 
@@ -66,6 +71,30 @@ export const RulesTable = (): JSX.Element => {
     setTableMaximumAllowedWidth(computedTableWidth);
   }, []);
 
+  const handleVitestCheckbox = () => {
+    if (isVitestChecked) {
+      setData([...rulesetWithJest]);
+      setIsVitestChecked(false);
+      setIsJestChecked(true);
+    } else {
+      setData([...rulesetWithVitest]);
+      setIsVitestChecked(true);
+      setIsJestChecked(false);
+    }
+  };
+
+  const handleJestCheckbox = () => {
+    if (isJestChecked) {
+      setData([...rulesetWithVitest]);
+      setIsVitestChecked(true);
+      setIsJestChecked(false);
+    } else {
+      setData([...rulesetWithJest]);
+      setIsVitestChecked(false);
+      setIsJestChecked(true);
+    }
+  };
+
   const table = useReactTable({
     data,
     columns,
@@ -78,29 +107,56 @@ export const RulesTable = (): JSX.Element => {
   });
 
   const cellMaxWidth = tableMaximumAllowedWidth / columns.length;
+  const pluginsNames = isVitestChecked
+    ? pluginsNamesWIthVitest
+    : pluginsNamesWIthJest;
 
   return (
     <div ref={tableContainerRef}>
       <div className={styles.tableControlsContainer}>
-        <div className={styles.checklistContainer}>
-          <label htmlFor="react">React</label>
-          <input checked disabled type="checkbox" name="react" id="react" />
-          <label htmlFor="lodash">Lodash</label>
-          <input checked disabled type="checkbox" name="lodash" id="lodash" />
-          <label htmlFor="next">Next</label>
-          <input checked disabled type="checkbox" name="next" id="next" />
-          <label htmlFor="playwright">Playwright</label>
-          <input
-            checked
-            disabled
-            type="checkbox"
-            name="playwright"
-            id="playwright"
-          />
-          <label htmlFor="vitest">Vitest</label>
-          <input defaultChecked type="checkbox" name="vitest" id="vitest" />
-          <label htmlFor="jest">Jest</label>
-          <input type="checkbox" name="jest" id="jest" />
+        <div className={styles.checkboxGroupContainer}>
+          <div className={styles.nativeCheckboxDisabled}>
+            <input checked disabled type="checkbox" name="react" id="react" />
+            <label htmlFor="react">React</label>
+          </div>
+          <div className={styles.nativeCheckboxDisabled}>
+            <input checked disabled type="checkbox" name="lodash" id="lodash" />
+            <label htmlFor="lodash">Lodash</label>
+          </div>
+          <div className={styles.nativeCheckboxDisabled}>
+            <input checked disabled type="checkbox" name="next" id="next" />
+            <label htmlFor="next">Next</label>
+          </div>
+          <div className={styles.nativeCheckboxDisabled}>
+            <input
+              checked
+              disabled
+              type="checkbox"
+              name="playwright"
+              id="playwright"
+            />
+            <label htmlFor="playwright">Playwright</label>
+          </div>
+          <div className={styles.nativeCheckbox}>
+            <input
+              type="checkbox"
+              name="vitest"
+              id="vitest"
+              checked={isVitestChecked}
+              onChange={handleVitestCheckbox}
+            />
+            <label htmlFor="vitest">Vitest</label>
+          </div>
+          <div className={styles.nativeCheckbox}>
+            <input
+              type="checkbox"
+              name="jest"
+              id="jest"
+              checked={isJestChecked}
+              onChange={handleJestCheckbox}
+            />
+            <label htmlFor="jest">Jest</label>
+          </div>
         </div>
         <div className={styles.filtersContainer}>
           <input

@@ -4878,8 +4878,294 @@ export const ruleset = [
     }
   },
   {
-    "ruleName": "vitest/consistent-test-it",
-    "parentPluginName": "eslint-plugin-vitest",
+    "ruleName": "jest/no-alias-methods",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Disallow alias methods",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-alias-methods.md"
+    }
+  },
+  {
+    "ruleName": "jest/prefer-to-be",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Suggest using `toBe()` for primitive literals",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/prefer-to-be.md"
+    }
+  },
+  {
+    "ruleName": "jest/prefer-to-contain",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Suggest using `toContain()`",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/prefer-to-contain.md"
+    }
+  },
+  {
+    "ruleName": "jest/prefer-to-have-length",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Suggest using `toHaveLength()`",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/prefer-to-have-length.md"
+    }
+  },
+  {
+    "ruleName": "jest/no-conditional-expect",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Disallow calling `expect` conditionally",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-conditional-expect.md"
+    }
+  },
+  {
+    "ruleName": "jest/no-conditional-in-test",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Disallow conditional logic in tests",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-conditional-in-test.md"
+    }
+  },
+  {
+    "ruleName": "jest/no-export",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Disallow using `exports` in files containing tests",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-export.md"
+    }
+  },
+  {
+    "ruleName": "jest/no-duplicate-hooks",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Disallow duplicate setup and teardown hooks",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-duplicate-hooks.md"
+    }
+  },
+  {
+    "ruleName": "jest/no-done-callback",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Disallow using a callback in asynchronous tests and hooks",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-done-callback.md"
+    }
+  },
+  {
+    "ruleName": "jest/no-identical-title",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Disallow identical titles",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-identical-title.md"
+    }
+  },
+  {
+    "ruleName": "jest/no-focused-tests",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Disallow focused tests",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-focused-tests.md"
+    }
+  },
+  {
+    "ruleName": "jest/no-jasmine-globals",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Disallow Jasmine globals",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-jasmine-globals.md"
+    }
+  },
+  {
+    "ruleName": "jest/no-standalone-expect",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Disallow using `expect` outside of `it` or `test` blocks",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-standalone-expect.md"
+    }
+  },
+  {
+    "ruleName": "jest/no-test-return-statement",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Disallow explicitly returning from tests",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-test-return-statement.md"
+    }
+  },
+  {
+    "ruleName": "jest/valid-describe-callback",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Enforce valid `describe()` callback",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/valid-describe-callback.md"
+    }
+  },
+  {
+    "ruleName": "jest/no-test-prefixes",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Require using `.only` and `.skip` over `f` and `x`",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/no-test-prefixes.md"
+    }
+  },
+  {
+    "ruleName": "jest/require-top-level-describe",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Require test cases and hooks to be inside a `describe` block",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/require-top-level-describe.md"
+    }
+  },
+  {
+    "ruleName": "jest/prefer-comparison-matcher",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Suggest using the built-in comparison matchers",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/prefer-comparison-matcher.md"
+    }
+  },
+  {
+    "ruleName": "jest/prefer-equality-matcher",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Suggest using the built-in equality matchers",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/prefer-equality-matcher.md"
+    }
+  },
+  {
+    "ruleName": "jest/prefer-expect-resolves",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Prefer `await expect(...).resolves` over `expect(await ...)` syntax",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/prefer-expect-resolves.md"
+    }
+  },
+  {
+    "ruleName": "jest/prefer-hooks-on-top",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Suggest having hooks before any test cases",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/prefer-hooks-on-top.md"
+    }
+  },
+  {
+    "ruleName": "jest/prefer-hooks-in-order",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Prefer having hooks in a consistent order",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/prefer-hooks-in-order.md"
+    }
+  },
+  {
+    "ruleName": "jest/prefer-strict-equal",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Suggest using `toStrictEqual()`",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/prefer-strict-equal.md"
+    }
+  },
+  {
+    "ruleName": "jest/valid-title",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Enforce valid titles",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/valid-title.md"
+    }
+  },
+  {
+    "ruleName": "jest/valid-expect-in-promise",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Require promises that have expectations in their chain to be valid",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/valid-expect-in-promise.md"
+    }
+  },
+  {
+    "ruleName": "jest/valid-expect",
+    "parentPluginName": "eslint-plugin-jest",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "docs": {
+      "description": "Enforce valid `expect()` usage",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/valid-expect.md"
+    }
+  },
+  {
+    "ruleName": "jest/consistent-test-it",
+    "parentPluginName": "eslint-plugin-jest",
     "severity": 2,
     "ruleOptions": [
       {
@@ -4889,382 +5175,30 @@ export const ruleset = [
     ],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
-      "description": "Prefer test or it but not both",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/consistent-test-it.md"
+      "description": "Enforce `test` and `it` usage conventions",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/consistent-test-it.md"
     }
   },
   {
-    "ruleName": "vitest/expect-expect",
-    "parentPluginName": "eslint-plugin-vitest",
+    "ruleName": "jest/unbound-method",
+    "parentPluginName": "eslint-plugin-jest",
     "severity": 2,
     "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
-      "description": "Enforce having expectation in test body",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/expect-expect.md"
+      "description": "Enforce unbound methods are called with their expected scope",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/unbound-method.md"
     }
   },
   {
-    "ruleName": "vitest/no-commented-out-tests",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
+    "ruleName": "@typescript-eslint/unbound-method",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 0,
     "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
-      "description": "Disallow commented out tests",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-commented-out-tests.md"
-    }
-  },
-  {
-    "ruleName": "vitest/no-conditional-expect",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Disallow conditional expects",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-conditional-expect.md"
-    }
-  },
-  {
-    "ruleName": "vitest/no-conditional-in-test",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Disallow conditional tests",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-conditional-in-test.md"
-    }
-  },
-  {
-    "ruleName": "vitest/no-disabled-tests",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Disallow disabled tests",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-disabled-tests.md"
-    }
-  },
-  {
-    "ruleName": "vitest/no-done-callback",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Disallow using a callback in asynchronous tests and hooks",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-done-callback.md"
-    }
-  },
-  {
-    "ruleName": "vitest/no-duplicate-hooks",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Disallow duplicate hooks and teardown hooks",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-duplicate-hooks.md"
-    }
-  },
-  {
-    "ruleName": "vitest/no-identical-title",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Disallow identical titles",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-identical-title.md"
-    }
-  },
-  {
-    "ruleName": "vitest/no-focused-tests",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Disallow focused tests",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-focused-tests.md"
-    }
-  },
-  {
-    "ruleName": "vitest/no-standalone-expect",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Disallow using `expect` outside of `it` or `test` blocks",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-standalone-expect.md"
-    }
-  },
-  {
-    "ruleName": "vitest/no-test-prefixes",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Disallow using `test` as a prefix",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-test-prefixes.md"
-    }
-  },
-  {
-    "ruleName": "vitest/no-test-return-statement",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Disallow return statements in tests",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-test-return-statement.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-comparison-matcher",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Suggest using the built-in comparison matchers",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-comparison-matcher.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-each",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Prefer `each` rather than manual loops",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-each.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-equality-matcher",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Suggest using the built-in quality matchers",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-equality-matcher.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-expect-resolves",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Suggest using `expect().resolves` over `expect(await ...)` syntax",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-expect-resolves.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-hooks-in-order",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Prefer having hooks in consistent order",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-hooks-in-order.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-hooks-on-top",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Suggest having hooks before any test cases",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-hooks-on-top.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-lowercase-title",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Enforce lowercase titles",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-lowercase-title.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-mock-promise-shorthand",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Prefer mock resolved/rejected shorthands for promises",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-mock-promise-shorthand.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-spy-on",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Suggest using `vi.spyOn`",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-spy-on.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-strict-equal",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Prefer strict equal over equal",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-strict-equal.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-to-be",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Suggest using toBe()",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-to-be-falsy",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Suggest using toBeFalsy()",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be-falsy.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-to-be-object",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Prefer toBeObject()",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be-object.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-to-be-truthy",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Suggest using `toBeTruthy`",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be-truthy.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-to-contain",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Prefer using toContain()",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-contain.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-to-have-length",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Suggest using toHaveLength()",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-have-length.md"
-    }
-  },
-  {
-    "ruleName": "vitest/prefer-todo",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Suggest using `test.todo`",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-todo.md"
-    }
-  },
-  {
-    "ruleName": "vitest/require-hook",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Require setup and teardown to be within a hook",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/require-hook.md"
-    }
-  },
-  {
-    "ruleName": "vitest/require-to-throw-message",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Require toThrow() to be called with an error message",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/require-to-throw-message.md"
-    }
-  },
-  {
-    "ruleName": "vitest/require-top-level-describe",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Enforce that all tests are in a top-level describe",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/require-top-level-describe.md"
-    }
-  },
-  {
-    "ruleName": "vitest/valid-describe-callback",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Enforce valid describe callback",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/valid-describe-callback.md"
-    }
-  },
-  {
-    "ruleName": "vitest/valid-expect",
-    "parentPluginName": "eslint-plugin-vitest",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
-    "docs": {
-      "description": "Enforce valid `expect()` usage",
-      "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/valid-expect.md"
+      "description": "Enforce unbound methods are called with their expected scope",
+      "url": "https://github.com/jest-community/eslint-plugin-jest/blob/v27.2.1/docs/rules/unbound-method.md"
     }
   },
   {
@@ -8169,7 +8103,8 @@ export const ruleset = [
       "url": "https://eslint.org/docs/latest/rules/curly"
     }
   }
-] as const;
+];
 
-    export const pluginsNames = ["@eslint/js","@typescript-eslint/eslint-plugin","eslint-plugin-tsdoc","eslint-plugin-fp","eslint-plugin-etc","@regru/eslint-plugin-prefer-early-return","eslint-plugin-unicorn","eslint-plugin-sonarjs","eslint-plugin-import","eslint-plugin-storybook","eslint-plugin-jsdoc","eslint-plugin-react","eslint-plugin-react-refresh","eslint-plugin-jsx-a11y","eslint-plugin-react-hooks","eslint-plugin-vitest","@next/eslint-plugin-next","eslint-plugin-lodash-f","eslint-plugin-playwright","eslint-plugin-babel","eslint-plugin-vue","@babel/eslint-plugin","eslint-plugin-flowtype","eslint-plugin-standard"] as const;
-  
+    export const pluginsNames = ["@eslint/js","@typescript-eslint/eslint-plugin","eslint-plugin-tsdoc","eslint-plugin-fp","eslint-plugin-etc","@regru/eslint-plugin-prefer-early-return","eslint-plugin-unicorn","eslint-plugin-sonarjs","eslint-plugin-import","eslint-plugin-storybook","eslint-plugin-jsdoc","eslint-plugin-react","eslint-plugin-react-refresh","eslint-plugin-jsx-a11y","eslint-plugin-react-hooks","eslint-plugin-jest","@next/eslint-plugin-next","eslint-plugin-lodash-f","eslint-plugin-playwright","eslint-plugin-babel","eslint-plugin-vue","@babel/eslint-plugin","eslint-plugin-flowtype","eslint-plugin-standard"];
+
+    

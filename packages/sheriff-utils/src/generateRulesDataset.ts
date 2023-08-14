@@ -17,6 +17,22 @@ import type {
 
 const linter = new Linter();
 
+const barebonesConfigWithJest: BarebonesConfigAtom[] = getSheriffConfig({
+  react: true,
+  next: true,
+  lodash: true,
+  playwright: true,
+  jest: true,
+});
+
+const barebonesConfigWithVitest: BarebonesConfigAtom[] = getSheriffConfig({
+  react: true,
+  next: true,
+  lodash: true,
+  playwright: true,
+  vitest: true,
+});
+
 const getParentPluginName = (rule: string): string => {
   if (rule.includes('/')) {
     const ruleParts = rule.split('/');
@@ -87,14 +103,6 @@ const getDocs = (ruleName: string, plugins: Plugins) => {
   return docs;
 };
 
-const barebonesConfig: BarebonesConfigAtom[] = getSheriffConfig({
-  react: true,
-  next: true,
-  lodash: true,
-  playwright: true,
-  vitest: true,
-});
-
 const extractOptionsFromRuleEntry = (
   ruleEntry: RuleOptions,
 ): RuleOptionsConfig => {
@@ -117,9 +125,9 @@ const extractNumericSeverityFromRuleOptions = (
   return severityRemapper(ruleOptions);
 };
 
-const generateRulesDataset = () => {
+const getCompiledConfig = (config: BarebonesConfigAtom[]) => {
   const pluginsNames: string[] = [];
-  const compiledConfig = barebonesConfig.flatMap((configAtom) => {
+  const compiledConfig = config.flatMap((configAtom) => {
     const atomRemappedRecords: Entry[] = [];
 
     if (!configAtom.rules || isEmpty(configAtom.rules)) {
@@ -148,16 +156,21 @@ const generateRulesDataset = () => {
   return { compiledConfig, pluginsNames: uniq(pluginsNames) };
 };
 
-fs.writeFileSync(
-  './src/ruleset.ts',
-  `export const ruleset = ${JSON.stringify(
-    generateRulesDataset().compiledConfig,
-    null,
-    2,
-  )} as const;
+const generateRulesDataset = (
+  config: BarebonesConfigAtom[],
+  filename: string,
+) => {
+  const { compiledConfig, pluginsNames } = getCompiledConfig(config);
 
-    export const pluginsNames = ${JSON.stringify(
-      generateRulesDataset().pluginsNames,
-    )} as const;
-  `,
-);
+  fs.writeFileSync(
+    `./src/${filename}.ts`,
+    `export const ruleset = ${JSON.stringify(compiledConfig, null, 2)};
+
+    export const pluginsNames = ${JSON.stringify(pluginsNames)};
+
+    `,
+  );
+};
+
+generateRulesDataset(barebonesConfigWithJest, 'rulesetWithJest');
+generateRulesDataset(barebonesConfigWithVitest, 'rulesetWithVitest');
