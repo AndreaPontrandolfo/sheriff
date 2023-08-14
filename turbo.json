@@ -4,13 +4,13 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": []
+      "outputs": ["**/.docusaurus/**/*"]
     },
     "lint": {},
     "start": {
       "cache": false,
       "persistent": true,
-      "outputs": ["./src/rules.json"]
+      "outputs": ["**/src/rules.json", "**/.docusaurus/**/*"]
     },
     "rulesgen": {
       "outputs": ["./src/rules.json"]

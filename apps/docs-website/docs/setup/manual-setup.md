@@ -16,8 +16,8 @@ Follow these steps:
 2. Create a `eslint.config.js` file at the root of your project and copy/paste the contents of the following snippet of code:
 
    ```js title="eslint.config.js"
-   import sheriff from 'eslint-config-sheriff';
-   import { defineFlatConfig } from 'eslint-define-config';
+   import sheriff from "eslint-config-sheriff";
+   import { defineFlatConfig } from "eslint-define-config";
 
    const sheriffOptions = {
      react: false,
@@ -35,9 +35,9 @@ Follow these steps:
 
    ```js title="eslint.config.js"
    // highlight-next-line
-   import sheriff from 'eslint-config-sheriff'; // add this
+   import sheriff from "eslint-config-sheriff"; // add this
    // highlight-next-line
-   import { defineFlatConfig } from 'eslint-define-config'; // add this
+   import { defineFlatConfig } from "eslint-define-config"; // add this
    // my other imports...
 
    // highlight-start
@@ -60,7 +60,7 @@ Follow these steps:
    ```
 
 3. [Configure Sheriff](../configuration.md) (_optional_)
-4. [Setup prettier](../prettier-support.md) (_optional_)
+4. [Setup prettier](../prettier-support.md#setup) (_optional_)
 5. [Setup VSCode support](../vscode-support.md) (_optional_)
 
 :::caution

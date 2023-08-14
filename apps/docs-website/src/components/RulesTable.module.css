@@ -1,30 +1,30 @@
 .td,
 .th {
-  max-width: 210px;
+  width: 100%;
 }
 
 .tr td {
   text-overflow: ellipsis;
-  overflow: hidden;
+  overflow-x: hidden;
   white-space: nowrap;
 }
 
 .tr:hover td {
-  overflow: auto;
+  overflow-x: auto;
   white-space: normal;
 }
 
 .filtersContainer {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   justify-content: flex-end;
 }
 
 .filterInput {
   width: 100%;
   min-height: 38px;
-  padding: 2px 8px;
+  padding: 10px;
   box-sizing: border-box;
   font-size: 16px;
   border-radius: 4px;

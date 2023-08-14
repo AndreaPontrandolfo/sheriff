@@ -20,6 +20,11 @@ const sheriffOptions = {
 module.exports = defineFlatConfig([
   ...sheriff(sheriffOptions),
   {
+    rules: {
+      "sonarjs/no-duplicate-string": 0,
+    },
+  },
+  {
     files: ["*.tsx", "*.ts"], // .mdx?
     plugins: {
       "@docusaurus": docusaurusEslintPlugin,

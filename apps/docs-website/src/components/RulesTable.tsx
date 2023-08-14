@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   createColumnHelper,
   flexRender,
@@ -39,14 +39,28 @@ const columns = [
     ),
   }),
   columnHelper.accessor("affectedFiles", {
-    header: "Affected Files",
+    header: "Files",
     cell: (info) => info.getValue(),
   }),
 ];
 
 export const RulesTable = (): JSX.Element => {
   const [data, setData] = useState(() => [...ruleset]);
-  const [filter, setFilter] = useState<string[] | string | null>(null);
+  const [filter, setFilter] = useState<string | null>(null);
+  const [tableMaximumAllowedWidth, setTableMaximumAllowedWidth] =
+    useState<number>(0);
+
+  const tableContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!tableContainerRef.current) {
+      return;
+    }
+    const computedTableWidth =
+      tableContainerRef.current.getBoundingClientRect().width;
+
+    setTableMaximumAllowedWidth(computedTableWidth);
+  }, []);
 
   const table = useReactTable({
     data,
@@ -59,28 +73,74 @@ export const RulesTable = (): JSX.Element => {
     onGlobalFilterChange: setFilter,
   });
 
+  const cellMaxWidth = tableMaximumAllowedWidth / columns.length;
+
   return (
-    <div>
+    <div ref={tableContainerRef}>
       <div className={styles.filtersContainer}>
         <input
           className={styles.filterInput}
           type="text"
-          placeholder="Filter by searching any therm..."
+          placeholder="Filter by any therm..."
           onChange={(e) => {
             setFilter(e.target.value);
           }}
         />
         <Select
           isSearchable
-          placeholder="Select a plugin from the list..."
+          isClearable
+          placeholder="Filter by plugins..."
           options={pluginsNames.map((pluginName) => ({
             value: pluginName,
             label: pluginName,
           }))}
           styles={{
-            control: (baseStyles, state) => ({
+            control: (baseStyles) => ({
               ...baseStyles,
               minWidth: "300px",
+              backgroundColor: "var(--ifm-color-secondary-contrast-background)",
+            }),
+            input: (baseStyles) => ({
+              ...baseStyles,
+              color: "var(--ifm-font-color-primary)",
+            }),
+            menu: (baseStyles) => ({
+              ...baseStyles,
+              backgroundColor: "var(--ifm-color-secondary-contrast-background)",
+            }),
+            option: (baseStyles, state) => ({
+              ...baseStyles,
+              transition:
+                "color var(--ifm-transition-fast) var(--ifm-transition-timing-default)",
+              backgroundColor: state.isFocused
+                ? "var(--ifm-menu-color-background-hover)"
+                : "var(--ifm-color-secondary-contrast-background)",
+              color: state.isFocused
+                ? "var(--ifm-menu-color)"
+                : "var(--ifm-font-color-secondary)",
+              ":active": {
+                backgroundColor: "var(--ifm-menu-color-background-hover)",
+              },
+            }),
+            singleValue: (baseStyles) => ({
+              ...baseStyles,
+              color: "var(--ifm-font-color-primary)",
+            }),
+            clearIndicator: (baseStyles) => ({
+              ...baseStyles,
+              color: "var(--ifm-font-color-secondary)",
+              ":hover": {
+                color: "var(--ifm-font-color-primary)",
+              },
+              cursor: "pointer",
+            }),
+            dropdownIndicator: (baseStyles) => ({
+              ...baseStyles,
+              color: "var(--ifm-font-color-secondary)",
+              ":hover": {
+                color: "var(--ifm-font-color-primary)",
+              },
+              cursor: "pointer",
             }),
           }}
           onChange={(inputText) => {
@@ -93,7 +153,13 @@ export const RulesTable = (): JSX.Element => {
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th key={header.id} className={styles.th}>
+                <th
+                  key={header.id}
+                  className={styles.th}
+                  style={{
+                    maxWidth: cellMaxWidth,
+                  }}
+                >
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -109,7 +175,13 @@ export const RulesTable = (): JSX.Element => {
           {table.getRowModel().rows.map((row) => (
             <tr key={row.id} className={styles.tr}>
               {row.getVisibleCells().map((cell) => (
-                <td key={cell.id} className={styles.td}>
+                <td
+                  key={cell.id}
+                  className={styles.td}
+                  style={{
+                    maxWidth: cellMaxWidth,
+                  }}
+                >
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}

@@ -22,3 +22,10 @@ sidebar_position: 15
 - [Rome](https://rome.tools/) ➜ No. Rome is not compatible with Eslint in the first place.
 - [Deno](https://deno.land/) ➜ No. Deno is not compatible with Eslint in the first place.
 - [Bun](https://bun.sh/) ➜ Untested.
+
+## Does Sheriff support vanilla Javascript codebases?
+
+Sheriff is a Typescript-first Eslint configuration. It's focused on Typescript codebases. You can almost consider Sheriff a superset of [@typescript-eslint](https://typescript-eslint.io/). <br />
+If your codebase is not written in Typescript, i would worry about that first, before worrying about linting.
+
+For this reason, vanilla Javascript is not supported as of right now, but support may come at a later time.
