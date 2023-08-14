@@ -43,7 +43,6 @@
     "preinstall": "npx only-allow pnpm",
     "semantic-release": "semantic-release",
     "generate-typings": "tsc --declaration --allowJs --emitDeclarationOnly --declarationMap --outDir types",
-    "generate-rules-file": "node ./utils/extractRules.js",
     "publint": "publint",
     "clean": "rm -rf .turbo && rm -rf dist "
   },
