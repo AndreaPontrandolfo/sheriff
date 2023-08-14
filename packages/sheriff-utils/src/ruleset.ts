@@ -3,7 +3,7 @@ export const ruleset = [
     "ruleName": "constructor-super",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require `super()` calls in constructors",
@@ -14,7 +14,7 @@ export const ruleset = [
     "ruleName": "for-direction",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce \"for\" loop update clause moving the counter in the right direction",
@@ -25,7 +25,7 @@ export const ruleset = [
     "ruleName": "getter-return",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `return` statements in getters",
@@ -36,7 +36,7 @@ export const ruleset = [
     "ruleName": "no-async-promise-executor",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow using an async function as a Promise executor",
@@ -47,7 +47,7 @@ export const ruleset = [
     "ruleName": "no-case-declarations",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow lexical declarations in case clauses",
@@ -58,7 +58,7 @@ export const ruleset = [
     "ruleName": "no-class-assign",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow reassigning class members",
@@ -69,7 +69,7 @@ export const ruleset = [
     "ruleName": "no-compare-neg-zero",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow comparing against -0",
@@ -80,7 +80,7 @@ export const ruleset = [
     "ruleName": "no-cond-assign",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow assignment operators in conditional expressions",
@@ -91,7 +91,7 @@ export const ruleset = [
     "ruleName": "no-const-assign",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow reassigning `const` variables",
@@ -102,7 +102,7 @@ export const ruleset = [
     "ruleName": "no-constant-condition",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow constant expressions in conditions",
@@ -113,7 +113,7 @@ export const ruleset = [
     "ruleName": "no-control-regex",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow control characters in regular expressions",
@@ -124,7 +124,7 @@ export const ruleset = [
     "ruleName": "no-debugger",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the use of `debugger`",
@@ -135,7 +135,7 @@ export const ruleset = [
     "ruleName": "no-delete-var",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow deleting variables",
@@ -146,7 +146,7 @@ export const ruleset = [
     "ruleName": "no-dupe-args",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow duplicate arguments in `function` definitions",
@@ -157,7 +157,7 @@ export const ruleset = [
     "ruleName": "no-dupe-class-members",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow duplicate class members",
@@ -168,7 +168,7 @@ export const ruleset = [
     "ruleName": "no-dupe-else-if",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow duplicate conditions in if-else-if chains",
@@ -179,7 +179,7 @@ export const ruleset = [
     "ruleName": "no-dupe-keys",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow duplicate keys in object literals",
@@ -190,7 +190,7 @@ export const ruleset = [
     "ruleName": "no-duplicate-case",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow duplicate case labels",
@@ -201,7 +201,7 @@ export const ruleset = [
     "ruleName": "no-empty",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow empty block statements",
@@ -212,7 +212,7 @@ export const ruleset = [
     "ruleName": "no-empty-character-class",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow empty character classes in regular expressions",
@@ -223,7 +223,7 @@ export const ruleset = [
     "ruleName": "no-empty-pattern",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow empty destructuring patterns",
@@ -234,7 +234,7 @@ export const ruleset = [
     "ruleName": "no-ex-assign",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow reassigning exceptions in `catch` clauses",
@@ -245,7 +245,7 @@ export const ruleset = [
     "ruleName": "no-extra-boolean-cast",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary boolean casts",
@@ -256,7 +256,7 @@ export const ruleset = [
     "ruleName": "no-extra-semi",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary semicolons",
@@ -267,7 +267,7 @@ export const ruleset = [
     "ruleName": "no-fallthrough",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow fallthrough of `case` statements",
@@ -278,7 +278,7 @@ export const ruleset = [
     "ruleName": "no-func-assign",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow reassigning `function` declarations",
@@ -289,7 +289,7 @@ export const ruleset = [
     "ruleName": "no-global-assign",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow assignments to native objects or read-only global variables",
@@ -300,7 +300,7 @@ export const ruleset = [
     "ruleName": "no-import-assign",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow assigning to imported bindings",
@@ -311,7 +311,7 @@ export const ruleset = [
     "ruleName": "no-inner-declarations",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow variable or `function` declarations in nested blocks",
@@ -322,7 +322,7 @@ export const ruleset = [
     "ruleName": "no-invalid-regexp",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow invalid regular expression strings in `RegExp` constructors",
@@ -333,7 +333,7 @@ export const ruleset = [
     "ruleName": "no-irregular-whitespace",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow irregular whitespace",
@@ -344,7 +344,7 @@ export const ruleset = [
     "ruleName": "no-loss-of-precision",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow literal numbers that lose precision",
@@ -355,7 +355,7 @@ export const ruleset = [
     "ruleName": "no-misleading-character-class",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow characters which are made with multiple code points in character class syntax",
@@ -366,7 +366,7 @@ export const ruleset = [
     "ruleName": "no-mixed-spaces-and-tabs",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow mixed spaces and tabs for indentation",
@@ -377,7 +377,7 @@ export const ruleset = [
     "ruleName": "no-new-symbol",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `new` operators with the `Symbol` object",
@@ -388,7 +388,7 @@ export const ruleset = [
     "ruleName": "no-nonoctal-decimal-escape",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `\\8` and `\\9` escape sequences in string literals",
@@ -399,7 +399,7 @@ export const ruleset = [
     "ruleName": "no-obj-calls",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow calling global object properties as functions",
@@ -410,7 +410,7 @@ export const ruleset = [
     "ruleName": "no-octal",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow octal literals",
@@ -421,7 +421,7 @@ export const ruleset = [
     "ruleName": "no-prototype-builtins",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow calling some `Object.prototype` methods directly on objects",
@@ -432,7 +432,7 @@ export const ruleset = [
     "ruleName": "no-redeclare",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow variable redeclaration",
@@ -443,7 +443,7 @@ export const ruleset = [
     "ruleName": "no-regex-spaces",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow multiple spaces in regular expressions",
@@ -454,7 +454,7 @@ export const ruleset = [
     "ruleName": "no-self-assign",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow assignments where both sides are exactly the same",
@@ -465,7 +465,7 @@ export const ruleset = [
     "ruleName": "no-setter-return",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow returning values from setters",
@@ -476,7 +476,7 @@ export const ruleset = [
     "ruleName": "no-shadow-restricted-names",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow identifiers from shadowing restricted names",
@@ -487,7 +487,7 @@ export const ruleset = [
     "ruleName": "no-sparse-arrays",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow sparse arrays",
@@ -498,7 +498,7 @@ export const ruleset = [
     "ruleName": "no-this-before-super",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `this`/`super` before calling `super()` in constructors",
@@ -509,7 +509,7 @@ export const ruleset = [
     "ruleName": "no-undef",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the use of undeclared variables unless mentioned in `/*global */` comments",
@@ -520,7 +520,7 @@ export const ruleset = [
     "ruleName": "no-unexpected-multiline",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow confusing multiline expressions",
@@ -531,7 +531,7 @@ export const ruleset = [
     "ruleName": "no-unreachable",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unreachable code after `return`, `throw`, `continue`, and `break` statements",
@@ -542,7 +542,7 @@ export const ruleset = [
     "ruleName": "no-unsafe-finally",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow control flow statements in `finally` blocks",
@@ -553,7 +553,7 @@ export const ruleset = [
     "ruleName": "no-unsafe-negation",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow negating the left operand of relational operators",
@@ -564,7 +564,7 @@ export const ruleset = [
     "ruleName": "no-unsafe-optional-chaining",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow use of optional chaining in contexts where the `undefined` value is not allowed",
@@ -575,7 +575,7 @@ export const ruleset = [
     "ruleName": "no-unused-labels",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unused labels",
@@ -586,7 +586,7 @@ export const ruleset = [
     "ruleName": "no-unused-vars",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unused variables",
@@ -597,7 +597,7 @@ export const ruleset = [
     "ruleName": "no-useless-backreference",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow useless backreferences in regular expressions",
@@ -608,7 +608,7 @@ export const ruleset = [
     "ruleName": "no-useless-catch",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary `catch` clauses",
@@ -619,7 +619,7 @@ export const ruleset = [
     "ruleName": "no-useless-escape",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary escape characters",
@@ -630,7 +630,7 @@ export const ruleset = [
     "ruleName": "no-with",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `with` statements",
@@ -641,7 +641,7 @@ export const ruleset = [
     "ruleName": "require-yield",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require generator functions to contain `yield`",
@@ -652,7 +652,7 @@ export const ruleset = [
     "ruleName": "use-isnan",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require calls to `isNaN()` when checking for `NaN`",
@@ -663,7 +663,7 @@ export const ruleset = [
     "ruleName": "valid-typeof",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce comparing `typeof` expressions against valid strings",
@@ -674,7 +674,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/adjacent-overload-signatures",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require that function overload signatures be consecutive",
@@ -685,7 +685,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/ban-ts-comment",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `@ts-<directive>` comments or require descriptions after directives",
@@ -696,7 +696,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/ban-types",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow certain types",
@@ -707,7 +707,7 @@ export const ruleset = [
     "ruleName": "no-array-constructor",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow generic `Array` constructors",
@@ -718,7 +718,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-array-constructor",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow generic `Array` constructors",
@@ -729,7 +729,7 @@ export const ruleset = [
     "ruleName": "no-empty-function",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow empty functions",
@@ -740,7 +740,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-empty-function",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow empty functions",
@@ -751,7 +751,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-empty-interface",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the declaration of empty interfaces",
@@ -762,7 +762,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-explicit-any",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the `any` type",
@@ -773,7 +773,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-extra-non-null-assertion",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow extra non-null assertions",
@@ -784,7 +784,7 @@ export const ruleset = [
     "ruleName": "no-extra-semi",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary semicolons",
@@ -795,7 +795,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-extra-semi",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary semicolons",
@@ -806,7 +806,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-inferrable-types",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow explicit type declarations for variables or parameters initialized to a number, string, or boolean",
@@ -817,7 +817,7 @@ export const ruleset = [
     "ruleName": "no-loss-of-precision",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow literal numbers that lose precision",
@@ -828,7 +828,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-loss-of-precision",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow literal numbers that lose precision",
@@ -839,7 +839,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-misused-new",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce valid definition of `new` and `constructor`",
@@ -850,7 +850,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-namespace",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow TypeScript namespaces",
@@ -861,7 +861,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-non-null-asserted-optional-chain",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow non-null assertions after an optional chain expression",
@@ -872,7 +872,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-non-null-assertion",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow non-null assertions using the `!` postfix operator",
@@ -883,7 +883,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-this-alias",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow aliasing `this`",
@@ -894,7 +894,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-unnecessary-type-constraint",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary constraints on generic types",
@@ -905,7 +905,7 @@ export const ruleset = [
     "ruleName": "no-unused-vars",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unused variables",
@@ -916,7 +916,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-unused-vars",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unused variables",
@@ -927,7 +927,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-var-requires",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `require` statements except in import statements",
@@ -938,7 +938,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/prefer-as-const",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce the use of `as const` over literal type",
@@ -949,7 +949,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/prefer-namespace-keyword",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require using `namespace` keyword over `module` keyword to declare custom TypeScript modules",
@@ -960,7 +960,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/triple-slash-reference",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow certain triple slash directives in favor of ES6-style import declarations",
@@ -971,7 +971,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/await-thenable",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow awaiting a value that is not a Thenable",
@@ -982,7 +982,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-floating-promises",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require Promise-like statements to be handled appropriately",
@@ -993,7 +993,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-for-in-array",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow iterating over an array with a for-in loop",
@@ -1004,7 +1004,7 @@ export const ruleset = [
     "ruleName": "no-implied-eval",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the use of `eval()`-like methods",
@@ -1015,7 +1015,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-implied-eval",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the use of `eval()`-like methods",
@@ -1026,7 +1026,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-misused-promises",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow Promises in places not designed to handle them",
@@ -1037,7 +1037,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-unnecessary-type-assertion",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow type assertions that do not change the type of an expression",
@@ -1048,7 +1048,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-unsafe-argument",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow calling a function with a value with type `any`",
@@ -1059,7 +1059,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-unsafe-assignment",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow assigning a value with type `any` to variables and properties",
@@ -1070,7 +1070,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-unsafe-call",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow calling a value with type `any`",
@@ -1081,7 +1081,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-unsafe-member-access",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow member access on a value with type `any`",
@@ -1092,7 +1092,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-unsafe-return",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow returning a value with type `any` from a function",
@@ -1103,7 +1103,7 @@ export const ruleset = [
     "ruleName": "require-await",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow async functions which have no `await` expression",
@@ -1114,7 +1114,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/require-await",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow async functions which have no `await` expression",
@@ -1125,7 +1125,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/restrict-plus-operands",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require both operands of addition to be the same type and be `bigint`, `number`, or `string`",
@@ -1136,7 +1136,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/restrict-template-expressions",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce template literal expressions to be of `string` type",
@@ -1147,7 +1147,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/unbound-method",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce unbound methods are called with their expected scope",
@@ -1158,7 +1158,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/return-await",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce consistent returning of awaited values",
@@ -1169,7 +1169,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-redundant-type-constituents",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow members of unions and intersections that do nothing or override type information",
@@ -1180,7 +1180,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-unnecessary-boolean-literal-compare",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary equality comparisons against boolean literals",
@@ -1191,7 +1191,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/prefer-ts-expect-error",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce using `@ts-expect-error` over `@ts-ignore`",
@@ -1202,7 +1202,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-throw-literal",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow throwing literals as exceptions",
@@ -1213,7 +1213,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-use-before-define",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the use of variables before they are defined",
@@ -1224,7 +1224,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/consistent-type-assertions",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce consistent usage of type assertions",
@@ -1235,9 +1235,11 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/consistent-type-imports",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": {
-      "fixStyle": "inline-type-imports"
-    },
+    "ruleOptions": [
+      {
+        "fixStyle": "inline-type-imports"
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce consistent usage of type imports",
@@ -1248,9 +1250,11 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/consistent-type-exports",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": {
-      "fixMixedExportsWithInlineTypeSpecifier": true
-    },
+    "ruleOptions": [
+      {
+        "fixMixedExportsWithInlineTypeSpecifier": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce consistent usage of type exports",
@@ -1261,7 +1265,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/explicit-module-boundary-types",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require explicit return and argument types on exported functions' and classes' public class methods",
@@ -1272,7 +1276,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/switch-exhaustiveness-check",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require switch-case statements to be exhaustive with union type",
@@ -1283,7 +1287,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-invalid-void-type",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `void` type outside of generic or return types",
@@ -1294,7 +1298,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/method-signature-style",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce using a particular method signature syntax",
@@ -1305,7 +1309,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/non-nullable-type-assertion-style",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce non-null assertions over explicit type casts",
@@ -1316,7 +1320,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-confusing-void-expression",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require expressions of type void to appear in statement position",
@@ -1327,11 +1331,13 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/prefer-nullish-coalescing",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": {
-      "ignorePrimitives": {
-        "string": true
+    "ruleOptions": [
+      {
+        "ignorePrimitives": {
+          "string": true
+        }
       }
-    },
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce using the nullish coalescing operator instead of logical chaining",
@@ -1342,7 +1348,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-unnecessary-condition",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow conditionals where the type is always truthy or always falsy",
@@ -1353,7 +1359,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/unified-signatures",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow two overloads that could be unified into one with a union or an optional/rest parameter",
@@ -1364,12 +1370,14 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-unused-expressions",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": {
-      "allowShortCircuit": true,
-      "allowTernary": true,
-      "allowTaggedTemplates": true,
-      "enforceForJSX": true
-    },
+    "ruleOptions": [
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true,
+        "allowTaggedTemplates": true,
+        "enforceForJSX": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unused expressions",
@@ -1380,7 +1388,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/array-type",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require consistently using either `T[]` or `Array<T>` for arrays",
@@ -1391,7 +1399,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/prefer-optional-chain",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce using concise optional chain expressions instead of chained logical ands, negated logical ors, or empty objects",
@@ -1402,7 +1410,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/dot-notation",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce dot notation whenever possible",
@@ -1413,7 +1421,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-import-type-side-effects",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce the use of top-level import type qualifier when an import only has specifiers with inline type qualifiers",
@@ -1424,7 +1432,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/default-param-last",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce default parameters to be last",
@@ -1435,19 +1443,21 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-shadow",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": {
-      "hoist": "all",
-      "allow": [
-        "resolve",
-        "reject",
-        "done",
-        "next",
-        "err",
-        "error"
-      ],
-      "ignoreTypeValueShadow": true,
-      "ignoreFunctionTypeParameterNameValueShadow": true
-    },
+    "ruleOptions": [
+      {
+        "hoist": "all",
+        "allow": [
+          "resolve",
+          "reject",
+          "done",
+          "next",
+          "err",
+          "error"
+        ],
+        "ignoreTypeValueShadow": true,
+        "ignoreFunctionTypeParameterNameValueShadow": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow variable declarations from shadowing variables declared in the outer scope",
@@ -1458,14 +1468,75 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/naming-convention",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": {
-      "selector": "default",
-      "format": [
-        "camelCase"
-      ],
-      "leadingUnderscore": "forbid",
-      "trailingUnderscore": "forbid"
-    },
+    "ruleOptions": [
+      {
+        "selector": "default",
+        "format": [
+          "camelCase"
+        ],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "variable",
+        "format": [
+          "camelCase",
+          "UPPER_CASE"
+        ],
+        "modifiers": [
+          "const"
+        ],
+        "types": [
+          "boolean",
+          "string",
+          "number"
+        ],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "objectLiteralProperty",
+        "format": null,
+        "leadingUnderscore": "allowSingleOrDouble",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "typeLike",
+        "format": [
+          "PascalCase"
+        ],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "variable",
+        "types": [
+          "boolean"
+        ],
+        "format": [
+          "camelCase"
+        ],
+        "prefix": [
+          "is",
+          "has",
+          "should",
+          "can"
+        ],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "variable",
+        "modifiers": [
+          "destructured"
+        ],
+        "format": null
+      },
+      {
+        "selector": "typeProperty",
+        "format": null
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce naming conventions for everything across a codebase",
@@ -1476,7 +1547,7 @@ export const ruleset = [
     "ruleName": "tsdoc/syntax",
     "parentPluginName": "eslint-plugin-tsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Validates that TypeScript documentation comments conform to the TSDoc standard",
@@ -1487,7 +1558,7 @@ export const ruleset = [
     "ruleName": "func-style",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce the consistent use of either `function` declarations or expressions",
@@ -1498,7 +1569,7 @@ export const ruleset = [
     "ruleName": "no-promise-executor-return",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow returning values from Promise executor functions",
@@ -1509,7 +1580,7 @@ export const ruleset = [
     "ruleName": "no-unreachable-loop",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow loops with a body that allows only one iteration",
@@ -1520,7 +1591,7 @@ export const ruleset = [
     "ruleName": "no-caller",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the use of `arguments.caller` or `arguments.callee`",
@@ -1531,11 +1602,13 @@ export const ruleset = [
     "ruleName": "no-restricted-imports",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "paths": [
-        "prop-types"
-      ]
-    },
+    "ruleOptions": [
+      {
+        "paths": [
+          "prop-types"
+        ]
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow specified modules when loaded by `import`",
@@ -1546,7 +1619,7 @@ export const ruleset = [
     "ruleName": "no-extend-native",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow extending native types",
@@ -1557,7 +1630,7 @@ export const ruleset = [
     "ruleName": "no-extra-bind",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary calls to `.bind()`",
@@ -1568,7 +1641,7 @@ export const ruleset = [
     "ruleName": "no-extra-label",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary labels",
@@ -1579,7 +1652,7 @@ export const ruleset = [
     "ruleName": "no-implicit-coercion",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow shorthand type conversions",
@@ -1590,7 +1663,7 @@ export const ruleset = [
     "ruleName": "no-multi-str",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow multiline strings",
@@ -1601,7 +1674,7 @@ export const ruleset = [
     "ruleName": "no-negated-condition",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow negated conditions",
@@ -1612,7 +1685,7 @@ export const ruleset = [
     "ruleName": "no-new-wrappers",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `new` operators with the `String`, `Number`, and `Boolean` objects",
@@ -1623,7 +1696,7 @@ export const ruleset = [
     "ruleName": "no-new-object",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `Object` constructors",
@@ -1634,11 +1707,38 @@ export const ruleset = [
     "ruleName": "no-restricted-properties",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "object": "global",
-      "property": "isFinite",
-      "message": "Please use Number.isFinite instead"
-    },
+    "ruleOptions": [
+      {
+        "object": "global",
+        "property": "isFinite",
+        "message": "Please use Number.isFinite instead"
+      },
+      {
+        "object": "self",
+        "property": "isFinite",
+        "message": "Please use Number.isFinite instead"
+      },
+      {
+        "object": "window",
+        "property": "isFinite",
+        "message": "Please use Number.isFinite instead"
+      },
+      {
+        "object": "global",
+        "property": "isNaN",
+        "message": "Please use Number.isNaN instead"
+      },
+      {
+        "object": "self",
+        "property": "isNaN",
+        "message": "Please use Number.isNaN instead"
+      },
+      {
+        "object": "window",
+        "property": "isNaN",
+        "message": "Please use Number.isNaN instead"
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow certain properties on certain objects",
@@ -1649,7 +1749,9 @@ export const ruleset = [
     "ruleName": "strict",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "never",
+    "ruleOptions": [
+      "never"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require or disallow strict mode directives",
@@ -1660,7 +1762,7 @@ export const ruleset = [
     "ruleName": "no-octal-escape",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow octal escape sequences in string literals",
@@ -1671,7 +1773,7 @@ export const ruleset = [
     "ruleName": "no-proto",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the use of the `__proto__` property",
@@ -1682,9 +1784,11 @@ export const ruleset = [
     "ruleName": "no-sequences",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "allowInParentheses": false
-    },
+    "ruleOptions": [
+      {
+        "allowInParentheses": false
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow comma operators",
@@ -1695,7 +1799,7 @@ export const ruleset = [
     "ruleName": "no-unmodified-loop-condition",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unmodified loop conditions",
@@ -1706,7 +1810,7 @@ export const ruleset = [
     "ruleName": "no-void",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `void` operators",
@@ -1717,9 +1821,11 @@ export const ruleset = [
     "ruleName": "max-statements-per-line",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "max": 1
-    },
+    "ruleOptions": [
+      {
+        "max": 1
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce a maximum number of statements allowed per line",
@@ -1730,7 +1836,7 @@ export const ruleset = [
     "ruleName": "no-array-constructor",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `Array` constructors",
@@ -1741,7 +1847,7 @@ export const ruleset = [
     "ruleName": "no-multi-assign",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow use of chained assignment expressions",
@@ -1752,7 +1858,7 @@ export const ruleset = [
     "ruleName": "no-plusplus",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the unary operators `++` and `--`",
@@ -1763,10 +1869,15 @@ export const ruleset = [
     "ruleName": "prefer-destructuring",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "array": false,
-      "object": true
-    },
+    "ruleOptions": [
+      {
+        "array": false,
+        "object": true
+      },
+      {
+        "enforceForRenamedProperties": false
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require destructuring from arrays and/or objects",
@@ -1777,7 +1888,7 @@ export const ruleset = [
     "ruleName": "no-useless-call",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary calls to `.call()` and `.apply()`",
@@ -1788,7 +1899,7 @@ export const ruleset = [
     "ruleName": "prefer-object-has-own",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow use of `Object.prototype.hasOwnProperty.call()` and prefer use of `Object.hasOwn()`",
@@ -1799,7 +1910,7 @@ export const ruleset = [
     "ruleName": "no-constant-binary-expression",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow expressions where the operation doesn't affect the value",
@@ -1810,7 +1921,7 @@ export const ruleset = [
     "ruleName": "no-lone-blocks",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary nested blocks",
@@ -1821,7 +1932,7 @@ export const ruleset = [
     "ruleName": "no-var",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require `let` or `const` instead of `var`",
@@ -1832,7 +1943,7 @@ export const ruleset = [
     "ruleName": "no-eval",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the use of `eval()`",
@@ -1843,7 +1954,7 @@ export const ruleset = [
     "ruleName": "prefer-const",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require `const` declarations for variables that are never reassigned after declared",
@@ -1854,7 +1965,7 @@ export const ruleset = [
     "ruleName": "prefer-rest-params",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require rest parameters instead of `arguments`",
@@ -1865,7 +1976,9 @@ export const ruleset = [
     "ruleName": "no-return-assign",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "always",
+    "ruleOptions": [
+      "always"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow assignment operators in `return` statements",
@@ -1876,9 +1989,11 @@ export const ruleset = [
     "ruleName": "no-else-return",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "allowElseIf": false
-    },
+    "ruleOptions": [
+      {
+        "allowElseIf": false
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `else` blocks after `return` statements in `if` statements",
@@ -1889,7 +2004,7 @@ export const ruleset = [
     "ruleName": "prefer-template",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require template literals instead of string concatenation",
@@ -1900,7 +2015,9 @@ export const ruleset = [
     "ruleName": "operator-assignment",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "never",
+    "ruleOptions": [
+      "never"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require or disallow assignment operator shorthand where possible",
@@ -1911,7 +2028,9 @@ export const ruleset = [
     "ruleName": "logical-assignment-operators",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "never",
+    "ruleOptions": [
+      "never"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require or disallow logical assignment operator shorthand",
@@ -1922,14 +2041,32 @@ export const ruleset = [
     "ruleName": "padding-line-between-statements",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "blankLine": "always",
-      "prev": [
-        "const",
-        "let"
-      ],
-      "next": "*"
-    },
+    "ruleOptions": [
+      {
+        "blankLine": "always",
+        "prev": [
+          "const",
+          "let"
+        ],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": [
+          "const",
+          "let"
+        ],
+        "next": [
+          "const",
+          "let"
+        ]
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require or disallow padding lines between statements",
@@ -1940,7 +2077,7 @@ export const ruleset = [
     "ruleName": "prefer-spread",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require spread operators instead of `.apply()`",
@@ -1951,7 +2088,7 @@ export const ruleset = [
     "ruleName": "prefer-object-spread",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow using Object.assign with an object literal as the first argument and prefer the use of object spread instead",
@@ -1962,9 +2099,11 @@ export const ruleset = [
     "ruleName": "no-param-reassign",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "props": true
-    },
+    "ruleOptions": [
+      {
+        "props": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow reassigning `function` parameters",
@@ -1975,7 +2114,7 @@ export const ruleset = [
     "ruleName": "no-redeclare",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow variable redeclaration",
@@ -1986,10 +2125,12 @@ export const ruleset = [
     "ruleName": "array-callback-return",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "allowImplicit": true,
-      "checkForEach": true
-    },
+    "ruleOptions": [
+      {
+        "allowImplicit": true,
+        "checkForEach": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `return` statements in callbacks of array methods",
@@ -2000,7 +2141,7 @@ export const ruleset = [
     "ruleName": "object-shorthand",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require or disallow method and property shorthand syntax for object literals",
@@ -2011,9 +2152,11 @@ export const ruleset = [
     "ruleName": "no-unneeded-ternary",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "defaultAssignment": false
-    },
+    "ruleOptions": [
+      {
+        "defaultAssignment": false
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow ternary operators when simpler alternatives exist",
@@ -2024,7 +2167,7 @@ export const ruleset = [
     "ruleName": "require-atomic-updates",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow assignments that can lead to race conditions due to usage of `await` or `yield`",
@@ -2035,7 +2178,7 @@ export const ruleset = [
     "ruleName": "no-nested-ternary",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow nested ternary expressions",
@@ -2046,13 +2189,15 @@ export const ruleset = [
     "ruleName": "no-console",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "allow": [
-        "warn",
-        "error",
-        "debug"
-      ]
-    },
+    "ruleOptions": [
+      {
+        "allow": [
+          "warn",
+          "error",
+          "debug"
+        ]
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the use of `console`",
@@ -2063,7 +2208,7 @@ export const ruleset = [
     "ruleName": "eqeqeq",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require the use of `===` and `!==`",
@@ -2074,7 +2219,7 @@ export const ruleset = [
     "ruleName": "prefer-arrow-callback",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require using arrow functions for callbacks",
@@ -2085,7 +2230,9 @@ export const ruleset = [
     "ruleName": "arrow-body-style",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "as-needed",
+    "ruleOptions": [
+      "as-needed"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require braces around arrow function bodies",
@@ -2096,10 +2243,44 @@ export const ruleset = [
     "ruleName": "no-restricted-syntax",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": {
-      "selector": "LabeledStatement",
-      "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
-    },
+    "ruleOptions": [
+      {
+        "selector": "LabeledStatement",
+        "message": "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand."
+      },
+      {
+        "selector": "ForInStatement",
+        "message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array."
+      },
+      {
+        "selector": "Identifier[name='Reflect']",
+        "message": "Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development."
+      },
+      {
+        "selector": "BinaryExpression[operator='in']",
+        "message": "Avoid the 'in' operator. In real-world scenarios there is rarely a need for this operator. For most usecases, basic property access is all you need. For every other case, use the Object.hasOwn() or the Object.prototype.hasOwnProperty() method. In the really niche cases where you actually need to check for the existence of a property both in the object itself AND in it's prototype chain, feel free to disable this rule with the inline eslint-disable syntax."
+      },
+      {
+        "selector": "PropertyDefinition[accessibility='public']",
+        "message": "Avoid access modifiers. In Javascript modules there is no need to limit developer access to properties."
+      },
+      {
+        "selector": "PropertyDefinition[accessibility='protected']",
+        "message": "Avoid access modifiers. In Javascript modules there is no need to limit developer access to properties."
+      },
+      {
+        "selector": "PropertyDefinition[accessibility='private']",
+        "message": "Avoid access modifiers. In Javascript modules there is no need to limit developer access to properties."
+      },
+      {
+        "selector": "Identifier[name='PropTypes']",
+        "message": "Avoid PropTypes. Use Typescript instead."
+      },
+      {
+        "selector": "Identifier[name='propTypes']",
+        "message": "Avoid PropTypes. Use Typescript instead."
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow specified syntax",
@@ -2110,7 +2291,7 @@ export const ruleset = [
     "ruleName": "no-undef",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the use of undeclared variables unless mentioned in `/*global */` comments",
@@ -2121,7 +2302,7 @@ export const ruleset = [
     "ruleName": "no-dupe-class-members",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow duplicate class members",
@@ -2132,7 +2313,7 @@ export const ruleset = [
     "ruleName": "no-return-await",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary `return await`",
@@ -2143,7 +2324,7 @@ export const ruleset = [
     "ruleName": "no-throw-literal",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow throwing literals as exceptions",
@@ -2154,7 +2335,7 @@ export const ruleset = [
     "ruleName": "no-use-before-define",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow the use of variables before they are defined",
@@ -2165,7 +2346,7 @@ export const ruleset = [
     "ruleName": "no-unused-expressions",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unused expressions",
@@ -2176,7 +2357,7 @@ export const ruleset = [
     "ruleName": "no-empty-function",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow empty functions",
@@ -2187,7 +2368,7 @@ export const ruleset = [
     "ruleName": "require-await",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow async functions which have no `await` expression",
@@ -2198,7 +2379,7 @@ export const ruleset = [
     "ruleName": "no-unused-vars",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unused variables",
@@ -2209,7 +2390,7 @@ export const ruleset = [
     "ruleName": "dot-notation",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce dot notation whenever possible",
@@ -2220,7 +2401,7 @@ export const ruleset = [
     "ruleName": "no-shadow",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow variable declarations from shadowing variables declared in the outer scope",
@@ -2231,7 +2412,7 @@ export const ruleset = [
     "ruleName": "default-param-last",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce default parameters to be last",
@@ -2242,7 +2423,7 @@ export const ruleset = [
     "ruleName": "fp/no-arguments",
     "parentPluginName": "eslint-plugin-fp",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbid the use of `arguments`.",
@@ -2253,7 +2434,7 @@ export const ruleset = [
     "ruleName": "fp/no-class",
     "parentPluginName": "eslint-plugin-fp",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbid the use of `class`.",
@@ -2264,7 +2445,7 @@ export const ruleset = [
     "ruleName": "fp/no-delete",
     "parentPluginName": "eslint-plugin-fp",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbid the use of `delete`.",
@@ -2275,7 +2456,7 @@ export const ruleset = [
     "ruleName": "fp/no-proxy",
     "parentPluginName": "eslint-plugin-fp",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbid the use of `Proxy`.",
@@ -2286,7 +2467,7 @@ export const ruleset = [
     "ruleName": "etc/no-enum",
     "parentPluginName": "eslint-plugin-etc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbids the use of `enum`.",
@@ -2297,7 +2478,7 @@ export const ruleset = [
     "ruleName": "etc/no-misused-generics",
     "parentPluginName": "eslint-plugin-etc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbids type parameters without inference sites and type parameters that don't add type safety to declarations.",
@@ -2308,7 +2489,7 @@ export const ruleset = [
     "ruleName": "etc/no-assign-mutated-array",
     "parentPluginName": "eslint-plugin-etc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbids the assignment of returned, mutated arrays.",
@@ -2319,9 +2500,11 @@ export const ruleset = [
     "ruleName": "@regru/prefer-early-return/prefer-early-return",
     "parentPluginName": "@regru/eslint-plugin-prefer-early-return",
     "severity": 2,
-    "ruleOptions": {
-      "maximumStatements": 1
-    },
+    "ruleOptions": [
+      {
+        "maximumStatements": 1
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer early returns over full-body conditional wrapping in function declarations.",
@@ -2332,7 +2515,7 @@ export const ruleset = [
     "ruleName": "unicorn/better-regex",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Improve regexes by making them shorter, consistent, and safer.",
@@ -2343,7 +2526,7 @@ export const ruleset = [
     "ruleName": "unicorn/explicit-length-check",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce explicitly comparing the `length` or `size` property of a value.",
@@ -2354,7 +2537,7 @@ export const ruleset = [
     "ruleName": "unicorn/consistent-function-scoping",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Move function definitions to the highest possible scope.",
@@ -2365,7 +2548,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-default-parameters",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer default parameters over reassignment.",
@@ -2376,7 +2559,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-array-push-push",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce combining multiple `Array#push()` into one call.",
@@ -2387,7 +2570,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-array-index-of",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `Array#{indexOf,lastIndexOf}()` over `Array#{findIndex,findLastIndex}()` when looking for the index of an item.",
@@ -2398,7 +2581,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-array-flat-map",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `.flatMap(…)` over `.map(…).flat()`.",
@@ -2409,7 +2592,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-array-some",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `.some(…)` over `.filter(…).length` check and `.{find,findLast}(…)`.",
@@ -2420,7 +2603,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-array-find",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `.find(…)` and `.findLast(…)` over the first or last element from `.filter(…)`.",
@@ -2431,7 +2614,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-array-flat",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `Array#flat()` over legacy techniques to flatten arrays.",
@@ -2442,7 +2625,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-includes",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence.",
@@ -2453,7 +2636,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-top-level-await",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer top-level await over top-level promises and async function calls.",
@@ -2464,7 +2647,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-spread",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer the spread operator over `Array.from(…)`, `Array#concat(…)`, `Array#{slice,toSpliced}()` and `String#split('')`.",
@@ -2475,7 +2658,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-useless-spread",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary spread.",
@@ -2486,7 +2669,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-useless-undefined",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow useless `undefined`.",
@@ -2497,7 +2680,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-for-loop",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Do not use a `for` loop that can be replaced with a `for-of` loop.",
@@ -2508,7 +2691,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-set-size",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer using `Set#size` instead of `Array#length`.",
@@ -2519,7 +2702,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-type-error",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce throwing `TypeError` in type checking conditions.",
@@ -2530,7 +2713,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-object-from-entries",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer using `Object.fromEntries(…)` to transform a list of key-value pairs into an object.",
@@ -2541,7 +2724,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-instanceof-array",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require `Array.isArray()` instead of `instanceof Array`.",
@@ -2552,7 +2735,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-native-coercion-functions",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly.",
@@ -2563,7 +2746,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-logical-operator-over-ternary",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer using a logical operator over a ternary.",
@@ -2574,7 +2757,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-event-target",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `EventTarget` over `EventEmitter`.",
@@ -2585,7 +2768,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-await-expression-member",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow member access from await expression.",
@@ -2596,7 +2779,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-new-array",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `new Array()`.",
@@ -2607,7 +2790,7 @@ export const ruleset = [
     "ruleName": "unicorn/throw-new-error",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require `new` when throwing an error.",
@@ -2618,7 +2801,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-array-reduce",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `Array#reduce()` and `Array#reduceRight()`.",
@@ -2629,7 +2812,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-useless-length-check",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow useless array length check.",
@@ -2640,7 +2823,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-prototype-methods",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer borrowing methods from the prototype instead of the instance.",
@@ -2651,7 +2834,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-date-now",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch.",
@@ -2662,9 +2845,11 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-export-from",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": {
-      "ignoreUsedVariables": true
-    },
+    "ruleOptions": [
+      {
+        "ignoreUsedVariables": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `export…from` when re-exporting.",
@@ -2675,7 +2860,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-new-buffer",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`.",
@@ -2686,7 +2871,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-query-selector",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `.querySelector()` over `.getElementById()`, `.querySelectorAll()` over `.getElementsByClassName()` and `.getElementsByTagName()`.",
@@ -2697,7 +2882,7 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-string-replace-all",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `String#replaceAll()` over regex searches with the global flag.",
@@ -2708,9 +2893,11 @@ export const ruleset = [
     "ruleName": "unicorn/prefer-switch",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": {
-      "emptyDefaultCase": "do-nothing-comment"
-    },
+    "ruleOptions": [
+      {
+        "emptyDefaultCase": "do-nothing-comment"
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `switch` over multiple `else-if`.",
@@ -2721,7 +2908,7 @@ export const ruleset = [
     "ruleName": "unicorn/switch-case-braces",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce consistent brace style for `case` clauses.",
@@ -2732,7 +2919,7 @@ export const ruleset = [
     "ruleName": "unicorn/catch-error-name",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce a specific parameter name in catch clauses.",
@@ -2743,7 +2930,7 @@ export const ruleset = [
     "ruleName": "sonarjs/cognitive-complexity",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Cognitive Complexity of functions should not be too high",
@@ -2754,7 +2941,7 @@ export const ruleset = [
     "ruleName": "sonarjs/elseif-without-else",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "\"if ... else if\" constructs should end with \"else\" clauses",
@@ -2765,7 +2952,7 @@ export const ruleset = [
     "ruleName": "sonarjs/max-switch-cases",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "\"switch\" statements should not have too many \"case\" clauses",
@@ -2776,7 +2963,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-all-duplicated-branches",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "All branches in a conditional structure should not have exactly the same implementation",
@@ -2787,7 +2974,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-collapsible-if",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Collapsible \"if\" statements should be merged",
@@ -2798,7 +2985,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-collection-size-mischeck",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Collection sizes and array length comparisons should make sense",
@@ -2809,7 +2996,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-duplicate-string",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "String literals should not be duplicated",
@@ -2820,7 +3007,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-duplicated-branches",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Two branches in a conditional structure should not have exactly the same implementation",
@@ -2831,7 +3018,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-element-overwrite",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Collection elements should not be replaced unconditionally",
@@ -2842,7 +3029,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-empty-collection",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Empty collections should not be accessed or iterated",
@@ -2853,7 +3040,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-extra-arguments",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Function calls should not pass extra arguments",
@@ -2864,7 +3051,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-gratuitous-expressions",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Boolean expressions should not be gratuitous",
@@ -2875,7 +3062,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-identical-conditions",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Related \"if-else-if\" and \"switch-case\" statements should not have the same condition",
@@ -2886,7 +3073,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-identical-expressions",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Identical expressions should not be used on both sides of a binary operator",
@@ -2897,7 +3084,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-identical-functions",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Functions should not have identical implementations",
@@ -2908,7 +3095,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-ignored-return",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Return values from functions without side effects should not be ignored",
@@ -2919,7 +3106,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-inverted-boolean-check",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Boolean checks should not be inverted",
@@ -2930,7 +3117,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-nested-switch",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "\"switch\" statements should not be nested",
@@ -2941,7 +3128,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-nested-template-literals",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Template literals should not be nested",
@@ -2952,7 +3139,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-one-iteration-loop",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Loops with at most one iteration should be refactored",
@@ -2963,7 +3150,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-redundant-boolean",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Boolean literals should not be redundant",
@@ -2974,7 +3161,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-redundant-jump",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Jump statements should not be redundant",
@@ -2985,7 +3172,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-same-line-conditional",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Conditionals should start on new lines",
@@ -2996,7 +3183,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-small-switch",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "\"switch\" statements should have at least 3 \"case\" clauses",
@@ -3007,7 +3194,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-unused-collection",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Collection and array contents should be used",
@@ -3018,7 +3205,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-use-of-empty-return-value",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "The output of functions that don't return anything should not be used",
@@ -3029,7 +3216,7 @@ export const ruleset = [
     "ruleName": "sonarjs/no-useless-catch",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "\"catch\" clauses should do more than rethrow",
@@ -3040,7 +3227,7 @@ export const ruleset = [
     "ruleName": "sonarjs/non-existent-operator",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Non-existent operators \"=+\", \"=-\" and \"=!\" should not be used",
@@ -3051,7 +3238,7 @@ export const ruleset = [
     "ruleName": "sonarjs/prefer-immediate-return",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Local variables should not be declared and then immediately returned or thrown",
@@ -3062,7 +3249,7 @@ export const ruleset = [
     "ruleName": "sonarjs/prefer-object-literal",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Object literal syntax should be used",
@@ -3073,7 +3260,7 @@ export const ruleset = [
     "ruleName": "sonarjs/prefer-single-boolean-return",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Return of boolean expressions should not be wrapped into an \"if-then-else\" statement",
@@ -3084,7 +3271,7 @@ export const ruleset = [
     "ruleName": "sonarjs/prefer-while",
     "parentPluginName": "eslint-plugin-sonarjs",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "A \"while\" loop should be used instead of a \"for\" loop",
@@ -3095,7 +3282,7 @@ export const ruleset = [
     "ruleName": "import/named",
     "parentPluginName": "eslint-plugin-import",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Ensure named imports correspond to a named export in the remote file.",
@@ -3106,7 +3293,7 @@ export const ruleset = [
     "ruleName": "import/namespace",
     "parentPluginName": "eslint-plugin-import",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Ensure imported namespaces contain dereferenced properties as they are dereferenced.",
@@ -3117,7 +3304,7 @@ export const ruleset = [
     "ruleName": "import/default",
     "parentPluginName": "eslint-plugin-import",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Ensure a default export is present, given a default import.",
@@ -3128,7 +3315,7 @@ export const ruleset = [
     "ruleName": "import/no-named-as-default-member",
     "parentPluginName": "eslint-plugin-import",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbid use of exported name as property of default export.",
@@ -3139,10 +3326,12 @@ export const ruleset = [
     "ruleName": "import/no-unresolved",
     "parentPluginName": "eslint-plugin-import",
     "severity": 2,
-    "ruleOptions": {
-      "commonjs": true,
-      "caseSensitiveStrict": true
-    },
+    "ruleOptions": [
+      {
+        "commonjs": true,
+        "caseSensitiveStrict": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Ensure imports point to a file/module that can be resolved.",
@@ -3153,7 +3342,7 @@ export const ruleset = [
     "ruleName": "import/first",
     "parentPluginName": "eslint-plugin-import",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Ensure all imports appear before other statements.",
@@ -3164,9 +3353,11 @@ export const ruleset = [
     "ruleName": "import/order",
     "parentPluginName": "eslint-plugin-import",
     "severity": 2,
-    "ruleOptions": {
-      "newlines-between": "never"
-    },
+    "ruleOptions": [
+      {
+        "newlines-between": "never"
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce a convention in module import order.",
@@ -3177,7 +3368,7 @@ export const ruleset = [
     "ruleName": "import/no-default-export",
     "parentPluginName": "eslint-plugin-import",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbid default exports.",
@@ -3188,7 +3379,7 @@ export const ruleset = [
     "ruleName": "import/no-named-as-default",
     "parentPluginName": "eslint-plugin-import",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbid use of exported name as identifier of default export.",
@@ -3199,9 +3390,11 @@ export const ruleset = [
     "ruleName": "import/no-duplicates",
     "parentPluginName": "eslint-plugin-import",
     "severity": 2,
-    "ruleOptions": {
-      "prefer-inline": true
-    },
+    "ruleOptions": [
+      {
+        "prefer-inline": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbid repeated import of the same module in multiple places.",
@@ -3212,9 +3405,11 @@ export const ruleset = [
     "ruleName": "import/newline-after-import",
     "parentPluginName": "eslint-plugin-import",
     "severity": 2,
-    "ruleOptions": {
-      "considerComments": true
-    },
+    "ruleOptions": [
+      {
+        "considerComments": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce a newline after import statements.",
@@ -3225,9 +3420,11 @@ export const ruleset = [
     "ruleName": "import/no-useless-path-segments",
     "parentPluginName": "eslint-plugin-import",
     "severity": 2,
-    "ruleOptions": {
-      "noUselessIndex": true
-    },
+    "ruleOptions": [
+      {
+        "noUselessIndex": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Forbid unnecessary path segments in import and require statements.",
@@ -3238,7 +3435,7 @@ export const ruleset = [
     "ruleName": "import/no-anonymous-default-export",
     "parentPluginName": "eslint-plugin-import",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "",
@@ -3249,7 +3446,7 @@ export const ruleset = [
     "ruleName": "storybook/await-interactions",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "Interactions should be awaited",
@@ -3260,7 +3457,7 @@ export const ruleset = [
     "ruleName": "storybook/context-in-play-function",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "Pass a context when invoking play function of another story",
@@ -3271,7 +3468,7 @@ export const ruleset = [
     "ruleName": "storybook/default-exports",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "Story files should have a default export",
@@ -3282,7 +3479,7 @@ export const ruleset = [
     "ruleName": "storybook/hierarchy-separator",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "Deprecated hierarchy separator in title property",
@@ -3293,7 +3490,7 @@ export const ruleset = [
     "ruleName": "storybook/no-redundant-story-name",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "A story should not have a redundant name property",
@@ -3304,7 +3501,7 @@ export const ruleset = [
     "ruleName": "storybook/prefer-pascal-case",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "Stories should use PascalCase",
@@ -3315,7 +3512,7 @@ export const ruleset = [
     "ruleName": "storybook/story-exports",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "A story file must contain at least one story export",
@@ -3326,7 +3523,7 @@ export const ruleset = [
     "ruleName": "storybook/use-storybook-expect",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "Use expect from `@storybook/jest`",
@@ -3337,7 +3534,7 @@ export const ruleset = [
     "ruleName": "storybook/use-storybook-testing-library",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "Do not use testing-library directly on stories",
@@ -3348,7 +3545,7 @@ export const ruleset = [
     "ruleName": "storybook/csf-component",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "The component property should be set",
@@ -3359,7 +3556,7 @@ export const ruleset = [
     "ruleName": "storybook/no-stories-of",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "storiesOf is deprecated and should not be used",
@@ -3370,7 +3567,7 @@ export const ruleset = [
     "ruleName": "storybook/no-title-property-in-meta",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "Do not define a title in meta",
@@ -3381,7 +3578,7 @@ export const ruleset = [
     "ruleName": "import/no-default-export",
     "parentPluginName": "eslint-plugin-import",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.@(ts|tsx|js|jsx|mjs|cjs), **/*.story.@(ts|tsx|js|jsx|mjs|cjs)",
     "docs": {
       "description": "",
@@ -3392,7 +3589,7 @@ export const ruleset = [
     "ruleName": "storybook/no-uninstalled-addons",
     "parentPluginName": "eslint-plugin-storybook",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/.storybook/main.@(js|cjs|mjs|ts)",
     "docs": {
       "description": "This rule identifies storybook addons that are invalid because they are either not installed or contain a typo in their name.",
@@ -3403,7 +3600,7 @@ export const ruleset = [
     "ruleName": "jsdoc/require-description",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Requires that all functions have a description.",
@@ -3414,7 +3611,7 @@ export const ruleset = [
     "ruleName": "jsdoc/require-description-complete-sentence",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Requires that block description, explicit `@description`, and `@param`/`@returns` tag descriptions are written in complete sentences.",
@@ -3425,7 +3622,7 @@ export const ruleset = [
     "ruleName": "jsdoc/require-hyphen-before-param-description",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Requires a hyphen before the `@param` description.",
@@ -3436,7 +3633,7 @@ export const ruleset = [
     "ruleName": "jsdoc/require-returns-description",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Requires that the `@returns` tag has a `description` value.",
@@ -3447,7 +3644,7 @@ export const ruleset = [
     "ruleName": "jsdoc/require-param-name",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Requires that all function parameters have names.",
@@ -3458,7 +3655,7 @@ export const ruleset = [
     "ruleName": "jsdoc/require-param-description",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Requires that each `@param` tag has a `description` value.",
@@ -3469,7 +3666,7 @@ export const ruleset = [
     "ruleName": "jsdoc/require-asterisk-prefix",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Requires that each JSDoc line starts with an `*`.",
@@ -3480,7 +3677,7 @@ export const ruleset = [
     "ruleName": "jsdoc/no-types",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "This rule reports types being used on `@param` or `@returns`.",
@@ -3491,7 +3688,7 @@ export const ruleset = [
     "ruleName": "jsdoc/no-multi-asterisks",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -3502,7 +3699,7 @@ export const ruleset = [
     "ruleName": "jsdoc/no-defaults",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "This rule reports defaults being used on the relevant portion of `@param` or `@default`.",
@@ -3513,7 +3710,7 @@ export const ruleset = [
     "ruleName": "jsdoc/no-blank-block-descriptions",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Detects and removes extra lines of a blank block description",
@@ -3524,7 +3721,7 @@ export const ruleset = [
     "ruleName": "jsdoc/check-indentation",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Reports invalid padding inside JSDoc blocks.",
@@ -3535,9 +3732,11 @@ export const ruleset = [
     "ruleName": "jsdoc/check-tag-names",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": {
-      "jsxTags": true
-    },
+    "ruleOptions": [
+      {
+        "jsxTags": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Reports invalid block tag names.",
@@ -3548,10 +3747,12 @@ export const ruleset = [
     "ruleName": "jsdoc/check-param-names",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": {
-      "checkDestructured": false,
-      "enableFixer": false
-    },
+    "ruleOptions": [
+      {
+        "checkDestructured": false,
+        "enableFixer": false
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Ensures that parameter names in JSDoc match those in the function declaration.",
@@ -3562,7 +3763,7 @@ export const ruleset = [
     "ruleName": "jsdoc/sort-tags",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Sorts tags by a specified sequence according to tag name.",
@@ -3573,7 +3774,12 @@ export const ruleset = [
     "ruleName": "jsdoc/tag-lines",
     "parentPluginName": "eslint-plugin-jsdoc",
     "severity": 2,
-    "ruleOptions": "any",
+    "ruleOptions": [
+      "any",
+      {
+        "startLines": 1
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforces lines (or no lines) between tags.",
@@ -3584,7 +3790,7 @@ export const ruleset = [
     "ruleName": "import/no-default-export",
     "parentPluginName": "eslint-plugin-import",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.config.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -3595,7 +3801,7 @@ export const ruleset = [
     "ruleName": "react/display-name",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow missing displayName in a React component definition",
@@ -3606,7 +3812,7 @@ export const ruleset = [
     "ruleName": "react/jsx-key",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow missing `key` props in iterators/collection literals",
@@ -3617,7 +3823,7 @@ export const ruleset = [
     "ruleName": "react/jsx-no-comment-textnodes",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow comments from being inserted as text nodes",
@@ -3628,7 +3834,7 @@ export const ruleset = [
     "ruleName": "react/jsx-no-duplicate-props",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow duplicate properties in JSX",
@@ -3639,7 +3845,7 @@ export const ruleset = [
     "ruleName": "react/jsx-no-target-blank",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow `target=\"_blank\"` attribute without `rel=\"noreferrer\"`",
@@ -3650,7 +3856,7 @@ export const ruleset = [
     "ruleName": "react/jsx-no-undef",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow undeclared variables in JSX",
@@ -3661,7 +3867,7 @@ export const ruleset = [
     "ruleName": "react/jsx-uses-react",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow React to be incorrectly marked as unused",
@@ -3672,7 +3878,7 @@ export const ruleset = [
     "ruleName": "react/jsx-uses-vars",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow variables used in JSX to be incorrectly marked as unused",
@@ -3683,7 +3889,7 @@ export const ruleset = [
     "ruleName": "react/no-children-prop",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow passing of children as props",
@@ -3694,7 +3900,7 @@ export const ruleset = [
     "ruleName": "react/no-danger-with-children",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow when a DOM element is using both children and dangerouslySetInnerHTML",
@@ -3705,7 +3911,7 @@ export const ruleset = [
     "ruleName": "react/no-deprecated",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow usage of deprecated methods",
@@ -3716,7 +3922,7 @@ export const ruleset = [
     "ruleName": "react/no-direct-mutation-state",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow direct mutation of this.state",
@@ -3727,7 +3933,7 @@ export const ruleset = [
     "ruleName": "react/no-find-dom-node",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow usage of findDOMNode",
@@ -3738,7 +3944,7 @@ export const ruleset = [
     "ruleName": "react/no-is-mounted",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow usage of isMounted",
@@ -3749,7 +3955,7 @@ export const ruleset = [
     "ruleName": "react/no-render-return-value",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow usage of the return value of ReactDOM.render",
@@ -3760,7 +3966,7 @@ export const ruleset = [
     "ruleName": "react/no-string-refs",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow using string references",
@@ -3771,7 +3977,7 @@ export const ruleset = [
     "ruleName": "react/no-unescaped-entities",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unescaped HTML entities from appearing in markup",
@@ -3782,7 +3988,7 @@ export const ruleset = [
     "ruleName": "react/no-unknown-property",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow usage of unknown DOM property",
@@ -3793,7 +3999,7 @@ export const ruleset = [
     "ruleName": "react/no-unsafe",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow usage of unsafe lifecycle methods",
@@ -3804,7 +4010,7 @@ export const ruleset = [
     "ruleName": "react/prop-types",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow missing props validation in a React component definition",
@@ -3815,7 +4021,7 @@ export const ruleset = [
     "ruleName": "react/react-in-jsx-scope",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow missing React when using JSX",
@@ -3826,7 +4032,7 @@ export const ruleset = [
     "ruleName": "react/require-render-return",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce ES5 or ES6 class for returning value in render function",
@@ -3837,9 +4043,11 @@ export const ruleset = [
     "ruleName": "react/no-unstable-nested-components",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": {
-      "allowAsProps": false
-    },
+    "ruleOptions": [
+      {
+        "allowAsProps": false
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow creating unstable components inside components",
@@ -3850,9 +4058,11 @@ export const ruleset = [
     "ruleName": "react/jsx-no-useless-fragment",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": {
-      "allowExpressions": true
-    },
+    "ruleOptions": [
+      {
+        "allowExpressions": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow unnecessary fragments",
@@ -3863,9 +4073,11 @@ export const ruleset = [
     "ruleName": "react/function-component-definition",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": {
-      "namedComponents": "arrow-function"
-    },
+    "ruleOptions": [
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce a specific function type for function components",
@@ -3876,7 +4088,7 @@ export const ruleset = [
     "ruleName": "react/jsx-boolean-value",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce boolean attributes notation in JSX",
@@ -3887,7 +4099,7 @@ export const ruleset = [
     "ruleName": "react/jsx-fragments",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce shorthand or standard form for React fragments",
@@ -3898,7 +4110,7 @@ export const ruleset = [
     "ruleName": "react/hook-use-state",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Ensure destructuring and symmetric naming of useState hook value and setter variables",
@@ -3909,12 +4121,14 @@ export const ruleset = [
     "ruleName": "react/jsx-no-leaked-render",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": {
-      "validStrategies": [
-        "coerce",
-        "ternary"
-      ]
-    },
+    "ruleOptions": [
+      {
+        "validStrategies": [
+          "coerce",
+          "ternary"
+        ]
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow problematic leaked values from being rendered",
@@ -3925,7 +4139,7 @@ export const ruleset = [
     "ruleName": "react/destructuring-assignment",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce consistent usage of destructuring assignment of props, state, and context",
@@ -3936,12 +4150,14 @@ export const ruleset = [
     "ruleName": "react/jsx-filename-extension",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": {
-      "extensions": [
-        ".tsx"
-      ],
-      "allow": "as-needed"
-    },
+    "ruleOptions": [
+      {
+        "extensions": [
+          ".tsx"
+        ],
+        "allow": "as-needed"
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow file extensions that may contain JSX",
@@ -3952,7 +4168,7 @@ export const ruleset = [
     "ruleName": "react/no-multi-comp",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow multiple component definition per file",
@@ -3963,7 +4179,7 @@ export const ruleset = [
     "ruleName": "react/no-array-index-key",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow usage of Array index in keys",
@@ -3974,7 +4190,7 @@ export const ruleset = [
     "ruleName": "react/jsx-props-no-spreading",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow JSX prop spreading",
@@ -3985,15 +4201,17 @@ export const ruleset = [
     "ruleName": "react/jsx-sort-props",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": {
-      "callbacksLast": true,
-      "shorthandFirst": true,
-      "shorthandLast": false,
-      "ignoreCase": true,
-      "noSortAlphabetically": true,
-      "multiline": "last",
-      "reservedFirst": false
-    },
+    "ruleOptions": [
+      {
+        "callbacksLast": true,
+        "shorthandFirst": true,
+        "shorthandLast": false,
+        "ignoreCase": true,
+        "noSortAlphabetically": true,
+        "multiline": "last",
+        "reservedFirst": false
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce props alphabetical sorting",
@@ -4004,15 +4222,76 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/naming-convention",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
-    "ruleOptions": {
-      "selector": "default",
-      "format": [
-        "camelCase",
-        "StrictPascalCase"
-      ],
-      "leadingUnderscore": "forbid",
-      "trailingUnderscore": "forbid"
-    },
+    "ruleOptions": [
+      {
+        "selector": "default",
+        "format": [
+          "camelCase",
+          "StrictPascalCase"
+        ],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "variable",
+        "format": [
+          "camelCase",
+          "UPPER_CASE"
+        ],
+        "modifiers": [
+          "const"
+        ],
+        "types": [
+          "boolean",
+          "string",
+          "number"
+        ],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "objectLiteralProperty",
+        "format": null,
+        "leadingUnderscore": "allowSingleOrDouble",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "typeLike",
+        "format": [
+          "PascalCase"
+        ],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "variable",
+        "types": [
+          "boolean"
+        ],
+        "format": [
+          "camelCase"
+        ],
+        "prefix": [
+          "is",
+          "has",
+          "should",
+          "can"
+        ],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "variable",
+        "modifiers": [
+          "destructured"
+        ],
+        "format": null
+      },
+      {
+        "selector": "typeProperty",
+        "format": null
+      }
+    ],
     "affectedFiles": "**/*{jsx,tsx}",
     "docs": {
       "description": "",
@@ -4023,7 +4302,7 @@ export const ruleset = [
     "ruleName": "react-refresh/only-export-components",
     "parentPluginName": "eslint-plugin-react-refresh",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{jsx,tsx}",
     "docs": {
       "description": "",
@@ -4034,7 +4313,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/alt-text",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce all elements that require alternative text have meaningful information to relay back to end user.",
@@ -4045,7 +4324,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/anchor-ambiguous-text",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `<a>` text to not exactly match \"click here\", \"here\", \"link\", or \"a link\".",
@@ -4056,7 +4335,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/anchor-has-content",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce all anchors to contain accessible content.",
@@ -4067,7 +4346,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/anchor-is-valid",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce all anchors are valid, navigable elements.",
@@ -4078,7 +4357,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/aria-activedescendant-has-tabindex",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce elements with aria-activedescendant are tabbable.",
@@ -4089,7 +4368,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/aria-props",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce all `aria-*` props are valid.",
@@ -4100,7 +4379,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/aria-proptypes",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce ARIA state and property values are valid.",
@@ -4111,7 +4390,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/aria-role",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that elements with ARIA roles must use a valid, non-abstract ARIA role.",
@@ -4122,7 +4401,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/aria-unsupported-elements",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that elements that do not support ARIA roles, states, and properties do not have those attributes.",
@@ -4133,7 +4412,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/autocomplete-valid",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that autocomplete attributes are used correctly.",
@@ -4144,7 +4423,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/click-events-have-key-events",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce a clickable non-interactive element has at least one keyboard event listener.",
@@ -4155,33 +4434,35 @@ export const ruleset = [
     "ruleName": "jsx-a11y/control-has-associated-label",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 0,
-    "ruleOptions": {
-      "ignoreElements": [
-        "audio",
-        "canvas",
-        "embed",
-        "input",
-        "textarea",
-        "tr",
-        "video"
-      ],
-      "ignoreRoles": [
-        "grid",
-        "listbox",
-        "menu",
-        "menubar",
-        "radiogroup",
-        "row",
-        "tablist",
-        "toolbar",
-        "tree",
-        "treegrid"
-      ],
-      "includeRoles": [
-        "alert",
-        "dialog"
-      ]
-    },
+    "ruleOptions": [
+      {
+        "ignoreElements": [
+          "audio",
+          "canvas",
+          "embed",
+          "input",
+          "textarea",
+          "tr",
+          "video"
+        ],
+        "ignoreRoles": [
+          "grid",
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "row",
+          "tablist",
+          "toolbar",
+          "tree",
+          "treegrid"
+        ],
+        "includeRoles": [
+          "alert",
+          "dialog"
+        ]
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that a control (an interactive element) has a text label.",
@@ -4192,7 +4473,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/heading-has-content",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce heading (`h1`, `h2`, etc) elements contain accessible content.",
@@ -4203,7 +4484,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/html-has-lang",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `<html>` element has `lang` prop.",
@@ -4214,7 +4495,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/iframe-has-title",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce iframe elements have a title attribute.",
@@ -4225,7 +4506,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/img-redundant-alt",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `<img>` alt prop does not contain the word \"image\", \"picture\", or \"photo\".",
@@ -4236,17 +4517,19 @@ export const ruleset = [
     "ruleName": "jsx-a11y/interactive-supports-focus",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": {
-      "tabbable": [
-        "button",
-        "checkbox",
-        "link",
-        "searchbox",
-        "spinbutton",
-        "switch",
-        "textbox"
-      ]
-    },
+    "ruleOptions": [
+      {
+        "tabbable": [
+          "button",
+          "checkbox",
+          "link",
+          "searchbox",
+          "spinbutton",
+          "switch",
+          "textbox"
+        ]
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that elements with interactive handlers like `onClick` must be focusable.",
@@ -4257,7 +4540,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/label-has-associated-control",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that a `label` tag has a text label and an associated control.",
@@ -4268,7 +4551,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/label-has-for",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that `<label>` elements have the `htmlFor` prop.",
@@ -4279,7 +4562,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/media-has-caption",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforces that `<audio>` and `<video>` elements must have a `<track>` for captions.",
@@ -4290,7 +4573,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/mouse-events-have-key-events",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that `onMouseOver`/`onMouseOut` are accompanied by `onFocus`/`onBlur` for keyboard-only users.",
@@ -4301,7 +4584,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/no-access-key",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that the `accessKey` prop is not used on any element to avoid complications with keyboard commands used by a screenreader.",
@@ -4312,7 +4595,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/no-autofocus",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce autoFocus prop is not used.",
@@ -4323,7 +4606,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/no-distracting-elements",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce distracting elements are not used.",
@@ -4334,15 +4617,17 @@ export const ruleset = [
     "ruleName": "jsx-a11y/no-interactive-element-to-noninteractive-role",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": {
-      "tr": [
-        "none",
-        "presentation"
-      ],
-      "canvas": [
-        "img"
-      ]
-    },
+    "ruleOptions": [
+      {
+        "tr": [
+          "none",
+          "presentation"
+        ],
+        "canvas": [
+          "img"
+        ]
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Interactive elements should not be assigned non-interactive roles.",
@@ -4353,40 +4638,42 @@ export const ruleset = [
     "ruleName": "jsx-a11y/no-noninteractive-element-interactions",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": {
-      "handlers": [
-        "onClick",
-        "onError",
-        "onLoad",
-        "onMouseDown",
-        "onMouseUp",
-        "onKeyPress",
-        "onKeyDown",
-        "onKeyUp"
-      ],
-      "alert": [
-        "onKeyUp",
-        "onKeyDown",
-        "onKeyPress"
-      ],
-      "body": [
-        "onError",
-        "onLoad"
-      ],
-      "dialog": [
-        "onKeyUp",
-        "onKeyDown",
-        "onKeyPress"
-      ],
-      "iframe": [
-        "onError",
-        "onLoad"
-      ],
-      "img": [
-        "onError",
-        "onLoad"
-      ]
-    },
+    "ruleOptions": [
+      {
+        "handlers": [
+          "onClick",
+          "onError",
+          "onLoad",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ],
+        "alert": [
+          "onKeyUp",
+          "onKeyDown",
+          "onKeyPress"
+        ],
+        "body": [
+          "onError",
+          "onLoad"
+        ],
+        "dialog": [
+          "onKeyUp",
+          "onKeyDown",
+          "onKeyPress"
+        ],
+        "iframe": [
+          "onError",
+          "onLoad"
+        ],
+        "img": [
+          "onError",
+          "onLoad"
+        ]
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Non-interactive elements should not be assigned mouse or keyboard event listeners.",
@@ -4397,43 +4684,45 @@ export const ruleset = [
     "ruleName": "jsx-a11y/no-noninteractive-element-to-interactive-role",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": {
-      "ul": [
-        "listbox",
-        "menu",
-        "menubar",
-        "radiogroup",
-        "tablist",
-        "tree",
-        "treegrid"
-      ],
-      "ol": [
-        "listbox",
-        "menu",
-        "menubar",
-        "radiogroup",
-        "tablist",
-        "tree",
-        "treegrid"
-      ],
-      "li": [
-        "menuitem",
-        "option",
-        "row",
-        "tab",
-        "treeitem"
-      ],
-      "table": [
-        "grid"
-      ],
-      "td": [
-        "gridcell"
-      ],
-      "fieldset": [
-        "radiogroup",
-        "presentation"
-      ]
-    },
+    "ruleOptions": [
+      {
+        "ul": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
+        "ol": [
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "tablist",
+          "tree",
+          "treegrid"
+        ],
+        "li": [
+          "menuitem",
+          "option",
+          "row",
+          "tab",
+          "treeitem"
+        ],
+        "table": [
+          "grid"
+        ],
+        "td": [
+          "gridcell"
+        ],
+        "fieldset": [
+          "radiogroup",
+          "presentation"
+        ]
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Non-interactive elements should not be assigned interactive roles.",
@@ -4444,13 +4733,15 @@ export const ruleset = [
     "ruleName": "jsx-a11y/no-noninteractive-tabindex",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": {
-      "tags": [],
-      "roles": [
-        "tabpanel"
-      ],
-      "allowExpressionValues": true
-    },
+    "ruleOptions": [
+      {
+        "tags": [],
+        "roles": [
+          "tabpanel"
+        ],
+        "allowExpressionValues": true
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "`tabIndex` should only be declared on interactive elements.",
@@ -4461,7 +4752,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/no-redundant-roles",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce explicit role property is not the same as implicit/default role property on element.",
@@ -4472,17 +4763,19 @@ export const ruleset = [
     "ruleName": "jsx-a11y/no-static-element-interactions",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": {
-      "allowExpressionValues": true,
-      "handlers": [
-        "onClick",
-        "onMouseDown",
-        "onMouseUp",
-        "onKeyPress",
-        "onKeyDown",
-        "onKeyUp"
-      ]
-    },
+    "ruleOptions": [
+      {
+        "allowExpressionValues": true,
+        "handlers": [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that non-interactive, visible elements (such as `<div>`) that have click handlers use the role attribute.",
@@ -4493,7 +4786,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/role-has-required-aria-props",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that elements with ARIA roles must have all required attributes for that role.",
@@ -4504,7 +4797,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/role-supports-aria-props",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that elements with explicit or implicit roles defined contain only `aria-*` properties supported by that `role`.",
@@ -4515,7 +4808,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/scope",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `scope` prop is only used on `<th>` elements.",
@@ -4526,7 +4819,7 @@ export const ruleset = [
     "ruleName": "jsx-a11y/tabindex-no-positive",
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `tabIndex` value is not greater than zero.",
@@ -4537,7 +4830,7 @@ export const ruleset = [
     "ruleName": "react-hooks/rules-of-hooks",
     "parentPluginName": "eslint-plugin-react-hooks",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "enforces the Rules of Hooks",
@@ -4548,7 +4841,7 @@ export const ruleset = [
     "ruleName": "react-hooks/exhaustive-deps",
     "parentPluginName": "eslint-plugin-react-hooks",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "verifies the list of dependencies for Hooks like useEffect and similar",
@@ -4559,7 +4852,7 @@ export const ruleset = [
     "ruleName": "react-refresh/only-export-components",
     "parentPluginName": "eslint-plugin-react-refresh",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.stories.tsx",
     "docs": {
       "description": "",
@@ -4570,12 +4863,14 @@ export const ruleset = [
     "ruleName": "react/jsx-filename-extension",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
-    "ruleOptions": {
-      "allow": "always",
-      "extensions": [
-        ".tsx"
-      ]
-    },
+    "ruleOptions": [
+      {
+        "allow": "always",
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ],
     "affectedFiles": "**/*.stories.tsx",
     "docs": {
       "description": "",
@@ -4586,10 +4881,12 @@ export const ruleset = [
     "ruleName": "vitest/consistent-test-it",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": {
-      "fn": "test",
-      "withinDescribe": "test"
-    },
+    "ruleOptions": [
+      {
+        "fn": "test",
+        "withinDescribe": "test"
+      }
+    ],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Prefer test or it but not both",
@@ -4600,7 +4897,7 @@ export const ruleset = [
     "ruleName": "vitest/expect-expect",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Enforce having expectation in test body",
@@ -4611,7 +4908,7 @@ export const ruleset = [
     "ruleName": "vitest/no-commented-out-tests",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Disallow commented out tests",
@@ -4622,7 +4919,7 @@ export const ruleset = [
     "ruleName": "vitest/no-conditional-expect",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Disallow conditional expects",
@@ -4633,7 +4930,7 @@ export const ruleset = [
     "ruleName": "vitest/no-conditional-in-test",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Disallow conditional tests",
@@ -4644,7 +4941,7 @@ export const ruleset = [
     "ruleName": "vitest/no-disabled-tests",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Disallow disabled tests",
@@ -4655,7 +4952,7 @@ export const ruleset = [
     "ruleName": "vitest/no-done-callback",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Disallow using a callback in asynchronous tests and hooks",
@@ -4666,7 +4963,7 @@ export const ruleset = [
     "ruleName": "vitest/no-duplicate-hooks",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Disallow duplicate hooks and teardown hooks",
@@ -4677,7 +4974,7 @@ export const ruleset = [
     "ruleName": "vitest/no-identical-title",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Disallow identical titles",
@@ -4688,7 +4985,7 @@ export const ruleset = [
     "ruleName": "vitest/no-focused-tests",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Disallow focused tests",
@@ -4699,7 +4996,7 @@ export const ruleset = [
     "ruleName": "vitest/no-standalone-expect",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Disallow using `expect` outside of `it` or `test` blocks",
@@ -4710,7 +5007,7 @@ export const ruleset = [
     "ruleName": "vitest/no-test-prefixes",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Disallow using `test` as a prefix",
@@ -4721,7 +5018,7 @@ export const ruleset = [
     "ruleName": "vitest/no-test-return-statement",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Disallow return statements in tests",
@@ -4732,7 +5029,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-comparison-matcher",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Suggest using the built-in comparison matchers",
@@ -4743,7 +5040,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-each",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Prefer `each` rather than manual loops",
@@ -4754,7 +5051,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-equality-matcher",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Suggest using the built-in quality matchers",
@@ -4765,7 +5062,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-expect-resolves",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Suggest using `expect().resolves` over `expect(await ...)` syntax",
@@ -4776,7 +5073,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-hooks-in-order",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Prefer having hooks in consistent order",
@@ -4787,7 +5084,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-hooks-on-top",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Suggest having hooks before any test cases",
@@ -4798,7 +5095,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-lowercase-title",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Enforce lowercase titles",
@@ -4809,7 +5106,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-mock-promise-shorthand",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Prefer mock resolved/rejected shorthands for promises",
@@ -4820,7 +5117,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-spy-on",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Suggest using `vi.spyOn`",
@@ -4831,7 +5128,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-strict-equal",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Prefer strict equal over equal",
@@ -4842,7 +5139,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-to-be",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Suggest using toBe()",
@@ -4853,7 +5150,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-to-be-falsy",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Suggest using toBeFalsy()",
@@ -4864,7 +5161,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-to-be-object",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Prefer toBeObject()",
@@ -4875,7 +5172,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-to-be-truthy",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Suggest using `toBeTruthy`",
@@ -4886,7 +5183,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-to-contain",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Prefer using toContain()",
@@ -4897,7 +5194,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-to-have-length",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Suggest using toHaveLength()",
@@ -4908,7 +5205,7 @@ export const ruleset = [
     "ruleName": "vitest/prefer-todo",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Suggest using `test.todo`",
@@ -4919,7 +5216,7 @@ export const ruleset = [
     "ruleName": "vitest/require-hook",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Require setup and teardown to be within a hook",
@@ -4930,7 +5227,7 @@ export const ruleset = [
     "ruleName": "vitest/require-to-throw-message",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Require toThrow() to be called with an error message",
@@ -4941,7 +5238,7 @@ export const ruleset = [
     "ruleName": "vitest/require-top-level-describe",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Enforce that all tests are in a top-level describe",
@@ -4952,7 +5249,7 @@ export const ruleset = [
     "ruleName": "vitest/valid-describe-callback",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Enforce valid describe callback",
@@ -4963,7 +5260,7 @@ export const ruleset = [
     "ruleName": "vitest/valid-expect",
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
     "docs": {
       "description": "Enforce valid `expect()` usage",
@@ -4974,7 +5271,7 @@ export const ruleset = [
     "ruleName": "@next/next/google-font-display",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce font-display behavior with Google Fonts.",
@@ -4985,7 +5282,7 @@ export const ruleset = [
     "ruleName": "@next/next/google-font-preconnect",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Ensure `preconnect` is used with Google Fonts.",
@@ -4996,7 +5293,7 @@ export const ruleset = [
     "ruleName": "@next/next/next-script-for-ga",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `next/script` component when using the inline script for Google Analytics.",
@@ -5007,7 +5304,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-before-interactive-script-outside-document",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent usage of `next/script`'s `beforeInteractive` strategy outside of `pages/_document.js`.",
@@ -5018,7 +5315,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-css-tags",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent manual stylesheet tags.",
@@ -5029,7 +5326,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-head-element",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent usage of `<head>` element.",
@@ -5040,7 +5337,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-html-link-for-pages",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent usage of `<a>` elements to navigate to internal Next.js pages.",
@@ -5051,7 +5348,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-img-element",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent usage of `<img>` element due to slower LCP and higher bandwidth.",
@@ -5062,7 +5359,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-page-custom-font",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent page-only custom fonts.",
@@ -5073,7 +5370,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-styled-jsx-in-document",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent usage of `styled-jsx` in `pages/_document.js`.",
@@ -5084,7 +5381,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-sync-scripts",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent synchronous scripts.",
@@ -5095,7 +5392,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-title-in-document-head",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent usage of `<title>` with `Head` component from `next/document`.",
@@ -5106,7 +5403,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-typos",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent common typos in Next.js data fetching functions.",
@@ -5117,7 +5414,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-unwanted-polyfillio",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent duplicate polyfills from Polyfill.io.",
@@ -5128,7 +5425,7 @@ export const ruleset = [
     "ruleName": "@next/next/inline-script-id",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `id` attribute on `next/script` components with inline content.",
@@ -5139,7 +5436,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-assign-module-variable",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent assignment to the `module` variable.",
@@ -5150,7 +5447,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-document-import-in-page",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent importing `next/document` outside of `pages/_document.js`.",
@@ -5161,7 +5458,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-duplicate-head",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent duplicate usage of `<Head>` in `pages/_document.js`.",
@@ -5172,7 +5469,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-head-import-in-document",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent usage of `next/head` in `pages/_document.js`.",
@@ -5183,7 +5480,7 @@ export const ruleset = [
     "ruleName": "@next/next/no-script-component-in-head",
     "parentPluginName": "@next/eslint-plugin-next",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prevent usage of `next/script` in `next/head` component.",
@@ -5194,7 +5491,7 @@ export const ruleset = [
     "ruleName": "lodash-f/callback-binding",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5205,7 +5502,9 @@ export const ruleset = [
     "ruleName": "lodash-f/chain-style",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "as-needed",
+    "ruleOptions": [
+      "as-needed"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5216,7 +5515,7 @@ export const ruleset = [
     "ruleName": "lodash-f/chaining",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5227,7 +5526,7 @@ export const ruleset = [
     "ruleName": "lodash-f/collection-method-value",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5238,7 +5537,7 @@ export const ruleset = [
     "ruleName": "lodash-f/collection-ordering",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5249,7 +5548,7 @@ export const ruleset = [
     "ruleName": "lodash-f/collection-return",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5260,7 +5559,9 @@ export const ruleset = [
     "ruleName": "lodash-f/consistent-compose",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "flow",
+    "ruleOptions": [
+      "flow"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5271,7 +5572,9 @@ export const ruleset = [
     "ruleName": "lodash-f/identity-shorthand",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "always",
+    "ruleOptions": [
+      "always"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5282,7 +5585,9 @@ export const ruleset = [
     "ruleName": "lodash-f/import-scope",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 2,
-    "ruleOptions": "member",
+    "ruleOptions": [
+      "member"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5293,7 +5598,9 @@ export const ruleset = [
     "ruleName": "lodash-f/matches-prop-shorthand",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "always",
+    "ruleOptions": [
+      "always"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5304,7 +5611,10 @@ export const ruleset = [
     "ruleName": "lodash-f/matches-shorthand",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "always",
+    "ruleOptions": [
+      "always",
+      3
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5315,7 +5625,7 @@ export const ruleset = [
     "ruleName": "lodash-f/no-commit",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5326,7 +5636,7 @@ export const ruleset = [
     "ruleName": "lodash-f/no-double-unwrap",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5337,7 +5647,7 @@ export const ruleset = [
     "ruleName": "lodash-f/no-extra-args",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5348,7 +5658,7 @@ export const ruleset = [
     "ruleName": "lodash-f/no-unbound-this",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5359,7 +5669,9 @@ export const ruleset = [
     "ruleName": "lodash-f/path-style",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "string",
+    "ruleOptions": [
+      "string"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5370,7 +5682,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-compact",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5381,7 +5693,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-constant",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5392,7 +5704,9 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-filter",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 2,
-    "ruleOptions": 3,
+    "ruleOptions": [
+      3
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5403,7 +5717,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-find",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5414,7 +5728,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-flat-map",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5425,7 +5739,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-get",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5436,7 +5750,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-immutable-method",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5447,9 +5761,11 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-includes",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 2,
-    "ruleOptions": {
-      "includeNative": false
-    },
+    "ruleOptions": [
+      {
+        "includeNative": false
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5460,7 +5776,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-invoke-map",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5471,7 +5787,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-is-empty",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5482,7 +5798,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-is-nil",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5493,7 +5809,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-lodash-chain",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5504,7 +5820,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-lodash-method",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5515,7 +5831,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-lodash-typecheck",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5526,7 +5842,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-map",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5537,7 +5853,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-matches",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5548,7 +5864,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-nullish-coalescing",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5559,7 +5875,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-noop",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5570,7 +5886,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-over-quantifier",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5581,7 +5897,9 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-reject",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 2,
-    "ruleOptions": 3,
+    "ruleOptions": [
+      3
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5592,9 +5910,11 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-some",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 2,
-    "ruleOptions": {
-      "includeNative": false
-    },
+    "ruleOptions": [
+      {
+        "includeNative": false
+      }
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5605,7 +5925,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-startswith",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5616,7 +5936,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-thru",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5627,7 +5947,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-times",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5638,7 +5958,7 @@ export const ruleset = [
     "ruleName": "lodash-f/prefer-wrapper-method",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5649,7 +5969,7 @@ export const ruleset = [
     "ruleName": "lodash-f/preferred-alias",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5660,7 +5980,9 @@ export const ruleset = [
     "ruleName": "lodash-f/prop-shorthand",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "always",
+    "ruleOptions": [
+      "always"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5671,7 +5993,7 @@ export const ruleset = [
     "ruleName": "lodash-f/unwrap",
     "parentPluginName": "eslint-plugin-lodash-f",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5682,7 +6004,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-instanceof-array",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
@@ -5693,7 +6015,7 @@ export const ruleset = [
     "ruleName": "no-empty-pattern",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "",
@@ -5704,7 +6026,7 @@ export const ruleset = [
     "ruleName": "playwright/missing-playwright-await",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Identify false positives when async Playwright APIs are not properly awaited.",
@@ -5715,7 +6037,7 @@ export const ruleset = [
     "ruleName": "playwright/no-page-pause",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Prevent usage of page.pause()",
@@ -5726,7 +6048,7 @@ export const ruleset = [
     "ruleName": "playwright/no-element-handle",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "The use of ElementHandle is discouraged, use Locator instead",
@@ -5737,7 +6059,7 @@ export const ruleset = [
     "ruleName": "playwright/no-eval",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "The use of `page.$eval` and `page.$$eval` are discouraged, use `locator.evaluate` or `locator.evaluateAll` instead",
@@ -5748,7 +6070,7 @@ export const ruleset = [
     "ruleName": "playwright/no-focused-test",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Prevent usage of `.only()` focus test annotation",
@@ -5759,7 +6081,7 @@ export const ruleset = [
     "ruleName": "playwright/no-skipped-test",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Prevent usage of the `.skip()` skip test annotation.",
@@ -5770,7 +6092,7 @@ export const ruleset = [
     "ruleName": "playwright/no-wait-for-timeout",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Prevent usage of page.waitForTimeout()",
@@ -5781,7 +6103,7 @@ export const ruleset = [
     "ruleName": "playwright/no-force-option",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Prevent usage of `{ force: true }` option.",
@@ -5792,7 +6114,7 @@ export const ruleset = [
     "ruleName": "playwright/max-nested-describe",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Enforces a maximum depth to nested describe calls",
@@ -5803,7 +6125,7 @@ export const ruleset = [
     "ruleName": "playwright/no-conditional-in-test",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Disallow conditional logic in tests",
@@ -5814,7 +6136,7 @@ export const ruleset = [
     "ruleName": "playwright/no-useless-not",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Disallow usage of 'not' matchers when a more specific matcher exists",
@@ -5825,7 +6147,7 @@ export const ruleset = [
     "ruleName": "playwright/valid-expect",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Enforce valid `expect()` usage",
@@ -5836,7 +6158,7 @@ export const ruleset = [
     "ruleName": "playwright/prefer-lowercase-title",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Enforce lowercase test names",
@@ -5847,7 +6169,7 @@ export const ruleset = [
     "ruleName": "playwright/prefer-to-have-length",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Suggest using `toHaveLength()`",
@@ -5858,7 +6180,7 @@ export const ruleset = [
     "ruleName": "playwright/require-top-level-describe",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Require test cases and hooks to be inside a `test.describe` block",
@@ -5869,7 +6191,7 @@ export const ruleset = [
     "ruleName": "playwright/prefer-to-be",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Suggest using `toBe()` for primitive literals",
@@ -5880,7 +6202,7 @@ export const ruleset = [
     "ruleName": "playwright/prefer-strict-equal",
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "**/*{js,ts}",
     "docs": {
       "description": "Suggest using `toStrictEqual()`",
@@ -5891,7 +6213,7 @@ export const ruleset = [
     "ruleName": "curly",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent brace style for all control statements",
@@ -5902,7 +6224,7 @@ export const ruleset = [
     "ruleName": "lines-around-comment",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require empty lines around comments",
@@ -5913,7 +6235,7 @@ export const ruleset = [
     "ruleName": "max-len",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce a maximum line length",
@@ -5924,7 +6246,7 @@ export const ruleset = [
     "ruleName": "no-confusing-arrow",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow arrow functions where they could be confused with comparisons",
@@ -5935,7 +6257,7 @@ export const ruleset = [
     "ruleName": "no-mixed-operators",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow mixed binary operators",
@@ -5946,7 +6268,7 @@ export const ruleset = [
     "ruleName": "no-tabs",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow all tabs",
@@ -5957,7 +6279,7 @@ export const ruleset = [
     "ruleName": "no-unexpected-multiline",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow confusing multiline expressions",
@@ -5968,7 +6290,7 @@ export const ruleset = [
     "ruleName": "quotes",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce the consistent use of either backticks, double, or single quotes",
@@ -5979,7 +6301,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/lines-around-comment",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -5990,7 +6312,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/quotes",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6001,7 +6323,7 @@ export const ruleset = [
     "ruleName": "babel/quotes",
     "parentPluginName": "eslint-plugin-babel",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6012,7 +6334,7 @@ export const ruleset = [
     "ruleName": "vue/html-self-closing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6023,7 +6345,7 @@ export const ruleset = [
     "ruleName": "vue/max-len",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6034,7 +6356,7 @@ export const ruleset = [
     "ruleName": "array-bracket-newline",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce linebreaks after opening and before closing array brackets",
@@ -6045,7 +6367,7 @@ export const ruleset = [
     "ruleName": "array-bracket-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing inside array brackets",
@@ -6056,7 +6378,7 @@ export const ruleset = [
     "ruleName": "array-element-newline",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce line breaks after each array element",
@@ -6067,7 +6389,7 @@ export const ruleset = [
     "ruleName": "arrow-parens",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require parentheses around arrow function arguments",
@@ -6078,7 +6400,7 @@ export const ruleset = [
     "ruleName": "arrow-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing before and after the arrow in arrow functions",
@@ -6089,7 +6411,7 @@ export const ruleset = [
     "ruleName": "block-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow or enforce spaces inside of blocks after opening block and before closing block",
@@ -6100,7 +6422,7 @@ export const ruleset = [
     "ruleName": "brace-style",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent brace style for blocks",
@@ -6111,7 +6433,7 @@ export const ruleset = [
     "ruleName": "comma-dangle",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require or disallow trailing commas",
@@ -6122,7 +6444,7 @@ export const ruleset = [
     "ruleName": "comma-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing before and after commas",
@@ -6133,7 +6455,7 @@ export const ruleset = [
     "ruleName": "comma-style",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent comma style",
@@ -6144,7 +6466,7 @@ export const ruleset = [
     "ruleName": "computed-property-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing inside computed property brackets",
@@ -6155,7 +6477,7 @@ export const ruleset = [
     "ruleName": "dot-location",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent newlines before and after dots",
@@ -6166,7 +6488,7 @@ export const ruleset = [
     "ruleName": "eol-last",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require or disallow newline at the end of files",
@@ -6177,7 +6499,7 @@ export const ruleset = [
     "ruleName": "func-call-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require or disallow spacing between function identifiers and their invocations",
@@ -6188,7 +6510,7 @@ export const ruleset = [
     "ruleName": "function-call-argument-newline",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce line breaks between arguments of a function call",
@@ -6199,7 +6521,7 @@ export const ruleset = [
     "ruleName": "function-paren-newline",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent line breaks inside function parentheses",
@@ -6210,7 +6532,7 @@ export const ruleset = [
     "ruleName": "generator-star-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing around `*` operators in generator functions",
@@ -6221,7 +6543,7 @@ export const ruleset = [
     "ruleName": "implicit-arrow-linebreak",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce the location of arrow function bodies",
@@ -6232,7 +6554,7 @@ export const ruleset = [
     "ruleName": "indent",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent indentation",
@@ -6243,7 +6565,7 @@ export const ruleset = [
     "ruleName": "jsx-quotes",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce the consistent use of either double or single quotes in JSX attributes",
@@ -6254,7 +6576,7 @@ export const ruleset = [
     "ruleName": "key-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing between keys and values in object literal properties",
@@ -6265,7 +6587,7 @@ export const ruleset = [
     "ruleName": "keyword-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing before and after keywords",
@@ -6276,7 +6598,7 @@ export const ruleset = [
     "ruleName": "linebreak-style",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent linebreak style",
@@ -6287,7 +6609,7 @@ export const ruleset = [
     "ruleName": "max-statements-per-line",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce a maximum number of statements allowed per line",
@@ -6298,7 +6620,7 @@ export const ruleset = [
     "ruleName": "multiline-ternary",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce newlines between operands of ternary expressions",
@@ -6309,7 +6631,7 @@ export const ruleset = [
     "ruleName": "newline-per-chained-call",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require a newline after each call in a method chain",
@@ -6320,7 +6642,7 @@ export const ruleset = [
     "ruleName": "new-parens",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce or disallow parentheses when invoking a constructor with no arguments",
@@ -6331,7 +6653,7 @@ export const ruleset = [
     "ruleName": "no-extra-parens",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow unnecessary parentheses",
@@ -6342,7 +6664,7 @@ export const ruleset = [
     "ruleName": "no-extra-semi",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow unnecessary semicolons",
@@ -6353,7 +6675,7 @@ export const ruleset = [
     "ruleName": "no-floating-decimal",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow leading or trailing decimal points in numeric literals",
@@ -6364,7 +6686,7 @@ export const ruleset = [
     "ruleName": "no-mixed-spaces-and-tabs",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow mixed spaces and tabs for indentation",
@@ -6375,7 +6697,7 @@ export const ruleset = [
     "ruleName": "no-multi-spaces",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow multiple spaces",
@@ -6386,7 +6708,7 @@ export const ruleset = [
     "ruleName": "no-multiple-empty-lines",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow multiple empty lines",
@@ -6397,7 +6719,7 @@ export const ruleset = [
     "ruleName": "no-trailing-spaces",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow trailing whitespace at the end of lines",
@@ -6408,7 +6730,7 @@ export const ruleset = [
     "ruleName": "no-whitespace-before-property",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow whitespace before properties",
@@ -6419,7 +6741,7 @@ export const ruleset = [
     "ruleName": "nonblock-statement-body-position",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce the location of single-line statements",
@@ -6430,7 +6752,7 @@ export const ruleset = [
     "ruleName": "object-curly-newline",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent line breaks after opening and before closing braces",
@@ -6441,7 +6763,7 @@ export const ruleset = [
     "ruleName": "object-curly-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing inside braces",
@@ -6452,7 +6774,7 @@ export const ruleset = [
     "ruleName": "object-property-newline",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce placing object properties on separate lines",
@@ -6463,7 +6785,7 @@ export const ruleset = [
     "ruleName": "one-var-declaration-per-line",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require or disallow newlines around variable declarations",
@@ -6474,7 +6796,7 @@ export const ruleset = [
     "ruleName": "operator-linebreak",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent linebreak style for operators",
@@ -6485,7 +6807,7 @@ export const ruleset = [
     "ruleName": "padded-blocks",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require or disallow padding within blocks",
@@ -6496,7 +6818,7 @@ export const ruleset = [
     "ruleName": "quote-props",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require quotes around object literal property names",
@@ -6507,7 +6829,7 @@ export const ruleset = [
     "ruleName": "rest-spread-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce spacing between rest and spread operators and their expressions",
@@ -6518,7 +6840,7 @@ export const ruleset = [
     "ruleName": "semi",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require or disallow semicolons instead of ASI",
@@ -6529,7 +6851,7 @@ export const ruleset = [
     "ruleName": "semi-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing before and after semicolons",
@@ -6540,7 +6862,7 @@ export const ruleset = [
     "ruleName": "semi-style",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce location of semicolons",
@@ -6551,7 +6873,7 @@ export const ruleset = [
     "ruleName": "space-before-blocks",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing before blocks",
@@ -6562,7 +6884,7 @@ export const ruleset = [
     "ruleName": "space-before-function-paren",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing before `function` definition opening parenthesis",
@@ -6573,7 +6895,7 @@ export const ruleset = [
     "ruleName": "space-in-parens",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing inside parentheses",
@@ -6584,7 +6906,7 @@ export const ruleset = [
     "ruleName": "space-infix-ops",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require spacing around infix operators",
@@ -6595,7 +6917,7 @@ export const ruleset = [
     "ruleName": "space-unary-ops",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent spacing before or after unary operators",
@@ -6606,7 +6928,7 @@ export const ruleset = [
     "ruleName": "switch-colon-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce spacing around colons of switch statements",
@@ -6617,7 +6939,7 @@ export const ruleset = [
     "ruleName": "template-curly-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require or disallow spacing around embedded expressions of template strings",
@@ -6628,7 +6950,7 @@ export const ruleset = [
     "ruleName": "template-tag-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require or disallow spacing between template tags and their literals",
@@ -6639,7 +6961,7 @@ export const ruleset = [
     "ruleName": "wrap-iife",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require parentheses around immediate `function` invocations",
@@ -6650,7 +6972,7 @@ export const ruleset = [
     "ruleName": "wrap-regex",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require parenthesis around regex literals",
@@ -6661,7 +6983,7 @@ export const ruleset = [
     "ruleName": "yield-star-spacing",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Require or disallow spacing around the `*` in `yield*` expressions",
@@ -6672,7 +6994,7 @@ export const ruleset = [
     "ruleName": "@babel/object-curly-spacing",
     "parentPluginName": "@babel/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6683,7 +7005,7 @@ export const ruleset = [
     "ruleName": "@babel/semi",
     "parentPluginName": "@babel/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6694,7 +7016,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/block-spacing",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6705,7 +7027,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/brace-style",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6716,7 +7038,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/comma-dangle",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6727,7 +7049,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/comma-spacing",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6738,7 +7060,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/func-call-spacing",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6749,7 +7071,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/indent",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6760,7 +7082,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/key-spacing",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6771,7 +7093,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/keyword-spacing",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6782,7 +7104,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/member-delimiter-style",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6793,7 +7115,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-extra-parens",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6804,7 +7126,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/no-extra-semi",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6815,7 +7137,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/object-curly-spacing",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6826,7 +7148,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/semi",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6837,7 +7159,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/space-before-blocks",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6848,7 +7170,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/space-before-function-paren",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6859,7 +7181,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/space-infix-ops",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6870,7 +7192,7 @@ export const ruleset = [
     "ruleName": "@typescript-eslint/type-annotation-spacing",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6881,7 +7203,7 @@ export const ruleset = [
     "ruleName": "babel/object-curly-spacing",
     "parentPluginName": "eslint-plugin-babel",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6892,7 +7214,7 @@ export const ruleset = [
     "ruleName": "babel/semi",
     "parentPluginName": "eslint-plugin-babel",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6903,7 +7225,7 @@ export const ruleset = [
     "ruleName": "flowtype/boolean-style",
     "parentPluginName": "eslint-plugin-flowtype",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6914,7 +7236,7 @@ export const ruleset = [
     "ruleName": "flowtype/delimiter-dangle",
     "parentPluginName": "eslint-plugin-flowtype",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6925,7 +7247,7 @@ export const ruleset = [
     "ruleName": "flowtype/generic-spacing",
     "parentPluginName": "eslint-plugin-flowtype",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6936,7 +7258,7 @@ export const ruleset = [
     "ruleName": "flowtype/object-type-curly-spacing",
     "parentPluginName": "eslint-plugin-flowtype",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6947,7 +7269,7 @@ export const ruleset = [
     "ruleName": "flowtype/object-type-delimiter",
     "parentPluginName": "eslint-plugin-flowtype",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6958,7 +7280,7 @@ export const ruleset = [
     "ruleName": "flowtype/quotes",
     "parentPluginName": "eslint-plugin-flowtype",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6969,7 +7291,7 @@ export const ruleset = [
     "ruleName": "flowtype/semi",
     "parentPluginName": "eslint-plugin-flowtype",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6980,7 +7302,7 @@ export const ruleset = [
     "ruleName": "flowtype/space-after-type-colon",
     "parentPluginName": "eslint-plugin-flowtype",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -6991,7 +7313,7 @@ export const ruleset = [
     "ruleName": "flowtype/space-before-generic-bracket",
     "parentPluginName": "eslint-plugin-flowtype",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7002,7 +7324,7 @@ export const ruleset = [
     "ruleName": "flowtype/space-before-type-colon",
     "parentPluginName": "eslint-plugin-flowtype",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7013,7 +7335,7 @@ export const ruleset = [
     "ruleName": "flowtype/union-intersection-spacing",
     "parentPluginName": "eslint-plugin-flowtype",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7024,7 +7346,7 @@ export const ruleset = [
     "ruleName": "react/jsx-child-element-spacing",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7035,7 +7357,7 @@ export const ruleset = [
     "ruleName": "react/jsx-closing-bracket-location",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7046,7 +7368,7 @@ export const ruleset = [
     "ruleName": "react/jsx-closing-tag-location",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7057,7 +7379,7 @@ export const ruleset = [
     "ruleName": "react/jsx-curly-newline",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7068,7 +7390,7 @@ export const ruleset = [
     "ruleName": "react/jsx-curly-spacing",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7079,7 +7401,7 @@ export const ruleset = [
     "ruleName": "react/jsx-equals-spacing",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7090,7 +7412,7 @@ export const ruleset = [
     "ruleName": "react/jsx-first-prop-new-line",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7101,7 +7423,7 @@ export const ruleset = [
     "ruleName": "react/jsx-indent",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7112,7 +7434,7 @@ export const ruleset = [
     "ruleName": "react/jsx-indent-props",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7123,7 +7445,7 @@ export const ruleset = [
     "ruleName": "react/jsx-max-props-per-line",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7134,7 +7456,7 @@ export const ruleset = [
     "ruleName": "react/jsx-newline",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7145,7 +7467,7 @@ export const ruleset = [
     "ruleName": "react/jsx-one-expression-per-line",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7156,7 +7478,7 @@ export const ruleset = [
     "ruleName": "react/jsx-props-no-multi-spaces",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7167,7 +7489,7 @@ export const ruleset = [
     "ruleName": "react/jsx-tag-spacing",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7178,7 +7500,7 @@ export const ruleset = [
     "ruleName": "react/jsx-wrap-multilines",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7189,7 +7511,7 @@ export const ruleset = [
     "ruleName": "standard/array-bracket-even-spacing",
     "parentPluginName": "eslint-plugin-standard",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7200,7 +7522,7 @@ export const ruleset = [
     "ruleName": "standard/computed-property-even-spacing",
     "parentPluginName": "eslint-plugin-standard",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7211,7 +7533,7 @@ export const ruleset = [
     "ruleName": "standard/object-curly-even-spacing",
     "parentPluginName": "eslint-plugin-standard",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7222,7 +7544,7 @@ export const ruleset = [
     "ruleName": "unicorn/empty-brace-spaces",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7233,7 +7555,7 @@ export const ruleset = [
     "ruleName": "unicorn/no-nested-ternary",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7244,7 +7566,7 @@ export const ruleset = [
     "ruleName": "unicorn/number-literal-case",
     "parentPluginName": "eslint-plugin-unicorn",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7255,7 +7577,7 @@ export const ruleset = [
     "ruleName": "vue/array-bracket-newline",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7266,7 +7588,7 @@ export const ruleset = [
     "ruleName": "vue/array-bracket-spacing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7277,7 +7599,7 @@ export const ruleset = [
     "ruleName": "vue/array-element-newline",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7288,7 +7610,7 @@ export const ruleset = [
     "ruleName": "vue/arrow-spacing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7299,7 +7621,7 @@ export const ruleset = [
     "ruleName": "vue/block-spacing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7310,7 +7632,7 @@ export const ruleset = [
     "ruleName": "vue/block-tag-newline",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7321,7 +7643,7 @@ export const ruleset = [
     "ruleName": "vue/brace-style",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7332,7 +7654,7 @@ export const ruleset = [
     "ruleName": "vue/comma-dangle",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7343,7 +7665,7 @@ export const ruleset = [
     "ruleName": "vue/comma-spacing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7354,7 +7676,7 @@ export const ruleset = [
     "ruleName": "vue/comma-style",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7365,7 +7687,7 @@ export const ruleset = [
     "ruleName": "vue/dot-location",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7376,7 +7698,7 @@ export const ruleset = [
     "ruleName": "vue/func-call-spacing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7387,7 +7709,7 @@ export const ruleset = [
     "ruleName": "vue/html-closing-bracket-newline",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7398,7 +7720,7 @@ export const ruleset = [
     "ruleName": "vue/html-closing-bracket-spacing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7409,7 +7731,7 @@ export const ruleset = [
     "ruleName": "vue/html-end-tags",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7420,7 +7742,7 @@ export const ruleset = [
     "ruleName": "vue/html-indent",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7431,7 +7753,7 @@ export const ruleset = [
     "ruleName": "vue/html-quotes",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7442,7 +7764,7 @@ export const ruleset = [
     "ruleName": "vue/key-spacing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7453,7 +7775,7 @@ export const ruleset = [
     "ruleName": "vue/keyword-spacing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7464,7 +7786,7 @@ export const ruleset = [
     "ruleName": "vue/max-attributes-per-line",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7475,7 +7797,7 @@ export const ruleset = [
     "ruleName": "vue/multiline-html-element-content-newline",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7486,7 +7808,7 @@ export const ruleset = [
     "ruleName": "vue/multiline-ternary",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7497,7 +7819,7 @@ export const ruleset = [
     "ruleName": "vue/mustache-interpolation-spacing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7508,7 +7830,7 @@ export const ruleset = [
     "ruleName": "vue/no-extra-parens",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7519,7 +7841,7 @@ export const ruleset = [
     "ruleName": "vue/no-multi-spaces",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7530,7 +7852,7 @@ export const ruleset = [
     "ruleName": "vue/no-spaces-around-equal-signs-in-attribute",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7541,7 +7863,7 @@ export const ruleset = [
     "ruleName": "vue/object-curly-newline",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7552,7 +7874,7 @@ export const ruleset = [
     "ruleName": "vue/object-curly-spacing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7563,7 +7885,7 @@ export const ruleset = [
     "ruleName": "vue/object-property-newline",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7574,7 +7896,7 @@ export const ruleset = [
     "ruleName": "vue/operator-linebreak",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7585,7 +7907,7 @@ export const ruleset = [
     "ruleName": "vue/quote-props",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7596,7 +7918,7 @@ export const ruleset = [
     "ruleName": "vue/script-indent",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7607,7 +7929,7 @@ export const ruleset = [
     "ruleName": "vue/singleline-html-element-content-newline",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7618,7 +7940,7 @@ export const ruleset = [
     "ruleName": "vue/space-in-parens",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7629,7 +7951,7 @@ export const ruleset = [
     "ruleName": "vue/space-infix-ops",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7640,7 +7962,7 @@ export const ruleset = [
     "ruleName": "vue/space-unary-ops",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7651,7 +7973,7 @@ export const ruleset = [
     "ruleName": "vue/template-curly-spacing",
     "parentPluginName": "eslint-plugin-vue",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7662,7 +7984,7 @@ export const ruleset = [
     "ruleName": "generator-star",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7673,7 +7995,7 @@ export const ruleset = [
     "ruleName": "indent-legacy",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Enforce consistent indentation",
@@ -7684,7 +8006,7 @@ export const ruleset = [
     "ruleName": "no-arrow-condition",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7695,7 +8017,7 @@ export const ruleset = [
     "ruleName": "no-comma-dangle",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7706,7 +8028,7 @@ export const ruleset = [
     "ruleName": "no-reserved-keys",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7717,7 +8039,7 @@ export const ruleset = [
     "ruleName": "no-space-before-semi",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7728,7 +8050,7 @@ export const ruleset = [
     "ruleName": "no-spaced-func",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "Disallow spacing between function identifiers and their applications (deprecated)",
@@ -7739,7 +8061,7 @@ export const ruleset = [
     "ruleName": "no-wrap-func",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7750,7 +8072,7 @@ export const ruleset = [
     "ruleName": "space-after-function-name",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7761,7 +8083,7 @@ export const ruleset = [
     "ruleName": "space-after-keywords",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7772,7 +8094,7 @@ export const ruleset = [
     "ruleName": "space-before-function-parentheses",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7783,7 +8105,7 @@ export const ruleset = [
     "ruleName": "space-before-keywords",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7794,7 +8116,7 @@ export const ruleset = [
     "ruleName": "space-in-brackets",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7805,7 +8127,7 @@ export const ruleset = [
     "ruleName": "space-return-throw-case",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7816,7 +8138,7 @@ export const ruleset = [
     "ruleName": "space-unary-word-ops",
     "parentPluginName": "@eslint/js",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7827,7 +8149,7 @@ export const ruleset = [
     "ruleName": "react/jsx-space-before-closing",
     "parentPluginName": "eslint-plugin-react",
     "severity": 0,
-    "ruleOptions": "",
+    "ruleOptions": [],
     "affectedFiles": "*",
     "docs": {
       "description": "",
@@ -7838,7 +8160,9 @@ export const ruleset = [
     "ruleName": "curly",
     "parentPluginName": "@eslint/js",
     "severity": 2,
-    "ruleOptions": "all",
+    "ruleOptions": [
+      "all"
+    ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce consistent brace style for all control statements",

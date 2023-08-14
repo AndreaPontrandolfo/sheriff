@@ -14,7 +14,9 @@ export type NumericSeverity = 0 | 1 | 2;
 
 export type Severity = NumericSeverity | 'error' | 'warn' | 'off';
 
-export type RuleOptions = [Severity, Record<string, any>] | Severity;
+export type RuleOptions =
+  | [Severity, ...(Record<string, unknown> | string)[]]
+  | Severity;
 
 export type Plugins =
   | {
@@ -35,4 +37,4 @@ export interface BarebonesConfigAtom {
   files: string[] | undefined;
 }
 
-export type RuleOptionsConfig = Record<string, any> | '';
+export type RuleOptionsConfig = (Record<string, any> | string)[];

@@ -17,8 +17,6 @@
 .filtersContainer {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
-  justify-content: flex-end;
 }
 
 .filterInput {
@@ -31,4 +29,16 @@
   border: 1px solid #ccc;
   margin-right: 8px;
   max-width: 300px;
+}
+
+.tableControlsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.checklistContainer {
+  display: flex;
+  align-items: center;
 }

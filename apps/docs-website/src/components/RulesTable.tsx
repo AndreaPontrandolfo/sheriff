@@ -8,6 +8,7 @@ import {
 } from "@tanstack/react-table";
 import { ruleset, pluginsNames } from "@sheriff/utils";
 import type { Entry } from "@sheriff/types";
+import { isEmpty } from "lodash-es";
 import Select from "react-select";
 import styles from "./RulesTable.module.css";
 
@@ -15,20 +16,23 @@ const columnHelper = createColumnHelper<Entry>();
 
 const columns = [
   columnHelper.accessor("ruleName", {
-    header: () => "Rule",
+    header: "Rule",
     cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("parentPluginName", {
-    header: () => "Plugin",
+    header: "Plugin",
     cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("severity", {
-    header: () => "Severity",
+    header: "Severity",
     cell: (info) => info.getValue(),
   }),
   columnHelper.accessor("ruleOptions", {
-    header: () => "Options",
-    cell: (info) => (info.getValue() ? JSON.stringify(info.getValue()) : ""),
+    header: "Options",
+    cell: (info) =>
+      info.getValue() && !isEmpty(info.getValue())
+        ? JSON.stringify(info.getValue())
+        : "No options",
   }),
   columnHelper.accessor("docs", {
     header: "Docs",
@@ -77,76 +81,100 @@ export const RulesTable = (): JSX.Element => {
 
   return (
     <div ref={tableContainerRef}>
-      <div className={styles.filtersContainer}>
-        <input
-          className={styles.filterInput}
-          type="text"
-          placeholder="Filter by any therm..."
-          onChange={(e) => {
-            setFilter(e.target.value);
-          }}
-        />
-        <Select
-          isSearchable
-          isClearable
-          placeholder="Filter by plugins..."
-          options={pluginsNames.map((pluginName) => ({
-            value: pluginName,
-            label: pluginName,
-          }))}
-          styles={{
-            control: (baseStyles) => ({
-              ...baseStyles,
-              minWidth: "300px",
-              backgroundColor: "var(--ifm-color-secondary-contrast-background)",
-            }),
-            input: (baseStyles) => ({
-              ...baseStyles,
-              color: "var(--ifm-font-color-primary)",
-            }),
-            menu: (baseStyles) => ({
-              ...baseStyles,
-              backgroundColor: "var(--ifm-color-secondary-contrast-background)",
-            }),
-            option: (baseStyles, state) => ({
-              ...baseStyles,
-              transition:
-                "color var(--ifm-transition-fast) var(--ifm-transition-timing-default)",
-              backgroundColor: state.isFocused
-                ? "var(--ifm-menu-color-background-hover)"
-                : "var(--ifm-color-secondary-contrast-background)",
-              color: state.isFocused
-                ? "var(--ifm-menu-color)"
-                : "var(--ifm-font-color-secondary)",
-              ":active": {
-                backgroundColor: "var(--ifm-menu-color-background-hover)",
-              },
-            }),
-            singleValue: (baseStyles) => ({
-              ...baseStyles,
-              color: "var(--ifm-font-color-primary)",
-            }),
-            clearIndicator: (baseStyles) => ({
-              ...baseStyles,
-              color: "var(--ifm-font-color-secondary)",
-              ":hover": {
+      <div className={styles.tableControlsContainer}>
+        <div className={styles.checklistContainer}>
+          <label htmlFor="react">React</label>
+          <input checked disabled type="checkbox" name="react" id="react" />
+          <label htmlFor="lodash">Lodash</label>
+          <input checked disabled type="checkbox" name="lodash" id="lodash" />
+          <label htmlFor="next">Next</label>
+          <input checked disabled type="checkbox" name="next" id="next" />
+          <label htmlFor="playwright">Playwright</label>
+          <input
+            checked
+            disabled
+            type="checkbox"
+            name="playwright"
+            id="playwright"
+          />
+          <label htmlFor="vitest">Vitest</label>
+          <input defaultChecked type="checkbox" name="vitest" id="vitest" />
+          <label htmlFor="jest">Jest</label>
+          <input type="checkbox" name="jest" id="jest" />
+        </div>
+        <div className={styles.filtersContainer}>
+          <input
+            className={styles.filterInput}
+            type="text"
+            placeholder="Filter by any therm..."
+            onChange={(e) => {
+              setFilter(e.target.value);
+            }}
+          />
+          <Select
+            isSearchable
+            isClearable
+            placeholder="Filter by plugins..."
+            options={pluginsNames.map((pluginName) => ({
+              value: pluginName,
+              label: pluginName,
+            }))}
+            styles={{
+              control: (baseStyles) => ({
+                ...baseStyles,
+                minWidth: "300px",
+                backgroundColor:
+                  "var(--ifm-color-secondary-contrast-background)",
+              }),
+              input: (baseStyles) => ({
+                ...baseStyles,
                 color: "var(--ifm-font-color-primary)",
-              },
-              cursor: "pointer",
-            }),
-            dropdownIndicator: (baseStyles) => ({
-              ...baseStyles,
-              color: "var(--ifm-font-color-secondary)",
-              ":hover": {
+              }),
+              menu: (baseStyles) => ({
+                ...baseStyles,
+                backgroundColor:
+                  "var(--ifm-color-secondary-contrast-background)",
+              }),
+              option: (baseStyles, state) => ({
+                ...baseStyles,
+                transition:
+                  "color var(--ifm-transition-fast) var(--ifm-transition-timing-default)",
+                backgroundColor: state.isFocused
+                  ? "var(--ifm-menu-color-background-hover)"
+                  : "var(--ifm-color-secondary-contrast-background)",
+                color: state.isFocused
+                  ? "var(--ifm-menu-color)"
+                  : "var(--ifm-font-color-secondary)",
+                ":active": {
+                  backgroundColor: "var(--ifm-menu-color-background-hover)",
+                },
+              }),
+              singleValue: (baseStyles) => ({
+                ...baseStyles,
                 color: "var(--ifm-font-color-primary)",
-              },
-              cursor: "pointer",
-            }),
-          }}
-          onChange={(inputText) => {
-            setFilter(inputText?.value ?? "");
-          }}
-        />
+              }),
+              clearIndicator: (baseStyles) => ({
+                ...baseStyles,
+                color: "var(--ifm-font-color-secondary)",
+                ":hover": {
+                  color: "var(--ifm-font-color-primary)",
+                },
+                cursor: "pointer",
+              }),
+              dropdownIndicator: (baseStyles) => ({
+                ...baseStyles,
+                color: "var(--ifm-font-color-secondary)",
+                ":hover": {
+                  color: "var(--ifm-font-color-primary)",
+                },
+                cursor: "pointer",
+              }),
+            }}
+            onChange={(inputText) => {
+              setFilter(inputText?.value ?? "");
+            }}
+          />
+        </div>
       </div>
       <table>
         <thead>

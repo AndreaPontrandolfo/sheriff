@@ -99,10 +99,12 @@ const extractOptionsFromRuleEntry = (
   ruleEntry: RuleOptions,
 ): RuleOptionsConfig => {
   if (isArray(ruleEntry)) {
-    return ruleEntry[1];
+    const [severity, ...options] = ruleEntry;
+
+    return options;
   }
 
-  return '';
+  return [];
 };
 
 const extractNumericSeverityFromRuleOptions = (
