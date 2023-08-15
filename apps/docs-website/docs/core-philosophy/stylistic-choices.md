@@ -28,4 +28,4 @@ description: 🔥 Hot takes!
 - overloads clutter the code and make it more verbose and harder to read, which increase the cognitive overload.
 - overloads clutter the VScode tooltips.
 - overloads force you to write non-standard javascript syntax.
-- overloads are a bad practice. The flexibility that they enable also enable your team to write inconsistent code. Which is exactly the problem that Eslint is designed to solve.
+- overloads are a bad practice. The flexibility that they enable also enable your team to write inconsistent code. Which is exactly the problem that ESLint is designed to solve.

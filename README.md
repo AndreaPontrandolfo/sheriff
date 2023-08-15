@@ -14,7 +14,7 @@
 4. [🛠️ Setup](#setup)
 5. [🖥️ Techs](#techs)
 6. [🔑 Requirements](#requirements)
-7. [🔌 Eslint plugins](#eslint-plugins)
+7. [🔌 ESLint plugins](#eslint-plugins)
 8. [🧶 Rules](#rules)
 9. [🧠 Configuration](#configuration)
 10. [💅 Prettier support](#prettier-support)
@@ -32,19 +32,19 @@
 
 ### 🥳 Introduction
 
-Sheriff is a comprehensive Eslint configuration. It supports [various popular technologies](#techs).<br>
+Sheriff is a comprehensive ESLint configuration. It supports [various popular technologies](#techs).<br>
 
 > ⚠️ At the moment, Sheriff supports only Typescript codebases with modern Ecmascript standards. Support for vanilla Javascript will come at a later time.
 
 ### 🔑 Key points
 
-- This library is pioneering in the adoption of the Eslint `FlatConfig`, [introduced in Eslint v8.23.0](https://eslint.org/blog/2022/08/eslint-v8.23.0-released/).<br>
+- This library is pioneering in the adoption of the ESLint `FlatConfig`, [introduced in ESLint v8.23.0](https://eslint.org/blog/2022/08/eslint-v8.23.0-released/).<br>
 - Sheriff is very easy to get started with and use. It promotes a _“zero overhead approach”_. See: [philosophy](#philosophy). <br>
 - It’s a [_"plug & play"_](#automatic-setup) solution but you can customize it as much as you want. See: [features](#features).
 
 ### 🤔 Why / Motivations
 
-Managing a complex Eslint configuration takes time and effort. **Sheriff does it for you**.
+Managing a complex ESLint configuration takes time and effort. **Sheriff does it for you**.
 
 ### <a name="philosophy"></a>💭 Philosophy / Criteria
 
@@ -159,7 +159,7 @@ Follow these steps:
 4. [Setup prettier](#prettier-support) (_optional_)
 5. [Setup VSCode support](#vscode-support) (_optional_)
 
-[^1]: Sheriff is based on the [new format of Eslint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend Sheriff from a [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
+[^1]: Sheriff is based on the [new format of ESLint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend Sheriff from a [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
 
 ## <a name="techs"></a>🖥️ Techs
 
@@ -179,7 +179,7 @@ Follow these steps:
 ### Hard requirements
 
 - [Node >=16](https://nodejs.org/en/)
-- [Eslint >=8.38.0](https://eslint.org/)
+- [ESLint >=8.38.0](https://eslint.org/)
 - [Typescript](https://www.typescriptlang.org/)
 
 ### Recommendations
@@ -190,7 +190,7 @@ Follow these steps:
 - [VScode prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - Either `strict: true` or atleast `strictNullChecks: true` in `tsconfig`. Some `@typescript/eslint` rules requires `strictNullChecks` turned on. This shouldn't be a problem because Sheriff is meant to be used with `strict` turned on anyway.
 
-## <a name="eslint-plugins"></a>🔌 Eslint plugins
+## <a name="eslint-plugins"></a>🔌 ESLint plugins
 
 - [@typescript/eslint](https://github.com/typescript-eslint/typescript-eslint)
 - [eslint-plugin-etc](https://github.com/cartant/eslint-plugin-etc)
@@ -297,7 +297,7 @@ See [Rules](https://github.com/AndreaPontrandolfo/sheriff/tree/master/docs/rules
   ]);
   ```
 
-  This is just the standard behavior of the new configuration system of Eslint, which I'm illustrating here for your convenience. Sheriff doesn't alter this in any way.<br>
+  This is just the standard behavior of the new configuration system of ESLint, which I'm illustrating here for your convenience. Sheriff doesn't alter this in any way.<br>
   For more in-depth information, refer to the [official docs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new).
 
 ### Extra configuration options
@@ -334,7 +334,7 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 
 #### "noRestrictedSyntaxOverride" option
 
-Eslint has a very useful rule called `no-restricted-syntax`. It accepts an array of objects. Each object represent a specific Javascript syntax feature that you want to opt-out.
+ESLint has a very useful rule called `no-restricted-syntax`. It accepts an array of objects. Each object represent a specific Javascript syntax feature that you want to opt-out.
 Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, if you need to customize it, you have a few options:
 
 - override the rule in full: you provide your own `no-restricted-syntax` rule. You can do this as normal, appending the rule to the FlatConfig array.
@@ -418,7 +418,7 @@ To enforce Prettier in CI, see the [CLI docs](https://prettier.io/docs/en/cli.ht
 
 ## <a name="vscode-support"></a>🚀 VSCode support
 
-The Eslint `FlatConfig` support is currently not enabled by default by the [VSCode Eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). It needs to be enabled manually with a flag.
+The ESLint `FlatConfig` support is currently not enabled by default by the [VSCode ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). It needs to be enabled manually with a flag.
 It's advisable to enable it at the workspace level, meaning in the project `.vscode/settings.json`, like so:
 
 ```JSONC
@@ -436,7 +436,7 @@ It works fine in singular packages inside monorepos.
 
 ### Monorepo support in VSCode
 
-To make use of the [Eslint VScode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) in monorepos, use the [eslint.workingDirectories](https://github.com/microsoft/vscode-eslint#mono-repository-setup) setting.
+To make use of the [ESLint VScode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) in monorepos, use the [eslint.workingDirectories](https://github.com/microsoft/vscode-eslint#mono-repository-setup) setting.
 
 ## <a name="prior-art"></a>🧐 Prior art
 
@@ -452,7 +452,7 @@ To make use of the [Eslint VScode extension](https://marketplace.visualstudio.co
 
 ### Comparisons
 
-The main difference between Sheriff and the other projects is that Sheriff is updated to the most recent version of Eslint and supports the new `FlatConfig` instead of relying on weird hacks using the [@rushstack/eslint-patch](https://www.npmjs.com/package/@rushstack/eslint-patch).<br>
+The main difference between Sheriff and the other projects is that Sheriff is updated to the most recent version of ESLint and supports the new `FlatConfig` instead of relying on weird hacks using the [@rushstack/eslint-patch](https://www.npmjs.com/package/@rushstack/eslint-patch).<br>
 There are of course other differences as well, but you can get an idea for yourself by reading their READMEs.
 
 ## <a name="migration-guide"></a>♻ Migration guide
@@ -514,7 +514,7 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 
 ## <a name="faq"></a>👉 FAQ
 
-- Why you didn’t include Eslint plugins/rules for "X" library?
+- Why you didn’t include ESLint plugins/rules for "X" library?
   - [Cypress](https://github.com/cypress-io/eslint-plugin-cypress) ➜ Don't use [Cypress](https://www.cypress.io/). Use [Playwright](https://playwright.dev/) instead.
   - [Testing library](https://github.com/testing-library/eslint-plugin-testing-library) ➜ I believe [testing library](https://github.com/testing-library) is one of the least efficient ways to test UIs. In most codebases it does more harm than good. You can use [Storybook](https://github.com/storybookjs/storybook) to test and develop components in isolation.
 - Is Sheriff compatible with "X"?
@@ -524,8 +524,8 @@ See [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
     ```
     DISABLE_ESLINT_PLUGIN=true
     ```
-  - [Rome](https://rome.tools/) ➜ No. Rome is not compatible with Eslint in the first place.
-  - [Deno](https://deno.land/) ➜ No. Deno is not compatible with Eslint in the first place.
+  - [Rome](https://rome.tools/) ➜ No. Rome is not compatible with ESLint in the first place.
+  - [Deno](https://deno.land/) ➜ No. Deno is not compatible with ESLint in the first place.
   - [Bun](https://bun.sh/) ➜ Untested.
 
 ## <a name="acknowledgments"></a>💌 Acknowledgments

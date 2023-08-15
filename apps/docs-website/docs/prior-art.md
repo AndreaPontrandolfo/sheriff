@@ -16,7 +16,7 @@ sidebar_position: 13
 
 ## Comparisons
 
-The main technical difference between Sheriff and the other projects is that Sheriff is updated to the most recent version of Eslint and supports the new `FlatConfig` instead of relying on weird hacks using the [@rushstack/eslint-patch](https://www.npmjs.com/package/@rushstack/eslint-patch). Because of the technical limitation imposed by this hack, these configs are harder to work with, at multiple levels.
+The main technical difference between Sheriff and the other projects is that Sheriff is updated to the most recent version of ESLint and supports the new `FlatConfig` instead of relying on weird hacks using the [@rushstack/eslint-patch](https://www.npmjs.com/package/@rushstack/eslint-patch). Because of the technical limitation imposed by this hack, these configs are harder to work with, at multiple levels.
 
 Another key difference is that the design of most of these configs seems to revolve around the idea of stuffing as much rules as possible into the config, regardless of the quality of the experience and the goal of the project.<br />
 Sheriff instead was [shaped around solid principles](./core-philosophy/criteria.md) and only includes the rules that let it achieve its goals.

@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# 🔌 Eslint plugins
+# 🔌 ESLint plugins
 
 - [@typescript/eslint](https://github.com/typescript-eslint/typescript-eslint)
 - [eslint-plugin-etc](https://github.com/cartant/eslint-plugin-etc)

@@ -33,7 +33,7 @@ export const setEslintConfig = async (): Promise<void> => {
     );
 
     printWarning(
-      'If you have other Eslint configs in your project, remove them',
+      'If you have other ESLint configs in your project, remove them',
     );
 
     const root = await getPackageJsonContents();

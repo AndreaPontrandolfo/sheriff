@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-sheriff",
   "version": "0.0.0-development",
-  "description": "A comprehensive Eslint configuration.",
+  "description": "A comprehensive ESLint configuration.",
   "main": "index.js",
   "exports": {
     "./package.json": "./package.json",

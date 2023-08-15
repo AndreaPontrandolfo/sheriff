@@ -5,7 +5,7 @@ description: 🎯 What line of reasoning drives Sheriff development
 
 # Criteria
 
-This library is very opinionated, but it's for the better. I took a lot of decisions so you don't have to.<br />
+This library is very opinionated, but it's for the better. A lot of decisions were taken so you don't have to.<br />
 You can now quickstart static analysis in all your Typescript projects with ease. <br />
 Just type `npx create-sheriff-config` in a CLI and you are good to go.
 

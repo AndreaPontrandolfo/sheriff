@@ -4,10 +4,10 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  margin: 0 auto;
+  background: initial;
+  padding: 0;
 }
 
 @media screen and (max-width: 996px) {
@@ -20,4 +20,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.codeblock {
+  border: 1px solid var(--ifm-color-secondary);
+  box-shadow: none;
+}
+
+.codeblock button {
+  opacity: 1 !important;
+  margin-top: 2px;
+}
+
+.heroBanner {
+  margin: 0 auto;
 }

@@ -82,7 +82,7 @@ sidebar_position: 9
   ]);
   ```
 
-  This is just the standard behavior of the new configuration system of Eslint, which I'm illustrating here for your convenience. Sheriff doesn't alter this in any way.<br />
+  This is just the standard behavior of the new configuration system of ESLint, which I'm illustrating here for your convenience. Sheriff doesn't alter this in any way.<br />
   For more in-depth information, refer to the [official docs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new).
 
 ## Advanced configuration options
@@ -118,7 +118,7 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 
 ### "noRestrictedSyntaxOverride" option
 
-Eslint has a very useful rule called `no-restricted-syntax`. It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to opt-out.
+ESLint has a very useful rule called `no-restricted-syntax`. It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to opt-out.
 Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, if you need to customize it, you have a few options:
 
 - override the rule in full: you provide your own `no-restricted-syntax` rule. You can do this as normal, appending the rule to the `FlatConfig` array.

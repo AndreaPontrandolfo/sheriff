@@ -65,6 +65,6 @@ Follow these steps:
 
 :::caution
 
-Sheriff is based on the [new format of Eslint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend Sheriff from an [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
+Sheriff is based on the [new format of ESLint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend Sheriff from an [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
 
 :::
