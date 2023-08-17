@@ -15,8 +15,8 @@ import {
 import type { Entry } from "@sheriff/types";
 import { isEmpty } from "lodash-es";
 import Select from "react-select";
+import { DebounceInput } from "react-debounce-input";
 import styles from "./RulesTable.module.css";
-import { DebouncedInput } from "./DebouncedInput";
 
 const columnHelper = createColumnHelper<Entry>();
 
@@ -169,11 +169,12 @@ export const RulesTable = (): JSX.Element => {
           </div>
         </div>
         <div className={styles.filtersContainer}>
-          <input
+          <DebounceInput
             className={styles.filterInput}
             type="text"
             placeholder="Filter by any therm..."
             value={inputValue}
+            debounceTimeout={300}
             onChange={(event) => {
               setInputValue(event.target.value);
               resetSelectValue();
@@ -182,9 +183,9 @@ export const RulesTable = (): JSX.Element => {
           />
           <Select
             isClearable
+            isSearchable
             placeholder="Filter by plugins..."
             value={selectValue}
-            isSearchable={false}
             styles={{
               control: (baseStyles) => ({
                 ...baseStyles,

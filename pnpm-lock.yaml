@@ -50,6 +50,9 @@ importers:
       react:
         specifier: ^17.0.2
         version: 17.0.2
+      react-debounce-input:
+        specifier: ^3.3.0
+        version: 3.3.0(react@17.0.2)
       react-dom:
         specifier: ^17.0.2
         version: 17.0.2(react@17.0.2)
@@ -11577,6 +11580,16 @@ packages:
       lodash.curry: 4.1.1
       lodash.flow: 3.5.0
       pure-color: 1.3.0
+    dev: false
+
+  /react-debounce-input@3.3.0(react@17.0.2):
+    resolution: {integrity: sha512-VEqkvs8JvY/IIZvh71Z0TC+mdbxERvYF33RcebnodlsUZ8RSgyKe2VWaHXv4+/8aoOgXLxWrdsYs2hDhcwbUgA==}
+    peerDependencies:
+      react: ^15.3.0 || 16 || 17 || 18
+    dependencies:
+      lodash.debounce: 4.0.8
+      prop-types: 15.8.1
+      react: 17.0.2
     dev: false
 
   /react-dev-utils@12.0.1(eslint@8.47.0)(typescript@4.8.4)(webpack@5.88.2):
