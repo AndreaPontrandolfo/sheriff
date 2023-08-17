@@ -10,7 +10,7 @@ Follow these steps:
 1. Install the package from [npm](https://www.npmjs.com/package/eslint-config-sheriff).
 
    ```bash npm2yarn
-   npm install -D eslint-config-sheriff
+   npm install -D eslint eslint-define-config eslint-config-sheriff
    ```
 
 2. Create a `eslint.config.js` file at the root of your project and copy/paste the contents of the following snippet of code:

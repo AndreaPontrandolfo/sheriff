@@ -15,7 +15,7 @@ Sheriff is a comprehensive ESLint configuration. It supports [various popular te
 
 :::caution
 
-Sheriff is a Typescript-first library, and as such, it support only Typescript codebases written with modern Ecmascript standards. Vanilla Javascript codebases are not supported as of now. See [faq](./faq.md#does-sheriff-support-vanilla-javascript-codebases).
+Sheriff is a Typescript-first library, and as such, it support only Typescript codebases written with modern ECMAScript standards. Vanilla Javascript codebases are not supported as of now. See [faq](./faq.md#does-sheriff-support-vanilla-javascript-codebases).
 
 :::
 

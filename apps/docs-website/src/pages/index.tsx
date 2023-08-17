@@ -7,12 +7,12 @@ import CodeBlock from "@theme/CodeBlock";
 import SheriffLogo from "../../static/img/sheriff-logo.svg";
 import styles from "./index.module.css";
 
-const HomepageHeader = () => {
+const Homepage = () => {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <header className={clsx("hero margin-top--lg", styles.heroBanner)}>
-      <div className="container">
+    <header className={styles.heroBanner}>
+      <main className="container">
         <div className="margin--md">
           <SheriffLogo />
         </div>
@@ -39,7 +39,7 @@ const HomepageHeader = () => {
         <CodeBlock className={styles.codeblock} language="bash">
           npx create-sheriff-config
         </CodeBlock>
-      </div>
+      </main>
     </header>
   );
 };
@@ -51,9 +51,9 @@ const Home = (): JSX.Element => {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
+      wrapperClassName={styles.homepageWrapper}
     >
-      <HomepageHeader />
-      <main></main>
+      <Homepage />
     </Layout>
   );
 };

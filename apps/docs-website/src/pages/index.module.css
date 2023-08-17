@@ -1,7 +1,6 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+.homepageWrapper {
+  justify-content: center;
+}
 
 .heroBanner {
   text-align: center;

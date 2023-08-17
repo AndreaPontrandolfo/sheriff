@@ -542,7 +542,7 @@ const reactHandPickedRules = {
   'react/jsx-filename-extension': [
     2,
     {
-      extensions: ['.tsx'],
+      extensions: ['jsx', '.tsx', 'mtsx', 'mjsx'],
       allow: 'as-needed',
     },
   ],
@@ -604,11 +604,11 @@ const getReactConfig = (customTSConfigPath) => {
       },
     },
     {
-      files: ['**/*{jsx,tsx}'],
+      files: ['**/*{jsx,tsx,mtsx,mjsx}'],
       rules: getTsNamingConventionRule({ isTsx: true }),
     },
     {
-      files: ['**/*{jsx,tsx}'],
+      files: ['**/*{jsx,tsx,mtsx,mjsx}'],
       plugins: { 'react-refresh': reactRefresh },
       rules: {
         'react-refresh/only-export-components': 2,
@@ -636,7 +636,7 @@ const getReactConfig = (customTSConfigPath) => {
         'react-refresh/only-export-components': 0,
         'react/jsx-filename-extension': [
           2,
-          { allow: 'always', extensions: ['.tsx'] },
+          { allow: 'always', extensions: ['jsx', '.tsx', 'mtsx', 'mjsx'] },
         ],
       },
     },
