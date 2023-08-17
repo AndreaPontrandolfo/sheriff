@@ -16,6 +16,7 @@ import type { Entry } from "@sheriff/types";
 import { isEmpty } from "lodash-es";
 import Select from "react-select";
 import styles from "./RulesTable.module.css";
+import { DebouncedInput } from "./DebouncedInput";
 
 const columnHelper = createColumnHelper<Entry>();
 
@@ -53,12 +54,13 @@ const columns = [
 
 export const RulesTable = (): JSX.Element => {
   const [data, setData] = useState(() => [...rulesetWithVitest]);
-  const [filter, setFilter] = useState<string | null>(null);
+  const [globalFilter, setGlobalFilter] = React.useState("");
+  const [inputValue, setInputValue] = React.useState("");
+  const [selectValue, setSelectValue] = React.useState(null);
   const [isVitestChecked, setIsVitestChecked] = useState<boolean>(true);
   const [isJestChecked, setIsJestChecked] = useState<boolean>(false);
   const [tableMaximumAllowedWidth, setTableMaximumAllowedWidth] =
     useState<number>(0);
-
   const tableContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -70,6 +72,14 @@ export const RulesTable = (): JSX.Element => {
 
     setTableMaximumAllowedWidth(computedTableWidth);
   }, []);
+
+  const resetSelectValue = () => {
+    setSelectValue(null);
+  };
+
+  const resetInputValue = () => {
+    setInputValue("");
+  };
 
   const handleVitestCheckbox = () => {
     if (isVitestChecked) {
@@ -101,9 +111,9 @@ export const RulesTable = (): JSX.Element => {
     getCoreRowModel: getCoreRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     state: {
-      globalFilter: filter,
+      globalFilter,
     },
-    onGlobalFilterChange: setFilter,
+    onGlobalFilterChange: setGlobalFilter,
   });
 
   const cellMaxWidth = tableMaximumAllowedWidth / columns.length;
@@ -163,18 +173,18 @@ export const RulesTable = (): JSX.Element => {
             className={styles.filterInput}
             type="text"
             placeholder="Filter by any therm..."
-            onChange={(e) => {
-              setFilter(e.target.value);
+            value={inputValue}
+            onChange={(event) => {
+              setInputValue(event.target.value);
+              resetSelectValue();
+              setGlobalFilter(event.target.value);
             }}
           />
           <Select
-            isSearchable
             isClearable
             placeholder="Filter by plugins..."
-            options={pluginsNames.map((pluginName) => ({
-              value: pluginName,
-              label: pluginName,
-            }))}
+            value={selectValue}
+            isSearchable={false}
             styles={{
               control: (baseStyles) => ({
                 ...baseStyles,
@@ -226,8 +236,14 @@ export const RulesTable = (): JSX.Element => {
                 cursor: "pointer",
               }),
             }}
-            onChange={(inputText) => {
-              setFilter(inputText?.value ?? "");
+            options={pluginsNames.map((pluginName) => ({
+              value: pluginName,
+              label: pluginName,
+            }))}
+            onChange={(selectedOption) => {
+              setSelectValue(selectedOption);
+              resetInputValue();
+              setGlobalFilter(selectedOption?.value ?? "");
             }}
           />
         </div>

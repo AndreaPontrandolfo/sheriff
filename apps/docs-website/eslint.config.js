@@ -47,4 +47,10 @@ module.exports = defineFlatConfig([
       ...flatCodeBlocks.rules,
     },
   },
+  {
+    rules: {
+      "arrow-body-style": 0,
+      "react/jsx-props-no-spreading": 0,
+    },
+  },
 ]);
