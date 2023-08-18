@@ -1,4 +1,7 @@
-export const removeElementFromArray = <T>(array: T[], value: T): void => {
+export const removeElementFromArrayByValue = <T>(
+  array: T[],
+  value: T,
+): void => {
   const index = array.indexOf(value);
 
   if (index !== -1) {

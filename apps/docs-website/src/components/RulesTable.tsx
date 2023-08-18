@@ -16,6 +16,7 @@ import type { Entry } from "@sheriff/types";
 import { isEmpty } from "lodash-es";
 import Select from "react-select";
 import { DebounceInput } from "react-debounce-input";
+import { filterDuplicateRules } from "../utils/filterDuplicatedRules";
 import styles from "./RulesTable.module.css";
 
 const columnHelper = createColumnHelper<Entry>();
@@ -52,8 +53,11 @@ const columns = [
   }),
 ];
 
+const dedupedRulesetWithVitest = filterDuplicateRules(rulesetWithVitest);
+const dedupedRulesetWithJest = filterDuplicateRules(rulesetWithJest);
+
 export const RulesTable = (): JSX.Element => {
-  const [data, setData] = useState(() => [...rulesetWithVitest]);
+  const [data, setData] = useState(() => [...dedupedRulesetWithVitest]);
   const [globalFilter, setGlobalFilter] = React.useState("");
   const [inputValue, setInputValue] = React.useState("");
   const [selectValue, setSelectValue] = React.useState(null);
@@ -83,11 +87,11 @@ export const RulesTable = (): JSX.Element => {
 
   const handleVitestCheckbox = () => {
     if (isVitestChecked) {
-      setData([...rulesetWithJest]);
+      setData([...dedupedRulesetWithJest]);
       setIsVitestChecked(false);
       setIsJestChecked(true);
     } else {
-      setData([...rulesetWithVitest]);
+      setData([...dedupedRulesetWithVitest]);
       setIsVitestChecked(true);
       setIsJestChecked(false);
     }
@@ -95,11 +99,11 @@ export const RulesTable = (): JSX.Element => {
 
   const handleJestCheckbox = () => {
     if (isJestChecked) {
-      setData([...rulesetWithVitest]);
+      setData([...dedupedRulesetWithVitest]);
       setIsVitestChecked(true);
       setIsJestChecked(false);
     } else {
-      setData([...rulesetWithJest]);
+      setData([...dedupedRulesetWithJest]);
       setIsVitestChecked(false);
       setIsJestChecked(true);
     }
