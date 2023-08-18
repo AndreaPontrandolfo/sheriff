@@ -4153,7 +4153,10 @@ export const ruleset = [
     "ruleOptions": [
       {
         "extensions": [
-          ".tsx"
+          "jsx",
+          ".tsx",
+          "mtsx",
+          "mjsx"
         ],
         "allow": "as-needed"
       }
@@ -4292,7 +4295,7 @@ export const ruleset = [
         "format": null
       }
     ],
-    "affectedFiles": "**/*{jsx,tsx}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
       "url": ""
@@ -4303,7 +4306,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-react-refresh",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{jsx,tsx}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "",
       "url": ""
@@ -4867,7 +4870,10 @@ export const ruleset = [
       {
         "allow": "always",
         "extensions": [
-          ".tsx"
+          "jsx",
+          ".tsx",
+          "mtsx",
+          "mjsx"
         ]
       }
     ],
