@@ -26,6 +26,6 @@ sidebar_position: 16
 ## Does Sheriff support vanilla Javascript codebases?
 
 Sheriff is a Typescript-first ESLint configuration. It's focused on Typescript codebases. You can almost consider Sheriff a superset of [@typescript-eslint](https://typescript-eslint.io/). <br />
-If your codebase is not written in Typescript, i would worry about that first, before worrying about linting.
+If your codebase is not written in Typescript, you should would worry about that first, before worrying about linting.
 
 For this reason, vanilla Javascript is not supported as of right now, but support may come at a later time.
