@@ -25,6 +25,10 @@ Sheriff is a Typescript-first library, and as such, it support only Typescript c
 - Sheriff is very easy to get started with and use. It promotes a _“zero overhead approach”_. See: [philosophy](./core-philosophy/criteria.md).
 - Sheriff is a [_"plug & play"_](./setup/automatic-setup.mdx) solution but you can customize it as much as you want. See: [features](./features.md).
 
+## Trivia
+
+The name "Sheriff" comes from the idea that it's a tool that watches over your codebase and keep everything in order.
+
 ## Ok, let's do this
 
 To get started, head over to the [automatic setup guide](./setup/automatic-setup.mdx) and follow the instructions.

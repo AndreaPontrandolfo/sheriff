@@ -4,8 +4,6 @@ sidebar_position: 13
 
 # ✍ TSConfig guidelines
 
-## Introduction
-
 Typescript configuration is a very wide and complex topic. Depending on the environments that you are going to target, setting up correctly a proper `TSConfig` can be daunting and time consuming.<br />
 In this section I'll try to illustrate a rundown of the choices that you should make when tweaking a `TSConfig` in a modern Typescript project that use Sheriff.
 
