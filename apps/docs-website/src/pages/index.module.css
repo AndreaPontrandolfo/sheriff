@@ -9,16 +9,16 @@
   padding: 0;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
 .buttons {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 996px) {
+  .buttons a {
+    padding: 12px 26px;
+  }
 }
 
 .codeblock {
