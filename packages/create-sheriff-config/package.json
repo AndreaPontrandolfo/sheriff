@@ -1,6 +1,6 @@
 {
   "name": "create-sheriff-config",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "type": "module",
   "description": "",
   "main": "dist/index.js",
@@ -11,8 +11,6 @@
     "publint": "publint",
     "clean": "rm -rf .turbo && rm -rf dist "
   },
-  "keywords": [],
-  "author": "AndreaPontrandolfo",
   "license": "MIT",
   "tsup": {
     "entry": [
@@ -56,6 +54,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AndreaPontrandolfo/create-sheriff-config.git"
+    "url": "https://github.com/AndreaPontrandolfo/sheriff.git"
+  },
+  "author": {
+    "name": "Andrea Pontrandolfo",
+    "email": "andrea.pontra@gmail.com",
+    "url": "https://github.com/AndreaPontrandolfo"
+  },
+  "keywords": [
+    "javascript",
+    "eslint",
+    "prettier",
+    "cli",
+    "generator",
+    "scaffolding",
+    "starter"
+  ],
+  "homepage": "https://sheriffrc.gitbook.io/sheriff/",
+  "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
+  "publishConfig": {
+    "access": "public"
   }
 }

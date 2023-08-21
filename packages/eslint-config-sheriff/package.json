@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-sheriff",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "description": "A comprehensive ESLint configuration.",
   "main": "index.js",
   "exports": {
@@ -85,5 +85,8 @@
     "publint": "^0.2.0",
     "semantic-release": "19.0.5",
     "typescript": "5.1.6"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

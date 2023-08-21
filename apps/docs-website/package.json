@@ -61,5 +61,31 @@
   },
   "engines": {
     "node": ">=16.14"
-  }
+  },
+  "author": {
+    "name": "Andrea Pontrandolfo",
+    "email": "andrea.pontra@gmail.com",
+    "url": "https://github.com/AndreaPontrandolfo"
+  },
+  "repository": "https://github.com/AndreaPontrandolfo/sheriff",
+  "keywords": [
+    "documentation",
+    "docusaurus",
+    "javascript",
+    "typescript",
+    "eslint",
+    "prettier",
+    "playwright",
+    "jsdoc",
+    "lodash",
+    "sonarjs",
+    "unicorn",
+    "react",
+    "next",
+    "storybook",
+    "jest",
+    "vitest"
+  ],
+  "homepage": "https://sheriffrc.gitbook.io/sheriff/",
+  "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug"
 }
