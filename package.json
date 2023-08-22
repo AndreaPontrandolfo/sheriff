@@ -11,9 +11,13 @@
     "publint": "turbo run publint --concurrency=1",
     "clean": "turbo run clean",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",
-    "nuke": "pnpm clean && pnpm delete-node-modules"
+    "nuke": "pnpm clean && pnpm delete-node-modules",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo build --filter='./packages/*' && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@turbo/gen": "^1.9.7",
     "prettier": "^3.0.1",
     "turbo": "^1.10.12"
