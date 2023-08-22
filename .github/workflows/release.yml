@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - master
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
   release:
     name: Release
@@ -13,18 +16,19 @@ jobs:
         with:
           fetch-depth: 0
       - name: Pnpm Setup
-        uses: pnpm/action-setup@v2.2.2
-        with:
-          version: 7.9.0
+        uses: pnpm/action-setup@v2
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 'lts/*'
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
-      - name: Release
-        run: pnpm semantic-release
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

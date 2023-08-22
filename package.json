@@ -23,6 +23,9 @@
     "turbo": "^1.10.12"
   },
   "packageManager": "pnpm@8.6.10",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "pnpm": {
     "peerDependencyRules": {
       "allowAny": [
