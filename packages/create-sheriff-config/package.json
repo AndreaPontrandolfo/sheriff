@@ -48,7 +48,7 @@
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^1.23.0",
     "publint": "^0.2.0",
-    "semantic-release": "^19.0.5",
+    "semantic-release": "^21.0.0",
     "tsup": "^6.2.3",
     "tsx": "^3.9.0"
   },

@@ -83,7 +83,7 @@
   "devDependencies": {
     "husky": "^8.0.0",
     "publint": "^0.2.0",
-    "semantic-release": "19.0.5",
+    "semantic-release": "21.0.9",
     "typescript": "5.1.6"
   },
   "publishConfig": {
