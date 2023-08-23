@@ -52,7 +52,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AndreaPontrandolfo/sheriff.git"
+    "url": "https://github.com/AndreaPontrandolfo/sheriff.git",
+    "directory": "packages/create-sheriff-config"
   },
   "author": {
     "name": "Andrea Pontrandolfo",
@@ -68,7 +69,7 @@
     "scaffolding",
     "starter"
   ],
-  "homepage": "https://sheriffrc.gitbook.io/sheriff/",
+  "homepage": "https://www.eslint-config-sheriff.dev",
   "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "publishConfig": {
     "access": "public"
