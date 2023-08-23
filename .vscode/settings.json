@@ -1,0 +1,17 @@
+{
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.workingDirectories": [
+    "./packages/create-sheriff-config",
+    "./packages/sheriff-utils",
+    "./packages/sheriff-types",
+    "./apps/docs-website"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "mdx",
+    "markdown"
+  ]
+}

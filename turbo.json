@@ -1,0 +1,31 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["rulesgen", "^build"],
+      "outputs": [".docusaurus/**", "dist/**"]
+    },
+    "lint": {},
+    "start": {
+      "cache": false,
+      "persistent": true,
+      "outputs": [
+        "./src/rulesetWithJest.ts",
+        "./src/rulesetWithVitest.ts",
+        "**/.docusaurus/**/*"
+      ]
+    },
+    "rulesgen": {
+      "outputs": ["./src/rulesetWithJest.ts", "./src/rulesetWithVitest.ts"]
+    },
+    "publint": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["build"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "serve": { "cache": false, "persistent": true }
+  }
+}

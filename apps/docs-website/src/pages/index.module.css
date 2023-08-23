@@ -1,0 +1,32 @@
+.homepageWrapper {
+  justify-content: center;
+}
+
+.heroBanner {
+  text-align: center;
+  margin: 0 auto;
+  background: initial;
+  padding: 0;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 996px) {
+  .buttons a {
+    padding: 12px 26px;
+  }
+}
+
+.codeblock {
+  border: 1px solid var(--ifm-color-secondary);
+  box-shadow: none;
+}
+
+.codeblock button {
+  opacity: 1 !important;
+  margin-top: 2px;
+}

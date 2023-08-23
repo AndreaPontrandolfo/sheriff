@@ -1,0 +1,117 @@
+.td,
+.th {
+  width: 100%;
+}
+
+.tr td {
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.tr:hover td {
+  overflow-x: auto;
+  white-space: normal;
+}
+
+.filtersContainer {
+  display: flex;
+  align-items: center;
+}
+
+.filterInput {
+  width: 100%;
+  min-height: 38px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border-radius: var(--ifm-global-radius);
+  border: 1px solid #ccc;
+  margin-right: 8px;
+  max-width: 300px;
+}
+
+.tableControlsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.checkboxGroupContainer {
+  display: flex;
+  align-items: center;
+}
+
+.nativeCheckbox,
+.nativeCheckboxDisabled {
+  display: block;
+  margin-right: 12px;
+}
+
+.nativeCheckbox input,
+.nativeCheckboxDisabled input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.nativeCheckboxDisabled input {
+  cursor: not-allowed;
+}
+
+.nativeCheckbox label,
+.nativeCheckboxDisabled label {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nativeCheckboxDisabled label {
+  cursor: not-allowed;
+}
+
+.nativeCheckbox label:before,
+.nativeCheckboxDisabled label:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--ifm-color-primary);
+  border-radius: var(--ifm-global-radius);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+  top: -1px;
+}
+
+.nativeCheckboxDisabled label:before {
+  border-color: var(--ifm-color-emphasis-300);
+  cursor: not-allowed;
+}
+
+.nativeCheckbox input:checked + label:after,
+.nativeCheckboxDisabled input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 9px;
+  width: 4px;
+  height: 10px;
+  border: solid var(--ifm-color-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.nativeCheckboxDisabled input:checked + label:after {
+  border-color: var(--ifm-color-emphasis-300);
+}

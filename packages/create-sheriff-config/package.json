@@ -1,0 +1,78 @@
+{
+  "name": "create-sheriff-config",
+  "version": "2.9.1",
+  "type": "module",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx ./index.ts",
+    "build": "tsup",
+    "semantic-release": "semantic-release",
+    "publint": "publint",
+    "clean": "rm -rf .turbo && rm -rf dist "
+  },
+  "license": "MIT",
+  "tsup": {
+    "entry": [
+      "index.ts"
+    ],
+    "format": "esm",
+    "splitting": false,
+    "sourcemap": false,
+    "clean": true
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.4.1",
+    "detect-package-manager": "^2.0.1",
+    "find-up": "^6.3.0",
+    "lodash-es": "^4.17.21",
+    "ora": "^6.1.2",
+    "prompts": "^2.4.2",
+    "read-pkg-up": "9.1.0",
+    "typescript": "^4.8.4",
+    "winston": "^3.8.2",
+    "winston-console-format": "^1.0.8",
+    "yargs": "^17.6.2"
+  },
+  "bin": {
+    "create-sheriff-config": "./dist/index.js"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.191",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^18.8.2",
+    "@types/prompts": "^2.4.2",
+    "@types/yargs": "^17.0.18",
+    "eslint": "^8.46.0",
+    "eslint-config-sheriff": "workspace:*",
+    "eslint-define-config": "^1.23.0",
+    "publint": "^0.2.0",
+    "semantic-release": "^19.0.5",
+    "tsup": "^6.2.3",
+    "tsx": "^3.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndreaPontrandolfo/sheriff.git"
+  },
+  "author": {
+    "name": "Andrea Pontrandolfo",
+    "email": "andrea.pontra@gmail.com",
+    "url": "https://github.com/AndreaPontrandolfo"
+  },
+  "keywords": [
+    "javascript",
+    "eslint",
+    "prettier",
+    "cli",
+    "generator",
+    "scaffolding",
+    "starter"
+  ],
+  "homepage": "https://sheriffrc.gitbook.io/sheriff/",
+  "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
+  "publishConfig": {
+    "access": "public"
+  }
+}
