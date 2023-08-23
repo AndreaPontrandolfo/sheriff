@@ -7,7 +7,6 @@
   "scripts": {
     "dev": "tsx ./index.ts",
     "build": "tsup",
-    "semantic-release": "semantic-release",
     "publint": "publint",
     "clean": "rm -rf .turbo && rm -rf dist "
   },
@@ -48,13 +47,13 @@
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^1.23.0",
     "publint": "^0.2.0",
-    "semantic-release": "^19.0.5",
     "tsup": "^6.2.3",
     "tsx": "^3.9.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AndreaPontrandolfo/sheriff.git"
+    "url": "https://github.com/AndreaPontrandolfo/sheriff.git",
+    "directory": "packages/create-sheriff-config"
   },
   "author": {
     "name": "Andrea Pontrandolfo",
@@ -70,7 +69,7 @@
     "scaffolding",
     "starter"
   ],
-  "homepage": "https://sheriffrc.gitbook.io/sheriff/",
+  "homepage": "https://www.eslint-config-sheriff.dev",
   "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "publishConfig": {
     "access": "public"

@@ -20,7 +20,11 @@
     "email": "andrea.pontra@gmail.com",
     "url": "https://github.com/AndreaPontrandolfo"
   },
-  "repository": "https://github.com/AndreaPontrandolfo/sheriff",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndreaPontrandolfo/sheriff.git",
+    "directory": "packages/eslint-config-sheriff"
+  },
   "keywords": [
     "javascript",
     "typescript",
@@ -37,11 +41,10 @@
     "jest",
     "vitest"
   ],
-  "homepage": "https://sheriffrc.gitbook.io/sheriff/",
+  "homepage": "https://www.eslint-config-sheriff.dev",
   "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "semantic-release": "semantic-release",
     "generate-typings": "tsc --declaration --allowJs --emitDeclarationOnly --declarationMap --outDir types",
     "publint": "publint",
     "clean": "rm -rf .turbo && rm -rf dist "
@@ -83,7 +86,6 @@
   "devDependencies": {
     "husky": "^8.0.0",
     "publint": "^0.2.0",
-    "semantic-release": "19.0.5",
     "typescript": "5.1.6"
   },
   "publishConfig": {
