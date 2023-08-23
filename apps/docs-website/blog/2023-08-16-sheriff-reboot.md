@@ -19,7 +19,7 @@ The codebase has been restructured into a monorepo setup, as it allows for the m
 ### New documentation
 
 The documentation has been fully revamped, moving on from a simple README to a full-blown website, a new documentation hub was crafted, leveraging the power of [Docusaurus](https://docusaurus.io/), a modern documentation framework. Whether a newcomer or a seasoned user, the documentation is more accessible and easier to navigate, with a sidebar that allows for quick access to the different sections.<br/>
-Also, a special ["Rules"](../docs/rules) page was carefully crafted to let users explore in detail all the rules that Sheriff enables.
+Also, a special "Rules" page was carefully crafted to let users explore in detail all the rules that Sheriff enables.
 
 ### New Logo
 

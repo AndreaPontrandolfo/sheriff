@@ -3,17 +3,21 @@
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["**/.docusaurus/**/*"]
+      "dependsOn": ["rulesgen", "^build"],
+      "outputs": [".docusaurus/**", "dist/**"]
     },
     "lint": {},
     "start": {
       "cache": false,
       "persistent": true,
-      "outputs": ["**/src/rules.json", "**/.docusaurus/**/*"]
+      "outputs": [
+        "./src/rulesetWithJest.ts",
+        "./src/rulesetWithVitest.ts",
+        "**/.docusaurus/**/*"
+      ]
     },
     "rulesgen": {
-      "outputs": ["./src/rules.json"]
+      "outputs": ["./src/rulesetWithJest.ts", "./src/rulesetWithVitest.ts"]
     },
     "publint": {
       "outputs": ["dist/**"],
@@ -21,6 +25,7 @@
     },
     "clean": {
       "cache": false
-    }
+    },
+    "serve": { "cache": false, "persistent": true }
   }
 }

@@ -14,7 +14,8 @@
     "nuke": "pnpm clean && pnpm delete-node-modules",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo build --filter='./packages/*' && changeset publish"
+    "release": "turbo build --filter='./packages/*' && changeset publish",
+    "preview-docs": "turbo run serve --filter=docs-website"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
