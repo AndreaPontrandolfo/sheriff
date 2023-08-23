@@ -13,6 +13,10 @@ This repository hosts the sourcecode of the following projects:
 
 Visit the [official docs](https://sheriffrc.gitbook.io/sheriff/) to get started with Sheriff.
 
+## 📝 Updates
+
+You can follow the latest updates on the project in the [official blog](https://sheriffrc.gitbook.io/sheriff/).
+
 ## 🧡 Contributing
 
 ### Suggestions
