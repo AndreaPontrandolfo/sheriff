@@ -7,7 +7,6 @@
   "scripts": {
     "dev": "tsx ./index.ts",
     "build": "tsup",
-    "semantic-release": "semantic-release",
     "publint": "publint",
     "clean": "rm -rf .turbo && rm -rf dist "
   },
@@ -48,7 +47,6 @@
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^1.23.0",
     "publint": "^0.2.0",
-    "semantic-release": "^19.0.5",
     "tsup": "^6.2.3",
     "tsx": "^3.9.0"
   },

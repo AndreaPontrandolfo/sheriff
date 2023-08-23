@@ -41,7 +41,6 @@
   "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "semantic-release": "semantic-release",
     "generate-typings": "tsc --declaration --allowJs --emitDeclarationOnly --declarationMap --outDir types",
     "publint": "publint",
     "clean": "rm -rf .turbo && rm -rf dist "
@@ -83,7 +82,6 @@
   "devDependencies": {
     "husky": "^8.0.0",
     "publint": "^0.2.0",
-    "semantic-release": "19.0.5",
     "typescript": "5.1.6"
   },
   "publishConfig": {
