@@ -14,6 +14,8 @@ Here's a snapshot of the key changes:
 
 The codebase has been restructured into a monorepo setup with [Turborepo](https://turbo.build/repo) + [pnpm workspaces](https://pnpm.io/workspaces), as it allows for the management of multiple related packages under a single repository, streamlining the development process and enabling better coordination between different parts of the project.
 
+As a side-effect, the project now relies on [changesets](https://github.com/changesets/changesets) to manage semantic versioning, in place of [semantic-release](https://github.com/semantic-release/semantic-release)
+
 ## Complete Rebranding
 
 ### New documentation
