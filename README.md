@@ -28,8 +28,8 @@ Please use the discussions tab or the issues tab for new rules proposals.
 ### Development
 
 1. Clone the repo
-2. Install the dependencies with pnpm
-3. Do the changes
+1. Install the dependencies with pnpm
+1. Do the changes
 
 ## 📋 License
 
