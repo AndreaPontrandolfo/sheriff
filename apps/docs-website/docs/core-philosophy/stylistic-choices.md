@@ -13,7 +13,7 @@ description: 🔥 Hot takes!
 ## No reduce
 
 - [Is reduce() bad? - HTTP 203](https://www.youtube.com/watch?v=qaGjS7-qWzg)
-- [TkDodo - Why i dont like reduce](https://www.youtube.com/watch?v=qaGjS7-qWzg)
+- [TkDodo - Why i don't like reduce](https://www.youtube.com/watch?v=qaGjS7-qWzg)
 
 ## No enums
 
