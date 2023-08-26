@@ -13,7 +13,7 @@ Follow these steps:
    npm install -D eslint eslint-define-config eslint-config-sheriff
    ```
 
-2. Create a `eslint.config.js` file at the root of your project and copy/paste the contents of the following snippet of code:
+1. Create a `eslint.config.js` file at the root of your project and copy/paste the contents of the following snippet of code:
 
    ```js title="eslint.config.js"
    import sheriff from "eslint-config-sheriff";
@@ -59,9 +59,9 @@ Follow these steps:
    ];
    ```
 
-3. [Configure Sheriff](../configuration.md) (_optional_)
-4. [Setup prettier](../prettier-support.md#setup) (_optional_)
-5. [Setup VSCode support](../vscode-support.md) (_optional_)
+1. [Configure Sheriff](../configuration.md) (_optional_)
+1. [Setup prettier](../prettier-support.md#setup) (_optional_)
+1. [Setup VSCode support](../vscode-support.md) (_optional_)
 
 :::caution
 
