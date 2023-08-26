@@ -4,7 +4,7 @@
     "**/vscode-extension/**",
     "**/.git/**",
     "**/.pnpm-lock.json",
-    "**/.pnpm-lock.yaml",
+    "pnpm-lock.yaml",
     ".vscode",
     "megalinter",
     "package-lock.json",
