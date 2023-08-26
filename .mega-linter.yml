@@ -20,4 +20,4 @@ DISABLE_ERRORS: true
 REPOSITORY_CHECKOV_ARGUMENTS:
   - 'checkov --skip-check CKV2_GHA_1'
 MARKDOWN_MARKDOWNLINT_FILE_EXTENSIONS: ['.md', '.mdx']
-MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: ^(?!.*(?:\/|^)(node_modules|\.changeset)\/).*$
+MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: (node_modules|\.changeset)\/.*$
