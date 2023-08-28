@@ -236,7 +236,7 @@ const getBaseEslintHandPickedRules = (noRestrictedSyntaxOverride) => {
     'prefer-spread': 2,
     'prefer-object-spread': 2,
     'no-param-reassign': [2, { props: true }],
-    'no-redeclare': 2, // we are not using the @typescript-eslint version on purpose, because we want to disallow function overloading entirely.
+    'no-redeclare': 2, // we are not using the @typescript-eslint version on purpose, because we want to disallow function overloading entirely, as stated in https://www.eslint-config-sheriff.dev/docs/core-philosophy/stylistic-choices#no-overloads.
     'array-callback-return': [2, { allowImplicit: true, checkForEach: true }],
     'object-shorthand': 2,
     'no-unneeded-ternary': [2, { defaultAssignment: false }],
@@ -256,8 +256,20 @@ const getBaseEslintHandPickedRules = (noRestrictedSyntaxOverride) => {
         ? noRestrictedSyntaxOverride.adjuncts
         : []),
     ],
-    'no-undef': 0, // typescript already takes care of this. See: https://typescript-eslint.io/docs/linting/troubleshooting/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
-    'no-dupe-class-members': 0, // typescript already takes care of this.
+    'no-undef': 0, // already handled by Typescript
+    'no-dupe-class-members': 0, // already handled by Typescript.
+    'constructor-super': 0, // already handled by Typescript.
+    'getter-return': 0, // already handled by Typescript.
+    'no-const-assign': 0, // already handled by Typescript.
+    'no-dupe-args': 0, // already handled by Typescript.
+    'no-dupe-keys': 0, // already handled by Typescript.
+    'no-func-assign': 0, // already handled by Typescript.
+    'no-new-symbol': 0, // already handled by Typescript.
+    'no-obj-calls': 0, // already handled by Typescript.
+    'no-setter-return': 0, // already handled by Typescript.
+    'no-this-before-super': 0, // already handled by Typescript.
+    'no-unreachable': 0, // already handled by Typescript.
+    'no-unsafe-negation': 0, // already handled by Typescript.
     'no-return-await': 0, // we are using the @typescript/eslint version
     'no-throw-literal': 0, // we are using the @typescript/eslint version
     'no-use-before-define': 0, // we are using the @typescript/eslint version
