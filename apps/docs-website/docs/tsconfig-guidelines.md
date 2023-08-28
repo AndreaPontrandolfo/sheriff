@@ -21,7 +21,7 @@ If you don't know much about `TSConfig` and you are uncertain, this can be a goo
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "build", "coverage"], // this is already a good deafult. Generally you want to put here build artifacts. Some other possible build artifacts are: "artifacts", "lib"...
+  "exclude": ["node_modules", "dist", "build", "coverage"], // this is already a good default. Generally you want to put here build artifacts. Some other possible build artifacts are: "artifacts", "lib"...
   "compilerOptions": {
     "target": "es6",
     "module": "nodenext",

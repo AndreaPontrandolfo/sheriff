@@ -7,7 +7,7 @@ sidebar_position: 16
 ## Why you didn’t include ESLint plugins/rules for "X" library?
 
 - [Cypress](https://github.com/cypress-io/eslint-plugin-cypress) ➜ Don't use [Cypress](https://www.cypress.io/). Use [Playwright](https://playwright.dev/) instead.
-- [Testing library](https://github.com/testing-library/eslint-plugin-testing-library) ➜ I believe Sheriff should not encourage wrong testing practices. In my opinion [testing library](https://github.com/testing-library) is one of the least efficient ways to test UIs, by priciples. In most codebases it does more harm than good. You can use [Storybook](https://github.com/storybookjs/storybook) to test components in isolation and [Playwright](https://playwright.dev/) for any kind of integration and end-to-end tests.
+- [Testing library](https://github.com/testing-library/eslint-plugin-testing-library) ➜ I believe Sheriff should not encourage wrong testing practices. In my opinion [testing library](https://github.com/testing-library) is one of the least efficient ways to test UIs, by principles. In most codebases it does more harm than good. You can use [Storybook](https://github.com/storybookjs/storybook) to test components in isolation and [Playwright](https://playwright.dev/) for any kind of integration and end-to-end tests.
 
 ## Is Sheriff compatible with "X"?
 
