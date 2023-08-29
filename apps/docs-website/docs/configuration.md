@@ -6,84 +6,88 @@ sidebar_position: 9
 
 ## Base options
 
-- The `eslint-config-sheriff` package exports a `sheriff` function.<br />
-  You can configure Sheriff as desired using a simple javascript object as the first input parameter of the `sheriff` function.<br />
-  Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with `create-sheriff-config` some of these values will be inferred automatically from your project.
+The `eslint-config-sheriff` package exports a `sheriff` function.<br />
+You can configure Sheriff as desired using a simple javascript object as the first input parameter of the `sheriff` function.<br />
+Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with `create-sheriff-config` some of these values will be inferred automatically from your project.
 
-  ```js title="eslint.config.js"
-  import sheriff from "eslint-config-sheriff";
-  import { defineFlatConfig } from "eslint-define-config";
+```js title="eslint.config.js"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
 
-  // highlight-start
-  // Sheriff configuration object
-  const sheriffOptions = {
-    react: false,
-    next: false,
-    lodash: false,
-    playwright: false,
-    jest: false,
-    vitest: false,
-  };
-  // highlight-end
+// highlight-start
+// Sheriff configuration object
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+};
+// highlight-end
 
-  export default defineFlatConfig([...sheriff(sheriffOptions)]);
-  ```
+export default defineFlatConfig([...sheriff(sheriffOptions)]);
+```
 
-- You can override any Sheriff rule as desired in the `eslint.config.js` file.<br />
-  For example, let's say you want to disable a Sheriff rule, like `import/first`:
+## Remodeling
 
-  ```js title="eslint.config.js"
-  import sheriff from "eslint-config-sheriff";
-  import { defineFlatConfig } from "eslint-define-config";
+You can override any Sheriff rule as desired in the `eslint.config.js` file.
 
-  const sheriffOptions = {
-    react: false,
-    next: false,
-    lodash: false,
-    playwright: false,
-    jest: false,
-    vitest: false,
-  };
+For example, let's say you want to disable a Sheriff rule, like `import/first`:
 
-  export default defineFlatConfig([
-    ...sheriff(sheriffOptions),
-    {
-      rules: {
-        // highlight-next-line
-        "import/first": 0, // 'import/first' is now disabled everywhere.
-      },
+```js title="eslint.config.js"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+};
+
+export default defineFlatConfig([
+  ...sheriff(sheriffOptions),
+  {
+    rules: {
+      // highlight-next-line
+      "import/first": 0, // 'import/first' is now disabled everywhere.
     },
-  ]);
-  ```
+  },
+]);
+```
 
-  Likewise, let's say you want to enable a new rule:
+Likewise, let's say you want to enable a new rule:
 
-  ```js title="eslint.config.js"
-  import sheriff from "eslint-config-sheriff";
-  import { defineFlatConfig } from "eslint-define-config";
+```js title="eslint.config.js"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
 
-  const sheriffOptions = {
-    react: false,
-    next: false,
-    lodash: false,
-    playwright: false,
-    jest: false,
-    vitest: false,
-  };
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+};
 
-  export default defineFlatConfig([
-    ...sheriff(sheriffOptions),
-    {
-      rules: {
-        // highlight-next-line
-        "import/first": 2, // 'import/first' is now enabled everywhere.
-      },
+export default defineFlatConfig([
+  ...sheriff(sheriffOptions),
+  {
+    rules: {
+      // highlight-next-line
+      "import/first": 2, // 'import/first' is now enabled everywhere.
     },
-  ]);
-  ```
+  },
+]);
+```
 
-  This is just the standard behavior of the new configuration system of ESLint, which I'm illustrating here for your convenience. Sheriff doesn't alter this in any way.<br />
-  For more in-depth information, refer to the [official docs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new).
+This is just the standard behavior of the new configuration system of ESLint, which I'm illustrating here for your convenience. Sheriff doesn't alter this in any way.
+
+For more in-depth information, refer to the [official docs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new).
 
 ## Advanced configuration options
 
