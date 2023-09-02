@@ -1,0 +1,1 @@
+export { getExportableConfig } from './getExportableConfig';

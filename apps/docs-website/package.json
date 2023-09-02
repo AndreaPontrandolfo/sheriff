@@ -34,6 +34,7 @@
   "devDependencies": {
     "@docusaurus/eslint-plugin": "^2.4.1",
     "@docusaurus/module-type-aliases": "2.4.1",
+    "@docusaurus/types": "^2.4.1",
     "@sheriff/types": "workspace:*",
     "@tsconfig/docusaurus": "^1.0.5",
     "@types/lodash-es": "^4.17.6",

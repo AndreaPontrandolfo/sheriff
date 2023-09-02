@@ -8,13 +8,13 @@ tags: [sheriff, rebranding, docusaurus]
 
 Sheriff, the ESLint sharable config, has exciting news to share!<br />
 With a complete rebranding, a restructured codebase, and exciting plans ahead, Sheriff is set to become an even more essential tool for ensuring code quality and consistency in projects.<br />
-Here's a snapshot of the key changes:
+Let's walkthrough the key changes of this release.
 
 ## Restructured Codebase in a monorepo
 
 The codebase has been restructured into a monorepo setup with [Turborepo](https://turbo.build/repo) + [pnpm workspaces](https://pnpm.io/workspaces), as it allows for the management of multiple related packages under a single repository, streamlining the development process and enabling better coordination between different parts of the project.
 
-As a side-effect, the project now relies on [changesets](https://github.com/changesets/changesets) to manage semantic versioning, in place of [semantic-release](https://github.com/semantic-release/semantic-release)
+As a side-effect, the project now relies on [changesets](https://github.com/changesets/changesets) to manage semantic versioning, in place of [semantic-release](https://github.com/semantic-release/semantic-release).
 
 ## Complete Rebranding
 
