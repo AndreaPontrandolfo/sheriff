@@ -15,7 +15,8 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo build --filter='./packages/*' && changeset publish",
-    "preview-docs": "turbo run serve --filter=docs-website"
+    "preview-docs": "turbo run serve --filter=docs-website",
+    "are-the-types-wrong": "turbo run are-the-types-wrong"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",

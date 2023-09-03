@@ -1,1 +1,1 @@
-export { getExportableConfig } from './getExportableConfig';
+export { getExportableConfig as getSheriffConfig } from './getExportableConfig';

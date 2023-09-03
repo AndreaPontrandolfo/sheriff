@@ -3,7 +3,7 @@
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build": {
-      "dependsOn": ["rulesgen", "^build"],
+      "dependsOn": ["^build"],
       "outputs": [".docusaurus/**", "dist/**"]
     },
     "lint": {},
@@ -23,6 +23,7 @@
       "outputs": ["dist/**"],
       "dependsOn": ["build"]
     },
+    "are-the-types-wrong": {},
     "clean": {
       "cache": false
     },

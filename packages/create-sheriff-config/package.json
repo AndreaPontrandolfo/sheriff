@@ -46,7 +46,7 @@
     "eslint": "^8.46.0",
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^1.23.0",
-    "publint": "^0.2.0",
+    "publint": "^0.2.2",
     "tsup": "^6.2.3",
     "tsx": "^3.9.0"
   },

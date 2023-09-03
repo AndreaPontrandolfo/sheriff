@@ -32,9 +32,9 @@ export type Plugins =
   | {
       [key: string]:
         | {
-            files: string[];
+            files?: string[];
             rules: any;
-            configs: any;
+            configs?: any;
           }
         | undefined;
     }

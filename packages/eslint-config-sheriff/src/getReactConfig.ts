@@ -1,10 +1,10 @@
+import react from 'eslint-plugin-react';
+import reactAccessibility from 'eslint-plugin-jsx-a11y';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
 import { supportedFileTypes } from './constants';
 import { getTsNamingConventionRule } from './getTsNamingConventionRule';
 import { reactHandPickedRules } from './reactHandPickedRules';
-const react = require('eslint-plugin-react');
-const reactAccessibility = require('eslint-plugin-jsx-a11y');
-const reactHooks = require('eslint-plugin-react-hooks');
-const reactRefresh = require('eslint-plugin-react-refresh');
 import { getLanguageOptionsTypescriptReact } from './getExportableConfig';
 
 export const getReactConfig = (customTSConfigPath?: string) => {

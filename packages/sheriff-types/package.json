@@ -23,11 +23,8 @@
   },
   "devDependencies": {
     "@types/node": "20.4.0",
-    "eslint": "^8.47.0",
-    "eslint-config-sheriff": "workspace:*",
-    "eslint-define-config": "^1.23.0",
     "prettier": "^3.0.0",
-    "publint": "^0.1.11",
+    "publint": "^0.2.2",
     "type-fest": "^3.9.0",
     "typescript": "5.1.6"
   }

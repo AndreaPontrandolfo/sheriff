@@ -1,3 +1,21 @@
+import eslintRecommended from '@eslint/js';
+import typescriptParser from '@typescript-eslint/parser';
+import typescript from '@typescript-eslint/eslint-plugin';
+import unicorn from 'eslint-plugin-unicorn';
+import sonarjs from 'eslint-plugin-sonarjs';
+import playwright from 'eslint-plugin-playwright';
+import jsdoc from 'eslint-plugin-jsdoc';
+import lodash from 'eslint-plugin-lodash-f';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import pluginImport from 'eslint-plugin-import';
+import nextjs from '@next/eslint-plugin-next';
+import fp from 'eslint-plugin-fp';
+import jest from 'eslint-plugin-jest';
+import vitest from 'eslint-plugin-vitest';
+import etc from 'eslint-plugin-etc';
+import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
+import tsdoc from 'eslint-plugin-tsdoc';
+import storybook from 'eslint-plugin-storybook';
 import { allJsExtensions, supportedFileTypes, ignores } from './constants';
 import { etcHandPickedRules } from './etcHandPickedRules';
 import { fpHandPickedRules } from './fpHandPickedRules';
@@ -18,25 +36,6 @@ import {
   NoRestrictedSyntaxOverride,
   SheriffSettings,
 } from '@sheriff/types';
-
-const eslintRecommended = require('@eslint/js');
-const typescriptParser = require('@typescript-eslint/parser');
-const typescript = require('@typescript-eslint/eslint-plugin');
-const unicorn = require('eslint-plugin-unicorn');
-const sonarjs = require('eslint-plugin-sonarjs');
-const playwright = require('eslint-plugin-playwright');
-const jsdoc = require('eslint-plugin-jsdoc');
-const lodash = require('eslint-plugin-lodash-f');
-const eslintConfigPrettier = require('eslint-config-prettier');
-const pluginImport = require('eslint-plugin-import');
-const nextjs = require('@next/eslint-plugin-next');
-const fp = require('eslint-plugin-fp');
-const jest = require('eslint-plugin-jest');
-const vitest = require('eslint-plugin-vitest');
-const etc = require('eslint-plugin-etc');
-const preferEarlyReturn = require('@regru/eslint-plugin-prefer-early-return');
-const tsdoc = require('eslint-plugin-tsdoc');
-const storybook = require('eslint-plugin-storybook');
 
 const getLanguageOptionsTypescript = (userChosenTSConfig?: string) => {
   return {
