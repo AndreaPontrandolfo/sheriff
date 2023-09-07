@@ -9,9 +9,9 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "publint": "turbo run publint --concurrency=1",
-    "clean": "turbo run clean",
+    "cleanall": "turbo run clean",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",
-    "nuke": "pnpm clean && pnpm delete-node-modules",
+    "nuke": "pnpm cleanall && pnpm delete-node-modules",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo build --filter='./packages/*' && changeset publish",
@@ -24,7 +24,7 @@
     "prettier": "^3.0.1",
     "turbo": "^1.10.12"
   },
-  "packageManager": "pnpm@8.6.10",
+  "packageManager": "pnpm@8.7.0",
   "engines": {
     "node": ">=18.0.0"
   },
