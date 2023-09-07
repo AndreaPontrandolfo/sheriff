@@ -11,9 +11,9 @@ If you don't know much about `TSConfig` and you are uncertain, this can be a goo
 
 ## Resources
 
-- in [this project](https://github.com/tsconfig/bases/tree/main) you can find a lot of `TSConfig` examples for different scenarios.
-- If you are having hard-to-debug issues, consider using [these debugging tools](https://www.typescriptlang.org/tsconfig#Compiler_Diagnostics_6251).
-- for any doubt, make sure to check out the official [TSConfigs documentation](https://www.typescriptlang.org/tsconfig).
+- in [this project](https://github.com/tsconfig/bases/tree/main) you can find a lot of `TSConfig` examples for different scenarios
+- If you are having hard-to-debug issues, consider using [these debugging tools](https://www.typescriptlang.org/tsconfig#Compiler_Diagnostics_6251)
+- for any doubt, make sure to check out the official [TSConfigs documentation](https://www.typescriptlang.org/tsconfig)
 
 ## Sheriff's TSConfig reference
 

@@ -21,9 +21,9 @@ Sheriff is a Typescript-first library, and as such, it support only Typescript c
 
 ## Key points
 
-- This library is pioneering in the adoption of the ESLint `FlatConfig`, [introduced in ESLint v8.23.0](https://eslint.org/blog/2022/08/eslint-v8.23.0-released/).
-- Sheriff is very easy to get started with and use. It promotes a _“zero overhead approach”_. See: [philosophy](./core-philosophy/criteria.md).
-- Sheriff is a [_"plug & play"_](./setup/automatic-setup.mdx) solution but you can customize it as much as you want. See: [features](./features.md).
+- This library is pioneering in the adoption of the ESLint `FlatConfig`, [introduced in ESLint v8.23.0](https://eslint.org/blog/2022/08/eslint-v8.23.0-released/)
+- Sheriff is very easy to get started with and use. It promotes a _“zero overhead approach”_. See: [philosophy](./core-philosophy/criteria.md)
+- Sheriff is a [_"plug & play"_](./setup/automatic-setup.mdx) solution but you can customize it as much as you want. See: [features](./features.md)
 
 ## Trivia
 

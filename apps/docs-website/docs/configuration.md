@@ -125,7 +125,7 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ESLint has a very useful rule called `no-restricted-syntax`. It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to opt-out.
 Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, if you need to customize it, you have a few options:
 
-- override the rule in full: you provide your own `no-restricted-syntax` rule. You can do this as normal, appending the rule to the `FlatConfig` array.
+- override the rule in full: you provide your own `no-restricted-syntax` rule. You can do this as normal, appending the rule to the `FlatConfig` array
 - extend the Sheriff version of `no-restricted-syntax`: use the key `noRestrictedSyntaxOverride.adjuncts` in the Sheriff configuration object. Example:
 
   ```js title="eslint.config.js"

@@ -9,4 +9,4 @@ description: You probably need this too
 - [VScode](https://code.visualstudio.com/)
 - [VScode eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [VScode prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- Either `strict: true` or at least `strictNullChecks: true` in `tsconfig`. Some `@typescript/eslint` rules requires `strictNullChecks` turned on. This shouldn't be a problem because Sheriff is meant to be used with `strict` turned on anyway.
+- Either `strict: true` or at least `strictNullChecks: true` in `tsconfig`. Some `@typescript/eslint` rules requires `strictNullChecks` turned on. This shouldn't be a problem because Sheriff is meant to be used with `strict` turned on anyway
