@@ -125,69 +125,80 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ESLint has a very useful rule called `no-restricted-syntax`. It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to opt-out.
 Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, if you need to customize it, you have a few options:
 
-- override the rule in full: you provide your own `no-restricted-syntax` rule. You can do this as normal, appending the rule to the `FlatConfig` array.
-- extend the Sheriff version of `no-restricted-syntax`: use the key `noRestrictedSyntaxOverride.adjuncts` in the Sheriff configuration object. Example:
+#### Override the rule in full
 
-  ```js title="eslint.config.js"
-  import sheriff from "eslint-config-sheriff";
-  import { defineFlatConfig } from "eslint-define-config";
+You provide your own `no-restricted-syntax` rule. You can do this as normal, appending the rule to the `FlatConfig` array.
 
-  const sheriffOptions = {
-    react: false,
-    next: false,
-    lodash: false,
-    playwright: false,
-    jest: false,
-    vitest: false,
-    // highlight-start
-    noRestrictedSyntaxOverride: {
-      adjuncts: [
-        {
-          selector: "LabeledStatement",
-          message:
-            "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
-        },
-        {
-          selector: "ForInStatement",
-          message:
-            "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",
-        },
-        {
-          selector: "Identifier[name='Reflect']",
-          message:
-            "Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development.",
-        },
-      ],
-    },
-    // highlight-end
-  };
+#### Extend the Sheriff version of `no-restricted-syntax`
 
-  export default defineFlatConfig([...sheriff(sheriffOptions)]);
-  ```
+Use the key `noRestrictedSyntaxOverride.adjuncts` in the Sheriff configuration object.
 
-- shrink the Sheriff version of `no-restricted-syntax`: use the key `noRestrictedSyntaxOverride.allows` in the Sheriff configuration object. Example:
+Example:
 
-  ```js title="eslint.config.js"
-  import sheriff from "eslint-config-sheriff";
-  import { defineFlatConfig } from "eslint-define-config";
+```js title="eslint.config.js"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
 
-  const sheriffOptions = {
-    react: false,
-    next: false,
-    lodash: false,
-    playwright: false,
-    jest: false,
-    vitest: false,
-    // highlight-start
-    noRestrictedSyntaxOverride: {
-      allows: [
-        "LabeledStatement",
-        "ForInStatement",
-        "Identifier[name='Reflect']",
-      ],
-    },
-    // highlight-end
-  };
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  // highlight-start
+  noRestrictedSyntaxOverride: {
+    adjuncts: [
+      {
+        selector: "LabeledStatement",
+        message:
+          "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
+      },
+      {
+        selector: "ForInStatement",
+        message:
+          "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",
+      },
+      {
+        selector: "Identifier[name='Reflect']",
+        message:
+          "Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development.",
+      },
+    ],
+  },
+  // highlight-end
+};
 
-  export default defineFlatConfig([...sheriff(sheriffOptions)]);
-  ```
+export default defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+#### Shrink the Sheriff version of `no-restricted-syntax`
+
+Use the key `noRestrictedSyntaxOverride.allows` in the Sheriff configuration object.
+
+Example:
+
+```js title="eslint.config.js"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  // highlight-start
+  noRestrictedSyntaxOverride: {
+    allows: [
+      "LabeledStatement",
+      "ForInStatement",
+      "Identifier[name='Reflect']",
+    ],
+  },
+  // highlight-end
+};
+
+export default defineFlatConfig([...sheriff(sheriffOptions)]);
+```

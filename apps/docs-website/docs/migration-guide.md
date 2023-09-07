@@ -6,10 +6,10 @@ sidebar_position: 14
 
 If you are setting up Sheriff in an already established codebase, follow these steps:
 
-1. Start by running the `create-sheriff-config` command and follow the advices that it prints in the console.
-1. Make sure that the only eslint config file present in any workspace is the `eslint.config.js`.
-1. If you want to keep your existing custom rules on-top of Sheriff, move them to the `eslint.config.js`, after the `sheriff` config, so they will override it. Refer to the [configuration instructions](./configuration.md).
-1. Make sure to uninstall all the packages that Sheriff already incorporates out-of-the-box. [Here](./eslint-plugins.md) is the list.
+1. Start by running the `create-sheriff-config` command and follow the advices that it prints in the console
+1. Make sure that the only eslint config file present in any workspace is the `eslint.config.js`
+1. If you want to keep your existing custom rules on-top of Sheriff, move them to the `eslint.config.js`, after the `sheriff` config, so they will override it. Refer to the [configuration instructions](./configuration.md)
+1. Make sure to uninstall all the packages that Sheriff already incorporates out-of-the-box. [Here](./eslint-plugins.md) is the list
 
 ## Progressive adoption story
 
@@ -43,4 +43,4 @@ You can achieve this by leveraging 2 techniques:
 
   :::
 
-- use [eslint-interactive](https://github.com/mizdra/eslint-interactive).
+- use [eslint-interactive](https://github.com/mizdra/eslint-interactive)
