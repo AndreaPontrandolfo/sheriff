@@ -65,8 +65,14 @@ export const getBaseEslintHandPickedRules = (
     'prefer-destructuring': [
       2,
       {
-        array: false,
-        object: true,
+        VariableDeclarator: {
+          array: false,
+          object: true,
+        },
+        AssignmentExpression: {
+          array: false,
+          object: false,
+        },
       },
       {
         enforceForRenamedProperties: false,
