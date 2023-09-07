@@ -1,6 +1,8 @@
-const getFilteredBaseNoRestrictedSyntax = (
-  baseNoRestrictedSyntaxRules,
-  userProvidedNoRestrictedSyntaxSelectors,
+import { NoRestrictedSyntaxSlice } from '@sheriff/types';
+
+export const getFilteredBaseNoRestrictedSyntax = (
+  baseNoRestrictedSyntaxRules: NoRestrictedSyntaxSlice[],
+  userProvidedNoRestrictedSyntaxSelectors?: string[],
 ) => {
   if (
     !userProvidedNoRestrictedSyntaxSelectors ||
@@ -15,5 +17,3 @@ const getFilteredBaseNoRestrictedSyntax = (
 
   return filteredList;
 };
-
-module.exports = { getFilteredBaseNoRestrictedSyntax };

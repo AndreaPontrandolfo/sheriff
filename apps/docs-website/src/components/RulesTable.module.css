@@ -90,7 +90,7 @@
   vertical-align: middle;
   cursor: pointer;
   margin-right: 5px;
-  top: -1px;
+  top: -2px;
 }
 
 .nativeCheckboxDisabled label:before {

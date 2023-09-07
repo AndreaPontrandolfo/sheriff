@@ -2,18 +2,20 @@
   "name": "eslint-config-sheriff",
   "version": "14.4.0",
   "description": "A comprehensive ESLint configuration.",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "require": "./index.js",
-      "import": "./index.js"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
     }
   },
   "files": [
-    "index.js",
-    "configs",
-    "utils"
+    "dist",
+    "CHANGELOG.md"
   ],
   "author": {
     "name": "Andrea Pontrandolfo",
@@ -45,9 +47,10 @@
   "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "generate-typings": "tsc --declaration --allowJs --emitDeclarationOnly --declarationMap --outDir types",
+    "build": "tsup",
     "publint": "publint",
-    "clean": "rm -rf .turbo && rm -rf dist "
+    "are-the-types-wrong": "attw --pack .",
+    "clean": "rm -rf .turbo dist"
   },
   "dependencies": {
     "@eslint/js": "^8.44.0",
@@ -84,8 +87,14 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.9.0",
+    "@sheriff/types": "workspace:*",
+    "@types/eslint": "^8.44.2",
+    "@types/node": "^20.5.7",
     "husky": "^8.0.0",
-    "publint": "^0.2.0",
+    "publint": "^0.2.2",
+    "tsconfig": "workspace:*",
+    "tsup": "^6.2.3",
     "typescript": "5.1.6"
   },
   "publishConfig": {

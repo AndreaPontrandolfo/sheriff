@@ -13,5 +13,11 @@
     "typescriptreact",
     "mdx",
     "markdown"
+  ],
+  "json.schemas": [
+    {
+      "url": "https://cdn.jsdelivr.net/npm/tsup/schema.json",
+      "fileMatch": ["package.json", "tsup.config.json"]
+    }
   ]
 }

@@ -1,3 +1,13 @@
+export interface NoRestrictedSyntaxSlice {
+  selector: string;
+  message: string;
+}
+
+export interface NoRestrictedSyntaxOverride {
+  adjuncts: NoRestrictedSyntaxSlice[];
+  allows: string[];
+}
+
 export interface Entry {
   ruleName: string;
   parentPluginName: string;
@@ -22,9 +32,9 @@ export type Plugins =
   | {
       [key: string]:
         | {
-            files: string[];
+            files?: string[];
             rules: any;
-            configs: any;
+            configs?: any;
           }
         | undefined;
     }
@@ -32,9 +42,57 @@ export type Plugins =
   | undefined;
 
 export interface BarebonesConfigAtom {
-  rules: Record<string, RuleOptions> | undefined;
-  plugins: Plugins;
-  files: string[] | undefined;
+  rules?: Record<string, RuleOptions> | undefined;
+  plugins?: Plugins;
+  files?: string[] | undefined;
+}
+
+export interface ExportableConfigAtom {
+  rules?: Record<string, any>;
+  plugins?: Plugins;
+  files?: string[];
+  languageOptions?: Record<string, unknown>;
+  settings?: Record<string, unknown>;
+  ignores?: string[];
 }
 
 export type RuleOptionsConfig = (Record<string, any> | string)[];
+
+export interface SheriffSettings {
+  /**
+   * React support.
+   */
+  react?: boolean;
+  /**
+   * Lodash support.
+   */
+  lodash?: boolean;
+  /**
+   * Nextjs support.
+   */
+  next?: boolean;
+  /**
+   * Playwright support.
+   */
+  playwright?: boolean;
+  /**
+   * Jest support. Select this or vitest, not both.
+   */
+  jest?: boolean;
+  /**
+   * Vitest support. Select this or jest, not both.
+   */
+  vitest?: boolean;
+  /**
+   * With this settings, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config Sheriff will pickup.
+   */
+  customTSConfigPath?: string;
+  /**
+   * This setting accepts an array of filepaths, dictaced by minimatch syntax. Only the matching files found in this array will be linted. All other files will be ignored. This is useful if you want to lint only a subset of your project.
+   */
+  files?: string[];
+  /**
+   * This setting allows you to override the default no-restricted-syntax rule configuration. You can add your own rules to the existing ones, or you can override the existing ones. You can also disable the existing ones by adding them to the allows array.
+   */
+  noRestrictedSyntaxOverride?: NoRestrictedSyntaxOverride;
+}

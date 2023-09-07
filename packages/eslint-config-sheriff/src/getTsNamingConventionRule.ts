@@ -1,0 +1,57 @@
+interface GetTsNamingConventionRuleOptions {
+  isTsx: boolean;
+}
+
+export const getTsNamingConventionRule = ({
+  isTsx,
+}: GetTsNamingConventionRuleOptions) => {
+  return {
+    '@typescript-eslint/naming-convention': [
+      2,
+      {
+        selector: 'default',
+        format: ['camelCase', isTsx && 'StrictPascalCase'].filter(Boolean),
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      {
+        selector: 'variable',
+        format: ['camelCase', 'UPPER_CASE'],
+        modifiers: ['const'],
+        types: ['boolean', 'string', 'number'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      {
+        selector: 'objectLiteralProperty',
+        format: null,
+        leadingUnderscore: 'allowSingleOrDouble',
+        trailingUnderscore: 'forbid',
+      },
+      {
+        selector: 'typeLike',
+        format: ['PascalCase'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      // https://typescript-eslint.io/rules/naming-convention/#enforce-that-boolean-variables-are-prefixed-with-an-allowed-verb
+      {
+        selector: 'variable',
+        types: ['boolean'],
+        format: ['camelCase'],
+        prefix: ['is', 'has', 'should', 'can'],
+        leadingUnderscore: 'forbid',
+        trailingUnderscore: 'forbid',
+      },
+      {
+        selector: 'variable',
+        modifiers: ['destructured'],
+        format: null,
+      },
+      {
+        selector: 'typeProperty',
+        format: null,
+      },
+    ],
+  };
+};
