@@ -42,9 +42,9 @@ export type Plugins =
   | undefined;
 
 export interface BarebonesConfigAtom {
-  rules: Record<string, RuleOptions> | undefined;
-  plugins: Plugins;
-  files: string[] | undefined;
+  rules?: Record<string, RuleOptions> | undefined;
+  plugins?: Plugins;
+  files?: string[] | undefined;
 }
 
 export interface ExportableConfigAtom {
@@ -94,5 +94,5 @@ export interface SheriffSettings {
   /**
    * This setting allows you to override the default no-restricted-syntax rule configuration. You can add your own rules to the existing ones, or you can override the existing ones. You can also disable the existing ones by adding them to the allows array.
    */
-  noRestrictedSyntaxOverride: NoRestrictedSyntaxOverride;
+  noRestrictedSyntaxOverride?: NoRestrictedSyntaxOverride;
 }

@@ -93,6 +93,7 @@
     "@types/node": "^20.5.7",
     "husky": "^8.0.0",
     "publint": "^0.2.2",
+    "tsconfig": "workspace:*",
     "tsup": "^6.2.3",
     "typescript": "5.1.6"
   },

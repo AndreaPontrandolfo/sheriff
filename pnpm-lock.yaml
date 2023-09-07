@@ -175,6 +175,9 @@ importers:
       publint:
         specifier: ^0.2.2
         version: 0.2.2
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
       tsup:
         specifier: ^6.2.3
         version: 6.2.3(typescript@4.8.4)
@@ -275,6 +278,9 @@ importers:
       publint:
         specifier: ^0.2.2
         version: 0.2.2
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
       tsup:
         specifier: ^6.2.3
         version: 6.2.3(typescript@5.1.6)
@@ -287,21 +293,15 @@ importers:
       '@types/node':
         specifier: 20.4.0
         version: 20.4.0
-      eslint:
-        specifier: ^8.47.0
-        version: 8.47.0
-      eslint-config-sheriff:
-        specifier: ^14.4.0
-        version: link:../eslint-config-sheriff
-      eslint-define-config:
-        specifier: ^1.23.0
-        version: 1.23.0
       prettier:
         specifier: ^3.0.0
         version: 3.0.1
       publint:
         specifier: ^0.2.2
         version: 0.2.2
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
       type-fest:
         specifier: ^3.9.0
         version: 3.9.0
@@ -338,6 +338,9 @@ importers:
       publint:
         specifier: ^0.2.2
         version: 0.2.2
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
       tsx:
         specifier: ^3.9.0
         version: 3.9.0
