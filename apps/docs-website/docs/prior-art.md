@@ -17,13 +17,14 @@ After exploring every possible alternative, i came to the conclusion that none o
 
 ## Related projects
 
-- [eslint-config-galex](https://github.com/ljosberinn/eslint-config-galex)
-- [eslint-kit](https://github.com/eslint-kit/eslint-kit)
-- [eslint-config-everywhere](https://github.com/locol23/eslint-config-everywhere)
+- [eslint-config-airbnb-typescript](https://github.com/iamturns/eslint-config-airbnb-typescript)
 - [xo](https://github.com/xojs/xo)
+- [eslint-kit](https://github.com/eslint-kit/eslint-kit)
+- [eslint-config-galex](https://github.com/ljosberinn/eslint-config-galex)
+- [eslint-config-hardcore](https://github.com/EvgenyOrekhov/eslint-config-hardcore)
+- [eslint-config-everywhere](https://github.com/locol23/eslint-config-everywhere)
 - [eslint-plugin-canonical](https://github.com/gajus/eslint-plugin-canonical)
 - [eslint-prettier-typescript-config](https://github.com/moia-oss/eslint-prettier-typescript-config)
-- [eslint-config-airbnb-typescript](https://github.com/iamturns/eslint-config-airbnb-typescript)
 
 ## Comparisons
 
