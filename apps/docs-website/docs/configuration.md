@@ -100,7 +100,7 @@ Covered here: [♻ Migration guide](./migration-guide.md)
 ### "customTSConfigPath" option
 
 If you have multiple `tsconfig.json` files in your project (like `tsconfig.json`, `tsconfig.eslint.json`, `tsconfig.node.json`, etc...) you can specify which config Sheriff will pickup with the `customTSConfigPath` option.
-You can pass the path to it as a string in the `sheriffOptions` object. Example:
+You can pass the path to it as a string (or as a array of strings, see: [one-tsconfigjson-per-package](https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root)) in the `sheriffOptions` object. Example:
 
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";

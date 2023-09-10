@@ -7,7 +7,7 @@ import { getTsNamingConventionRule } from './getTsNamingConventionRule';
 import { reactHandPickedRules } from './reactHandPickedRules';
 import { getLanguageOptionsTypescriptReact } from './getExportableConfig';
 
-export const getReactConfig = (customTSConfigPath?: string) => {
+export const getReactConfig = (customTSConfigPath?: string | string[]) => {
   return [
     {
       files: [supportedFileTypes],

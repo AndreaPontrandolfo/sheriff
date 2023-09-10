@@ -86,7 +86,7 @@ export interface SheriffSettings {
   /**
    * With this settings, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config Sheriff will pickup.
    */
-  customTSConfigPath?: string;
+  customTSConfigPath?: string | string[];
   /**
    * This setting accepts an array of filepaths, dictaced by minimatch syntax. Only the matching files found in this array will be linted. All other files will be ignored. This is useful if you want to lint only a subset of your project.
    */
