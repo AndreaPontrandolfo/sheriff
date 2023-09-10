@@ -105,10 +105,11 @@ As outlined in the [criteria](./core-philosophy/criteria.md) page, Sheriff comes
 
 #### `pathsOveriddes.tsconfigLocation`
 
-By default, Sheriff will use the `project: true` option to locate the TSConfig of your project.
+By default, Sheriff will use the `project: true` option to locate the `tsconfig.json` of your project.
 
-But, if you have multiple `tsconfig.json` files in your project (like `tsconfig.json`, `tsconfig.eslint.json`, `tsconfig.node.json`, etc...), you can specify which config Sheriff will pickup with the `customTSConfigPath` option.
-You can pass the path to it as a string (or as a array of strings, see: [one-tsconfigjson-per-package](https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root)) in the `sheriffOptions` object.
+But, if you have multiple `tsconfig.json` files in your project (like `tsconfig.json`, `tsconfig.eslint.json`, `tsconfig.node.json`, etc...), you can use this parameter to specify which config Sheriff will pickup.
+
+You can pass it a path as a string (or a list of paths as a array of strings, see: [one-tsconfigjson-per-package](https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root)).
 
 Example:
 
@@ -123,8 +124,10 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-  // highlight-next-line
-  customTSConfigPath: "./tsconfig.eslint.json",
+  pathsOveriddes: {
+    // highlight-next-line
+    tsconfigLocation: "./tsconfig.eslint.json",
+  },
 };
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
@@ -138,11 +141,37 @@ This setting overrides this default.
 
 It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax.
 
+Example:
+
+```js title="eslint.config.js"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  pathsOveriddes: {
+    // highlight-start
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/mySpecialFolder/**",
+    ],
+    // highlight-end
+  },
+};
+```
+
 #### `pathsOveriddes.tests`
 
 By default, Sheriff will apply Jest or Vitest rules only on specific files.
 
-```ts
+```ts title="paths for test files"
 [
   "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
   "**/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
@@ -153,6 +182,31 @@ By default, Sheriff will apply Jest or Vitest rules only on specific files.
 This setting overrides this default.
 
 It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax.
+
+Example:
+
+```js title="eslint.config.js"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  pathsOveriddes: {
+    // highlight-start
+    tests: [
+      "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+      "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+      "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    ];
+    // highlight-end
+  },
+};
+```
 
 ### `noRestrictedSyntaxOverride` option
 
