@@ -7,4 +7,4 @@ description: The bare minimum
 
 - [Node >=16](https://nodejs.org/en/)
 - [ESLint >=8.38.0](https://eslint.org/)
-- [Typescript](https://www.typescriptlang.org/)
+- [Typescript >= 5.0.0](https://www.typescriptlang.org/)

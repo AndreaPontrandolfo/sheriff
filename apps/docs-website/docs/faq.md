@@ -19,7 +19,7 @@ sidebar_position: 16
   DISABLE_ESLINT_PLUGIN=true
   ```
 
-- [Rome](https://rome.tools/) ➜ No. Rome is not compatible with ESLint in the first place
+- [Biome](https://biomejs.dev/) ➜ No. Biome is not compatible with ESLint in the first place
 - [Deno](https://deno.land/) ➜ No. Deno is not compatible with ESLint in the first place
 - [Bun](https://bun.sh/) ➜ Untested
 

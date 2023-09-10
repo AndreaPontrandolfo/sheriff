@@ -84,9 +84,22 @@ export interface SheriffSettings {
    */
   vitest?: boolean;
   /**
-   * With this settings, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config Sheriff will pickup.
+   * This parameter allows you to override the paths for some Sheriff settings.
    */
-  customTSConfigPath?: string | string[];
+  pathsOveriddes?: {
+    /**
+     * With this setting, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config Sheriff will pickup. You can also specify a list of paths, see: https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root.
+     */
+    tsconfigLocation?: string | string[];
+    /**
+     * This setting overrides the default Sheriff "ignores" filepaths. It accepts an array of filepaths, dictaced by minimatch syntax. Sheriff will ignore these files.
+     */
+    ignores?: string[];
+    /**
+     * This setting overrides the default Sheriff filepaths for test files. It accepts an array of filepaths, dictaced by minimatch syntax. Sheriff will apply Jest or Vitest rules only on these files.
+     */
+    tests?: string[];
+  };
   /**
    * This setting accepts an array of filepaths, dictaced by minimatch syntax. Only the matching files found in this array will be linted. All other files will be ignored. This is useful if you want to lint only a subset of your project.
    */

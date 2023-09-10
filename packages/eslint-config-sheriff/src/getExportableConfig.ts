@@ -95,35 +95,39 @@ const playwrightConfig = {
   },
 };
 
-const jestConfig = {
-  files: [
-    `**/*.{test,spec}.{${allJsExtensions}}`,
-    `**/tests/**`,
-    `**/__tests__/**`,
-  ],
-  plugins: {
-    jest,
-  },
-  languageOptions: {
-    globals: jest.environments.globals.globals,
-  },
-  rules: {
-    ...jest.configs.style.rules,
-    ...jestHandPickedRules,
-    '@typescript-eslint/unbound-method': 0, // see reference: https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
-  },
+const getJestConfig = (pathsOverrides?: string[]) => {
+  return {
+    files: pathsOverrides ?? [
+      `**/*.{test,spec}.{${allJsExtensions}}`,
+      `**/tests/**/*.{${allJsExtensions}}`,
+      `**/__tests__/**/*.{${allJsExtensions}}`,
+    ],
+    plugins: {
+      jest,
+    },
+    languageOptions: {
+      globals: jest.environments.globals.globals,
+    },
+    rules: {
+      ...jest.configs.style.rules,
+      ...jestHandPickedRules,
+      '@typescript-eslint/unbound-method': 0, // see reference: https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
+    },
+  };
 };
 
-const vitestConfig = {
-  files: [
-    `**/*.{test,spec}.{${allJsExtensions}}`,
-    `**/tests/**`,
-    `**/__tests__/**`,
-  ],
-  plugins: {
-    vitest,
-  },
-  rules: vitestHandPickedRules,
+const getVitestConfig = (pathsOverrides?: string[]) => {
+  return {
+    files: pathsOverrides ?? [
+      `**/*.{test,spec}.{${allJsExtensions}}`,
+      `**/tests/**/*.{${allJsExtensions}}`,
+      `**/__tests__/**/*.{${allJsExtensions}}`,
+    ],
+    plugins: {
+      vitest,
+    },
+    rules: vitestHandPickedRules,
+  };
 };
 
 const prettierOverrides = {
@@ -267,7 +271,7 @@ export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
 
   let exportableConfig: ExportableConfigAtom[] = [
     ...getBaseConfig(
-      userConfigChoices.customTSConfigPath,
+      userConfigChoices.pathsOveriddes?.tsconfigLocation,
       userConfigChoices.noRestrictedSyntaxOverride,
     ),
   ];
@@ -276,7 +280,7 @@ export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
     // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
     exportableConfig = [
       ...exportableConfig,
-      ...getReactConfig(userConfigChoices?.customTSConfigPath),
+      ...getReactConfig(userConfigChoices.pathsOveriddes?.tsconfigLocation),
     ];
   }
 
@@ -287,11 +291,15 @@ export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
   }
 
   if (userConfigChoices.jest) {
-    exportableConfig.push(jestConfig);
+    exportableConfig.push(
+      getJestConfig(userConfigChoices.pathsOveriddes?.tests),
+    );
   }
 
   if (userConfigChoices.vitest) {
-    exportableConfig.push(vitestConfig);
+    exportableConfig.push(
+      getVitestConfig(userConfigChoices.pathsOveriddes?.tests),
+    );
   }
 
   if (userConfigChoices.next) {
@@ -326,7 +334,9 @@ export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
     });
   }
 
-  exportableConfig.push({ ignores });
+  exportableConfig.push({
+    ignores: userConfigChoices.pathsOveriddes?.ignores ?? ignores,
+  });
 
   return exportableConfig;
 };
