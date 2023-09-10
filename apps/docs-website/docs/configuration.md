@@ -165,6 +165,8 @@ const sheriffOptions = {
     // highlight-end
   },
 };
+
+export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
 
 #### `pathsOveriddes.tests`
@@ -206,6 +208,8 @@ const sheriffOptions = {
     // highlight-end
   },
 };
+
+export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
 
 ### `noRestrictedSyntaxOverride` option
