@@ -53,12 +53,12 @@
     "clean": "rm -rf .turbo dist"
   },
   "dependencies": {
-    "@eslint/js": "^8.44.0",
+    "@eslint/js": "^8.49.0",
     "@next/eslint-plugin-next": "^13.2.3",
     "@regru/eslint-plugin-prefer-early-return": "^1.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.61.0",
-    "eslint": "8.44.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-etc": "^2.0.2",
@@ -80,7 +80,7 @@
   },
   "peerDependencies": {
     "eslint": ">=8.23.0",
-    "typescript": ">=4.0.0"
+    "typescript": ">=5.0.0"
   },
   "engines": {
     "node": ">=16"
@@ -95,7 +95,7 @@
     "publint": "^0.2.2",
     "tsconfig": "workspace:*",
     "tsup": "^6.2.3",
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   },
   "publishConfig": {
     "access": "public"

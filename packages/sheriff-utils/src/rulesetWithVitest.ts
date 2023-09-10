@@ -671,14 +671,234 @@ export const ruleset = [
     }
   },
   {
-    "ruleName": "@typescript-eslint/adjacent-overload-signatures",
+    "ruleName": "constructor-super",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "getter-return",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-const-assign",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-dupe-args",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-dupe-class-members",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow duplicate class members",
+      "url": "https://typescript-eslint.io/rules/no-dupe-class-members"
+    }
+  },
+  {
+    "ruleName": "no-dupe-keys",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-func-assign",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-import-assign",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-new-symbol",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-obj-calls",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-redeclare",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow variable redeclaration",
+      "url": "https://typescript-eslint.io/rules/no-redeclare"
+    }
+  },
+  {
+    "ruleName": "no-setter-return",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-this-before-super",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-undef",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-unreachable",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-unsafe-negation",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "no-var",
+    "parentPluginName": "@eslint/js",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "prefer-const",
+    "parentPluginName": "@eslint/js",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "prefer-rest-params",
+    "parentPluginName": "@eslint/js",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "prefer-spread",
+    "parentPluginName": "@eslint/js",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "",
+      "url": ""
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/await-thenable",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
     "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
-      "description": "Require that function overload signatures be consecutive",
-      "url": "https://typescript-eslint.io/rules/adjacent-overload-signatures"
+      "description": "Disallow awaiting a value that is not a Thenable",
+      "url": "https://typescript-eslint.io/rules/await-thenable"
     }
   },
   {
@@ -726,42 +946,64 @@ export const ruleset = [
     }
   },
   {
-    "ruleName": "no-empty-function",
-    "parentPluginName": "@eslint/js",
-    "severity": 0,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow empty functions",
-      "url": "https://typescript-eslint.io/rules/no-empty-function"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-empty-function",
+    "ruleName": "@typescript-eslint/no-base-to-string",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
     "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
-      "description": "Disallow empty functions",
-      "url": "https://typescript-eslint.io/rules/no-empty-function"
+      "description": "Require `.toString()` to only be called on objects which provide useful information when stringified",
+      "url": "https://typescript-eslint.io/rules/no-base-to-string"
     }
   },
   {
-    "ruleName": "@typescript-eslint/no-empty-interface",
+    "ruleName": "@typescript-eslint/no-confusing-void-expression",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
     "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
-      "description": "Disallow the declaration of empty interfaces",
-      "url": "https://typescript-eslint.io/rules/no-empty-interface"
+      "description": "Require expressions of type void to appear in statement position",
+      "url": "https://typescript-eslint.io/rules/no-confusing-void-expression"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-duplicate-enum-values",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow duplicate enum member values",
+      "url": "https://typescript-eslint.io/rules/no-duplicate-enum-values"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-duplicate-type-constituents",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow duplicate constituents of union or intersection types",
+      "url": "https://typescript-eslint.io/rules/no-duplicate-type-constituents"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-dynamic-delete",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow using the `delete` operator on computed key expressions",
+      "url": "https://typescript-eslint.io/rules/no-dynamic-delete"
     }
   },
   {
     "ruleName": "@typescript-eslint/no-explicit-any",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 1,
+    "severity": 2,
     "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
@@ -781,201 +1023,14 @@ export const ruleset = [
     }
   },
   {
-    "ruleName": "no-extra-semi",
-    "parentPluginName": "@eslint/js",
-    "severity": 0,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow unnecessary semicolons",
-      "url": "https://typescript-eslint.io/rules/no-extra-semi"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-extra-semi",
+    "ruleName": "@typescript-eslint/no-extraneous-class",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
     "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
-      "description": "Disallow unnecessary semicolons",
-      "url": "https://typescript-eslint.io/rules/no-extra-semi"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-inferrable-types",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow explicit type declarations for variables or parameters initialized to a number, string, or boolean",
-      "url": "https://typescript-eslint.io/rules/no-inferrable-types"
-    }
-  },
-  {
-    "ruleName": "no-loss-of-precision",
-    "parentPluginName": "@eslint/js",
-    "severity": 0,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow literal numbers that lose precision",
-      "url": "https://typescript-eslint.io/rules/no-loss-of-precision"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-loss-of-precision",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow literal numbers that lose precision",
-      "url": "https://typescript-eslint.io/rules/no-loss-of-precision"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-misused-new",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Enforce valid definition of `new` and `constructor`",
-      "url": "https://typescript-eslint.io/rules/no-misused-new"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-namespace",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow TypeScript namespaces",
-      "url": "https://typescript-eslint.io/rules/no-namespace"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-non-null-asserted-optional-chain",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow non-null assertions after an optional chain expression",
-      "url": "https://typescript-eslint.io/rules/no-non-null-asserted-optional-chain"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-non-null-assertion",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 1,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow non-null assertions using the `!` postfix operator",
-      "url": "https://typescript-eslint.io/rules/no-non-null-assertion"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-this-alias",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow aliasing `this`",
-      "url": "https://typescript-eslint.io/rules/no-this-alias"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-unnecessary-type-constraint",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow unnecessary constraints on generic types",
-      "url": "https://typescript-eslint.io/rules/no-unnecessary-type-constraint"
-    }
-  },
-  {
-    "ruleName": "no-unused-vars",
-    "parentPluginName": "@eslint/js",
-    "severity": 0,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow unused variables",
-      "url": "https://typescript-eslint.io/rules/no-unused-vars"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-unused-vars",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 1,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow unused variables",
-      "url": "https://typescript-eslint.io/rules/no-unused-vars"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-var-requires",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow `require` statements except in import statements",
-      "url": "https://typescript-eslint.io/rules/no-var-requires"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/prefer-as-const",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Enforce the use of `as const` over literal type",
-      "url": "https://typescript-eslint.io/rules/prefer-as-const"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/prefer-namespace-keyword",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Require using `namespace` keyword over `module` keyword to declare custom TypeScript modules",
-      "url": "https://typescript-eslint.io/rules/prefer-namespace-keyword"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/triple-slash-reference",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow certain triple slash directives in favor of ES6-style import declarations",
-      "url": "https://typescript-eslint.io/rules/triple-slash-reference"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/await-thenable",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow awaiting a value that is not a Thenable",
-      "url": "https://typescript-eslint.io/rules/await-thenable"
+      "description": "Disallow classes used as namespaces",
+      "url": "https://typescript-eslint.io/rules/no-extraneous-class"
     }
   },
   {
@@ -1023,6 +1078,61 @@ export const ruleset = [
     }
   },
   {
+    "ruleName": "@typescript-eslint/no-invalid-void-type",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow `void` type outside of generic or return types",
+      "url": "https://typescript-eslint.io/rules/no-invalid-void-type"
+    }
+  },
+  {
+    "ruleName": "no-loss-of-precision",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow literal numbers that lose precision",
+      "url": "https://typescript-eslint.io/rules/no-loss-of-precision"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-loss-of-precision",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow literal numbers that lose precision",
+      "url": "https://typescript-eslint.io/rules/no-loss-of-precision"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-meaningless-void-operator",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow the `void` operator except when used to discard a value",
+      "url": "https://typescript-eslint.io/rules/no-meaningless-void-operator"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-misused-new",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Enforce valid definition of `new` and `constructor`",
+      "url": "https://typescript-eslint.io/rules/no-misused-new"
+    }
+  },
+  {
     "ruleName": "@typescript-eslint/no-misused-promises",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
@@ -1034,6 +1144,138 @@ export const ruleset = [
     }
   },
   {
+    "ruleName": "@typescript-eslint/no-mixed-enums",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow enums from having both number and string members",
+      "url": "https://typescript-eslint.io/rules/no-mixed-enums"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-namespace",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow TypeScript namespaces",
+      "url": "https://typescript-eslint.io/rules/no-namespace"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-non-null-asserted-nullish-coalescing",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow non-null assertions in the left operand of a nullish coalescing operator",
+      "url": "https://typescript-eslint.io/rules/no-non-null-asserted-nullish-coalescing"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-non-null-asserted-optional-chain",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow non-null assertions after an optional chain expression",
+      "url": "https://typescript-eslint.io/rules/no-non-null-asserted-optional-chain"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-non-null-assertion",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow non-null assertions using the `!` postfix operator",
+      "url": "https://typescript-eslint.io/rules/no-non-null-assertion"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-redundant-type-constituents",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow members of unions and intersections that do nothing or override type information",
+      "url": "https://typescript-eslint.io/rules/no-redundant-type-constituents"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-this-alias",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow aliasing `this`",
+      "url": "https://typescript-eslint.io/rules/no-this-alias"
+    }
+  },
+  {
+    "ruleName": "no-throw-literal",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow throwing literals as exceptions",
+      "url": "https://typescript-eslint.io/rules/no-throw-literal"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-throw-literal",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow throwing literals as exceptions",
+      "url": "https://typescript-eslint.io/rules/no-throw-literal"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-unnecessary-boolean-literal-compare",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow unnecessary equality comparisons against boolean literals",
+      "url": "https://typescript-eslint.io/rules/no-unnecessary-boolean-literal-compare"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-unnecessary-condition",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow conditionals where the type is always truthy or always falsy",
+      "url": "https://typescript-eslint.io/rules/no-unnecessary-condition"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-unnecessary-type-arguments",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow type arguments that are equal to the default",
+      "url": "https://typescript-eslint.io/rules/no-unnecessary-type-arguments"
+    }
+  },
+  {
     "ruleName": "@typescript-eslint/no-unnecessary-type-assertion",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
@@ -1042,6 +1284,17 @@ export const ruleset = [
     "docs": {
       "description": "Disallow type assertions that do not change the type of an expression",
       "url": "https://typescript-eslint.io/rules/no-unnecessary-type-assertion"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-unnecessary-type-constraint",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow unnecessary constraints on generic types",
+      "url": "https://typescript-eslint.io/rules/no-unnecessary-type-constraint"
     }
   },
   {
@@ -1078,6 +1331,28 @@ export const ruleset = [
     }
   },
   {
+    "ruleName": "@typescript-eslint/no-unsafe-declaration-merging",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow unsafe declaration merging",
+      "url": "https://typescript-eslint.io/rules/no-unsafe-declaration-merging"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-unsafe-enum-comparison",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow comparing an enum value with a non-enum value",
+      "url": "https://typescript-eslint.io/rules/no-unsafe-enum-comparison"
+    }
+  },
+  {
     "ruleName": "@typescript-eslint/no-unsafe-member-access",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
@@ -1097,6 +1372,127 @@ export const ruleset = [
     "docs": {
       "description": "Disallow returning a value with type `any` from a function",
       "url": "https://typescript-eslint.io/rules/no-unsafe-return"
+    }
+  },
+  {
+    "ruleName": "no-unused-vars",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow unused variables",
+      "url": "https://typescript-eslint.io/rules/no-unused-vars"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-unused-vars",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow unused variables",
+      "url": "https://typescript-eslint.io/rules/no-unused-vars"
+    }
+  },
+  {
+    "ruleName": "no-useless-constructor",
+    "parentPluginName": "@eslint/js",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow unnecessary constructors",
+      "url": "https://typescript-eslint.io/rules/no-useless-constructor"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-useless-constructor",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow unnecessary constructors",
+      "url": "https://typescript-eslint.io/rules/no-useless-constructor"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-var-requires",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow `require` statements except in import statements",
+      "url": "https://typescript-eslint.io/rules/no-var-requires"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/prefer-as-const",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Enforce the use of `as const` over literal type",
+      "url": "https://typescript-eslint.io/rules/prefer-as-const"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/prefer-includes",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Enforce `includes` method over `indexOf` method",
+      "url": "https://typescript-eslint.io/rules/prefer-includes"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/prefer-literal-enum-member",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Require all enum members to be literal values",
+      "url": "https://typescript-eslint.io/rules/prefer-literal-enum-member"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/prefer-reduce-type-parameter",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Enforce using type parameter when calling `Array#reduce` instead of casting",
+      "url": "https://typescript-eslint.io/rules/prefer-reduce-type-parameter"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/prefer-return-this-type",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Enforce that `this` is used when only `this` type is returned",
+      "url": "https://typescript-eslint.io/rules/prefer-return-this-type"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/prefer-ts-expect-error",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Enforce using `@ts-expect-error` over `@ts-ignore`",
+      "url": "https://typescript-eslint.io/rules/prefer-ts-expect-error"
     }
   },
   {
@@ -1144,6 +1540,17 @@ export const ruleset = [
     }
   },
   {
+    "ruleName": "@typescript-eslint/triple-slash-reference",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow certain triple slash directives in favor of ES6-style import declarations",
+      "url": "https://typescript-eslint.io/rules/triple-slash-reference"
+    }
+  },
+  {
     "ruleName": "@typescript-eslint/unbound-method",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
@@ -1152,6 +1559,72 @@ export const ruleset = [
     "docs": {
       "description": "Enforce unbound methods are called with their expected scope",
       "url": "https://typescript-eslint.io/rules/unbound-method"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/unified-signatures",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow two overloads that could be unified into one with a union or an optional/rest parameter",
+      "url": "https://typescript-eslint.io/rules/unified-signatures"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-use-before-define",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow the use of variables before they are defined",
+      "url": "https://typescript-eslint.io/rules/no-use-before-define"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-inferrable-types",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow explicit type declarations for variables or parameters initialized to a number, string, or boolean",
+      "url": "https://typescript-eslint.io/rules/no-inferrable-types"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-loop-func",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow function declarations that contain unsafe references inside loop statements",
+      "url": "https://typescript-eslint.io/rules/no-loop-func"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/prefer-function-type",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Enforce using function types instead of interfaces with call signatures",
+      "url": "https://typescript-eslint.io/rules/prefer-function-type"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/prefer-string-starts-ends-with",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Enforce using `String#startsWith` and `String#endsWith` over other equivalent methods of checking substrings",
+      "url": "https://typescript-eslint.io/rules/prefer-string-starts-ends-with"
     }
   },
   {
@@ -1166,58 +1639,14 @@ export const ruleset = [
     }
   },
   {
-    "ruleName": "@typescript-eslint/no-redundant-type-constituents",
+    "ruleName": "@typescript-eslint/consistent-type-definitions",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
     "ruleOptions": [],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
-      "description": "Disallow members of unions and intersections that do nothing or override type information",
-      "url": "https://typescript-eslint.io/rules/no-redundant-type-constituents"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-unnecessary-boolean-literal-compare",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow unnecessary equality comparisons against boolean literals",
-      "url": "https://typescript-eslint.io/rules/no-unnecessary-boolean-literal-compare"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/prefer-ts-expect-error",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Enforce using `@ts-expect-error` over `@ts-ignore`",
-      "url": "https://typescript-eslint.io/rules/prefer-ts-expect-error"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-throw-literal",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow throwing literals as exceptions",
-      "url": "https://typescript-eslint.io/rules/no-throw-literal"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-use-before-define",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow the use of variables before they are defined",
-      "url": "https://typescript-eslint.io/rules/no-use-before-define"
+      "description": "Enforce type definitions to consistently use either `interface` or `type`",
+      "url": "https://typescript-eslint.io/rules/consistent-type-definitions"
     }
   },
   {
@@ -1284,17 +1713,6 @@ export const ruleset = [
     }
   },
   {
-    "ruleName": "@typescript-eslint/no-invalid-void-type",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow `void` type outside of generic or return types",
-      "url": "https://typescript-eslint.io/rules/no-invalid-void-type"
-    }
-  },
-  {
     "ruleName": "@typescript-eslint/method-signature-style",
     "parentPluginName": "@typescript-eslint/eslint-plugin",
     "severity": 2,
@@ -1303,28 +1721,6 @@ export const ruleset = [
     "docs": {
       "description": "Enforce using a particular method signature syntax",
       "url": "https://typescript-eslint.io/rules/method-signature-style"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/non-nullable-type-assertion-style",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Enforce non-null assertions over explicit type casts",
-      "url": "https://typescript-eslint.io/rules/non-nullable-type-assertion-style"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-confusing-void-expression",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Require expressions of type void to appear in statement position",
-      "url": "https://typescript-eslint.io/rules/no-confusing-void-expression"
     }
   },
   {
@@ -1340,30 +1736,8 @@ export const ruleset = [
     ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
-      "description": "Enforce using the nullish coalescing operator instead of logical chaining",
+      "description": "Enforce using the nullish coalescing operator instead of logical assignments or chaining",
       "url": "https://typescript-eslint.io/rules/prefer-nullish-coalescing"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/no-unnecessary-condition",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow conditionals where the type is always truthy or always falsy",
-      "url": "https://typescript-eslint.io/rules/no-unnecessary-condition"
-    }
-  },
-  {
-    "ruleName": "@typescript-eslint/unified-signatures",
-    "parentPluginName": "@typescript-eslint/eslint-plugin",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow two overloads that could be unified into one with a union or an optional/rest parameter",
-      "url": "https://typescript-eslint.io/rules/unified-signatures"
     }
   },
   {
@@ -1393,6 +1767,17 @@ export const ruleset = [
     "docs": {
       "description": "Require consistently using either `T[]` or `Array<T>` for arrays",
       "url": "https://typescript-eslint.io/rules/array-type"
+    }
+  },
+  {
+    "ruleName": "@typescript-eslint/no-empty-function",
+    "parentPluginName": "@typescript-eslint/eslint-plugin",
+    "severity": 2,
+    "ruleOptions": [],
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    "docs": {
+      "description": "Disallow empty functions",
+      "url": "https://typescript-eslint.io/rules/no-empty-function"
     }
   },
   {
@@ -1871,8 +2256,14 @@ export const ruleset = [
     "severity": 2,
     "ruleOptions": [
       {
-        "array": false,
-        "object": true
+        "VariableDeclarator": {
+          "array": false,
+          "object": true
+        },
+        "AssignmentExpression": {
+          "array": false,
+          "object": false
+        }
       },
       {
         "enforceForRenamedProperties": false
@@ -1929,17 +2320,6 @@ export const ruleset = [
     }
   },
   {
-    "ruleName": "no-var",
-    "parentPluginName": "@eslint/js",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Require `let` or `const` instead of `var`",
-      "url": "https://eslint.org/docs/latest/rules/no-var"
-    }
-  },
-  {
     "ruleName": "no-eval",
     "parentPluginName": "@eslint/js",
     "severity": 2,
@@ -1948,28 +2328,6 @@ export const ruleset = [
     "docs": {
       "description": "Disallow the use of `eval()`",
       "url": "https://eslint.org/docs/latest/rules/no-eval"
-    }
-  },
-  {
-    "ruleName": "prefer-const",
-    "parentPluginName": "@eslint/js",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Require `const` declarations for variables that are never reassigned after declared",
-      "url": "https://eslint.org/docs/latest/rules/prefer-const"
-    }
-  },
-  {
-    "ruleName": "prefer-rest-params",
-    "parentPluginName": "@eslint/js",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Require rest parameters instead of `arguments`",
-      "url": "https://eslint.org/docs/latest/rules/prefer-rest-params"
     }
   },
   {
@@ -2071,17 +2429,6 @@ export const ruleset = [
     "docs": {
       "description": "Require or disallow padding lines between statements",
       "url": "https://eslint.org/docs/latest/rules/padding-line-between-statements"
-    }
-  },
-  {
-    "ruleName": "prefer-spread",
-    "parentPluginName": "@eslint/js",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Require spread operators instead of `.apply()`",
-      "url": "https://eslint.org/docs/latest/rules/prefer-spread"
     }
   },
   {
@@ -2288,28 +2635,6 @@ export const ruleset = [
     }
   },
   {
-    "ruleName": "no-undef",
-    "parentPluginName": "@eslint/js",
-    "severity": 0,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow the use of undeclared variables unless mentioned in `/*global */` comments",
-      "url": "https://eslint.org/docs/latest/rules/no-undef"
-    }
-  },
-  {
-    "ruleName": "no-dupe-class-members",
-    "parentPluginName": "@eslint/js",
-    "severity": 0,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow duplicate class members",
-      "url": "https://eslint.org/docs/latest/rules/no-dupe-class-members"
-    }
-  },
-  {
     "ruleName": "no-return-await",
     "parentPluginName": "@eslint/js",
     "severity": 0,
@@ -2318,17 +2643,6 @@ export const ruleset = [
     "docs": {
       "description": "Disallow unnecessary `return await`",
       "url": "https://eslint.org/docs/latest/rules/no-return-await"
-    }
-  },
-  {
-    "ruleName": "no-throw-literal",
-    "parentPluginName": "@eslint/js",
-    "severity": 0,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow throwing literals as exceptions",
-      "url": "https://eslint.org/docs/latest/rules/no-throw-literal"
     }
   },
   {
@@ -2362,28 +2676,6 @@ export const ruleset = [
     "docs": {
       "description": "Disallow empty functions",
       "url": "https://eslint.org/docs/latest/rules/no-empty-function"
-    }
-  },
-  {
-    "ruleName": "require-await",
-    "parentPluginName": "@eslint/js",
-    "severity": 0,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow async functions which have no `await` expression",
-      "url": "https://eslint.org/docs/latest/rules/require-await"
-    }
-  },
-  {
-    "ruleName": "no-unused-vars",
-    "parentPluginName": "@eslint/js",
-    "severity": 0,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow unused variables",
-      "url": "https://eslint.org/docs/latest/rules/no-unused-vars"
     }
   },
   {
@@ -2663,17 +2955,6 @@ export const ruleset = [
     "docs": {
       "description": "Disallow unnecessary spread.",
       "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-useless-spread.md"
-    }
-  },
-  {
-    "ruleName": "unicorn/no-useless-undefined",
-    "parentPluginName": "eslint-plugin-unicorn",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Disallow useless `undefined`.",
-      "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.0/docs/rules/no-useless-undefined.md"
     }
   },
   {
@@ -4893,7 +5174,7 @@ export const ruleset = [
         "withinDescribe": "test"
       }
     ],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer test or it but not both",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/consistent-test-it.md"
@@ -4904,7 +5185,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce having expectation in test body",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/expect-expect.md"
@@ -4915,7 +5196,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow commented out tests",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-commented-out-tests.md"
@@ -4926,7 +5207,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow conditional expects",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-conditional-expect.md"
@@ -4937,7 +5218,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow conditional tests",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-conditional-in-test.md"
@@ -4948,7 +5229,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow disabled tests",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-disabled-tests.md"
@@ -4959,7 +5240,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow using a callback in asynchronous tests and hooks",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-done-callback.md"
@@ -4970,7 +5251,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow duplicate hooks and teardown hooks",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-duplicate-hooks.md"
@@ -4981,7 +5262,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow identical titles",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-identical-title.md"
@@ -4992,7 +5273,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow focused tests",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-focused-tests.md"
@@ -5003,7 +5284,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow using `expect` outside of `it` or `test` blocks",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-standalone-expect.md"
@@ -5014,7 +5295,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow using `test` as a prefix",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-test-prefixes.md"
@@ -5025,7 +5306,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Disallow return statements in tests",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/no-test-return-statement.md"
@@ -5036,7 +5317,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Suggest using the built-in comparison matchers",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-comparison-matcher.md"
@@ -5047,7 +5328,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer `each` rather than manual loops",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-each.md"
@@ -5058,7 +5339,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Suggest using the built-in quality matchers",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-equality-matcher.md"
@@ -5069,7 +5350,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Suggest using `expect().resolves` over `expect(await ...)` syntax",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-expect-resolves.md"
@@ -5080,7 +5361,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer having hooks in consistent order",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-hooks-in-order.md"
@@ -5091,7 +5372,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Suggest having hooks before any test cases",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-hooks-on-top.md"
@@ -5102,7 +5383,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce lowercase titles",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-lowercase-title.md"
@@ -5113,7 +5394,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer mock resolved/rejected shorthands for promises",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-mock-promise-shorthand.md"
@@ -5124,7 +5405,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Suggest using `vi.spyOn`",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-spy-on.md"
@@ -5135,7 +5416,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer strict equal over equal",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-strict-equal.md"
@@ -5146,7 +5427,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Suggest using toBe()",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be.md"
@@ -5157,7 +5438,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Suggest using toBeFalsy()",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be-falsy.md"
@@ -5168,7 +5449,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer toBeObject()",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be-object.md"
@@ -5179,7 +5460,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Suggest using `toBeTruthy`",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-be-truthy.md"
@@ -5190,7 +5471,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Prefer using toContain()",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-contain.md"
@@ -5201,7 +5482,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Suggest using toHaveLength()",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-to-have-length.md"
@@ -5212,7 +5493,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Suggest using `test.todo`",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-todo.md"
@@ -5223,7 +5504,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require setup and teardown to be within a hook",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/require-hook.md"
@@ -5234,7 +5515,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Require toThrow() to be called with an error message",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/require-to-throw-message.md"
@@ -5245,7 +5526,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that all tests are in a top-level describe",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/require-top-level-describe.md"
@@ -5256,7 +5537,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce valid describe callback",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/valid-describe-callback.md"
@@ -5267,7 +5548,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-vitest",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**, **/__tests__/**",
+    "affectedFiles": "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}, **/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce valid `expect()` usage",
       "url": "https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/valid-expect.md"

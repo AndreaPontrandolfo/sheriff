@@ -37,24 +37,26 @@ import {
   SheriffSettings,
 } from '@sheriff/types';
 
-const getLanguageOptionsTypescript = (userChosenTSConfig?: string) => {
+const getLanguageOptionsTypescript = (
+  userChosenTSConfig?: string | string[],
+) => {
   return {
     parser: typescriptParser,
     parserOptions: {
       ecmaFeatures: { modules: true },
-      project: userChosenTSConfig || './tsconfig.json',
+      project: userChosenTSConfig || true,
     },
   };
 };
 
 export const getLanguageOptionsTypescriptReact = (
-  userChosenTSConfig?: string,
+  userChosenTSConfig?: string | string[],
 ) => {
   return {
     parser: typescriptParser,
     parserOptions: {
       ecmaFeatures: { modules: true, jsx: true },
-      project: userChosenTSConfig || './tsconfig.json',
+      project: userChosenTSConfig || true,
       jsxPragma: null, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
     },
   };
@@ -93,35 +95,39 @@ const playwrightConfig = {
   },
 };
 
-const jestConfig = {
-  files: [
-    `**/*.{test,spec}.{${allJsExtensions}}`,
-    `**/tests/**`,
-    `**/__tests__/**`,
-  ],
-  plugins: {
-    jest,
-  },
-  languageOptions: {
-    globals: jest.environments.globals.globals,
-  },
-  rules: {
-    ...jest.configs.style.rules,
-    ...jestHandPickedRules,
-    '@typescript-eslint/unbound-method': 0, // see reference: https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
-  },
+const getJestConfig = (pathsOverrides?: string[]) => {
+  return {
+    files: pathsOverrides ?? [
+      `**/*.{test,spec}.{${allJsExtensions}}`,
+      `**/tests/**/*.{${allJsExtensions}}`,
+      `**/__tests__/**/*.{${allJsExtensions}}`,
+    ],
+    plugins: {
+      jest,
+    },
+    languageOptions: {
+      globals: jest.environments.globals.globals,
+    },
+    rules: {
+      ...jest.configs.style.rules,
+      ...jestHandPickedRules,
+      '@typescript-eslint/unbound-method': 0, // see reference: https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
+    },
+  };
 };
 
-const vitestConfig = {
-  files: [
-    `**/*.{test,spec}.{${allJsExtensions}}`,
-    `**/tests/**`,
-    `**/__tests__/**`,
-  ],
-  plugins: {
-    vitest,
-  },
-  rules: vitestHandPickedRules,
+const getVitestConfig = (pathsOverrides?: string[]) => {
+  return {
+    files: pathsOverrides ?? [
+      `**/*.{test,spec}.{${allJsExtensions}}`,
+      `**/tests/**/*.{${allJsExtensions}}`,
+      `**/__tests__/**/*.{${allJsExtensions}}`,
+    ],
+    plugins: {
+      vitest,
+    },
+    rules: vitestHandPickedRules,
+  };
 };
 
 const prettierOverrides = {
@@ -132,7 +138,7 @@ const prettierOverrides = {
 };
 
 const getBaseConfig = (
-  customTSConfigPath?: string,
+  customTSConfigPath?: string | string[],
   noRestrictedSyntaxOverride?: NoRestrictedSyntaxOverride,
 ) => {
   return [
@@ -150,8 +156,9 @@ const getBaseConfig = (
         '@typescript-eslint': typescript,
       },
       rules: {
-        ...typescript.configs.recommended.rules,
-        ...typescript.configs['recommended-requiring-type-checking'].rules,
+        ...(typescript.configs['eslint-recommended'].overrides?.[0].rules ??
+          {}),
+        ...typescript.configs['strict-type-checked'].rules,
         ...typescriptHandPickedRules,
         ...getTsNamingConventionRule({ isTsx: false }),
       },
@@ -264,7 +271,7 @@ export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
 
   let exportableConfig: ExportableConfigAtom[] = [
     ...getBaseConfig(
-      userConfigChoices.customTSConfigPath,
+      userConfigChoices.pathsOveriddes?.tsconfigLocation,
       userConfigChoices.noRestrictedSyntaxOverride,
     ),
   ];
@@ -273,7 +280,7 @@ export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
     // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
     exportableConfig = [
       ...exportableConfig,
-      ...getReactConfig(userConfigChoices?.customTSConfigPath),
+      ...getReactConfig(userConfigChoices.pathsOveriddes?.tsconfigLocation),
     ];
   }
 
@@ -284,11 +291,15 @@ export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
   }
 
   if (userConfigChoices.jest) {
-    exportableConfig.push(jestConfig);
+    exportableConfig.push(
+      getJestConfig(userConfigChoices.pathsOveriddes?.tests),
+    );
   }
 
   if (userConfigChoices.vitest) {
-    exportableConfig.push(vitestConfig);
+    exportableConfig.push(
+      getVitestConfig(userConfigChoices.pathsOveriddes?.tests),
+    );
   }
 
   if (userConfigChoices.next) {
@@ -323,7 +334,9 @@ export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
     });
   }
 
-  exportableConfig.push({ ignores });
+  exportableConfig.push({
+    ignores: userConfigChoices.pathsOveriddes?.ignores ?? ignores,
+  });
 
   return exportableConfig;
 };
