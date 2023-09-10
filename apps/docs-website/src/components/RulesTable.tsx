@@ -42,7 +42,7 @@ const columns = [
   columnHelper.accessor("docs", {
     header: "Docs",
     cell: (info) => (
-      <a href={info.getValue().url}>
+      <a href={info.getValue().url} target="_blank" rel="noreferrer">
         {info.getValue().description || info.getValue().url}
       </a>
     ),
