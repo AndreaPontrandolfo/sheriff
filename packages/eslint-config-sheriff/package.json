@@ -61,7 +61,6 @@
     "eslint": "8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.5.5",
-    "eslint-plugin-etc": "^2.0.2",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.1",

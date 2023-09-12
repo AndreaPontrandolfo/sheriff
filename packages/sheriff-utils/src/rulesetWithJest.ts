@@ -2756,39 +2756,6 @@ export const ruleset = [
     }
   },
   {
-    "ruleName": "etc/no-enum",
-    "parentPluginName": "eslint-plugin-etc",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Forbids the use of `enum`.",
-      "url": "https://github.com/cartant/eslint-plugin-etc/tree/main/docs/rules/no-enum.md"
-    }
-  },
-  {
-    "ruleName": "etc/no-misused-generics",
-    "parentPluginName": "eslint-plugin-etc",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Forbids type parameters without inference sites and type parameters that don't add type safety to declarations.",
-      "url": "https://github.com/cartant/eslint-plugin-etc/tree/main/docs/rules/no-misused-generics.md"
-    }
-  },
-  {
-    "ruleName": "etc/no-assign-mutated-array",
-    "parentPluginName": "eslint-plugin-etc",
-    "severity": 2,
-    "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    "docs": {
-      "description": "Forbids the assignment of returned, mutated arrays.",
-      "url": "https://github.com/cartant/eslint-plugin-etc/tree/main/docs/rules/no-assign-mutated-array.md"
-    }
-  },
-  {
     "ruleName": "@regru/prefer-early-return/prefer-early-return",
     "parentPluginName": "@regru/eslint-plugin-prefer-early-return",
     "severity": 2,
@@ -4438,8 +4405,7 @@ export const ruleset = [
           ".tsx",
           "mtsx",
           "mjsx"
-        ],
-        "allow": "as-needed"
+        ]
       }
     ],
     "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
@@ -8392,6 +8358,6 @@ export const ruleset = [
   }
 ];
 
-    export const pluginsNames = ["@eslint/js","@typescript-eslint/eslint-plugin","eslint-plugin-tsdoc","eslint-plugin-fp","eslint-plugin-etc","@regru/eslint-plugin-prefer-early-return","eslint-plugin-unicorn","eslint-plugin-sonarjs","eslint-plugin-import","eslint-plugin-storybook","eslint-plugin-jsdoc","eslint-plugin-react","eslint-plugin-react-refresh","eslint-plugin-jsx-a11y","eslint-plugin-react-hooks","eslint-plugin-jest","@next/eslint-plugin-next","eslint-plugin-lodash-f","eslint-plugin-playwright","eslint-plugin-babel","eslint-plugin-vue","@babel/eslint-plugin","eslint-plugin-flowtype","eslint-plugin-standard"];
+    export const pluginsNames = ["@eslint/js","@typescript-eslint/eslint-plugin","eslint-plugin-tsdoc","eslint-plugin-fp","@regru/eslint-plugin-prefer-early-return","eslint-plugin-unicorn","eslint-plugin-sonarjs","eslint-plugin-import","eslint-plugin-storybook","eslint-plugin-jsdoc","eslint-plugin-react","eslint-plugin-react-refresh","eslint-plugin-jsx-a11y","eslint-plugin-react-hooks","eslint-plugin-jest","@next/eslint-plugin-next","eslint-plugin-lodash-f","eslint-plugin-playwright","eslint-plugin-babel","eslint-plugin-vue","@babel/eslint-plugin","eslint-plugin-flowtype","eslint-plugin-standard"];
 
     

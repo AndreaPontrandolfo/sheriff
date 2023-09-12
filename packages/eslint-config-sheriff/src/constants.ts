@@ -58,4 +58,8 @@ export const baseNoRestrictedSyntaxRules = [
     selector: "Identifier[name='propTypes']",
     message: 'Avoid PropTypes. Use Typescript instead.',
   },
+  {
+    selector: 'TSEnumDeclaration',
+    message: 'Avoid enums.',
+  },
 ];

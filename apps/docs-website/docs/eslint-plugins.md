@@ -5,7 +5,6 @@ sidebar_position: 7
 # 🔌 ESLint plugins
 
 - [@typescript/eslint](https://github.com/typescript-eslint/typescript-eslint)
-- [eslint-plugin-etc](https://github.com/cartant/eslint-plugin-etc)
 - [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
 - [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react)
 - [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)

@@ -12,12 +12,10 @@ import nextjs from '@next/eslint-plugin-next';
 import fp from 'eslint-plugin-fp';
 import jest from 'eslint-plugin-jest';
 import vitest from 'eslint-plugin-vitest';
-import etc from 'eslint-plugin-etc';
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import tsdoc from 'eslint-plugin-tsdoc';
 import storybook from 'eslint-plugin-storybook';
 import { allJsExtensions, supportedFileTypes, ignores } from './constants';
-import { etcHandPickedRules } from './etcHandPickedRules';
 import { fpHandPickedRules } from './fpHandPickedRules';
 import { getBaseEslintHandPickedRules } from './getBaseEslintHandPickedRules';
 import { getReactConfig } from './getReactConfig';
@@ -180,11 +178,6 @@ const getBaseConfig = (
       files: [supportedFileTypes],
       plugins: { fp },
       rules: fpHandPickedRules,
-    },
-    {
-      files: [supportedFileTypes],
-      plugins: { etc },
-      rules: etcHandPickedRules,
     },
     {
       files: [supportedFileTypes],
