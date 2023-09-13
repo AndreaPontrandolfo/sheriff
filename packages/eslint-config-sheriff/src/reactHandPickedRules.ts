@@ -15,7 +15,6 @@ export const reactHandPickedRules = {
     2,
     {
       extensions: ['jsx', '.tsx', 'mtsx', 'mjsx'],
-      allow: 'as-needed',
     },
   ],
   'react/no-multi-comp': 2,

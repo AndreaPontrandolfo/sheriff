@@ -17,7 +17,7 @@ If you don't know much about `TSConfig` and you are uncertain, this can be a goo
 
 ## Sheriff's TSConfig reference
 
-```JSON title="tsconfig.json"
+```JSONC title="tsconfig.json"
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "include": ["src"],
