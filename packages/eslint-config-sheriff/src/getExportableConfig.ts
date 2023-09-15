@@ -29,11 +29,8 @@ import { sonarjsHandPickedRules } from './sonarjsHandPickedRules';
 import { typescriptHandPickedRules } from './typescriptHandPickedRules';
 import { unicornHandPickedRules } from './unicornHandPickedRules';
 import { vitestHandPickedRules } from './vitestHandPickedRules';
-import {
-  ExportableConfigAtom,
-  NoRestrictedSyntaxOverride,
-  SheriffSettings,
-} from '@sheriff/types';
+import { ExportableConfigAtom, SheriffSettings } from '@sheriff/types';
+import { getAstroConfig } from './getAstroConfig';
 
 const getLanguageOptionsTypescript = (
   userChosenTSConfig?: string | string[],
@@ -135,10 +132,11 @@ const prettierOverrides = {
   },
 };
 
-const getBaseConfig = (
-  customTSConfigPath?: string | string[],
-  noRestrictedSyntaxOverride?: NoRestrictedSyntaxOverride,
-) => {
+const getBaseConfig = (userConfigChoices: SheriffSettings) => {
+  const customTSConfigPath = userConfigChoices.pathsOveriddes?.tsconfigLocation;
+  const { noRestrictedSyntaxOverride } = userConfigChoices;
+  const hasReact = Boolean(userConfigChoices.react);
+
   return [
     {
       files: [supportedFileTypes],
@@ -248,6 +246,7 @@ const getBaseConfig = (
         },
       },
     },
+    getAstroConfig(hasReact, customTSConfigPath),
     {
       files: [`**/*.config.{${allJsExtensions}}`],
       rules: {
@@ -263,10 +262,7 @@ export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
   }
 
   let exportableConfig: ExportableConfigAtom[] = [
-    ...getBaseConfig(
-      userConfigChoices.pathsOveriddes?.tsconfigLocation,
-      userConfigChoices.noRestrictedSyntaxOverride,
-    ),
+    ...getBaseConfig(userConfigChoices),
   ];
 
   if (userConfigChoices.react || userConfigChoices.next) {
