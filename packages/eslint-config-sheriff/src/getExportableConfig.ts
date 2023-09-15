@@ -12,12 +12,10 @@ import nextjs from '@next/eslint-plugin-next';
 import fp from 'eslint-plugin-fp';
 import jest from 'eslint-plugin-jest';
 import vitest from 'eslint-plugin-vitest';
-import etc from 'eslint-plugin-etc';
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import tsdoc from 'eslint-plugin-tsdoc';
 import storybook from 'eslint-plugin-storybook';
 import { allJsExtensions, supportedFileTypes, ignores } from './constants';
-import { etcHandPickedRules } from './etcHandPickedRules';
 import { fpHandPickedRules } from './fpHandPickedRules';
 import { getBaseEslintHandPickedRules } from './getBaseEslintHandPickedRules';
 import { getReactConfig } from './getReactConfig';
@@ -31,11 +29,8 @@ import { sonarjsHandPickedRules } from './sonarjsHandPickedRules';
 import { typescriptHandPickedRules } from './typescriptHandPickedRules';
 import { unicornHandPickedRules } from './unicornHandPickedRules';
 import { vitestHandPickedRules } from './vitestHandPickedRules';
-import {
-  ExportableConfigAtom,
-  NoRestrictedSyntaxOverride,
-  SheriffSettings,
-} from '@sheriff/types';
+import { ExportableConfigAtom, SheriffSettings } from '@sheriff/types';
+import { getAstroConfig } from './getAstroConfig';
 
 const getLanguageOptionsTypescript = (
   userChosenTSConfig?: string | string[],
@@ -137,10 +132,11 @@ const prettierOverrides = {
   },
 };
 
-const getBaseConfig = (
-  customTSConfigPath?: string | string[],
-  noRestrictedSyntaxOverride?: NoRestrictedSyntaxOverride,
-) => {
+const getBaseConfig = (userConfigChoices: SheriffSettings) => {
+  const customTSConfigPath = userConfigChoices.pathsOveriddes?.tsconfigLocation;
+  const { noRestrictedSyntaxOverride } = userConfigChoices;
+  const hasReact = Boolean(userConfigChoices.react);
+
   return [
     {
       files: [supportedFileTypes],
@@ -180,11 +176,6 @@ const getBaseConfig = (
       files: [supportedFileTypes],
       plugins: { fp },
       rules: fpHandPickedRules,
-    },
-    {
-      files: [supportedFileTypes],
-      plugins: { etc },
-      rules: etcHandPickedRules,
     },
     {
       files: [supportedFileTypes],
@@ -255,6 +246,7 @@ const getBaseConfig = (
         },
       },
     },
+    getAstroConfig(hasReact, customTSConfigPath),
     {
       files: [`**/*.config.{${allJsExtensions}}`],
       rules: {
@@ -270,10 +262,7 @@ export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
   }
 
   let exportableConfig: ExportableConfigAtom[] = [
-    ...getBaseConfig(
-      userConfigChoices.pathsOveriddes?.tsconfigLocation,
-      userConfigChoices.noRestrictedSyntaxOverride,
-    ),
+    ...getBaseConfig(userConfigChoices),
   ];
 
   if (userConfigChoices.react || userConfigChoices.next) {

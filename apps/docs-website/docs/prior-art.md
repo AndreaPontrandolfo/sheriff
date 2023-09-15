@@ -10,7 +10,7 @@ Through the years I came across a few ESLint configurations (have a look [here](
 None of these projects share the same goals of Sheriff. Sheriff has a particular vision. The main reasons that led to it's creation are:
 
 - easy to setup and use (thank to `create-sheriff-config`)
-- easy to customize (thanks to the FlatConfig format)
+- easy to customize (thanks to the `FlatConfig` format)
 - sensible defaults, based on years of real world experience in production scenarios
 
 After exploring every possible alternative, i came to the conclusion that none of the other options where close to what i needed for my projects and everyday use. That’s why i still opted for making Sheriff.

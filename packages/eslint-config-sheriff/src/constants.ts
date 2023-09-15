@@ -1,6 +1,7 @@
-export const allJsExtensions = 'js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx';
+export const allJsExtensions = 'js,mjs,cjs,ts,mts,cts';
+export const allJsxExtensions = 'jsx,tsx,mtsx,mjsx';
 
-export const supportedFileTypes = `**/*{${allJsExtensions}}`;
+export const supportedFileTypes = `**/*{${allJsExtensions},${allJsxExtensions},astro}`;
 
 export const messages = {
   NO_ACCESS_MODIFIER:
@@ -57,5 +58,9 @@ export const baseNoRestrictedSyntaxRules = [
   {
     selector: "Identifier[name='propTypes']",
     message: 'Avoid PropTypes. Use Typescript instead.',
+  },
+  {
+    selector: 'TSEnumDeclaration',
+    message: 'Avoid enums.',
   },
 ];

@@ -176,7 +176,7 @@ export const RulesTable = (): JSX.Element => {
           <DebounceInput
             className={styles.filterInput}
             type="text"
-            placeholder="Filter by any therm..."
+            placeholder="Filter by any term..."
             value={inputValue}
             debounceTimeout={300}
             onChange={(event) => {

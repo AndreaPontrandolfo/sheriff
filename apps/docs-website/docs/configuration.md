@@ -95,11 +95,11 @@ For more in-depth information, refer to the [official docs](https://eslint.org/d
 
 The upcoming configuration options are kind of hidden options, tailored to serve only a niche group of users and designed to address specific use cases. **Use these only if you end up needing them**.
 
-### `files` option
+### `files`
 
 Covered here: [♻ Migration guide](./migration-guide.md)
 
-### `pathsOveriddes` option
+### `pathsOveriddes`
 
 As outlined in the [criteria](./core-philosophy/criteria.md) page, Sheriff comes with sensible defaults. However, as your project grows, your team may come across the need to override some of these defaults. This option lets you do just that.
 
@@ -212,17 +212,19 @@ const sheriffOptions = {
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
 
-### `noRestrictedSyntaxOverride` option
+### `noRestrictedSyntaxOverride`
 
 ESLint has a very useful rule called `no-restricted-syntax`. It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to opt-out.
 Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, if you need to customize it, you have a few options:
 
-#### Override the rule in full
+#### Override
 
+Override the rule in full.
 You provide your own `no-restricted-syntax` rule. You can do this as normal, appending the rule to the `FlatConfig` array.
 
-#### Extend the Sheriff version of `no-restricted-syntax`
+#### Extend
 
+Extend the Sheriff version of `no-restricted-syntax`
 Use the key `noRestrictedSyntaxOverride.adjuncts` in the Sheriff configuration object.
 
 Example:
@@ -264,8 +266,9 @@ const sheriffOptions = {
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
 
-#### Shrink the Sheriff version of `no-restricted-syntax`
+#### Shrink
 
+Shrink the Sheriff version of `no-restricted-syntax`
 Use the key `noRestrictedSyntaxOverride.allows` in the Sheriff configuration object.
 
 Example:
