@@ -1,5 +1,13 @@
 # eslint-config-sheriff
 
+## 15.1.0
+
+### Minor Changes
+
+- 91b3b38: feat(rules): added astro support. Closes #45
+  fix(rules): removed eslint-plugin-etc rules
+  BREAKING CHANGE: removed eslint-plugin-etc
+
 ## 15.0.0
 
 ### Major Changes
