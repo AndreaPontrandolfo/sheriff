@@ -1,5 +1,18 @@
 # docs-website
 
+## 1.1.0
+
+### Minor Changes
+
+- 91b3b38: feat(rules): added astro support. Closes #45
+  fix(rules): removed eslint-plugin-etc rules
+  BREAKING CHANGE: removed eslint-plugin-etc
+
+### Patch Changes
+
+- Updated dependencies [91b3b38]
+  - @sheriff/utils@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
