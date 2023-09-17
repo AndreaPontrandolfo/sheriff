@@ -1,5 +1,11 @@
 # eslint-config-sheriff
 
+## 15.3.0
+
+### Minor Changes
+
+- ea724f4: fix(astro): added more fine-grained control to files influence
+
 ## 15.2.0
 
 ### Minor Changes

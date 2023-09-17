@@ -1,5 +1,12 @@
 # docs-website
 
+## 1.2.1
+
+### Patch Changes
+
+- Updated dependencies [ea724f4]
+  - @sheriff/utils@1.1.0
+
 ## 1.2.0
 
 ### Minor Changes

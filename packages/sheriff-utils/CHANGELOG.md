@@ -1,5 +1,11 @@
 # @sheriff/utils
 
+## 1.1.0
+
+### Minor Changes
+
+- ea724f4: fix(astro): added more fine-grained control to files influence
+
 ## 1.0.1
 
 ### Patch Changes
