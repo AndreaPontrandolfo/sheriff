@@ -15,7 +15,12 @@ import vitest from 'eslint-plugin-vitest';
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import tsdoc from 'eslint-plugin-tsdoc';
 import storybook from 'eslint-plugin-storybook';
-import { allJsExtensions, supportedFileTypes, ignores } from './constants';
+import {
+  allJsExtensions,
+  supportedFileTypes,
+  ignores,
+  allJsxExtensions,
+} from './constants';
 import { fpHandPickedRules } from './fpHandPickedRules';
 import { getBaseEslintHandPickedRules } from './getBaseEslintHandPickedRules';
 import { getReactConfig } from './getReactConfig';
@@ -143,7 +148,7 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
       rules: eslintRecommended.configs.recommended.rules,
     },
     {
-      files: [supportedFileTypes],
+      files: `**/*{${allJsExtensions},${allJsxExtensions}}`,
       languageOptions: getLanguageOptionsTypescript(customTSConfigPath),
     },
     {
