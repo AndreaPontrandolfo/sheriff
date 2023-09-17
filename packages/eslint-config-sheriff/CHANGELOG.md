@@ -1,5 +1,11 @@
 # eslint-config-sheriff
 
+## 15.2.0
+
+### Minor Changes
+
+- b5b5abf: fix(rules): fixed broken astro support
+
 ## 15.1.0
 
 ### Minor Changes

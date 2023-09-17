@@ -1,5 +1,15 @@
 # docs-website
 
+## 1.2.0
+
+### Minor Changes
+
+- b5b5abf: fix(rules): fixed broken astro support
+
+### Patch Changes
+
+- @sheriff/utils@1.0.1
+
 ## 1.1.0
 
 ### Minor Changes
