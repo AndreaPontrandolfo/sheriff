@@ -2,7 +2,11 @@ import react from 'eslint-plugin-react';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import { supportedFileTypes } from './constants';
+import {
+  allJsExtensions,
+  allJsxExtensions,
+  supportedFileTypes,
+} from './constants';
 import { getTsNamingConventionRule } from './getTsNamingConventionRule';
 import { reactHandPickedRules } from './reactHandPickedRules';
 import { getLanguageOptionsTypescriptReact } from './getExportableConfig';
@@ -10,11 +14,17 @@ import { getLanguageOptionsTypescriptReact } from './getExportableConfig';
 export const getReactConfig = (customTSConfigPath?: string | string[]) => {
   return [
     {
-      files: [supportedFileTypes],
+      files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
       plugins: {
         react,
       },
       languageOptions: getLanguageOptionsTypescriptReact(customTSConfigPath),
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: {
+        react,
+      },
       settings: {
         react: {
           version: 'detect',
@@ -27,25 +37,25 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
       },
     },
     {
-      files: ['**/*{jsx,tsx,mtsx,mjsx}'],
+      files: [`**/*{${allJsxExtensions}}`],
       rules: getTsNamingConventionRule({ isTsx: true }),
     },
     {
-      files: ['**/*{jsx,tsx,mtsx,mjsx}'],
+      files: [`**/*{${allJsxExtensions}}`],
       plugins: { 'react-refresh': reactRefresh },
       rules: {
         'react-refresh/only-export-components': 2,
       },
     },
     {
-      files: [supportedFileTypes],
+      files: [`**/*{${allJsxExtensions}}`],
       plugins: {
         'jsx-a11y': reactAccessibility,
       },
       rules: reactAccessibility.configs.recommended.rules,
     },
     {
-      files: [supportedFileTypes],
+      files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
       plugins: {
         'react-hooks': reactHooks,
       },
@@ -57,9 +67,20 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
       plugins: { 'react-refresh': reactRefresh },
       rules: {
         'react-refresh/only-export-components': 0,
+      },
+    },
+    // Specific overrides for astro
+    {
+      files: ['**/*.astro'],
+      plugins: { react },
+      rules: {
+        'react/no-unknown-property': 0,
         'react/jsx-filename-extension': [
           2,
-          { allow: 'always', extensions: ['jsx', '.tsx', 'mtsx', 'mjsx'] },
+          {
+            allow: 'always',
+            extensions: ['.jsx', '.tsx', '.mtsx', '.mjsx', '.astro'],
+          },
         ],
       },
     },

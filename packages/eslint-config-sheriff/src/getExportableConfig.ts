@@ -85,7 +85,7 @@ const nextjsConfig = {
 };
 
 const playwrightConfig = {
-  files: ['**/*{js,ts}'],
+  files: [`**/*{${allJsExtensions}}`],
   plugins: {
     playwright,
   },
@@ -148,7 +148,7 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
       rules: eslintRecommended.configs.recommended.rules,
     },
     {
-      files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
+      files: [`**/*{${allJsExtensions}}`],
       languageOptions: getLanguageOptionsTypescript(customTSConfigPath),
     },
     {

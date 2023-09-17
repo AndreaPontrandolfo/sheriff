@@ -14,7 +14,7 @@ export const reactHandPickedRules = {
   'react/jsx-filename-extension': [
     2,
     {
-      extensions: ['jsx', '.tsx', 'mtsx', 'mjsx'],
+      extensions: ['.jsx', '.tsx', '.mtsx', '.mjsx'],
     },
   ],
   'react/no-multi-comp': 2,
