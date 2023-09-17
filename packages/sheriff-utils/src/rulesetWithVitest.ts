@@ -4999,10 +4999,10 @@ export const ruleset = [
     "ruleOptions": [
       {
         "extensions": [
-          "jsx",
+          ".jsx",
           ".tsx",
-          "mtsx",
-          "mjsx"
+          ".mtsx",
+          ".mjsx"
         ]
       }
     ],
@@ -5162,7 +5162,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce all elements that require alternative text have meaningful information to relay back to end user.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/alt-text.md"
@@ -5173,7 +5173,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 0,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `<a>` text to not exactly match \"click here\", \"here\", \"link\", or \"a link\".",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-ambiguous-text.md"
@@ -5184,7 +5184,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce all anchors to contain accessible content.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-has-content.md"
@@ -5195,7 +5195,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce all anchors are valid, navigable elements.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-is-valid.md"
@@ -5206,7 +5206,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce elements with aria-activedescendant are tabbable.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-activedescendant-has-tabindex.md"
@@ -5217,7 +5217,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce all `aria-*` props are valid.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-props.md"
@@ -5228,7 +5228,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce ARIA state and property values are valid.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-proptypes.md"
@@ -5239,7 +5239,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that elements with ARIA roles must use a valid, non-abstract ARIA role.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-role.md"
@@ -5250,7 +5250,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that elements that do not support ARIA roles, states, and properties do not have those attributes.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/aria-unsupported-elements.md"
@@ -5261,7 +5261,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that autocomplete attributes are used correctly.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/autocomplete-valid.md"
@@ -5272,7 +5272,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce a clickable non-interactive element has at least one keyboard event listener.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/click-events-have-key-events.md"
@@ -5311,7 +5311,7 @@ export const ruleset = [
         ]
       }
     ],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that a control (an interactive element) has a text label.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/control-has-associated-label.md"
@@ -5322,7 +5322,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce heading (`h1`, `h2`, etc) elements contain accessible content.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/heading-has-content.md"
@@ -5333,7 +5333,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `<html>` element has `lang` prop.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/html-has-lang.md"
@@ -5344,7 +5344,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce iframe elements have a title attribute.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/iframe-has-title.md"
@@ -5355,7 +5355,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `<img>` alt prop does not contain the word \"image\", \"picture\", or \"photo\".",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/img-redundant-alt.md"
@@ -5378,7 +5378,7 @@ export const ruleset = [
         ]
       }
     ],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that elements with interactive handlers like `onClick` must be focusable.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/interactive-supports-focus.md"
@@ -5389,7 +5389,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that a `label` tag has a text label and an associated control.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/label-has-associated-control.md"
@@ -5400,7 +5400,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 0,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that `<label>` elements have the `htmlFor` prop.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/label-has-for.md"
@@ -5411,7 +5411,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforces that `<audio>` and `<video>` elements must have a `<track>` for captions.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/media-has-caption.md"
@@ -5422,7 +5422,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that `onMouseOver`/`onMouseOut` are accompanied by `onFocus`/`onBlur` for keyboard-only users.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/mouse-events-have-key-events.md"
@@ -5433,7 +5433,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that the `accessKey` prop is not used on any element to avoid complications with keyboard commands used by a screenreader.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-access-key.md"
@@ -5444,7 +5444,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce autoFocus prop is not used.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-autofocus.md"
@@ -5455,7 +5455,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce distracting elements are not used.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-distracting-elements.md"
@@ -5476,7 +5476,7 @@ export const ruleset = [
         ]
       }
     ],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Interactive elements should not be assigned non-interactive roles.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-interactive-element-to-noninteractive-role.md"
@@ -5522,7 +5522,7 @@ export const ruleset = [
         ]
       }
     ],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Non-interactive elements should not be assigned mouse or keyboard event listeners.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-noninteractive-element-interactions.md"
@@ -5571,7 +5571,7 @@ export const ruleset = [
         ]
       }
     ],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Non-interactive elements should not be assigned interactive roles.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-noninteractive-element-to-interactive-role.md"
@@ -5590,7 +5590,7 @@ export const ruleset = [
         "allowExpressionValues": true
       }
     ],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "`tabIndex` should only be declared on interactive elements.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-noninteractive-tabindex.md"
@@ -5601,7 +5601,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce explicit role property is not the same as implicit/default role property on element.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-redundant-roles.md"
@@ -5624,7 +5624,7 @@ export const ruleset = [
         ]
       }
     ],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that non-interactive, visible elements (such as `<div>`) that have click handlers use the role attribute.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/no-static-element-interactions.md"
@@ -5635,7 +5635,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that elements with ARIA roles must have all required attributes for that role.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/role-has-required-aria-props.md"
@@ -5646,7 +5646,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce that elements with explicit or implicit roles defined contain only `aria-*` properties supported by that `role`.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/role-supports-aria-props.md"
@@ -5657,7 +5657,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `scope` prop is only used on `<th>` elements.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/scope.md"
@@ -5668,7 +5668,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-jsx-a11y",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "Enforce `tabIndex` value is not greater than zero.",
       "url": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/tabindex-no-positive.md"
@@ -5679,7 +5679,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-react-hooks",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "enforces the Rules of Hooks",
       "url": "https://reactjs.org/docs/hooks-rules.html"
@@ -5690,7 +5690,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-react-hooks",
     "severity": 1,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx,astro}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
     "docs": {
       "description": "verifies the list of dependencies for Hooks like useEffect and similar",
       "url": "https://github.com/facebook/react/issues/14920"
@@ -5708,6 +5708,17 @@ export const ruleset = [
     }
   },
   {
+    "ruleName": "react/no-unknown-property",
+    "parentPluginName": "eslint-plugin-react",
+    "severity": 0,
+    "ruleOptions": [],
+    "affectedFiles": "**/*.astro",
+    "docs": {
+      "description": "Disallow usage of unknown DOM property",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-unknown-property.md"
+    }
+  },
+  {
     "ruleName": "react/jsx-filename-extension",
     "parentPluginName": "eslint-plugin-react",
     "severity": 2,
@@ -5715,17 +5726,18 @@ export const ruleset = [
       {
         "allow": "always",
         "extensions": [
-          "jsx",
+          ".jsx",
           ".tsx",
-          "mtsx",
-          "mjsx"
+          ".mtsx",
+          ".mjsx",
+          ".astro"
         ]
       }
     ],
-    "affectedFiles": "**/*.stories.tsx",
+    "affectedFiles": "**/*.astro",
     "docs": {
-      "description": "",
-      "url": ""
+      "description": "Disallow file extensions that may contain JSX",
+      "url": "https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-filename-extension.md"
     }
   },
   {
@@ -6867,7 +6879,7 @@ export const ruleset = [
     "parentPluginName": "@eslint/js",
     "severity": 0,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "",
       "url": ""
@@ -6878,7 +6890,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Identify false positives when async Playwright APIs are not properly awaited.",
       "url": ""
@@ -6889,7 +6901,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Prevent usage of page.pause()",
       "url": ""
@@ -6900,7 +6912,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "The use of ElementHandle is discouraged, use Locator instead",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-element-handle.md"
@@ -6911,7 +6923,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "The use of `page.$eval` and `page.$$eval` are discouraged, use `locator.evaluate` or `locator.evaluateAll` instead",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-eval.md"
@@ -6922,7 +6934,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Prevent usage of `.only()` focus test annotation",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-focused-test.md"
@@ -6933,7 +6945,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Prevent usage of the `.skip()` skip test annotation.",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-skipped-test.md"
@@ -6944,7 +6956,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Prevent usage of page.waitForTimeout()",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-wait-for-timeout.md"
@@ -6955,7 +6967,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 0,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Prevent usage of `{ force: true }` option.",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-force-option.md"
@@ -6966,7 +6978,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Enforces a maximum depth to nested describe calls",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/max-nested-describe.md"
@@ -6977,7 +6989,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Disallow conditional logic in tests",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-conditional-in-test.md"
@@ -6988,7 +7000,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 1,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Disallow usage of 'not' matchers when a more specific matcher exists",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/no-useless-not.md"
@@ -6999,7 +7011,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Enforce valid `expect()` usage",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/valid-expect.md"
@@ -7010,7 +7022,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Enforce lowercase test names",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-lowercase-title.md"
@@ -7021,7 +7033,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Suggest using `toHaveLength()`",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-to-have-length.md"
@@ -7032,7 +7044,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Require test cases and hooks to be inside a `test.describe` block",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/require-top-level-describe.md"
@@ -7043,7 +7055,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Suggest using `toBe()` for primitive literals",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-to-be.md"
@@ -7054,7 +7066,7 @@ export const ruleset = [
     "parentPluginName": "eslint-plugin-playwright",
     "severity": 2,
     "ruleOptions": [],
-    "affectedFiles": "**/*{js,ts}",
+    "affectedFiles": "**/*{js,mjs,cjs,ts,mts,cts}",
     "docs": {
       "description": "Suggest using `toStrictEqual()`",
       "url": "https://github.com/playwright-community/eslint-plugin-playwright/tree/main/docs/rules/prefer-strict-equal.md"
