@@ -148,7 +148,7 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
       rules: eslintRecommended.configs.recommended.rules,
     },
     {
-      files: `**/*{${allJsExtensions},${allJsxExtensions}}`,
+      files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
       languageOptions: getLanguageOptionsTypescript(customTSConfigPath),
     },
     {
