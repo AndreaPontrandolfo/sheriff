@@ -8,7 +8,7 @@
     "dev": "tsx ./index.ts",
     "build": "tsup",
     "publint": "publint",
-    "clean": "rm -rf .turbo && rm -rf dist "
+    "clean": "rm -rf .turbo && rm -rf dist"
   },
   "license": "MIT",
   "tsup": {

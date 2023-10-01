@@ -19,7 +19,7 @@
   },
   "scripts": {
     "publint": "publint",
-    "clean": "rm -rf .turbo && rm -rf dist "
+    "clean": "rm -rf .turbo && rm -rf dist"
   },
   "devDependencies": {
     "@types/node": "20.4.0",
