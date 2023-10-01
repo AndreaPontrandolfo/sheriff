@@ -115,8 +115,8 @@ importers:
         specifier: ^8.47.0
         version: 8.49.0
       eslint-config-sheriff:
-        specifier: latest
-        version: link:../../packages/eslint-config-sheriff
+        specifier: 15.2.0
+        version: 15.2.0(eslint@8.49.0)(typescript@5.2.2)
       express:
         specifier: ^4.18.2
         version: 4.18.2
@@ -7146,6 +7146,49 @@ packages:
       eslint: '>=7.0.0'
     dependencies:
       eslint: 8.49.0
+    dev: false
+
+  /eslint-config-sheriff@15.2.0(eslint@8.49.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-hFKgtHwqf4/S6m7NozYnz39Lrzc5252n/y9jiDggMtLQIagzoGJY5FM0TfseTDlWeLOEMucgazQxpwoS+tuNbw==}
+    engines: {node: '>=16'}
+    requiresBuild: true
+    peerDependencies:
+      eslint: '>=8.23.0'
+      typescript: '*'
+    dependencies:
+      '@eslint/js': 8.50.0
+      '@next/eslint-plugin-next': 13.5.3
+      '@regru/eslint-plugin-prefer-early-return': 1.0.0
+      '@typescript-eslint/eslint-plugin': 6.7.3(@typescript-eslint/parser@6.7.3)(eslint@8.49.0)(typescript@5.2.2)
+      '@typescript-eslint/parser': 6.7.3(eslint@8.49.0)(typescript@5.2.2)
+      astro-eslint-parser: 0.15.0
+      eslint: 8.49.0
+      eslint-config-prettier: 9.0.0(eslint@8.49.0)
+      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.7.3)(eslint-plugin-import@2.28.1)(eslint@8.49.0)
+      eslint-plugin-astro: 0.29.0(eslint@8.49.0)
+      eslint-plugin-fp: 2.3.0(eslint@8.49.0)
+      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.7.3)(eslint-import-resolver-typescript@3.6.1)(eslint@8.49.0)
+      eslint-plugin-jest: 27.4.2(@typescript-eslint/eslint-plugin@6.7.3)(eslint@8.49.0)(typescript@5.2.2)
+      eslint-plugin-jsdoc: 46.8.2(eslint@8.49.0)
+      eslint-plugin-jsx-a11y: 6.7.1(eslint@8.49.0)
+      eslint-plugin-lodash-f: 7.5.3(eslint@8.49.0)
+      eslint-plugin-playwright: 0.12.0(eslint-plugin-jest@27.4.2)(eslint@8.49.0)
+      eslint-plugin-react: 7.33.2(eslint@8.49.0)
+      eslint-plugin-react-hooks: 4.6.0(eslint@8.49.0)
+      eslint-plugin-react-refresh: 0.4.3(eslint@8.49.0)
+      eslint-plugin-sonarjs: 0.19.0(eslint@8.49.0)
+      eslint-plugin-storybook: 0.6.14(eslint@8.49.0)(typescript@5.2.2)
+      eslint-plugin-tsdoc: 0.2.17
+      eslint-plugin-unicorn: 48.0.1(eslint@8.49.0)
+      eslint-plugin-vitest: 0.2.8(eslint@8.49.0)(typescript@5.2.2)
+      typescript: 5.2.2
+    transitivePeerDependencies:
+      - eslint-import-resolver-node
+      - eslint-import-resolver-webpack
+      - jest
+      - supports-color
+      - vite
+      - vitest
     dev: false
 
   /eslint-define-config@1.23.0:
