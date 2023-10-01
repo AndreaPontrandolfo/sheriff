@@ -1,0 +1,30 @@
+{
+  "name": "sheriff-webservices",
+  "description": "Sheriff webservices.",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx watch ./src/index.ts",
+    "build": "tsc",
+    "clean": "rm -rf .turbo && rm -rf dist"
+  },
+  "devDependencies": {
+    "@sheriff/types": "workspace:*",
+    "@tsconfig/node-lts": "^18.12.5",
+    "@types/express": "^4.17.18",
+    "@types/node": "20.8.0",
+    "@types/lodash": "^4.14.191",
+    "eslint-define-config": "^1.23.0",
+    "prettier": "^3.0.0",
+    "tsx": "^3.13.0",
+    "type-fest": "^4.3.3",
+    "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-sheriff": "workspace:*",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21"
+  }
+}
