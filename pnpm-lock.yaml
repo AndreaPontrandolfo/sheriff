@@ -115,7 +115,7 @@ importers:
         specifier: ^8.47.0
         version: 8.49.0
       eslint-config-sheriff:
-        specifier: workspace:*
+        specifier: latest
         version: link:../../packages/eslint-config-sheriff
       express:
         specifier: ^4.18.2
