@@ -10,7 +10,10 @@ app.use(express.json());
 
 app.post('/api/get-new-sheriff-config', (req: Request, res: Response) => {
   const newConfig: BarebonesConfigAtom[] = getSheriffConfig(req.body);
+
+  console.log('Sending new config...');
   const { compiledConfig, pluginsNames } = generateRulesDataset(newConfig);
+  console.log('New config sent.');
 
   res.send({ compiledConfig, pluginsNames });
 });
