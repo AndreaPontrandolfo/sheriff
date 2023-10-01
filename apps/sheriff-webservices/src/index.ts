@@ -1,3 +1,4 @@
+// @ts-ignore
 import getSheriffConfig from 'eslint-config-sheriff';
 import { BarebonesConfigAtom } from '@sheriff/types';
 import { generateRulesDataset } from './generateRulesDataset.js';
