@@ -27,7 +27,7 @@
   },
   "packageManager": "pnpm@8.8.0",
   "engines": {
-    "node": "lts"
+    "node": ">=18.17.1"
   },
   "pnpm": {
     "peerDependencyRules": {
