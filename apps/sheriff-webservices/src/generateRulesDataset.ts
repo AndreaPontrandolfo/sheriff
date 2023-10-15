@@ -11,6 +11,7 @@ import type {
   BarebonesConfigAtom,
   RuleOptions,
   RuleOptionsConfig,
+  ServerResponse,
 } from '@sheriff/types';
 
 const { isArray, isEmpty, last, uniq } = lodash;
@@ -140,7 +141,9 @@ const getCompiledConfig = (config: BarebonesConfigAtom[]) => {
   return { compiledConfig, pluginsNames: uniq(pluginsNames) };
 };
 
-export const generateRulesDataset = (config: BarebonesConfigAtom[]) => {
+export const generateRulesDataset = (
+  config: BarebonesConfigAtom[],
+): ServerResponse => {
   const { compiledConfig, pluginsNames } = getCompiledConfig(config);
   return { compiledConfig, pluginsNames };
 };

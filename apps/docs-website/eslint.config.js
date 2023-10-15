@@ -1,4 +1,4 @@
-const sheriff = require("eslint-config-sheriff");
+const sheriff = require("eslint-config-sheriff").default;
 const { defineFlatConfig } = require("eslint-define-config");
 const docusaurusEslintPlugin = require("@docusaurus/eslint-plugin");
 const {
