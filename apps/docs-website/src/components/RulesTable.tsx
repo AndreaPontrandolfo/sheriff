@@ -85,7 +85,10 @@ export const RulesTable = (): JSX.Element => {
             : "https://sheriff-webservices.onrender.com/api/get-new-sheriff-config",
           {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin": "*",
+            },
             body: JSON.stringify(configCombination),
           },
         );
