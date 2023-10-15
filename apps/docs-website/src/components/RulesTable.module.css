@@ -29,6 +29,7 @@
   border: 1px solid #ccc;
   margin-right: 8px;
   max-width: 300px;
+  min-width: 100px;
 }
 
 .tableControlsContainer {
@@ -41,16 +42,17 @@
 .checkboxGroupContainer {
   display: flex;
   align-items: center;
+  border: 2px solid var(--ifm-toc-border-color);
+  border-radius: var(--ifm-global-radius);
+  padding: 9px 16px 8px 16px;
 }
 
-.nativeCheckbox,
-.nativeCheckboxDisabled {
+.nativeCheckbox {
   display: block;
   margin-right: 12px;
 }
 
-.nativeCheckbox input,
-.nativeCheckboxDisabled input {
+.nativeCheckbox input {
   padding: 0;
   height: initial;
   width: initial;
@@ -59,27 +61,17 @@
   cursor: pointer;
 }
 
-.nativeCheckboxDisabled input {
-  cursor: not-allowed;
-}
-
-.nativeCheckbox label,
-.nativeCheckboxDisabled label {
+.nativeCheckbox label {
   position: relative;
   cursor: pointer;
   user-select: none;
 }
 
-.nativeCheckboxDisabled label {
-  cursor: not-allowed;
-}
-
-.nativeCheckbox label:before,
-.nativeCheckboxDisabled label:before {
+.nativeCheckbox label:before {
   content: "";
   -webkit-appearance: none;
   background-color: transparent;
-  border: 2px solid var(--ifm-color-primary);
+  border: 2px solid var(--ifm-toc-border-color);
   border-radius: var(--ifm-global-radius);
   box-shadow:
     0 1px 2px rgba(0, 0, 0, 0.05),
@@ -93,13 +85,7 @@
   top: -2px;
 }
 
-.nativeCheckboxDisabled label:before {
-  border-color: var(--ifm-color-emphasis-300);
-  cursor: not-allowed;
-}
-
-.nativeCheckbox input:checked + label:after,
-.nativeCheckboxDisabled input:checked + label:after {
+.nativeCheckbox input:checked + label:after {
   content: "";
   display: block;
   position: absolute;
@@ -110,8 +96,4 @@
   border: solid var(--ifm-color-primary);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
-}
-
-.nativeCheckboxDisabled input:checked + label:after {
-  border-color: var(--ifm-color-emphasis-300);
 }
