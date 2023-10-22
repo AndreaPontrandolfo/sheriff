@@ -1,7 +1,7 @@
 {
   "name": "@sheriff/utils",
   "description": "Sheriff utility functions.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": true,
   "type": "module",
   "files": [
@@ -21,7 +21,7 @@
     "start": "tsx watch ./src/generateRulesDataset.ts",
     "rulesgen": "tsx ./src/generateRulesDataset.ts",
     "publint": "publint",
-    "clean": "rm -rf .turbo && rm -rf dist "
+    "clean": "rm -rf .turbo && rm -rf dist"
   },
   "devDependencies": {
     "@sheriff/types": "workspace:*",

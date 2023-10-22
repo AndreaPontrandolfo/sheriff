@@ -48,10 +48,8 @@ If you don't know much about `TSConfig` and you are uncertain, this can be a goo
     "verbatimModuleSyntax": true, // this is required for Sheriff to perform correctly.
     "noEmit": true, // you should pretty much never need this, most projects are transpiled and bundled with specific tools like Rollup nowadays.
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
     "allowJs": false,
     "checkJs": false,
-    "maxNodeModuleJsDepth": false,
     "experimentalDecorators": false,
     "paths": {}, // define here your paths if you want to use absolute paths in your project, which is highly recommended.
   },

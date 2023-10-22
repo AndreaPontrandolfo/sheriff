@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 
-import fs from 'fs';
-import getSheriffConfig from 'eslint-config-sheriff';
-import { isArray, isEmpty, last, uniq } from 'lodash-es';
+import lodash from 'lodash';
 import { Linter } from 'eslint';
 import type {
   Severity,
@@ -13,25 +11,12 @@ import type {
   BarebonesConfigAtom,
   RuleOptions,
   RuleOptionsConfig,
+  ServerResponse,
 } from '@sheriff/types';
 
+const { isArray, isEmpty, last, uniq } = lodash;
+
 const linter = new Linter();
-
-const barebonesConfigWithJest: BarebonesConfigAtom[] = getSheriffConfig({
-  react: true,
-  next: true,
-  lodash: true,
-  playwright: true,
-  jest: true,
-});
-
-const barebonesConfigWithVitest: BarebonesConfigAtom[] = getSheriffConfig({
-  react: true,
-  next: true,
-  lodash: true,
-  playwright: true,
-  vitest: true,
-});
 
 const getParentPluginName = (rule: string): string => {
   if (rule.includes('/')) {
@@ -156,21 +141,9 @@ const getCompiledConfig = (config: BarebonesConfigAtom[]) => {
   return { compiledConfig, pluginsNames: uniq(pluginsNames) };
 };
 
-const generateRulesDataset = (
+export const generateRulesDataset = (
   config: BarebonesConfigAtom[],
-  filename: string,
-) => {
+): ServerResponse => {
   const { compiledConfig, pluginsNames } = getCompiledConfig(config);
-
-  fs.writeFileSync(
-    `./src/${filename}.ts`,
-    `export const ruleset = ${JSON.stringify(compiledConfig, null, 2)};
-
-    export const pluginsNames = ${JSON.stringify(pluginsNames)};
-
-    `,
-  );
+  return { compiledConfig, pluginsNames };
 };
-
-generateRulesDataset(barebonesConfigWithJest, 'rulesetWithJest');
-generateRulesDataset(barebonesConfigWithVitest, 'rulesetWithVitest');

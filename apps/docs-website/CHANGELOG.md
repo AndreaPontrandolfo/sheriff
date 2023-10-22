@@ -1,5 +1,16 @@
 # docs-website
 
+## 1.3.0
+
+### Minor Changes
+
+- db87640: feat(website): rules filters are now configurable
+
+### Patch Changes
+
+- 9bf7bb6: feat(plugins): integrated all rules of eslint-plugin-fsecond
+- 4adedb8: feat(webservices): restricted cors access
+
 ## 1.2.1
 
 ### Patch Changes

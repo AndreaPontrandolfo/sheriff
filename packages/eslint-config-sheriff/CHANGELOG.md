@@ -1,5 +1,15 @@
 # eslint-config-sheriff
 
+## 16.0.0
+
+### Major Changes
+
+- 9bf7bb6: feat(plugins): integrated all rules of eslint-plugin-fsecond
+
+### Patch Changes
+
+- 4adedb8: feat(webservices): restricted cors access
+
 ## 15.3.0
 
 ### Minor Changes

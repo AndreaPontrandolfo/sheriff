@@ -109,3 +109,8 @@ export interface SheriffSettings {
    */
   noRestrictedSyntaxOverride?: NoRestrictedSyntaxOverride;
 }
+
+export interface ServerResponse {
+  compiledConfig: Entry[];
+  pluginsNames: string[];
+}
