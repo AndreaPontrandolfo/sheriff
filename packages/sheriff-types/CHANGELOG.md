@@ -1,5 +1,15 @@
 # @sheriff/types
 
+## 1.1.0
+
+### Minor Changes
+
+- db87640: feat(website): rules filters are now configurable
+
+### Patch Changes
+
+- d70cb51: feat(webservices): added sheriff webservices
+
 ## 1.0.1
 
 ### Patch Changes

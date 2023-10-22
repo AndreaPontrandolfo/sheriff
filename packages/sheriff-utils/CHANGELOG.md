@@ -1,5 +1,12 @@
 # @sheriff/utils
 
+## 1.1.1
+
+### Patch Changes
+
+- 4adedb8: feat(webservices): restricted cors access
+- d70cb51: feat(webservices): added sheriff webservices
+
 ## 1.1.0
 
 ### Minor Changes
