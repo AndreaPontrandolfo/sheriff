@@ -15,6 +15,7 @@ import vitest from 'eslint-plugin-vitest';
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import tsdoc from 'eslint-plugin-tsdoc';
 import storybook from 'eslint-plugin-storybook';
+import fsecond from 'eslint-plugin-fsecond';
 import { allJsExtensions, supportedFileTypes, ignores } from './constants';
 import { fpHandPickedRules } from './fpHandPickedRules';
 import { getBaseEslintHandPickedRules } from './getBaseEslintHandPickedRules';
@@ -245,6 +246,11 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
           mode: 'typescript',
         },
       },
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: { fsecond },
+      rules: { 'fsecond/prefer-destructured-optionals': 2 },
     },
     getAstroConfig(hasReact, customTSConfigPath),
     {

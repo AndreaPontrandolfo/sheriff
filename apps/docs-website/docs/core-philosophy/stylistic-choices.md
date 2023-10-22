@@ -15,6 +15,12 @@ description: 🔥 Hot takes!
 - [Is reduce() bad? - HTTP 203](https://www.youtube.com/watch?v=qaGjS7-qWzg)
 - [TkDodo - Why i don't like reduce](https://www.youtube.com/watch?v=qaGjS7-qWzg)
 
+:::info
+
+Sheriff actually allows using `reduce` for very simple operations like summing up numbers. Complex operations are banned.
+
+:::
+
 ## No enums
 
 - [eslint-plugin-typescript-enum - README](https://github.com/shian15810/eslint-plugin-typescript-enum/blob/main/README.md)

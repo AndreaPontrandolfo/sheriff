@@ -65,6 +65,7 @@
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-astro": "^0.29.0",
     "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-fsecond": "^1.1.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.1",
     "eslint-plugin-jsdoc": "^46.4.3",
