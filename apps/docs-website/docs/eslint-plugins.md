@@ -23,3 +23,4 @@ sidebar_position: 7
 - [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
 - [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook)
 - [eslint-plugin-astro](https://github.com/ota-meshi/eslint-plugin-astro)
+- [eslint-plugin-fsecond](https://github.com/AndreaPontrandolfo/eslint-plugin-fsecond)
