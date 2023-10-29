@@ -30,7 +30,7 @@ Sheriff actually allows using `reduce` for very simple operations like summing u
 
 ## No overloads
 
-- generics supersedes them. overloads are a legacy feature that was made available in Typescript before generics were a thing. Overloads are mostly a C#/Angular leftover. Simply put: there are no problems that function overloads solve better than generics
+- generics supersedes them. Overloads are a legacy feature that was made available in Typescript before generics were a thing. Overloads are mostly a C#/Angular leftover. Simply put: there are no problems that function overloads solve better than generics
 - overloads clutter the code and make it more verbose and harder to read, which increase the cognitive overload
 - overloads clutter the VScode tooltips
 - overloads force you to write non-standard javascript syntax

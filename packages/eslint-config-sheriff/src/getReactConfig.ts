@@ -1,4 +1,3 @@
-import react from 'eslint-plugin-react';
 import reactRecommended from 'eslint-plugin-react/configs/recommended';
 import jsxRuntime from 'eslint-plugin-react/configs/jsx-runtime';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
@@ -17,11 +16,6 @@ import { getLanguageOptionsTypescriptReact } from './getExportableConfig';
 export const getReactConfig = (customTSConfigPath?: string | string[]) => {
   return [
     {
-      // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
-      files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
-      languageOptions: getLanguageOptionsTypescriptReact(customTSConfigPath),
-    },
-    {
       files: [supportedFileTypes],
       settings: {
         react: {
@@ -35,12 +29,16 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
     },
     {
       files: [supportedFileTypes],
-      plugins: { react },
       rules: reactHandPickedRules,
     },
     {
       files: [supportedFileTypes],
       ...jsxRuntime,
+    },
+    {
+      // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
+      files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
+      languageOptions: getLanguageOptionsTypescriptReact(customTSConfigPath),
     },
     {
       files: [`**/*{${allJsxExtensions}}`],
@@ -87,7 +85,6 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
     // Specific overrides for astro
     {
       files: ['**/*.astro'],
-      plugins: { react },
       rules: {
         'react/no-unknown-property': 0,
         'react/jsx-filename-extension': [
