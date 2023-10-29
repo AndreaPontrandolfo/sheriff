@@ -35,7 +35,7 @@
     "publint": "^0.2.2",
     "tsconfig": "workspace:*",
     "tsx": "^3.9.0",
-    "type-fest": "^3.9.0",
+    "type-fest": "^4.0.0",
     "typescript": "5.1.6"
   }
 }
