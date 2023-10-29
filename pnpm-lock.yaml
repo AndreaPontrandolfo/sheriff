@@ -325,8 +325,8 @@ importers:
         version: 0.2.8(eslint@8.49.0)(typescript@5.2.2)
     devDependencies:
       '@arethetypeswrong/cli':
-        specifier: ^0.9.0
-        version: 0.9.0
+        specifier: ^0.12.0
+        version: 0.12.2
       '@sheriff/types':
         specifier: workspace:*
         version: link:../sheriff-types
@@ -573,23 +573,24 @@ packages:
     resolution: {integrity: sha512-Jh15/qVmrLGhkKJBdXlK1+9tY4lZruYjsgkDFj08ZmDiWVBLJcqkok7Z0/R0In+i1rScBpJlSvrTS2Lm41Pbnw==}
     dev: true
 
-  /@arethetypeswrong/cli@0.9.0:
-    resolution: {integrity: sha512-QeT3TXtivqfH6LL0kPI2YcqH7IzQ2VKnCwJgVLxsmXKsd7ng8XhpInu0w69OIfEQ5qMaHAdVXyB0pI6NYpY3SQ==}
+  /@arethetypeswrong/cli@0.12.2:
+    resolution: {integrity: sha512-SE4Rqy8LM8zgRLeVXZqFIOg4w4TCDG2AMguuZDDRcrUmVQj7phW0tWJnKwsZtyJ6SdqXTIzWvGYiUJiHg2hb9w==}
     hasBin: true
     dependencies:
-      '@arethetypeswrong/core': 0.9.0
+      '@arethetypeswrong/core': 0.12.2
       chalk: 4.1.2
       cli-table3: 0.6.3
       commander: 10.0.1
       marked: 5.1.2
       marked-terminal: 5.2.0(marked@5.1.2)
       node-fetch: 2.7.0
+      semver: 7.5.4
     transitivePeerDependencies:
       - encoding
     dev: true
 
-  /@arethetypeswrong/core@0.9.0:
-    resolution: {integrity: sha512-Bu6lLtGPBmj1psNwZCZi6avCewl/M+JZ6vGtHA/FkgGWz48vffWIa8d0i8t/QGwxda5WUnGeKaaARkvsivarRg==}
+  /@arethetypeswrong/core@0.12.2:
+    resolution: {integrity: sha512-ez/quGfC6RVg7VrwCgMVreJ01jbkfJQRNxOG7Bpl4YGcPRs45ZE1AzpHiIdzqfwFg9EBVSaewaffrsK5MVbALw==}
     dependencies:
       '@andrewbranch/untar.js': 1.0.3
       fetch-ponyfill: 7.1.0
