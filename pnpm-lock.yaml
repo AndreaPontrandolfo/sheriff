@@ -309,8 +309,8 @@ importers:
         specifier: ^0.4.3
         version: 0.4.4(eslint@8.49.0)
       eslint-plugin-sonarjs:
-        specifier: ^0.19.0
-        version: 0.19.0(eslint@8.49.0)
+        specifier: ^0.21.0
+        version: 0.21.0(eslint@8.49.0)
       eslint-plugin-storybook:
         specifier: ^0.6.11
         version: 0.6.15(eslint@8.49.0)(typescript@5.2.2)
@@ -7573,8 +7573,8 @@ packages:
       string.prototype.matchall: 4.0.10
     dev: false
 
-  /eslint-plugin-sonarjs@0.19.0(eslint@8.49.0):
-    resolution: {integrity: sha512-6+s5oNk5TFtVlbRxqZN7FIGmjdPCYQKaTzFPmqieCmsU1kBYDzndTeQav0xtQNwZJWu5awWfTGe8Srq9xFOGnw==}
+  /eslint-plugin-sonarjs@0.21.0(eslint@8.49.0):
+    resolution: {integrity: sha512-oezUDfFT5S6j3rQheZ4DLPrbetPmMS7zHIKWGHr0CM3g5JgyZroz1FpIKa4jV83NsGpmgIeagpokWDKIJzRQmw==}
     engines: {node: '>=14'}
     peerDependencies:
       eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
