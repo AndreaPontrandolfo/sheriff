@@ -16,3 +16,5 @@ And if you don't like something, you can easily override it, and just as easily 
 This config is particularly useful for big teams with developers of various skill levels.<br />
 Sheriff was made to prevent all kind of mistakes and to align the team on the same playing field. It is battle-tested in real-world scenarios and shines especially in such.<br />
 Also, Sheriff target pretty much everybody. Junior developers can learn a lot by using it, and Lead developers can save a lot of time on configuration and maintenance.
+
+Sheriff doesn't have the goal to include every single ESLint plugin in existance. The ESLint plugins that qualify for inclusion in Sheriff are usually the ones that would benefit the community the most and that would be tricky to manually integrate with the rest of the config.
