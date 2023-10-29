@@ -82,8 +82,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/sheriff-types
       '@tsconfig/docusaurus':
-        specifier: ^1.0.5
-        version: 1.0.7
+        specifier: ^2.0.0
+        version: 2.0.2
       '@types/lodash-es':
         specifier: ^4.17.6
         version: 4.17.10
@@ -4272,8 +4272,8 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: false
 
-  /@tsconfig/docusaurus@1.0.7:
-    resolution: {integrity: sha512-ffTXxGIP/IRMCjuzHd6M4/HdIrw1bMfC7Bv8hMkTadnePkpe0lG0oDSdbRpSDZb2rQMAgpbWiR10BvxvNYwYrg==}
+  /@tsconfig/docusaurus@2.0.2:
+    resolution: {integrity: sha512-12HWfYmgUl4M2o76/TFufGtI68wl2k/b8qPrIrG7ci9YJLrpAtadpy897Bz5v29Mlkr7a1Hq4KHdQTKtU+2rhQ==}
     dev: true
 
   /@tsconfig/node-lts@18.12.5:
