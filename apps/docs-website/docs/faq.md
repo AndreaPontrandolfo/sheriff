@@ -11,17 +11,15 @@ sidebar_position: 16
 
 ## Is Sheriff compatible with "X"?
 
-- [Vite](https://vitejs.dev/) ➜ Yes
-- [Next.js](https://github.com/vercel/next.js) ➜ Yes. Sheriff has explicit support for Next.js. You can enable it in the Sheriff config options
-- [CRA](https://create-react-app.dev/) ➜ Yes. Just add this line to your `.env` file:
+Generally speaking, everything that is compatible with ESLint, should also be compatible with Sheriff. That being said, in some cases there can be some nuances:
+
+- [Vite](https://vitejs.dev/) ➜ Compatible out of the box.
+- [Next.js](https://github.com/vercel/next.js) ➜ Sheriff has explicit support for Next.js. You can enable it in the Sheriff config options. You shouldn't follow any of the steps provided in the [Next.js website](https://nextjs.org/docs/pages/building-your-application/configuring/eslint). Only follow the Sheriff instructions
+- [CRA](https://create-react-app.dev/) ➜ Compatible. Just add this line to your `.env` file:
 
   ```.env title=".env"
   DISABLE_ESLINT_PLUGIN=true
   ```
-
-- [Biome](https://biomejs.dev/) ➜ No. Biome is not compatible with ESLint in the first place
-- [Deno](https://deno.land/) ➜ No. Deno is not compatible with ESLint in the first place
-- [Bun](https://bun.sh/) ➜ Untested
 
 ## Does Sheriff support vanilla Javascript codebases?
 
