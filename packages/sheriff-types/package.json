@@ -22,7 +22,7 @@
     "clean": "rm -rf .turbo && rm -rf dist"
   },
   "devDependencies": {
-    "@types/node": "20.4.0",
+    "@types/node": "20.8.9",
     "prettier": "^3.0.0",
     "publint": "^0.2.2",
     "tsconfig": "workspace:*",
