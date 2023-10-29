@@ -97,7 +97,7 @@
     "husky": "^8.0.0",
     "publint": "^0.2.2",
     "tsconfig": "workspace:*",
-    "tsup": "^6.2.3",
+    "tsup": "^7.0.0",
     "typescript": "5.2.2"
   },
   "publishConfig": {
