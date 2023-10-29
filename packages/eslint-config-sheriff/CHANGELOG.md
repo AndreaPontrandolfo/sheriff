@@ -1,5 +1,11 @@
 # eslint-config-sheriff
 
+## 16.1.0
+
+### Minor Changes
+
+- b9c995b: feat(rules): removed react/jsx-no-leaked-render
+
 ## 16.0.0
 
 ### Major Changes
