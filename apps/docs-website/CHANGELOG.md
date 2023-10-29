@@ -1,5 +1,12 @@
 # docs-website
 
+## 1.4.0
+
+### Minor Changes
+
+- 04bca0a: fix(plugins): removed extra react plugin definition
+  docs(website): updated some website sections
+
 ## 1.3.0
 
 ### Minor Changes

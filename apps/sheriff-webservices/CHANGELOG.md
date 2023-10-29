@@ -1,5 +1,12 @@
 # sheriff-webservices
 
+## 1.0.2
+
+### Patch Changes
+
+- Updated dependencies [04bca0a]
+  - eslint-config-sheriff@16.2.0
+
 ## 1.0.1
 
 ### Patch Changes

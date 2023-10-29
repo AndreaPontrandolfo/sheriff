@@ -1,5 +1,12 @@
 # eslint-config-sheriff
 
+## 16.2.0
+
+### Minor Changes
+
+- 04bca0a: fix(plugins): removed extra react plugin definition
+  docs(website): updated some website sections
+
 ## 16.1.0
 
 ### Minor Changes
