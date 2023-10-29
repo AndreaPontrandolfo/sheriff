@@ -124,8 +124,8 @@ importers:
         specifier: ^8.47.0
         version: 8.49.0
       eslint-config-sheriff:
-        specifier: 15.2.0
-        version: 15.2.0(eslint@8.49.0)(typescript@5.2.2)
+        specifier: 16.0.0
+        version: link:../../packages/eslint-config-sheriff
       express:
         specifier: ^4.18.2
         version: 4.18.2
@@ -300,7 +300,7 @@ importers:
         specifier: ^0.12.0
         version: 0.12.0(eslint-plugin-jest@27.4.3)(eslint@8.49.0)
       eslint-plugin-react:
-        specifier: ^7.31.8
+        specifier: ^7.33.2
         version: 7.33.2(eslint@8.49.0)
       eslint-plugin-react-hooks:
         specifier: ^4.6.0
@@ -5415,7 +5415,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.22.1
-      caniuse-lite: 1.0.30001552
+      caniuse-lite: 1.0.30001553
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -5685,7 +5685,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001552
+      caniuse-lite: 1.0.30001553
       electron-to-chromium: 1.4.563
       node-releases: 2.0.13
       update-browserslist-db: 1.0.13(browserslist@4.22.1)
@@ -5815,13 +5815,13 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.22.1
-      caniuse-lite: 1.0.30001552
+      caniuse-lite: 1.0.30001553
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: false
 
-  /caniuse-lite@1.0.30001552:
-    resolution: {integrity: sha512-WXdqNcUo7OKqFOpXZdVnrSC1vRfzPrMWwmxwHsoC+J7YjTLbGiqo0LUAGAmKXdMEqHL14RWJTWCuWT5md43tkA==}
+  /caniuse-lite@1.0.30001553:
+    resolution: {integrity: sha512-N0ttd6TrFfuqKNi+pMgWJTb9qrdJu4JSpgPFLe/lrD19ugC6fZgF0pUewRowDwzdDnb9V41mFcdlYgl/PyKf4A==}
 
   /cardinal@2.1.1:
     resolution: {integrity: sha512-JSr5eOgoEymtYHBjNWyjrMqet9Am2miJhlfKNdqLp6zoeAh0KN5dRAcxlecj5mAJrmQomgiOBj35xHLrFjqBpw==}
@@ -7228,49 +7228,6 @@ packages:
       eslint: '>=7.0.0'
     dependencies:
       eslint: 8.49.0
-    dev: false
-
-  /eslint-config-sheriff@15.2.0(eslint@8.49.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-hFKgtHwqf4/S6m7NozYnz39Lrzc5252n/y9jiDggMtLQIagzoGJY5FM0TfseTDlWeLOEMucgazQxpwoS+tuNbw==}
-    engines: {node: '>=16'}
-    requiresBuild: true
-    peerDependencies:
-      eslint: '>=8.23.0'
-      typescript: '*'
-    dependencies:
-      '@eslint/js': 8.52.0
-      '@next/eslint-plugin-next': 13.5.6
-      '@regru/eslint-plugin-prefer-early-return': 1.0.0
-      '@typescript-eslint/eslint-plugin': 6.8.0(@typescript-eslint/parser@6.8.0)(eslint@8.49.0)(typescript@5.2.2)
-      '@typescript-eslint/parser': 6.8.0(eslint@8.49.0)(typescript@5.2.2)
-      astro-eslint-parser: 0.15.0
-      eslint: 8.49.0
-      eslint-config-prettier: 9.0.0(eslint@8.49.0)
-      eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.8.0)(eslint-plugin-import@2.28.1)(eslint@8.49.0)
-      eslint-plugin-astro: 0.29.1(eslint@8.49.0)
-      eslint-plugin-fp: 2.3.0(eslint@8.49.0)
-      eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.8.0)(eslint-import-resolver-typescript@3.6.1)(eslint@8.49.0)
-      eslint-plugin-jest: 27.4.3(@typescript-eslint/eslint-plugin@6.8.0)(eslint@8.49.0)(typescript@5.2.2)
-      eslint-plugin-jsdoc: 46.8.2(eslint@8.49.0)
-      eslint-plugin-jsx-a11y: 6.7.1(eslint@8.49.0)
-      eslint-plugin-lodash-f: 7.5.3(eslint@8.49.0)
-      eslint-plugin-playwright: 0.12.0(eslint-plugin-jest@27.4.3)(eslint@8.49.0)
-      eslint-plugin-react: 7.33.2(eslint@8.49.0)
-      eslint-plugin-react-hooks: 4.6.0(eslint@8.49.0)
-      eslint-plugin-react-refresh: 0.4.3(eslint@8.49.0)
-      eslint-plugin-sonarjs: 0.19.0(eslint@8.49.0)
-      eslint-plugin-storybook: 0.6.15(eslint@8.49.0)(typescript@5.2.2)
-      eslint-plugin-tsdoc: 0.2.17
-      eslint-plugin-unicorn: 48.0.1(eslint@8.49.0)
-      eslint-plugin-vitest: 0.2.8(eslint@8.49.0)(typescript@5.2.2)
-      typescript: 5.2.2
-    transitivePeerDependencies:
-      - eslint-import-resolver-node
-      - eslint-import-resolver-webpack
-      - jest
-      - supports-color
-      - vite
-      - vitest
     dev: false
 
   /eslint-define-config@1.24.1:

@@ -9,7 +9,8 @@ export const reactHandPickedRules = {
   'react/jsx-boolean-value': 2,
   'react/jsx-fragments': 2,
   'react/hook-use-state': 2,
-  'react/jsx-no-leaked-render': [2, { validStrategies: ['coerce', 'ternary'] }],
+  // this rule right now isn't really inferring typescript types information about variables being boolean, see more here: https://github.com/jsx-eslint/eslint-plugin-react/issues/3292
+  // 'react/jsx-no-leaked-render': [2, { validStrategies: ['coerce', 'ternary'] }],
   'react/destructuring-assignment': 2,
   'react/jsx-filename-extension': [
     2,

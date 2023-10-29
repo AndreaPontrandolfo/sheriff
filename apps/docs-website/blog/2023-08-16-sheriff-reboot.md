@@ -18,7 +18,7 @@ As a side-effect, the project now relies on [changesets](https://github.com/chan
 
 ## Complete Rebranding
 
-### New documentation
+### New Docs
 
 The documentation has been fully revamped, moving on from [Gitbook](https://www.gitbook.com/) to [Docusaurus](https://docusaurus.io/), a modern documentation framework.<br/>
 Whether a newcomer or a seasoned user, the documentation is more accessible and easier to navigate, with a sidebar that allows for quick access to the different sections.<br/>
