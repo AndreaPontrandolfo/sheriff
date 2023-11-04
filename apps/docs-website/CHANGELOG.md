@@ -1,5 +1,11 @@
 # docs-website
 
+## 1.5.0
+
+### Minor Changes
+
+- e89713c: docs(blog): added second blog entry
+
 ## 1.4.0
 
 ### Minor Changes
