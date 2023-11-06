@@ -111,7 +111,7 @@ export const getBaseEslintHandPickedRules = (
     'no-unneeded-ternary': [2, { defaultAssignment: false }],
     'require-atomic-updates': 2,
     'no-nested-ternary': 2,
-    'no-console': [2, { allow: ['warn', 'error', 'debug'] }],
+    'no-console': [2, { allow: ['warn', 'error', 'debug', 'info'] }],
     eqeqeq: 2,
     'prefer-arrow-callback': 2,
     'arrow-body-style': [2, 'as-needed'],
