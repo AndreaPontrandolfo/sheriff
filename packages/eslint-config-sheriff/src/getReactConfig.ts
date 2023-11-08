@@ -1,5 +1,5 @@
-import reactRecommended from 'eslint-plugin-react/configs/recommended';
-import jsxRuntime from 'eslint-plugin-react/configs/jsx-runtime';
+import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
+import jsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
