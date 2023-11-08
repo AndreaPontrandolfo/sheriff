@@ -1,5 +1,11 @@
 # eslint-config-sheriff
 
+## 17.0.0
+
+### Major Changes
+
+- d31e5b3: fix(config): fixed an import of eslint-plugin-react
+
 ## 16.2.0
 
 ### Minor Changes
