@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   createColumnHelper,
   flexRender,
@@ -58,9 +58,9 @@ export const RulesTable = (): JSX.Element => {
   const [configCombination, setConfigCombination] = useState<SheriffSettings>(
     configCombinationDefaultValues,
   );
-  const [globalFilter, setGlobalFilter] = React.useState("");
-  const [inputValue, setInputValue] = React.useState("");
-  const [selectValue, setSelectValue] = React.useState(null);
+  const [globalFilter, setGlobalFilter] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [selectValue, setSelectValue] = useState(null);
   const [tableMaximumAllowedWidth, setTableMaximumAllowedWidth] =
     useState<number>(0);
   const tableContainerRef = useRef<HTMLDivElement>(null);
@@ -81,7 +81,7 @@ export const RulesTable = (): JSX.Element => {
       try {
         const response = await fetch(
           process?.env?.NODE_ENV === "development"
-            ? "http://localhost:5000/api/get-new-sheriff-config"
+            ? "http://localhost:5001/api/get-new-sheriff-config"
             : "https://sheriff-webservices.onrender.com/api/get-new-sheriff-config",
           {
             method: "POST",

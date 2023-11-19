@@ -14,16 +14,10 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-  files: ["src/**/*.{ts,tsx,mdx}", "docs/**/*.mdx", "blog/**/*.mdx"],
 };
 
 module.exports = defineFlatConfig([
   ...sheriff(sheriffOptions),
-  {
-    rules: {
-      "sonarjs/no-duplicate-string": 0,
-    },
-  },
   {
     files: ["*.tsx", "*.ts"], // .mdx?
     plugins: {
@@ -31,7 +25,9 @@ module.exports = defineFlatConfig([
     },
     rules: {
       "@docusaurus/no-untranslated-text": 0, // enable when we have translations
-      "@docusaurus/string-literal-i18n-messages": 0, // enable when we have translations
+      "@docusaurus/string-literal-i18n-messages": 0, // enable when we have translations,
+      "@docusaurus/no-html-links": 2,
+      "@docusaurus/prefer-docusaurus-heading": 2,
     },
   },
   {
@@ -49,8 +45,20 @@ module.exports = defineFlatConfig([
   },
   {
     rules: {
+      "sonarjs/no-duplicate-string": 0,
       "arrow-body-style": 0,
       "react/jsx-props-no-spreading": 0,
+      "import/no-unresolved": [
+        2,
+        {
+          commonjs: true,
+          caseSensitiveStrict: true,
+          ignore: ["^@theme", "^@docusaurus"],
+        },
+      ],
     },
+  },
+  {
+    ignores: [".docusaurus/**/*", ".turbo/**/*", "babel.config.js"],
   },
 ]);
