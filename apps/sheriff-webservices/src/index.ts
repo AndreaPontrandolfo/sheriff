@@ -12,12 +12,29 @@ app.use(cors());
 
 app.post('/api/get-new-sheriff-config', (req: Request, res: Response) => {
   const newConfig: BarebonesConfigAtom[] = getSheriffConfig(req.body);
+  const allRulesConfig: BarebonesConfigAtom[] = getSheriffConfig(
+    {
+      react: true,
+      lodash: true,
+      next: true,
+      playwright: true,
+      jest: true,
+      vitest: true,
+    },
+    true,
+  );
 
   console.log('Sending new config...');
+  const allRulesCompiledConfig =
+    generateRulesDataset(allRulesConfig).compiledConfig;
   const { compiledConfig, pluginsNames } = generateRulesDataset(newConfig);
   console.log('New config sent.');
 
-  res.send({ compiledConfig, pluginsNames });
+  res.send({
+    compiledConfig,
+    pluginsNames,
+    totalAvailableRulesAmount: allRulesCompiledConfig.length,
+  });
 });
 
 app.listen(port, () => {

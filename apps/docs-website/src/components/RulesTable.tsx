@@ -16,6 +16,7 @@ import styles from "./RulesTable.module.css";
 import { ConfigCombinationForm } from "./ConfigCombinationForm";
 import { TableSkeleton } from "./TableSkeleton";
 import { configCombinationDefaultValues } from "./constants";
+import { QueriedRulesMetricsGroup } from "./QueriedRulesMetricsGroup";
 
 const columnHelper = createColumnHelper<Entry>();
 
@@ -55,6 +56,8 @@ export const RulesTable = (): JSX.Element => {
   const [data, setData] = useState<Entry[]>(() => []);
   const [isLoading, setIsLoading] = useState(false);
   const [pluginsNames, setPluginsNames] = useState<string[]>([]);
+  const [totalAvailableRulesAmount, setTotalAvailableRulesAmount] = useState(0);
+  const [fetchedConfigRulesAmount, setFetchedConfigRulesAmount] = useState(0);
   const [configCombination, setConfigCombination] = useState<SheriffSettings>(
     configCombinationDefaultValues,
   );
@@ -95,8 +98,9 @@ export const RulesTable = (): JSX.Element => {
 
         const fetchedData: ServerResponse = await response.json();
 
+        setTotalAvailableRulesAmount(fetchedData.totalAvailableRulesAmount);
+        setFetchedConfigRulesAmount(fetchedData.compiledConfig.length);
         setPluginsNames(fetchedData.pluginsNames);
-
         setData(filterDuplicateRules(fetchedData.compiledConfig));
       } catch (error) {
         console.error(error);
@@ -213,6 +217,11 @@ export const RulesTable = (): JSX.Element => {
             }}
           />
         </div>
+        <QueriedRulesMetricsGroup
+          totalAvailableRulesAmount={totalAvailableRulesAmount}
+          fetchedConfigRulesAmount={fetchedConfigRulesAmount}
+          filteredRulesAmount={table.getRowModel().rows.length}
+        />
       </div>
       {isLoading ? (
         <TableSkeleton />

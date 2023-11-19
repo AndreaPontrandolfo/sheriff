@@ -113,4 +113,5 @@ export interface SheriffSettings {
 export interface ServerResponse {
   compiledConfig: Entry[];
   pluginsNames: string[];
+  totalAvailableRulesAmount: number;
 }

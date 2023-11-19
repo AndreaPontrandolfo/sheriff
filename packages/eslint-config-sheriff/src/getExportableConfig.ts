@@ -262,7 +262,10 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
   ];
 };
 
-export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
+export const getExportableConfig = (
+  userConfigChoices: SheriffSettings,
+  areAllRulesForced?: boolean,
+) => {
   if (!userConfigChoices) {
     throw new Error('No settings provided.');
   }
@@ -279,7 +282,11 @@ export const getExportableConfig = (userConfigChoices: SheriffSettings) => {
     ];
   }
 
-  if (userConfigChoices.jest && userConfigChoices.vitest) {
+  if (
+    !areAllRulesForced &&
+    userConfigChoices.jest &&
+    userConfigChoices.vitest
+  ) {
     throw new Error(
       'Jest and Vitest support cannot be activated at once. Please choose one or the other.',
     );

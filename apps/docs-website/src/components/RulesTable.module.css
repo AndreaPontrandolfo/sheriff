@@ -36,7 +36,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   margin-bottom: 16px;
+  gap: 1rem;
 }
 
 .checkboxGroupContainer {
@@ -96,4 +98,11 @@
   border: solid var(--ifm-color-primary);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+
+.queriedRulesMetricsGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
 }
