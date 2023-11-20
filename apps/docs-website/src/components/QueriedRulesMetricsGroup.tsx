@@ -1,4 +1,4 @@
-import styles from "./RulesTable.module.css";
+import styles from "./QueriedRulesMetricsGroup.module.css";
 
 interface QueriedRulesMetricsGroupProps {
   totalAvailableRulesAmount: number;
@@ -12,17 +12,18 @@ export const QueriedRulesMetricsGroup = ({
   filteredRulesAmount,
 }: QueriedRulesMetricsGroupProps): JSX.Element => {
   return (
-    <div className={styles.queriedRulesMetricsGroup}>
+    <div className={styles.container}>
       <div>
-        <span>Total available rules: </span>
-        <span>{totalAvailableRulesAmount}</span>
+        <span className={styles.label}>Total available rules: </span>
+        <span className={styles.number}>{totalAvailableRulesAmount}</span>
       </div>
       <div>
-        <span>Current config rules: </span>
-        <span>{fetchedConfigRulesAmount}</span>
+        <span className={styles.label}>Current config rules: </span>
+        <span className={styles.number}>{fetchedConfigRulesAmount}</span>
       </div>
       <div>
-        <span>Filtered rules</span>: <span>{filteredRulesAmount}</span>
+        <span className={styles.label}>Filtered rules: </span>
+        <span className={styles.number}>{filteredRulesAmount}</span>
       </div>
     </div>
   );

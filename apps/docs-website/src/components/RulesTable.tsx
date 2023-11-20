@@ -57,7 +57,6 @@ export const RulesTable = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState(false);
   const [pluginsNames, setPluginsNames] = useState<string[]>([]);
   const [totalAvailableRulesAmount, setTotalAvailableRulesAmount] = useState(0);
-  const [fetchedConfigRulesAmount, setFetchedConfigRulesAmount] = useState(0);
   const [configCombination, setConfigCombination] = useState<SheriffSettings>(
     configCombinationDefaultValues,
   );
@@ -98,8 +97,9 @@ export const RulesTable = (): JSX.Element => {
 
         const fetchedData: ServerResponse = await response.json();
 
-        setTotalAvailableRulesAmount(fetchedData.totalAvailableRulesAmount);
-        setFetchedConfigRulesAmount(fetchedData.compiledConfig.length);
+        setTotalAvailableRulesAmount(
+          fetchedData.totalAvailableRulesAmount ?? 0,
+        );
         setPluginsNames(fetchedData.pluginsNames);
         setData(filterDuplicateRules(fetchedData.compiledConfig));
       } catch (error) {
@@ -219,7 +219,7 @@ export const RulesTable = (): JSX.Element => {
         </div>
         <QueriedRulesMetricsGroup
           totalAvailableRulesAmount={totalAvailableRulesAmount}
-          fetchedConfigRulesAmount={fetchedConfigRulesAmount}
+          fetchedConfigRulesAmount={data.length}
           filteredRulesAmount={table.getRowModel().rows.length}
         />
       </div>

@@ -30,3 +30,8 @@
   opacity: 1 !important;
   margin-top: 2px;
 }
+
+.heroActionsBlock {
+  max-width: 24rem;
+  margin: 0 auto;
+}
