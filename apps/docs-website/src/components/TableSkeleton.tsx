@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React from "react";
 import ContentLoader, { type IContentLoaderProps } from "react-content-loader";
 
 export const TableSkeleton = (props: IContentLoaderProps): JSX.Element => (

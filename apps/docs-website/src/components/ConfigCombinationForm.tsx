@@ -1,8 +1,7 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
-import styles from "./RulesTable.module.css";
 import { configCombinationDefaultValues } from "./constants";
+import styles from "./ConfigCombinationForm.module.css";
 
 interface ConfigCombinationFormProps {
   setTableData: (data: FormInputs) => void;
@@ -26,6 +25,7 @@ export const ConfigCombinationForm = ({
 
   const handleVitestChange = (isChecked: boolean) => {
     setValue("vitest", isChecked, { shouldDirty: true, shouldTouch: true });
+
     if (isChecked) {
       setValue("jest", false, { shouldDirty: true, shouldTouch: true });
     }
@@ -33,6 +33,7 @@ export const ConfigCombinationForm = ({
 
   const handleJestChange = (isChecked: boolean) => {
     setValue("jest", isChecked, { shouldDirty: true, shouldTouch: true });
+
     if (isChecked) {
       setValue("vitest", false, { shouldDirty: true, shouldTouch: true });
     }

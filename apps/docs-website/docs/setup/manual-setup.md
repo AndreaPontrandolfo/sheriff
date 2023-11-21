@@ -63,7 +63,7 @@ Follow these steps:
 1. [Setup prettier](../prettier-support.md#setup) (_optional_)
 1. [Setup VSCode support](../vscode-support.md) (_optional_)
 
-:::caution
+:::warning
 
 Sheriff is based on the [new format of ESLint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend Sheriff from an [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
 
