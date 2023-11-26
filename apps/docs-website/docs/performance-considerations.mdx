@@ -2,6 +2,9 @@
 sidebar_position: 14
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # ⚡ Performance tips
 
 Depending on the device you are operating on, in-editor performance can be a concern with Sheriff. <br />
@@ -41,6 +44,9 @@ This approach has a little more overhead, but you could try to run the heaviest 
 
 Here is an example on how you can achieve it:
 
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
+
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
@@ -65,6 +71,36 @@ export default defineFlatConfig([
 ]);
 ```
 
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
+
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+};
+
+module.exports = defineFlatConfig([
+  ...sheriff(sheriffOptions),
+  {
+    rules: {
+      // highlight-next-line
+      "@typescript-eslint/no-misused-promises": process.env.CI ? 2 : 0,
+    },
+  },
+]);
+```
+
+  </TabItem>
+</Tabs>
+
 This is a tradeoff, as this approach is a DX degradation and could lead to some developer frustration, because perfectly valid code in local environment could instead fail in CI.
 
 ### Adopt ESLint cache
@@ -76,7 +112,7 @@ This technique has pretty much no downsides and you should employ it in any case
 Read the official docs on ESLint caching here: [command-line-interface#caching](https://eslint.org/docs/latest/use/command-line-interface#caching). <br />
 Instead, if your project lives in a monorepo, you can follow [this guide](https://www.shew.dev/monorepos/guardrails/eslint).
 
-### Revise glob patterns
+### Review glob patterns
 
 ESLint, Typescript and Sheriff use minimatch syntax to handle glob patterns. <br />
 Wide glob patterns can lead to performance degradation.

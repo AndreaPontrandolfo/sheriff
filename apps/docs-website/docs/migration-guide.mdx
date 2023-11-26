@@ -2,6 +2,9 @@
 sidebar_position: 15
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # ♻ Migration guide
 
 If you are setting up Sheriff in an already established codebase, follow these steps:
@@ -19,28 +22,55 @@ You can achieve this by leveraging 2 techniques:
 - open the `eslint.config.js` file and add a key `files` in the `sheriffOptions` object. The value accepts an array of filepaths, dictated by [minimatch](https://github.com/isaacs/minimatch) syntax. Only the matching files found in this array will be linted. <br />
   See example below:
 
-  ```js title="eslint.config.js"
-  import sheriff from "eslint-config-sheriff";
-  import { defineFlatConfig } from "eslint-define-config";
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
 
-  const sheriffOptions = {
-    // highlight-next-line
-    files: ["./src/**/*"], // Only the files in the /src directory will be linted.
-    react: false,
-    next: false,
-    lodash: false,
-    playwright: false,
-    jest: false,
-    vitest: false,
-  };
+```js title="eslint.config.js"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
 
-  export default defineFlatConfig([...sheriff(sheriffOptions)]);
-  ```
+const sheriffOptions = {
+  // highlight-next-line
+  files: ["./src/**/*"], // Only the files in the /src directory will be linted.
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+};
 
-  :::info
+export default defineFlatConfig([...sheriff(sheriffOptions)]);
+```
 
-  By default, the `create-sheriff-config` command will not add the `files` in the object and every js/ts file will be linted. Use this only if you want to specifically lint just a subsection of the codebase.
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
 
-  :::
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+const sheriffOptions = {
+  // highlight-next-line
+  files: ["./src/**/*"], // Only the files in the /src directory will be linted.
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+};
+
+module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+  </TabItem>
+</Tabs>
+
+:::info
+
+By default, the `create-sheriff-config` command will not add the `files` in the object and every js/ts file will be linted. Use this only if you want to specifically lint just a subsection of the codebase.
+
+:::
 
 - use [eslint-interactive](https://github.com/mizdra/eslint-interactive)
