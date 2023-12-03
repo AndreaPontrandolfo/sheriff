@@ -4,6 +4,9 @@ toc_min_heading_level: 2
 toc_max_heading_level: 4
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # 🧠 Configuration
 
 ## Base options
@@ -11,6 +14,9 @@ toc_max_heading_level: 4
 The `eslint-config-sheriff` package exports a `sheriff` function.<br />
 You can configure Sheriff as desired using a simple javascript object as the first input parameter of the `sheriff` function.<br />
 Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with `create-sheriff-config` some of these values will be inferred automatically from your project.
+
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
 
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";
@@ -31,11 +37,39 @@ const sheriffOptions = {
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
 
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
+
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+// highlight-start
+// Sheriff configuration object
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+};
+// highlight-end
+
+module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+  </TabItem>
+</Tabs>
+
 ## Remodeling
 
 You can override any Sheriff rule as desired in the `eslint.config.js` file.
 
 For example, let's say you want to disable a Sheriff rule, like `import/first`:
+
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
 
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";
@@ -61,7 +95,40 @@ export default defineFlatConfig([
 ]);
 ```
 
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
+
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+};
+
+module.exports = defineFlatConfig([
+  ...sheriff(sheriffOptions),
+  {
+    rules: {
+      // highlight-next-line
+      "import/first": 0, // 'import/first' is now disabled everywhere.
+    },
+  },
+]);
+```
+
+  </TabItem>
+</Tabs>
+
 Likewise, let's say you want to enable a new rule:
+
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
 
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";
@@ -87,6 +154,36 @@ export default defineFlatConfig([
 ]);
 ```
 
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
+
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+};
+
+module.exports = defineFlatConfig([
+  ...sheriff(sheriffOptions),
+  {
+    rules: {
+      // highlight-next-line
+      "import/first": 2, // 'import/first' is now enabled everywhere.
+    },
+  },
+]);
+```
+
+  </TabItem>
+</Tabs>
+
 This is just the standard behavior of the new configuration system of ESLint, which I'm illustrating here for your convenience. Sheriff doesn't alter this in any way.
 
 For more in-depth information, refer to the [official docs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new).
@@ -97,7 +194,7 @@ The upcoming configuration options are kind of hidden options, tailored to serve
 
 ### `files`
 
-Covered here: [♻ Migration guide](./migration-guide.md)
+Covered here: [♻ Migration guide](./migration-guide.mdx)
 
 ### `pathsOveriddes`
 
@@ -112,6 +209,9 @@ But, if you have multiple `tsconfig.json` files in your project (like `tsconfig.
 You can pass it a path as a string (or a list of paths as a array of strings, see: [one-tsconfigjson-per-package](https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root)).
 
 Example:
+
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
 
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";
@@ -133,6 +233,32 @@ const sheriffOptions = {
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
 
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
+
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  pathsOveriddes: {
+    // highlight-next-line
+    tsconfigLocation: "./tsconfig.eslint.json",
+  },
+};
+
+module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+  </TabItem>
+</Tabs>
+
 #### `pathsOveriddes.ignores`
 
 By default, Sheriff ignores a list of commonly ignored folders (`/node_modules/`, `/build/`, `/dist/`, etc...).
@@ -142,6 +268,9 @@ This setting overrides this default.
 It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax.
 
 Example:
+
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
 
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";
@@ -169,6 +298,38 @@ const sheriffOptions = {
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
 
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
+
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  pathsOveriddes: {
+    // highlight-start
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/mySpecialFolder/**",
+    ],
+    // highlight-end
+  },
+};
+
+module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+  </TabItem>
+</Tabs>
+
 #### `pathsOveriddes.tests`
 
 By default, Sheriff will apply Jest or Vitest rules only on specific files.
@@ -187,6 +348,9 @@ It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isa
 
 Example:
 
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
+
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
@@ -204,13 +368,44 @@ const sheriffOptions = {
       "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
       "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
       "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-    ];
+    ],
     // highlight-end
   },
 };
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
+
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
+
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  pathsOveriddes: {
+    // highlight-start
+    tests: [
+      "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+      "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+      "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+    ],
+    // highlight-end
+  },
+};
+
+module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+  </TabItem>
+</Tabs>
 
 ### `noRestrictedSyntaxOverride`
 
@@ -220,7 +415,7 @@ Sheriff already come with a preconfigured `no-restricted-syntax` entry. However,
 #### Override
 
 Override the rule in full.
-You provide your own `no-restricted-syntax` rule. You can do this as normal, appending the rule to the `FlatConfig` array.
+You provide your own `no-restricted-syntax` rule. You can do this you normally would, appending the rule to the `FlatConfig` array.
 
 #### Extend
 
@@ -228,6 +423,9 @@ Extend the Sheriff version of `no-restricted-syntax`
 Use the key `noRestrictedSyntaxOverride.adjuncts` in the Sheriff configuration object.
 
 Example:
+
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
 
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";
@@ -266,12 +464,58 @@ const sheriffOptions = {
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
 
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
+
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  // highlight-start
+  noRestrictedSyntaxOverride: {
+    adjuncts: [
+      {
+        selector: "LabeledStatement",
+        message:
+          "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
+      },
+      {
+        selector: "ForInStatement",
+        message:
+          "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",
+      },
+      {
+        selector: "Identifier[name='Reflect']",
+        message:
+          "Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development.",
+      },
+    ],
+  },
+  // highlight-end
+};
+
+module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+  </TabItem>
+</Tabs>
+
 #### Shrink
 
 Shrink the Sheriff version of `no-restricted-syntax`
 Use the key `noRestrictedSyntaxOverride.allows` in the Sheriff configuration object.
 
 Example:
+
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
 
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";
@@ -297,3 +541,34 @@ const sheriffOptions = {
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
+
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
+
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  // highlight-start
+  noRestrictedSyntaxOverride: {
+    allows: [
+      "LabeledStatement",
+      "ForInStatement",
+      "Identifier[name='Reflect']",
+    ],
+  },
+  // highlight-end
+};
+
+module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+  </TabItem>
+</Tabs>

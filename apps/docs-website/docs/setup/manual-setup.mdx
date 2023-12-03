@@ -1,0 +1,135 @@
+---
+sidebar_position: 2
+description: DIY
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Manual setup
+
+Follow these steps:
+
+1. Install the package from [npm](https://www.npmjs.com/package/eslint-config-sheriff).
+
+   ```bash npm2yarn
+   npm install -D eslint eslint-define-config eslint-config-sheriff
+   ```
+
+1. Create a `eslint.config.js` file at the root of your project and copy/paste the contents of the following snippet of code:
+
+  <Tabs groupId="esmorcjs">
+    <TabItem value="ESM" label="ESM">
+
+    ```js title="eslint.config.js"
+    import sheriff from "eslint-config-sheriff";
+    import { defineFlatConfig } from "eslint-define-config";
+
+    const sheriffOptions = {
+      react: false,
+      next: false,
+      lodash: false,
+      playwright: false,
+      jest: false,
+      vitest: false,
+    };
+
+    export default defineFlatConfig([...sheriff(sheriffOptions)]);
+    ```
+
+    </TabItem>
+    <TabItem value="CommonJS" label="CommonJS">
+
+    ```js title="eslint.config.js"
+    const { sheriff } = require("eslint-config-sheriff");
+    const { defineFlatConfig } = require("eslint-define-config");
+
+    const sheriffOptions = {
+      react: false,
+      next: false,
+      lodash: false,
+      playwright: false,
+      jest: false,
+      vitest: false,
+    };
+
+    module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
+    ```
+
+    </TabItem>
+
+  </Tabs>
+
+or, if you already have a `eslint.config.js` in your project, just append Sheriff to the configs array, like this:
+
+  <Tabs groupId="esmorcjs">
+    <TabItem value="ESM" label="ESM">
+
+    ```js title="eslint.config.js"
+    // highlight-next-line
+    import sheriff from "eslint-config-sheriff"; // add this
+    // highlight-next-line
+    import { defineFlatConfig } from "eslint-define-config"; // add this
+    // my other imports...
+
+    // highlight-start
+    // add this
+    const sheriffOptions = {
+      react: false,
+      next: false,
+      lodash: false,
+      playwright: false,
+      jest: false,
+      vitest: false,
+    };
+    // highlight-end
+
+    export default [
+      // highlight-next-line
+      ...sheriff(sheriffOptions), // add this
+      // my other configurations...
+    ];
+    ```
+
+    </TabItem>
+    <TabItem value="CommonJS" label="CommonJS">
+
+    ```js title="eslint.config.js"
+    // highlight-next-line
+    const { sheriff } = require("eslint-config-sheriff"); // add this
+    // highlight-next-line
+    const { defineFlatConfig } = require("eslint-define-config"); // add this
+    // my other imports...
+
+    // highlight-start
+    // add this
+    const sheriffOptions = {
+      react: false,
+      next: false,
+      lodash: false,
+      playwright: false,
+      jest: false,
+      vitest: false,
+    };
+    // highlight-end
+
+    module.exports = [
+      // highlight-next-line
+      ...sheriff(sheriffOptions), // add this
+      // my other configurations...
+    ];
+    ```
+
+    </TabItem>
+
+  </Tabs>
+
+1. [Configure Sheriff](../configuration.mdx) (_optional_)
+1. [Setup prettier](../prettier-support.md#setup) (_optional_)
+1. [Setup VSCode support](../vscode-support.md) (_optional_)
+
+:::warning
+
+Sheriff is based on the [new format of ESLint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend Sheriff from an [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
+
+:::

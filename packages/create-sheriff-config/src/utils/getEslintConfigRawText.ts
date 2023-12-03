@@ -24,7 +24,7 @@ const sheriffOptions = ${JSON.stringify(sheriffConfig, null, 2)};
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);`,
 
-    commonjs: `const sheriff = require('eslint-config-sheriff');
+    commonjs: `const { sheriff } = require('eslint-config-sheriff');
 const { defineFlatConfig } = require('eslint-define-config');
 
 const sheriffOptions = ${JSON.stringify(sheriffConfig, null, 2)};

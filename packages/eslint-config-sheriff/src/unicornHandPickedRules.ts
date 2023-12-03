@@ -13,6 +13,7 @@ export const unicornHandPickedRules = {
   'unicorn/prefer-top-level-await': 2,
   'unicorn/prefer-spread': 2,
   'unicorn/no-useless-spread': 2,
+  'unicorn/no-useless-fallback-in-spread': 2,
   'unicorn/no-for-loop': 2,
   'unicorn/prefer-set-size': 2,
   'unicorn/prefer-type-error': 2,
