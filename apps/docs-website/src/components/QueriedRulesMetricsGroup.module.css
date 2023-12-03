@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.label {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.number {
+  font-size: 18px;
+  font-weight: 500;
+}
