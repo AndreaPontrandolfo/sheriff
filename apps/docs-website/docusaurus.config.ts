@@ -2,6 +2,7 @@
 import type * as Preset from "@docusaurus/preset-classic";
 import type { Config } from "@docusaurus/types";
 import { themes } from "prism-react-renderer";
+import { version } from "eslint-config-sheriff/package.json";
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -75,6 +76,11 @@ const config: Config = {
           label: "Docs",
         },
         { to: "/blog", label: "Blog", position: "left" },
+        {
+          position: "right",
+          value: `<div style="font-weight: 700;">v${version}</div>`,
+          type: "html",
+        },
         {
           href: "https://github.com/AndreaPontrandolfo/sheriff",
           position: "right",
