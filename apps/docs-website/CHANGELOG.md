@@ -1,5 +1,16 @@
 # docs-website
 
+## 1.6.0
+
+### Minor Changes
+
+- 00d83c4: build(website): updated ts-eslint to latest
+- df2fa02: docs(website): added totalRulesAmount metrics to rules page
+
+### Patch Changes
+
+- 4360bfb: docs(readme): added performance tips docs
+
 ## 1.5.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @sheriff/types
 
+## 1.1.1
+
+### Patch Changes
+
+- df2fa02: docs(website): added totalRulesAmount metrics to rules page
+
 ## 1.1.0
 
 ### Minor Changes

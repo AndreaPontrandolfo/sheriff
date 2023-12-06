@@ -1,5 +1,18 @@
 # sheriff-webservices
 
+## 1.1.0
+
+### Minor Changes
+
+- df2fa02: docs(website): added totalRulesAmount metrics to rules page
+
+### Patch Changes
+
+- Updated dependencies [00d83c4]
+- Updated dependencies [4360bfb]
+- Updated dependencies [df2fa02]
+  - eslint-config-sheriff@17.1.0
+
 ## 1.0.3
 
 ### Patch Changes
