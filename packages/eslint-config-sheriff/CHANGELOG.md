@@ -1,5 +1,16 @@
 # eslint-config-sheriff
 
+## 17.1.0
+
+### Minor Changes
+
+- 00d83c4: build(website): updated ts-eslint to latest
+
+### Patch Changes
+
+- 4360bfb: docs(readme): added performance tips docs
+- df2fa02: docs(website): added totalRulesAmount metrics to rules page
+
 ## 17.0.0
 
 ### Major Changes

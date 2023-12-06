@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-sheriff",
-  "version": "17.0.0",
+  "version": "17.1.0",
   "description": "A comprehensive ESLint configuration.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
