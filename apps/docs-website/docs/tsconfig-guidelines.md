@@ -24,7 +24,7 @@ If you don't know much about `TSConfig` and you are uncertain, this can be a goo
   "exclude": ["node_modules", "dist", "build", "coverage"], // this is already a good default. Generally you want to put here build artifacts. Some other possible build artifacts are: "artifacts", "lib"...
   "compilerOptions": {
     "target": "es6",
-    "module": "nodenext",
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx",

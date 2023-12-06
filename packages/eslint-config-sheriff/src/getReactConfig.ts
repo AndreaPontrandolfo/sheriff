@@ -59,14 +59,14 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
       rules: reactAccessibility.configs.recommended.rules,
     },
     {
-      files: [`**/*{${allJsxExtensions}}`],
+      files: [supportedFileTypes],
       plugins: {
         'react-hooks': reactHooks,
       },
       rules: reactHooks.configs.recommended.rules,
     },
     {
-      files: [`**/*{${allJsxExtensions}}`],
+      files: [supportedFileTypes],
       plugins: {
         fsecond,
       },
