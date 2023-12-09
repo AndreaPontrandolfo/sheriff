@@ -10,6 +10,9 @@ const port = process.env.PORT || 5001;
 app.use(express.json());
 app.use(cors());
 
+app.get('/api/keepalive', (req: Request, res: Response) => {
+  res.send('OK');
+});
 app.post('/api/get-new-sheriff-config', (req: Request, res: Response) => {
   const newConfig: BarebonesConfigAtom[] = getSheriffConfig(req.body);
   const allRulesConfig: BarebonesConfigAtom[] = getSheriffConfig(

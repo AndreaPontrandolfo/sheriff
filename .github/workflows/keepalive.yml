@@ -1,0 +1,28 @@
+name: Scheduled API Request
+
+on:
+  schedule:
+    - cron: '*/13 * * * *' # Schedule every 13 minutes
+
+jobs:
+  api-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Pnpm Setup
+        uses: pnpm/action-setup@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Run API Request Script
+        run: |
+          curl -X GET https://sheriff-webservices.onrender.com/api/keepalive
