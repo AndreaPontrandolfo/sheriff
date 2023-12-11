@@ -16,6 +16,8 @@ import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import tsdoc from 'eslint-plugin-tsdoc';
 import storybook from 'eslint-plugin-storybook';
 import fsecond from 'eslint-plugin-fsecond';
+import getGitignorePatterns from 'eslint-config-flat-gitignore';
+import { ExportableConfigAtom, SheriffSettings } from '@sheriff/types';
 import { allJsExtensions, supportedFileTypes, ignores } from './constants';
 import { fpHandPickedRules } from './fpHandPickedRules';
 import { getBaseEslintHandPickedRules } from './getBaseEslintHandPickedRules';
@@ -30,7 +32,6 @@ import { sonarjsHandPickedRules } from './sonarjsHandPickedRules';
 import { typescriptHandPickedRules } from './typescriptHandPickedRules';
 import { unicornHandPickedRules } from './unicornHandPickedRules';
 import { vitestHandPickedRules } from './vitestHandPickedRules';
-import { ExportableConfigAtom, SheriffSettings } from '@sheriff/types';
 import { getAstroConfig } from './getAstroConfig';
 
 const getLanguageOptionsTypescript = (
@@ -337,7 +338,12 @@ export const getExportableConfig = (
   }
 
   exportableConfig.push({
-    ignores: userConfigChoices.pathsOveriddes?.ignores ?? ignores,
+    ignores: [
+      ...(userConfigChoices.ignores?.recommended ? ignores : []),
+      ...(userConfigChoices.ignores?.inheritedFromGitignore
+        ? getGitignorePatterns().ignores
+        : []),
+    ],
   });
 
   return exportableConfig;
