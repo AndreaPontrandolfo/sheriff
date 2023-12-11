@@ -196,6 +196,63 @@ The upcoming configuration options are kind of hidden options, tailored to serve
 
 Covered here: [♻ Migration guide](./migration-guide.mdx)
 
+### `ignores`
+
+By default, Sheriff ignores a list of commonly ignored folders (`/node_modules/`, `/build/`, `/dist/`, etc...) and the files specified in your .gitignore file. You can disable any of these settings by passing `false` to them.
+
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
+
+```js title="eslint.config.js"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  // highlight-start
+  ignores: {
+    recommended: true, // true by default. false to disable.
+    inheritedFromGitignore: true, // true by default. false to disable.
+  },
+  // highlight-end
+};
+
+export default defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
+
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  // highlight-start
+  ignores: {
+    recommended: true, // true by default. false to disable.
+    inheritedFromGitignore: true, // true by default. false to disable.
+  },
+  // highlight-end
+};
+
+module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+  </TabItem>
+</Tabs>
+
 ### `pathsOveriddes`
 
 As outlined in the [criteria](./core-philosophy/criteria.md) page, Sheriff comes with sensible defaults. However, as your project grows, your team may come across the need to override some of these defaults. This option lets you do just that.
@@ -250,77 +307,6 @@ const sheriffOptions = {
   pathsOveriddes: {
     // highlight-next-line
     tsconfigLocation: "./tsconfig.eslint.json",
-  },
-};
-
-module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
-```
-
-  </TabItem>
-</Tabs>
-
-#### `pathsOveriddes.ignores`
-
-By default, Sheriff ignores a list of commonly ignored folders (`/node_modules/`, `/build/`, `/dist/`, etc...).
-
-This setting overrides this default.
-
-It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax.
-
-Example:
-
-<Tabs groupId="esmorcjs">
-  <TabItem value="ESM" label="ESM">
-
-```js title="eslint.config.js"
-import sheriff from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
-
-const sheriffOptions = {
-  react: false,
-  next: false,
-  lodash: false,
-  playwright: false,
-  jest: false,
-  vitest: false,
-  pathsOveriddes: {
-    // highlight-start
-    ignores: [
-      "**/node_modules/**",
-      "**/dist/**",
-      "**/build/**",
-      "**/mySpecialFolder/**",
-    ],
-    // highlight-end
-  },
-};
-
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
-```
-
-</TabItem>
-<TabItem value="CommonJS" label="CommonJS">
-
-```js title="eslint.config.js"
-const { sheriff } = require("eslint-config-sheriff");
-const { defineFlatConfig } = require("eslint-define-config");
-
-const sheriffOptions = {
-  react: false,
-  next: false,
-  lodash: false,
-  playwright: false,
-  jest: false,
-  vitest: false,
-  pathsOveriddes: {
-    // highlight-start
-    ignores: [
-      "**/node_modules/**",
-      "**/dist/**",
-      "**/build/**",
-      "**/mySpecialFolder/**",
-    ],
-    // highlight-end
   },
 };
 

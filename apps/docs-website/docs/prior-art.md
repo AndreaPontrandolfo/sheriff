@@ -18,6 +18,7 @@ After exploring every possible alternative, i came to the conclusion that none o
 ## Related projects
 
 - [eslint-config-airbnb-typescript](https://github.com/iamturns/eslint-config-airbnb-typescript)
+- [@antfu/eslint-config](https://github.com/antfu/eslint-config)
 - [xo](https://github.com/xojs/xo)
 - [eslint-kit](https://github.com/eslint-kit/eslint-kit)
 - [eslint-config-galex](https://github.com/ljosberinn/eslint-config-galex)
