@@ -38,3 +38,5 @@ yarn-error.log*
 dist
 
 megalinter-reports/
+
+pnpm-lock.yaml
