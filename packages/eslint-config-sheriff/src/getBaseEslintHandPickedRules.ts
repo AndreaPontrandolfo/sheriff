@@ -58,7 +58,6 @@ export const getBaseEslintHandPickedRules = (
     'no-sequences': [2, { allowInParentheses: false }],
     'no-unmodified-loop-condition': 2,
     'no-void': 2,
-    'max-statements-per-line': [2, { max: 1 }],
     'no-array-constructor': 2,
     'no-multi-assign': 2,
     'no-plusplus': 2,
@@ -88,21 +87,6 @@ export const getBaseEslintHandPickedRules = (
     'prefer-template': 2,
     'operator-assignment': [2, 'never'],
     'logical-assignment-operators': [2, 'never'],
-
-    // Prettier doesn't have strong opinions about emptyLines. See: https://prettier.io/docs/en/rationale.html#empty-lines.
-    'padding-line-between-statements': [
-      2,
-      // blank lines after every sequence of variable declarations, like the newline-after-var rule.
-      { blankLine: 'always', prev: ['const', 'let'], next: '*' },
-      {
-        blankLine: 'any',
-        prev: ['const', 'let'],
-        next: ['const', 'let'],
-      },
-
-      //require blank lines before all return statements, like the newline-before-return rule.
-      { blankLine: 'always', prev: '*', next: 'return' },
-    ],
     'prefer-object-spread': 2,
     'no-param-reassign': [2, { props: true }],
     'no-redeclare': 2,

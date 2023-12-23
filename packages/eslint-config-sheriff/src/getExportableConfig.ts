@@ -16,6 +16,7 @@ import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import tsdoc from 'eslint-plugin-tsdoc';
 import storybook from 'eslint-plugin-storybook';
 import fsecond from 'eslint-plugin-fsecond';
+import stylistic from '@stylistic/eslint-plugin';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import { ExportableConfigAtom, SheriffSettings } from '@sheriff/types';
 import { allJsExtensions, supportedFileTypes, ignores } from './constants';
@@ -33,6 +34,7 @@ import { typescriptHandPickedRules } from './typescriptHandPickedRules';
 import { unicornHandPickedRules } from './unicornHandPickedRules';
 import { vitestHandPickedRules } from './vitestHandPickedRules';
 import { getAstroConfig } from './getAstroConfig';
+import { stylisticHandPickedRules } from './stylisticHandPickedRules';
 
 const getLanguageOptionsTypescript = (
   userChosenTSConfig?: string | string[],
@@ -173,6 +175,11 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
     {
       files: [supportedFileTypes],
       rules: getBaseEslintHandPickedRules(noRestrictedSyntaxOverride),
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: { '@stylistic': stylistic },
+      rules: stylisticHandPickedRules,
     },
     {
       files: [supportedFileTypes],
