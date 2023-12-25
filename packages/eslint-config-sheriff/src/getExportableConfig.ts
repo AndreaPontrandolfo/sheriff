@@ -267,6 +267,12 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
         'import/no-default-export': 0,
       },
     },
+    {
+      files: [supportedFileTypes],
+      linterOptions: {
+        reportUnusedDisableDirectives: 'error',
+      },
+    },
   ];
 };
 

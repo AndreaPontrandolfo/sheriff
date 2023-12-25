@@ -31,10 +31,6 @@ Please use the discussions tab or the issues tab for new rules proposals.
 1. Install the dependencies with pnpm
 1. Do the changes
 
-## 📋 License
-
-[MIT](https://github.com/AndreaPontrandolfo/sheriff/blob/master/LICENSE).
-
 ## 🌤 Changelog
 
 [Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
