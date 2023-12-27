@@ -23,7 +23,7 @@ const columnHelper = createColumnHelper<Entry>();
 const columns = [
   columnHelper.accessor("ruleName", {
     header: "Rule",
-    cell: (info) => info.getValue(),
+    cell: (info) => <code>{info.getValue()}</code>,
   }),
   columnHelper.accessor("parentPluginName", {
     header: "Plugin",
