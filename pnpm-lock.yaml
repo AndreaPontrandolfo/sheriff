@@ -24,6 +24,8 @@ importers:
         specifier: ^1.10.12
         version: 1.11.1
 
+  apps/cli-playground: {}
+
   apps/docs-website:
     dependencies:
       '@docusaurus/core':
