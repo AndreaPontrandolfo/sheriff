@@ -41,11 +41,7 @@ export const setEslintConfig = async (
     }
 
     logger.verbose(
-      `'${
-        isEslintTsPatchRequired
-          ? ESLINT_CONFIG_TS_FILE_NAME
-          : ESLINT_CONFIG_JS_FILE_NAME
-      }' file not found. Generating and configuring '${
+      `Neither a '${ESLINT_CONFIG_TS_FILE_NAME}' nor a '${ESLINT_CONFIG_JS_FILE_NAME}' file were found. Generating and configuring '${
         isEslintTsPatchRequired
           ? ESLINT_CONFIG_TS_FILE_NAME
           : ESLINT_CONFIG_JS_FILE_NAME
