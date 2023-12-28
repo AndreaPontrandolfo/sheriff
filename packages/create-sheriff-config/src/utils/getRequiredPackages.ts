@@ -1,6 +1,8 @@
 import { logger } from './logs';
 
-export const getRequiredPackages = (): string[] => {
+export const getRequiredPackages = (
+  isEslintTsPatchRequired: boolean,
+): string[] => {
   const requiredPackages: string[] = [];
 
   requiredPackages.push('eslint');
@@ -11,6 +13,11 @@ export const getRequiredPackages = (): string[] => {
 
   requiredPackages.push('eslint-config-sheriff');
   logger.verbose("Installing 'eslint-config-sheriff'...");
+
+  if (isEslintTsPatchRequired) {
+    requiredPackages.push('eslint-ts-patch', 'eslint@npm:eslint-ts-patch');
+    logger.verbose("Installing 'eslint-ts-patch'...");
+  }
 
   return requiredPackages;
 };

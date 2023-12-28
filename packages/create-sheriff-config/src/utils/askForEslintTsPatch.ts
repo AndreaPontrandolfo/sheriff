@@ -1,5 +1,5 @@
 import promptShape from 'prompts';
-import { isBoolean } from 'lodash';
+import { isBoolean } from 'lodash-es';
 import { logger } from './logs';
 
 export const askForEslintTsPatch = async (): Promise<boolean> => {

@@ -3,7 +3,7 @@ import { printError } from './printError';
 import { setSheriffConfig } from './setSheriffConfig';
 
 export const getEslintConfigRawText = async (
-  modulesType: 'esm' | 'commonjs',
+  fileType: 'ts' | 'esm' | 'commonjs',
 ): Promise<string> => {
   let sheriffConfig = sheriffStartingOptions;
 
@@ -17,6 +17,18 @@ export const getEslintConfigRawText = async (
   }
 
   const eslintConfigRawText = {
+    ts: `import sheriff from 'eslint-config-sheriff';
+import { defineFlatConfig } from 'eslint-define-config';
+import { SheriffSettings } from '@sheriff/types';
+
+const sheriffOptions: SheriffSettings = ${JSON.stringify(
+      sheriffConfig,
+      null,
+      2,
+    )};
+
+export default defineFlatConfig([...sheriff(sheriffOptions)]);`,
+
     esm: `import sheriff from 'eslint-config-sheriff';
 import { defineFlatConfig } from 'eslint-define-config';
 
@@ -32,7 +44,11 @@ const sheriffOptions = ${JSON.stringify(sheriffConfig, null, 2)};
 module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);`,
   };
 
-  if (modulesType === 'esm') {
+  if (fileType === 'ts') {
+    return eslintConfigRawText.ts;
+  }
+
+  if (fileType === 'esm') {
     return eslintConfigRawText.esm;
   }
 

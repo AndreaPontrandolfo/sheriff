@@ -32,12 +32,13 @@ async function main() {
 
   const isEslintTsPatchRequired = await askForEslintTsPatch();
 
-  await setEslintConfig();
+  await setEslintConfig(isEslintTsPatchRequired);
+
   if (!isSubProject || global.hasLocalPrettierSupport) {
     await setPrettierConfig();
     await setPrettierIgnore();
   }
-  await setDependencies();
+  await setDependencies(isEslintTsPatchRequired);
 }
 
 // eslint-disable-next-line

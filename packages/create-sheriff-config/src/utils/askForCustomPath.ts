@@ -4,7 +4,7 @@ import { logger } from './logs';
 
 export const askForCustomPath = async (): Promise<void> => {
   logger.verbose(
-    `It looks like you are trying to install the sheriff config in a workspace' package.
+    `It looks like you are trying to install the Sheriff config in a workspace package.
              Please specify the package' path...`,
   );
 
