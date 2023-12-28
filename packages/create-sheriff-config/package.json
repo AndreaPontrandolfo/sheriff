@@ -2,10 +2,10 @@
   "name": "create-sheriff-config",
   "version": "3.0.2",
   "type": "module",
-  "description": "",
+  "description": "CLI/starter to bootstrap a Sheriff config",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "tsx ./index.ts",
+    "dev": "tsx ./src/index.ts",
     "build": "tsup",
     "publint": "publint",
     "clean": "rm -rf .turbo && rm -rf dist"
@@ -13,7 +13,7 @@
   "license": "MIT",
   "tsup": {
     "entry": [
-      "index.ts"
+      "src/index.ts"
     ],
     "format": "esm",
     "splitting": false,
