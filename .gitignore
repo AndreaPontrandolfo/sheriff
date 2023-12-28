@@ -47,3 +47,8 @@ yarn-error.log*
 dist
 
 megalinter-reports/
+
+# playground
+apps/cli-playground/*
+!apps/cli-playground/package.json
+

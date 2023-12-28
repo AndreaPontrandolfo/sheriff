@@ -5,6 +5,7 @@
     "build": "turbo run build",
     "start:rulesgen": "turbo run start --filter=@sheriff/utils",
     "start:docs": "turbo run start --filter=docs-website --filter=sheriff-webservices",
+    "playground": "pnpm --filter cli-playground exec create-sheriff-config",
     "rulesgen": "turbo run rulesgen --filter=@sheriff/utils",
     "webservices:dev": "turbo run start --filter=sheriff-webservices",
     "lint": "turbo run lint",
