@@ -208,7 +208,7 @@ importers:
         specifier: ^1.0.8
         version: 1.0.8
       yargs:
-        specifier: ^17.6.2
+        specifier: ^17.7.2
         version: 17.7.2
     devDependencies:
       '@types/lodash':
@@ -224,7 +224,7 @@ importers:
         specifier: ^2.4.2
         version: 2.4.9
       '@types/yargs':
-        specifier: ^17.0.18
+        specifier: ^17.0.32
         version: 17.0.32
       eslint:
         specifier: ^8.46.0

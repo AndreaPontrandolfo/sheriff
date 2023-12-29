@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-import yargs, { type Arguments } from 'yargs';
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 import { setDependencies } from './utils/setDependencies';
 import { setEslintConfig } from './utils/setEslintConfig';
 import { setPrettierConfig } from './utils/setPrettierConfig';
@@ -13,17 +14,15 @@ import { askForEslintTsPatch } from './utils/askForEslintTsPatch';
 // import { widgets } from './src/utils/widgets';
 // import { spinnerError, stopSpinner } from "./src/utils/spinner";
 
-type Command =
-  | Arguments<{
-      filter: string | undefined;
-    }>
-  | undefined;
-
-const command = yargs(process.argv.slice(2)).argv as Command;
+const { argv } = yargs(hideBin(process.argv)).option('filter', {
+  type: 'string',
+  description: 'Filter for specific workspace',
+});
 
 // eslint-disable-next-line
 async function main() {
-  const isSubProject = Boolean(command?.filter);
+  const commandArguments = await argv;
+  const isSubProject = Boolean(commandArguments.filter);
 
   if (isSubProject) {
     await askForCustomPath();
