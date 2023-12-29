@@ -22,9 +22,9 @@ const { argv } = yargs(hideBin(process.argv)).option('filter', {
 // eslint-disable-next-line
 async function main() {
   const commandArguments = await argv;
-  const isSubProject = Boolean(commandArguments.filter);
+  const isWorkspace = Boolean(commandArguments.filter);
 
-  if (isSubProject) {
+  if (isWorkspace) {
     await askForCustomPath();
     await askForPrettierSupport();
   }
@@ -33,7 +33,7 @@ async function main() {
 
   await setEslintConfig(isEslintTsPatchRequired);
 
-  if (!isSubProject || global.hasLocalPrettierSupport) {
+  if (!isWorkspace || global.hasLocalPrettierSupport) {
     await setPrettierConfig();
     await setPrettierIgnore();
   }

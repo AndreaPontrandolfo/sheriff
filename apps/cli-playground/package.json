@@ -2,5 +2,6 @@
   "name": "cli-playground",
   "description": "Playground for playtesting create-eslint-config.",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "packageManager": "pnpm@8.8.0"
 }

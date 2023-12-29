@@ -6,6 +6,9 @@ export const askForPrettierSupport = async (): Promise<void> => {
   logger.verbose(
     `Do you want to add Prettier support in the workspace package?`,
   );
+  logger.info(
+    `Tip: if you want to use prettier from the root of the monorepo, choose 'No'.`,
+  );
 
   const response = await promptShape({
     type: 'confirm',
