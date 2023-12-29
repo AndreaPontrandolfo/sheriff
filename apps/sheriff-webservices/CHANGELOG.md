@@ -1,5 +1,22 @@
 # sheriff-webservices
 
+## 2.0.0
+
+### Major Changes
+
+- faf08ec: feat(deps): Update eslint-config-sheriff version
+
+### Patch Changes
+
+- 54dda70: feat(webservice): added keepalive endpoint
+- 4ead06c: fix(webservice): #2 attempt at fixing the webserver
+- aa3e426: fix(webservice): added ts module declaration
+- Updated dependencies [93c94cf]
+- Updated dependencies [69b0dba]
+- Updated dependencies [991f1fa]
+- Updated dependencies [faf08ec]
+  - eslint-config-sheriff@18.0.0
+
 ## 1.1.0
 
 ### Minor Changes

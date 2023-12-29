@@ -1,5 +1,18 @@
 # docs-website
 
+## 1.7.0
+
+### Minor Changes
+
+- 3870f73: feat(config): added experimental support for eslint-ts-patch
+  feat(CLI): massive improvements to create-sheriff-config
+  feat(playground): added workspace cli-playground
+  feat(types): @sheriff/types is now a npm package
+- 69b0dba: feat(config): added support for reporting unused directives
+- 991f1fa: feat(config): Added eslint-config-flat-gitignore functionality and updated docs
+
+  BREAKING CHANGE: the config key pathsOveriddes.ignores was removed. It has been replaced with "ignores".
+
 ## 1.6.0
 
 ### Minor Changes
