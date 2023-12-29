@@ -4,11 +4,12 @@ import { setSheriffConfig } from './setSheriffConfig';
 
 export const getEslintConfigRawText = async (
   fileType: 'ts' | 'esm' | 'commonjs',
+  customProjectRootPath: string | null,
 ): Promise<string> => {
   let sheriffConfig = sheriffStartingOptions;
 
   try {
-    sheriffConfig = await setSheriffConfig();
+    sheriffConfig = await setSheriffConfig(customProjectRootPath);
   } catch (error) {
     printError(
       "Couldn't infer Sheriff user preferences automatically. Setting every option to false...",

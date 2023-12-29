@@ -3,7 +3,7 @@ import { isBoolean } from 'lodash-es';
 import { logger } from './logs';
 import { gracefullyAbort } from './gracefullyAbort';
 
-export const askForPrettierSupport = async (): Promise<void> => {
+export const askForPrettierSupport = async (): Promise<boolean> => {
   logger.verbose(
     `Do you want to add Prettier support in the workspace package?`,
   );
@@ -21,8 +21,9 @@ export const askForPrettierSupport = async (): Promise<void> => {
   const { localPrettier } = response;
 
   if (isBoolean(localPrettier)) {
-    global.hasLocalPrettierSupport = localPrettier;
+    return true;
   } else {
     logger.error('Unknown input. Input should be a boolean.');
+    return false;
   }
 };

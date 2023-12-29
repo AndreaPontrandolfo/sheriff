@@ -7,8 +7,8 @@ import { printSucces } from './printSucces';
 
 export const autoInstallPackages = async (
   packages: string[],
+  selectedProject: string | null,
 ): Promise<void> => {
-  const selectedProject = global.customProjectRootPath;
   const packagesLatestVersions = packages.map(
     (packageName) => `${packageName}@latest`,
   );

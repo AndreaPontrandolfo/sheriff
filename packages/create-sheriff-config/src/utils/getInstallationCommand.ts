@@ -1,7 +1,7 @@
 export const getInstallationCommand = (
   pm: string,
   packagesLatestVersions: string[],
-  selectedProject: string | undefined,
+  selectedProject: string | null,
   isFilterRequired = true,
 ): string => {
   const projectArgument =

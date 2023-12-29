@@ -23,21 +23,19 @@ const { argv } = yargs(hideBin(process.argv)).option('filter', {
 async function main() {
   const commandArguments = await argv;
   const isWorkspace = Boolean(commandArguments.filter);
-
-  if (isWorkspace) {
-    await askForCustomPath();
-    await askForPrettierSupport();
-  }
-
+  const hasLocalPrettierSupport = isWorkspace
+    ? await askForPrettierSupport()
+    : false;
+  const customProjectRootPath = isWorkspace ? await askForCustomPath() : null;
   const isEslintTsPatchRequired = await askForEslintTsPatch();
 
-  await setEslintConfig(isEslintTsPatchRequired);
+  await setEslintConfig(isEslintTsPatchRequired, customProjectRootPath);
 
-  if (!isWorkspace || global.hasLocalPrettierSupport) {
-    await setPrettierConfig();
-    await setPrettierIgnore();
+  if (!isWorkspace || hasLocalPrettierSupport) {
+    await setPrettierConfig(customProjectRootPath);
+    await setPrettierIgnore(customProjectRootPath);
   }
-  await setDependencies(isEslintTsPatchRequired);
+  await setDependencies(isEslintTsPatchRequired, customProjectRootPath);
 }
 
 // eslint-disable-next-line

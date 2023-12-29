@@ -8,15 +8,25 @@ import { getEslintConfigRawText } from './getEslintConfigRawText';
 
 export const setEslintConfig = async (
   isEslintTsPatchRequired: boolean,
+  customProjectRootPath: string | null,
 ): Promise<void> => {
   const ESLINT_CONFIG_JS_FILE_NAME = 'eslint.config.js';
   const ESLINT_CONFIG_TS_FILE_NAME = 'eslint.config.ts';
   const ESLINT_IGNORE_FILE_NAME = '.eslintignore';
 
   try {
-    const eslintConfigJsFile = await patchedFindUp(ESLINT_CONFIG_JS_FILE_NAME);
-    const eslintConfigTsFile = await patchedFindUp(ESLINT_CONFIG_TS_FILE_NAME);
-    const eslintIgnoreFile = await patchedFindUp(ESLINT_IGNORE_FILE_NAME);
+    const eslintConfigJsFile = await patchedFindUp(
+      ESLINT_CONFIG_JS_FILE_NAME,
+      customProjectRootPath,
+    );
+    const eslintConfigTsFile = await patchedFindUp(
+      ESLINT_CONFIG_TS_FILE_NAME,
+      customProjectRootPath,
+    );
+    const eslintIgnoreFile = await patchedFindUp(
+      ESLINT_IGNORE_FILE_NAME,
+      customProjectRootPath,
+    );
 
     if (eslintIgnoreFile) {
       printWarning(
@@ -55,13 +65,14 @@ export const setEslintConfig = async (
     if (isEslintTsPatchRequired) {
       createFile(
         ESLINT_CONFIG_TS_FILE_NAME,
-        await getEslintConfigRawText('ts'),
+        await getEslintConfigRawText('ts', customProjectRootPath),
+        customProjectRootPath,
       );
 
       return;
     }
 
-    const root = await getPackageJsonContents();
+    const root = await getPackageJsonContents(customProjectRootPath);
 
     if (!root) {
       printWarning(
@@ -69,19 +80,22 @@ export const setEslintConfig = async (
       );
       createFile(
         ESLINT_CONFIG_JS_FILE_NAME,
-        await getEslintConfigRawText('commonjs'),
+        await getEslintConfigRawText('commonjs', customProjectRootPath),
+        customProjectRootPath,
       );
     }
     if (root) {
       if (root.packageJson.type === 'module') {
         createFile(
           ESLINT_CONFIG_JS_FILE_NAME,
-          await getEslintConfigRawText('esm'),
+          await getEslintConfigRawText('esm', customProjectRootPath),
+          customProjectRootPath,
         );
       } else {
         createFile(
           ESLINT_CONFIG_JS_FILE_NAME,
-          await getEslintConfigRawText('commonjs'),
+          await getEslintConfigRawText('commonjs', customProjectRootPath),
+          customProjectRootPath,
         );
       }
     }

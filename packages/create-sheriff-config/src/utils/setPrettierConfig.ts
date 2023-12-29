@@ -7,8 +7,10 @@ import { patchedFindUp } from './patchedFindUp';
 
 const prettierConfigRawText = `{}`;
 
-export const setPrettierConfig = async (): Promise<void> => {
-  const root = await getPackageJsonContents();
+export const setPrettierConfig = async (
+  customProjectRootPath: string | null,
+): Promise<void> => {
+  const root = await getPackageJsonContents(customProjectRootPath);
 
   if (!root) {
     printError("couldn't read the package.json.");
@@ -36,11 +38,12 @@ export const setPrettierConfig = async (): Promise<void> => {
   try {
     // DISABLED: this should be the correct way of handling the inference of the prettier config, but the search-up of "resolveConfigFile" cannot be stopped at a specific directory, which is currently a requirement (otherwise it goes up to the root of the monorepo which is not what we want), so this solution cannot be used right now.
     // const prettierConfigurationFilePath = await resolveConfigFile(
-    //   global.customProjectRootPath,
+    //   customProjectRootPath,
     // );
 
     const prettierConfigurationFilePath = await patchedFindUp(
       prettierConfigFileNames,
+      customProjectRootPath,
     );
 
     if (
@@ -70,7 +73,11 @@ export const setPrettierConfig = async (): Promise<void> => {
       `No 'prettier' configuration or dependency was found in the project. Generating and configuring '${PREFERRED_PRETTIER_CONFIG_FILE_NAME}' file...`,
     );
 
-    createFile(PREFERRED_PRETTIER_CONFIG_FILE_NAME, prettierConfigRawText);
+    createFile(
+      PREFERRED_PRETTIER_CONFIG_FILE_NAME,
+      prettierConfigRawText,
+      customProjectRootPath,
+    );
   } catch (error) {
     printError("Couldn't walk up the filesystem", { error });
   }

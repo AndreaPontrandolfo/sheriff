@@ -4,11 +4,11 @@ import { logger } from './logs';
 import { printError } from './printError';
 // import { spinnerSuccess, updateSpinnerText } from './spinner';
 
-export const setSheriffConfig = async (): Promise<
-  typeof sheriffStartingOptions
-> => {
+export const setSheriffConfig = async (
+  customProjectRootPath: string | null,
+): Promise<typeof sheriffStartingOptions> => {
   const finalPluginsConfigurationSetup = sheriffStartingOptions;
-  const root = await getPackageJsonContents();
+  const root = await getPackageJsonContents(customProjectRootPath);
 
   if (!root) {
     printError(

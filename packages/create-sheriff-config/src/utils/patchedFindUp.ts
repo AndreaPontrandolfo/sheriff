@@ -10,17 +10,18 @@ import { findUp } from 'find-up';
  */
 export const patchedFindUp = async (
   fileNames: string | string[],
+  customProjectRootPath: string | null,
 ): Promise<string | undefined> => {
-  if (!global.customProjectRootPath) {
+  if (!customProjectRootPath) {
     const filePath = await findUp(fileNames);
 
     return filePath;
   }
 
-  if (global.customProjectRootPath) {
-    const stopAt = resolve(global.customProjectRootPath);
+  if (customProjectRootPath) {
+    const stopAt = resolve(customProjectRootPath);
     const filePath = await findUp(fileNames, {
-      cwd: global.customProjectRootPath,
+      cwd: customProjectRootPath,
     });
 
     if (filePath && dirname(filePath) === stopAt) {
