@@ -1,6 +1,6 @@
 {
   "name": "create-sheriff-config",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "type": "module",
   "description": "CLI/starter to bootstrap a Sheriff config",
   "main": "dist/index.js",

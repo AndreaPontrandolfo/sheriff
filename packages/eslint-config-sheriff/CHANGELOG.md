@@ -1,5 +1,20 @@
 # eslint-config-sheriff
 
+## 18.0.0
+
+### Major Changes
+
+- 991f1fa: feat(config): Added eslint-config-flat-gitignore functionality and updated docs
+
+  BREAKING CHANGE: the config key pathsOveriddes.ignores was removed. It has been replaced with "ignores".
+
+- faf08ec: feat(deps): Update eslint-config-sheriff version
+
+### Minor Changes
+
+- 93c94cf: feat(rules): introduces @stylistic/eslint-plugin
+- 69b0dba: feat(config): added support for reporting unused directives
+
 ## 17.1.0
 
 ### Minor Changes
