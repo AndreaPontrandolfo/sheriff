@@ -21,7 +21,6 @@
     "clean": true
   },
   "dependencies": {
-    "chalk": "^5.0.1",
     "commander": "^9.4.1",
     "detect-package-manager": "^3.0.1",
     "find-up": "^6.3.0",
