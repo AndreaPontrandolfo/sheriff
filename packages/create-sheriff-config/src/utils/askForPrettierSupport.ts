@@ -1,6 +1,7 @@
 import promptShape from 'prompts';
 import { isBoolean } from 'lodash-es';
 import { logger } from './logs';
+import { gracefullyAbort } from './gracefullyAbort';
 
 export const askForPrettierSupport = async (): Promise<void> => {
   logger.verbose(
@@ -14,6 +15,7 @@ export const askForPrettierSupport = async (): Promise<void> => {
     type: 'confirm',
     name: 'localPrettier',
     message: 'Local prettier support',
+    onState: gracefullyAbort,
   });
 
   const { localPrettier } = response;

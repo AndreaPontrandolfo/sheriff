@@ -1,6 +1,7 @@
 import promptShape from 'prompts';
 import { isBoolean } from 'lodash-es';
 import { logger } from './logs';
+import { gracefullyAbort } from './gracefullyAbort';
 
 export const askForEslintTsPatch = async (): Promise<boolean> => {
   logger.verbose(`Do you want to use the eslint-ts-patch?`);
@@ -9,6 +10,7 @@ export const askForEslintTsPatch = async (): Promise<boolean> => {
     type: 'confirm',
     name: 'eslintTsPatchConfirmValue',
     message: 'eslint-ts-patch support (Experimental. Not recommended.)',
+    onState: gracefullyAbort,
   });
 
   const { eslintTsPatchConfirmValue } = response;
