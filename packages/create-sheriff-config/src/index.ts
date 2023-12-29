@@ -23,10 +23,10 @@ const { argv } = yargs(hideBin(process.argv)).option('filter', {
 async function main() {
   const commandArguments = await argv;
   const isWorkspace = Boolean(commandArguments.filter);
+  const customProjectRootPath = isWorkspace ? await askForCustomPath() : null;
   const hasLocalPrettierSupport = isWorkspace
     ? await askForPrettierSupport()
     : false;
-  const customProjectRootPath = isWorkspace ? await askForCustomPath() : null;
   const isEslintTsPatchRequired = await askForEslintTsPatch();
 
   await setEslintConfig(isEslintTsPatchRequired, customProjectRootPath);
