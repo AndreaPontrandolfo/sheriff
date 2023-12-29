@@ -20,7 +20,7 @@ export const getEslintConfigRawText = async (
   const eslintConfigRawText = {
     ts: `import sheriff from 'eslint-config-sheriff';
 import { defineFlatConfig } from 'eslint-define-config';
-import { SheriffSettings } from '@sheriff/types';
+import type { SheriffSettings } from '@sheriff/types';
 
 const sheriffOptions: SheriffSettings = ${JSON.stringify(
       sheriffConfig,
