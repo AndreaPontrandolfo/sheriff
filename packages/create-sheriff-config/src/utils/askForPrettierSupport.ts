@@ -1,23 +1,29 @@
 import promptShape from 'prompts';
 import { isBoolean } from 'lodash-es';
 import { logger } from './logs';
+import { gracefullyAbort } from './gracefullyAbort';
 
-export const askForPrettierSupport = async (): Promise<void> => {
+export const askForPrettierSupport = async (): Promise<boolean> => {
   logger.verbose(
-    `Do you want to add Prettier support in the workspace' package?`,
+    `Do you want to add Prettier support in the workspace package?`,
   );
-
-  const LOCAL_PRETTIER = 'local prettier' as const;
+  logger.info(
+    `Tip: if you want to use prettier from the root of the monorepo, choose 'No'.`,
+  );
 
   const response = await promptShape({
     type: 'confirm',
-    name: LOCAL_PRETTIER,
+    name: 'localPrettier',
     message: 'Local prettier support',
+    onState: gracefullyAbort,
   });
 
-  if (isBoolean(response[LOCAL_PRETTIER])) {
-    global.hasLocalPrettierSupport = response[LOCAL_PRETTIER];
+  const { localPrettier } = response;
+
+  if (isBoolean(localPrettier)) {
+    return true;
   } else {
     logger.error('Unknown input. Input should be a boolean.');
+    return false;
   }
 };

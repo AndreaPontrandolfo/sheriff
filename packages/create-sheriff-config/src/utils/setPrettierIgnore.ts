@@ -10,11 +10,16 @@ const prettierIgnoreRawText = `/node_modules/
 /coverage/
 .git/`;
 
-export const setPrettierIgnore = async (): Promise<void> => {
+export const setPrettierIgnore = async (
+  customProjectRootPath: string | null,
+): Promise<void> => {
   const PRETTIER_IGNORE_FILE_NAME = '.prettierignore';
 
   try {
-    const prettierIgnoreFile = await patchedFindUp(PRETTIER_IGNORE_FILE_NAME);
+    const prettierIgnoreFile = await patchedFindUp(
+      PRETTIER_IGNORE_FILE_NAME,
+      customProjectRootPath,
+    );
 
     if (prettierIgnoreFile) {
       logger.verbose(
@@ -26,7 +31,11 @@ export const setPrettierIgnore = async (): Promise<void> => {
     logger.verbose(
       `No '${PRETTIER_IGNORE_FILE_NAME}' file was found in the project. Generating and configuring '${PRETTIER_IGNORE_FILE_NAME}' file...`,
     );
-    createFile(PRETTIER_IGNORE_FILE_NAME, prettierIgnoreRawText);
+    createFile(
+      PRETTIER_IGNORE_FILE_NAME,
+      prettierIgnoreRawText,
+      customProjectRootPath,
+    );
   } catch (error) {
     printError("Couldn't walk up the filesystem", { error });
   }

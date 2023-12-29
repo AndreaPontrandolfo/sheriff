@@ -1,12 +1,12 @@
 import { type NormalizedReadResult, readPackageUp } from 'read-pkg-up';
 import { printError } from './printError';
 
-export const getPackageJsonContents = async (): Promise<
-  NormalizedReadResult | undefined
-> => {
+export const getPackageJsonContents = async (
+  customProjectRootPath: string | null,
+): Promise<NormalizedReadResult | undefined> => {
   try {
     const packageJsonContents = await readPackageUp({
-      cwd: global.customProjectRootPath ?? process.cwd(),
+      cwd: customProjectRootPath ?? process.cwd(),
     });
 
     if (!packageJsonContents) {

@@ -27,7 +27,7 @@ You will also need to enable linting on specified file extensions:
 }
 ```
 
-For [Astro](https://astro.build/) projects instead, add this:
+For [Astro](https://astro.build/) projects, add the astro extension too:
 
 ```JSONC title=".vscode/settings.json"
 {
@@ -36,6 +36,7 @@ For [Astro](https://astro.build/) projects instead, add this:
     "javascriptreact",
     "typescript",
     "typescriptreact"
+    // highlight-next-line
     "astro"
   ]
 }

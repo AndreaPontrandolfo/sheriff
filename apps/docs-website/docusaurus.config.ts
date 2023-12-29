@@ -78,7 +78,7 @@ const config: Config = {
         { to: "/blog", label: "Blog", position: "left" },
         {
           position: "right",
-          value: `<div style="font-weight: 700;">v${version}</div>`,
+          value: `<div style="font-weight: 500;">v${version}</div>`,
           type: "html",
         },
         {
