@@ -1,0 +1,26 @@
+[
+  {
+    "Link": "[Sheriff docs website](www.eslint-config-sheriff.dev)",
+    "Source": "[docs-website](https://github.com/AndreaPontrandolfo/sheriff/tree/master/apps/docs-website)",
+    "Description": "Sheriff documentation website",
+    "Version": "[![GitHub release](https://img.shields.io/github/release/AndreaPontrandolfo/your-repository.svg)](https://github.com/AndreaPontrandolfo/sheriff/releases/latest)"
+  },
+  {
+    "Link": "[`eslint-config-sheriff`](https://www.npmjs.com/package/eslint-config-sheriff)",
+    "Source": "[eslint-config-sheriff](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/eslint-config-sheriff)",
+    "Description": "A comprehensive and opinionated Typescript-first ESLint configuration",
+    "Version": "[![npm](https://img.shields.io/npm/v/eslint-config-sheriff.svg)](https://www.npmjs.com/package/eslint-config-sheriff)"
+  },
+  {
+    "Link": "[`create-sheriff-config`](https://www.npmjs.com/package/create-sheriff-config)",
+    "Source": "[create-sheriff-config](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/create-sheriff-config)",
+    "Description": "CLI/starter to bootstrap a Sheriff config",
+    "Version": "[![npm](https://img.shields.io/npm/v/create-sheriff-config.svg)](https://www.npmjs.com/package/create-sheriff-config)"
+  },
+  {
+    "Link": "[`@sheriff/types`](https://www.npmjs.com/package/@sheriff/types)",
+    "Source": "[sheriff-types](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/sheriff-types)",
+    "Description": "Sheriff types package",
+    "Version": "[![npm](https://img.shields.io/npm/v/@sheriff/types.svg)](https://www.npmjs.com/package/@sheriff/types)"
+  }
+]
