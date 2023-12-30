@@ -1,0 +1,16 @@
+name: update README.md with markdown-autodocs
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Update README
+        uses: dineshsonachalam/markdown-autodocs@v1.0.7

@@ -3,12 +3,10 @@
 
 # Sheriff
 
-This repository hosts the sourcecode of the following projects:
+This repository is a monorepo that hosts the sourcecode of the following projects:
 
-- [Sheriff docs website](https://github.com/AndreaPontrandolfo/sheriff/tree/master/apps/docs-website)
-- [eslint-config-sheriff package](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/eslint-config-sheriff)
-- [create-sheriff-config package](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/create-sheriff-config)
-- [@sheriff/types package](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/sheriff-types)
+<!-- MARKDOWN-AUTO-DOCS:START (JSON_TO_HTML_TABLE:src=./readmeMarkdownTable.json) -->
+<!-- MARKDOWN-AUTO-DOCS:END -->
 
 ## 🚀 Getting Started
 
