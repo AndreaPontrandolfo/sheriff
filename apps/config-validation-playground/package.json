@@ -1,0 +1,15 @@
+{
+  "name": "config-validation-playground",
+  "description": "Playground for validating eslint-config-sheriff.",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@8.8.0",
+  "dependencies": {
+    "eslint": "9.0.0-alpha.0",
+    "lodash": "^4.17.21",
+    "next": "^14.0.4",
+    "playwright": "^1.40.1",
+    "react": "^18.2.0",
+    "vitest": "^1.1.0"
+  }
+}

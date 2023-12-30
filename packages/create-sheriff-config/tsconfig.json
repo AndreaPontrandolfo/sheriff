@@ -6,6 +6,7 @@
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "node",
+    "incremental": true,
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   }
 }

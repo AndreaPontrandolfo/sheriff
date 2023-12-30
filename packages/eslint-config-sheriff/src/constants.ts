@@ -10,7 +10,6 @@ export const messages = {
 
 export const ignores = [
   '**/node_modules/**',
-  '.git/**',
   '**/dist/**',
   '**/build/**',
   '**/artifacts/**',
