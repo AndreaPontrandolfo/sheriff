@@ -13,7 +13,8 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc --noEmit",
-    "publint": "publint",
+    "lint": "eslint . --max-warnings=0 --cache --cache-location 'node_modules/.cache/.eslintcache'",
+    "typesync": "typesync --dry=fail",
     "clean": "rm -rf .turbo && rm -rf dist"
   },
   "dependencies": {
@@ -47,7 +48,6 @@
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^2.0.0",
     "eslint-plugin-mdx": "^2.2.0",
-    "publint": "^0.2.5",
     "typescript": "^5.2.2"
   },
   "browserslist": {

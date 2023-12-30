@@ -18,8 +18,10 @@
     }
   },
   "scripts": {
-    "publint": "publint",
     "clean": "rm -rf .turbo && rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0 --cache --cache-location 'node_modules/.cache/.eslintcache'",
+    "publint": "publint",
     "are-the-types-wrong": "attw --pack ."
   },
   "devDependencies": {

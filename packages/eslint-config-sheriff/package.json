@@ -48,10 +48,13 @@
   "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "clean": "rm -rf .turbo dist",
     "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0 --cache --cache-location 'node_modules/.cache/.eslintcache'",
     "publint": "publint",
-    "are-the-types-wrong": "attw --pack .",
-    "clean": "rm -rf .turbo dist"
+    "typesync": "typesync --dry=fail",
+    "are-the-types-wrong": "attw --pack ."
   },
   "dependencies": {
     "@eslint/js": "^8.56.0",
@@ -95,6 +98,7 @@
     "@arethetypeswrong/cli": "^0.9.0",
     "@sheriff/types": "workspace:*",
     "@types/eslint": "^8.44.2",
+    "@types/eslint-config-prettier": "^6.11.3",
     "@types/node": "^20.5.7",
     "husky": "^8.0.0",
     "publint": "^0.2.2",
