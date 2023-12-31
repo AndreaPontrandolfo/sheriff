@@ -350,11 +350,21 @@ export const getExportableConfig = (
     });
   }
 
+  const hasIgnoresRecommended =
+    typeof userConfigChoices.ignores?.recommended === 'boolean'
+      ? userConfigChoices.ignores.recommended
+      : true;
+
+  const hasIgnoresInheritedFromGitignore =
+    typeof userConfigChoices.ignores?.inheritedFromGitignore === 'boolean'
+      ? userConfigChoices.ignores.inheritedFromGitignore
+      : true;
+
   exportableConfig.push({
     ignores: [
-      ...(userConfigChoices.ignores?.recommended ? ignores : []),
-      ...(userConfigChoices.ignores?.inheritedFromGitignore
-        ? getGitignorePatterns().ignores
+      ...(hasIgnoresRecommended ? ignores : []),
+      ...(hasIgnoresInheritedFromGitignore
+        ? getGitignorePatterns({ strict: false }).ignores
         : []),
     ],
   });
