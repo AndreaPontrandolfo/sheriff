@@ -5,7 +5,7 @@ import unicorn from 'eslint-plugin-unicorn';
 import sonarjs from 'eslint-plugin-sonarjs';
 import playwright from 'eslint-plugin-playwright';
 import jsdoc from 'eslint-plugin-jsdoc';
-import lodash from 'eslint-plugin-lodash-f';
+import lodashPlugin from 'eslint-plugin-lodash-f';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import pluginImport from 'eslint-plugin-import';
 import nextjs from '@next/eslint-plugin-next';
@@ -18,6 +18,7 @@ import storybook from 'eslint-plugin-storybook';
 import fsecond from 'eslint-plugin-fsecond';
 import stylistic from '@stylistic/eslint-plugin';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
+import lodash from 'lodash';
 import { ExportableConfigAtom, SheriffSettings } from '@sheriff/types';
 import { allJsExtensions, supportedFileTypes, ignores } from './constants';
 import { fpHandPickedRules } from './fpHandPickedRules';
@@ -64,10 +65,10 @@ export const getLanguageOptionsTypescriptReact = (
 const lodashConfig = {
   files: [supportedFileTypes],
   plugins: {
-    'lodash-f': lodash,
+    'lodash-f': lodashPlugin,
   },
   rules: {
-    ...lodash.configs.recommended.rules,
+    ...lodashPlugin.configs.recommended.rules,
     ...lodashHandPickedRules,
   },
 };
@@ -350,15 +351,17 @@ export const getExportableConfig = (
     });
   }
 
-  const hasIgnoresRecommended =
-    typeof userConfigChoices.ignores?.recommended === 'boolean'
-      ? userConfigChoices.ignores.recommended
-      : true;
+  const hasIgnoresRecommended = lodash.isBoolean(
+    userConfigChoices.ignores?.recommended,
+  )
+    ? userConfigChoices.ignores?.recommended
+    : true;
 
-  const hasIgnoresInheritedFromGitignore =
-    typeof userConfigChoices.ignores?.inheritedFromGitignore === 'boolean'
-      ? userConfigChoices.ignores.inheritedFromGitignore
-      : true;
+  const hasIgnoresInheritedFromGitignore = lodash.isBoolean(
+    userConfigChoices.ignores?.inheritedFromGitignore,
+  )
+    ? userConfigChoices.ignores?.inheritedFromGitignore
+    : true;
 
   exportableConfig.push({
     ignores: [

@@ -19,9 +19,10 @@ export const askForCustomPath = async (): Promise<string | null> => {
 
   if (isString(response.path)) {
     logger.info(`Selected path: "${response.path}"`);
+
     return response.path;
-  } else {
-    logger.error('Unknown input. Input should be string.');
-    return null;
   }
+  logger.error('Unknown input. Input should be string.');
+
+  return null;
 };

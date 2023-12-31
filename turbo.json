@@ -20,7 +20,11 @@
     },
     "lint": {
       "outputs": ["node_modules/.cache/.eslintcache"],
-      "dependsOn": ["^topo"]
+      "dependsOn": ["^topo", "^build"]
+    },
+    "validate-config": {
+      "outputs": ["node_modules/.cache/.eslintcache"],
+      "dependsOn": ["^topo", "^build"]
     },
     "publint": {
       "dependsOn": ["build"]

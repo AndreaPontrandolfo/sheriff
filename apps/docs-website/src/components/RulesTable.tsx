@@ -18,6 +18,11 @@ import { TableSkeleton } from "./TableSkeleton";
 import { configCombinationDefaultValues } from "./constants";
 import { QueriedRulesMetricsGroup } from "./QueriedRulesMetricsGroup";
 
+interface FilterOption {
+  value: string;
+  label: string;
+}
+
 const columnHelper = createColumnHelper<Entry>();
 
 const columns = [
@@ -62,7 +67,7 @@ export const RulesTable = (): JSX.Element => {
   );
   const [globalFilter, setGlobalFilter] = useState("");
   const [inputValue, setInputValue] = useState("");
-  const [selectValue, setSelectValue] = useState(null);
+  const [selectValue, setSelectValue] = useState<FilterOption | null>(null);
   const [tableMaximumAllowedWidth, setTableMaximumAllowedWidth] =
     useState<number>(0);
   const tableContainerRef = useRef<HTMLDivElement>(null);

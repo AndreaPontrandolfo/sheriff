@@ -14,7 +14,8 @@
     "are-the-types-wrong": "turbo run are-the-types-wrong",
     "manypkg": "manypkg check 2>&1 | grep -v '@workspace'",
     "typesync": "turbo run typesync",
-    "merge-checks": "FORCE_COLOR=1 turbo run publint manypkg typesync typecheck lint",
+    "validate-config": "turbo run validate-config",
+    "merge-checks": "FORCE_COLOR=1 turbo run publint manypkg typesync typecheck lint validate-config",
     "cleanall": "turbo run clean",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",
     "nuke": "pnpm cleanall && pnpm delete-node-modules",
@@ -23,12 +24,12 @@
     "version-packages": "changeset version",
     "release": "turbo build --filter='./packages/*' && changeset publish"
   },
-  "devDependencies": {
+  "dependencies": {
     "@changesets/cli": "^2.26.2",
     "@manypkg/cli": "^0.21.1",
     "@turbo/gen": "^1.9.7",
     "create-sheriff-config": "workspace:*",
-    "prettier": "3.1.0",
+    "prettier": "^3.1.1",
     "turbo": "^1.11.2",
     "typesync": "^0.12.0"
   },

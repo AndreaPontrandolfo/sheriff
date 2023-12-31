@@ -6,7 +6,7 @@
   "compilerOptions": {
     "composite": false,
     "target": "ESNext",
-    "module": "ES2015",
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "allowJs": false,
     "isolatedModules": true,

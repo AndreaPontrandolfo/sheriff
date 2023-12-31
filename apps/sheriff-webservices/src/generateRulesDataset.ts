@@ -1,5 +1,8 @@
-import lodash from 'lodash';
-import { Linter } from 'eslint';
+/* eslint-disable @typescript-eslint/unbound-method */
+/* eslint-disable lodash-f/import-scope */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import lodash from "lodash";
+import { Linter } from "eslint";
 import type {
   Severity,
   Plugins,
@@ -9,18 +12,18 @@ import type {
   RuleOptions,
   RuleOptionsConfig,
   ServerResponse,
-} from '@sheriff/types';
+} from "@sheriff/types";
 
 const { isArray, isEmpty, last, uniq } = lodash;
 
 const linter = new Linter();
 
 const getParentPluginName = (rule: string): string => {
-  if (rule.includes('/')) {
-    const ruleParts = rule.split('/');
+  if (rule.includes("/")) {
+    const ruleParts = rule.split("/");
 
     if (!isEmpty(ruleParts)) {
-      if (rule.includes('@')) {
+      if (rule.includes("@")) {
         if (ruleParts[2]) {
           return `${ruleParts[0]}/eslint-plugin-${ruleParts[1]}`;
         }
@@ -32,18 +35,18 @@ const getParentPluginName = (rule: string): string => {
     }
   }
 
-  return '@eslint/js';
+  return "@eslint/js";
 };
 
 const severityRemapper = (severity: Severity): NumericSeverity => {
   switch (severity) {
-    case 'off': {
+    case "off": {
       return 0;
     }
-    case 'warn': {
+    case "warn": {
       return 1;
     }
-    case 'error': {
+    case "error": {
       return 2;
     }
     default: {
@@ -54,32 +57,32 @@ const severityRemapper = (severity: Severity): NumericSeverity => {
 
 const getDocs = (ruleName: string, plugins: Plugins) => {
   const docs = {
-    description: '',
-    url: '',
+    description: "",
+    url: "",
   };
 
   if (plugins) {
     for (const pluginContents of Object.values(plugins)) {
       if (pluginContents) {
-        const ruleNameWithoutPrefix = last(ruleName.split('/'));
+        const ruleNameWithoutPrefix = last(ruleName.split("/"));
 
         if (ruleNameWithoutPrefix) {
           docs.description =
             pluginContents.rules[ruleNameWithoutPrefix]?.meta?.docs
-              ?.description ?? '';
+              ?.description ?? "";
           docs.url =
-            pluginContents.rules[ruleNameWithoutPrefix]?.meta?.docs?.url ?? '';
+            pluginContents.rules[ruleNameWithoutPrefix]?.meta?.docs?.url ?? "";
         }
       }
     }
   }
 
-  const isEslintRule = ruleName.includes('/');
+  const isEslintRule = ruleName.includes("/");
 
   if (!plugins && !isEslintRule) {
     docs.description =
-      linter.getRules().get(ruleName)?.meta?.docs?.description ?? '';
-    docs.url = linter.getRules().get(ruleName)?.meta?.docs?.url ?? '';
+      linter.getRules().get(ruleName)?.meta?.docs?.description ?? "";
+    docs.url = linter.getRules().get(ruleName)?.meta?.docs?.url ?? "";
   }
 
   return docs;
@@ -89,6 +92,7 @@ const extractOptionsFromRuleEntry = (
   ruleEntry: RuleOptions,
 ): RuleOptionsConfig => {
   if (isArray(ruleEntry)) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [severity, ...options] = ruleEntry;
 
     return options;
@@ -125,7 +129,7 @@ const getCompiledConfig = (config: BarebonesConfigAtom[]) => {
         parentPluginName,
         severity: extractNumericSeverityFromRuleOptions(ruleOptions),
         ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
-        affectedFiles: configAtom.files ? configAtom.files.join(', ') : '*',
+        affectedFiles: configAtom.files ? configAtom.files.join(", ") : "*",
         docs: getDocs(ruleName, configAtom.plugins),
       };
 
@@ -142,5 +146,6 @@ export const generateRulesDataset = (
   config: BarebonesConfigAtom[],
 ): ServerResponse => {
   const { compiledConfig, pluginsNames } = getCompiledConfig(config);
+
   return { compiledConfig, pluginsNames };
 };
