@@ -1,12 +1,12 @@
 name: update README.md with markdown-autodocs
 on:
-  push:
-    branches: [master]
   pull_request:
-    branches: [master]
+    types:
+      - synchronize
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    if: '!github.event.pull_request.draft'
     steps:
       - name: checkout
         uses: actions/checkout@v3
