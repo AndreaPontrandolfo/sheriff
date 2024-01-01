@@ -1,0 +1,10 @@
+{
+  "ignorePackages": [
+    "tsconfig",
+    "create-sheriff-config",
+    "@sheriff/types",
+    "eslint-config-sheriff",
+    "@eslint/js",
+    "eslint"
+  ]
+}

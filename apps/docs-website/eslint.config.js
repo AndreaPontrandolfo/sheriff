@@ -1,4 +1,4 @@
-const sheriff = require("eslint-config-sheriff").default;
+const { sheriff } = require("eslint-config-sheriff");
 const { defineFlatConfig } = require("eslint-define-config");
 const docusaurusEslintPlugin = require("@docusaurus/eslint-plugin");
 const {
@@ -33,7 +33,7 @@ module.exports = defineFlatConfig([
   {
     ...flat,
     processor: createRemarkProcessor({
-      lintCodeBlocks: true,
+      lintCodeBlocks: false,
       languageMapper: {},
     }),
   },
@@ -44,10 +44,19 @@ module.exports = defineFlatConfig([
     },
   },
   {
+    files: ["**/*ts", "**/*tsx"],
     rules: {
       "sonarjs/no-duplicate-string": 0,
       "arrow-body-style": 0,
       "react/jsx-props-no-spreading": 0,
+      "@typescript-eslint/no-misused-promises": [
+        2,
+        {
+          checksVoidReturn: {
+            attributes: false,
+          },
+        },
+      ],
       "import/no-unresolved": [
         2,
         {

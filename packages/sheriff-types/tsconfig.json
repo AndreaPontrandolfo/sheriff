@@ -3,8 +3,9 @@
   "include": ["src"],
   "exclude": ["dist", "build", "node_modules"],
   "extends": "tsconfig/base.json",
-
   "compilerOptions": {
-    "module": "ESNext"
+    "module": "ESNext",
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   }
 }

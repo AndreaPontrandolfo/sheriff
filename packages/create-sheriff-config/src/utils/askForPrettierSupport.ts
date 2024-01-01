@@ -8,13 +8,13 @@ export const askForPrettierSupport = async (): Promise<boolean> => {
     `Do you want to add Prettier support in the workspace package?`,
   );
   logger.info(
-    `Tip: if you want to use prettier from the root of the monorepo, choose 'No'.`,
+    `Tip: if you want to use Prettier from the root of the monorepo, choose 'No'.`,
   );
 
   const response = await promptShape({
     type: 'confirm',
     name: 'localPrettier',
-    message: 'Local prettier support',
+    message: 'Local Prettier support',
     onState: gracefullyAbort,
   });
 
@@ -22,8 +22,8 @@ export const askForPrettierSupport = async (): Promise<boolean> => {
 
   if (isBoolean(localPrettier)) {
     return true;
-  } else {
-    logger.error('Unknown input. Input should be a boolean.');
-    return false;
   }
+  logger.error('Unknown input. Input should be a boolean.');
+
+  return false;
 };

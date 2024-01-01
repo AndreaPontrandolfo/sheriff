@@ -2,6 +2,7 @@ import { sheriffStartingOptions } from '../constants';
 import { getPackageJsonContents } from './getPackageJsonContents';
 import { logger } from './logs';
 import { printError } from './printError';
+
 // import { spinnerSuccess, updateSpinnerText } from './spinner';
 
 export const setSheriffConfig = async (

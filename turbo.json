@@ -2,27 +2,36 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
+    "topo": {
+      "dependsOn": ["^topo"]
+    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".docusaurus/**", "dist/**"]
     },
-    "lint": {},
     "start": {
       "cache": false,
       "persistent": true,
-      "outputs": [
-        "./src/rulesetWithJest.ts",
-        "./src/rulesetWithVitest.ts",
-        "**/.docusaurus/**/*"
-      ]
+      "outputs": ["**/.docusaurus/**/*"]
     },
-    "rulesgen": {
-      "outputs": ["./src/rulesetWithJest.ts", "./src/rulesetWithVitest.ts"]
+    "typecheck": {
+      "dependsOn": ["^topo"],
+      "outputs": ["node_modules/.cache/tsbuildinfo.json"]
+    },
+    "lint": {
+      "outputs": ["node_modules/.cache/.eslintcache"],
+      "dependsOn": ["^topo", "^build"]
+    },
+    "validate-config": {
+      "outputs": ["node_modules/.cache/.eslintcache"],
+      "dependsOn": ["^topo", "^build"]
     },
     "publint": {
-      "outputs": ["dist/**"],
       "dependsOn": ["build"]
     },
+    "//#manypkg": {},
+    "//#knip": {},
+    "typesync": {},
     "are-the-types-wrong": {},
     "clean": {
       "cache": false

@@ -8,5 +8,5 @@ interface Error {
 export const printError = (message: string, { error }: Error = {}): void => {
   logger.error(`❌  ${message}. ${isString(error) ? error : String(error)}`);
 
-  throw new Error(`${isString(error) ? error : String(error)}`);
+  throw new Error(isString(error) ? error : String(error));
 };

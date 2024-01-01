@@ -5,6 +5,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "strict": true,
-    "types": ["@docusaurus/module-type-aliases"]
+    "types": ["@docusaurus/module-type-aliases"],
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   }
 }

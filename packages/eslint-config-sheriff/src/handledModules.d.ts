@@ -5,7 +5,6 @@ declare module 'eslint-plugin-unicorn';
 declare module 'eslint-plugin-playwright';
 declare module 'eslint-plugin-jsdoc';
 declare module 'eslint-plugin-lodash-f';
-declare module 'eslint-config-prettier';
 declare module 'eslint-plugin-import';
 declare module 'eslint-plugin-fp';
 declare module 'eslint-plugin-jest';

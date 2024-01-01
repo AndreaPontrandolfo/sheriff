@@ -3,14 +3,13 @@ export const allJsxExtensions = 'jsx,tsx,mtsx,mjsx';
 
 export const supportedFileTypes = `**/*{${allJsExtensions},${allJsxExtensions},astro}`;
 
-export const messages = {
+const messages = {
   NO_ACCESS_MODIFIER:
     'Avoid access modifiers. In Javascript modules there is no need to limit developer access to properties.',
 };
 
 export const ignores = [
   '**/node_modules/**',
-  '.git/**',
   '**/dist/**',
   '**/build/**',
   '**/artifacts/**',

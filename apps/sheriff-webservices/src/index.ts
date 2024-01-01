@@ -1,8 +1,9 @@
-import getSheriffConfig from 'eslint-config-sheriff';
-import { BarebonesConfigAtom } from '@sheriff/types';
-import express, { Request, Response } from 'express';
-import cors from 'cors';
-import { generateRulesDataset } from './generateRulesDataset.js';
+/* eslint-disable @typescript-eslint/no-unsafe-call */
+import getSheriffConfig from "eslint-config-sheriff";
+import type { BarebonesConfigAtom } from "@sheriff/types";
+import express, { type Request, type Response } from "express";
+import cors from "cors";
+import { generateRulesDataset } from "./generateRulesDataset.js";
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -10,10 +11,10 @@ const port = process.env.PORT || 5001;
 app.use(express.json());
 app.use(cors());
 
-app.get('/api/keepalive', (req: Request, res: Response) => {
-  res.send('OK');
+app.get("/api/keepalive", (req: Request, res: Response) => {
+  res.send("OK");
 });
-app.post('/api/get-new-sheriff-config', (req: Request, res: Response) => {
+app.post("/api/get-new-sheriff-config", (req: Request, res: Response) => {
   const newConfig: BarebonesConfigAtom[] = getSheriffConfig(req.body);
   const allRulesConfig: BarebonesConfigAtom[] = getSheriffConfig(
     {
@@ -27,11 +28,12 @@ app.post('/api/get-new-sheriff-config', (req: Request, res: Response) => {
     true,
   );
 
-  console.log('Sending new config...');
+  console.info("Sending new config...");
   const allRulesCompiledConfig =
     generateRulesDataset(allRulesConfig).compiledConfig;
   const { compiledConfig, pluginsNames } = generateRulesDataset(newConfig);
-  console.log('New config sent.');
+
+  console.info("New config sent.");
 
   res.send({
     compiledConfig,
@@ -41,5 +43,5 @@ app.post('/api/get-new-sheriff-config', (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.debug(`Server is running on port ${port}`);
 });

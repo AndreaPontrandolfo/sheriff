@@ -48,10 +48,12 @@
   "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "clean": "rm -rf .turbo dist",
     "build": "tsup",
+    "typecheck": "tsc --noEmit",
     "publint": "publint",
-    "are-the-types-wrong": "attw --pack .",
-    "clean": "rm -rf .turbo dist"
+    "typesync": "typesync --dry=fail",
+    "are-the-types-wrong": "attw --pack ."
   },
   "dependencies": {
     "@eslint/js": "^8.56.0",
@@ -61,7 +63,6 @@
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
     "astro-eslint-parser": "^0.15.0",
-    "eslint": "8.56.0",
     "eslint-config-flat-gitignore": "^0.1.2",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -94,13 +95,15 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.9.0",
     "@sheriff/types": "workspace:*",
-    "@types/eslint": "^8.44.2",
-    "@types/node": "^20.5.7",
-    "husky": "^8.0.0",
-    "publint": "^0.2.2",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/lodash": "^4.14.191",
+    "@types/node": "^20.10.6",
+    "eslint": "^8.56.0",
+    "lodash": "^4.17.21",
+    "publint": "^0.2.7",
     "tsconfig": "workspace:*",
     "tsup": "^6.2.3",
-    "typescript": "5.2.2"
+    "typescript": "^5.3.3"
   },
   "publishConfig": {
     "access": "public"

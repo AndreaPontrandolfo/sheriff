@@ -52,13 +52,13 @@ export const setPrettierConfig = async (
     ) {
       if (prettierConfigurationFilePath) {
         logger.verbose(
-          `An already present 'prettier' configuration was found in the project.`,
+          `An already present 'Prettier' configuration was found in the project.`,
         );
       }
 
       if (root.packageJson.devDependencies?.prettier) {
         logger.verbose(
-          `An already present 'prettier' dependency was found in the project.`,
+          `An already present 'Prettier' dependency was found in the project.`,
         );
       }
 

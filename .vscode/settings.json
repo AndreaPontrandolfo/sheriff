@@ -4,7 +4,9 @@
     "./packages/create-sheriff-config",
     "./packages/sheriff-utils",
     "./packages/sheriff-types",
-    "./apps/docs-website"
+    "./apps/docs-website",
+    "./apps/sheriff-webservices",
+    "./apps/config-validation-playground"
   ],
   "eslint.validate": [
     "javascript",
@@ -12,7 +14,8 @@
     "typescript",
     "typescriptreact",
     "mdx",
-    "markdown"
+    "markdown",
+    "astro"
   ],
   "json.schemas": [
     {

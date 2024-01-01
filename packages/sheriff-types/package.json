@@ -18,17 +18,16 @@
     }
   },
   "scripts": {
-    "publint": "publint",
     "clean": "rm -rf .turbo && rm -rf dist",
-    "are-the-types-wrong": "attw --pack ."
+    "typecheck": "tsc --noEmit",
+    "publint": "publint"
   },
   "devDependencies": {
-    "@types/node": "20.4.0",
-    "prettier": "^3.0.0",
-    "publint": "^0.2.2",
+    "@types/node": "^20.10.6",
+    "publint": "^0.2.7",
     "tsconfig": "workspace:*",
-    "type-fest": "^3.9.0",
-    "typescript": "5.1.6"
+    "type-fest": "^4.9.0",
+    "typescript": "^5.3.3"
   },
   "repository": {
     "type": "git",

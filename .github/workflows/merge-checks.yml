@@ -1,0 +1,28 @@
+name: Merge Checks
+
+on:
+  pull_request:
+    types:
+      - synchronize
+
+jobs:
+  merge-checks:
+    runs-on: ubuntu-latest
+    if: '!github.event.pull_request.draft'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Launch Turborepo Remote Caching
+        uses: dtinth/setup-github-actions-caching-for-turbo@v1
+      - name: Pnpm Setup
+        uses: pnpm/action-setup@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run qa checks
+        run: pnpm merge-checks

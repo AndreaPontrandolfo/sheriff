@@ -5,6 +5,8 @@
   "extends": "tsconfig/base.json",
   "compilerOptions": {
     "module": "ESNext",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
   }
 }
