@@ -14,3 +14,7 @@ export const factorial = (num: number): number => {
 
   return num * factorial(num - 1);
 };
+
+// Function to calculate the sum of a list of numbers
+export const sum = (numbers: number[]): number =>
+  numbers.reduce((acc, curr) => acc + curr, 0);
