@@ -1,9 +1,9 @@
 name: update README.md with markdown-autodocs
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches:
+      - '**'
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
