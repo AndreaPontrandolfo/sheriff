@@ -21,7 +21,6 @@
     "@types/lodash": "^4.14.191",
     "@types/node": "^20.10.6",
     "eslint-define-config": "^2.1.0",
-    "prettier": "^3.1.1",
     "tsx": "^4.7.0",
     "type-fest": "^4.9.0",
     "typescript": "^5.3.3"

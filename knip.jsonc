@@ -1,0 +1,21 @@
+{
+  "$schema": "https://unpkg.com/knip@3/schema-jsonc.json",
+  "ignoreWorkspaces": [
+    "packages/sheriff-utils",
+    "apps/config-validation-playground",
+    "apps/cli-playground",
+    "apps/docs-website"
+  ],
+  "ignore": [
+    "packages/create-sheriff-config/src/utils/spinner.ts",
+    "packages/create-sheriff-config/src/utils/widgets.ts"
+  ],
+  "ignoreDependencies": [
+    "@turbo/gen",
+    "commander",
+    "ora",
+    "eslint-import-resolver-typescript",
+    "type-fest"
+  ],
+  "ignoreBinaries": ["only-allow"]
+}

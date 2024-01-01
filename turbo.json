@@ -30,6 +30,7 @@
       "dependsOn": ["build"]
     },
     "//#manypkg": {},
+    "//#knip": {},
     "typesync": {},
     "are-the-types-wrong": {},
     "clean": {

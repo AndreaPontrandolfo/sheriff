@@ -20,12 +20,10 @@
   "scripts": {
     "clean": "rm -rf .turbo && rm -rf dist",
     "typecheck": "tsc --noEmit",
-    "publint": "publint",
-    "are-the-types-wrong": "attw --pack ."
+    "publint": "publint"
   },
   "devDependencies": {
     "@types/node": "^20.10.6",
-    "prettier": "^3.1.1",
     "publint": "^0.2.7",
     "tsconfig": "workspace:*",
     "type-fest": "^4.9.0",
