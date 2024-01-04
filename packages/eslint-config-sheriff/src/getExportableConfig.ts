@@ -16,6 +16,7 @@ import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import tsdoc from 'eslint-plugin-tsdoc';
 import storybook from 'eslint-plugin-storybook';
 import fsecond from 'eslint-plugin-fsecond';
+import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import stylistic from '@stylistic/eslint-plugin';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
@@ -210,6 +211,14 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
       rules: {
         ...sonarjs.configs.recommended.rules,
         ...sonarjsHandPickedRules,
+      },
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: { 'arrow-return-style': arrowReturnStyle },
+      rules: {
+        'arrow-return-style/arrow-return-style': 2,
+        'arrow-return-style/no-export-default-arrow': 2,
       },
     },
     {

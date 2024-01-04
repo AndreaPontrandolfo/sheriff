@@ -47,7 +47,6 @@ module.exports = defineFlatConfig([
     files: ["**/*ts", "**/*tsx"],
     rules: {
       "sonarjs/no-duplicate-string": 0,
-      "arrow-body-style": 0,
       "react/jsx-props-no-spreading": 0,
       "@typescript-eslint/no-misused-promises": [
         2,

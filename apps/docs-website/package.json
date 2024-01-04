@@ -13,7 +13,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . --max-warnings=0 --cache --cache-location 'node_modules/.cache/.eslintcache'",
+    "lint": "eslint . --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache",
     "typesync": "typesync --dry=fail",
     "clean": "rm -rf .turbo && rm -rf dist"
   },

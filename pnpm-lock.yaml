@@ -329,6 +329,9 @@ importers:
       eslint-import-resolver-typescript:
         specifier: ^3.5.5
         version: 3.6.1(@typescript-eslint/parser@6.17.0)(eslint-plugin-import@2.29.1)(eslint@8.56.0)
+      eslint-plugin-arrow-return-style:
+        specifier: ^1.2.2
+        version: 1.2.2(eslint@8.56.0)(typescript@5.3.3)
       eslint-plugin-astro:
         specifier: ^0.29.0
         version: 0.29.1(eslint@8.56.0)
@@ -9034,6 +9037,19 @@ packages:
       - supports-color
     dev: false
 
+  /eslint-plugin-arrow-return-style@1.2.2(eslint@8.56.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-aGZdjczx3t7mJViUHNNKFgpJZST6yhzTjvBYzgX+cQIea3903uA/yDUezYQVxLYpE66qD7eY8ZiJ6X6zG0x8+g==}
+    peerDependencies:
+      eslint: '>=8.0.0'
+    dependencies:
+      '@typescript-eslint/utils': 6.17.0(eslint@8.56.0)(typescript@5.3.3)
+      eslint: 8.56.0
+      scule: 1.1.1
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: false
+
   /eslint-plugin-astro@0.29.1(eslint@8.56.0):
     resolution: {integrity: sha512-ffuUc7zFz8HavaAVaS5iRUzWqBf3/YbrFWUhx0GxXW3gVtnbri5UyvkN8EMOkZWkNXG1zqD2y9dlEsAezhbC0w==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -16060,6 +16076,10 @@ packages:
       ajv: 8.12.0
       ajv-formats: 2.1.1(ajv@8.12.0)
       ajv-keywords: 5.1.0(ajv@8.12.0)
+    dev: false
+
+  /scule@1.1.1:
+    resolution: {integrity: sha512-sHtm/SsIK9BUBI3EFT/Gnp9VoKfY6QLvlkvAE6YK7454IF8FSgJEAnJpVdSC7K5/pjI5NfxhzBLW2JAfYA/shQ==}
     dev: false
 
   /search-insights@2.13.0:
