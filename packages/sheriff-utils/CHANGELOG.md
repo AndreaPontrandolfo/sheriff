@@ -1,5 +1,12 @@
 # @sheriff/utils
 
+## 1.1.2
+
+### Patch Changes
+
+- 977b2b4: feat(types): Update @sheriff/types to @sherifforg/types
+- aba4e21: ci(monorepo): added merge-checks
+
 ## 1.1.1
 
 ### Patch Changes

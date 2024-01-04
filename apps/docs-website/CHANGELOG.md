@@ -1,5 +1,12 @@
 # docs-website
 
+## 1.8.0
+
+### Minor Changes
+
+- 977b2b4: feat(types): Update @sheriff/types to @sherifforg/types
+- aba4e21: ci(monorepo): added merge-checks
+
 ## 1.7.0
 
 ### Minor Changes
