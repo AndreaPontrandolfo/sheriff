@@ -1,5 +1,18 @@
 # sheriff-webservices
 
+## 2.1.0
+
+### Minor Changes
+
+- 977b2b4: feat(types): Update @sheriff/types to @sherifforg/types
+- aba4e21: ci(monorepo): added merge-checks
+
+### Patch Changes
+
+- Updated dependencies [977b2b4]
+- Updated dependencies [aba4e21]
+  - eslint-config-sheriff@18.1.0
+
 ## 2.0.0
 
 ### Major Changes
