@@ -16,7 +16,7 @@
     "typesync": "turbo run typesync",
     "knip": "knip",
     "validate-config": "turbo run validate-config",
-    "merge-checks": "FORCE_COLOR=1 turbo run publint manypkg typesync knip typecheck lint validate-config",
+    "merge-checks": "set FORCE_COLOR=1 && turbo run publint manypkg typesync knip typecheck lint validate-config",
     "cleanall": "turbo run clean",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",
     "nuke": "pnpm cleanall && pnpm delete-node-modules",

@@ -5,7 +5,7 @@
   "type": "module",
   "packageManager": "pnpm@8.8.0",
   "scripts": {
-    "validate-config": "eslint . --max-warnings=0 --cache --cache-location 'node_modules/.cache/.eslintcache'"
+    "validate-config": "eslint . --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache"
   },
   "dependencies": {
     "astro": "^4.0.8",

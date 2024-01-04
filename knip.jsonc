@@ -17,5 +17,5 @@
     "eslint-import-resolver-typescript",
     "type-fest"
   ],
-  "ignoreBinaries": ["only-allow"]
+  "ignoreBinaries": ["only-allow", "set"]
 }

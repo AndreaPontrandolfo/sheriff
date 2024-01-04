@@ -9,7 +9,7 @@
     "clean": "rm -rf .turbo && rm -rf dist",
     "build": "tsup",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . --max-warnings=0 --cache --cache-location 'node_modules/.cache/.eslintcache'",
+    "lint": "eslint . --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache",
     "publint": "publint",
     "typesync": "typesync --dry=fail"
   },

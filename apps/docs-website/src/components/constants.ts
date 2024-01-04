@@ -5,4 +5,4 @@ export const configCombinationDefaultValues = {
   playwright: true,
   vitest: true,
   jest: false,
-};
+} as const;

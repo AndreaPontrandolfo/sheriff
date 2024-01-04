@@ -16,6 +16,7 @@ sidebar_position: 7
 - [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs)
 - [eslint-plugin-fp](https://github.com/jfmengels/eslint-plugin-fp)
 - [@regru/eslint-plugin-prefer-early-return](https://github.com/regru/eslint-plugin-prefer-early-return)
+- [eslint-plugin-arrow-return-style](https://github.com/u3u/eslint-plugin-arrow-return-style)
 - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)
 - [eslint-plugin-tsdoc](https://www.npmjs.com/package/eslint-plugin-tsdoc)
 - [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)

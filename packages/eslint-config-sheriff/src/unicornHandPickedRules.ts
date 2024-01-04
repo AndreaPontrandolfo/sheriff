@@ -36,4 +36,5 @@ export const unicornHandPickedRules = {
   'unicorn/prefer-switch': [2, { emptyDefaultCase: 'do-nothing-comment' }],
   'unicorn/switch-case-braces': 2,
   'unicorn/catch-error-name': 2,
+  'unicorn/consistent-destructuring': 2,
 };

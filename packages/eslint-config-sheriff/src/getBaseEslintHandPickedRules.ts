@@ -98,7 +98,6 @@ export const getBaseEslintHandPickedRules = (
     'no-console': [2, { allow: ['warn', 'error', 'debug', 'info', 'table'] }],
     eqeqeq: 2,
     'prefer-arrow-callback': 2,
-    'arrow-body-style': [2, 'as-needed'],
     'no-restricted-syntax': [
       2,
       ...getFilteredBaseNoRestrictedSyntax(
@@ -116,5 +115,6 @@ export const getBaseEslintHandPickedRules = (
     'dot-notation': 0, // we are using the @typescript/eslint version
     'no-shadow': 0, // we are using the @typescript/eslint version
     'default-param-last': 0, // we are using the @typescript/eslint version
+    'arrow-body-style': 0, // we are using the eslint-plugin-arrow-return-style version
   };
 };
