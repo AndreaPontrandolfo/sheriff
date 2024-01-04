@@ -1,4 +1,4 @@
-import type { Entry } from "@sheriff/types";
+import type { Entry } from "@sherifforg/types";
 import { isEqual } from "lodash-es";
 import { removeElementFromArrayByValue } from "./removeElementFromArrayByValue";
 

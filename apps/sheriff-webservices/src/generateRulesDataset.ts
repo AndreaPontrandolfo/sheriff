@@ -12,7 +12,7 @@ import type {
   RuleOptions,
   RuleOptionsConfig,
   ServerResponse,
-} from "@sheriff/types";
+} from "@sherifforg/types";
 
 const { isArray, isEmpty, last, uniq } = lodash;
 

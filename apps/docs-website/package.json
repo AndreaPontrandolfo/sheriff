@@ -39,7 +39,7 @@
     "@docusaurus/tsconfig": "^3.0.0",
     "@docusaurus/types": "^3.0.0",
     "@hookform/devtools": "^4.3.1",
-    "@sheriff/types": "workspace:*",
+    "@sherifforg/types": "workspace:*",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.10.6",
     "@types/react": "^18.2.37",

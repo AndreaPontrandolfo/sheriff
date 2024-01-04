@@ -19,7 +19,7 @@ import fsecond from 'eslint-plugin-fsecond';
 import stylistic from '@stylistic/eslint-plugin';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
-import { ExportableConfigAtom, SheriffSettings } from '@sheriff/types';
+import { ExportableConfigAtom, SheriffSettings } from '@sherifforg/types';
 import { allJsExtensions, supportedFileTypes, ignores } from './constants';
 import { fpHandPickedRules } from './fpHandPickedRules';
 import { getBaseEslintHandPickedRules } from './getBaseEslintHandPickedRules';

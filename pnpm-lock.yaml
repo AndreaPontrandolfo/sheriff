@@ -147,7 +147,7 @@ importers:
       '@hookform/devtools':
         specifier: ^4.3.1
         version: 4.3.1(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
-      '@sheriff/types':
+      '@sherifforg/types':
         specifier: workspace:*
         version: link:../../packages/sheriff-types
       '@types/lodash-es':
@@ -196,7 +196,7 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
     devDependencies:
-      '@sheriff/types':
+      '@sherifforg/types':
         specifier: workspace:*
         version: link:../../packages/sheriff-types
       '@tsconfig/node-lts':
@@ -384,7 +384,7 @@ importers:
       '@arethetypeswrong/cli':
         specifier: ^0.9.0
         version: 0.9.0
-      '@sheriff/types':
+      '@sherifforg/types':
         specifier: workspace:*
         version: link:../sheriff-types
       '@types/eslint-config-prettier':
@@ -435,7 +435,7 @@ importers:
 
   packages/sheriff-utils:
     devDependencies:
-      '@sheriff/types':
+      '@sherifforg/types':
         specifier: workspace:*
         version: link:../sheriff-types
       '@types/lodash-es':

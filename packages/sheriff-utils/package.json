@@ -24,7 +24,7 @@
     "clean": "rm -rf .turbo && rm -rf dist"
   },
   "devDependencies": {
-    "@sheriff/types": "workspace:*",
+    "@sherifforg/types": "workspace:*",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.10.6",
     "eslint": "^8.56.0",
