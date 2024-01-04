@@ -7,7 +7,7 @@ import {
   getFilteredRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import type { Entry, ServerResponse, SheriffSettings } from "@sheriff/types";
+import type { Entry, ServerResponse, SheriffSettings } from "@sherifforg/types";
 import { isEmpty } from "lodash-es";
 import Select from "react-select";
 import { DebounceInput } from "react-debounce-input";

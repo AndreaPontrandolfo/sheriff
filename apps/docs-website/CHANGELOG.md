@@ -7,7 +7,7 @@
 - 3870f73: feat(config): added experimental support for eslint-ts-patch
   feat(CLI): massive improvements to create-sheriff-config
   feat(playground): added workspace cli-playground
-  feat(types): @sheriff/types is now a npm package
+  feat(types): @sherifforg/types is now a npm package
 - 69b0dba: feat(config): added support for reporting unused directives
 - 991f1fa: feat(config): Added eslint-config-flat-gitignore functionality and updated docs
 

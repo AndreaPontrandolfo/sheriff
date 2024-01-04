@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import getSheriffConfig from "eslint-config-sheriff";
-import type { BarebonesConfigAtom } from "@sheriff/types";
+import type { BarebonesConfigAtom } from "@sherifforg/types";
 import express, { type Request, type Response } from "express";
 import cors from "cors";
 import { generateRulesDataset } from "./generateRulesDataset.js";

@@ -1,4 +1,4 @@
-import { NoRestrictedSyntaxSlice } from '@sheriff/types';
+import { NoRestrictedSyntaxSlice } from '@sherifforg/types';
 
 export const getFilteredBaseNoRestrictedSyntax = (
   baseNoRestrictedSyntaxRules: NoRestrictedSyntaxSlice[],

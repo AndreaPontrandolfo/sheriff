@@ -18,9 +18,9 @@
     "Version": "[![npm](https://img.shields.io/npm/v/create-sheriff-config.svg)](https://www.npmjs.com/package/create-sheriff-config)"
   },
   {
-    "Link": "[`@sheriff/types`](https://www.npmjs.com/package/@sheriff/types)",
+    "Link": "[`@sherifforg/types`](https://www.npmjs.com/package/@sherifforg/types)",
     "Source": "[sheriff-types](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/sheriff-types)",
     "Description": "Sheriff types package",
-    "Version": "[![npm](https://img.shields.io/npm/v/@sheriff/types.svg)](https://www.npmjs.com/package/@sheriff/types)"
+    "Version": "[![npm](https://img.shields.io/npm/v/@sherifforg/types.svg)](https://www.npmjs.com/package/@sherifforg/types)"
   }
 ]
