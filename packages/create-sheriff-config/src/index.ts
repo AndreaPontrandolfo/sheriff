@@ -2,6 +2,7 @@
 
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import { consola } from 'consola';
 import { setDependencies } from './utils/setDependencies';
 import { setEslintConfig } from './utils/setEslintConfig';
 import { setPrettierConfig } from './utils/setPrettierConfig';
@@ -9,10 +10,6 @@ import { setPrettierIgnore } from './utils/setPrettierIgnore';
 import { askForCustomPath } from './utils/askForCustomPath';
 import { askForPrettierSupport } from './utils/askForPrettierSupport';
 import { askForEslintTsPatch } from './utils/askForEslintTsPatch';
-
-// import { Command, program } from 'commander';
-// import { widgets } from './src/utils/widgets';
-// import { spinnerError, stopSpinner } from "./src/utils/spinner";
 
 const { argv } = yargs(hideBin(process.argv)).option('filter', {
   type: 'string',
@@ -36,6 +33,7 @@ async function main() {
     await setPrettierIgnore(customProjectRootPath);
   }
   await setDependencies(isEslintTsPatchRequired, customProjectRootPath);
+  consola.info("You're all set!");
 }
 
 // eslint-disable-next-line

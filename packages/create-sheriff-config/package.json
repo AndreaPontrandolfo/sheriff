@@ -24,6 +24,7 @@
     "clean": true
   },
   "dependencies": {
+    "cli-highlight": "^2.1.11",
     "commander": "^9.4.1",
     "consola": "^3.2.3",
     "detect-package-manager": "^3.0.1",

@@ -1,9 +1,8 @@
 import { consola } from 'consola';
+import { highlight } from 'cli-highlight';
 import { sheriffStartingOptions } from '../constants';
 import { getPackageJsonContents } from './getPackageJsonContents';
 import { throwError } from './throwError';
-
-// import { spinnerSuccess, updateSpinnerText } from './spinner';
 
 export const setSheriffConfig = async (
   customProjectRootPath: string | null,
@@ -71,7 +70,9 @@ export const setSheriffConfig = async (
   }
 
   consola.info('Setting Sheriff with options:');
-  consola.box(finalPluginsConfigurationSetup);
+  consola.box(
+    highlight(JSON.stringify(finalPluginsConfigurationSetup, null, 2)),
+  );
 
   return finalPluginsConfigurationSetup;
 };
