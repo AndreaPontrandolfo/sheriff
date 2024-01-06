@@ -1,7 +1,7 @@
+import { consola } from 'consola';
 import { sheriffStartingOptions } from '../constants';
 import { getPackageJsonContents } from './getPackageJsonContents';
-import { logger } from './logs';
-import { printError } from './printError';
+import { throwError } from './throwError';
 
 // import { spinnerSuccess, updateSpinnerText } from './spinner';
 
@@ -12,7 +12,7 @@ export const setSheriffConfig = async (
   const root = await getPackageJsonContents(customProjectRootPath);
 
   if (!root) {
-    printError(
+    throwError(
       "couldn't read the package.json. Every setting will be set to false",
     );
 
@@ -29,56 +29,49 @@ export const setSheriffConfig = async (
     userProjectDependencies['react-scripts'] ||
     userProjectDependencies.next
   ) {
-    logger.verbose(
+    consola.start(
       "'React' package found in the project. Setting up support for it...",
     );
     finalPluginsConfigurationSetup.react = true;
   }
 
   if (userProjectDependencies.playwright) {
-    logger.verbose(
+    consola.start(
       "'Playwright' package found in the project. Setting up support for it...",
     );
     finalPluginsConfigurationSetup.playwright = true;
   }
 
   if (userProjectDependencies.next) {
-    logger.verbose(
+    consola.start(
       "'Next' package found in the project. Setting up support for it...",
     );
     finalPluginsConfigurationSetup.next = true;
   }
 
   if (userProjectDependencies.lodash || userProjectDependencies['lodash-es']) {
-    logger.verbose(
+    consola.start(
       "'Lodash' package found in the project. Setting up support for it...",
     );
     finalPluginsConfigurationSetup.lodash = true;
   }
 
   if (userProjectDependencies.jest) {
-    logger.verbose(
+    consola.start(
       "'Jest' package found in the project. Setting up support for it...",
     );
     finalPluginsConfigurationSetup.jest = true;
   }
 
   if (userProjectDependencies.vitest) {
-    logger.verbose(
+    consola.start(
       "'Vitest' package found in the project. Setting up support for it...",
     );
     finalPluginsConfigurationSetup.vitest = true;
   }
 
-  logger.verbose(
-    `Setting Sheriff with options:`,
-    finalPluginsConfigurationSetup,
-  );
+  consola.info('Setting Sheriff with options:');
+  consola.box(finalPluginsConfigurationSetup);
 
-  // updateSpinnerText("Creating '.sheriffrc.json'...");
   return finalPluginsConfigurationSetup;
-
-  // spinnerSuccess(
-  //   "Successfully created '.sheriffrc.json' file at project root.",
-  // );
 };

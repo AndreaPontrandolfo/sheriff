@@ -1,5 +1,5 @@
 import { sheriffStartingOptions } from '../constants';
-import { printError } from './printError';
+import { throwError } from './throwError';
 import { setSheriffConfig } from './setSheriffConfig';
 
 export const getEslintConfigRawText = async (
@@ -11,7 +11,7 @@ export const getEslintConfigRawText = async (
   try {
     sheriffConfig = await setSheriffConfig(customProjectRootPath);
   } catch (error) {
-    printError(
+    throwError(
       "Couldn't infer Sheriff user preferences automatically. Setting every option to false...",
       { error },
     );

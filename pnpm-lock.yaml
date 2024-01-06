@@ -232,6 +232,9 @@ importers:
       commander:
         specifier: ^9.4.1
         version: 9.5.0
+      consola:
+        specifier: ^3.2.3
+        version: 3.2.3
       detect-package-manager:
         specifier: ^3.0.1
         version: 3.0.1
@@ -7736,6 +7739,11 @@ packages:
 
   /consola@2.15.3:
     resolution: {integrity: sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==}
+    dev: false
+
+  /consola@3.2.3:
+    resolution: {integrity: sha512-I5qxpzLv+sJhTVEoLYNcTW+bThDCPsit0vLNKShZx6rLtpilNpmmeTPaeqJb9ZE9dV3DGaeby6Vuhrw38WjeyQ==}
+    engines: {node: ^14.18.0 || >=16.10.0}
     dev: false
 
   /constant-case@2.0.0:

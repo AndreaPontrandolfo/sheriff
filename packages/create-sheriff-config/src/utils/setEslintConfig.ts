@@ -1,8 +1,7 @@
+import { consola } from 'consola';
 import { createFile } from './createFile';
 import { getPackageJsonContents } from './getPackageJsonContents';
-import { logger } from './logs';
-import { printError } from './printError';
-import { printWarning } from './printWarning';
+import { throwError } from './throwError';
 import { patchedFindUp } from './patchedFindUp';
 import { getEslintConfigRawText } from './getEslintConfigRawText';
 
@@ -29,13 +28,13 @@ export const setEslintConfig = async (
     );
 
     if (eslintIgnoreFile) {
-      printWarning(
+      consola.warn(
         `A ${ESLINT_IGNORE_FILE_NAME} file was found. Please remove it and transfer the ignored files list to the ${ESLINT_CONFIG_JS_FILE_NAME} 'ignores' array`,
       );
     }
 
     if (eslintConfigJsFile) {
-      logger.verbose(
+      consola.info(
         `'${ESLINT_CONFIG_JS_FILE_NAME}' file found. Skipping '${ESLINT_CONFIG_JS_FILE_NAME}' file generation and configuration.`,
       );
 
@@ -43,14 +42,14 @@ export const setEslintConfig = async (
     }
 
     if (eslintConfigTsFile) {
-      logger.verbose(
+      consola.info(
         `'${ESLINT_CONFIG_TS_FILE_NAME}' file found. Skipping '${ESLINT_CONFIG_TS_FILE_NAME}' file generation and configuration.`,
       );
 
       return;
     }
 
-    logger.verbose(
+    consola.start(
       `Neither a '${ESLINT_CONFIG_TS_FILE_NAME}' nor a '${ESLINT_CONFIG_JS_FILE_NAME}' file were found. Generating and configuring '${
         isEslintTsPatchRequired
           ? ESLINT_CONFIG_TS_FILE_NAME
@@ -58,7 +57,7 @@ export const setEslintConfig = async (
       }' file...`,
     );
 
-    printWarning(
+    consola.warn(
       'If you have other ESLint configs in your project, remove them',
     );
 
@@ -75,7 +74,7 @@ export const setEslintConfig = async (
     const root = await getPackageJsonContents(customProjectRootPath);
 
     if (!root) {
-      printWarning(
+      consola.warn(
         "couldn't read the package.json. Defaulting to Commonjs imports style",
       );
       createFile(
@@ -100,6 +99,6 @@ export const setEslintConfig = async (
       }
     }
   } catch (error) {
-    printError("Couldn't walk up the filesystem", { error });
+    throwError("Couldn't walk up the filesystem", { error });
   }
 };

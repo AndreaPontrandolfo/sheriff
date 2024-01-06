@@ -1,6 +1,6 @@
+import { consola } from 'consola';
 import { createFile } from './createFile';
-import { logger } from './logs';
-import { printError } from './printError';
+import { throwError } from './throwError';
 import { patchedFindUp } from './patchedFindUp';
 
 const prettierIgnoreRawText = `/node_modules/
@@ -22,13 +22,13 @@ export const setPrettierIgnore = async (
     );
 
     if (prettierIgnoreFile) {
-      logger.verbose(
+      consola.info(
         `An already present '${PRETTIER_IGNORE_FILE_NAME}' file was found in the project. Skipping '${PRETTIER_IGNORE_FILE_NAME}' file generation and configuration.`,
       );
 
       return;
     }
-    logger.verbose(
+    consola.start(
       `No '${PRETTIER_IGNORE_FILE_NAME}' file was found in the project. Generating and configuring '${PRETTIER_IGNORE_FILE_NAME}' file...`,
     );
     createFile(
@@ -37,6 +37,6 @@ export const setPrettierIgnore = async (
       customProjectRootPath,
     );
   } catch (error) {
-    printError("Couldn't walk up the filesystem", { error });
+    throwError("Couldn't walk up the filesystem", { error });
   }
 };

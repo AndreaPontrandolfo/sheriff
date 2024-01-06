@@ -1,8 +1,8 @@
 // import { resolveConfigFile } from 'prettier';
+import { consola } from 'consola';
 import { createFile } from './createFile';
 import { getPackageJsonContents } from './getPackageJsonContents';
-import { logger } from './logs';
-import { printError } from './printError';
+import { throwError } from './throwError';
 import { patchedFindUp } from './patchedFindUp';
 
 const prettierConfigRawText = `{}`;
@@ -13,7 +13,7 @@ export const setPrettierConfig = async (
   const root = await getPackageJsonContents(customProjectRootPath);
 
   if (!root) {
-    printError("couldn't read the package.json.");
+    throwError("couldn't read the package.json.");
 
     return;
   }
@@ -51,25 +51,25 @@ export const setPrettierConfig = async (
       root.packageJson.devDependencies?.prettier
     ) {
       if (prettierConfigurationFilePath) {
-        logger.verbose(
+        consola.info(
           `An already present 'Prettier' configuration was found in the project.`,
         );
       }
 
       if (root.packageJson.devDependencies?.prettier) {
-        logger.verbose(
+        consola.info(
           `An already present 'Prettier' dependency was found in the project.`,
         );
       }
 
-      logger.verbose(
+      consola.info(
         `Skipping '${PREFERRED_PRETTIER_CONFIG_FILE_NAME}' file generation and configuration.`,
       );
 
       return;
     }
 
-    logger.verbose(
+    consola.start(
       `No 'prettier' configuration or dependency was found in the project. Generating and configuring '${PREFERRED_PRETTIER_CONFIG_FILE_NAME}' file...`,
     );
 
@@ -79,6 +79,6 @@ export const setPrettierConfig = async (
       customProjectRootPath,
     );
   } catch (error) {
-    printError("Couldn't walk up the filesystem", { error });
+    throwError("Couldn't walk up the filesystem", { error });
   }
 };

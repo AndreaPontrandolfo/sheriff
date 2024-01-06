@@ -1,4 +1,4 @@
-import { logger } from './logs';
+import { consola } from 'consola';
 
 interface State {
   aborted: boolean;
@@ -7,7 +7,7 @@ interface State {
 export const gracefullyAbort = (state: State): void => {
   if (state.aborted) {
     process.nextTick(() => {
-      logger.info('Cancelling...');
+      consola.info('Cancelling...');
       process.exit(0);
     });
   }

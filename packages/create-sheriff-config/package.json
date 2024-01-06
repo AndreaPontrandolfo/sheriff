@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "commander": "^9.4.1",
+    "consola": "^3.2.3",
     "detect-package-manager": "^3.0.1",
     "find-up": "^6.3.0",
     "lodash-es": "^4.17.21",

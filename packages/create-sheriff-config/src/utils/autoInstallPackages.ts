@@ -1,9 +1,8 @@
 import { execSync } from 'child_process';
 import { detect } from 'detect-package-manager';
+import { consola } from 'consola';
 import { getInstallationCommand } from './getInstallationCommand';
-import { unImportantLogger } from './logs';
-import { printError } from './printError';
-import { printSucces } from './printSucces';
+import { throwError } from './throwError';
 
 export const autoInstallPackages = async (
   packages: string[],
@@ -25,11 +24,11 @@ export const autoInstallPackages = async (
       false,
     )}`;
 
-    unImportantLogger.silly(`Detected package manager: ${pm}`);
+    consola.info(`Detected package manager: ${pm}`);
 
     if (pm === 'pnpm' && selectedProject) {
-      unImportantLogger.silly(
-        `Installing dependendencies in project: ${selectedProject}`,
+      consola.start(
+        `Installing dependendencies in project ${selectedProject}...`,
       );
     }
 
@@ -37,15 +36,15 @@ export const autoInstallPackages = async (
       execSync(
         getInstallationCommand(pm, packagesLatestVersions, selectedProject),
       );
-      printSucces(
+      consola.success(
         `${packages.join(' and ')} ${
           packages.length > 1 ? 'were' : 'was'
         } installed successfully`,
       );
     } catch (error) {
-      printError(failedInstallationMessage, { error });
+      throwError(failedInstallationMessage, { error });
     }
   } catch (error) {
-    printError("Couldn't walk up the filesystem", { error });
+    throwError("Couldn't walk up the filesystem", { error });
   }
 };

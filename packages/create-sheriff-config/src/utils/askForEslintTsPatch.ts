@@ -1,10 +1,11 @@
 import promptShape from 'prompts';
 import { isBoolean } from 'lodash-es';
-import { logger } from './logs';
+import { consola } from 'consola';
 import { gracefullyAbort } from './gracefullyAbort';
+import { throwError } from './throwError';
 
 export const askForEslintTsPatch = async (): Promise<boolean> => {
-  logger.verbose(`Do you want to use the eslint-ts-patch?`);
+  consola.info(`Do you want to use the eslint-ts-patch?`);
 
   const response = await promptShape({
     type: 'confirm',
@@ -19,7 +20,7 @@ export const askForEslintTsPatch = async (): Promise<boolean> => {
     return eslintTsPatchConfirmValue;
   }
 
-  logger.error(
+  throwError(
     `Invalid response. Expected boolean, received ${eslintTsPatchConfirmValue}`,
   );
 
