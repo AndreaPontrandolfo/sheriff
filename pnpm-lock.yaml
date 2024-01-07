@@ -318,8 +318,8 @@ importers:
         specifier: ^6.13.2
         version: 6.18.0(eslint@8.56.0)(typescript@5.3.3)
       astro-eslint-parser:
-        specifier: ^0.15.0
-        version: 0.15.0
+        specifier: ^0.16.0
+        version: 0.16.0
       eslint-config-flat-gitignore:
         specifier: ^0.1.2
         version: 0.1.2
@@ -333,8 +333,8 @@ importers:
         specifier: ^1.3.0
         version: 1.3.0(eslint@8.56.0)(typescript@5.3.3)
       eslint-plugin-astro:
-        specifier: ^0.29.0
-        version: 0.29.1(eslint@8.56.0)
+        specifier: ^0.31.0
+        version: 0.31.0(eslint@8.56.0)
       eslint-plugin-fp:
         specifier: ^2.3.0
         version: 2.3.0(eslint@8.56.0)
@@ -8885,6 +8885,15 @@ packages:
       lodash.zip: 4.2.0
     dev: false
 
+  /eslint-compat-utils@0.1.2(eslint@8.56.0):
+    resolution: {integrity: sha512-Jia4JDldWnFNIru1Ehx1H5s9/yxiRHY/TimCuUc0jNexew3cF1gI6CYZil1ociakfWO3rRqFjl1mskBblB3RYg==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      eslint: '>=6.0.0'
+    dependencies:
+      eslint: 8.56.0
+    dev: false
+
   /eslint-config-flat-gitignore@0.1.2:
     resolution: {integrity: sha512-PcBsqtd5QHEZH4ROvpnRN4EP0qcHh9voCCHgtyHxnJZHGspJREcZn7oPqRG/GfWt9m3C0fkC2l5CuBtMig2wXQ==}
     dependencies:
@@ -9063,6 +9072,24 @@ packages:
       '@typescript-eslint/types': 5.62.0
       astro-eslint-parser: 0.16.0
       eslint: 8.56.0
+      postcss: 8.4.33
+      postcss-selector-parser: 6.0.15
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /eslint-plugin-astro@0.31.0(eslint@8.56.0):
+    resolution: {integrity: sha512-oNZj7bcpCPkebKD7ZfGflAFVUwz78ItdXeK5aVAqFpZZk1JhGaseWdU24f8r26hRte9rrT3EQV4Qwbngp2xSPA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      '@eslint-community/eslint-utils': 4.4.0(eslint@8.56.0)
+      '@jridgewell/sourcemap-codec': 1.4.15
+      '@typescript-eslint/types': 5.62.0
+      astro-eslint-parser: 0.16.0
+      eslint: 8.56.0
+      eslint-compat-utils: 0.1.2(eslint@8.56.0)
       postcss: 8.4.33
       postcss-selector-parser: 6.0.15
     transitivePeerDependencies:
