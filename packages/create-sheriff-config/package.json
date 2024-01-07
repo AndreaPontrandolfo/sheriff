@@ -6,7 +6,7 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "tsx ./src/index.ts",
-    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean": "rm -rf .turbo dist",
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache",
@@ -30,6 +30,7 @@
     "detect-package-manager": "^3.0.1",
     "find-up": "^6.3.0",
     "lodash-es": "^4.17.21",
+    "nypm": "^0.3.4",
     "ora": "^6.1.2",
     "prompts": "^2.4.2",
     "read-pkg-up": "9.1.0",

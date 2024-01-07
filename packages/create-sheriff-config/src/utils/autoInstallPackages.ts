@@ -1,5 +1,5 @@
 import { execSync } from 'child_process';
-import { detect } from 'detect-package-manager';
+import { detectPackageManager, addDevDependency } from 'nypm';
 import { consola } from 'consola';
 import { getInstallationCommand } from './getInstallationCommand';
 import { throwError } from './throwError';
@@ -13,29 +13,33 @@ export const autoInstallPackages = async (
   );
 
   try {
-    const pm = await detect();
+    const pm = await detectPackageManager(process.cwd());
 
     const failedInstallationMessage = `Couldn't auto-install the required packages.
     You have to install them manually yourself.
     Please try to run: ${getInstallationCommand(
-      pm,
+      pm?.name,
       packagesLatestVersions,
       selectedProject,
       false,
     )}`;
 
-    consola.info(`Detected package manager: ${pm}`);
+    consola.info(`Detected package manager: ${pm?.name}`);
 
-    if (pm === 'pnpm' && selectedProject) {
+    if (selectedProject) {
       consola.start(
         `Installing dependendencies in project ${selectedProject}...`,
       );
     }
 
     try {
-      execSync(
-        getInstallationCommand(pm, packagesLatestVersions, selectedProject),
-      );
+      // execSync(
+      //   getInstallationCommand(pm, packagesLatestVersions, selectedProject),
+      // );
+      await addDevDependency(packagesLatestVersions[0], {
+        cwd: process.cwd(),
+        workspace: 'cli-playground',
+      });
       consola.success(
         `${packages.join(' and ')} ${
           packages.length > 1 ? 'were' : 'was'

@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache",
     "typesync": "typesync --dry=fail",
-    "clean": "rm -rf .turbo && rm -rf dist"
+    "clean": "rm -rf .turbo dist"
   },
   "dependencies": {
     "@docusaurus/core": "3.0.0",
