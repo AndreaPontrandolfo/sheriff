@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache",
     "typesync": "typesync --dry=fail",
-    "clean": "rm -rf .turbo && rm -rf dist"
+    "clean": "pnpm clear && rm -rf .turbo && rm -rf dist"
   },
   "dependencies": {
     "@docusaurus/core": "3.0.0",
@@ -63,7 +63,7 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.10.0"
   },
   "author": {
     "name": "Andrea Pontrandolfo",
