@@ -217,7 +217,10 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
       files: [supportedFileTypes],
       plugins: { 'arrow-return-style': arrowReturnStyle },
       rules: {
-        'arrow-return-style/arrow-return-style': 2,
+        'arrow-return-style/arrow-return-style': [
+          2,
+          { namedExportsAlwaysUseExplicitReturn: false },
+        ],
         'arrow-return-style/no-export-default-arrow': 2,
       },
     },
