@@ -28,7 +28,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "eslint": "^8.56.0",
-    "eslint-config-sheriff": "workspace:*",
+    "eslint-config-sheriff": "latest",
     "express": "^4.18.2",
     "lodash": "^4.17.21"
   },
