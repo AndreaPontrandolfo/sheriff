@@ -37,4 +37,5 @@ export const unicornHandPickedRules = {
   'unicorn/switch-case-braces': 2,
   'unicorn/catch-error-name': 2,
   'unicorn/consistent-destructuring': 2,
+  'unicorn/prefer-string-slice': 2,
 };
