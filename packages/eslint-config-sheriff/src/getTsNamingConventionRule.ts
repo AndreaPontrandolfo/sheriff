@@ -38,7 +38,7 @@ export const getTsNamingConventionRule = ({
       {
         selector: 'variable',
         types: ['boolean'],
-        format: ['camelCase'],
+        format: ['PascalCase'],
         prefix: ['is', 'has', 'should', 'can'],
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
