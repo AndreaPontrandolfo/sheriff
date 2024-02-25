@@ -1,3 +1,4 @@
+/* eslint-disable fsecond/prefer-destructured-optionals */
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable lodash-f/import-scope */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
@@ -55,7 +56,7 @@ const severityRemapper = (severity: Severity): NumericSeverity => {
   }
 };
 
-const getDocs = (ruleName: string, plugins: Plugins) => {
+const getDocs = (ruleName: string, plugins?: Plugins) => {
   const docs = {
     description: "",
     url: "",
@@ -111,8 +112,12 @@ const extractNumericSeverityFromRuleOptions = (
   return severityRemapper(ruleOptions);
 };
 
-const getCompiledConfig = (config: BarebonesConfigAtom[]) => {
+const getCompiledConfig = (
+  config: BarebonesConfigAtom[],
+  allRulesRaw: BarebonesConfigAtom["rules"],
+) => {
   const pluginsNames: string[] = [];
+
   const compiledConfig = config.flatMap((configAtom) => {
     const atomRemappedRecords: Entry[] = [];
 
@@ -120,20 +125,42 @@ const getCompiledConfig = (config: BarebonesConfigAtom[]) => {
       return atomRemappedRecords;
     }
 
-    for (const [ruleName, ruleOptions] of Object.entries(configAtom.rules)) {
-      const parentPluginName = getParentPluginName(ruleName);
+    for (const [ruleName, ruleOptions] of Object.entries(allRulesRaw)) {
+      if (isEmpty(configAtom.rules[ruleName])) {
+        // rule is not explicitly used in Sheriff. A undeclared rule will be used with default values as fallback.
+        const parentPluginName = getParentPluginName(ruleName);
 
-      pluginsNames.push(parentPluginName);
-      const ruleRecord: Entry = {
-        ruleName,
-        parentPluginName,
-        severity: extractNumericSeverityFromRuleOptions(ruleOptions),
-        ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
-        affectedFiles: configAtom.files ? configAtom.files.join(", ") : "*",
-        docs: getDocs(ruleName, configAtom.plugins),
-      };
+        const ruleRecord: Entry = {
+          ruleName,
+          parentPluginName,
+          severity: 0,
+          ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
+          affectedFiles: "none",
+          docs: getDocs(ruleName),
+        };
 
-      atomRemappedRecords.push(ruleRecord);
+        atomRemappedRecords.push(ruleRecord);
+      } else {
+        // rule is explicitly used in Sheriff.
+        const parentPluginName = getParentPluginName(ruleName);
+
+        pluginsNames.push(parentPluginName);
+
+        const ruleRecord: Entry = {
+          ruleName,
+          parentPluginName,
+          severity: extractNumericSeverityFromRuleOptions(
+            configAtom.rules[ruleName],
+          ),
+          ruleOptions: extractOptionsFromRuleEntry(configAtom.rules[ruleName]),
+          affectedFiles: configAtom.files
+            ? configAtom.files.join(", ")
+            : "none",
+          docs: getDocs(ruleName, configAtom.plugins),
+        };
+
+        atomRemappedRecords.push(ruleRecord);
+      }
     }
 
     return atomRemappedRecords;
@@ -144,8 +171,12 @@ const getCompiledConfig = (config: BarebonesConfigAtom[]) => {
 
 export const generateRulesDataset = (
   config: BarebonesConfigAtom[],
+  allRulesRaw: BarebonesConfigAtom["rules"],
 ): ServerResponse => {
-  const { compiledConfig, pluginsNames } = getCompiledConfig(config);
+  const { compiledConfig, pluginsNames } = getCompiledConfig(
+    config,
+    allRulesRaw,
+  );
 
   return { compiledConfig, pluginsNames };
 };

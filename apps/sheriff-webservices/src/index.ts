@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import getSheriffConfig from "eslint-config-sheriff";
 import { Hono } from "hono";
 import { serve } from "@hono/node-server";
 import { cors } from "hono/cors";
-import type { BarebonesConfigAtom } from "@sherifforg/types";
+import type { BarebonesConfigAtom, SheriffSettings } from "@sherifforg/types";
 import { generateRulesDataset } from "./generateRulesDataset.js";
+import { getAllRules } from "./getAllRules.js";
 
 const app = new Hono();
 const port = Number(process.env.PORT || 5001);
@@ -12,9 +12,13 @@ const port = Number(process.env.PORT || 5001);
 app.use("/api/*", cors());
 
 app.get("/api/keepalive", (context) => context.text("OK"));
-app.post("/api/get-new-sheriff-config", (context) => {
-  const newConfig: BarebonesConfigAtom[] = getSheriffConfig(context.req.json());
-  const allRulesConfig: BarebonesConfigAtom[] = getSheriffConfig(
+app.post("/api/get-new-sheriff-config", async (context) => {
+  const userConfigChoices: SheriffSettings = await context.req.json();
+
+  const allRulesRaw = getAllRules(userConfigChoices);
+
+  const newConfig: BarebonesConfigAtom[] = getSheriffConfig(userConfigChoices);
+  const anyRuleAllowedConfig: BarebonesConfigAtom[] = getSheriffConfig(
     {
       react: true,
       lodash: true,
@@ -27,9 +31,14 @@ app.post("/api/get-new-sheriff-config", (context) => {
   );
 
   console.info("Sending new config...");
-  const allRulesCompiledConfig =
-    generateRulesDataset(allRulesConfig).compiledConfig;
-  const { compiledConfig, pluginsNames } = generateRulesDataset(newConfig);
+  const allRulesCompiledConfig = generateRulesDataset(
+    anyRuleAllowedConfig,
+    allRulesRaw,
+  ).compiledConfig;
+  const { compiledConfig, pluginsNames } = generateRulesDataset(
+    newConfig,
+    allRulesRaw,
+  );
 
   console.info("New config sent.");
 
