@@ -1,26 +1,122 @@
-// import type { ExportableConfigAtom, SheriffSettings } from "@sherifforg/types";
+/* eslint-disable @typescript-eslint/consistent-type-imports */
 
-declare module "@eslint/js";
-declare module "@next/eslint-plugin-next";
-declare module "@regru/eslint-plugin-prefer-early-return";
-declare module "eslint-plugin-unicorn";
-declare module "eslint-plugin-playwright";
-declare module "eslint-plugin-jsdoc";
-declare module "eslint-plugin-lodash-f";
-declare module "eslint-plugin-import";
-declare module "eslint-plugin-fp";
-declare module "eslint-plugin-jest";
-declare module "eslint-plugin-storybook";
-declare module "eslint-plugin-react*";
-declare module "eslint-plugin-jsx-a11y";
-declare module "eslint-plugin-react-hooks";
-declare module "eslint-plugin-react-refresh";
-declare module "eslint-plugin-fsecond";
-// declare module "eslint-config-sheriff" {
-//   const config: (
-//     userConfigChoices: SheriffSettings,
-//     areAllRulesForced?: boolean,
-//   ) => ExportableConfigAtom[];
+declare module "@eslint/js" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
 
-//   export default config;
-// }
+  export default config;
+}
+declare module "@next/eslint-plugin-next" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "@regru/eslint-plugin-prefer-early-return" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-unicorn" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-playwright" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-jsdoc" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-lodash-f" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-import" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-fp" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-jest" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-storybook" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-react*" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-jsx-a11y" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-react-hooks" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-react-refresh" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-plugin-fsecond" {
+  const config: {
+    rules: Record<string, import("@sherifforg/types").RuleOptions>;
+  };
+
+  export default config;
+}
+declare module "eslint-config-sheriff" {
+  const config: (
+    userConfigChoices: import("@sherifforg/types").SheriffSettings,
+    areAllRulesForced?: boolean,
+  ) => import("@sherifforg/types").ExportableConfigAtom[];
+
+  export default config;
+}

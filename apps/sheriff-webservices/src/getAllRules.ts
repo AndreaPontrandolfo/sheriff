@@ -24,12 +24,20 @@ import jsxRuntime from "eslint-plugin-react/configs/jsx-runtime.js";
 import reactAccessibility from "eslint-plugin-jsx-a11y";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import type { BarebonesConfigAtom, SheriffSettings } from "@sherifforg/types";
+import type {
+  BarebonesConfigAtom,
+  RuleOptions,
+  SheriffSettings,
+} from "@sherifforg/types";
 import { prependRulesWithPluginName } from "./prependRulesWithPluginName.js";
+
+interface Plugin {
+  rules: Record<string, RuleOptions>;
+}
 
 export const getAllRules = (
   settings: SheriffSettings,
-): BarebonesConfigAtom["rules"][] => {
+): BarebonesConfigAtom["rules"] => {
   const reactRulesCatalog = {
     ...reactRecommended.rules,
     ...jsxRuntime.rules,
@@ -39,24 +47,32 @@ export const getAllRules = (
     ...prependRulesWithPluginName(fsecond.rules, "fsecond"),
   };
 
-  const rules: BarebonesConfigAtom["rules"][] = {
+  const rules: BarebonesConfigAtom["rules"] = {
     ...eslintRecommended.rules,
-    ...prependRulesWithPluginName(typescript.rules, "@typescript-eslint"),
+    ...prependRulesWithPluginName(
+      (typescript as unknown as Plugin).rules,
+      "@typescript-eslint",
+    ),
     ...prependRulesWithPluginName(unicorn.rules, "unicorn"),
     ...prependRulesWithPluginName(sonarjs.rules, "sonarjs"),
     ...prependRulesWithPluginName(jsdoc.rules, "jsdoc"),
-    ...prependRulesWithPluginName(tsdoc.rules, "tsdoc"),
+    ...prependRulesWithPluginName((tsdoc as unknown as Plugin).rules, "tsdoc"),
     ...prependRulesWithPluginName(fp.rules, "fp"),
     ...prependRulesWithPluginName(
       preferEarlyReturn.rules,
       "@regru/prefer-early-return",
     ),
-    ...prependRulesWithPluginName(arrowReturnStyle.rules, "arrow-return-style"),
-    // @ts-expect-error
-    ...prependRulesWithPluginName(stylistic.rules, "@stylistic"),
+    ...prependRulesWithPluginName(
+      (arrowReturnStyle as unknown as Plugin).rules,
+      "arrow-return-style",
+    ),
+    ...prependRulesWithPluginName(
+      (stylistic as unknown as Plugin).rules,
+      "@stylistic",
+    ),
     ...prependRulesWithPluginName(pluginImport.rules, "import"),
     ...prependRulesWithPluginName(storybook.rules, "storybook"),
-    ...prependRulesWithPluginName(astro.rules, "astro"),
+    ...prependRulesWithPluginName((astro as unknown as Plugin).rules, "astro"),
     ...(settings.react ? reactRulesCatalog : {}),
     ...(settings.next
       ? prependRulesWithPluginName(nextjs.rules, "@next/next")
@@ -69,7 +85,10 @@ export const getAllRules = (
       : {}),
     ...(settings.jest ? prependRulesWithPluginName(jest.rules, "jest") : {}),
     ...(settings.vitest
-      ? prependRulesWithPluginName(vitest.rules, "vitest")
+      ? prependRulesWithPluginName(
+          (vitest as unknown as Plugin).rules,
+          "vitest",
+        )
       : {}),
   };
 

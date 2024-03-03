@@ -146,20 +146,22 @@ const getCompiledConfig = (
 
   const declaredRules = compiledConfig.map((rule) => rule.ruleName);
 
-  for (const [ruleName, ruleOptions] of Object.entries(allRulesRaw)) {
-    if (!declaredRules.includes(ruleName)) {
-      const parentPluginName = getParentPluginName(ruleName);
+  if (allRulesRaw) {
+    for (const [ruleName, ruleOptions] of Object.entries(allRulesRaw)) {
+      if (!declaredRules.includes(ruleName)) {
+        const parentPluginName = getParentPluginName(ruleName);
 
-      const ruleRecord: Entry = {
-        ruleName,
-        parentPluginName,
-        severity: 0,
-        ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
-        affectedFiles: "none",
-        docs: getDocs(ruleName),
-      };
+        const ruleRecord: Entry = {
+          ruleName,
+          parentPluginName,
+          severity: 0,
+          ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
+          affectedFiles: "none",
+          docs: getDocs(ruleName),
+        };
 
-      compiledConfig.push(ruleRecord);
+        compiledConfig.push(ruleRecord);
+      }
     }
   }
 
