@@ -44,7 +44,7 @@
     "@types/node": "^20.10.6",
     "@types/prompts": "^2.4.2",
     "@types/yargs": "^17.0.32",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^2.1.0",
     "publint": "^0.2.7",

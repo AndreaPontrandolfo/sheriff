@@ -56,7 +56,7 @@
     "are-the-types-wrong": "attw --pack ."
   },
   "dependencies": {
-    "@eslint/js": "^8.56.0",
+    "@eslint/js": "^8.57.0",
     "@next/eslint-plugin-next": "^13.2.3",
     "@regru/eslint-plugin-prefer-early-return": "^1.0.0",
     "@stylistic/eslint-plugin": "^1.5.1",
@@ -99,7 +99,7 @@
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/lodash": "^4.14.191",
     "@types/node": "^20.10.6",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "lodash": "^4.17.21",
     "publint": "^0.2.7",
     "tsconfig": "workspace:*",
