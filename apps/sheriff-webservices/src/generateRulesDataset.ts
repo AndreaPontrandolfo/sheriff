@@ -125,46 +125,43 @@ const getCompiledConfig = (
       return atomRemappedRecords;
     }
 
-    for (const [ruleName, ruleOptions] of Object.entries(allRulesRaw)) {
-      if (isEmpty(configAtom.rules[ruleName])) {
-        // rule is not explicitly used in Sheriff. A undeclared rule will be used with default values as fallback.
-        const parentPluginName = getParentPluginName(ruleName);
+    for (const [ruleName, ruleOptions] of Object.entries(configAtom.rules)) {
+      const parentPluginName = getParentPluginName(ruleName);
 
-        const ruleRecord: Entry = {
-          ruleName,
-          parentPluginName,
-          severity: 0,
-          ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
-          affectedFiles: "none",
-          docs: getDocs(ruleName),
-        };
+      pluginsNames.push(parentPluginName);
+      const ruleRecord: Entry = {
+        ruleName,
+        parentPluginName,
+        severity: extractNumericSeverityFromRuleOptions(ruleOptions),
+        ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
+        affectedFiles: configAtom.files ? configAtom.files.join(", ") : "none",
+        docs: getDocs(ruleName, configAtom.plugins),
+      };
 
-        atomRemappedRecords.push(ruleRecord);
-      } else {
-        // rule is explicitly used in Sheriff.
-        const parentPluginName = getParentPluginName(ruleName);
-
-        pluginsNames.push(parentPluginName);
-
-        const ruleRecord: Entry = {
-          ruleName,
-          parentPluginName,
-          severity: extractNumericSeverityFromRuleOptions(
-            configAtom.rules[ruleName],
-          ),
-          ruleOptions: extractOptionsFromRuleEntry(configAtom.rules[ruleName]),
-          affectedFiles: configAtom.files
-            ? configAtom.files.join(", ")
-            : "none",
-          docs: getDocs(ruleName, configAtom.plugins),
-        };
-
-        atomRemappedRecords.push(ruleRecord);
-      }
+      atomRemappedRecords.push(ruleRecord);
     }
 
     return atomRemappedRecords;
   });
+
+  const declaredRules = compiledConfig.map((rule) => rule.ruleName);
+
+  for (const [ruleName, ruleOptions] of Object.entries(allRulesRaw)) {
+    if (!declaredRules.includes(ruleName)) {
+      const parentPluginName = getParentPluginName(ruleName);
+
+      const ruleRecord: Entry = {
+        ruleName,
+        parentPluginName,
+        severity: 0,
+        ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
+        affectedFiles: "none",
+        docs: getDocs(ruleName),
+      };
+
+      compiledConfig.push(ruleRecord);
+    }
+  }
 
   return { compiledConfig, pluginsNames: uniq(pluginsNames) };
 };
