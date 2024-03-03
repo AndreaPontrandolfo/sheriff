@@ -1,11 +1,7 @@
-const { sheriff } = require("eslint-config-sheriff");
-const { defineFlatConfig } = require("eslint-define-config");
-const docusaurusEslintPlugin = require("@docusaurus/eslint-plugin");
-const {
-  flat,
-  flatCodeBlocks,
-  createRemarkProcessor,
-} = require("eslint-plugin-mdx");
+import { sheriff } from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+import docusaurusEslintPlugin from "@docusaurus/eslint-plugin";
+import { flat, flatCodeBlocks, createRemarkProcessor } from "eslint-plugin-mdx";
 
 const sheriffOptions = {
   react: true,
@@ -16,7 +12,7 @@ const sheriffOptions = {
   vitest: false,
 };
 
-module.exports = defineFlatConfig([
+export default defineFlatConfig([
   ...sheriff(sheriffOptions),
   {
     files: ["*.tsx", "*.ts"], // .mdx?
