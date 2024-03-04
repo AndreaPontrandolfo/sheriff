@@ -16,6 +16,7 @@ export const filterDuplicateRules = (rules: Entry[]): Entry[] => {
   const alreadyFoundOccurrences: Entry[] = [];
 
   for (const currentRule of rules) {
+    // TODO: this is O(n^2), it is probabably slow and should be optimized, either with Map or object lookup
     const ruleWithSameName = alreadyFoundOccurrences.find(
       (occurrence) => occurrence.ruleName === currentRule.ruleName,
     );

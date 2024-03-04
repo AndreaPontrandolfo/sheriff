@@ -1,4 +1,4 @@
-import { NoRestrictedSyntaxOverride } from '@sherifforg/types';
+import type { NoRestrictedSyntaxOverride } from '@sherifforg/types';
 import { baseNoRestrictedSyntaxRules } from './constants';
 import { getFilteredBaseNoRestrictedSyntax } from './getFilteredBaseNoRestrictedSyntax';
 

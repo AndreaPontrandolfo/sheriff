@@ -4,6 +4,7 @@
     "create-sheriff-config",
     "@sherifforg/types",
     "eslint-config-sheriff",
+    "@eslint/js",
     "eslint"
   ]
 }
