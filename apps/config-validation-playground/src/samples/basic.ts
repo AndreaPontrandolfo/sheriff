@@ -4,9 +4,7 @@ export const addNumbers = function (a: number, b: number): number {
 };
 
 // Function to check if a number is even
-export const isEven = (num: number): boolean => {
-  return num % 2 === 0;
-};
+export const isEven = (num: number): boolean => num % 2 === 0;
 
 // Function to calculate the factorial of a number
 export const factorial = (num: number): number => {
@@ -18,6 +16,5 @@ export const factorial = (num: number): number => {
 };
 
 // Function to calculate the sum of a list of numbers
-export const sum = (numbers: number[]): number => {
-  return numbers.reduce((acc, curr) => acc + curr, 0);
-};
+export const sum = (numbers: number[]): number =>
+  numbers.reduce((acc, curr) => acc + curr, 0);
