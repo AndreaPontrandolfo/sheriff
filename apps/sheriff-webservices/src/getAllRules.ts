@@ -1,7 +1,7 @@
 /* eslint-disable import/newline-after-import */
 
 import eslintRecommended from "@eslint/js";
-import typescript from "@typescript-eslint/eslint-plugin";
+import tseslint from "typescript-eslint";
 import unicorn from "eslint-plugin-unicorn";
 import sonarjs from "eslint-plugin-sonarjs";
 import playwright from "eslint-plugin-playwright";
@@ -50,7 +50,8 @@ export const getAllRules = (
   const rules: BarebonesConfigAtom["rules"] = {
     ...eslintRecommended.rules,
     ...prependRulesWithPluginName(
-      (typescript as unknown as Plugin).rules,
+      //@ts-expect-error
+      tseslint.plugin.rules ?? [],
       "@typescript-eslint",
     ),
     ...prependRulesWithPluginName(unicorn.rules, "unicorn"),

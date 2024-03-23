@@ -1,6 +1,5 @@
 import eslintRecommended from '@eslint/js';
-import typescriptParser from '@typescript-eslint/parser';
-import typescript from '@typescript-eslint/eslint-plugin';
+import tseslint from 'typescript-eslint';
 import unicorn from 'eslint-plugin-unicorn';
 import sonarjs from 'eslint-plugin-sonarjs';
 import playwright from 'eslint-plugin-playwright';
@@ -20,7 +19,7 @@ import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import stylistic from '@stylistic/eslint-plugin';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
-import { ExportableConfigAtom, SheriffSettings } from '@sherifforg/types';
+import { SheriffSettings } from '@sherifforg/types';
 import { allJsExtensions, supportedFileTypes, ignores } from './constants';
 import { fpHandPickedRules } from './fpHandPickedRules';
 import { getBaseEslintHandPickedRules } from './getBaseEslintHandPickedRules';
@@ -42,7 +41,7 @@ const getLanguageOptionsTypescript = (
   userChosenTSConfig?: string | string[],
 ) => {
   return {
-    parser: typescriptParser,
+    parser: tseslint.parser,
     parserOptions: {
       ecmaFeatures: { modules: true },
       project: userChosenTSConfig || true,
@@ -54,7 +53,7 @@ export const getLanguageOptionsTypescriptReact = (
   userChosenTSConfig?: string | string[],
 ) => {
   return {
-    parser: typescriptParser,
+    parser: tseslint.parser,
     parserOptions: {
       ecmaFeatures: { modules: true, jsx: true },
       project: userChosenTSConfig || true,
@@ -143,10 +142,15 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
   const { noRestrictedSyntaxOverride } = userConfigChoices;
   const hasReact = Boolean(userConfigChoices.react);
 
-  return [
+  return tseslint.config(
     {
       files: [supportedFileTypes],
-      rules: eslintRecommended.configs.recommended.rules,
+      extends: [eslintRecommended.configs.recommended],
+    },
+    {
+      files: [supportedFileTypes],
+      //@ts-expect-error
+      rules: getBaseEslintHandPickedRules(noRestrictedSyntaxOverride),
     },
     {
       files: [`**/*{${allJsExtensions}}`],
@@ -154,13 +158,14 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
     },
     {
       files: [supportedFileTypes],
+      extends: [tseslint.configs.strictTypeChecked],
+    },
+    {
+      files: [supportedFileTypes],
       plugins: {
-        '@typescript-eslint': typescript,
+        '@typescript-eslint': tseslint.plugin,
       },
       rules: {
-        ...(typescript.configs['eslint-recommended'].overrides?.[0].rules ??
-          {}),
-        ...typescript.configs['strict-type-checked'].rules,
         ...typescriptHandPickedRules,
         ...getTsNamingConventionRule({ isTsx: false }),
       },
@@ -173,10 +178,6 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
       rules: {
         'tsdoc/syntax': 2,
       },
-    },
-    {
-      files: [supportedFileTypes],
-      rules: getBaseEslintHandPickedRules(noRestrictedSyntaxOverride),
     },
     {
       files: [supportedFileTypes],
@@ -286,7 +287,7 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
         reportUnusedDisableDirectives: 'error',
       },
     },
-  ];
+  );
 };
 
 export const getExportableConfig = (
@@ -297,9 +298,7 @@ export const getExportableConfig = (
     throw new Error('No settings provided.');
   }
 
-  let exportableConfig: ExportableConfigAtom[] = [
-    ...getBaseConfig(userConfigChoices),
-  ];
+  let exportableConfig = [...getBaseConfig(userConfigChoices)];
 
   if (userConfigChoices.react || userConfigChoices.next) {
     // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
@@ -327,6 +326,7 @@ export const getExportableConfig = (
 
   if (userConfigChoices.vitest) {
     exportableConfig.push(
+      //@ts-expect-error
       getVitestConfig(userConfigChoices.pathsOveriddes?.tests),
     );
   }
@@ -344,6 +344,7 @@ export const getExportableConfig = (
   }
 
   exportableConfig.push(eslintConfigPrettier);
+  //@ts-expect-error
   exportableConfig.push(prettierOverrides);
 
   if (userConfigChoices.files) {
