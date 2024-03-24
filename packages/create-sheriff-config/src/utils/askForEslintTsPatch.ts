@@ -1,9 +1,7 @@
 import { consola } from 'consola';
 
 export const askForEslintTsPatch = async (): Promise<boolean> => {
-  consola.info(`Do you want to use the eslint-ts-patch?`);
-
-  const response = await consola.prompt(
+  const isTsEslintPatchWanted = await consola.prompt(
     `Do you want to use the eslint-ts-patch? (Experimental)`,
     {
       type: 'confirm',
@@ -11,5 +9,5 @@ export const askForEslintTsPatch = async (): Promise<boolean> => {
     },
   );
 
-  return response;
+  return isTsEslintPatchWanted;
 };

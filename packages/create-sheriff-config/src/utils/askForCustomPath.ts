@@ -2,8 +2,8 @@ import { consola } from 'consola';
 
 export const askForCustomPath = async (): Promise<string> => {
   const response = await consola.prompt(
-    `It looks like you are trying to install the Sheriff config in a workspace package.
-Please specify the package relative path:`,
+    `It looks like you are trying to install the Sheriff config in a workspace.
+Please specify the workspace path relative from the root of the project:`,
     {
       type: 'text',
       message: 'Package path',
@@ -12,8 +12,6 @@ Please specify the package relative path:`,
       // onState: gracefullyAbort,
     },
   );
-
-  consola.info(`Selected path: "${response}"`);
 
   return response;
 };
