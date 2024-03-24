@@ -4,18 +4,19 @@
     "packages/sheriff-utils",
     "apps/config-validation-playground",
     "apps/cli-playground",
-    "apps/docs-website"
+    "apps/docs-website",
   ],
   "ignore": [
     "packages/create-sheriff-config/src/utils/spinner.ts",
-    "packages/create-sheriff-config/src/utils/widgets.ts"
+    "packages/create-sheriff-config/src/utils/widgets.ts",
   ],
   "ignoreDependencies": [
     "@turbo/gen",
     "commander",
     "ora",
     "eslint-import-resolver-typescript",
-    "type-fest"
+    "type-fest",
+    "@typescript-eslint/utils",
   ],
-  "ignoreBinaries": ["only-allow", "set"]
+  "ignoreBinaries": ["only-allow", "set"],
 }

@@ -63,6 +63,11 @@ export default defineFlatConfig([
     },
   },
   {
-    ignores: [".docusaurus/**/*", ".turbo/**/*", "babel.config.js"],
+    ignores: [
+      ".docusaurus/**/*",
+      ".turbo/**/*",
+      "babel.config.js",
+      "CHANGELOG.md",
+    ],
   },
 ]);

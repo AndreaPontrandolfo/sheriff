@@ -20,7 +20,7 @@ export const askForEslintTsPatch = async (): Promise<boolean> => {
   }
 
   logger.error(
-    `Invalid response. Expected boolean, received ${eslintTsPatchConfirmValue}`,
+    `Invalid response. Expected boolean, received ${String(eslintTsPatchConfirmValue)}`,
   );
 
   return false;
