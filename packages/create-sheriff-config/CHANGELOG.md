@@ -1,5 +1,15 @@
 # create-sheriff-config
 
+## 4.2.0
+
+### Minor Changes
+
+- 2306ffa: chore(deps): updated node and pnpm versions
+
+### Patch Changes
+
+- 3f56ab8: feat(rules): added eslint-plugin-arrow-return-style
+
 ## 4.1.0
 
 ### Minor Changes
