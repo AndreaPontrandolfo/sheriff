@@ -1,5 +1,20 @@
 # eslint-config-sheriff
 
+## 18.2.0
+
+### Minor Changes
+
+- bf2c839: feat(webservices): swapped expressjs with honojs
+  feat(docs-website): page rules now also include undeclared rules
+- b8c1ff4: chore(config): updated tseslint
+  chore(webservices): updated tseslint
+- 3f56ab8: feat(rules): added eslint-plugin-arrow-return-style
+
+### Patch Changes
+
+- 084818e: chore(deps): updated eslint-plugin-astro to latest
+- 043c53d: fix(rules): fixed naming-convention rule for boolean cases
+
 ## 18.1.0
 
 ### Minor Changes

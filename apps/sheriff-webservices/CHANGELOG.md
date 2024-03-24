@@ -1,5 +1,30 @@
 # sheriff-webservices
 
+## 3.0.0
+
+### Major Changes
+
+- bf2c839: feat(webservices): swapped expressjs with honojs
+  feat(docs-website): page rules now also include undeclared rules
+
+### Minor Changes
+
+- 2306ffa: chore(deps): updated node and pnpm versions
+- b8c1ff4: chore(config): updated tseslint
+  chore(webservices): updated tseslint
+
+### Patch Changes
+
+- 084818e: chore(deps): updated eslint-plugin-astro to latest
+- 8c5ba4d: chore(webservices): tentative changesets comparator fix
+- 3f56ab8: feat(rules): added eslint-plugin-arrow-return-style
+- Updated dependencies [084818e]
+- Updated dependencies [bf2c839]
+- Updated dependencies [043c53d]
+- Updated dependencies [b8c1ff4]
+- Updated dependencies [3f56ab8]
+  - eslint-config-sheriff@18.2.0
+
 ## 2.1.0
 
 ### Minor Changes
