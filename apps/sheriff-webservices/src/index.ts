@@ -55,6 +55,6 @@ serve(
     port,
   },
   (info) => {
-    console.debug(`Server is running on port ${info.port}`);
+    console.debug(`Server is running on port ${info.port.toString()}`);
   },
 );
