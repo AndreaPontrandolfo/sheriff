@@ -1,5 +1,17 @@
 # docs-website
 
+## 2.0.0
+
+### Major Changes
+
+- bf2c839: feat(webservices): swapped expressjs with honojs
+  feat(docs-website): page rules now also include undeclared rules
+
+### Minor Changes
+
+- 2306ffa: chore(deps): updated node and pnpm versions
+- 3f56ab8: feat(rules): added eslint-plugin-arrow-return-style
+
 ## 1.8.0
 
 ### Minor Changes

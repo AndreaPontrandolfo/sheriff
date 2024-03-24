@@ -2,6 +2,7 @@ export const typescriptHandPickedRules = {
   '@typescript-eslint/ban-ts-comment': 0,
   '@typescript-eslint/no-unsafe-assignment': 0,
   '@typescript-eslint/no-array-constructor': 0,
+  '@typescript-eslint/use-unknown-in-catch-callback-variable': 0,
   '@typescript-eslint/no-use-before-define': 2,
   '@typescript-eslint/no-inferrable-types': 2,
   '@typescript-eslint/no-loop-func': 2,

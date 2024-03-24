@@ -1,5 +1,11 @@
 # @sherifforg/types
 
+## 3.1.0
+
+### Minor Changes
+
+- 2306ffa: chore(deps): updated node and pnpm versions
+
 ## 3.0.0
 
 ### Major Changes

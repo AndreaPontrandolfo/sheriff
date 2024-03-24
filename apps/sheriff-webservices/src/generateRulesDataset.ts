@@ -1,3 +1,4 @@
+/* eslint-disable fsecond/prefer-destructured-optionals */
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable lodash-f/import-scope */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
@@ -55,7 +56,7 @@ const severityRemapper = (severity: Severity): NumericSeverity => {
   }
 };
 
-const getDocs = (ruleName: string, plugins: Plugins) => {
+const getDocs = (ruleName: string, plugins?: Plugins) => {
   const docs = {
     description: "",
     url: "",
@@ -111,8 +112,12 @@ const extractNumericSeverityFromRuleOptions = (
   return severityRemapper(ruleOptions);
 };
 
-const getCompiledConfig = (config: BarebonesConfigAtom[]) => {
+const getCompiledConfig = (
+  config: BarebonesConfigAtom[],
+  allRulesRaw: BarebonesConfigAtom["rules"],
+) => {
   const pluginsNames: string[] = [];
+
   const compiledConfig = config.flatMap((configAtom) => {
     const atomRemappedRecords: Entry[] = [];
 
@@ -129,7 +134,7 @@ const getCompiledConfig = (config: BarebonesConfigAtom[]) => {
         parentPluginName,
         severity: extractNumericSeverityFromRuleOptions(ruleOptions),
         ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
-        affectedFiles: configAtom.files ? configAtom.files.join(", ") : "*",
+        affectedFiles: configAtom.files ? configAtom.files.join(", ") : "none",
         docs: getDocs(ruleName, configAtom.plugins),
       };
 
@@ -139,13 +144,38 @@ const getCompiledConfig = (config: BarebonesConfigAtom[]) => {
     return atomRemappedRecords;
   });
 
+  const declaredRules = compiledConfig.map((rule) => rule.ruleName);
+
+  if (allRulesRaw) {
+    for (const [ruleName, ruleOptions] of Object.entries(allRulesRaw)) {
+      if (!declaredRules.includes(ruleName)) {
+        const parentPluginName = getParentPluginName(ruleName);
+
+        const ruleRecord: Entry = {
+          ruleName,
+          parentPluginName,
+          severity: 0,
+          ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
+          affectedFiles: "none",
+          docs: getDocs(ruleName),
+        };
+
+        compiledConfig.push(ruleRecord);
+      }
+    }
+  }
+
   return { compiledConfig, pluginsNames: uniq(pluginsNames) };
 };
 
 export const generateRulesDataset = (
   config: BarebonesConfigAtom[],
+  allRulesRaw: BarebonesConfigAtom["rules"],
 ): ServerResponse => {
-  const { compiledConfig, pluginsNames } = getCompiledConfig(config);
+  const { compiledConfig, pluginsNames } = getCompiledConfig(
+    config,
+    allRulesRaw,
+  );
 
   return { compiledConfig, pluginsNames };
 };

@@ -18,11 +18,13 @@ export const getAstroConfig = (
         extraFileExtensions: ['.astro'],
       },
     },
+    processor: 'astro/client-side-ts',
     rules: {
       ...astro.configs.recommended.rules,
       // @ts-expect-error - eslint-plugin-astro typings are wrong
       ...(hasReact ? astro.configs['jsx-a11y-recommended'].rules : {}),
       'astro/valid-compile': 0,
+      'astro/semi': 0,
     },
   };
 };

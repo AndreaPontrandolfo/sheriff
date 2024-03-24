@@ -7,6 +7,8 @@ import { version } from "eslint-config-sheriff/package.json";
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
 
+const currentYear = new Date().getFullYear();
+
 const config: Config = {
   title: "Sheriff",
   tagline:
@@ -90,7 +92,7 @@ const config: Config = {
     },
     footer: {
       style: "dark",
-      copyright: `Copyright © ${new Date().getFullYear()} Sheriff. Built with Docusaurus.`,
+      copyright: `Copyright © ${currentYear.toString()} Sheriff. Built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,

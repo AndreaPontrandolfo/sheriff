@@ -1,22 +1,24 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import getSheriffConfig from "eslint-config-sheriff";
-import type { BarebonesConfigAtom } from "@sherifforg/types";
-import express, { type Request, type Response } from "express";
-import cors from "cors";
+import { Hono } from "hono";
+import { serve } from "@hono/node-server";
+import { cors } from "hono/cors";
+import type { BarebonesConfigAtom, SheriffSettings } from "@sherifforg/types";
 import { generateRulesDataset } from "./generateRulesDataset.js";
+import { getAllRules } from "./getAllRules.js";
 
-const app = express();
-const port = process.env.PORT || 5001;
+const app = new Hono();
+const port = Number(process.env.PORT || 5001);
 
-app.use(express.json());
-app.use(cors());
+app.use("/api/*", cors());
 
-app.get("/api/keepalive", (req: Request, res: Response) => {
-  res.send("OK");
-});
-app.post("/api/get-new-sheriff-config", (req: Request, res: Response) => {
-  const newConfig: BarebonesConfigAtom[] = getSheriffConfig(req.body);
-  const allRulesConfig: BarebonesConfigAtom[] = getSheriffConfig(
+app.get("/api/keepalive", (context) => context.text("OK"));
+app.post("/api/get-new-sheriff-config", async (context) => {
+  const userConfigChoices: SheriffSettings = await context.req.json();
+
+  const allRulesRaw = getAllRules(userConfigChoices);
+
+  const newConfig: BarebonesConfigAtom[] = getSheriffConfig(userConfigChoices);
+  const anyRuleAllowedConfig: BarebonesConfigAtom[] = getSheriffConfig(
     {
       react: true,
       lodash: true,
@@ -29,19 +31,30 @@ app.post("/api/get-new-sheriff-config", (req: Request, res: Response) => {
   );
 
   console.info("Sending new config...");
-  const allRulesCompiledConfig =
-    generateRulesDataset(allRulesConfig).compiledConfig;
-  const { compiledConfig, pluginsNames } = generateRulesDataset(newConfig);
+  const allRulesCompiledConfig = generateRulesDataset(
+    anyRuleAllowedConfig,
+    allRulesRaw,
+  ).compiledConfig;
+  const { compiledConfig, pluginsNames } = generateRulesDataset(
+    newConfig,
+    allRulesRaw,
+  );
 
   console.info("New config sent.");
 
-  res.send({
+  return context.json({
     compiledConfig,
     pluginsNames,
     totalAvailableRulesAmount: allRulesCompiledConfig.length,
   });
 });
 
-app.listen(port, () => {
-  console.debug(`Server is running on port ${port}`);
-});
+serve(
+  {
+    fetch: app.fetch,
+    port,
+  },
+  (info) => {
+    console.debug(`Server is running on port ${info.port.toString()}`);
+  },
+);
