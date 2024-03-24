@@ -158,7 +158,7 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
     },
     {
       files: [supportedFileTypes],
-      extends: [tseslint.configs.strictTypeChecked],
+      extends: tseslint.configs.strictTypeChecked,
     },
     {
       files: [supportedFileTypes],
