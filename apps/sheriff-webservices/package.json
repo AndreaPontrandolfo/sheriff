@@ -30,7 +30,7 @@
     "@regru/eslint-plugin-prefer-early-return": "^1.0.0",
     "@stylistic/eslint-plugin": "^1.5.1",
     "eslint": "^8.57.0",
-    "eslint-config-sheriff": "latest",
+    "eslint-config-sheriff": "workspace:*",
     "eslint-plugin-arrow-return-style": "^1.2.2",
     "eslint-plugin-astro": "^0.31.4",
     "eslint-plugin-fp": "^2.3.0",
