@@ -21,7 +21,7 @@
     "start": "tsx watch ./src/generateRulesDataset.ts",
     "rulesgen": "tsx ./src/generateRulesDataset.ts",
     "publint": "publint",
-    "clean": "rm -rf .turbo && rm -rf dist"
+    "clean": "rm -rf .turb dist"
   },
   "devDependencies": {
     "@sherifforg/types": "workspace:*",

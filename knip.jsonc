@@ -12,8 +12,6 @@
   ],
   "ignoreDependencies": [
     "@turbo/gen",
-    "commander",
-    "ora",
     "eslint-import-resolver-typescript",
     "type-fest",
     "@typescript-eslint/utils",

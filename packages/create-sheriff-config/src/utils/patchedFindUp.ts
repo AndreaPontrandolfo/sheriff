@@ -1,4 +1,4 @@
-import { resolve, dirname } from 'path';
+import { resolve, dirname } from 'pathe';
 import { findUp } from 'find-up';
 
 /**

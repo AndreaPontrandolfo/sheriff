@@ -1,5 +1,5 @@
 import { type NormalizedReadResult, readPackageUp } from 'read-pkg-up';
-import { printError } from './printError';
+import { throwError } from './throwError';
 
 export const getPackageJsonContents = async (
   customProjectRootPath: string | null,
@@ -10,12 +10,12 @@ export const getPackageJsonContents = async (
     });
 
     if (!packageJsonContents) {
-      printError('Package.json not found');
+      throwError('Package.json not found');
     }
 
     return packageJsonContents;
   } catch (error) {
-    printError("Couldn't parse the package.json", { error });
+    throwError("Couldn't parse the package.json", { error });
 
     return;
   }

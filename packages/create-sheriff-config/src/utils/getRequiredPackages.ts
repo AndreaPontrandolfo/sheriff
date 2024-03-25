@@ -1,4 +1,4 @@
-import { logger } from './logs';
+import { consola } from 'consola';
 
 export const getRequiredPackages = (
   isEslintTsPatchRequired: boolean,
@@ -6,19 +6,19 @@ export const getRequiredPackages = (
   const requiredPackages: string[] = [];
 
   requiredPackages.push('eslint');
-  logger.verbose("Installing 'eslint'...");
+  consola.start("Installing 'eslint'...");
 
   requiredPackages.push('eslint-define-config');
-  logger.verbose("Installing 'eslint-define-config'...");
+  consola.start("Installing 'eslint-define-config'...");
 
   requiredPackages.push('eslint-config-sheriff');
-  logger.verbose("Installing 'eslint-config-sheriff'...");
+  consola.start("Installing 'eslint-config-sheriff'...");
 
   if (isEslintTsPatchRequired) {
     requiredPackages.push('eslint-ts-patch', 'eslint@npm:eslint-ts-patch');
-    logger.verbose("Installing 'eslint-ts-patch'...");
+    consola.start("Installing 'eslint-ts-patch'...");
     requiredPackages.push('@sherifforg/types');
-    logger.verbose("Installing '@sherifforg/types'...");
+    consola.start("Installing '@sherifforg/types'...");
   }
 
   return requiredPackages;

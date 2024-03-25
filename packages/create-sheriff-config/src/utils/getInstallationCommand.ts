@@ -1,5 +1,5 @@
 export const getInstallationCommand = (
-  pm: string,
+  pm: string | undefined,
   packagesLatestVersions: string[],
   selectedProject: string | null,
   isFilterRequired = true,
@@ -7,5 +7,5 @@ export const getInstallationCommand = (
   const projectArgument =
     isFilterRequired && selectedProject ? ` --filter=${selectedProject}` : '';
 
-  return `${pm} add -D ${packagesLatestVersions.join(' ')}${projectArgument}`;
+  return `${pm ?? '<your-package-manager>'} add -D ${packagesLatestVersions.join(' ')}${projectArgument}`;
 };
