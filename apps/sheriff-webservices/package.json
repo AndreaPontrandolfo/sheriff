@@ -31,7 +31,7 @@
     "@stylistic/eslint-plugin": "^1.5.1",
     "eslint": "^8.57.0",
     "eslint-config-sheriff": "workspace:*",
-    "eslint-plugin-arrow-return-style": "^1.2.2",
+    "eslint-plugin-arrow-return-style": "^1.3.0",
     "eslint-plugin-astro": "^0.31.4",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-fsecond": "^1.1.0",
