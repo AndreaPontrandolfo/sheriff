@@ -253,8 +253,8 @@ importers:
         specifier: ^50.0.1
         version: 50.0.1(eslint@8.57.0)
       eslint-plugin-vitest:
-        specifier: ^0.2.8
-        version: 0.2.8(eslint@8.57.0)(typescript@5.4.3)
+        specifier: ^0.3.26
+        version: 0.3.26(eslint@8.57.0)(typescript@5.4.3)
       hono:
         specifier: ^3.12.0
         version: 3.12.12
@@ -438,8 +438,8 @@ importers:
         specifier: ^50.0.1
         version: 50.0.1(eslint@8.57.0)
       eslint-plugin-vitest:
-        specifier: ^0.2.8
-        version: 0.2.8(eslint@8.57.0)(typescript@5.4.3)
+        specifier: ^0.3.26
+        version: 0.3.26(eslint@8.57.0)(typescript@5.4.3)
       typescript-eslint:
         specifier: ^7.3.1
         version: 7.3.1(eslint@8.57.0)(typescript@5.4.3)
@@ -9639,20 +9639,20 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-vitest@0.2.8(eslint@8.57.0)(typescript@5.4.3):
-    resolution: {integrity: sha512-q8s4tStyKtn3gXf+8nf1ZYTHhoCXKdnozZzp6u8b4ni5v68Y4vxhNh4Z8njUfNjEY8HoPBB77MazHMR23IPb+g==}
-    engines: {node: 14.x || >= 16}
+  /eslint-plugin-vitest@0.3.26(eslint@8.57.0)(typescript@5.4.3):
+    resolution: {integrity: sha512-oxe5JSPgRjco8caVLTh7Ti8PxpwJdhSV0hTQAmkFcNcmy/9DnqLB/oNVRA11RmVRP//2+jIIT6JuBEcpW3obYg==}
+    engines: {node: ^18.0.0 || >= 20.0.0}
     peerDependencies:
+      '@typescript-eslint/eslint-plugin': '*'
       eslint: '>=8.0.0'
-      vite: '*'
       vitest: '*'
     peerDependenciesMeta:
-      vite:
+      '@typescript-eslint/eslint-plugin':
         optional: true
       vitest:
         optional: true
     dependencies:
-      '@typescript-eslint/utils': 6.21.0(eslint@8.57.0)(typescript@5.4.3)
+      '@typescript-eslint/utils': 7.3.1(eslint@8.57.0)(typescript@5.4.3)
       eslint: 8.57.0
     transitivePeerDependencies:
       - supports-color
