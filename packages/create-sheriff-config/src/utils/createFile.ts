@@ -1,5 +1,6 @@
 import { writeFile } from 'fs';
 import { consola } from 'consola';
+import { colors } from 'consola/utils';
 import { throwError } from './throwError';
 
 export const createFile = (
@@ -13,11 +14,14 @@ export const createFile = (
 
   writeFile(completeFilePath, fileBody, (error) => {
     if (error) {
-      throwError(`Couldn't write ${fileName} file to the filesystem`, {
-        error,
-      });
+      throwError(
+        `Couldn't write ${colors.bold(fileName)} file to the filesystem`,
+        {
+          error,
+        },
+      );
     }
 
-    consola.success(`Successfully generated ${fileName} file`);
+    consola.success(`Successfully generated ${colors.bold(fileName)} file`);
   });
 };

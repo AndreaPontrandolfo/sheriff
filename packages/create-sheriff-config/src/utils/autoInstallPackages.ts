@@ -1,5 +1,6 @@
 import { detectPackageManager, addDependency } from 'nypm';
 import { consola } from 'consola';
+import { colors } from 'consola/utils';
 import { getInstallationCommand } from './getInstallationCommand';
 import { throwError } from './throwError';
 import { getPackageJsonContents } from './getPackageJsonContents';
@@ -16,7 +17,7 @@ export const autoInstallPackages = async (
     const pm = await detectPackageManager(process.cwd());
 
     if (pm) {
-      consola.info(`Detected package manager: ${pm.name}`);
+      consola.info(`Detected package manager: ${colors.bold(pm.name)}`);
     }
 
     if (!pm) {

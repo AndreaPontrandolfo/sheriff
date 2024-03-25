@@ -1,5 +1,6 @@
 // import { resolveConfigFile } from 'prettier';
 import { consola } from 'consola';
+import { colors } from 'consola/utils';
 import { createFile } from './createFile';
 import { getPackageJsonContents } from './getPackageJsonContents';
 import { throwError } from './throwError';
@@ -63,14 +64,14 @@ export const setPrettierConfig = async (
       }
 
       consola.info(
-        `Skipping '${PREFERRED_PRETTIER_CONFIG_FILE_NAME}' file generation and configuration.`,
+        `Skipping ${colors.bold(PREFERRED_PRETTIER_CONFIG_FILE_NAME)} file generation and configuration.`,
       );
 
       return;
     }
 
     consola.start(
-      `No 'prettier' configuration or dependency was found in the project. Generating and configuring '${PREFERRED_PRETTIER_CONFIG_FILE_NAME}' file...`,
+      `No 'prettier' configuration or dependency was found in the project. Generating and configuring ${colors.bold(PREFERRED_PRETTIER_CONFIG_FILE_NAME)} file...`,
     );
 
     createFile(

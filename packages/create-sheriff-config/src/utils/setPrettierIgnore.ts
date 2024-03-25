@@ -1,4 +1,5 @@
 import { consola } from 'consola';
+import { colors } from 'consola/utils';
 import { createFile } from './createFile';
 import { throwError } from './throwError';
 import { patchedFindUp } from './patchedFindUp';
@@ -23,13 +24,13 @@ export const setPrettierIgnore = async (
 
     if (prettierIgnoreFile) {
       consola.info(
-        `An already present '${PRETTIER_IGNORE_FILE_NAME}' file was found in the project. Skipping '${PRETTIER_IGNORE_FILE_NAME}' file generation and configuration.`,
+        `An already present ${colors.bold(PRETTIER_IGNORE_FILE_NAME)} file was found in the project. Skipping ${colors.bold(PRETTIER_IGNORE_FILE_NAME)} file generation and configuration.`,
       );
 
       return;
     }
     consola.start(
-      `No '${PRETTIER_IGNORE_FILE_NAME}' file was found in the project. Generating and configuring '${PRETTIER_IGNORE_FILE_NAME}' file...`,
+      `No ${colors.bold(PRETTIER_IGNORE_FILE_NAME)} file was found in the project. Generating and configuring ${colors.bold(PRETTIER_IGNORE_FILE_NAME)} file...`,
     );
     createFile(
       PRETTIER_IGNORE_FILE_NAME,

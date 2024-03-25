@@ -1,4 +1,5 @@
 import { consola } from 'consola';
+import { colors } from 'consola/utils';
 import { createFile } from './createFile';
 import { getPackageJsonContents } from './getPackageJsonContents';
 import { throwError } from './throwError';
@@ -29,13 +30,13 @@ export const setEslintConfig = async (
 
     if (eslintIgnoreFile) {
       consola.warn(
-        `A ${ESLINT_IGNORE_FILE_NAME} file was found. Please remove it and transfer the ignored files list to the ${ESLINT_CONFIG_JS_FILE_NAME} 'ignores' array`,
+        `A ${colors.bold(ESLINT_IGNORE_FILE_NAME)} file was found. Please remove it and transfer the ignored files list to the ${colors.bold(ESLINT_CONFIG_JS_FILE_NAME)} 'ignores' array`,
       );
     }
 
     if (eslintConfigJsFile) {
       consola.info(
-        `'${ESLINT_CONFIG_JS_FILE_NAME}' file found. Skipping '${ESLINT_CONFIG_JS_FILE_NAME}' file generation and configuration.`,
+        `${colors.bold(ESLINT_CONFIG_JS_FILE_NAME)} file found. Skipping ${colors.bold(ESLINT_CONFIG_JS_FILE_NAME)} file generation and configuration.`,
       );
 
       return;
@@ -43,18 +44,18 @@ export const setEslintConfig = async (
 
     if (eslintConfigTsFile) {
       consola.info(
-        `'${ESLINT_CONFIG_TS_FILE_NAME}' file found. Skipping '${ESLINT_CONFIG_TS_FILE_NAME}' file generation and configuration.`,
+        `${colors.bold(ESLINT_CONFIG_TS_FILE_NAME)} file found. Skipping ${colors.bold(ESLINT_CONFIG_TS_FILE_NAME)} file generation and configuration.`,
       );
 
       return;
     }
 
     consola.start(
-      `Neither a '${ESLINT_CONFIG_TS_FILE_NAME}' nor a '${ESLINT_CONFIG_JS_FILE_NAME}' file were found. Generating and configuring '${
+      `Neither a ${colors.bold(ESLINT_CONFIG_TS_FILE_NAME)} nor a ${colors.bold(ESLINT_CONFIG_JS_FILE_NAME)} file were found. Generating and configuring ${
         isEslintTsPatchRequired
-          ? ESLINT_CONFIG_TS_FILE_NAME
-          : ESLINT_CONFIG_JS_FILE_NAME
-      }' file...`,
+          ? colors.bold(ESLINT_CONFIG_TS_FILE_NAME)
+          : colors.bold(ESLINT_CONFIG_JS_FILE_NAME)
+      } file...`,
     );
 
     consola.warn(
