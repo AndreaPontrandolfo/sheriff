@@ -1,7 +1,4 @@
-/* eslint-disable react/no-array-index-key */
-
 interface TableEntry {
-  Project: string;
   FlatConfig: "✅" | "❌";
   Maintained: "✅" | "❌";
   Customizable: "✅" | "❌";
@@ -31,9 +28,18 @@ interface TableEntry {
   Astro: "✅" | "❌";
 }
 
-const tableEntries: TableEntry[] = [
-  {
-    Project: "Sheriff",
+interface EntriesTable {
+  sheriff: TableEntry;
+  "eslint-config-airbnb-typescript": TableEntry;
+  "@antfu/eslint-config": TableEntry;
+  XO: TableEntry;
+  "eslint-kit": TableEntry;
+  "eslint-config-galex": TableEntry;
+  "eslint-config-hardcore": TableEntry;
+}
+
+const entriesTable: EntriesTable = {
+  sheriff: {
     FlatConfig: "✅",
     Maintained: "✅",
     Customizable: "✅",
@@ -62,8 +68,7 @@ const tableEntries: TableEntry[] = [
     Storybook: "✅",
     Astro: "✅",
   },
-  {
-    Project: "eslint-config-airbnb-typescript",
+  "eslint-config-airbnb-typescript": {
     FlatConfig: "❌",
     Maintained: "✅",
     Customizable: "✅",
@@ -92,8 +97,7 @@ const tableEntries: TableEntry[] = [
     Storybook: "❌",
     Astro: "❌",
   },
-  {
-    Project: "@antfu/eslint-config",
+  "@antfu/eslint-config": {
     FlatConfig: "✅",
     Maintained: "✅",
     Customizable: "✅",
@@ -122,8 +126,7 @@ const tableEntries: TableEntry[] = [
     Storybook: "❌",
     Astro: "✅",
   },
-  {
-    Project: "XO",
+  XO: {
     FlatConfig: "❌",
     Maintained: "✅",
     Customizable: "✅",
@@ -152,8 +155,7 @@ const tableEntries: TableEntry[] = [
     Storybook: "❌",
     Astro: "❌",
   },
-  {
-    Project: "eslint-kit",
+  "eslint-kit": {
     FlatConfig: "❌",
     Maintained: "✅",
     Customizable: "✅",
@@ -182,8 +184,7 @@ const tableEntries: TableEntry[] = [
     Storybook: "❌",
     Astro: "❌",
   },
-  {
-    Project: "eslint-config-galex",
+  "eslint-config-galex": {
     FlatConfig: "❌",
     Maintained: "❌",
     Customizable: "✅",
@@ -212,8 +213,7 @@ const tableEntries: TableEntry[] = [
     Storybook: "✅",
     Astro: "❌",
   },
-  {
-    Project: "eslint-config-hardcore",
+  "eslint-config-hardcore": {
     FlatConfig: "❌",
     Maintained: "✅",
     Customizable: "✅",
@@ -242,25 +242,35 @@ const tableEntries: TableEntry[] = [
     Storybook: "✅",
     Astro: "❌",
   },
-];
+};
 
 export const ComparisonTable = (): JSX.Element => {
   return (
     <table>
       <thead>
         <tr>
-          {Object.keys(tableEntries[0]).map((header) => (
+          <th>Feature</th>
+          {Object.keys(entriesTable).map((header) => (
             <th key={header}>{header}</th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {tableEntries.map((row, rowIndex) => {
+        {Object.keys(entriesTable.sheriff).map((key) => {
           return (
-            <tr key={rowIndex}>
-              {Object.values(row).map((value, colIndex) => (
-                <td key={colIndex}>{value}</td>
-              ))}
+            <tr key={key}>
+              <td>{key}</td>
+              {Object.keys(entriesTable).map((entry) => {
+                return (
+                  <td key={entry}>
+                    {
+                      entriesTable[entry as keyof typeof entriesTable][
+                        key as keyof TableEntry
+                      ]
+                    }
+                  </td>
+                );
+              })}
             </tr>
           );
         })}
