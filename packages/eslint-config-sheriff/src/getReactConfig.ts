@@ -4,6 +4,7 @@ import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import fsecond from 'eslint-plugin-fsecond';
+import rel1cxReact from '@eslint-react/eslint-plugin';
 import {
   allJsExtensions,
   allJsxExtensions,
@@ -64,6 +65,17 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
         'react-hooks': reactHooks,
       },
       rules: reactHooks.configs.recommended.rules,
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: {
+        '@eslint-react': rel1cxReact,
+      },
+      rules: {
+        '@eslint-react/ensure-custom-hooks-using-other-hooks': 2,
+        '@eslint-react/no-leaked-conditional-rendering': 2,
+        '@eslint-react/no-complicated-conditional-rendering': 2,
+      },
     },
     {
       files: [supportedFileTypes],
