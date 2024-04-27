@@ -68,11 +68,12 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
     },
     {
       files: [supportedFileTypes],
-      plugins: {
-        '@eslint-react': rel1cxReact,
-      },
+      ...rel1cxReact.configs.off,
+    },
+    {
+      files: [supportedFileTypes],
       rules: {
-        '@eslint-react/ensure-custom-hooks-using-other-hooks': 2,
+        '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 2,
         '@eslint-react/no-leaked-conditional-rendering': 2,
         '@eslint-react/no-complicated-conditional-rendering': 2,
       },
