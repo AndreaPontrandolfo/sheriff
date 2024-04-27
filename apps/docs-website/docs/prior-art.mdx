@@ -45,3 +45,34 @@ For a quick glance at the differences between Sheriff and some of the other ESLi
 ### Features comparison table
 
 <ComparisonTable />
+
+### Sheriff VS `eslint-config-airbnb`
+
+I cannot not mention the fact that `eslint-config-airbnb` is apparently the most popular ESLint config.
+
+However there are are a few specific reasons that led to this, and none of the has to do with the quality of the config itself:
+
+- it was one of the first ESLint configs to be created
+- the starred repository actually contains a stylistic guide, not just the ESLint config. The endorsements are for the guide, not the ESLint config
+- the repository is owned by Airbnb. Many developers through the years starred it just for their enthusiasm for the company, not for this library in particular
+- for many years, it was the deafult ESLint config in many popular boilerplates and React guides/articles
+
+As of today it's frowned upon by many industry professionals. Some of the most glaring issues:
+
+- it's largely outdated and not maintained since quite some time
+- It's big, bloated, too strict for most projects
+- it doesn't support TypeScript out of the box, to get it you actually have to use a different library, even less maintained and supported than the original one
+
+### Sheriff VS `@antfu/eslint-config`
+
+Antfu config shares many similarities with Sheriff, but is less mature and has less features.
+
+Also, it's important to note that it goes for a very opinionated route toward styling, where instead of adopting Prettier, it relies on [eslint-stylistic](https://github.com/eslint-community/eslint-stylistic) for it's formatting needs.
+
+### Sheriff VS XO
+
+XO is an interesting project. It uses ESLint and Prettier under the hood, but don't directly expose them to you. Instead of relying on the ESLint CLI and VSCode Extensions, it has it's own CLI and VSCode Extension. On the surface, it can seem like a good thing because it allows them to provide a more integrated experience, but it also means that you are locked into their ecosystem.
+
+It is very opinionated in their stylistic and formatting choices and doesn't allow for much flexibility.
+
+XO has many issues that ESLint and Prettier don't have.
