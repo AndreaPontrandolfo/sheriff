@@ -16,5 +16,5 @@
     "type-fest",
     "@typescript-eslint/utils",
   ],
-  "ignoreBinaries": ["only-allow", "set"],
+  "ignoreBinaries": ["only-allow"],
 }

@@ -24,6 +24,7 @@ import jsxRuntime from "eslint-plugin-react/configs/jsx-runtime.js";
 import reactAccessibility from "eslint-plugin-jsx-a11y";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
+import rel1cxReact from "@eslint-react/eslint-plugin";
 import type {
   BarebonesConfigAtom,
   RuleOptions,
@@ -44,6 +45,8 @@ export const getAllRules = (
     ...prependRulesWithPluginName(reactAccessibility.rules, "jsx-a11y"),
     ...prependRulesWithPluginName(reactHooks.rules, "react-hooks"),
     ...prependRulesWithPluginName(reactRefresh.rules, "react-refresh"),
+    //@ts-expect-error
+    ...prependRulesWithPluginName(rel1cxReact.rules, "@eslint-react"),
     ...prependRulesWithPluginName(fsecond.rules, "fsecond"),
   };
 

@@ -56,6 +56,7 @@
     "are-the-types-wrong": "attw --pack ."
   },
   "dependencies": {
+    "@eslint-react/eslint-plugin": "^1.5.9",
     "@eslint/js": "^8.57.0",
     "@next/eslint-plugin-next": "^13.2.3",
     "@regru/eslint-plugin-prefer-early-return": "^1.0.0",
@@ -80,12 +81,12 @@
     "eslint-plugin-sonarjs": "^0.19.0",
     "eslint-plugin-storybook": "^0.6.11",
     "eslint-plugin-tsdoc": "^0.2.17",
-    "eslint-plugin-unicorn": "^50.0.1",
-    "eslint-plugin-vitest": "^0.2.8",
+    "eslint-plugin-unicorn": "^52.0.0",
+    "eslint-plugin-vitest": "^0.3.26",
     "typescript-eslint": "^7.3.1"
   },
   "peerDependencies": {
-    "eslint": ">=8.23.0",
+    "eslint": ">=8.23.0 <=8.57.0",
     "typescript": ">=5.0.0"
   },
   "engines": {

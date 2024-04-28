@@ -1,0 +1,78 @@
+---
+sidebar_position: 16
+---
+
+# 🧐 Prior art
+
+import { ComparisonTable } from "@site/src/components/ComparisonTable";
+
+## Why yet another Eslint config?
+
+As you might have noticed, there are already a lot of ESLint configurations in the wild (have a look [here](#related-projects) or [here](https://github.com/dustinspecker/awesome-eslint#configs)).<br />
+None of these projects share the same goals of Sheriff.<br />
+Sheriff has a particular vision.
+
+The main reasons that led to it's creation are:
+
+- easy to setup and use (thank to `create-sheriff-config`)
+- easy to customize (thanks to the `FlatConfig` format)
+- sensible defaults, based on years of real world experience in production scenarios
+
+After exploring every possible alternative, i came to the conclusion that none of the other options where close to what i needed for my projects and everyday use. **That’s why i still opted for making Sheriff**.
+
+## Related projects
+
+- [eslint-config-airbnb-typescript](https://github.com/iamturns/eslint-config-airbnb-typescript)
+- [standard](https://github.com/standard/standard)
+- [xo](https://github.com/xojs/xo)
+- [@antfu/eslint-config](https://github.com/antfu/eslint-config)
+- [eslint-config-canonical](https://github.com/gajus/eslint-config-canonical)
+- [eslint-config-hardcore](https://github.com/EvgenyOrekhov/eslint-config-hardcore)
+- [eslint-config-galex](https://github.com/ljosberinn/eslint-config-galex)
+- [eslint-kit](https://github.com/eslint-kit/eslint-kit)
+- [eslint-config-everywhere](https://github.com/locol23/eslint-config-everywhere)
+- [eslint-prettier-typescript-config](https://github.com/moia-oss/eslint-prettier-typescript-config)
+
+## In-depth comparisons
+
+The main technical difference between Sheriff and the other projects is that Sheriff is updated to the most recent version of ESLint and supports the new `FlatConfig` instead of relying on weird hacks using the [@rushstack/eslint-patch](https://www.npmjs.com/package/@rushstack/eslint-patch). Because of the technical limitation imposed by this hack, these configs are harder to work with, at multiple levels.
+
+Another key difference is that the design of most of these configs seems to revolve around the idea of stuffing as much rules as possible into the config, regardless of the quality of the experience and the goal of the project.<br />
+Sheriff instead was [shaped around solid principles](./core-philosophy/criteria.md) and only includes the rules that let it achieve its goals.
+
+For a quick glance at the differences between Sheriff and some of the other ESLint configurations mentioned above, have a look at the table below.
+
+### Features comparison table
+
+<ComparisonTable />
+
+### Sheriff VS `eslint-config-airbnb`
+
+I cannot not mention the fact that `eslint-config-airbnb` is apparently the most popular ESLint config.
+
+However there are are a few specific reasons that led to this, and none of the has to do with the quality of the config itself:
+
+- it was one of the first ESLint configs to be created
+- the starred repository actually contains a stylistic guide, not just the ESLint config. The endorsements are for the guide, not the ESLint config
+- the repository is owned by Airbnb. Many developers through the years starred it just for their enthusiasm for the company, not for this library in particular
+- for many years, it was the deafult ESLint config in many popular boilerplates and React guides/articles
+
+As of today it's frowned upon by many industry professionals. Some of the most glaring issues:
+
+- it's largely outdated and not maintained since quite some time
+- It's big, bloated, too strict for most projects
+- it doesn't support TypeScript out of the box, to get it you actually have to use a different library, even less maintained and supported than the original one
+
+### Sheriff VS `@antfu/eslint-config`
+
+Antfu config shares many similarities with Sheriff, but is less mature and has less features.
+
+Also, it's important to note that it goes for a very opinionated route toward styling, where instead of adopting Prettier, it relies on [eslint-stylistic](https://github.com/eslint-community/eslint-stylistic) for it's formatting needs.
+
+### Sheriff VS XO
+
+XO is an interesting project. It uses ESLint and Prettier under the hood, but don't directly expose them to you. Instead of relying on the ESLint CLI and VSCode Extensions, it has it's own CLI and VSCode Extension. On the surface, it can seem like a good thing because it allows them to provide a more integrated experience, but it also means that you are locked into their ecosystem.
+
+It is very opinionated in their stylistic and formatting choices and doesn't allow for much flexibility.
+
+XO has many issues that ESLint and Prettier don't have.
