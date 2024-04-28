@@ -44,7 +44,7 @@ export const setPrettierConfig = async (
 
     const prettierConfigurationFilePath = await patchedFindUp(
       prettierConfigFileNames,
-      customProjectRootPath,
+      customProjectRootPath ?? process.cwd(),
     );
 
     if (

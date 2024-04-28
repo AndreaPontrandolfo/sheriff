@@ -10,6 +10,7 @@ export const setEslintConfig = async (
   isEslintTsPatchRequired: boolean,
   customProjectRootPath: string | null,
 ): Promise<void> => {
+  // TODO: add case for .cjs and .mjs
   const ESLINT_CONFIG_JS_FILE_NAME = 'eslint.config.js';
   const ESLINT_CONFIG_TS_FILE_NAME = 'eslint.config.ts';
   const ESLINT_IGNORE_FILE_NAME = '.eslintignore';

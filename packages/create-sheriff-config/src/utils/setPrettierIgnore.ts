@@ -19,7 +19,7 @@ export const setPrettierIgnore = async (
   try {
     const prettierIgnoreFile = await patchedFindUp(
       PRETTIER_IGNORE_FILE_NAME,
-      customProjectRootPath,
+      customProjectRootPath ?? process.cwd(),
     );
 
     if (prettierIgnoreFile) {
