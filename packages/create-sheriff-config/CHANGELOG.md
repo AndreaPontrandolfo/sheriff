@@ -1,5 +1,11 @@
 # create-sheriff-config
 
+## 5.0.0
+
+### Major Changes
+
+- 0afd2c8: feat(cli): completely revamped CLI experience
+
 ## 4.2.0
 
 ### Minor Changes

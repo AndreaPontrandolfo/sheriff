@@ -1,5 +1,18 @@
 # eslint-config-sheriff
 
+## 18.3.0
+
+### Minor Changes
+
+- b4cc03a: chore(deps): updated unicorn, vitest and internal deps
+  feat(rules): added 3 new unicorn rules
+- 12d4471: docs(website): updated comparison section in the docs
+- 74520b0: feat(plugins): added 3 new rules from @eslint-react/eslint-plugin
+
+### Patch Changes
+
+- 0afd2c8: feat(cli): completely revamped CLI experience
+
 ## 18.2.0
 
 ### Minor Changes
