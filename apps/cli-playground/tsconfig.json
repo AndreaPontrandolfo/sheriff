@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["eslint.config.ts"],
+  "exclude": ["node_modules", "dist", "build", "coverage"], // this is already a good default. Generally you want to put here build artifacts. Some other possible build artifacts are: "artifacts", "lib"...
+  "compilerOptions": {
+    "target": "es6",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",
+    "composite": false, // you should enable this only for using TS project references. But they are fairly discourages nowadays.
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "strict": true, // this is required for Sheriff to perform correctly.
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": false, // this looks nice on paper, but is actually extremely annoying in practice.
+    "noUnusedLocals": false, // this is already covered by Sheriff.
+    "noUnusedParameters": false, // this is already covered by Sheriff.
+    "isolatedModules": true, // this is required for Sheriff to perform correctly.
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true, // this is required for Sheriff to perform correctly.
+    "noEmit": true, // you should pretty much never need this, most projects are transpiled and bundled with specific tools like Rollup nowadays.
+    "skipLibCheck": true,
+    "allowJs": false,
+    "checkJs": false,
+    "experimentalDecorators": false,
+    "paths": {} // define here your paths if you want to use absolute paths in your project, which is highly recommended.
+  }
+}

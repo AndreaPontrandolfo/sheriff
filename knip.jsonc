@@ -6,14 +6,9 @@
     "apps/cli-playground",
     "apps/docs-website",
   ],
-  "ignore": [
-    "packages/create-sheriff-config/src/utils/spinner.ts",
-    "packages/create-sheriff-config/src/utils/widgets.ts",
-  ],
+  "ignore": ["packages/create-sheriff-config/src/utils/gracefullyAbort.ts"],
   "ignoreDependencies": [
     "@turbo/gen",
-    "commander",
-    "ora",
     "eslint-import-resolver-typescript",
     "type-fest",
     "@typescript-eslint/utils",

@@ -18,7 +18,7 @@
     }
   },
   "scripts": {
-    "clean": "rm -rf .turbo && rm -rf dist",
+    "clean": "rm -rf .turbo dist",
     "typecheck": "tsc --noEmit",
     "publint": "publint"
   },
@@ -27,7 +27,7 @@
     "publint": "^0.2.7",
     "tsconfig": "workspace:*",
     "type-fest": "^4.9.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.5"
   },
   "repository": {
     "type": "git",

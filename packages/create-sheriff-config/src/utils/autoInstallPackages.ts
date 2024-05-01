@@ -1,9 +1,9 @@
-import { execSync } from 'child_process';
-import { detect } from 'detect-package-manager';
+import { detectPackageManager, addDependency } from 'nypm';
+import { consola } from 'consola';
+import { colors } from 'consola/utils';
 import { getInstallationCommand } from './getInstallationCommand';
-import { unImportantLogger } from './logs';
-import { printError } from './printError';
-import { printSucces } from './printSucces';
+import { throwError } from './throwError';
+import { getPackageJsonContents } from './getPackageJsonContents';
 
 export const autoInstallPackages = async (
   packages: string[],
@@ -14,38 +14,66 @@ export const autoInstallPackages = async (
   );
 
   try {
-    const pm = await detect();
+    const pm = await detectPackageManager(process.cwd());
 
-    const failedInstallationMessage = `Couldn't auto-install the required packages.
-    You have to install them manually yourself.
-    Please try to run: ${getInstallationCommand(
-      pm,
-      packagesLatestVersions,
-      selectedProject,
-      false,
-    )}`;
+    if (pm) {
+      consola.info(`Detected package manager: ${colors.bold(pm.name)}`);
+    }
 
-    unImportantLogger.silly(`Detected package manager: ${pm}`);
+    if (!pm) {
+      consola.error('No package manager detected!');
+    }
 
-    if (pm === 'pnpm' && selectedProject) {
-      unImportantLogger.silly(
-        `Installing dependendencies in project: ${selectedProject}`,
+    if (selectedProject) {
+      consola.start(
+        `Installing dependendencies in project ${selectedProject}...`,
       );
     }
 
+    if (!selectedProject) {
+      consola.start(`Installing dependendencies...`);
+    }
+
     try {
-      execSync(
-        getInstallationCommand(pm, packagesLatestVersions, selectedProject),
-      );
-      printSucces(
+      if (selectedProject) {
+        const root = await getPackageJsonContents(selectedProject);
+
+        if (!root) {
+          throwError("Couldn't read the package.json.");
+
+          return;
+        }
+
+        await addDependency(packagesLatestVersions, {
+          dev: true,
+          workspace: root.packageJson.name,
+        });
+      }
+
+      if (!selectedProject) {
+        await addDependency(packagesLatestVersions, {
+          dev: true,
+        });
+      }
+
+      consola.success(
         `${packages.join(' and ')} ${
           packages.length > 1 ? 'were' : 'was'
         } installed successfully`,
       );
     } catch (error) {
-      printError(failedInstallationMessage, { error });
+      const failedInstallationMessage = `Couldn't auto-install the required packages.
+      You have to install them manually yourself.
+      Please try to run: ${getInstallationCommand(
+        pm?.name,
+        packagesLatestVersions,
+        selectedProject,
+        false,
+      )}`;
+
+      throwError(failedInstallationMessage, { error });
     }
   } catch (error) {
-    printError("Couldn't walk up the filesystem", { error });
+    throwError("Couldn't walk up the filesystem", { error });
   }
 };

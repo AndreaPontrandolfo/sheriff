@@ -1,28 +1,17 @@
-import promptShape from 'prompts';
-import { isString } from 'lodash-es';
-import { logger } from './logs';
-import { gracefullyAbort } from './gracefullyAbort';
+import { consola } from 'consola';
 
-export const askForCustomPath = async (): Promise<string | null> => {
-  logger.verbose(
-    `It looks like you are trying to install the Sheriff config in a workspace package.
-             Please specify the package relative path...`,
+export const askForCustomPath = async (): Promise<string> => {
+  const response = await consola.prompt(
+    `It looks like you are trying to install the Sheriff config in a workspace.
+Please specify the workspace path relative from the root of the project:`,
+    {
+      type: 'text',
+      message: 'Package path',
+      initial: './',
+      placeholder: './path/to/workspace',
+      // onState: gracefullyAbort,
+    },
   );
 
-  const response = await promptShape({
-    type: 'text',
-    name: 'path',
-    message: 'Package path',
-    initial: '.',
-    onState: gracefullyAbort,
-  });
-
-  if (isString(response.path)) {
-    logger.info(`Selected path: "${response.path}"`);
-
-    return response.path;
-  }
-  logger.error('Unknown input. Input should be string.');
-
-  return null;
+  return response;
 };

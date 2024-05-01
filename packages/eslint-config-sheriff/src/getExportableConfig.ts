@@ -1,5 +1,5 @@
 import eslintRecommended from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import tseslint, { type Config } from 'typescript-eslint';
 import unicorn from 'eslint-plugin-unicorn';
 import sonarjs from 'eslint-plugin-sonarjs';
 import playwright from 'eslint-plugin-playwright';
@@ -293,7 +293,7 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
 export const getExportableConfig = (
   userConfigChoices: SheriffSettings,
   areAllRulesForced?: boolean,
-) => {
+): Config => {
   if (!userConfigChoices) {
     throw new Error('No settings provided.');
   }

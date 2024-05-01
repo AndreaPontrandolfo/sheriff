@@ -47,6 +47,9 @@
       "ignoreMissing": [
         "vitest"
       ]
+    },
+    "patchedDependencies": {
+      "nypm@0.3.8": "patches/nypm@0.3.8.patch"
     }
   }
 }
