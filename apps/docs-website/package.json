@@ -48,7 +48,7 @@
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^2.1.0",
     "eslint-plugin-mdx": "^2.2.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.5"
   },
   "browserslist": {
     "production": [

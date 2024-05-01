@@ -105,7 +105,7 @@
     "publint": "^0.2.7",
     "tsconfig": "workspace:*",
     "tsup": "^6.2.3",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.5"
   },
   "publishConfig": {
     "access": "public"
