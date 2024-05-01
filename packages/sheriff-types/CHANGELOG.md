@@ -1,5 +1,11 @@
 # @sherifforg/types
 
+## 3.1.1
+
+### Patch Changes
+
+- 0afd2c8: feat(cli): completely revamped CLI experience
+
 ## 3.1.0
 
 ### Minor Changes

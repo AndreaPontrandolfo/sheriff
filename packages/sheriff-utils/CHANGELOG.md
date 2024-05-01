@@ -1,5 +1,11 @@
 # @sheriff/utils
 
+## 1.1.3
+
+### Patch Changes
+
+- 0afd2c8: feat(cli): completely revamped CLI experience
+
 ## 1.1.2
 
 ### Patch Changes

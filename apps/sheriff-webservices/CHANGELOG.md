@@ -1,5 +1,22 @@
 # sheriff-webservices
 
+## 3.1.0
+
+### Minor Changes
+
+- b4cc03a: chore(deps): updated unicorn, vitest and internal deps
+  feat(rules): added 3 new unicorn rules
+- 74520b0: feat(plugins): added 3 new rules from @eslint-react/eslint-plugin
+
+### Patch Changes
+
+- 0afd2c8: feat(cli): completely revamped CLI experience
+- Updated dependencies [0afd2c8]
+- Updated dependencies [b4cc03a]
+- Updated dependencies [12d4471]
+- Updated dependencies [74520b0]
+  - eslint-config-sheriff@18.3.0
+
 ## 3.0.0
 
 ### Major Changes
