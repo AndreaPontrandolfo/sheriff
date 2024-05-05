@@ -1,5 +1,11 @@
 # docs-website
 
+## 2.2.0
+
+### Minor Changes
+
+- 7a9a7ef: fix(cli): the cli will install eslint@8.57.0
+
 ## 2.1.0
 
 ### Minor Changes

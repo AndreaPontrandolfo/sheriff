@@ -1,5 +1,11 @@
 # create-sheriff-config
 
+## 5.1.0
+
+### Minor Changes
+
+- 7a9a7ef: fix(cli): the cli will install eslint@8.57.0
+
 ## 5.0.0
 
 ### Major Changes
