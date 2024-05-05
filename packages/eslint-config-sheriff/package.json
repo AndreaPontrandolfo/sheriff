@@ -86,7 +86,7 @@
     "typescript-eslint": "^7.8.0"
   },
   "peerDependencies": {
-    "eslint": ">=8.23.0 <=8.57.0",
+    "eslint": "8.38.0 - 8.57.0 || 8.57.0-0",
     "typescript": ">=5.0.0"
   },
   "engines": {

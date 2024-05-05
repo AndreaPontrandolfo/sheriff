@@ -48,7 +48,7 @@
         "vitest"
       ],
       "allowedVersions": {
-        "eslint": "8.57.0"
+        "eslint": "8.57.0 || 8.57.0-0"
       }
     },
     "patchedDependencies": {
