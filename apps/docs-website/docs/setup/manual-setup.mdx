@@ -124,13 +124,13 @@ Follow these steps:
 
       </Tabs>
 
-1.  Adopt [eslint-ts-patch](https://github.com/antfu/eslint-ts-patch) (_optional_). 
+1.  Adopt `eslint.config.ts` (_optional_). 
     
     If you want to have a `.ts` configuration file instead of the default `.js` file, follow these steps:
     
       -
         ```bash npm2yarn
-        npm install -D eslint-ts-patch eslint@npm:eslint-ts-patch
+        npm install -D eslint-ts-patch eslint@npm:eslint-ts-patch @sherifforg/types
         ```
       - change the extension of `eslint.config.js` from `.js` to `.ts`
       - define the types of the `sheriffOptions` object:
@@ -151,8 +151,6 @@ Follow these steps:
 
         export default defineFlatConfig([...sheriff(sheriffOptions)]);
         ```
-      
-    To learn more, consult the [official documentation of eslint-ts-patch](https://github.com/antfu/eslint-ts-patch).
 
 1.  [Configure Sheriff](../configuration.mdx) (_optional_)
 1.  [Setup Prettier](../prettier-support.md#setup) (_optional_)
