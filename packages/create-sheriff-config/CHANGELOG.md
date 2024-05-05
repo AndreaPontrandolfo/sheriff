@@ -1,5 +1,11 @@
 # create-sheriff-config
 
+## 5.1.1
+
+### Patch Changes
+
+- 5f90276: build(deps): added 8.57.0-0 to allowed peer deps
+
 ## 5.1.0
 
 ### Minor Changes

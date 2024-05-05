@@ -1,5 +1,11 @@
 # eslint-config-sheriff
 
+## 18.5.0
+
+### Minor Changes
+
+- 7879040: chore(config): force changesets release
+
 ## 18.4.0
 
 ### Minor Changes
