@@ -1,5 +1,16 @@
 # sheriff-webservices
 
+## 3.2.0
+
+### Minor Changes
+
+- 7a9a7ef: fix(cli): the cli will install eslint@8.57.0
+
+### Patch Changes
+
+- Updated dependencies [7a9a7ef]
+  - eslint-config-sheriff@18.4.0
+
 ## 3.1.0
 
 ### Minor Changes
