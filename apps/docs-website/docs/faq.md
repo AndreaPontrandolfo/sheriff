@@ -8,6 +8,8 @@ sidebar_position: 17
 
 - [Cypress](https://github.com/cypress-io/eslint-plugin-cypress) ➜ Don't use [Cypress](https://www.cypress.io/). Use [Playwright](https://playwright.dev/) instead
 - [Testing library](https://github.com/testing-library/eslint-plugin-testing-library) ➜ I believe Sheriff should not encourage wrong testing practices. In my opinion [testing library](https://github.com/testing-library) is one of the least efficient ways to test UIs, by principles. In most codebases it does more harm than good. You can use [Storybook](https://github.com/storybookjs/storybook) to test components in isolation and [Playwright](https://playwright.dev/) for any kind of integration and end-to-end tests
+- [eslint-plugin-unused-imports](https://github.com/sweepline/eslint-plugin-unused-imports): anything this plugin does is done better by [knip](https://github.com/webpro/knip).
+- [import/no-unused-modules](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unused-modules.md): this rule is very slow and and has some issues, it is also hard to get working properly in most codebases. Instead, i recommend [knip](https://github.com/webpro/knip).
 
 ## Is Sheriff compatible with "X"?
 
