@@ -9,9 +9,13 @@ export const autoInstallPackages = async (
   packages: string[],
   selectedProject: string | null,
 ): Promise<void> => {
-  const packagesLatestVersions = packages.map(
-    (packageName) => `${packageName}@latest`,
-  );
+  const packagesLatestVersions = packages.map((packageName) => {
+    if (packageName === 'eslint') {
+      return `eslint@8.57.0`;
+    }
+
+    return `${packageName}@latest`;
+  });
 
   try {
     const pm = await detectPackageManager(process.cwd());

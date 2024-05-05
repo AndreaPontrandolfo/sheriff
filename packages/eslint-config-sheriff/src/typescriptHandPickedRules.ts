@@ -27,7 +27,7 @@ export const typescriptHandPickedRules = {
   '@typescript-eslint/method-signature-style': 2,
   '@typescript-eslint/prefer-nullish-coalescing': [
     2,
-    { ignorePrimitives: { string: true } },
+    { ignorePrimitives: true },
   ],
   '@typescript-eslint/unified-signatures': 2,
   '@typescript-eslint/no-unused-expressions': [

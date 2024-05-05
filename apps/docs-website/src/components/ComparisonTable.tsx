@@ -7,6 +7,7 @@ interface TableEntry {
   "Advanced ignores management": "✅" | "❌";
   "Learning curve": "😔" | "😐" | "😊";
   "Incremental adoption": "✅" | "❌";
+  "Typesafe config": "✅" | "❌";
   Typescript: "✅" | "❌";
   React: "✅" | "❌";
   Vue: "✅" | "❌";
@@ -51,6 +52,7 @@ const entriesTable: EntriesTable = {
     "Advanced ignores management": "✅",
     "Learning curve": "😊",
     "Incremental adoption": "✅",
+    "Typesafe config": "✅",
     Typescript: "✅",
     React: "✅",
     Vue: "❌",
@@ -80,6 +82,7 @@ const entriesTable: EntriesTable = {
     "Advanced ignores management": "❌",
     "Learning curve": "😐",
     "Incremental adoption": "❌",
+    "Typesafe config": "❌",
     Typescript: "✅",
     React: "✅",
     Vue: "❌",
@@ -109,6 +112,7 @@ const entriesTable: EntriesTable = {
     "Advanced ignores management": "❌",
     "Learning curve": "😔",
     "Incremental adoption": "❌",
+    "Typesafe config": "❌",
     Typescript: "❌",
     React: "❌",
     Vue: "❌",
@@ -138,6 +142,7 @@ const entriesTable: EntriesTable = {
     "Advanced ignores management": "❌",
     "Learning curve": "😐",
     "Incremental adoption": "❌",
+    "Typesafe config": "❌",
     Typescript: "❌",
     React: "❌",
     Vue: "❌",
@@ -167,6 +172,7 @@ const entriesTable: EntriesTable = {
     "Advanced ignores management": "✅",
     "Learning curve": "😊",
     "Incremental adoption": "❌",
+    "Typesafe config": "✅",
     Typescript: "✅",
     React: "✅",
     Vue: "✅",
@@ -196,6 +202,7 @@ const entriesTable: EntriesTable = {
     "Advanced ignores management": "✅",
     "Learning curve": "😐",
     "Incremental adoption": "❌",
+    "Typesafe config": "❌",
     Typescript: "✅",
     React: "✅",
     Vue: "✅",
@@ -225,6 +232,7 @@ const entriesTable: EntriesTable = {
     "Advanced ignores management": "❌",
     "Learning curve": "😔",
     "Incremental adoption": "❌",
+    "Typesafe config": "❌",
     Typescript: "✅",
     React: "✅",
     Vue: "❌",
@@ -254,6 +262,7 @@ const entriesTable: EntriesTable = {
     "Advanced ignores management": "❌",
     "Learning curve": "😔",
     "Incremental adoption": "✅",
+    "Typesafe config": "❌",
     Typescript: "✅",
     React: "✅",
     Vue: "✅",
@@ -283,6 +292,7 @@ const entriesTable: EntriesTable = {
     "Advanced ignores management": "❌",
     "Learning curve": "😔",
     "Incremental adoption": "✅",
+    "Typesafe config": "❌",
     Typescript: "✅",
     React: "✅",
     Vue: "❌",
@@ -312,6 +322,7 @@ const entriesTable: EntriesTable = {
     "Advanced ignores management": "❌",
     "Learning curve": "😐",
     "Incremental adoption": "❌",
+    "Typesafe config": "❌",
     Typescript: "✅",
     React: "✅",
     Vue: "✅",

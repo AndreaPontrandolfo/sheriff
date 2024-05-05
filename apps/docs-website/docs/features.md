@@ -11,6 +11,7 @@ sidebar_position: 2
 - ⇆ **Interoperability**: you can plop Sheriff in your project at any moment. `create-sheriff-config` will configure automatically everything for you and will warn you if you need to take any special precautions. Bottom line: it's never too late to install Sheriff
 - 🏔 **Cutting-edge**: Sheriff is one of the first attempts in the wild to adhere to the new eslint configuration format, the `FlatConfig`. You can use Sheriff to easily and safely migrate your project to the new config format without effort. See: [migration guide](./migration-guide.mdx)
 - 👊 **Sensible**: All of the rules that were hand-picked in Sheriff were chosen to counter some problematic real-world scenarios that can occur in production projects and to ensure maximum style consistency. No bloat here. See [criteria](./core-philosophy/criteria.md)
+- 🛡️ **Typesafe**: The Sheriff configuration file can be typesafe! See: [eslint-config-ts](./typescript-support/eslint-config-ts.md)
 - 🗄️ **Configurable**: Sheriff is fully configurable with its own config object. See: [configuration](./configuration.mdx)
 - 🐙 **Modular**: Sheriff has opt-in support for a [wide array of libraries](./techs.md)
 - 🆙 **SemVer**: Sheriff [releases](https://github.com/AndreaPontrandolfo/sheriff/releases) follows [Semantic Versioning](https://semver.org/) with [Conventional Commits](https://www.conventionalcommits.org/) standards

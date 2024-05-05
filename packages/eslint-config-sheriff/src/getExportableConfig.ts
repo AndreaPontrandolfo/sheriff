@@ -1,5 +1,5 @@
 import eslintRecommended from '@eslint/js';
-import tseslint, { type Config } from 'typescript-eslint';
+import tseslint from 'typescript-eslint';
 import unicorn from 'eslint-plugin-unicorn';
 import sonarjs from 'eslint-plugin-sonarjs';
 import playwright from 'eslint-plugin-playwright';
@@ -19,6 +19,7 @@ import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import stylistic from '@stylistic/eslint-plugin';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
+import type { FlatESLintConfig } from 'eslint-define-config';
 import { SheriffSettings } from '@sherifforg/types';
 import { allJsExtensions, supportedFileTypes, ignores } from './constants';
 import { fpHandPickedRules } from './fpHandPickedRules';
@@ -293,7 +294,7 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
 export const getExportableConfig = (
   userConfigChoices: SheriffSettings,
   areAllRulesForced?: boolean,
-): Config => {
+): FlatESLintConfig[] => {
   if (!userConfigChoices) {
     throw new Error('No settings provided.');
   }
@@ -385,5 +386,5 @@ export const getExportableConfig = (
     ],
   });
 
-  return exportableConfig;
+  return exportableConfig as FlatESLintConfig[];
 };

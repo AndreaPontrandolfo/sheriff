@@ -46,7 +46,10 @@
       ],
       "ignoreMissing": [
         "vitest"
-      ]
+      ],
+      "allowedVersions": {
+        "eslint": "8.57.0"
+      }
     },
     "patchedDependencies": {
       "nypm@0.3.8": "patches/nypm@0.3.8.patch"
