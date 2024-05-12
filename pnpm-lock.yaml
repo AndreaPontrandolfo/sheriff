@@ -248,6 +248,9 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.3
         version: 0.4.6(eslint@8.57.0)
+      eslint-plugin-simple-import-sort:
+        specifier: ^12.1.0
+        version: 12.1.0(eslint@8.57.0)
       eslint-plugin-sonarjs:
         specifier: ^0.19.0
         version: 0.19.0(eslint@8.57.0)
@@ -427,6 +430,9 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.3
         version: 0.4.6(eslint@8.57.0)
+      eslint-plugin-simple-import-sort:
+        specifier: ^12.1.0
+        version: 12.1.0(eslint@8.57.0)
       eslint-plugin-sonarjs:
         specifier: ^0.19.0
         version: 0.19.0(eslint@8.57.0)
@@ -9548,6 +9554,14 @@ packages:
       resolve: 2.0.0-next.5
       semver: 6.3.1
       string.prototype.matchall: 4.0.11
+    dev: false
+
+  /eslint-plugin-simple-import-sort@12.1.0(eslint@8.57.0):
+    resolution: {integrity: sha512-Y2fqAfC11TcG/WP3TrI1Gi3p3nc8XJyEOJYHyEPEGI/UAgNx6akxxlX74p7SbAQdLcgASKhj8M0GKvH3vq/+ig==}
+    peerDependencies:
+      eslint: '>=5.0.0 || 8.57.0 || 8.57.0-0'
+    dependencies:
+      eslint: 8.57.0
     dev: false
 
   /eslint-plugin-sonarjs@0.19.0(eslint@8.57.0):

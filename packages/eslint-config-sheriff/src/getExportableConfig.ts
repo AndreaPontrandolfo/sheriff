@@ -7,6 +7,7 @@ import jsdoc from 'eslint-plugin-jsdoc';
 import lodashPlugin from 'eslint-plugin-lodash-f';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import pluginImport from 'eslint-plugin-import';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import nextjs from '@next/eslint-plugin-next';
 import fp from 'eslint-plugin-fp';
 import jest from 'eslint-plugin-jest';
@@ -224,6 +225,19 @@ const getBaseConfig = (userConfigChoices: SheriffSettings) => {
           { namedExportsAlwaysUseExplicitReturn: false },
         ],
         'arrow-return-style/no-export-default-arrow': 2,
+      },
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: {
+        'simple-import-sort': simpleImportSort,
+      },
+      rules: {
+        'simple-import-sort/imports': [
+          2,
+          { groups: [['^\\u0000', '^node:', '^@?\\w', '^', '^\\.']] },
+        ],
+        'simple-import-sort/exports': 2,
       },
     },
     {

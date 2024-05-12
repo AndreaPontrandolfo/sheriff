@@ -29,3 +29,4 @@ sidebar_position: 7
 - [eslint-plugin-fsecond](https://github.com/AndreaPontrandolfo/eslint-plugin-fsecond)
 - [@regru/eslint-plugin-prefer-early-return](https://github.com/regru/eslint-plugin-prefer-early-return)
 - [eslint-plugin-arrow-return-style](https://github.com/u3u/eslint-plugin-arrow-return-style)
+- [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)

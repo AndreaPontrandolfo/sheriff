@@ -8,6 +8,7 @@ import playwright from "eslint-plugin-playwright";
 import jsdoc from "eslint-plugin-jsdoc"; // eslint-disable-line
 import lodashPlugin from "eslint-plugin-lodash-f";
 import pluginImport from "eslint-plugin-import";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
 import nextjs from "@next/eslint-plugin-next";
 import fp from "eslint-plugin-fp";
 import jest from "eslint-plugin-jest";
@@ -74,6 +75,7 @@ export const getAllRules = (
       (stylistic as unknown as Plugin).rules,
       "@stylistic",
     ),
+    ...prependRulesWithPluginName(simpleImportSort.rules, "simple-import-sort"),
     ...prependRulesWithPluginName(pluginImport.rules, "import"),
     ...prependRulesWithPluginName(storybook.rules, "storybook"),
     ...prependRulesWithPluginName((astro as unknown as Plugin).rules, "astro"),
