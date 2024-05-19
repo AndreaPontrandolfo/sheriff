@@ -10,9 +10,9 @@ import {
   allJsxExtensions,
   supportedFileTypes,
 } from '@sherifforg/constants';
-import { getTsNamingConventionRule } from './getTsNamingConventionRule';
-import { reactHandPickedRules } from './reactHandPickedRules';
-import { getLanguageOptionsTypescriptReact } from './getExportableConfig';
+import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
+import { reactHandPickedRules } from './handpickedRules/reactHandPickedRules';
+import { getLanguageOptionsTypescriptReact } from './utils/getLanguageOptionsTypescriptReact';
 
 export const getReactConfig = (customTSConfigPath?: string | string[]) => {
   return [

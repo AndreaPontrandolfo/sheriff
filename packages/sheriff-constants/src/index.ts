@@ -89,4 +89,4 @@ export const baseNoRestrictedSyntaxRules = [
     selector: 'TSEnumDeclaration',
     message: 'Avoid enums.',
   },
-] as const;
+];
