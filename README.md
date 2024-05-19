@@ -3,6 +3,9 @@
       <img src="https://github.com/AndreaPontrandolfo/sheriff/blob/master/apps/docs-website/static/img/sheriff-logo.svg" width="240">
     <h1 align="center">Sheriff</h1>
   </a>
+  <p align="center">
+    ✨ A comprehensive and opinionated Typescript-first ESLint configuration ✨
+  </p>
 </p>
 
 This repository is a monorepo that hosts the sourcecode of the following projects:

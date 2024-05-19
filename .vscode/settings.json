@@ -1,4 +1,5 @@
 {
+  "eslint.experimental.useFlatConfig": true,
   "eslint.workingDirectories": [
     "./packages/create-sheriff-config",
     "./packages/sheriff-utils",
