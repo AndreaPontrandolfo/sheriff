@@ -58,31 +58,34 @@ export interface ExportableConfigAtom {
 
 export type RuleOptionsConfig = (Record<string, any> | string)[];
 
-export interface SheriffSettings {
+export interface SheriffConfigurablePlugins {
   /**
    * React support.
    */
-  react?: boolean;
+  react: boolean;
   /**
    * Lodash support.
    */
-  lodash?: boolean;
+  lodash: boolean;
   /**
    * Nextjs support.
    */
-  next?: boolean;
+  next: boolean;
   /**
    * Playwright support.
    */
-  playwright?: boolean;
+  playwright: boolean;
   /**
    * Jest support. Select this or vitest, not both.
    */
-  jest?: boolean;
+  jest: boolean;
   /**
    * Vitest support. Select this or jest, not both.
    */
-  vitest?: boolean;
+  vitest: boolean;
+}
+
+export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
   /**
    * This parameter allows you to override the paths for some Sheriff settings.
    */

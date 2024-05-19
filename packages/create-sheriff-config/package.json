@@ -24,6 +24,7 @@
     "clean": true
   },
   "dependencies": {
+    "@sherifforg/constants": "workspace:*",
     "cli-highlight": "^2.1.11",
     "consola": "^3.2.3",
     "find-up": "^6.3.0",

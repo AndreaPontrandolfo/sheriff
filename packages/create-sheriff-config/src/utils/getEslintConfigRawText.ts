@@ -1,4 +1,4 @@
-import { sheriffStartingOptions } from '../constants';
+import { sheriffStartingOptions } from '@sherifforg/constants';
 import { throwError } from './throwError';
 import { setSheriffConfig } from './setSheriffConfig';
 

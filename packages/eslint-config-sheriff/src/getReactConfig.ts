@@ -9,7 +9,7 @@ import {
   allJsExtensions,
   allJsxExtensions,
   supportedFileTypes,
-} from './constants';
+} from '@sherifforg/constants';
 import { getTsNamingConventionRule } from './getTsNamingConventionRule';
 import { reactHandPickedRules } from './reactHandPickedRules';
 import { getLanguageOptionsTypescriptReact } from './getExportableConfig';

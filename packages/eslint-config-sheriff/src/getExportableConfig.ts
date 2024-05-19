@@ -22,7 +22,11 @@ import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
 import type { FlatESLintConfig } from 'eslint-define-config';
 import { SheriffSettings } from '@sherifforg/types';
-import { allJsExtensions, supportedFileTypes, ignores } from './constants';
+import {
+  allJsExtensions,
+  supportedFileTypes,
+  ignores,
+} from '@sherifforg/constants';
 import { fpHandPickedRules } from './fpHandPickedRules';
 import { getBaseEslintHandPickedRules } from './getBaseEslintHandPickedRules';
 import { getReactConfig } from './getReactConfig';

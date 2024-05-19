@@ -60,6 +60,7 @@
     "@eslint/js": "^8.57.0",
     "@next/eslint-plugin-next": "^13.2.3",
     "@regru/eslint-plugin-prefer-early-return": "^1.0.0",
+    "@sherifforg/constants": "workspace:*",
     "@stylistic/eslint-plugin": "^1.5.1",
     "astro-eslint-parser": "^0.16.3",
     "eslint-config-flat-gitignore": "^0.1.3",
