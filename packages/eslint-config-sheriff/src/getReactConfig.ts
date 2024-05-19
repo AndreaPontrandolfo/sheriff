@@ -75,7 +75,6 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
       rules: {
         '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 2,
         '@eslint-react/no-leaked-conditional-rendering': 2,
-        '@eslint-react/no-complicated-conditional-rendering': 2,
       },
     },
     {
