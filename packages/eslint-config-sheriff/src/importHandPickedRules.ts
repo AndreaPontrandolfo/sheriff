@@ -6,6 +6,7 @@ export const importHandPickedRules = {
   'import/no-unresolved': [2, { commonjs: true, caseSensitiveStrict: true }],
   'import/first': 2,
   'import/no-default-export': 2,
+  'import/no-anonymous-default-export': 2,
   'import/no-named-as-default': 2,
   'import/no-duplicates': [2, { 'prefer-inline': true }],
   'import/newline-after-import': [2, { considerComments: true }],
