@@ -1,8 +1,8 @@
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
 import { createFile } from './createFile';
-import { throwError } from './throwError';
 import { patchedFindUp } from './patchedFindUp';
+import { throwError } from './throwError';
 
 const prettierIgnoreRawText = `/node_modules/
 /dist/

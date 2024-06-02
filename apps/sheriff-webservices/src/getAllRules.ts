@@ -1,36 +1,36 @@
 /* eslint-disable import/newline-after-import */
 
-import eslintRecommended from "@eslint/js";
-import tseslint from "typescript-eslint";
-import unicorn from "eslint-plugin-unicorn";
-import sonarjs from "eslint-plugin-sonarjs";
-import playwright from "eslint-plugin-playwright";
-import jsdoc from "eslint-plugin-jsdoc"; // eslint-disable-line
-import lodashPlugin from "eslint-plugin-lodash-f";
-import pluginImport from "eslint-plugin-import";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
-import nextjs from "@next/eslint-plugin-next";
-import fp from "eslint-plugin-fp";
-import jest from "eslint-plugin-jest";
-import vitest from "eslint-plugin-vitest";
-import preferEarlyReturn from "@regru/eslint-plugin-prefer-early-return";
-import tsdoc from "eslint-plugin-tsdoc";
-import storybook from "eslint-plugin-storybook";
-import fsecond from "eslint-plugin-fsecond";
 import arrowReturnStyle from "eslint-plugin-arrow-return-style";
-import stylistic from "@stylistic/eslint-plugin";
 import astro from "eslint-plugin-astro";
-import reactRecommended from "eslint-plugin-react/configs/recommended.js";
-import jsxRuntime from "eslint-plugin-react/configs/jsx-runtime.js";
+import fp from "eslint-plugin-fp";
+import fsecond from "eslint-plugin-fsecond";
+import pluginImport from "eslint-plugin-import";
+import jest from "eslint-plugin-jest";
+import jsdoc from "eslint-plugin-jsdoc"; // eslint-disable-line
 import reactAccessibility from "eslint-plugin-jsx-a11y";
+import lodashPlugin from "eslint-plugin-lodash-f";
+import playwright from "eslint-plugin-playwright";
+import jsxRuntime from "eslint-plugin-react/configs/jsx-runtime.js";
+import reactRecommended from "eslint-plugin-react/configs/recommended.js";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import sonarjs from "eslint-plugin-sonarjs";
+import storybook from "eslint-plugin-storybook";
+import tsdoc from "eslint-plugin-tsdoc";
+import unicorn from "eslint-plugin-unicorn";
+import vitest from "eslint-plugin-vitest";
+import tseslint from "typescript-eslint";
+import eslintRecommended from "@eslint/js";
 import rel1cxReact from "@eslint-react/eslint-plugin";
+import nextjs from "@next/eslint-plugin-next";
+import preferEarlyReturn from "@regru/eslint-plugin-prefer-early-return";
 import type {
   BarebonesConfigAtom,
   RuleOptions,
   SheriffSettings,
 } from "@sherifforg/types";
+import stylistic from "@stylistic/eslint-plugin";
 import { prependRulesWithPluginName } from "./prependRulesWithPluginName.js";
 
 interface Plugin {

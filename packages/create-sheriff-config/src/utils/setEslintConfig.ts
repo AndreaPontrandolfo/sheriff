@@ -1,10 +1,10 @@
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
 import { createFile } from './createFile';
-import { getPackageJsonContents } from './getPackageJsonContents';
-import { throwError } from './throwError';
-import { patchedFindUp } from './patchedFindUp';
 import { getEslintConfigRawText } from './getEslintConfigRawText';
+import { getPackageJsonContents } from './getPackageJsonContents';
+import { patchedFindUp } from './patchedFindUp';
+import { throwError } from './throwError';
 
 export const setEslintConfig = async (
   isEslintTsPatchRequired: boolean,

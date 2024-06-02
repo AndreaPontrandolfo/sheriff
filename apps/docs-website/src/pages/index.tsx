@@ -1,8 +1,8 @@
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Layout from "@theme/Layout";
 import { clsx } from "clsx";
 import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import CodeBlock from "@theme/CodeBlock";
+import Layout from "@theme/Layout";
 import SheriffLogo from "../../static/img/sheriff-logo.svg";
 import styles from "./index.module.css";
 

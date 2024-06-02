@@ -1,5 +1,5 @@
-import { consola } from 'consola';
 import { highlight } from 'cli-highlight';
+import { consola } from 'consola';
 import { sheriffStartingOptions } from '@sherifforg/constants';
 import { getPackageJsonContents } from './getPackageJsonContents';
 import { throwError } from './throwError';

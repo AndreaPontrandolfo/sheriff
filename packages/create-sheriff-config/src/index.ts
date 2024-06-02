@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
+import { consola } from 'consola';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { consola } from 'consola';
+import { askForCustomPath } from './utils/askForCustomPath';
+import { askForEslintTsPatch } from './utils/askForEslintTsPatch';
+import { askForPrettierSupport } from './utils/askForPrettierSupport';
 import { setDependencies } from './utils/setDependencies';
 import { setEslintConfig } from './utils/setEslintConfig';
 import { setPrettierConfig } from './utils/setPrettierConfig';
 import { setPrettierIgnore } from './utils/setPrettierIgnore';
-import { askForCustomPath } from './utils/askForCustomPath';
-import { askForPrettierSupport } from './utils/askForPrettierSupport';
-import { askForEslintTsPatch } from './utils/askForEslintTsPatch';
 
 const { argv } = yargs(hideBin(process.argv)).option('filter', {
   type: 'string',

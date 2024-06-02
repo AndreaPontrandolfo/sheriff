@@ -1,5 +1,5 @@
-import type { Entry } from "@sherifforg/types";
 import { isEqual } from "lodash-es";
+import type { Entry } from "@sherifforg/types";
 import { removeElementFromArrayByValue } from "./removeElementFromArrayByValue";
 
 const isSameItem = (firstOccurrence: Entry, secondOccurrence: Entry) => {

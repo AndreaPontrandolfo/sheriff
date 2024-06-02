@@ -1,5 +1,5 @@
-import { isString } from 'lodash-es';
 import { consola } from 'consola';
+import { isString } from 'lodash-es';
 
 interface Error {
   error?: unknown;

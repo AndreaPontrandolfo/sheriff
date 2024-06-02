@@ -2,17 +2,17 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable lodash-f/import-scope */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-import lodash from "lodash";
 import { Linter } from "eslint";
+import lodash from "lodash";
 import type {
-  Severity,
-  Plugins,
-  NumericSeverity,
-  Entry,
   BarebonesConfigAtom,
+  Entry,
+  NumericSeverity,
+  Plugins,
   RuleOptions,
   RuleOptionsConfig,
   ServerResponse,
+  Severity,
 } from "@sherifforg/types";
 
 const { isArray, isEmpty, last, uniq } = lodash;

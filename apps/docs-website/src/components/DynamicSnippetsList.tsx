@@ -6,12 +6,12 @@ interface DynamicSnippetsListProps {
 
 export const DynamicSnippetsList = ({
   paths,
-}: DynamicSnippetsListProps): React.JSX.Element => (
-  <ul>
-    {paths.map((path) => (
-      <li key={path}>
+}: DynamicSnippetsListProps): React.JSX.Element => 
+  { return <ul>
+    {paths.map((path) => 
+      { return <li key={path}>
         <code>{path}</code>
-      </li>
-    ))}
-  </ul>
-);
+      </li> }
+    )}
+  </ul> }
+;
