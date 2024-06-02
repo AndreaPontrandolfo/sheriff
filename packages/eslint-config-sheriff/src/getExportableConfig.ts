@@ -12,6 +12,7 @@ import { lodashConfig } from './lodashConfig';
 import { getJestConfig } from './getJestConfig';
 import { getVitestConfig } from './getVitestConfig';
 import { prettierOverrides } from './prettierOverrides';
+import { type TSESLint } from '@typescript-eslint/utils';
 
 export const getExportableConfig = (
   userConfigChoices: SheriffSettings,
@@ -21,7 +22,9 @@ export const getExportableConfig = (
     throw new Error('No settings provided.');
   }
 
-  let exportableConfig = [...getBaseConfig(userConfigChoices)];
+  let exportableConfig: TSESLint.FlatConfig.ConfigArray = [
+    ...getBaseConfig(userConfigChoices),
+  ];
 
   if (userConfigChoices.react || userConfigChoices.next) {
     // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
