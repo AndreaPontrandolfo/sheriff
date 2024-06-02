@@ -23,6 +23,7 @@ import { sonarjsHandPickedRules } from './handpickedRules/sonarjsHandPickedRules
 import { stylisticHandPickedRules } from './handpickedRules/stylisticHandPickedRules';
 import { typescriptHandPickedRules } from './handpickedRules/typescriptHandPickedRules';
 import { unicornHandPickedRules } from './handpickedRules/unicornHandPickedRules';
+import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
 import { getLanguageOptionsTypescript } from './utils/getLanguageOptionsTypescript';
 
 export const getBaseConfig = (userConfigChoices: SheriffSettings) => {
@@ -37,7 +38,7 @@ export const getBaseConfig = (userConfigChoices: SheriffSettings) => {
     },
     {
       files: [supportedFileTypes],
-      //@ts-expect-error
+      // @ts-expect-error
       rules: getBaseEslintHandPickedRules(noRestrictedSyntaxOverride),
     },
     {
@@ -53,7 +54,6 @@ export const getBaseConfig = (userConfigChoices: SheriffSettings) => {
       plugins: {
         '@typescript-eslint': tseslint.plugin,
       },
-      // @ts-expect-error
       rules: {
         ...typescriptHandPickedRules,
         ...getTsNamingConventionRule({ isTsx: false }),

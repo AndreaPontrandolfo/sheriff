@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "@sherifforg/types": "workspace:*",
-    "prettier": "^3.1.1",
     "publint": "^0.2.7",
     "tsconfig": "workspace:*",
     "typescript": "^5.4.5"
