@@ -38,7 +38,6 @@ export const unicornHandPickedRules = {
   'unicorn/catch-error-name': 2,
   'unicorn/consistent-destructuring': 2,
   'unicorn/prefer-string-slice': 2,
-  'unicorn/no-anonymous-default-export': 2,
   'unicorn/no-await-in-promise-methods': 2,
   'unicorn/no-single-promise-in-promise-methods': 2,
 };

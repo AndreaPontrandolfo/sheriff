@@ -1,4 +1,25 @@
+import { SheriffConfigurablePlugins } from '@sherifforg/types';
+
+export const sheriffStartingOptions: SheriffConfigurablePlugins = {
+  react: false,
+  lodash: false,
+  next: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+} as const;
+
+export const configCombinationDefaultValues = {
+  react: true,
+  lodash: true,
+  next: true,
+  playwright: true,
+  jest: false,
+  vitest: true,
+} as const;
+
 export const allJsExtensions = 'js,mjs,cjs,ts,mts,cts';
+
 export const allJsxExtensions = 'jsx,tsx,mtsx,mjsx';
 
 export const supportedFileTypes = `**/*{${allJsExtensions},${allJsxExtensions},astro}`;
@@ -7,6 +28,12 @@ const messages = {
   NO_ACCESS_MODIFIER:
     'Avoid access modifiers. In Javascript modules there is no need to limit developer access to properties.',
 };
+
+export const testsFilePatterns = [
+  `**/*.{test,spec}.{${allJsExtensions}}`,
+  `**/tests/**/*.{${allJsExtensions}}`,
+  `**/__tests__/**/*.{${allJsExtensions}}`,
+];
 
 export const ignores = [
   '**/node_modules/**',

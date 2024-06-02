@@ -1,8 +1,8 @@
+import { version } from 'eslint-config-sheriff/package.json';
+import { themes } from 'prism-react-renderer';
 // eslint-disable-next-line @typescript-eslint/naming-convention
-import type * as Preset from "@docusaurus/preset-classic";
-import type { Config } from "@docusaurus/types";
-import { themes } from "prism-react-renderer";
-import { version } from "eslint-config-sheriff/package.json";
+import type * as Preset from '@docusaurus/preset-classic';
+import type { Config } from '@docusaurus/types';
 
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
@@ -10,101 +10,101 @@ const darkCodeTheme = themes.dracula;
 const currentYear = new Date().getFullYear();
 
 const config: Config = {
-  title: "Sheriff",
+  title: 'Sheriff',
   tagline:
-    "A comprehensive and opinionated Typescript-first ESLint configuration.",
-  favicon: "img/sheriff-logo.svg",
+    'A comprehensive and opinionated Typescript-first ESLint configuration.',
+  favicon: 'img/sheriff-logo.svg',
 
   // Set the production url of your site here
-  url: "https://www.eslint-config-sheriff.dev",
+  url: 'https://www.eslint-config-sheriff.dev',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "AndreaPontrandolfo", // Usually your GitHub org/user name.
-  projectName: "sheriff", // Usually your repo name.
+  organizationName: 'AndreaPontrandolfo', // Usually your GitHub org/user name.
+  projectName: 'sheriff', // Usually your repo name.
 
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
   presets: [
     [
-      "classic",
+      'classic',
       {
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [
-            [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
         },
         blog: {
           showReadingTime: true,
           remarkPlugins: [
-            [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
           ],
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve('./src/css/custom.css'),
         },
       } satisfies Preset.Options,
     ],
   ],
   themeConfig: {
-    image: "img/sheriff-social-card.jpg",
+    image: 'img/sheriff-social-card.jpg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "Sheriff",
+      title: 'Sheriff',
       logo: {
-        alt: "Sheriff Logo",
-        src: "img/sheriff-logo.svg",
+        alt: 'Sheriff Logo',
+        src: 'img/sheriff-logo.svg',
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "mainSidebar",
-          position: "left",
-          label: "Docs",
+          type: 'docSidebar',
+          sidebarId: 'mainSidebar',
+          position: 'left',
+          label: 'Docs',
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        { to: '/blog', label: 'Blog', position: 'left' },
         {
-          position: "right",
+          position: 'right',
           value: `<div style="font-weight: 500;">v${version}</div>`,
-          type: "html",
+          type: 'html',
         },
         {
-          href: "https://github.com/AndreaPontrandolfo/sheriff",
-          position: "right",
-          className: "navbar-github-link",
+          href: 'https://github.com/AndreaPontrandolfo/sheriff',
+          position: 'right',
+          className: 'navbar-github-link',
         },
       ],
     },
     footer: {
-      style: "dark",
+      style: 'dark',
       copyright: `Copyright © ${currentYear.toString()} Sheriff. Built with Docusaurus.`,
     },
     prism: {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
-      additionalLanguages: ["bash", "diff", "json"],
+      additionalLanguages: ['bash', 'diff', 'json'],
     },
     algolia: {
-      appId: "E76LHB1EJI",
+      appId: 'E76LHB1EJI',
       // Public API key: it is safe to commit it
-      apiKey: "8eaed87517914cb02078ae2ad16ee24a",
+      apiKey: '8eaed87517914cb02078ae2ad16ee24a',
 
-      indexName: "eslint-config-sheriff",
+      indexName: 'eslint-config-sheriff',
 
       // Optional: see doc section below
       contextualSearch: true,

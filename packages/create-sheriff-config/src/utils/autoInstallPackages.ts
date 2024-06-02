@@ -1,9 +1,9 @@
-import { detectPackageManager, addDependency } from 'nypm';
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
+import { addDependency,detectPackageManager } from 'nypm';
 import { getInstallationCommand } from './getInstallationCommand';
-import { throwError } from './throwError';
 import { getPackageJsonContents } from './getPackageJsonContents';
+import { throwError } from './throwError';
 
 export const autoInstallPackages = async (
   packages: string[],

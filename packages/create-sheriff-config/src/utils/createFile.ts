@@ -1,6 +1,6 @@
-import { writeFile } from 'fs';
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
+import { writeFile } from 'fs';
 import { throwError } from './throwError';
 
 export const createFile = (

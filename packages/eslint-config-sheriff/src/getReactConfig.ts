@@ -9,10 +9,10 @@ import {
   allJsExtensions,
   allJsxExtensions,
   supportedFileTypes,
-} from './constants';
-import { getTsNamingConventionRule } from './getTsNamingConventionRule';
-import { reactHandPickedRules } from './reactHandPickedRules';
-import { getLanguageOptionsTypescriptReact } from './getExportableConfig';
+} from '@sherifforg/constants';
+import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
+import { reactHandPickedRules } from './handpickedRules/reactHandPickedRules';
+import { getLanguageOptionsTypescriptReact } from './utils/getLanguageOptionsTypescriptReact';
 
 export const getReactConfig = (customTSConfigPath?: string | string[]) => {
   return [
@@ -75,7 +75,6 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
       rules: {
         '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 2,
         '@eslint-react/no-leaked-conditional-rendering': 2,
-        '@eslint-react/no-complicated-conditional-rendering': 2,
       },
     },
     {

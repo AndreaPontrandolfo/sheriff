@@ -6,6 +6,13 @@ toc_max_heading_level: 4
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import { DynamicSnippetsList } from "../src/components/DynamicSnippetsList";
+import {
+  ignores,
+  sheriffStartingOptions,
+  testsFilePatterns,
+} from "@sherifforg/constants";
 
 # 🧠 Configuration
 
@@ -211,11 +218,7 @@ ignores: {
 
 A list of commonly ignored folders:
 
-- `**/node_modules/**`
-- `**/dist/**`
-- `**/build/**`
-- `**/artifacts/**`
-- `**/coverage/**`
+<DynamicSnippetsList paths={ignores} />
 
 Example:
 
@@ -401,13 +404,9 @@ module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
 
 By default, Sheriff will apply Jest or Vitest rules only on specific files.
 
-```ts title="API"
-[
-  "**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-  "**/tests/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-  "**/__tests__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-];
-```
+<CodeBlock title="API" language="ts">
+  {JSON.stringify(testsFilePatterns, null, 2)}
+</CodeBlock>
 
 This setting overrides this default.
 
@@ -432,9 +431,9 @@ const sheriffOptions = {
   pathsOveriddes: {
     // highlight-start
     tests: [
-      "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-      "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
-      "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",
+      "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts}",
+      "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts}",
+      "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}",
     ],
     // highlight-end
   },

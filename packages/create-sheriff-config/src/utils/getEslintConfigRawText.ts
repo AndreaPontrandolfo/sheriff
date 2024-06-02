@@ -1,6 +1,6 @@
-import { sheriffStartingOptions } from '../constants';
-import { throwError } from './throwError';
+import { sheriffStartingOptions } from '@sherifforg/constants';
 import { setSheriffConfig } from './setSheriffConfig';
+import { throwError } from './throwError';
 
 export const getEslintConfigRawText = async (
   fileType: 'ts' | 'esm' | 'commonjs',

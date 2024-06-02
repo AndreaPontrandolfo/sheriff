@@ -1,5 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
+import { isEmpty } from "lodash-es";
 import { useEffect, useRef, useState } from "react";
+import { DebounceInput } from "react-debounce-input";
+import Select from "react-select";
+import { configCombinationDefaultValues } from "@sherifforg/constants";
+import type { Entry, ServerResponse, SheriffSettings } from "@sherifforg/types";
 import {
   createColumnHelper,
   flexRender,
@@ -7,16 +12,11 @@ import {
   getFilteredRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import type { Entry, ServerResponse, SheriffSettings } from "@sherifforg/types";
-import { isEmpty } from "lodash-es";
-import Select from "react-select";
-import { DebounceInput } from "react-debounce-input";
 import { filterDuplicateRules } from "../utils/filterDuplicatedRules";
-import styles from "./RulesTable.module.css";
 import { ConfigCombinationForm } from "./ConfigCombinationForm";
-import { TableSkeleton } from "./TableSkeleton";
-import { configCombinationDefaultValues } from "./constants";
 import { QueriedRulesMetricsGroup } from "./QueriedRulesMetricsGroup";
+import styles from "./RulesTable.module.css";
+import { TableSkeleton } from "./TableSkeleton";
 
 interface FilterOption {
   value: string;
@@ -45,13 +45,11 @@ const columns = [
   }),
   columnHelper.accessor("docs", {
     header: "Docs",
-    cell: (info) => {
-      return (
-        <a href={info.getValue().url} target="_blank" rel="noreferrer">
-          {info.getValue().description || info.getValue().url}
-        </a>
-      );
-    },
+    cell: (info) => 
+      { return <a href={info.getValue().url} target="_blank" rel="noreferrer">
+        {info.getValue().description || info.getValue().url}
+      </a> }
+    ,
   }),
   columnHelper.accessor("affectedFiles", {
     header: "Files",
@@ -163,76 +161,60 @@ export const RulesTable = (): JSX.Element => {
             placeholder="Filter by plugins..."
             value={selectValue}
             styles={{
-              control: (baseStyles) => {
-                return {
-                  ...baseStyles,
-                  minWidth: "300px",
-                  backgroundColor:
-                    "var(--ifm-color-secondary-contrast-background)",
-                };
-              },
-              input: (baseStyles) => {
-                return {
-                  ...baseStyles,
+              control: (baseStyles) => { return {
+                ...baseStyles,
+                minWidth: "300px",
+                backgroundColor:
+                  "var(--ifm-color-secondary-contrast-background)",
+              } },
+              input: (baseStyles) => { return {
+                ...baseStyles,
+                color: "var(--ifm-font-color-primary)",
+              } },
+              menu: (baseStyles) => { return {
+                ...baseStyles,
+                backgroundColor:
+                  "var(--ifm-color-secondary-contrast-background)",
+              } },
+              option: (baseStyles, state) => { return {
+                ...baseStyles,
+                transition:
+                  "color var(--ifm-transition-fast) var(--ifm-transition-timing-default)",
+                backgroundColor: state.isFocused
+                  ? "var(--ifm-menu-color-background-hover)"
+                  : "var(--ifm-color-secondary-contrast-background)",
+                color: state.isFocused
+                  ? "var(--ifm-menu-color)"
+                  : "var(--ifm-font-color-secondary)",
+                ":active": {
+                  backgroundColor: "var(--ifm-menu-color-background-hover)",
+                },
+              } },
+              singleValue: (baseStyles) => { return {
+                ...baseStyles,
+                color: "var(--ifm-font-color-primary)",
+              } },
+              clearIndicator: (baseStyles) => { return {
+                ...baseStyles,
+                color: "var(--ifm-font-color-secondary)",
+                ":hover": {
                   color: "var(--ifm-font-color-primary)",
-                };
-              },
-              menu: (baseStyles) => {
-                return {
-                  ...baseStyles,
-                  backgroundColor:
-                    "var(--ifm-color-secondary-contrast-background)",
-                };
-              },
-              option: (baseStyles, state) => {
-                return {
-                  ...baseStyles,
-                  transition:
-                    "color var(--ifm-transition-fast) var(--ifm-transition-timing-default)",
-                  backgroundColor: state.isFocused
-                    ? "var(--ifm-menu-color-background-hover)"
-                    : "var(--ifm-color-secondary-contrast-background)",
-                  color: state.isFocused
-                    ? "var(--ifm-menu-color)"
-                    : "var(--ifm-font-color-secondary)",
-                  ":active": {
-                    backgroundColor: "var(--ifm-menu-color-background-hover)",
-                  },
-                };
-              },
-              singleValue: (baseStyles) => {
-                return {
-                  ...baseStyles,
+                },
+                cursor: "pointer",
+              } },
+              dropdownIndicator: (baseStyles) => { return {
+                ...baseStyles,
+                color: "var(--ifm-font-color-secondary)",
+                ":hover": {
                   color: "var(--ifm-font-color-primary)",
-                };
-              },
-              clearIndicator: (baseStyles) => {
-                return {
-                  ...baseStyles,
-                  color: "var(--ifm-font-color-secondary)",
-                  ":hover": {
-                    color: "var(--ifm-font-color-primary)",
-                  },
-                  cursor: "pointer",
-                };
-              },
-              dropdownIndicator: (baseStyles) => {
-                return {
-                  ...baseStyles,
-                  color: "var(--ifm-font-color-secondary)",
-                  ":hover": {
-                    color: "var(--ifm-font-color-primary)",
-                  },
-                  cursor: "pointer",
-                };
-              },
+                },
+                cursor: "pointer",
+              } },
             }}
-            options={pluginsNames.map((pluginName) => {
-              return {
-                value: pluginName,
-                label: pluginName,
-              };
-            })}
+            options={pluginsNames.map((pluginName) => { return {
+              value: pluginName,
+              label: pluginName,
+            } })}
             onChange={(selectedOption) => {
               setSelectValue(selectedOption);
               resetInputValue();
@@ -251,54 +233,43 @@ export const RulesTable = (): JSX.Element => {
       ) : (
         <table>
           <thead>
-            {table.getHeaderGroups().map((headerGroup) => {
-              return (
-                <tr key={headerGroup.id}>
-                  {headerGroup.headers.map((header) => {
-                    return (
-                      <th
-                        key={header.id}
-                        className={styles.th}
-                        style={{
-                          maxWidth: cellMaxWidth,
-                        }}
-                      >
-                        {header.isPlaceholder
-                          ? null
-                          : flexRender(
-                              header.column.columnDef.header,
-                              header.getContext(),
-                            )}
-                      </th>
-                    );
-                  })}
-                </tr>
-              );
-            })}
+            {table.getHeaderGroups().map((headerGroup) => 
+              { return <tr key={headerGroup.id}>
+                {headerGroup.headers.map((header) => 
+                  { return <th
+                    key={header.id}
+                    className={styles.th}
+                    style={{
+                      maxWidth: cellMaxWidth,
+                    }}
+                  >
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext(),
+                        )}
+                  </th> }
+                )}
+              </tr> }
+            )}
           </thead>
           <tbody>
-            {table.getRowModel().rows.map((row) => {
-              return (
-                <tr key={row.id} className={styles.tr}>
-                  {row.getVisibleCells().map((cell) => {
-                    return (
-                      <td
-                        key={cell.id}
-                        className={styles.td}
-                        style={{
-                          maxWidth: cellMaxWidth,
-                        }}
-                      >
-                        {flexRender(
-                          cell.column.columnDef.cell,
-                          cell.getContext(),
-                        )}
-                      </td>
-                    );
-                  })}
-                </tr>
-              );
-            })}
+            {table.getRowModel().rows.map((row) => 
+              { return <tr key={row.id} className={styles.tr}>
+                {row.getVisibleCells().map((cell) => 
+                  { return <td
+                    key={cell.id}
+                    className={styles.td}
+                    style={{
+                      maxWidth: cellMaxWidth,
+                    }}
+                  >
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </td> }
+                )}
+              </tr> }
+            )}
           </tbody>
         </table>
       )}

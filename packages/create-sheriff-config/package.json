@@ -14,16 +14,8 @@
     "typesync": "typesync --dry=fail"
   },
   "license": "MIT",
-  "tsup": {
-    "entry": [
-      "src/index.ts"
-    ],
-    "format": "esm",
-    "splitting": false,
-    "sourcemap": false,
-    "clean": true
-  },
   "dependencies": {
+    "@sherifforg/constants": "workspace:*",
     "cli-highlight": "^2.1.11",
     "consola": "^3.2.3",
     "find-up": "^6.3.0",

@@ -1,6 +1,6 @@
 import type { NoRestrictedSyntaxOverride } from '@sherifforg/types';
-import { baseNoRestrictedSyntaxRules } from './constants';
-import { getFilteredBaseNoRestrictedSyntax } from './getFilteredBaseNoRestrictedSyntax';
+import { baseNoRestrictedSyntaxRules } from '@sherifforg/constants';
+import { getFilteredBaseNoRestrictedSyntax } from '../utils/getFilteredBaseNoRestrictedSyntax';
 
 export const getBaseEslintHandPickedRules = (
   noRestrictedSyntaxOverride?: NoRestrictedSyntaxOverride,

@@ -3,8 +3,8 @@ import { consola } from 'consola';
 import { colors } from 'consola/utils';
 import { createFile } from './createFile';
 import { getPackageJsonContents } from './getPackageJsonContents';
-import { throwError } from './throwError';
 import { patchedFindUp } from './patchedFindUp';
+import { throwError } from './throwError';
 
 const prettierConfigRawText = `{}`;
 

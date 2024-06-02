@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
-import { configCombinationDefaultValues } from "./constants";
+import { configCombinationDefaultValues } from "@sherifforg/constants";
 import styles from "./ConfigCombinationForm.module.css";
 
 interface ConfigCombinationFormProps {
