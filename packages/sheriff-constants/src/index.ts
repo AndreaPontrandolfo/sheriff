@@ -90,3 +90,5 @@ export const baseNoRestrictedSyntaxRules = [
     message: 'Avoid enums.',
   },
 ];
+
+export const CURRENT_FROZEN_ESLINT_VERSION = '8.57.0';
