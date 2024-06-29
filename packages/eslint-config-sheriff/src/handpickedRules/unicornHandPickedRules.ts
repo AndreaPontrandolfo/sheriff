@@ -29,6 +29,7 @@ export const unicornHandPickedRules = {
   'unicorn/no-useless-length-check': 2,
   'unicorn/prefer-prototype-methods': 2,
   'unicorn/prefer-date-now': 2,
+  'unicorn/prefer-node-protocol': 2,
   'unicorn/prefer-export-from': [2, { ignoreUsedVariables: true }],
   'unicorn/no-new-buffer': 2,
   'unicorn/prefer-query-selector': 2,

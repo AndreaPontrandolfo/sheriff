@@ -122,7 +122,11 @@ export const getBaseConfig = (userConfigChoices: SheriffSettings) => {
       rules: {
         'simple-import-sort/imports': [
           2,
-          { groups: [['^\\u0000', '^node:', '^', '^@', '^@/', '^\\.']] },
+          {
+            groups: [
+              ['^\\u0000', '^node:', '^', '^@', '^@/', '^#', '^~', '^\\.'],
+            ],
+          },
         ],
         'simple-import-sort/exports': 2,
       },
