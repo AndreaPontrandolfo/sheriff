@@ -4,15 +4,7 @@ sidebar_position: 11
 
 # 🚀 VSCode support
 
-To make the [VSCode ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) working correctly we'll need to enable a few settings. It's advisable to enable them at the workspace level, meaning in the root of the project at `.vscode/settings.json`
-
-The ESLint `FlatConfig` support is currently not enabled by default. It needs to be enabled manually with a flag, like so:
-
-```JSONC title=".vscode/settings.json"
-{
-  "eslint.experimental.useFlatConfig": true
-}
-```
+To make the [VSCode ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) work better with Sheriff we can enable a few settings. It's advisable to enable them at the workspace level, meaning in the root of the project at `.vscode/settings.json`
 
 ## Enable linting on specified file extensions
 
