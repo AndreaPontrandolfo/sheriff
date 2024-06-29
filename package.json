@@ -50,9 +50,6 @@
       "allowedVersions": {
         "eslint": "8.57.0 || 8.57.0-0"
       }
-    },
-    "patchedDependencies": {
-      "nypm@0.3.8": "patches/nypm@0.3.8.patch"
     }
   }
 }
