@@ -1,5 +1,21 @@
 # eslint-config-sheriff
 
+## 18.6.0
+
+### Minor Changes
+
+- 6e6cbee: feat(rules): added unicorn/prefer-node-protocol rule
+- 409ee4a: feat(rules): removed no-complicated-conditional-rendering
+  feat(plugins): added eslint-plugin-simple-import-sort plugin
+  feat(rules): replaced a unicorn rule with a import rule
+  docs(website): updated docs regarding vscode support
+
+### Patch Changes
+
+- Updated dependencies [409ee4a]
+- Updated dependencies [3252189]
+  - @sherifforg/constants@0.0.1
+
 ## 18.5.0
 
 ### Minor Changes

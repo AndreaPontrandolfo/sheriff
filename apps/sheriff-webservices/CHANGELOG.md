@@ -1,5 +1,17 @@
 # sheriff-webservices
 
+## 3.2.2
+
+### Patch Changes
+
+- 409ee4a: feat(rules): removed no-complicated-conditional-rendering
+  feat(plugins): added eslint-plugin-simple-import-sort plugin
+  feat(rules): replaced a unicorn rule with a import rule
+  docs(website): updated docs regarding vscode support
+- Updated dependencies [6e6cbee]
+- Updated dependencies [409ee4a]
+  - eslint-config-sheriff@18.6.0
+
 ## 3.2.1
 
 ### Patch Changes
