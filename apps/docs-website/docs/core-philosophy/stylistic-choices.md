@@ -27,6 +27,7 @@ Sheriff actually allows using `reduce` for very simple operations like summing u
 - [Enums considered harmful](https://www.youtube.com/watch?v=jjMbPt_H3RQ)
 - [How to use TypeScript Enums and why not to, maybe](https://www.youtube.com/watch?v=pWPClHdcvVg)
 - [Let's Talk About TypeScript's Worst Feature](https://www.youtube.com/watch?v=Anu8vHXsavo)
+- [Effective Typescript book](https://effectivetypescript.com) explicitly warn against this, saying that `enums` belong to a legacy design choice of Typescript.
 
 ## No overloads
 
@@ -35,3 +36,4 @@ Sheriff actually allows using `reduce` for very simple operations like summing u
 - overloads clutter the VScode tooltips
 - overloads force you to write non-standard javascript syntax
 - overloads are a bad practice. The flexibility that they enable also enable your team to write inconsistent code. Which is exactly the problem that ESLint is designed to solve
+- [Effective Typescript book](https://effectivetypescript.com) explicitly warn against this, saying that "conditional types" are preferrable.
