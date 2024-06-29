@@ -1,5 +1,19 @@
 # create-sheriff-config
 
+## 5.1.2
+
+### Patch Changes
+
+- 409ee4a: feat(rules): removed no-complicated-conditional-rendering
+  feat(plugins): added eslint-plugin-simple-import-sort plugin
+  feat(rules): replaced a unicorn rule with a import rule
+  docs(website): updated docs regarding vscode support
+- 3252189: fix(cli): locked version of `eslint-ts-patch`
+- 9e86345: chore(cli): updated nypm and removed custom patch
+- Updated dependencies [409ee4a]
+- Updated dependencies [3252189]
+  - @sherifforg/constants@0.0.1
+
 ## 5.1.1
 
 ### Patch Changes
