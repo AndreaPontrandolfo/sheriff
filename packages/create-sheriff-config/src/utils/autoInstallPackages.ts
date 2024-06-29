@@ -1,6 +1,7 @@
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
-import { addDependency,detectPackageManager } from 'nypm';
+import { addDependency, detectPackageManager } from 'nypm';
+import { CURRENT_FROZEN_ESLINT_VERSION } from '@sherifforg/constants';
 import { getInstallationCommand } from './getInstallationCommand';
 import { getPackageJsonContents } from './getPackageJsonContents';
 import { throwError } from './throwError';
@@ -11,7 +12,7 @@ export const autoInstallPackages = async (
 ): Promise<void> => {
   const packagesLatestVersions = packages.map((packageName) => {
     if (packageName === 'eslint') {
-      return `eslint@8.57.0`;
+      return `eslint@${CURRENT_FROZEN_ESLINT_VERSION}`;
     }
 
     return `${packageName}@latest`;
