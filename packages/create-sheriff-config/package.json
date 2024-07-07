@@ -15,7 +15,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@sherifforg/constants": "workspace:*",
     "cli-highlight": "^2.1.11",
     "consola": "^3.2.3",
     "find-up": "^6.3.0",
@@ -30,6 +29,7 @@
     "create-sheriff-config": "./dist/index.js"
   },
   "devDependencies": {
+    "@sherifforg/constants": "workspace:*",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.10.6",
     "@types/yargs": "^17.0.32",

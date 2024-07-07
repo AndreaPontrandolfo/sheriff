@@ -301,9 +301,6 @@ importers:
 
   packages/create-sheriff-config:
     dependencies:
-      '@sherifforg/constants':
-        specifier: workspace:*
-        version: link:../sheriff-constants
       cli-highlight:
         specifier: ^2.1.11
         version: 2.1.11
@@ -332,6 +329,9 @@ importers:
         specifier: ^17.7.2
         version: 17.7.2
     devDependencies:
+      '@sherifforg/constants':
+        specifier: workspace:*
+        version: link:../sheriff-constants
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -377,9 +377,6 @@ importers:
       '@regru/eslint-plugin-prefer-early-return':
         specifier: ^1.0.0
         version: 1.0.0
-      '@sherifforg/constants':
-        specifier: workspace:*
-        version: link:../sheriff-constants
       '@stylistic/eslint-plugin':
         specifier: ^1.5.1
         version: 1.8.0(eslint@8.57.0)(typescript@5.4.5)
@@ -459,6 +456,9 @@ importers:
       '@arethetypeswrong/cli':
         specifier: ^0.9.0
         version: 0.9.0
+      '@sherifforg/constants':
+        specifier: workspace:*
+        version: link:../sheriff-constants
       '@sherifforg/types':
         specifier: workspace:*
         version: link:../sheriff-types
