@@ -1,5 +1,11 @@
 # eslint-config-sheriff
 
+## 18.7.0
+
+### Minor Changes
+
+- 9883842: fix(deps): moved @sherifforg/constants to devDeps. Fixes #150
+
 ## 18.6.0
 
 ### Minor Changes

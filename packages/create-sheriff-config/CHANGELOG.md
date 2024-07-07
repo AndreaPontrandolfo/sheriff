@@ -1,5 +1,11 @@
 # create-sheriff-config
 
+## 5.2.0
+
+### Minor Changes
+
+- 9883842: fix(deps): moved @sherifforg/constants to devDeps. Fixes #150
+
 ## 5.1.2
 
 ### Patch Changes
