@@ -72,6 +72,10 @@ export interface SheriffConfigurablePlugins {
    */
   next: boolean;
   /**
+   * Astro support.
+   */
+  astro: boolean;
+  /**
    * Playwright support.
    */
   playwright: boolean;

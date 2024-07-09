@@ -7,6 +7,7 @@ import { ignores, sheriffStartingOptions } from '@sherifforg/constants';
 import { getReactConfig } from './getReactConfig';
 import { getBaseConfig } from './getBaseConfig';
 import { nextjsConfig } from './nextjsConfig';
+import { getAstroConfig } from './getAstroConfig';
 import { playwrightConfig } from './playwrightConfig';
 import { lodashConfig } from './lodashConfig';
 import { getJestConfig } from './getJestConfig';
@@ -58,6 +59,14 @@ export const getExportableConfig = (
 
   if (userConfigChoices.lodash) {
     exportableConfig.push(lodashConfig);
+  }
+
+  if (userConfigChoices.astro) {
+    const customTSConfigPath =
+      userConfigChoices.pathsOverrides?.tsconfigLocation;
+    const hasReact = Boolean(userConfigChoices.react);
+
+    exportableConfig.push(getAstroConfig(hasReact, customTSConfigPath));
   }
 
   if (userConfigChoices.playwright) {
