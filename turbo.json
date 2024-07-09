@@ -39,6 +39,14 @@
     "serve": {
       "cache": false,
       "persistent": true
+    },
+    "check-deduped-deps": {
+      "inputs": [
+        "package.json",
+        "apps/*/package.json",
+        "packages/*/package.json",
+        "pnpm-lock.yaml"
+      ]
     }
   }
 }
