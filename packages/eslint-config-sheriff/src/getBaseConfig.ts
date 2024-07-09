@@ -27,7 +27,7 @@ import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHan
 import { getLanguageOptionsTypescript } from './utils/getLanguageOptionsTypescript';
 
 export const getBaseConfig = (userConfigChoices: SheriffSettings) => {
-  const customTSConfigPath = userConfigChoices.pathsOveriddes?.tsconfigLocation;
+  const customTSConfigPath = userConfigChoices.pathsOverrides?.tsconfigLocation;
   const { noRestrictedSyntaxOverride } = userConfigChoices;
   const hasReact = Boolean(userConfigChoices.react);
 
