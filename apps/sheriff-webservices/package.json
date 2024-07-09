@@ -16,12 +16,12 @@
   "devDependencies": {
     "@sherifforg/types": "workspace:*",
     "@tsconfig/node-lts": "^18.12.5",
-    "@types/lodash": "^4.14.191",
-    "@types/node": "^20.10.6",
+    "@types/lodash": "^4.17.6",
+    "@types/node": "^20.14.10",
     "eslint-define-config": "^2.1.0",
-    "tsx": "^4.7.0",
-    "type-fest": "^4.9.0",
-    "typescript": "^5.4.5"
+    "tsx": "^4.16.2",
+    "type-fest": "^4.21.0",
+    "typescript": "^5.5.3"
   },
   "dependencies": {
     "@eslint-react/eslint-plugin": "^1.5.12",
