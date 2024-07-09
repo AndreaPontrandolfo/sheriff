@@ -40,3 +40,6 @@ dist
 megalinter-reports/
 
 pnpm-lock.yaml
+
+# MDX v3
+*.mdx
