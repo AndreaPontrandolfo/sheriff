@@ -26,9 +26,7 @@
     "@sherifforg/types": "workspace:*",
     "publint": "^0.2.8",
     "tsconfig": "workspace:*",
+    "tsup": "^8.2.1",
     "typescript": "^5.5.3"
-  },
-  "dependencies": {
-    "tsup": "^6.2.3"
   }
 }
