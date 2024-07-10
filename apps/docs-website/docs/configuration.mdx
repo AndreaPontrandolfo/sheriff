@@ -330,18 +330,18 @@ module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
   </TabItem>
 </Tabs>
 
-### `pathsOveriddes`
+### `pathsOverrides`
 
 As outlined in the [criteria](./core-philosophy/criteria.md) page, Sheriff comes with sensible defaults. However, as your project grows, your team may come across the need to override some of these defaults. This option lets you do just that.
 
 ```ts title="API"
-pathsOveriddes: {
+pathsOverrides: {
   tsconfigLocation: string | string[];
   tests: string[];
 }
 ```
 
-#### `pathsOveriddes.tsconfigLocation`
+#### `pathsOverrides.tsconfigLocation`
 
 By default, Sheriff will use the `project: true` option to locate the `tsconfig.json` of your project.
 
@@ -365,7 +365,7 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-  pathsOveriddes: {
+  pathsOverrides: {
     // highlight-next-line
     tsconfigLocation: "./tsconfig.eslint.json",
   },
@@ -388,7 +388,7 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-  pathsOveriddes: {
+  pathsOverrides: {
     // highlight-next-line
     tsconfigLocation: "./tsconfig.eslint.json",
   },
@@ -400,7 +400,7 @@ module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
   </TabItem>
 </Tabs>
 
-#### `pathsOveriddes.tests`
+#### `pathsOverrides.tests`
 
 By default, Sheriff will apply Jest or Vitest rules only on specific files.
 
@@ -428,7 +428,7 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-  pathsOveriddes: {
+  pathsOverrides: {
     // highlight-start
     tests: [
       "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts}",
@@ -456,7 +456,7 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-  pathsOveriddes: {
+  pathsOverrides: {
     // highlight-start
     tests: [
       "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}",

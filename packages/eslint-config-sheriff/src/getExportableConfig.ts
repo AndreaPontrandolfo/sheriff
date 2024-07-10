@@ -30,7 +30,7 @@ export const getExportableConfig = (
     // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
     exportableConfig = [
       ...exportableConfig,
-      ...getReactConfig(userConfigChoices.pathsOveriddes?.tsconfigLocation),
+      ...getReactConfig(userConfigChoices.pathsOverrides?.tsconfigLocation),
     ];
   }
 
@@ -46,14 +46,14 @@ export const getExportableConfig = (
 
   if (userConfigChoices.jest) {
     exportableConfig.push(
-      getJestConfig(userConfigChoices.pathsOveriddes?.tests),
+      getJestConfig(userConfigChoices.pathsOverrides?.tests),
     );
   }
 
   if (userConfigChoices.vitest) {
     exportableConfig.push(
       //@ts-expect-error
-      getVitestConfig(userConfigChoices.pathsOveriddes?.tests),
+      getVitestConfig(userConfigChoices.pathsOverrides?.tests),
     );
   }
 
