@@ -3,7 +3,11 @@
   "version": "5.2.0",
   "type": "module",
   "description": "CLI/starter to bootstrap a Sheriff config",
-  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "node": "./dist/index.js"
+    }
+  },
   "scripts": {
     "dev": "tsx ./src/index.ts",
     "clean": "rm -rf .turbo dist",

@@ -4,13 +4,19 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "main": "./dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
   "files": [
@@ -18,8 +24,9 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "publint": "publint",
     "clean": "rm -rf .turb dist",
+    "typecheck": "tsc --noEmit",
+    "publint": "publint",
     "build": "tsup"
   },
   "devDependencies": {
@@ -28,5 +35,8 @@
     "tsconfig": "workspace:*",
     "tsup": "^8.2.1",
     "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
