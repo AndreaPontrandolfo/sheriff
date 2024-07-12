@@ -5,7 +5,7 @@
   "splitting": false,
   "sourcemap": false,
   "clean": true,
-  "target": "node16",
+  "target": "node20",
   "skipNodeModulesBundle": true,
   "minify": true,
   "replaceNodeEnv": true,

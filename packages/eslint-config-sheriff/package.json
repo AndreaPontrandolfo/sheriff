@@ -93,7 +93,7 @@
     "typescript": ">=5.0.0"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=20.10.0"
   },
   "license": "MIT",
   "devDependencies": {
