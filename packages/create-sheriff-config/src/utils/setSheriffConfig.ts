@@ -8,7 +8,8 @@ import { throwError } from './throwError';
 export const setSheriffConfig = async (
   customProjectRootPath: string | null,
 ): Promise<SheriffConfigurablePlugins> => {
-  const finalPluginsConfigurationSetup = sheriffStartingOptions;
+  const finalPluginsConfigurationSetup: SheriffConfigurablePlugins =
+    sheriffStartingOptions;
   const root = await getPackageJsonContents(customProjectRootPath);
 
   if (!root) {
