@@ -6,7 +6,7 @@ export const getAstroConfig = (
 ) => {
   return [
     ...astro.configs.recommended,
-    ...(hasReact ? astro.configs['jsx-a11y-recommended'] : []),
+    ...(hasReact ? astro.configs['jsx-a11y-strict'] : []),
     {
       files: ['**/*.astro'],
       languageOptions: {
