@@ -1,19 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "tsconfig/base.json",
-  "include": ["src"],
-  "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
-    "module": "ESNext",
-    "composite": false,
-    "incremental": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     "jsx": "react-jsx",
-    "skipLibCheck": true,
-    "allowJs": false,
-    "checkJs": false,
-    "isolatedModules": true,
-    "strict": true,
-    "verbatimModuleSyntax": true
   }
 }

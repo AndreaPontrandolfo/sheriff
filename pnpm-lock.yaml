@@ -274,9 +274,6 @@ importers:
       '@sherifforg/types':
         specifier: workspace:*
         version: link:../../packages/sheriff-types
-      '@tsconfig/node-lts':
-        specifier: ^18.12.5
-        version: 18.12.5
       '@types/lodash':
         specifier: ^4.17.6
         version: 4.17.6
@@ -286,6 +283,9 @@ importers:
       eslint-define-config:
         specifier: ^2.1.0
         version: 2.1.0
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
       tsx:
         specifier: ^4.16.2
         version: 4.16.2
@@ -5429,10 +5429,6 @@ packages:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
     dev: false
-
-  /@tsconfig/node-lts@18.12.5:
-    resolution: {integrity: sha512-KJZX0kQ5FBv77WDVzmQ9y1dUjaJCNXAAz3LSsg5cMwH0AUijVdDQtII+IVprEXdb13U9GjVOBxBzyRvr/ozPxw==}
-    dev: true
 
   /@tsconfig/node10@1.0.11:
     resolution: {integrity: sha512-DcRjDCujK/kCk/cUe8Xz8ZSpm8mS3mNNpta+jGCA6USEDfktlNvm1+IuZ9eTcDbNk41BHwpHHeW+N1lKCz4zOw==}
