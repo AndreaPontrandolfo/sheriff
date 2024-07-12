@@ -1,3 +1,5 @@
+import type { TSESLint } from '@typescript-eslint/utils';
+
 export const unicornHandPickedRules = {
   'unicorn/better-regex': 2,
   'unicorn/explicit-length-check': 2,
@@ -41,4 +43,4 @@ export const unicornHandPickedRules = {
   'unicorn/prefer-string-slice': 2,
   'unicorn/no-await-in-promise-methods': 2,
   'unicorn/no-single-promise-in-promise-methods': 2,
-};
+} as const satisfies TSESLint.FlatConfig.Rules;

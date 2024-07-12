@@ -1,3 +1,5 @@
+import type { TSESLint } from '@typescript-eslint/utils';
+
 export const typescriptHandPickedRules = {
   '@typescript-eslint/ban-ts-comment': 0,
   '@typescript-eslint/no-unsafe-assignment': 0,
@@ -54,4 +56,4 @@ export const typescriptHandPickedRules = {
       ignoreFunctionTypeParameterNameValueShadow: true,
     },
   ],
-};
+} as const satisfies TSESLint.FlatConfig.Rules;

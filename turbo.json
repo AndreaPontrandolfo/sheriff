@@ -22,6 +22,10 @@
       "outputs": ["node_modules/.cache/.eslintcache"],
       "dependsOn": ["^topo", "^build"]
     },
+    "eslint-config-sheriff#lint": {
+      "outputs": ["node_modules/.cache/.eslintcache"],
+      "dependsOn": ["^topo", "build"]
+    },
     "validate-config": {
       "outputs": ["node_modules/.cache/.eslintcache"],
       "dependsOn": ["^topo", "^build"]

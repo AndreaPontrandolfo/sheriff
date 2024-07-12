@@ -1,8 +1,9 @@
 import tseslint from 'typescript-eslint';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 export const getLanguageOptionsTypescriptReact = (
   userChosenTSConfig?: string | string[],
-) => {
+): TSESLint.FlatConfig.LanguageOptions => {
   return {
     parser: tseslint.parser,
     parserOptions: {
