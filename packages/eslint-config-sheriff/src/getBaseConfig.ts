@@ -136,6 +136,7 @@ export const getBaseConfig = (userConfigChoices: SheriffSettings) => {
       settings: {
         'import/parsers': {
           '@typescript-eslint/parser': ['.ts', '.tsx'],
+          espree: ['.js'],
         },
         'import/resolver': {
           typescript: {

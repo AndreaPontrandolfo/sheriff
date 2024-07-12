@@ -66,7 +66,7 @@ export const getExportableConfig = (
       userConfigChoices.pathsOverrides?.tsconfigLocation;
     const hasReact = Boolean(userConfigChoices.react);
 
-    exportableConfig.push(getAstroConfig(hasReact, customTSConfigPath));
+    exportableConfig.push(...getAstroConfig(hasReact, customTSConfigPath));
   }
 
   if (userConfigChoices.playwright) {
