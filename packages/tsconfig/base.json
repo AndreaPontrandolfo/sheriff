@@ -9,9 +9,6 @@
   ],
   "compilerOptions": {
     "composite": false,
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
     "allowJs": false,
     "isolatedModules": true,
     "verbatimModuleSyntax": true,

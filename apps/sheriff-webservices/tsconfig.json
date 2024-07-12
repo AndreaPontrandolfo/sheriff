@@ -3,6 +3,10 @@
   "extends": "tsconfig/base.json",
   "compilerOptions": {
     "outDir": "./dist",
+    "target": "ESNext",
+    "lib": ["DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"
   }
