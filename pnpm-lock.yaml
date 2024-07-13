@@ -332,6 +332,9 @@ importers:
       '@sherifforg/constants':
         specifier: workspace:*
         version: link:../sheriff-constants
+      '@sherifforg/types':
+        specifier: workspace:*
+        version: link:../sheriff-types
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
