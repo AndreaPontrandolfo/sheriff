@@ -3,7 +3,7 @@ import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
 import type { FlatESLintConfig } from 'eslint-define-config';
 import { SheriffSettings } from '@sherifforg/types';
-import { ignores } from '@sherifforg/constants';
+import { ignores, sheriffStartingOptions } from '@sherifforg/constants';
 import { getReactConfig } from './getReactConfig';
 import { getBaseConfig } from './getBaseConfig';
 import { nextjsConfig } from './nextjsConfig';
@@ -15,23 +15,18 @@ import { prettierOverrides } from './prettierOverrides';
 import { type TSESLint } from '@typescript-eslint/utils';
 
 export const getExportableConfig = (
-  userConfigChoices: SheriffSettings,
+  userConfigChoices: SheriffSettings = sheriffStartingOptions,
   areAllRulesForced?: boolean,
 ): FlatESLintConfig[] => {
-  if (!userConfigChoices) {
-    throw new Error('No settings provided.');
-  }
-
   let exportableConfig: TSESLint.FlatConfig.ConfigArray = [
     ...getBaseConfig(userConfigChoices),
   ];
 
   if (userConfigChoices.react || userConfigChoices.next) {
     // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
-    exportableConfig = [
-      ...exportableConfig,
+    exportableConfig.push(
       ...getReactConfig(userConfigChoices.pathsOverrides?.tsconfigLocation),
-    ];
+    );
   }
 
   if (
