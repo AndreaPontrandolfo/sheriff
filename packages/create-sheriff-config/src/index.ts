@@ -16,7 +16,7 @@ const { argv } = yargs(hideBin(process.argv)).option('filter', {
   description: 'Filter for specific workspace',
 });
 
-// eslint-disable-next-line
+// eslint-disable-next-line func-style
 async function main() {
   const commandArguments = await argv;
   const isWorkspace = Boolean(commandArguments.filter);
@@ -36,5 +36,5 @@ async function main() {
   consola.info("You're all set!");
 }
 
-// eslint-disable-next-line
+// eslint-disable-next-line unicorn/prefer-top-level-await, @typescript-eslint/no-floating-promises
 main();

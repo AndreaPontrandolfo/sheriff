@@ -16,7 +16,7 @@ export const autoInstallPackages = async (
       return `eslint@${CURRENT_FROZEN_ESLINT_VERSION}`;
     }
 
-    const lastCharacter = packageName.charAt(packageName.length - 1);
+    const lastCharacter = packageName.at(-1);
 
     if (isNumber(lastCharacter)) {
       return packageName;

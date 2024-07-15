@@ -40,7 +40,13 @@ declare module '@regru/eslint-plugin-prefer-early-return' {
 declare module 'eslint-plugin-unicorn' {
   import type { TSESLint } from '@typescript-eslint/utils';
 
-  declare const defaultExport: TSESLint.FlatConfig.Plugin;
+  declare const defaultExport: TSESLint.FlatConfig.Plugin & {
+    configs: {
+      recommended: {
+        rules: TSESLint.FlatConfig.Rules;
+      };
+    };
+  };
 
   export default defaultExport;
 }

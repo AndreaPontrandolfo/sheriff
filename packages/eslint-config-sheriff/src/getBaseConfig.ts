@@ -109,7 +109,10 @@ export const getBaseConfig = (
       name: 'Base Sheriff Config (Unicorn)',
       files: [supportedFileTypes],
       plugins: { unicorn },
-      rules: unicornHandPickedRules,
+      rules: {
+        ...unicorn.configs.recommended.rules,
+        ...unicornHandPickedRules,
+      },
     },
     {
       name: 'Base Sheriff Config (SonarJS)',
