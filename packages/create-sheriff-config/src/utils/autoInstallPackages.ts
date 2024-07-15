@@ -15,6 +15,11 @@ export const autoInstallPackages = async (
       return `eslint@${CURRENT_FROZEN_ESLINT_VERSION}`;
     }
 
+    // packageName already has a version specified
+    if (packageName.includes('@')) {
+      return packageName
+    }
+
     return `${packageName}@latest`;
   });
 
