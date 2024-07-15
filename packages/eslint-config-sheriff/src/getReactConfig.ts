@@ -20,6 +20,7 @@ export const getReactConfig = (
 ): TSESLint.FlatConfig.ConfigArray => {
   return [
     {
+      name: 'Sheriff Config (React base)',
       files: [supportedFileTypes],
       settings: {
         react: {
@@ -28,27 +29,33 @@ export const getReactConfig = (
       },
     },
     {
+      name: 'Sheriff Config (React recommended)',
       files: [supportedFileTypes],
       ...reactRecommended,
     },
     {
+      name: 'Sheriff Config (React handpicked rules)',
       files: [supportedFileTypes],
       rules: reactHandPickedRules,
     },
     {
+      name: 'Sheriff Config (React JSX runtime)',
       files: [supportedFileTypes],
       ...jsxRuntime,
     },
     {
+      name: 'Sheriff Config (React TypeScript)',
       // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
       files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
       languageOptions: getLanguageOptionsTypescriptReact(customTSConfigPath),
     },
     {
+      name: 'Sheriff Config (React TypeScript naming conventions)',
       files: [`**/*{${allJsxExtensions}}`],
       rules: getTsNamingConventionRule({ isTsx: true }),
     },
     {
+      name: 'Sheriff Config (React HMR rules)',
       files: [`**/*{${allJsxExtensions}}`],
       plugins: { 'react-refresh': reactRefresh },
       rules: {
@@ -56,6 +63,7 @@ export const getReactConfig = (
       },
     },
     {
+      name: 'Sheriff Config (React Accessibility)',
       files: [`**/*{${allJsxExtensions}}`],
       plugins: {
         'jsx-a11y': reactAccessibility,
@@ -63,6 +71,7 @@ export const getReactConfig = (
       rules: reactAccessibility.configs.strict.rules,
     },
     {
+      name: 'Sheriff Config (React Hooks)',
       files: [supportedFileTypes],
       plugins: {
         'react-hooks': reactHooks,
@@ -70,10 +79,12 @@ export const getReactConfig = (
       rules: reactHooks.configs.recommended.rules,
     },
     {
+      name: 'Sheriff Config (More React ESLint)',
       files: [supportedFileTypes],
       ...rel1cxReact.configs.off,
     },
     {
+      name: 'Sheriff Config (React hooks)',
       files: [supportedFileTypes],
       rules: {
         '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 2,
@@ -81,6 +92,7 @@ export const getReactConfig = (
       },
     },
     {
+      name: 'Sheriff Config (React event listeners)',
       files: [supportedFileTypes],
       plugins: {
         fsecond,
@@ -91,6 +103,7 @@ export const getReactConfig = (
     },
     // Specific overrides for storybook
     {
+      name: 'Sheriff Config (React Storybook)',
       files: ['**/*.stories.tsx'],
       plugins: { 'react-refresh': reactRefresh },
       rules: {
@@ -99,6 +112,7 @@ export const getReactConfig = (
     },
     // Specific overrides for astro
     {
+      name: 'Sheriff Config (Astro React)',
       files: ['**/*.astro'],
       rules: {
         'react/no-unknown-property': 0,

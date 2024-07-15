@@ -4,6 +4,7 @@ import type { TSESLint } from '@typescript-eslint/utils';
 import { lodashHandPickedRules } from './handpickedRules/lodashHandPickedRules';
 
 export const lodashConfig = {
+  name: 'Lodash Sheriff Config',
   files: [supportedFileTypes],
   plugins: {
     'lodash-f': lodashPlugin,

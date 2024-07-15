@@ -3,6 +3,7 @@ import { supportedFileTypes } from '@sherifforg/constants';
 import type { TSESLint } from '@typescript-eslint/utils';
 
 export const nextjsConfig = {
+  name: 'Sheriff Config (Next.js)',
   files: [supportedFileTypes],
   plugins: {
     '@next/next': nextjs,

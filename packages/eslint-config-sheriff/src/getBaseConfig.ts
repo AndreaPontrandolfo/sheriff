@@ -34,22 +34,27 @@ export const getBaseConfig = (
 
   return tseslint.config(
     {
+      name: 'Base Sheriff Config (ESLint recommended)',
       files: [supportedFileTypes],
       extends: [eslintRecommended.configs.recommended],
     },
     {
+      name: 'Base Sheriff Config (ESLint handpicked rules)',
       files: [supportedFileTypes],
       rules: getBaseEslintHandPickedRules(noRestrictedSyntaxOverride),
     },
     {
+      name: 'Base Sheriff Config (TypeScript base)',
       files: [`**/*{${allJsExtensions}}`],
       languageOptions: getLanguageOptionsTypescript(customTSConfigPath),
     },
     {
+      name: 'Base Sheriff Config (TypeScript ESLint recommended rules)',
       files: [supportedFileTypes],
       extends: tseslint.configs.strictTypeChecked,
     },
     {
+      name: 'Base Sheriff Config (TypeScript ESLint handpicked rules)',
       files: [supportedFileTypes],
       plugins: {
         '@typescript-eslint': tseslint.plugin,
@@ -60,6 +65,7 @@ export const getBaseConfig = (
       },
     },
     {
+      name: 'Base Sheriff Config (TSDoc)',
       files: [supportedFileTypes],
       plugins: {
         tsdoc,
@@ -69,16 +75,19 @@ export const getBaseConfig = (
       },
     },
     {
+      name: 'Base Sheriff Config (Stylistic)',
       files: [supportedFileTypes],
       plugins: { '@stylistic': stylistic },
       rules: stylisticHandPickedRules,
     },
     {
+      name: 'Base Sheriff Config (Functional Programming rules)',
       files: [supportedFileTypes],
       plugins: { fp },
       rules: fpHandPickedRules,
     },
     {
+      name: 'Base Sheriff Config (Return stylistic rules)',
       files: [supportedFileTypes],
       plugins: { '@regru/prefer-early-return': preferEarlyReturn },
       rules: {
@@ -91,11 +100,13 @@ export const getBaseConfig = (
       },
     },
     {
+      name: 'Base Sheriff Config (Unicorn)',
       files: [supportedFileTypes],
       plugins: { unicorn },
       rules: unicornHandPickedRules,
     },
     {
+      name: 'Base Sheriff Config (SonarJS)',
       files: [supportedFileTypes],
       plugins: { sonarjs },
       rules: {
@@ -105,6 +116,7 @@ export const getBaseConfig = (
       },
     },
     {
+      name: 'Base Sheriff Config (Arrow function stylistic rules)',
       files: [supportedFileTypes],
       plugins: { 'arrow-return-style': arrowReturnStyle },
       rules: {
@@ -116,6 +128,7 @@ export const getBaseConfig = (
       },
     },
     {
+      name: 'Base Sheriff Config (Import sorting)',
       files: [supportedFileTypes],
       plugins: {
         'simple-import-sort': simpleImportSort,
@@ -133,6 +146,7 @@ export const getBaseConfig = (
       },
     },
     {
+      name: 'Base Sheriff Config (Import rules)',
       files: [supportedFileTypes],
       plugins: { import: pluginImport },
       rules: importHandPickedRules,
@@ -150,6 +164,7 @@ export const getBaseConfig = (
       },
     },
     {
+      name: 'Base Sheriff Config (Storybook story rules)',
       files: [
         '**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)',
         '**/*.story.@(ts|tsx|js|jsx|mjs|cjs)',
@@ -163,6 +178,7 @@ export const getBaseConfig = (
       },
     },
     {
+      name: 'Base Sheriff Config (Storybook config rules)',
       files: ['**/.storybook/main.@(js|cjs|mjs|ts)'],
       plugins: { storybook },
       rules: storybook.configs.recommended.overrides[1].rules,
@@ -178,17 +194,20 @@ export const getBaseConfig = (
       },
     },
     {
+      name: 'Base Sheriff Config (Prefer destructured optionals)',
       files: [supportedFileTypes],
       plugins: { fsecond },
       rules: { 'fsecond/prefer-destructured-optionals': 2 },
     },
     {
+      name: 'Base Sheriff Config (Allow default exports in config files)',
       files: [`**/*.config.{${allJsExtensions}}`],
       rules: {
         'import/no-default-export': 0,
       },
     },
     {
+      name: 'Base Sheriff Config (Ban unused ESLint disable directives)',
       files: [supportedFileTypes],
       linterOptions: {
         reportUnusedDisableDirectives: 'error',

@@ -4,6 +4,7 @@ import type { TSESLint } from '@typescript-eslint/utils';
 import { playwrightHandPickedRules } from './handpickedRules/playwrightHandPickedRules';
 
 export const playwrightConfig = {
+  name: 'Sheriff Config (Playwright)',
   files: [`**/*{${allJsExtensions}}`],
   plugins: {
     playwright,

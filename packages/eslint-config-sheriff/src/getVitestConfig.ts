@@ -7,6 +7,7 @@ export const getVitestConfig = (
   pathsOverrides?: string[],
 ): TSESLint.FlatConfig.Config => {
   return {
+    name: 'Sheriff Config (Vitest)',
     files: pathsOverrides ?? [
       `**/*.{test,spec}.{${allJsExtensions}}`,
       `**/tests/**/*.{${allJsExtensions}}`,

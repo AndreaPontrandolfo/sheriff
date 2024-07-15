@@ -9,6 +9,7 @@ export const getAstroConfig = (
     ...astro.configs.recommended,
     ...(hasReact ? astro.configs['jsx-a11y-strict'] : []),
     {
+      name: 'Sheriff Config (Astro)',
       files: ['**/*.astro'],
       languageOptions: {
         parserOptions: {
