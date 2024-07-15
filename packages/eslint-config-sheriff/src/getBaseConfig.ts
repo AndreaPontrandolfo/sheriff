@@ -15,6 +15,7 @@ import { allJsExtensions, supportedFileTypes } from '@sherifforg/constants';
 import type { SheriffSettings } from '@sherifforg/types';
 import stylistic from '@stylistic/eslint-plugin';
 import type { FlatConfig } from '@typescript-eslint/utils/ts-eslint';
+import { deprecatedRecommendedOverrides } from './deprecatedOverrides';
 import { fpHandPickedRules } from './handpickedRules/fpHandPickedRules';
 import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
 import { importHandPickedRules } from './handpickedRules/importHandPickedRules';
@@ -42,6 +43,11 @@ export const getBaseConfig = (
       name: 'Base Sheriff Config (ESLint handpicked rules)',
       files: [supportedFileTypes],
       rules: getBaseEslintHandPickedRules(noRestrictedSyntaxOverride),
+    },
+    {
+      name: 'Base Sheriff Config (Disable ESLint deprecated rules)',
+      files: [supportedFileTypes],
+      rules: deprecatedRecommendedOverrides,
     },
     {
       name: 'Base Sheriff Config (TypeScript base)',
