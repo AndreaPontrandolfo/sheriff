@@ -11,13 +11,8 @@ export const autoInstallPackages = async (
   selectedProject: string | null,
 ): Promise<void> => {
   const packagesLatestVersions = packages.map((packageName) => {
-    if (packageName === 'eslint') {
-      return `eslint@${CURRENT_FROZEN_ESLINT_VERSION}`;
-    }
-
-    // packageName already has a version specified
-    if (packageName.includes('@')) {
-      return packageName
+    if (packageName.includes(`@${CURRENT_FROZEN_ESLINT_VERSION}`)) {
+      return packageName;
     }
 
     return `${packageName}@latest`;
