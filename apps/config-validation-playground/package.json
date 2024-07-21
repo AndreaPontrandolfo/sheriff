@@ -8,7 +8,7 @@
     "validate-config": "eslint . --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache"
   },
   "dependencies": {
-    "astro": "^4.0.8",
+    "astro": "^4.11.5",
     "lodash": "^4.17.21",
     "next": "^14.0.4",
     "playwright": "^1.40.1",

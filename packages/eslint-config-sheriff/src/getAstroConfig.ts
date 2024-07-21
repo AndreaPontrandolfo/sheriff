@@ -1,30 +1,38 @@
 import astro from 'eslint-plugin-astro';
-import astroParser from 'astro-eslint-parser';
 
 export const getAstroConfig = (
   hasReact: boolean,
   customTSConfigPath: string | string[] | undefined,
 ) => {
-  return {
-    files: ['**/*.astro'],
-    plugins: {
-      astro,
-    },
-    languageOptions: {
-      parser: astroParser,
-      parserOptions: {
-        parser: '@typescript-eslint/parser',
-        project: customTSConfigPath || true,
-        extraFileExtensions: ['.astro'],
+  return [
+    ...astro.configs.recommended,
+    ...(hasReact ? astro.configs['jsx-a11y-strict'] : []),
+    {
+      files: ['**/*.astro'],
+      languageOptions: {
+        parserOptions: {
+          project: customTSConfigPath || true,
+        },
+      },
+      settings: {
+        'import/core-modules': [
+          'astro:actions',
+          'astro:assets',
+          'astro:db',
+          'astro:content',
+          'astro:container',
+          'astro:env',
+          'astro:i18n',
+          'astro:middleware',
+          'astro:transitions',
+          'astro:transitions/client',
+        ],
+        'import/parsers': {
+          'astro-eslint-parser': ['.astro'],
+          '@typescript-eslint/parser': ['.ts', '.tsx'],
+          espree: ['.js'],
+        },
       },
     },
-    processor: 'astro/client-side-ts',
-    rules: {
-      ...astro.configs.recommended.rules,
-      // @ts-expect-error - eslint-plugin-astro typings are wrong
-      ...(hasReact ? astro.configs['jsx-a11y-recommended'].rules : {}),
-      'astro/valid-compile': 0,
-      'astro/semi': 0,
-    },
-  };
+  ];
 };

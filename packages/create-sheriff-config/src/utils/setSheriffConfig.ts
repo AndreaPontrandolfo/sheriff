@@ -1,12 +1,13 @@
 import { highlight } from 'cli-highlight';
 import { consola } from 'consola';
 import { sheriffStartingOptions } from '@sherifforg/constants';
+import type { SheriffConfigurablePlugins } from '@sherifforg/types';
 import { getPackageJsonContents } from './getPackageJsonContents';
 import { throwError } from './throwError';
 
 export const setSheriffConfig = async (
   customProjectRootPath: string | null,
-): Promise<typeof sheriffStartingOptions> => {
+): Promise<SheriffConfigurablePlugins> => {
   const finalPluginsConfigurationSetup = sheriffStartingOptions;
   const root = await getPackageJsonContents(customProjectRootPath);
 
@@ -46,6 +47,13 @@ export const setSheriffConfig = async (
       "'Next' package found in the project. Setting up support for it...",
     );
     finalPluginsConfigurationSetup.next = true;
+  }
+
+  if (userProjectDependencies.astro) {
+    consola.start(
+      "'Astro' package found in the project. Setting up support for it...",
+    );
+    finalPluginsConfigurationSetup.astro = true;
   }
 
   if (userProjectDependencies.lodash || userProjectDependencies['lodash-es']) {

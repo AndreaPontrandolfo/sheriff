@@ -38,10 +38,18 @@ For [Astro](https://astro.build/) projects, add the astro extension too:
 
 ## Avoid "source.organizeImports"
 
-Sheriff already handle imports sorting, so you have to disable thew VSCode automatic import sorting feature to avoid conflicts:
+Sheriff already handles imports sorting, so if you happen to have enabled the VSCode automatic import sorting feature, you should disable it to avoid conflicts:
 
 ```JSONC title=".vscode/settings.json"
 "editor.codeActionsOnSave": {
-    "source.organizeImports": false
+    "source.organizeImports": "never"
+}
+```
+
+If you wish, you can automatically fix some ESLint violations on save, including sorting imports:
+
+```JSONC title=".vscode/settings.json"
+"editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
 }
 ```

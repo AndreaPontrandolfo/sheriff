@@ -57,7 +57,7 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
       plugins: {
         'jsx-a11y': reactAccessibility,
       },
-      rules: reactAccessibility.configs.recommended.rules,
+      rules: reactAccessibility.configs.strict.rules,
     },
     {
       files: [supportedFileTypes],
