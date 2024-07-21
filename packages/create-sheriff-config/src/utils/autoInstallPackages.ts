@@ -1,5 +1,6 @@
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
+import { isNumber } from 'lodash-es';
 import { addDependency, detectPackageManager } from 'nypm';
 import { CURRENT_FROZEN_ESLINT_VERSION } from '@sherifforg/constants';
 import { getInstallationCommand } from './getInstallationCommand';
@@ -13,6 +14,12 @@ export const autoInstallPackages = async (
   const packagesLatestVersions = packages.map((packageName) => {
     if (packageName === 'eslint') {
       return `eslint@${CURRENT_FROZEN_ESLINT_VERSION}`;
+    }
+
+    const lastCharacter = packageName.charAt(packageName.length - 1);
+
+    if (isNumber(lastCharacter)) {
+      return packageName;
     }
 
     return `${packageName}@latest`;
