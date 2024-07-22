@@ -1,4 +1,4 @@
-/* eslint-disable */
+/* eslint-disable @typescript-eslint/restrict-template-expressions, playwright/no-conditional-in-test, playwright/require-top-level-describe, vitest/expect-expect, vitest/no-conditional-in-test, vitest/require-top-level-describe */
 import { test } from 'vitest';
 
 // Test case 1
@@ -11,7 +11,7 @@ test('addition', () => {
 });
 
 // Test case 2
-test('substraction', () => {
+test('subtraction', () => {
   const result = 5 - 2;
 
   if (result !== 3) {

@@ -1,13 +1,15 @@
 import astro from 'eslint-plugin-astro';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 export const getAstroConfig = (
   hasReact: boolean,
   customTSConfigPath: string | string[] | undefined,
-) => {
+): TSESLint.FlatConfig.ConfigArray => {
   return [
     ...astro.configs.recommended,
     ...(hasReact ? astro.configs['jsx-a11y-strict'] : []),
     {
+      name: 'Sheriff Config (Astro)',
       files: ['**/*.astro'],
       languageOptions: {
         parserOptions: {

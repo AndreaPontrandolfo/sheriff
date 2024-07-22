@@ -1,3 +1,5 @@
+import type { TSESLint } from '@typescript-eslint/utils';
+
 export const playwrightHandPickedRules = {
   'playwright/no-force-option': 0,
   'playwright/prefer-lowercase-title': 2,
@@ -5,4 +7,4 @@ export const playwrightHandPickedRules = {
   'playwright/require-top-level-describe': 2,
   'playwright/prefer-to-be': 2,
   'playwright/prefer-strict-equal': 2,
-};
+} as const satisfies TSESLint.FlatConfig.Rules;

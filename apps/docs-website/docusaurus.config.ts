@@ -2,6 +2,7 @@ import { version } from 'eslint-config-sheriff/package.json';
 import { themes } from 'prism-react-renderer';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 import type * as Preset from '@docusaurus/preset-classic';
+import remarkPluginNpm2Yarn from '@docusaurus/remark-plugin-npm2yarn'; // eslint-disable-line import/no-named-as-default
 import type { Config } from '@docusaurus/types';
 
 const lightCodeTheme = themes.github;
@@ -9,7 +10,7 @@ const darkCodeTheme = themes.dracula;
 
 const currentYear = new Date().getFullYear();
 
-const config: Config = {
+const config = {
   title: 'Sheriff',
   tagline:
     'A comprehensive and opinionated Typescript-first ESLint configuration.',
@@ -42,19 +43,15 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
-          ],
+          sidebarPath: './sidebars.ts',
+          remarkPlugins: [[remarkPluginNpm2Yarn, { sync: true }]],
         },
         blog: {
           showReadingTime: true,
-          remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
-          ],
+          remarkPlugins: [[remarkPluginNpm2Yarn, { sync: true }]],
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
@@ -143,6 +140,6 @@ const config: Config = {
       headingIds: true,
     },
   },
-};
+} satisfies Config;
 
 export default config;

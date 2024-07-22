@@ -1,8 +1,10 @@
 import playwright from 'eslint-plugin-playwright';
 import { allJsExtensions } from '@sherifforg/constants';
+import type { TSESLint } from '@typescript-eslint/utils';
 import { playwrightHandPickedRules } from './handpickedRules/playwrightHandPickedRules';
 
 export const playwrightConfig = {
+  name: 'Sheriff Config (Playwright)',
   files: [`**/*{${allJsExtensions}}`],
   plugins: {
     playwright,
@@ -11,4 +13,4 @@ export const playwrightConfig = {
     ...playwright.configs['playwright-test'].rules,
     ...playwrightHandPickedRules,
   },
-};
+} as const satisfies TSESLint.FlatConfig.Config;

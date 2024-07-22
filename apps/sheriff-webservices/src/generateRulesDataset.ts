@@ -144,11 +144,11 @@ const getCompiledConfig = (
     return atomRemappedRecords;
   });
 
-  const declaredRules = compiledConfig.map((rule) => rule.ruleName);
+  const declaredRules = new Set(compiledConfig.map((rule) => rule.ruleName));
 
   if (allRulesRaw) {
     for (const [ruleName, ruleOptions] of Object.entries(allRulesRaw)) {
-      if (!declaredRules.includes(ruleName)) {
+      if (!declaredRules.has(ruleName)) {
         const parentPluginName = getParentPluginName(ruleName);
 
         const ruleRecord: Entry = {
