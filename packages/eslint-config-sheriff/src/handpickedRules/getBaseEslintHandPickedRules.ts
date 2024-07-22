@@ -1,10 +1,14 @@
-import type { NoRestrictedSyntaxOverride } from '@sherifforg/types';
 import { baseNoRestrictedSyntaxRules } from '@sherifforg/constants';
+import type { NoRestrictedSyntaxOverride } from '@sherifforg/types';
+import type { TSESLint } from '@typescript-eslint/utils';
 import { getFilteredBaseNoRestrictedSyntax } from '../utils/getFilteredBaseNoRestrictedSyntax';
+
+const isFiniteMessage = 'Please use Number.isFinite instead';
+const isNaNMessage = 'Please use Number.isNaN instead';
 
 export const getBaseEslintHandPickedRules = (
   noRestrictedSyntaxOverride?: NoRestrictedSyntaxOverride,
-) => {
+): TSESLint.FlatConfig.Rules => {
   return {
     'func-style': 2,
     'no-promise-executor-return': 2,
@@ -24,32 +28,32 @@ export const getBaseEslintHandPickedRules = (
       {
         object: 'global',
         property: 'isFinite',
-        message: 'Please use Number.isFinite instead',
+        message: isFiniteMessage,
       },
       {
         object: 'self',
         property: 'isFinite',
-        message: 'Please use Number.isFinite instead',
+        message: isFiniteMessage,
       },
       {
         object: 'window',
         property: 'isFinite',
-        message: 'Please use Number.isFinite instead',
+        message: isFiniteMessage,
       },
       {
         object: 'global',
         property: 'isNaN',
-        message: 'Please use Number.isNaN instead',
+        message: isNaNMessage,
       },
       {
         object: 'self',
         property: 'isNaN',
-        message: 'Please use Number.isNaN instead',
+        message: isNaNMessage,
       },
       {
         object: 'window',
         property: 'isNaN',
-        message: 'Please use Number.isNaN instead',
+        message: isNaNMessage,
       },
     ],
     strict: [2, 'never'],
@@ -104,9 +108,7 @@ export const getBaseEslintHandPickedRules = (
         baseNoRestrictedSyntaxRules,
         noRestrictedSyntaxOverride?.allows,
       ),
-      ...(noRestrictedSyntaxOverride?.adjuncts
-        ? noRestrictedSyntaxOverride.adjuncts
-        : []),
+      ...(noRestrictedSyntaxOverride?.adjuncts ?? []),
     ],
     'no-return-await': 0,
     'no-use-before-define': 0, // we are using the @typescript/eslint version

@@ -1,30 +1,28 @@
-import eslintConfigPrettier from 'eslint-config-prettier';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
-import lodash from 'lodash';
+import eslintConfigPrettier from 'eslint-config-prettier';
 import type { FlatESLintConfig } from 'eslint-define-config';
-import { SheriffSettings } from '@sherifforg/types';
+import { isBoolean, isEmpty } from 'lodash';
 import { ignores, sheriffStartingOptions } from '@sherifforg/constants';
-import { getReactConfig } from './getReactConfig';
-import { getBaseConfig } from './getBaseConfig';
-import { nextjsConfig } from './nextjsConfig';
+import type { SheriffSettings } from '@sherifforg/types';
+import type { TSESLint } from '@typescript-eslint/utils';
 import { getAstroConfig } from './getAstroConfig';
-import { playwrightConfig } from './playwrightConfig';
-import { lodashConfig } from './lodashConfig';
+import { getBaseConfig } from './getBaseConfig';
 import { getJestConfig } from './getJestConfig';
+import { getReactConfig } from './getReactConfig';
 import { getVitestConfig } from './getVitestConfig';
+import { lodashConfig } from './lodashConfig';
+import { nextjsConfig } from './nextjsConfig';
+import { playwrightConfig } from './playwrightConfig';
 import { prettierOverrides } from './prettierOverrides';
-import { type TSESLint } from '@typescript-eslint/utils';
 
 export const getExportableConfig = (
   userConfigChoices: SheriffSettings = sheriffStartingOptions,
   areAllRulesForced?: boolean,
 ): FlatESLintConfig[] => {
-  let exportableConfig: TSESLint.FlatConfig.ConfigArray = [
-    ...getBaseConfig(userConfigChoices),
-  ];
+  let exportableConfig: TSESLint.FlatConfig.ConfigArray =
+    getBaseConfig(userConfigChoices);
 
   if (userConfigChoices.react || userConfigChoices.next) {
-    // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
     exportableConfig.push(
       ...getReactConfig(userConfigChoices.pathsOverrides?.tsconfigLocation),
     );
@@ -48,7 +46,6 @@ export const getExportableConfig = (
 
   if (userConfigChoices.vitest) {
     exportableConfig.push(
-      //@ts-expect-error
       getVitestConfig(userConfigChoices.pathsOverrides?.tests),
     );
   }
@@ -73,9 +70,7 @@ export const getExportableConfig = (
     exportableConfig.push(playwrightConfig);
   }
 
-  exportableConfig.push(eslintConfigPrettier);
-  //@ts-expect-error
-  exportableConfig.push(prettierOverrides);
+  exportableConfig.push(eslintConfigPrettier, prettierOverrides);
 
   if (userConfigChoices.files) {
     const allowedPatterns = userConfigChoices.files.map(
@@ -83,7 +78,7 @@ export const getExportableConfig = (
     );
 
     exportableConfig = exportableConfig.map((configSlice) => {
-      if (configSlice.ignores?.length && configSlice.ignores.length > 0) {
+      if (configSlice.ignores?.length && !isEmpty(configSlice.ignores)) {
         return configSlice;
       }
 
@@ -94,16 +89,16 @@ export const getExportableConfig = (
     });
   }
 
-  const hasIgnoresRecommended = lodash.isBoolean(
+  const hasIgnoresRecommended = isBoolean(
     userConfigChoices.ignores?.recommended,
   )
-    ? userConfigChoices.ignores?.recommended
+    ? userConfigChoices.ignores.recommended
     : true;
 
-  const hasIgnoresInheritedFromGitignore = lodash.isBoolean(
+  const hasIgnoresInheritedFromGitignore = isBoolean(
     userConfigChoices.ignores?.inheritedFromGitignore,
   )
-    ? userConfigChoices.ignores?.inheritedFromGitignore
+    ? userConfigChoices.ignores.inheritedFromGitignore
     : true;
 
   exportableConfig.push({

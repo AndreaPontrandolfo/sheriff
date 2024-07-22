@@ -1,10 +1,12 @@
+import type { TSESLint } from '@typescript-eslint/utils';
+
 interface GetTsNamingConventionRuleOptions {
   isTsx: boolean;
 }
 
 export const getTsNamingConventionRule = ({
   isTsx,
-}: GetTsNamingConventionRuleOptions) => {
+}: GetTsNamingConventionRuleOptions): TSESLint.FlatConfig.Rules => {
   return {
     '@typescript-eslint/naming-convention': [
       2,

@@ -1,8 +1,9 @@
 import jest from 'eslint-plugin-jest';
 import { allJsExtensions } from '@sherifforg/constants';
+import type { FlatConfig } from '@typescript-eslint/utils/ts-eslint';
 import { jestHandPickedRules } from './handpickedRules/jestHandPickedRules';
 
-export const getJestConfig = (pathsOverrides?: string[]) => {
+export const getJestConfig = (pathsOverrides?: string[]): FlatConfig.Config => {
   return {
     files: pathsOverrides ?? [
       `**/*.{test,spec}.{${allJsExtensions}}`,

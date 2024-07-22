@@ -1,19 +1,16 @@
-import { NoRestrictedSyntaxSlice } from '@sherifforg/types';
+import type { NoRestrictedSyntaxSlice } from '@sherifforg/types';
 
 export const getFilteredBaseNoRestrictedSyntax = (
   baseNoRestrictedSyntaxRules: NoRestrictedSyntaxSlice[],
   userProvidedNoRestrictedSyntaxSelectors?: string[],
-) => {
-  if (
-    !userProvidedNoRestrictedSyntaxSelectors ||
-    userProvidedNoRestrictedSyntaxSelectors.length === 0
-  ) {
+): NoRestrictedSyntaxSlice[] => {
+  if (!userProvidedNoRestrictedSyntaxSelectors) {
     return baseNoRestrictedSyntaxRules;
   }
 
-  const filteredList = baseNoRestrictedSyntaxRules.filter((rule) => {
-    return !userProvidedNoRestrictedSyntaxSelectors.includes(rule.selector);
-  });
+  const filteredList = baseNoRestrictedSyntaxRules.filter(
+    (rule) => !userProvidedNoRestrictedSyntaxSelectors.includes(rule.selector),
+  );
 
   return filteredList;
 };

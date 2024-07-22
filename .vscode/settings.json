@@ -1,8 +1,8 @@
 {
   "eslint.workingDirectories": [
     "./packages/create-sheriff-config",
+    "./packages/eslint-config-sheriff",
     "./packages/sheriff-utils",
-    "./packages/sheriff-types",
     "./apps/docs-website",
     "./apps/sheriff-webservices",
     "./apps/config-validation-playground"

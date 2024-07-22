@@ -1,31 +1,34 @@
-import eslintRecommended from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import unicorn from 'eslint-plugin-unicorn';
-import sonarjs from 'eslint-plugin-sonarjs';
-import jsdoc from 'eslint-plugin-jsdoc';
-import pluginImport from 'eslint-plugin-import';
-import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import fp from 'eslint-plugin-fp';
-import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
-import tsdoc from 'eslint-plugin-tsdoc';
-import storybook from 'eslint-plugin-storybook';
-import fsecond from 'eslint-plugin-fsecond';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
+import fp from 'eslint-plugin-fp';
+import fsecond from 'eslint-plugin-fsecond';
+import pluginImport from 'eslint-plugin-import';
+import jsdoc from 'eslint-plugin-jsdoc'; // eslint-disable-line import/no-named-as-default
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import sonarjs from 'eslint-plugin-sonarjs';
+import storybook from 'eslint-plugin-storybook';
+import tsdoc from 'eslint-plugin-tsdoc';
+import unicorn from 'eslint-plugin-unicorn';
+import tseslint from 'typescript-eslint';
+import eslintRecommended from '@eslint/js';
+import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
+import { allJsExtensions, supportedFileTypes } from '@sherifforg/constants';
+import type { SheriffSettings } from '@sherifforg/types';
 import stylistic from '@stylistic/eslint-plugin';
-import { supportedFileTypes, allJsExtensions } from '@sherifforg/constants';
-import { SheriffSettings } from '@sherifforg/types';
+import type { FlatConfig } from '@typescript-eslint/utils/ts-eslint';
 import { fpHandPickedRules } from './handpickedRules/fpHandPickedRules';
-import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
+import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
 import { importHandPickedRules } from './handpickedRules/importHandPickedRules';
 import { jsdocHandPickedRules } from './handpickedRules/jsdocHandPickedRules';
 import { sonarjsHandPickedRules } from './handpickedRules/sonarjsHandPickedRules';
 import { stylisticHandPickedRules } from './handpickedRules/stylisticHandPickedRules';
 import { typescriptHandPickedRules } from './handpickedRules/typescriptHandPickedRules';
 import { unicornHandPickedRules } from './handpickedRules/unicornHandPickedRules';
-import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
 import { getLanguageOptionsTypescript } from './utils/getLanguageOptionsTypescript';
+import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 
-export const getBaseConfig = (userConfigChoices: SheriffSettings) => {
+export const getBaseConfig = (
+  userConfigChoices: SheriffSettings,
+): FlatConfig.ConfigArray => {
   const customTSConfigPath = userConfigChoices.pathsOverrides?.tsconfigLocation;
   const { noRestrictedSyntaxOverride } = userConfigChoices;
 
@@ -36,7 +39,6 @@ export const getBaseConfig = (userConfigChoices: SheriffSettings) => {
     },
     {
       files: [supportedFileTypes],
-      // @ts-expect-error
       rules: getBaseEslintHandPickedRules(noRestrictedSyntaxOverride),
     },
     {
@@ -97,6 +99,7 @@ export const getBaseConfig = (userConfigChoices: SheriffSettings) => {
       files: [supportedFileTypes],
       plugins: { sonarjs },
       rules: {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- Still has eslintrc types.
         ...sonarjs.configs.recommended.rules,
         ...sonarjsHandPickedRules,
       },

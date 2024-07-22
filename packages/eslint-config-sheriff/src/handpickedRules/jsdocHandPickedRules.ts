@@ -1,3 +1,5 @@
+import type { TSESLint } from '@typescript-eslint/utils';
+
 export const jsdocHandPickedRules = {
   'jsdoc/require-description': 2,
   'jsdoc/require-description-complete-sentence': 2,
@@ -18,4 +20,4 @@ export const jsdocHandPickedRules = {
   ],
   'jsdoc/sort-tags': 2,
   'jsdoc/tag-lines': [2, 'any', { startLines: 1 }],
-};
+} as const satisfies TSESLint.FlatConfig.Rules;
