@@ -24,9 +24,9 @@
   },
   "devDependencies": {
     "@sherifforg/types": "workspace:*",
-    "publint": "^0.2.7",
+    "publint": "^0.2.8",
     "tsconfig": "workspace:*",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.3"
   },
   "dependencies": {
     "tsup": "^6.2.3"

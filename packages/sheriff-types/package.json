@@ -23,11 +23,11 @@
     "publint": "publint"
   },
   "devDependencies": {
-    "@types/node": "^20.10.6",
-    "publint": "^0.2.7",
+    "@types/node": "^20.14.10",
+    "publint": "^0.2.8",
     "tsconfig": "workspace:*",
-    "type-fest": "^4.9.0",
-    "typescript": "^5.4.5"
+    "type-fest": "^4.21.0",
+    "typescript": "^5.5.3"
   },
   "repository": {
     "type": "git",

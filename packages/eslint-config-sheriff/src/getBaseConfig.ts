@@ -1,4 +1,5 @@
 import eslintRecommended from '@eslint/js';
+import type { TSESLint } from '@typescript-eslint/utils';
 import tseslint from 'typescript-eslint';
 import unicorn from 'eslint-plugin-unicorn';
 import sonarjs from 'eslint-plugin-sonarjs';
@@ -25,7 +26,9 @@ import { unicornHandPickedRules } from './handpickedRules/unicornHandPickedRules
 import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
 import { getLanguageOptionsTypescript } from './utils/getLanguageOptionsTypescript';
 
-export const getBaseConfig = (userConfigChoices: SheriffSettings) => {
+export const getBaseConfig = (
+  userConfigChoices: SheriffSettings,
+): TSESLint.FlatConfig.ConfigArray => {
   const customTSConfigPath = userConfigChoices.pathsOverrides?.tsconfigLocation;
   const { noRestrictedSyntaxOverride } = userConfigChoices;
 

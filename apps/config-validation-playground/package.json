@@ -8,23 +8,23 @@
     "validate-config": "eslint . --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache"
   },
   "dependencies": {
-    "astro": "^4.11.5",
+    "astro": "^4.12.2",
     "lodash": "^4.17.21",
-    "next": "^14.0.4",
-    "playwright": "^1.40.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "vitest": "^1.1.0"
+    "next": "^14.2.5",
+    "playwright": "^1.45.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vitest": "^2.0.3"
   },
   "devDependencies": {
-    "@storybook/react": "^7.6.6",
-    "@types/node": "^20.10.6",
-    "@types/react": "^18.2.37",
+    "@storybook/react": "^7.6.20",
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
     "@types/react-dom": "^18.2.15",
     "eslint": "^8.57.0",
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^2.1.0",
     "tsconfig": "workspace:*",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.3"
   }
 }

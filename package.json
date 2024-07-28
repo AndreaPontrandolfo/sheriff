@@ -16,7 +16,8 @@
     "typesync": "turbo run typesync",
     "knip": "knip",
     "validate-config": "turbo run validate-config",
-    "merge-checks": "turbo run publint manypkg typesync knip typecheck lint validate-config",
+    "merge-checks": "turbo run publint manypkg typesync knip typecheck lint validate-config check-deduped-deps",
+    "check-deduped-deps": "pnpm dedupe --check",
     "clean": "turbo run clean",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",
     "nuke": "pnpm clean && pnpm delete-node-modules",
@@ -26,14 +27,14 @@
     "release": "turbo build --filter='./packages/*' && changeset publish"
   },
   "dependencies": {
-    "@changesets/cli": "^2.26.2",
-    "@manypkg/cli": "^0.21.3",
-    "@turbo/gen": "^1.9.7",
+    "@changesets/cli": "^2.27.7",
+    "@manypkg/cli": "^0.21.4",
+    "@turbo/gen": "^2.0.9",
     "create-sheriff-config": "workspace:*",
-    "knip": "^5.17.3",
-    "prettier": "^3.1.1",
-    "turbo": "^1.13.0",
-    "typesync": "^0.12.0"
+    "knip": "^5.25.1",
+    "prettier": "^3.3.2",
+    "turbo": "^2.0.9",
+    "typesync": "^0.12.2"
   },
   "packageManager": "pnpm@8.14.0",
   "engines": {
