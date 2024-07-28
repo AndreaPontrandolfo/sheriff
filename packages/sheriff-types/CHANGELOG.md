@@ -1,5 +1,15 @@
 # @sherifforg/types
 
+## 4.0.0
+
+### Major Changes
+
+- 1859c47: fix!: typo in config
+
+### Patch Changes
+
+- aa57685: feat!: make astro support optional
+
 ## 3.1.2
 
 ### Patch Changes

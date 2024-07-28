@@ -1,5 +1,11 @@
 # create-sheriff-config
 
+## 5.2.1
+
+### Patch Changes
+
+- a8863d8: fix bug with auto install packages to ensure the correct version is installed
+
 ## 5.2.0
 
 ### Minor Changes
