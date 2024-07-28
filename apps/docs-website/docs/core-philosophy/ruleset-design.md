@@ -5,7 +5,9 @@ description: 📐 What opinions should you expect from Sheriff
 
 # Ruleset design
 
-Sheriff don’t offer a “recommended” or “strict” config. This config is a predefined set of rules meant to act as guidelines for a functional-light programming style.
+Sheriff don’t offer a “recommended” or “strict” config. This config is a predefined set of rules meant to act as guidelines for a functional-light programming style.<br />
+
+Sheriff tries to be as faithful to Javascript as possible and conceives Typescript as a tool to enhance the capabilities that Javascript already has. Becuase of this, Sheriff discourages typescript-only features, like enums and overloads (and classes, and decorators by extensions, even though they also landed in Ecmascript).
 
 If you just don’t like some rules you can disable them on a case-by-case basis.<br />
 If you want to adopt a more OOP programming style, or if you feel like the config is too strict, you can disable everything that bothers you.
