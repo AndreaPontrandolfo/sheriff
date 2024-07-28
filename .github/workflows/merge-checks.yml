@@ -3,7 +3,10 @@ name: Merge Checks
 on:
   pull_request:
     types:
+      - opened
+      - reopened
       - synchronize
+      - ready_for_review
 
 jobs:
   merge-checks:
@@ -14,8 +17,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Launch Turborepo Remote Caching
-        uses: dtinth/setup-github-actions-caching-for-turbo@v1
       - name: Pnpm Setup
         uses: pnpm/action-setup@v3
       - name: Setup Node.js
@@ -24,5 +25,7 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
+      - name: Launch Turborepo Remote Caching
+        uses: rharkor/caching-for-turbo@v1.5
       - name: Run qa checks
         run: pnpm merge-checks

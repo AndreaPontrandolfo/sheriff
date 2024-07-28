@@ -1,7 +1,7 @@
 {
   "name": "@sherifforg/types",
   "description": "Sheriff types.",
-  "version": "3.1.2",
+  "version": "4.0.0",
   "license": "MIT",
   "type": "module",
   "files": [

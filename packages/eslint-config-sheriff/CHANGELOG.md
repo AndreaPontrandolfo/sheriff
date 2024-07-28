@@ -1,5 +1,16 @@
 # eslint-config-sheriff
 
+## 19.0.0
+
+### Major Changes
+
+- aa57685: feat!: make astro support optional
+- 1859c47: fix!: typo in config
+
+### Minor Changes
+
+- 0fd4217: feat: allow zero-config sheriff
+
 ## 18.7.0
 
 ### Minor Changes
