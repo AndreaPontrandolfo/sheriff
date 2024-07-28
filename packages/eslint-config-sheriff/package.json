@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-sheriff",
-  "version": "18.7.0",
+  "version": "19.0.0",
   "description": "A comprehensive and opinionated Typescript-first ESLint configuration.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

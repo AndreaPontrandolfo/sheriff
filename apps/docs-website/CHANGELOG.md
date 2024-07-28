@@ -1,5 +1,16 @@
 # docs-website
 
+## 2.3.1
+
+### Patch Changes
+
+- 37bb057: docs(website): updated philosophy
+  ci(qa): fixes turbo caching in gh actions
+  ci(qa): add more context to qa action
+- 1859c47: fix!: typo in config
+- Updated dependencies [aa57685]
+  - @sherifforg/constants@0.0.2
+
 ## 2.3.0
 
 ### Minor Changes
