@@ -1,6 +1,5 @@
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import astro from 'eslint-plugin-astro';
-import fp from 'eslint-plugin-fp';
 import fsecond from 'eslint-plugin-fsecond';
 import pluginImport from 'eslint-plugin-import';
 import jest from 'eslint-plugin-jest';
@@ -60,7 +59,6 @@ export const getAllRules = (
     ...prependRulesWithPluginName(sonarjs.rules, 'sonarjs'),
     ...prependRulesWithPluginName(jsdoc.rules, 'jsdoc'),
     ...prependRulesWithPluginName((tsdoc as unknown as Plugin).rules, 'tsdoc'),
-    ...prependRulesWithPluginName(fp.rules, 'fp'),
     ...prependRulesWithPluginName(
       preferEarlyReturn.rules,
       '@regru/prefer-early-return',
