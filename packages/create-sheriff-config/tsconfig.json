@@ -1,12 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "include": ["src"],
-  "exclude": ["dist", "build", "node_modules"],
   "extends": "tsconfig/base.json",
   "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023"],
     "module": "ESNext",
-    "moduleResolution": "node",
-    "incremental": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json"
+    "moduleResolution": "Bundler"
   }
 }

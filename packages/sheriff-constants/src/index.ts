@@ -1,6 +1,6 @@
-import { SheriffConfigurablePlugins } from '@sherifforg/types';
+import type { SheriffConfigurablePlugins } from '@sherifforg/types';
 
-export const sheriffStartingOptions: SheriffConfigurablePlugins = {
+export const sheriffStartingOptions = {
   react: false,
   lodash: false,
   next: false,
@@ -8,7 +8,7 @@ export const sheriffStartingOptions: SheriffConfigurablePlugins = {
   playwright: false,
   jest: false,
   vitest: false,
-} as const;
+} as const satisfies SheriffConfigurablePlugins;
 
 export const configCombinationDefaultValues = {
   react: true,
@@ -18,7 +18,7 @@ export const configCombinationDefaultValues = {
   playwright: true,
   jest: false,
   vitest: true,
-} as const;
+} as const satisfies SheriffConfigurablePlugins;
 
 export const allJsExtensions = 'js,mjs,cjs,ts,mts,cts';
 

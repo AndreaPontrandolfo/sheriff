@@ -1,21 +1,25 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Default",
-  "include": ["src"],
-  "exclude": ["dist", "build", "node_modules"],
+  "include": ["${configDir}/src"],
+  "exclude": [
+    "${configDir}/dist",
+    "${configDir}/build",
+    "${configDir}/node_modules"
+  ],
   "compilerOptions": {
     "composite": false,
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
     "allowJs": false,
     "isolatedModules": true,
+    "verbatimModuleSyntax": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "strict": true,
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "incremental": true,
+    "tsBuildInfoFile": "${configDir}/node_modules/.cache/tsbuildinfo.json"
   }
 }

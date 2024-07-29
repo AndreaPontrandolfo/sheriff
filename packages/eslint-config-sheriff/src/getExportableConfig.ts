@@ -2,7 +2,7 @@ import eslintConfigPrettier from 'eslint-config-prettier';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
 import type { FlatESLintConfig } from 'eslint-define-config';
-import { SheriffSettings } from '@sherifforg/types';
+import type { SheriffSettings } from '@sherifforg/types';
 import { ignores, sheriffStartingOptions } from '@sherifforg/constants';
 import { getReactConfig } from './getReactConfig';
 import { getBaseConfig } from './getBaseConfig';
@@ -13,7 +13,7 @@ import { lodashConfig } from './lodashConfig';
 import { getJestConfig } from './getJestConfig';
 import { getVitestConfig } from './getVitestConfig';
 import { prettierOverrides } from './prettierOverrides';
-import { type TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 export const getExportableConfig = (
   userConfigChoices: SheriffSettings = sheriffStartingOptions,

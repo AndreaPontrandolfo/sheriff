@@ -5,27 +5,29 @@
   "license": "MIT",
   "type": "module",
   "files": [
-    "src"
+    "dist"
   ],
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
-  "module": "./src/index.ts",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "import": "./src/index.ts",
-      "require": "./src/index.ts"
+      "import": {
+        "types": "./dist/index.d.ts"
+      },
+      "require": {
+        "types": "./dist/index.d.cts"
+      }
     }
   },
   "scripts": {
     "clean": "rm -rf .turbo dist",
     "typecheck": "tsc --noEmit",
-    "publint": "publint"
+    "publint": "publint",
+    "build": "tsup"
   },
   "devDependencies": {
     "@types/node": "^20.14.10",
     "publint": "^0.2.8",
     "tsconfig": "workspace:*",
+    "tsup": "^8.2.1",
     "type-fest": "^4.21.0",
     "typescript": "^5.5.3"
   },

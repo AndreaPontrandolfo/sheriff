@@ -1,4 +1,5 @@
 import { sheriffStartingOptions } from '@sherifforg/constants';
+import type { SheriffConfigurablePlugins } from '@sherifforg/types';
 import { setSheriffConfig } from './setSheriffConfig';
 import { throwError } from './throwError';
 
@@ -6,7 +7,7 @@ export const getEslintConfigRawText = async (
   fileType: 'ts' | 'esm' | 'commonjs',
   customProjectRootPath: string | null,
 ): Promise<string> => {
-  let sheriffConfig = sheriffStartingOptions;
+  let sheriffConfig: SheriffConfigurablePlugins = sheriffStartingOptions;
 
   try {
     sheriffConfig = await setSheriffConfig(customProjectRootPath);
