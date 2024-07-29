@@ -5,7 +5,7 @@ sidebar_position: 2
 # ✨ Features
 
 - ⚡ **Batteries included**: Sheriff is a all-in-one solution. You don't need to install or configure separately anything else. Everything is included here
-- ➰ **Seamless**: if you know ESLint, you know Sheriff
+- ∞ **Seamless**: if you know ESLint, you know Sheriff
 - 🔓 **No lock-in**: Sheriff has extended capabilities beyond being a simple eslint config, but it's **not** a framework. You can extend the `eslint.config.js` beyond Sheriff as much as you like, just like you normally would. Or you can disable any rule Sheriff comes with. Sheriff doesn't impose any limitation. See: [configuration](./configuration.mdx)
 - 🤝 **Sheriff meets you where you are at**: some other configs bundle linting rules with formatting opinions and impose restrictions on how you should format your code. Sheriff does not. If you want to use Prettier alongside Sheriff, Sheriff provides you with the golden path to do it, if you don't it's ok too!
 - 🏑 **Frictionless by design**: to setup Sheriff and take off, the only input required from the user is running the `create-sheriff-config` command. The command will automatically infer the details of your project and figure out the optimal Sheriff configuration by itself

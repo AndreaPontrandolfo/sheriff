@@ -15,7 +15,6 @@ sidebar_position: 7
 - [@eslint-react/eslint-plugin](https://github.com/rel1cx/eslint-react)
 - [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
 - [eslint-plugin-sonarjs](https://github.com/SonarSource/eslint-plugin-sonarjs)
-- [eslint-plugin-fp](https://github.com/jfmengels/eslint-plugin-fp)
 - [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)
 - [eslint-plugin-tsdoc](https://www.npmjs.com/package/eslint-plugin-tsdoc)
 - [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)

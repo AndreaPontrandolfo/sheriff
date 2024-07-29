@@ -213,9 +213,6 @@ importers:
       eslint-plugin-astro:
         specifier: ^1.2.3
         version: 1.2.3(eslint@8.57.0)(typescript@5.5.3)
-      eslint-plugin-fp:
-        specifier: ^2.3.0
-        version: 2.3.0(eslint@8.57.0)
       eslint-plugin-fsecond:
         specifier: ^1.1.1
         version: 1.1.1(eslint@8.57.0)(typescript@5.5.3)
@@ -398,9 +395,6 @@ importers:
       eslint-plugin-astro:
         specifier: ^1.2.3
         version: 1.2.3(eslint@8.57.0)(typescript@5.5.3)
-      eslint-plugin-fp:
-        specifier: ^2.3.0
-        version: 2.3.0(eslint@8.57.0)
       eslint-plugin-fsecond:
         specifier: ^1.1.1
         version: 1.1.1(eslint@8.57.0)(typescript@5.5.3)
@@ -7914,13 +7908,6 @@ packages:
       typescript: 5.5.3
     dev: false
 
-  /create-eslint-index@1.0.0:
-    resolution: {integrity: sha512-nXvJjnfDytOOaPOonX0h0a1ggMoqrhdekGeZkD6hkcWYvlCWhU719tKFVh8eU04CnMwu3uwe1JjwuUF2C3k2qg==}
-    engines: {node: '>=4.0.0'}
-    dependencies:
-      lodash.get: 4.4.2
-    dev: false
-
   /create-require@1.1.1:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: false
@@ -8894,14 +8881,6 @@ packages:
     optionalDependencies:
       source-map: 0.6.1
 
-  /eslint-ast-utils@1.1.0:
-    resolution: {integrity: sha512-otzzTim2/1+lVrlH19EfQQJEhVJSu0zOb9ygb3iapN6UlyaDtyRq4b5U1FuW0v1lRa9Fp/GJyHkSwm6NqABgCA==}
-    engines: {node: '>=4'}
-    dependencies:
-      lodash.get: 4.4.2
-      lodash.zip: 4.2.0
-    dev: false
-
   /eslint-compat-utils@0.5.1(eslint@8.57.0):
     resolution: {integrity: sha512-3z3vFexKIEnjHE3zCMRo6fn/e44U7T1khUjg+Hp0ZQMCigh28rALD0nPFBcGZuiLC5rLZa2ubQHDRln09JfU2Q==}
     engines: {node: '>=12'}
@@ -9053,19 +9032,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
-    dev: false
-
-  /eslint-plugin-fp@2.3.0(eslint@8.57.0):
-    resolution: {integrity: sha512-3n2oHibwoIxAht9/+ZaTldhI6brXORgl8oNXqZd+d9xuAQt2SBJ2/aml0oQRMWvXrgsz2WG6wfC++NjzSG3prA==}
-    engines: {node: '>=4.0.0'}
-    peerDependencies:
-      eslint: '>=3 || 8.57.0 || 8.57.0-0'
-    dependencies:
-      create-eslint-index: 1.0.0
-      eslint: 8.57.0
-      eslint-ast-utils: 1.1.0
-      lodash: 4.17.21
-      req-all: 0.1.0
     dev: false
 
   /eslint-plugin-fsecond@1.1.1(eslint@8.57.0)(typescript@5.5.3):
@@ -11929,10 +11895,6 @@ packages:
 
   /lodash.uniq@4.5.0:
     resolution: {integrity: sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==}
-    dev: false
-
-  /lodash.zip@4.2.0:
-    resolution: {integrity: sha512-C7IOaBBK/0gMORRBd8OETNx3kmOkgIWIPvyDpZSCTwUrpYmgZwJkjZeOD8ww4xbOUOs4/attY+pciKvadNfFbg==}
     dev: false
 
   /lodash@4.17.21:
@@ -15178,11 +15140,6 @@ packages:
       htmlparser2: 6.1.0
       lodash: 4.17.21
       strip-ansi: 6.0.1
-    dev: false
-
-  /req-all@0.1.0:
-    resolution: {integrity: sha512-ZdvPr8uXy9ujX3KujwE2P1HWkMYgogIhqeAeyb47MqWjSfyxERSm0TNbN/IapCCmWDufXab04AYrRgObaJCJ6Q==}
-    engines: {node: '>=4'}
     dev: false
 
   /require-directory@2.1.1:

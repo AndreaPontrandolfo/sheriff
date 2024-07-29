@@ -6,7 +6,6 @@ declare module 'eslint-plugin-playwright';
 declare module 'eslint-plugin-jsdoc';
 declare module 'eslint-plugin-lodash-f';
 declare module 'eslint-plugin-import';
-declare module 'eslint-plugin-fp';
 declare module 'eslint-plugin-jest';
 declare module 'eslint-plugin-storybook';
 declare module 'eslint-plugin-react*';
