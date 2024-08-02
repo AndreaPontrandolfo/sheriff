@@ -97,6 +97,7 @@ export const getBaseEslintHandPickedRules = (
     'require-atomic-updates': 2,
     'no-nested-ternary': 2,
     'no-console': [2, { allow: ['warn', 'error', 'debug', 'info', 'table'] }],
+    curly: [2, 'all'],
     eqeqeq: 2,
     'prefer-arrow-callback': 2,
     'no-restricted-syntax': [
