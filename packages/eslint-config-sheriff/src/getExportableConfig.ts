@@ -1,4 +1,3 @@
-import eslintConfigPrettier from 'eslint-config-prettier';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
 import type { FlatESLintConfig } from 'eslint-define-config';
@@ -12,7 +11,6 @@ import { playwrightConfig } from './playwrightConfig';
 import { lodashConfig } from './lodashConfig';
 import { getJestConfig } from './getJestConfig';
 import { getVitestConfig } from './getVitestConfig';
-import { prettierOverrides } from './prettierOverrides';
 import { type TSESLint } from '@typescript-eslint/utils';
 
 export const getExportableConfig = (
@@ -72,10 +70,6 @@ export const getExportableConfig = (
   if (userConfigChoices.playwright) {
     exportableConfig.push(playwrightConfig);
   }
-
-  exportableConfig.push(eslintConfigPrettier);
-  //@ts-expect-error
-  exportableConfig.push(prettierOverrides);
 
   if (userConfigChoices.files) {
     const allowedPatterns = userConfigChoices.files.map(
