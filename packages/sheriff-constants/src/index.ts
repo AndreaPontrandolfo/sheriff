@@ -29,13 +29,13 @@ export const supportedFileTypes = `**/*{${allJsExtensions},${allJsxExtensions},a
 const messages = {
   NO_ACCESS_MODIFIER:
     'Avoid access modifiers. In Javascript modules there is no need to limit developer access to properties.',
-};
+} as const;
 
 export const testsFilePatterns = [
   `**/*.{test,spec}.{${allJsExtensions}}`,
   `**/tests/**/*.{${allJsExtensions}}`,
   `**/__tests__/**/*.{${allJsExtensions}}`,
-];
+] as const;
 
 export const ignores = [
   '**/node_modules/**',
@@ -44,7 +44,7 @@ export const ignores = [
   '**/artifacts/**',
   '**/coverage/**',
   'eslint.config.{js,mjs,cjs,cts}', // we currently cannot lint the eslint.config.js itself. It is currently only provided as a .js file and this config currently only supports .ts files. Therefore, eslint.config.js can only be re-enabled once this config support pure .js files too, or the ESLint team support the eslint.config.ts file.
-];
+] as const;
 
 export const baseNoRestrictedSyntaxRules = [
   {
@@ -107,6 +107,6 @@ export const baseNoRestrictedSyntaxRules = [
     selector: 'ClassExpression',
     message: 'Avoid classes. Use functions and objects instead.',
   },
-];
+] as const;
 
 export const CURRENT_FROZEN_ESLINT_VERSION = '8.57.0';
