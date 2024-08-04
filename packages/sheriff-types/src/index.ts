@@ -3,11 +3,6 @@ export interface NoRestrictedSyntaxSlice {
   message: string;
 }
 
-export interface NoRestrictedSyntaxOverride {
-  adjuncts: NoRestrictedSyntaxSlice[];
-  allows: string[];
-}
-
 export interface Entry {
   ruleName: string;
   parentPluginName: string;
@@ -120,10 +115,6 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
    * This setting accepts an array of filepaths, dictaced by minimatch syntax. Only the matching files found in this array will be linted. All other files will be ignored. This is useful if you want to lint only a subset of your project.
    */
   files?: string[];
-  /**
-   * This setting allows you to override the default no-restricted-syntax rule configuration. You can add your own rules to the existing ones, or you can override the existing ones. You can also disable the existing ones by adding them to the allows array.
-   */
-  noRestrictedSyntaxOverride?: NoRestrictedSyntaxOverride;
 }
 
 export interface ServerResponse {

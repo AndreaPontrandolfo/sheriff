@@ -197,23 +197,25 @@ module.exports = defineFlatConfig([
   </TabItem>
 </Tabs>
 
-This is just the standard behavior of the new configuration system of ESLint, which is being illustrated here for your convenience. Sheriff doesn't alter this in any way.
+This is just the standard behavior of the `FlatConfig` system of ESLint, which is being illustrated here for your convenience. Sheriff doesn't alter this in any way.
 
 For more in-depth information, refer to the [official docs](https://eslint.org/docs/latest/use/configure/configuration-files).
 
-## Advanced configuration options
+## Advanced options
 
-The upcoming configuration options are kind of hidden options, tailored to serve only a niche group of users and designed to address specific use cases. **Use these only if you end up needing them**.
+The upcoming configuration options are meant to be situational, tailored to serve only a niche group of users and designed to address specific use cases. **Use these only if and when you end up needing them**.
 
 ### `files`
 
-Covered here: [♻ Migration guide](./migration-guide.mdx#progressive-adoption-story)
+This option is primarily meant to be used while introducing Sheriff to an existing project.
+
+Learn more in the [♻ Migration guide](./migration-guide.mdx#progressive-adoption-story).
 
 ### `ignores`
 
 By default, Sheriff will ignore certain filepaths, but you can choose to opt-out of this behavior.
 
-```ts title="API"
+```ts
 ignores: {
   recommended: boolean;
   inheritedFromGitignore: boolean;
@@ -222,7 +224,7 @@ ignores: {
 
 #### `ignores.recommended`
 
-A list of commonly ignored folders:
+With this option, Sheriff will ignore a list of commonly ignored folders:
 
 <DynamicSnippetsList paths={ignores} />
 
@@ -283,7 +285,7 @@ module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
 
 #### `ignores.inheritedFromGitignore`
 
-The same filepaths specified in your `.gitignore` file.
+With this option, Sheriff will ignore the same filepaths specified in your `.gitignore` file.
 
 Example:
 
@@ -344,7 +346,7 @@ module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
 
 As outlined in the [criteria](./core-philosophy/criteria.md) page, Sheriff comes with sensible defaults. However, as your project grows, your team may come across the need to override some of these defaults. This option lets you do just that.
 
-```ts title="API"
+```ts
 pathsOverrides: {
   tsconfigLocation: string | string[];
   tests: string[];
@@ -416,7 +418,7 @@ module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
 
 By default, Sheriff will apply Jest or Vitest rules only on specific files.
 
-<CodeBlock title="API" language="ts">
+<CodeBlock language="ts">
   {JSON.stringify(testsFilePatterns, null, 2)}
 </CodeBlock>
 
@@ -487,30 +489,15 @@ module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
   </TabItem>
 </Tabs>
 
-### `noRestrictedSyntaxOverride`
+### Customizing the `no-restricted-syntax`
 
-ESLint has a very useful rule called `no-restricted-syntax`. It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to opt-out.
-Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, if you need to customize it, you have a few options.
-
-```ts title="API"
-noRestrictedSyntaxOverride: {
-  adjuncts: {
-    selector: string;
-    message: string;
-  }[];
-  allows: string[];
-}
-```
+ESLint provides a very powerful rule called `no-restricted-syntax` ([docs](https://eslint.org/docs/latest/rules/no-restricted-syntax)). It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to opt-out.
+Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, you can customize it in different ways.
 
 #### Override
 
 Override the rule in full.
-You provide your own `no-restricted-syntax` rule. You can do this you normally would, appending the rule to the `FlatConfig` array.
-
-#### Extend
-
-Extend the Sheriff version of `no-restricted-syntax`.
-Use the key `noRestrictedSyntaxOverride.adjuncts` in the Sheriff configuration object.
+You provide your own `no-restricted-syntax` rule. You can do this as you normally would, appending the rule to the `FlatConfig` array, after Sheriff.
 
 Example:
 
@@ -529,30 +516,23 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-  // highlight-start
-  noRestrictedSyntaxOverride: {
-    adjuncts: [
-      {
-        selector: "LabeledStatement",
-        message:
-          "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
-      },
-      {
-        selector: "ForInStatement",
-        message:
-          "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",
-      },
-      {
-        selector: "Identifier[name='Reflect']",
-        message:
-          "Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development.",
-      },
-    ],
-  },
-  // highlight-end
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default defineFlatConfig([
+  ...sheriff(sheriffOptions),
+  {
+    rules: {
+      "no-restricted-syntax": [
+        2,
+        // highlight-start
+        [
+          // your custom rules here...
+        ]
+        // highlight-end
+      ],
+    },
+  }
+]);
 ```
 
 </TabItem>
@@ -570,30 +550,103 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-  // highlight-start
-  noRestrictedSyntaxOverride: {
-    adjuncts: [
-      {
-        selector: "LabeledStatement",
-        message:
-          "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
-      },
-      {
-        selector: "ForInStatement",
-        message:
-          "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",
-      },
-      {
-        selector: "Identifier[name='Reflect']",
-        message:
-          "Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development.",
-      },
-    ],
-  },
-  // highlight-end
 };
 
-module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
+module.exports = defineFlatConfig([
+  ...sheriff(sheriffOptions),
+  {
+    rules: {
+      "no-restricted-syntax": [
+        2,
+        // highlight-start
+        [
+          // your custom rules here...
+        ]
+        // highlight-end
+      ],
+    },
+}
+]);
+```
+
+  </TabItem>
+</Tabs>
+
+#### Extend
+
+Conveniently, Sheriff exports it's own `no-restricted-syntax` entry as the `baseNoRestrictedSyntaxRules` array.
+To extend the Sheriff entry of `no-restricted-syntax`, you can use the Javascript spread syntax.
+
+Example:
+
+<Tabs groupId="esmorcjs">
+  <TabItem value="ESM" label="ESM">
+
+```js title="eslint.config.js"
+import sheriff, { baseNoRestrictedSyntaxRules } from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false
+};
+
+export default defineFlatConfig([
+  ...sheriff(sheriffOptions),
+  {
+    rules: {
+      "no-restricted-syntax": [
+        2,
+        // highlight-start
+        [
+          ...baseNoRestrictedSyntaxRules,
+          // your custom rules here...
+        ]
+        // highlight-end
+      ],
+    },
+  }
+]);
+```
+
+</TabItem>
+<TabItem value="CommonJS" label="CommonJS">
+
+```js title="eslint.config.js"
+const { sheriff } = require("eslint-config-sheriff");
+const { defineFlatConfig } = require("eslint-define-config");
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  playwright: false,
+  jest: false,
+  vitest: false
+};
+
+module.exports = defineFlatConfig([
+  ...sheriff(sheriffOptions),
+  {
+    rules: {
+      "no-restricted-syntax": [
+        2,
+        // highlight-start
+        [
+          ...baseNoRestrictedSyntaxRules,
+          // your custom rules here...
+        ]
+        // highlight-end
+      ],
+    },
+  }
+]);
 ```
 
   </TabItem>
@@ -601,8 +654,8 @@ module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
 
 #### Shrink
 
-Shrink the Sheriff version of `no-restricted-syntax`.
-Use the key `noRestrictedSyntaxOverride.allows` in the Sheriff configuration object.
+Conveniently, Sheriff exports it's own `no-restricted-syntax` entry as the `baseNoRestrictedSyntaxRules` array.
+To shrink the Sheriff entry of `no-restricted-syntax`, you can use the Javascript `toSpliced()` method.
 
 Example:
 
@@ -620,19 +673,22 @@ const sheriffOptions = {
   lodash: false,
   playwright: false,
   jest: false,
-  vitest: false,
-  // highlight-start
-  noRestrictedSyntaxOverride: {
-    allows: [
-      "LabeledStatement",
-      "ForInStatement",
-      "Identifier[name='Reflect']",
-    ],
-  },
-  // highlight-end
+  vitest: false
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default defineFlatConfig([
+  ...sheriff(sheriffOptions),
+  {
+    rules: {
+      "no-restricted-syntax": [
+        2,
+        // highlight-start
+        baseNoRestrictedSyntaxRules.toSpliced(2, 2) // removing two elements from baseNoRestrictedSyntaxRules starting from index 2
+        // highlight-end
+      ],
+    },
+  };
+]);
 ```
 
 </TabItem>
@@ -649,19 +705,22 @@ const sheriffOptions = {
   lodash: false,
   playwright: false,
   jest: false,
-  vitest: false,
-  // highlight-start
-  noRestrictedSyntaxOverride: {
-    allows: [
-      "LabeledStatement",
-      "ForInStatement",
-      "Identifier[name='Reflect']",
-    ],
-  },
-  // highlight-end
+  vitest: false
 };
 
-module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
+module.exports = defineFlatConfig([
+  ...sheriff(sheriffOptions),
+  {
+    rules: {
+      "no-restricted-syntax": [
+        2,
+        // highlight-start
+        baseNoRestrictedSyntaxRules.toSpliced(2, 2) // removing two elements from baseNoRestrictedSyntaxRules starting from index 2
+        // highlight-end
+      ],
+    },
+  };
+]);
 ```
 
   </TabItem>
