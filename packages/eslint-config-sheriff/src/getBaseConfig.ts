@@ -28,7 +28,6 @@ export const getBaseConfig = (
   userConfigChoices: SheriffSettings,
 ): TSESLint.FlatConfig.ConfigArray => {
   const customTSConfigPath = userConfigChoices.pathsOverrides?.tsconfigLocation;
-  const { noRestrictedSyntaxOverride } = userConfigChoices;
 
   return tseslint.config(
     {
@@ -38,7 +37,7 @@ export const getBaseConfig = (
     {
       files: [supportedFileTypes],
       // @ts-expect-error
-      rules: getBaseEslintHandPickedRules(noRestrictedSyntaxOverride),
+      rules: getBaseEslintHandPickedRules(),
     },
     {
       files: [`**/*{${allJsExtensions}}`],
