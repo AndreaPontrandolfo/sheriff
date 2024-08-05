@@ -23,6 +23,7 @@ import { typescriptHandPickedRules } from './handpickedRules/typescriptHandPicke
 import { unicornHandPickedRules } from './handpickedRules/unicornHandPickedRules';
 import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
 import { getLanguageOptionsTypescript } from './utils/getLanguageOptionsTypescript';
+import globals from 'globals';
 
 export const getBaseConfig = (
   userConfigChoices: SheriffSettings,
@@ -85,6 +86,9 @@ export const getBaseConfig = (
     },
     {
       files: [supportedFileTypes],
+      languageOptions: {
+        globals: globals.builtin,
+      },
       plugins: { unicorn },
       rules: unicornHandPickedRules,
     },

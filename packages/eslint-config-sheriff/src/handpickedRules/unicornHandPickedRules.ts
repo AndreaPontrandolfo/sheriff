@@ -41,4 +41,5 @@ export const unicornHandPickedRules = {
   'unicorn/prefer-string-slice': 2,
   'unicorn/no-await-in-promise-methods': 2,
   'unicorn/no-single-promise-in-promise-methods': 2,
+  'unicorn/consistent-empty-array-spread': 2,
 };

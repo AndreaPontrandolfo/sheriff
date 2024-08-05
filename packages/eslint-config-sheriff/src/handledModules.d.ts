@@ -1,7 +1,6 @@
 declare module '@eslint/js';
 declare module '@next/eslint-plugin-next';
 declare module '@regru/eslint-plugin-prefer-early-return';
-declare module 'eslint-plugin-unicorn';
 declare module 'eslint-plugin-playwright';
 declare module 'eslint-plugin-jsdoc';
 declare module 'eslint-plugin-lodash-f';
