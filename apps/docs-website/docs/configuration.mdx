@@ -525,9 +525,7 @@ export default defineFlatConfig([
       "no-restricted-syntax": [
         2,
         // highlight-start
-        [
-          // your custom rules here...
-        ]
+        // your custom rules here...
         // highlight-end
       ],
     },
@@ -559,9 +557,7 @@ module.exports = defineFlatConfig([
       "no-restricted-syntax": [
         2,
         // highlight-start
-        [
-          // your custom rules here...
-        ]
+        // your custom rules here...
         // highlight-end
       ],
     },
@@ -603,10 +599,8 @@ export default defineFlatConfig([
       "no-restricted-syntax": [
         2,
         // highlight-start
-        [
-          ...baseNoRestrictedSyntaxRules,
-          // your custom rules here...
-        ]
+        ...baseNoRestrictedSyntaxRules,
+        // your custom rules here...
         // highlight-end
       ],
     },
@@ -638,10 +632,8 @@ module.exports = defineFlatConfig([
       "no-restricted-syntax": [
         2,
         // highlight-start
-        [
-          ...baseNoRestrictedSyntaxRules,
-          // your custom rules here...
-        ]
+        ...baseNoRestrictedSyntaxRules,
+        // your custom rules here...
         // highlight-end
       ],
     },
@@ -683,7 +675,7 @@ export default defineFlatConfig([
       "no-restricted-syntax": [
         2,
         // highlight-start
-        baseNoRestrictedSyntaxRules.toSpliced(2, 2) // removing two elements from baseNoRestrictedSyntaxRules starting from index 2
+        ...baseNoRestrictedSyntaxRules.toSpliced(2, 2) // removing two elements from baseNoRestrictedSyntaxRules starting from index 2
         // highlight-end
       ],
     },
@@ -715,7 +707,7 @@ module.exports = defineFlatConfig([
       "no-restricted-syntax": [
         2,
         // highlight-start
-        baseNoRestrictedSyntaxRules.toSpliced(2, 2) // removing two elements from baseNoRestrictedSyntaxRules starting from index 2
+        ...baseNoRestrictedSyntaxRules.toSpliced(2, 2) // removing two elements from baseNoRestrictedSyntaxRules starting from index 2
         // highlight-end
       ],
     },

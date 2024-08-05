@@ -96,7 +96,7 @@ export const getBaseEslintHandPickedRules = () => {
     curly: [2, 'all'],
     eqeqeq: 2,
     'prefer-arrow-callback': 2,
-    'no-restricted-syntax': [2, baseNoRestrictedSyntaxRules],
+    'no-restricted-syntax': [2, ...baseNoRestrictedSyntaxRules],
     'no-return-await': 0,
     'no-use-before-define': 0, // we are using the @typescript/eslint version
     'no-unused-expressions': 0, // we are using the @typescript/eslint version
