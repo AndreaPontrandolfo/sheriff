@@ -48,7 +48,7 @@
     "eslint-plugin-sonarjs": "^0.19.0",
     "eslint-plugin-storybook": "^0.6.11",
     "eslint-plugin-tsdoc": "^0.2.17",
-    "eslint-plugin-unicorn": "^52.0.0",
+    "eslint-plugin-unicorn": "^55.0.0",
     "eslint-plugin-vitest": "^0.3.26",
     "hono": "^3.12.0",
     "lodash": "^4.17.21",
