@@ -18,4 +18,5 @@ export const jsdocHandPickedRules = {
   ],
   'jsdoc/sort-tags': 2,
   'jsdoc/tag-lines': [2, 'any', { startLines: 1 }],
+  'jsdoc/convert-to-jsdoc-comments': 2,
 };

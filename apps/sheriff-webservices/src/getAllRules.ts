@@ -3,7 +3,7 @@ import astro from 'eslint-plugin-astro';
 import fsecond from 'eslint-plugin-fsecond';
 import pluginImport from 'eslint-plugin-import';
 import jest from 'eslint-plugin-jest';
-import jsdoc from 'eslint-plugin-jsdoc'; // eslint-disable-line
+import jsdoc from 'eslint-plugin-jsdoc';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import lodashPlugin from 'eslint-plugin-lodash-f';
 import playwright from 'eslint-plugin-playwright';
