@@ -34,11 +34,11 @@
     "knip": "^5.25.1",
     "prettier": "^3.3.2",
     "turbo": "^2.0.9",
-    "typesync": "^0.12.2"
+    "typesync": "^0.13.0"
   },
   "packageManager": "pnpm@8.14.0",
   "engines": {
-    "node": ">=18.17.1"
+    "node": ">=20.10.0"
   },
   "pnpm": {
     "peerDependencyRules": {

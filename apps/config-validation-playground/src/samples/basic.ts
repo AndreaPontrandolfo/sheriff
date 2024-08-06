@@ -1,12 +1,18 @@
-// Function to add two numbers
+/**
+ * Function to add two numbers.
+ */
 export const addNumbers = function (a: number, b: number): number {
   return a + b;
 };
 
-// Function to check if a number is even
+/**
+ * Function to check if a number is even.
+ */
 export const isEven = (num: number): boolean => num % 2 === 0;
 
-// Function to calculate the factorial of a number
+/**
+ * Function to calculate the factorial of a number.
+ */
 export const factorial = (num: number): number => {
   if (num === 0 || num === 1) {
     return 1;
@@ -15,6 +21,8 @@ export const factorial = (num: number): number => {
   return num * factorial(num - 1);
 };
 
-// Function to calculate the sum of a list of numbers
+/**
+ * Function to calculate the sum of a list of numbers.
+ */
 export const sum = (numbers: number[]): number =>
   numbers.reduce((acc, curr) => acc + curr, 0);
