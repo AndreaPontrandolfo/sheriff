@@ -1,5 +1,27 @@
 # eslint-config-sheriff
 
+## 20.0.0
+
+### Major Changes
+
+- f685bae: feat(config): exposed more variables from main package
+  feat(config): reworked overrides
+  BREAKING CHANGE: removed the noRestrictedSyntaxOverride config option
+
+  Closes #188
+
+### Minor Changes
+
+- a124f56: feat(config): removed eslint-plugin-fp
+- dd61624: feat(deps): Update eslint-plugin-jsdoc to latest. Closes #182
+- 4960381: feat(config): removed eslint-config-prettier
+- 734355c: feat(deps): updated eslint-plugin-unicorn to latest
+
+### Patch Changes
+
+- 028c5d7: chore(deps): bump
+- 76dcc6a: feat(deps): added @types/eslint-plugin-jsx-a11y
+
 ## 19.0.0
 
 ### Major Changes
