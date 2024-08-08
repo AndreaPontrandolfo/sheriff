@@ -1,5 +1,11 @@
 # @sheriff/utils
 
+## 1.1.4
+
+### Patch Changes
+
+- 028c5d7: chore(deps): bump
+
 ## 1.1.3
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # sheriff-webservices
 
+## 3.2.5
+
+### Patch Changes
+
+- a124f56: feat(config): removed eslint-plugin-fp
+- dd61624: feat(deps): Update eslint-plugin-jsdoc to latest. Closes #182
+- 734355c: feat(deps): updated eslint-plugin-unicorn to latest
+- 028c5d7: chore(deps): bump
+- 76dcc6a: feat(deps): added @types/eslint-plugin-jsx-a11y
+- Updated dependencies [a124f56]
+- Updated dependencies [dd61624]
+- Updated dependencies [4960381]
+- Updated dependencies [734355c]
+- Updated dependencies [028c5d7]
+- Updated dependencies [76dcc6a]
+- Updated dependencies [f685bae]
+  - eslint-config-sheriff@20.0.0
+
 ## 3.2.4
 
 ### Patch Changes

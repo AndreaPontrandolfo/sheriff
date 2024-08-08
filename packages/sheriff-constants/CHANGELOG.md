@@ -1,5 +1,17 @@
 # @sherifforg/constants
 
+## 0.0.3
+
+### Patch Changes
+
+- a124f56: feat(config): removed eslint-plugin-fp
+- 028c5d7: chore(deps): bump
+- f685bae: feat(config): exposed more variables from main package
+  feat(config): reworked overrides
+  BREAKING CHANGE: removed the noRestrictedSyntaxOverride config option
+
+  Closes #188
+
 ## 0.0.2
 
 ### Patch Changes

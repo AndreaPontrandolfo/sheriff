@@ -1,5 +1,11 @@
 # create-sheriff-config
 
+## 5.2.2
+
+### Patch Changes
+
+- 028c5d7: chore(deps): bump
+
 ## 5.2.1
 
 ### Patch Changes

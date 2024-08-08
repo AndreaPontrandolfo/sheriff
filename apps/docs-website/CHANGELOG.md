@@ -1,5 +1,25 @@
 # docs-website
 
+## 2.4.0
+
+### Minor Changes
+
+- f685bae: feat(config): exposed more variables from main package
+  feat(config): reworked overrides
+  BREAKING CHANGE: removed the noRestrictedSyntaxOverride config option
+
+  Closes #188
+
+### Patch Changes
+
+- a124f56: feat(config): removed eslint-plugin-fp
+- 4960381: feat(config): removed eslint-config-prettier
+- 028c5d7: chore(deps): bump
+- Updated dependencies [a124f56]
+- Updated dependencies [028c5d7]
+- Updated dependencies [f685bae]
+  - @sherifforg/constants@0.0.3
+
 ## 2.3.1
 
 ### Patch Changes
