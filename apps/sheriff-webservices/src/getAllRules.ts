@@ -56,6 +56,7 @@ export const getAllRules = (
       '@typescript-eslint',
     ),
     ...prependRulesWithPluginName(unicorn.rules, 'unicorn'),
+    //@ts-expect-error
     ...prependRulesWithPluginName(sonarjs.rules, 'sonarjs'),
     ...prependRulesWithPluginName(jsdoc.rules, 'jsdoc'),
     ...prependRulesWithPluginName((tsdoc as unknown as Plugin).rules, 'tsdoc'),
