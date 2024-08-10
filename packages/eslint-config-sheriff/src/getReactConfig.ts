@@ -1,3 +1,4 @@
+import tseslint from 'typescript-eslint';
 import react from 'eslint-plugin-react';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -12,9 +13,12 @@ import {
 import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 import { reactHandPickedRules } from './handpickedRules/reactHandPickedRules';
 import { getLanguageOptionsTypescriptReact } from './utils/getLanguageOptionsTypescriptReact';
+import { type TSESLint } from '@typescript-eslint/utils';
 
-export const getReactConfig = (customTSConfigPath?: string | string[]) => {
-  return [
+export const getReactConfig = (
+  customTSConfigPath?: string | string[],
+): TSESLint.FlatConfig.ConfigArray => {
+  return tseslint.config(
     {
       // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
       files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
@@ -36,6 +40,7 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
     },
     {
       files: [`**/*{${allJsxExtensions}}`],
+      // @ts-expect-error
       rules: getTsNamingConventionRule({ isTsx: true }),
     },
     {
@@ -101,5 +106,5 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
         ],
       },
     },
-  ];
+  );
 };
