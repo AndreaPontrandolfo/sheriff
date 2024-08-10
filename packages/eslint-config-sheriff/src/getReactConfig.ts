@@ -1,5 +1,5 @@
-import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
-import jsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
+import tseslint from 'typescript-eslint';
+import react from 'eslint-plugin-react';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -13,36 +13,34 @@ import {
 import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 import { reactHandPickedRules } from './handpickedRules/reactHandPickedRules';
 import { getLanguageOptionsTypescriptReact } from './utils/getLanguageOptionsTypescriptReact';
+import { type TSESLint } from '@typescript-eslint/utils';
 
-export const getReactConfig = (customTSConfigPath?: string | string[]) => {
-  return [
-    {
-      files: [supportedFileTypes],
-      settings: {
-        react: {
-          version: 'detect',
-        },
-      },
-    },
-    {
-      files: [supportedFileTypes],
-      ...reactRecommended,
-    },
-    {
-      files: [supportedFileTypes],
-      rules: reactHandPickedRules,
-    },
-    {
-      files: [supportedFileTypes],
-      ...jsxRuntime,
-    },
+export const getReactConfig = (
+  customTSConfigPath?: string | string[],
+): TSESLint.FlatConfig.ConfigArray => {
+  return tseslint.config(
     {
       // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
       files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
       languageOptions: getLanguageOptionsTypescriptReact(customTSConfigPath),
     },
     {
+      files: [supportedFileTypes],
+      plugins: { react },
+      settings: {
+        react: {
+          version: 'detect',
+        },
+      },
+      rules: {
+        ...react.configs.flat.recommended.rules,
+        ...react.configs.flat['jsx-runtime'].rules,
+        ...reactHandPickedRules,
+      },
+    },
+    {
       files: [`**/*{${allJsxExtensions}}`],
+      // @ts-expect-error
       rules: getTsNamingConventionRule({ isTsx: true }),
     },
     {
@@ -108,5 +106,5 @@ export const getReactConfig = (customTSConfigPath?: string | string[]) => {
         ],
       },
     },
-  ];
+  );
 };
