@@ -1,5 +1,4 @@
-import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
-import jsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
+import react from 'eslint-plugin-react';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -17,29 +16,23 @@ import { getLanguageOptionsTypescriptReact } from './utils/getLanguageOptionsTyp
 export const getReactConfig = (customTSConfigPath?: string | string[]) => {
   return [
     {
+      // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
+      files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
+      languageOptions: getLanguageOptionsTypescriptReact(customTSConfigPath),
+    },
+    {
       files: [supportedFileTypes],
+      plugins: { react },
       settings: {
         react: {
           version: 'detect',
         },
       },
-    },
-    {
-      files: [supportedFileTypes],
-      ...reactRecommended,
-    },
-    {
-      files: [supportedFileTypes],
-      rules: reactHandPickedRules,
-    },
-    {
-      files: [supportedFileTypes],
-      ...jsxRuntime,
-    },
-    {
-      // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
-      files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
-      languageOptions: getLanguageOptionsTypescriptReact(customTSConfigPath),
+      rules: {
+        ...react.configs.flat.recommended.rules,
+        ...react.configs.flat['jsx-runtime'].rules,
+        ...reactHandPickedRules,
+      },
     },
     {
       files: [`**/*{${allJsxExtensions}}`],
