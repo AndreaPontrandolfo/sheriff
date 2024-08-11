@@ -68,7 +68,8 @@ export const getExportableConfig = (
   }
 
   if (userConfigChoices.playwright) {
-    exportableConfig.push(playwrightConfig);
+    //@ts-expect-error
+    exportableConfig.push(...playwrightConfig);
   }
 
   if (userConfigChoices.files) {

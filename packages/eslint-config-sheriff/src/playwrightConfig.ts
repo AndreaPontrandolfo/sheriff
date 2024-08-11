@@ -2,13 +2,15 @@ import playwright from 'eslint-plugin-playwright';
 import { allJsExtensions } from '@sherifforg/constants';
 import { playwrightHandPickedRules } from './handpickedRules/playwrightHandPickedRules';
 
-export const playwrightConfig = {
-  files: [`**/*{${allJsExtensions}}`],
-  plugins: {
-    playwright,
+export const playwrightConfig = [
+  {
+    ...playwright.configs['flat/recommended'],
+    files: [`**/*{${allJsExtensions}}`],
   },
-  rules: {
-    ...playwright.configs['playwright-test'].rules,
-    ...playwrightHandPickedRules,
+  {
+    files: [`**/*{${allJsExtensions}}`],
+    rules: {
+      ...playwrightHandPickedRules,
+    },
   },
-};
+];
