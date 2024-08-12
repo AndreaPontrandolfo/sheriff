@@ -41,18 +41,15 @@ export const getBaseConfig = (
       rules: getBaseEslintHandPickedRules(),
     },
     {
+      files: [supportedFileTypes],
+      extends: tseslint.configs.strictTypeChecked,
+    },
+    {
       files: [`**/*{${allJsExtensions}}`],
       languageOptions: getLanguageOptionsTypescript(customTSConfigPath),
     },
     {
       files: [supportedFileTypes],
-      extends: tseslint.configs.strictTypeChecked,
-    },
-    {
-      files: [supportedFileTypes],
-      plugins: {
-        '@typescript-eslint': tseslint.plugin,
-      },
       rules: {
         ...typescriptHandPickedRules,
         ...getTsNamingConventionRule({ isTsx: false }),

@@ -1,8 +1,17 @@
 export const typescriptHandPickedRules = {
-  '@typescript-eslint/ban-ts-comment': 0,
   '@typescript-eslint/no-unsafe-assignment': 0,
   '@typescript-eslint/no-array-constructor': 0,
   '@typescript-eslint/use-unknown-in-catch-callback-variable': 0,
+  '@typescript-eslint/no-require-imports': 0, // eventually we will enable https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/prefer-module.md instead
+  '@typescript-eslint/ban-ts-comment': [
+    2,
+    {
+      'ts-expect-error': false,
+      'ts-ignore': true,
+      'ts-nocheck': false,
+      'ts-check': false,
+    },
+  ],
   '@typescript-eslint/no-use-before-define': 2,
   '@typescript-eslint/no-inferrable-types': 2,
   '@typescript-eslint/no-loop-func': 2,
