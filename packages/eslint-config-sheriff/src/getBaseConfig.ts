@@ -28,8 +28,6 @@ import globals from 'globals';
 export const getBaseConfig = (
   userConfigChoices: SheriffSettings,
 ): TSESLint.FlatConfig.ConfigArray => {
-  const customTSConfigPath = userConfigChoices.pathsOverrides?.tsconfigLocation;
-
   return tseslint.config(
     {
       files: [supportedFileTypes],
@@ -46,7 +44,9 @@ export const getBaseConfig = (
     },
     {
       files: [`**/*{${allJsExtensions}}`],
-      languageOptions: getLanguageOptionsTypescript(customTSConfigPath),
+      languageOptions: getLanguageOptionsTypescript(
+        userConfigChoices.disableProjectService ?? false,
+      ),
     },
     {
       files: [supportedFileTypes],

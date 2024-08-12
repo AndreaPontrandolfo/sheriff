@@ -1,8 +1,9 @@
 import astro from 'eslint-plugin-astro';
+import { getLegacyCompatDirname } from './utils/getLegacyCompatDirname';
 
 export const getAstroConfig = (
   hasReact: boolean,
-  customTSConfigPath: string | string[] | undefined,
+  disableProjectService: boolean,
 ) => {
   return [
     ...astro.configs.recommended,
@@ -11,7 +12,10 @@ export const getAstroConfig = (
       files: ['**/*.astro'],
       languageOptions: {
         parserOptions: {
-          project: customTSConfigPath || true,
+          ...(disableProjectService ? {} : { projectService: true }),
+          tsconfigRootDir: disableProjectService
+            ? undefined
+            : getLegacyCompatDirname(),
         },
       },
       settings: {

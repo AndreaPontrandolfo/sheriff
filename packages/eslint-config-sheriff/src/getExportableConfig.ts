@@ -24,7 +24,7 @@ export const getExportableConfig = (
   if (userConfigChoices.react || userConfigChoices.next) {
     // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
     exportableConfig.push(
-      ...getReactConfig(userConfigChoices.pathsOverrides?.tsconfigLocation),
+      ...getReactConfig(userConfigChoices.disableProjectService ?? false),
     );
   }
 
@@ -60,11 +60,14 @@ export const getExportableConfig = (
   }
 
   if (userConfigChoices.astro) {
-    const customTSConfigPath =
-      userConfigChoices.pathsOverrides?.tsconfigLocation;
     const hasReact = Boolean(userConfigChoices.react);
 
-    exportableConfig.push(...getAstroConfig(hasReact, customTSConfigPath));
+    exportableConfig.push(
+      ...getAstroConfig(
+        hasReact,
+        userConfigChoices.disableProjectService ?? false,
+      ),
+    );
   }
 
   if (userConfigChoices.playwright) {

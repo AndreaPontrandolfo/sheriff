@@ -16,13 +16,13 @@ import { getLanguageOptionsTypescriptReact } from './utils/getLanguageOptionsTyp
 import { type TSESLint } from '@typescript-eslint/utils';
 
 export const getReactConfig = (
-  customTSConfigPath?: string | string[],
+  disableProjectService: boolean,
 ): TSESLint.FlatConfig.ConfigArray => {
   return tseslint.config(
     {
       // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
       files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
-      languageOptions: getLanguageOptionsTypescriptReact(customTSConfigPath),
+      languageOptions: getLanguageOptionsTypescriptReact(disableProjectService),
     },
     {
       files: [supportedFileTypes],
