@@ -82,7 +82,7 @@
     "eslint-plugin-unicorn": "^55.0.0",
     "eslint-plugin-vitest": "^0.3.26",
     "globals": "^15.9.0",
-    "typescript-eslint": "^7.8.0"
+    "typescript-eslint": "^8.0.1"
   },
   "peerDependencies": {
     "eslint": "8.38.0 - 8.57.0 || 8.57.0-0",
@@ -97,9 +97,10 @@
     "@sherifforg/constants": "workspace:*",
     "@sherifforg/types": "workspace:*",
     "@types/eslint-plugin-jsx-a11y": "^6.9.0",
+    "@types/eslint__js": "^8.42.3",
     "@types/lodash": "^4.17.6",
     "@types/node": "^20.14.10",
-    "@typescript-eslint/utils": "^7.3.1",
+    "@typescript-eslint/utils": "^8.0.1",
     "eslint": "^8.57.0",
     "eslint-define-config": "^2.1.0",
     "lodash": "^4.17.21",
