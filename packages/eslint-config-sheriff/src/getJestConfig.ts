@@ -14,7 +14,7 @@ export const getJestConfig = (pathsOverrides?: string[]) => {
     // @ts-expect-error
     rules: {
       ...jestHandPickedRules,
-      '@typescript-eslint/unbound-method': 0,
+      '@typescript-eslint/unbound-method': 0, // see: https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
     },
   });
 };
