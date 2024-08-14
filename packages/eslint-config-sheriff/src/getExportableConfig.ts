@@ -40,7 +40,7 @@ export const getExportableConfig = (
 
   if (userConfigChoices.jest) {
     exportableConfig.push(
-      getJestConfig(userConfigChoices.pathsOverrides?.tests),
+      ...getJestConfig(userConfigChoices.pathsOverrides?.tests),
     );
   }
 
