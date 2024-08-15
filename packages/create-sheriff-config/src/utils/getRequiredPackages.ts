@@ -1,5 +1,4 @@
 import { consola } from 'consola';
-import { CURRENT_FROZEN_ESLINT_VERSION } from '@sherifforg/constants';
 
 export const getRequiredPackages = (
   isEslintTsPatchRequired: boolean,
@@ -16,10 +15,7 @@ export const getRequiredPackages = (
   consola.start("Installing 'eslint-config-sheriff'...");
 
   if (isEslintTsPatchRequired) {
-    requiredPackages.push(
-      `eslint-ts-patch@${CURRENT_FROZEN_ESLINT_VERSION}`,
-      `eslint@npm:eslint-ts-patch@${CURRENT_FROZEN_ESLINT_VERSION}`,
-    );
+    requiredPackages.push(`eslint-ts-patch@`, `eslint@npm:eslint-ts-patch@`);
     consola.start("Installing 'eslint-ts-patch'...");
     requiredPackages.push('@sherifforg/types');
     consola.start("Installing '@sherifforg/types'...");
