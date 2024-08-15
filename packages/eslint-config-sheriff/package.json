@@ -56,8 +56,9 @@
     "are-the-types-wrong": "attw --pack ."
   },
   "dependencies": {
-    "@eslint-react/eslint-plugin": "^1.5.12",
-    "@eslint/js": "^8.57.0",
+    "@eslint-react/eslint-plugin": "^1.10.1",
+    "@eslint/compat": "^1.1.1",
+    "@eslint/js": "^9.9.0",
     "@next/eslint-plugin-next": "^13.2.3",
     "@regru/eslint-plugin-prefer-early-return": "^1.0.0",
     "@stylistic/eslint-plugin": "^1.5.1",
@@ -85,11 +86,11 @@
     "typescript-eslint": "^8.0.1"
   },
   "peerDependencies": {
-    "eslint": "8.38.0 - 8.57.0 || 8.57.0-0",
+    "eslint": ">=9.0.0",
     "typescript": ">=5.0.0"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18.18"
   },
   "license": "MIT",
   "devDependencies": {
@@ -100,8 +101,8 @@
     "@types/eslint__js": "^8.42.3",
     "@types/lodash": "^4.17.6",
     "@types/node": "^20.14.10",
-    "@typescript-eslint/utils": "^8.0.1",
-    "eslint": "^8.57.0",
+    "@typescript-eslint/utils": "^8.1.0",
+    "eslint": "^9.9.0",
     "eslint-define-config": "^2.1.0",
     "lodash": "^4.17.21",
     "publint": "^0.2.8",

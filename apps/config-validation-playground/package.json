@@ -21,7 +21,7 @@
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.2.15",
-    "eslint": "^8.57.0",
+    "eslint": "^9.9.0",
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^2.1.0",
     "tsconfig": "workspace:*",
