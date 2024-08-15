@@ -94,7 +94,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.9.0",
+    "@arethetypeswrong/cli": "^0.15.4",
     "@sherifforg/constants": "workspace:*",
     "@sherifforg/types": "workspace:*",
     "@types/eslint-plugin-jsx-a11y": "^6.9.0",
@@ -105,7 +105,7 @@
     "eslint": "^9.9.0",
     "eslint-define-config": "^2.1.0",
     "lodash": "^4.17.21",
-    "publint": "^0.2.8",
+    "publint": "^0.2.10",
     "tsconfig": "workspace:*",
     "tsup": "^6.2.3",
     "typescript": "^5.5.3"

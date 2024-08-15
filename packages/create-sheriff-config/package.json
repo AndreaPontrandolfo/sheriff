@@ -37,7 +37,7 @@
     "eslint": "^9.9.0",
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^2.1.0",
-    "publint": "^0.2.8",
+    "publint": "^0.2.10",
     "tsconfig": "workspace:*",
     "tsup": "^6.2.3",
     "tsx": "^4.16.2"

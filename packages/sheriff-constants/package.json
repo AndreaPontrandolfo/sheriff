@@ -20,11 +20,13 @@
   "scripts": {
     "publint": "publint",
     "clean": "rm -rf .turb dist",
-    "build": "tsup"
+    "build": "tsup",
+    "are-the-types-wrong": "attw --pack ."
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.15.4",
     "@sherifforg/types": "workspace:*",
-    "publint": "^0.2.8",
+    "publint": "^0.2.10",
     "tsconfig": "workspace:*",
     "typescript": "^5.5.3"
   },
