@@ -24,6 +24,7 @@ import { unicornHandPickedRules } from './handpickedRules/unicornHandPickedRules
 import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
 import { getLanguageOptionsTypescript } from './utils/getLanguageOptionsTypescript';
 import globals from 'globals';
+import { fixupPluginRules } from '@eslint/compat';
 
 export const getBaseConfig = (
   userConfigChoices: SheriffSettings,
@@ -127,7 +128,7 @@ export const getBaseConfig = (
     },
     {
       files: [supportedFileTypes],
-      plugins: { import: pluginImport },
+      plugins: { import: fixupPluginRules(pluginImport) },
       rules: importHandPickedRules,
       settings: {
         'import/parsers': {
