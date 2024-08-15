@@ -24,6 +24,7 @@ import { unicornHandPickedRules } from './handpickedRules/unicornHandPickedRules
 import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
 import { getLanguageOptionsTypescript } from './utils/getLanguageOptionsTypescript';
 import globals from 'globals';
+import { fixupPluginRules } from '@eslint/compat';
 
 export const getBaseConfig = (
   userConfigChoices: SheriffSettings,
@@ -127,7 +128,7 @@ export const getBaseConfig = (
     },
     {
       files: [supportedFileTypes],
-      plugins: { import: pluginImport },
+      plugins: { import: fixupPluginRules(pluginImport) },
       rules: importHandPickedRules,
       settings: {
         'import/parsers': {
@@ -147,7 +148,7 @@ export const getBaseConfig = (
         '**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)',
         '**/*.story.@(ts|tsx|js|jsx|mjs|cjs)',
       ],
-      plugins: { storybook },
+      plugins: { storybook: fixupPluginRules(storybook) },
       rules: {
         ...storybook.configs.recommended.overrides[0].rules,
         ...storybook.configs.csf.overrides[0].rules,
@@ -157,7 +158,7 @@ export const getBaseConfig = (
     },
     {
       files: ['**/.storybook/main.@(js|cjs|mjs|ts)'],
-      plugins: { storybook },
+      plugins: { storybook: fixupPluginRules(storybook) },
       rules: storybook.configs.recommended.overrides[1].rules,
     },
     {

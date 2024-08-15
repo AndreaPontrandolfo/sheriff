@@ -108,5 +108,3 @@ export const baseNoRestrictedSyntaxRules = [
     message: 'Avoid classes. Use functions and objects instead.',
   },
 ] as const;
-
-export const CURRENT_FROZEN_ESLINT_VERSION = '8.57.0';

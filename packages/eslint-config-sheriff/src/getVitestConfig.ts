@@ -1,4 +1,4 @@
-import vitest from 'eslint-plugin-vitest';
+import vitest from '@vitest/eslint-plugin';
 import { allJsExtensions } from '@sherifforg/constants';
 import { vitestHandPickedRules } from './handpickedRules/vitestHandPickedRules';
 

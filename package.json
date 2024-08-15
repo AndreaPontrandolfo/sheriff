@@ -47,10 +47,7 @@
       ],
       "ignoreMissing": [
         "vitest"
-      ],
-      "allowedVersions": {
-        "eslint": "8.57.0 || 8.57.0-0"
-      }
+      ]
     }
   }
 }
