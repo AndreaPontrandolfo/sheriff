@@ -201,6 +201,9 @@ importers:
       '@stylistic/eslint-plugin':
         specifier: ^1.5.1
         version: 1.8.0(eslint@9.9.0)(typescript@5.5.3)
+      '@vitest/eslint-plugin':
+        specifier: ^1.0.3
+        version: 1.0.3(@typescript-eslint/utils@8.1.0)(eslint@9.9.0)(typescript@5.5.3)
       eslint:
         specifier: ^9.9.0
         version: 9.9.0
@@ -251,16 +254,13 @@ importers:
         version: 1.0.4(eslint@9.9.0)
       eslint-plugin-storybook:
         specifier: ^0.6.11
-        version: 0.6.15(eslint@9.9.0)(typescript@5.5.3)
+        version: 0.6.11(eslint@9.9.0)(typescript@5.5.3)
       eslint-plugin-tsdoc:
         specifier: ^0.2.17
         version: 0.2.17
       eslint-plugin-unicorn:
         specifier: ^55.0.0
         version: 55.0.0(eslint@9.9.0)
-      eslint-plugin-vitest:
-        specifier: ^0.3.26
-        version: 0.3.26(eslint@9.9.0)(typescript@5.5.3)
       hono:
         specifier: ^3.12.0
         version: 3.12.12
@@ -389,6 +389,9 @@ importers:
       '@stylistic/eslint-plugin':
         specifier: ^1.5.1
         version: 1.8.0(eslint@9.9.0)(typescript@5.5.3)
+      '@vitest/eslint-plugin':
+        specifier: ^1.0.3
+        version: 1.0.3(@typescript-eslint/utils@8.1.0)(eslint@9.9.0)(typescript@5.5.3)
       eslint-config-flat-gitignore:
         specifier: ^0.1.3
         version: 0.1.5
@@ -439,16 +442,13 @@ importers:
         version: 1.0.4(eslint@9.9.0)
       eslint-plugin-storybook:
         specifier: ^0.6.11
-        version: 0.6.15(eslint@9.9.0)(typescript@5.5.3)
+        version: 0.6.11(eslint@9.9.0)(typescript@5.5.3)
       eslint-plugin-tsdoc:
         specifier: ^0.2.17
         version: 0.2.17
       eslint-plugin-unicorn:
         specifier: ^55.0.0
         version: 55.0.0(eslint@9.9.0)
-      eslint-plugin-vitest:
-        specifier: ^0.3.26
-        version: 0.3.26(eslint@9.9.0)(typescript@5.5.3)
       globals:
         specifier: ^15.9.0
         version: 15.9.0
@@ -6208,22 +6208,6 @@ packages:
       - typescript
     dev: false
 
-  /@typescript-eslint/utils@7.18.0(eslint@9.9.0)(typescript@5.5.3):
-    resolution: {integrity: sha512-kK0/rNa2j74XuHVcoCZxdFBMF+aq/vH83CXAOHieC+2Gis4mF8jJXT5eAfyD3K0sAxtPuwxaIOIOvhwzVDt/kw==}
-    engines: {node: ^18.18.0 || >=20.0.0}
-    peerDependencies:
-      eslint: ^8.56.0
-    dependencies:
-      '@eslint-community/eslint-utils': 4.4.0(eslint@9.9.0)
-      '@typescript-eslint/scope-manager': 7.18.0
-      '@typescript-eslint/types': 7.18.0
-      '@typescript-eslint/typescript-estree': 7.18.0(typescript@5.5.3)
-      eslint: 9.9.0
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-    dev: false
-
   /@typescript-eslint/utils@8.0.1(eslint@9.9.0)(typescript@5.5.3):
     resolution: {integrity: sha512-CBFR0G0sCt0+fzfnKaciu9IBsKvEKYwN9UZ+eeogK1fYHg4Qxk1yf/wLQkLXlq8wbU2dFlgAesxt8Gi76E8RTA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -6295,6 +6279,26 @@ packages:
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+
+  /@vitest/eslint-plugin@1.0.3(@typescript-eslint/utils@8.1.0)(eslint@9.9.0)(typescript@5.5.3):
+    resolution: {integrity: sha512-7hTONh+lqN+TEimHy2aWVdHVqYohcxLGD4yYBwSVvhyiti/j9CqBNMQvOa6xLoVcEtaWAoCCDbYgvxwNqA4lsA==}
+    peerDependencies:
+      '@typescript-eslint/utils': '>= 8.0'
+      eslint: '>= 8.57.0'
+      typescript: '*'
+      vitest: '*'
+    peerDependenciesMeta:
+      '@typescript-eslint/utils':
+        optional: true
+      typescript:
+        optional: true
+      vitest:
+        optional: true
+    dependencies:
+      '@typescript-eslint/utils': 8.1.0(eslint@9.9.0)(typescript@5.5.3)
+      eslint: 9.9.0
+      typescript: 5.5.3
+    dev: false
 
   /@vitest/expect@2.0.3:
     resolution: {integrity: sha512-X6AepoOYePM0lDNUPsGXTxgXZAl3EXd0GYe/MZyVE4HzkUqyUVC6S3PrY5mClDJ6/7/7vALLMV3+xD/Ko60Hqg==}
@@ -9444,8 +9448,8 @@ packages:
       eslint: 9.9.0
     dev: false
 
-  /eslint-plugin-storybook@0.6.15(eslint@9.9.0)(typescript@5.5.3):
-    resolution: {integrity: sha512-lAGqVAJGob47Griu29KXYowI4G7KwMoJDOkEip8ujikuDLxU+oWJ1l0WL6F2oDO4QiyUFXvtDkEkISMOPzo+7w==}
+  /eslint-plugin-storybook@0.6.11(eslint@9.9.0)(typescript@5.5.3):
+    resolution: {integrity: sha512-lIVmCqQgA0bhcuS1yWYBFrnPHBKPEQI+LHPDtlN81UE1/17onCqgwUW7Nyt7gS2OHjCAiOR4npjTGEoe0hssKw==}
     engines: {node: 12.x || 14.x || >= 16}
     peerDependencies:
       eslint: '>=6'
@@ -9490,26 +9494,6 @@ packages:
       regjsparser: 0.10.0
       semver: 7.6.3
       strip-indent: 3.0.0
-    dev: false
-
-  /eslint-plugin-vitest@0.3.26(eslint@9.9.0)(typescript@5.5.3):
-    resolution: {integrity: sha512-oxe5JSPgRjco8caVLTh7Ti8PxpwJdhSV0hTQAmkFcNcmy/9DnqLB/oNVRA11RmVRP//2+jIIT6JuBEcpW3obYg==}
-    engines: {node: ^18.0.0 || >= 20.0.0}
-    peerDependencies:
-      '@typescript-eslint/eslint-plugin': '*'
-      eslint: '>=8.0.0'
-      vitest: '*'
-    peerDependenciesMeta:
-      '@typescript-eslint/eslint-plugin':
-        optional: true
-      vitest:
-        optional: true
-    dependencies:
-      '@typescript-eslint/utils': 7.18.0(eslint@9.9.0)(typescript@5.5.3)
-      eslint: 9.9.0
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
     dev: false
 
   /eslint-scope@5.1.1:

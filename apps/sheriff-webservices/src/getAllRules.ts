@@ -16,7 +16,6 @@ import sonarjs from 'eslint-plugin-sonarjs';
 import storybook from 'eslint-plugin-storybook';
 import tsdoc from 'eslint-plugin-tsdoc';
 import unicorn from 'eslint-plugin-unicorn';
-import vitest from 'eslint-plugin-vitest';
 import tseslint from 'typescript-eslint';
 import eslintRecommended from '@eslint/js';
 import rel1cxReact from '@eslint-react/eslint-plugin';
@@ -28,6 +27,7 @@ import type {
   SheriffSettings,
 } from '@sherifforg/types';
 import stylistic from '@stylistic/eslint-plugin';
+import vitest from '@vitest/eslint-plugin';
 import { prependRulesWithPluginName } from './prependRulesWithPluginName.js';
 
 interface Plugin {

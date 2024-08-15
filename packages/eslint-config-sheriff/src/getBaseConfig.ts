@@ -148,7 +148,7 @@ export const getBaseConfig = (
         '**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)',
         '**/*.story.@(ts|tsx|js|jsx|mjs|cjs)',
       ],
-      plugins: { storybook },
+      plugins: { storybook: fixupPluginRules(storybook) },
       rules: {
         ...storybook.configs.recommended.overrides[0].rules,
         ...storybook.configs.csf.overrides[0].rules,
@@ -158,7 +158,7 @@ export const getBaseConfig = (
     },
     {
       files: ['**/.storybook/main.@(js|cjs|mjs|ts)'],
-      plugins: { storybook },
+      plugins: { storybook: fixupPluginRules(storybook) },
       rules: storybook.configs.recommended.overrides[1].rules,
     },
     {
