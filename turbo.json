@@ -32,7 +32,9 @@
     "//#manypkg": {},
     "//#knip": {},
     "typesync": {},
-    "are-the-types-wrong": {},
+    "are-the-types-wrong": {
+      "dependsOn": ["build"]
+    },
     "clean": {
       "cache": false
     },
