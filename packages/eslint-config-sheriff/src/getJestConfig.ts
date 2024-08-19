@@ -13,7 +13,7 @@ export const getJestConfig = (
       `**/tests/**/*.{${allJsExtensions}}`,
       `**/__tests__/**/*.{${allJsExtensions}}`,
     ],
-    extends: jest.configs['flat/style'],
+    extends: [jest.configs['flat/style']],
     // @ts-expect-error
     rules: {
       ...jestHandPickedRules,

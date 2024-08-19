@@ -107,4 +107,4 @@ export const baseNoRestrictedSyntaxRules = [
     selector: 'ClassExpression',
     message: 'Avoid classes. Use functions and objects instead.',
   },
-] as const;
+];

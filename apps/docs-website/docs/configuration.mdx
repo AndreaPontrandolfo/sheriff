@@ -491,13 +491,13 @@ module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
 
 ### Customizing the `no-restricted-syntax`
 
-ESLint provides a very powerful rule called `no-restricted-syntax` ([docs](https://eslint.org/docs/latest/rules/no-restricted-syntax)). It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to opt-out.
+ESLint provides a very powerful rule called `no-restricted-syntax` ([docs](https://eslint.org/docs/latest/rules/no-restricted-syntax)). It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to forbid.
 Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, you can customize it in different ways.
 
 #### Override
 
-Override the rule in full.
-You provide your own `no-restricted-syntax` rule. You can do this as you normally would, appending the rule to the `FlatConfig` array, after Sheriff.
+Override the rule in full.<br/ >
+You provide your own `no-restricted-syntax` rule and it will override the Sheriff one. You can do this as you normally would, appending the rule to the `FlatConfig` array, after Sheriff.
 
 Example:
 
@@ -646,8 +646,9 @@ module.exports = defineFlatConfig([
 
 #### Shrink
 
-Conveniently, Sheriff exports it's own `no-restricted-syntax` entry as the `baseNoRestrictedSyntaxRules` array.
-To shrink the Sheriff entry of `no-restricted-syntax`, you can use the Javascript `toSpliced()` method.
+Conveniently, Sheriff exports it's own `no-restricted-syntax` entry as the `baseNoRestrictedSyntaxRules` array.<br/>
+To shrink the Sheriff entry of `no-restricted-syntax`, you can use the Javascript [toSpliced() ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced) method to remove the entries that you don't like.<br/>
+Every entry prints the index of itself at the end of the `message` property, so you can easily identify which one you want to remove.
 
 Example:
 
@@ -675,7 +676,7 @@ export default defineFlatConfig([
       "no-restricted-syntax": [
         2,
         // highlight-start
-        ...baseNoRestrictedSyntaxRules.toSpliced(2, 2) // removing two elements from baseNoRestrictedSyntaxRules starting from index 2
+        ...baseNoRestrictedSyntaxRules.toSpliced(2, 1) // this will result in baseNoRestrictedSyntaxRules without the third element.
         // highlight-end
       ],
     },
@@ -707,7 +708,7 @@ module.exports = defineFlatConfig([
       "no-restricted-syntax": [
         2,
         // highlight-start
-        ...baseNoRestrictedSyntaxRules.toSpliced(2, 2) // removing two elements from baseNoRestrictedSyntaxRules starting from index 2
+        ...baseNoRestrictedSyntaxRules.toSpliced(2, 1) // this will result in baseNoRestrictedSyntaxRules without the third element.
         // highlight-end
       ],
     },
