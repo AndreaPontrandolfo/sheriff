@@ -1,5 +1,45 @@
 # sheriff-webservices
 
+## 3.2.5
+
+### Patch Changes
+
+- 1d42d3b: feat(deps): update eslint-plugin-playwright to latest
+  Fixes #184
+- a124f56: feat(config): removed eslint-plugin-fp
+- c92bee5: feat(config): added getIndexedBaseNoRestrictedSyntaxRules
+- 66b6e50: feat(deps): update eslint-plugin-jest to latest
+  Fixes #183
+- dd61624: feat(deps): Update eslint-plugin-jsdoc to latest. Closes #182
+- fdbb0db: chore(deps): updated some deps
+- 734355c: feat(deps): updated eslint-plugin-unicorn to latest
+- 028c5d7: chore(deps): bump
+- 84ab8bb: feat(deps): update eslint-plugin-react to latest
+  Fixes #176
+- b755626: feat(deps): update eslint-plugin-sonarjs to latest
+- fc4e0e5: feat(deps): update @typescript-eslint/eslint-plugin to latest
+  Fixes #177
+- 76dcc6a: feat(deps): added @types/eslint-plugin-jsx-a11y
+- b4685c3: feat(config): added ESLint v9 support and removed ESLint version 8.57.0 pins
+  Fixes #179
+  Fixes #185
+- Updated dependencies [1d42d3b]
+- Updated dependencies [a124f56]
+- Updated dependencies [c92bee5]
+- Updated dependencies [66b6e50]
+- Updated dependencies [dd61624]
+- Updated dependencies [fdbb0db]
+- Updated dependencies [4960381]
+- Updated dependencies [734355c]
+- Updated dependencies [028c5d7]
+- Updated dependencies [84ab8bb]
+- Updated dependencies [b755626]
+- Updated dependencies [fc4e0e5]
+- Updated dependencies [76dcc6a]
+- Updated dependencies [f685bae]
+- Updated dependencies [b4685c3]
+  - eslint-config-sheriff@20.0.0
+
 ## 3.2.4
 
 ### Patch Changes

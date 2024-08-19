@@ -1,5 +1,15 @@
 # create-sheriff-config
 
+## 5.2.2
+
+### Patch Changes
+
+- fdbb0db: chore(deps): updated some deps
+- 028c5d7: chore(deps): bump
+- b4685c3: feat(config): added ESLint v9 support and removed ESLint version 8.57.0 pins
+  Fixes #179
+  Fixes #185
+
 ## 5.2.1
 
 ### Patch Changes

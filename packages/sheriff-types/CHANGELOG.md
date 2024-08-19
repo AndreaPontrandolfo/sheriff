@@ -1,5 +1,17 @@
 # @sherifforg/types
 
+## 4.0.1
+
+### Patch Changes
+
+- fdbb0db: chore(deps): updated some deps
+- 028c5d7: chore(deps): bump
+- f685bae: feat(config): exposed more variables from main package
+  feat(config): reworked overrides
+  BREAKING CHANGE: removed the noRestrictedSyntaxOverride config option
+
+  Closes #188
+
 ## 4.0.0
 
 ### Major Changes
