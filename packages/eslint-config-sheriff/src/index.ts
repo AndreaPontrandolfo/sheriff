@@ -1,6 +1,5 @@
 import { getExportableConfig } from './getExportableConfig';
 import {
-  baseNoRestrictedSyntaxRules,
   allJsExtensions,
   allJsxExtensions,
   ignores,
@@ -8,10 +7,14 @@ import {
   supportedFileTypes,
   testsFilePatterns,
 } from '@sherifforg/constants';
+import { getIndexedBaseNoRestrictedSyntaxRules } from './utils/getIndexedBaseNoRestrictedSyntaxRules';
+
+const indexedBaseNoRestrictedSyntaxRules =
+  getIndexedBaseNoRestrictedSyntaxRules();
 
 export {
   getExportableConfig as sheriff,
-  baseNoRestrictedSyntaxRules,
+  indexedBaseNoRestrictedSyntaxRules as baseNoRestrictedSyntaxRules,
   allJsExtensions,
   allJsxExtensions,
   ignores,
