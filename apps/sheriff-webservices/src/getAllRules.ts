@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import type { ESLint } from 'eslint';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import astro from 'eslint-plugin-astro';
 import fsecond from 'eslint-plugin-fsecond';
@@ -7,8 +9,7 @@ import jsdoc from 'eslint-plugin-jsdoc';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import lodashPlugin from 'eslint-plugin-lodash-f';
 import playwright from 'eslint-plugin-playwright';
-import jsxRuntime from 'eslint-plugin-react/configs/jsx-runtime.js';
-import reactRecommended from 'eslint-plugin-react/configs/recommended.js';
+import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
@@ -28,7 +29,6 @@ import type {
 } from '@sherifforg/types';
 import stylistic from '@stylistic/eslint-plugin';
 import vitest from '@vitest/eslint-plugin';
-import { prependRulesWithPluginName } from './prependRulesWithPluginName.js';
 
 interface Plugin {
   rules: Record<string, RuleOptions>;
@@ -36,10 +36,16 @@ interface Plugin {
 
 export const getAllRules = (
   settings: SheriffSettings,
+  prependRulesWithPluginName: (
+    rules: Record<string, RuleOptions> | ESLint.Plugin['rules'] | undefined,
+    pluginName: string,
+  ) => Record<string, RuleOptions>,
 ): BarebonesConfigAtom['rules'] => {
   const reactRulesCatalog = {
-    ...reactRecommended.rules,
-    ...jsxRuntime.rules,
+    //@ts-expect-error
+    ...react.configs.flat.recommended.rules,
+    //@ts-expect-error
+    ...react.configs.flat['jsx-runtime'].rules,
     ...prependRulesWithPluginName(reactAccessibility.rules, 'jsx-a11y'),
     ...prependRulesWithPluginName(reactHooks.rules, 'react-hooks'),
     ...prependRulesWithPluginName(reactRefresh.rules, 'react-refresh'),

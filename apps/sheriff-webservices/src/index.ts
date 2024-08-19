@@ -5,6 +5,7 @@ import { serve } from '@hono/node-server';
 import type { BarebonesConfigAtom, SheriffSettings } from '@sherifforg/types';
 import { generateRulesDataset } from './generateRulesDataset.js';
 import { getAllRules } from './getAllRules.js';
+import { prependRulesWithPluginName } from './prependRulesWithPluginName.js';
 
 const app = new Hono();
 const port = Number(process.env.PORT || 5001);
@@ -15,7 +16,10 @@ app.get('/api/keepalive', (context) => context.text('OK'));
 app.post('/api/get-new-sheriff-config', async (context) => {
   const userConfigChoices: SheriffSettings = await context.req.json();
 
-  const allRulesRaw = getAllRules(userConfigChoices);
+  const allRulesRaw = getAllRules(
+    userConfigChoices,
+    prependRulesWithPluginName,
+  );
 
   const newConfig: BarebonesConfigAtom[] = getSheriffConfig(userConfigChoices);
   const anyRuleAllowedConfig: BarebonesConfigAtom[] = getSheriffConfig(
