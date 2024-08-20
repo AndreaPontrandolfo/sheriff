@@ -6,7 +6,27 @@ export const getBaseEslintHandPickedRules = () => {
     'no-promise-executor-return': 2,
     'no-unreachable-loop': 2,
     'no-caller': 2,
-    'no-restricted-imports': [2, { paths: ['prop-types'] }],
+    'no-restricted-imports': [
+      2,
+      {
+        paths: [
+          {
+            name: 'prop-types',
+            message: 'Dont use prop-types. Use Typescript instead.',
+          },
+        ],
+        patterns: [
+          {
+            group: ['node_modules'],
+            message: 'Imports from node_modules are likely a user mistake.',
+          },
+          {
+            group: ['dist'],
+            message: 'Imports from dist are likely a user mistake.',
+          },
+        ],
+      },
+    ],
     'no-extend-native': 2,
     'no-extra-bind': 2,
     'no-extra-label': 2,
