@@ -12,22 +12,17 @@ Depending on the device you are operating on, in-editor performance can be a con
 
 ## Rules performance benchmarking
 
-The currently known slowest rules in Sheriff are:
+The currently known slowest rules in Sheriff are the ones of `@typescript-eslint` that [requires type information ↗](https://typescript-eslint.io/getting-started/typed-linting) to work.
 
-- `@typescript-eslint/no-misused-promises`
-- `@typescript-eslint/no-unsafe-argument`
-- `@typescript-eslint/naming-convention`
-- `@typescript-eslint/no-floating-promises`
-- `import/no-unresolved`
-- `import/no-named-as-default`
+[List of types-aware rules ↗](https://typescript-eslint.io/rules/?=typeInformation).
 
 You can benchmark rules performance by yourself by running the following command in the terminal:
 
 ```bash npm2yarn
-TIMING=1 npm run eslint .
+TIMING=1 npm run eslint
 ```
 
-Learn more in the [ESLint official docs section](https://eslint.org/docs/latest/extend/custom-rules#profile-rule-performance).
+Learn more in the [ESLint official docs section ↗](https://eslint.org/docs/latest/extend/custom-rules#profile-rule-performance).
 
 ## Rules performance optimization strategies
 
@@ -111,8 +106,8 @@ ESLint features an internal cache where you can store your previous runs.
 
 This technique has pretty much no downsides and you should employ it in any case, regardless of any other factor.
 
-Read the official docs on ESLint caching here: [command-line-interface#caching](https://eslint.org/docs/latest/use/command-line-interface#caching). <br />
-Instead, if your project lives in a monorepo, you can follow [this guide](https://www.shew.dev/monorepos/guardrails/eslint).
+Read the official docs on ESLint caching here: [command-line-interface#caching ↗](https://eslint.org/docs/latest/use/command-line-interface#caching). <br />
+Instead, if your project lives in a monorepo, you can follow [this guide ↗](https://www.shew.dev/monorepos/guardrails/eslint).
 
 ### Review glob patterns
 
