@@ -15,10 +15,8 @@ export const typescriptHandPickedRules = {
   '@typescript-eslint/no-use-before-define': 2,
   '@typescript-eslint/no-inferrable-types': 2,
   '@typescript-eslint/no-loop-func': 2,
-  '@typescript-eslint/no-non-null-assertion': 2,
   '@typescript-eslint/prefer-function-type': 2,
   '@typescript-eslint/prefer-string-starts-ends-with': 2,
-  '@typescript-eslint/return-await': 2,
   '@typescript-eslint/consistent-type-definitions': 2,
   '@typescript-eslint/consistent-type-assertions': 2,
   '@typescript-eslint/consistent-type-imports': [
@@ -38,7 +36,6 @@ export const typescriptHandPickedRules = {
     2,
     { ignorePrimitives: true },
   ],
-  '@typescript-eslint/unified-signatures': 2,
   '@typescript-eslint/no-unused-expressions': [
     2,
     {
