@@ -117,7 +117,8 @@ export const getBaseEslintHandPickedRules = () => {
     eqeqeq: 2,
     'prefer-arrow-callback': 2,
     'no-restricted-syntax': [2, ...getIndexedBaseNoRestrictedSyntaxRules()],
-    'no-return-await': 0,
+    'no-useless-assignment': 2,
+    'no-return-await': 0, // we are using the @typescript/eslint version
     'no-use-before-define': 0, // we are using the @typescript/eslint version
     'no-unused-expressions': 0, // we are using the @typescript/eslint version
     'no-empty-function': 0, // we are using the @typescript/eslint version
