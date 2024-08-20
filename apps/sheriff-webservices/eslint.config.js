@@ -1,5 +1,5 @@
-import sheriff from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import sheriff from 'eslint-config-sheriff';
+import { defineFlatConfig } from 'eslint-define-config';
 
 const sheriffOptions = {
   react: false,
@@ -15,10 +15,11 @@ export default defineFlatConfig([
   ...sheriff(sheriffOptions),
   {
     ignores: [
-      "**/dist/**/*",
-      "**/node_modules/**/*",
-      "**/turbo/**/*",
-      "eslint.config.js",
+      '**/dist/**/*',
+      '**/node_modules/**/*',
+      '**/turbo/**/*',
+      'eslint.config.js',
+      'src/handledModules.d.ts',
     ],
   },
 ]);

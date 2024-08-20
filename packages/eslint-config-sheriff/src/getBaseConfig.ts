@@ -130,9 +130,14 @@ export const getBaseConfig = (
       files: [supportedFileTypes],
       plugins: { import: fixupPluginRules(pluginImport) },
       rules: importHandPickedRules,
+      languageOptions: {
+        parserOptions: {
+          sourceType: 'module', // required for https://github.com/import-js/eslint-plugin-import/blob/09476d7dac1ab36668283f9626f85e2223652b37/src/rules/no-default-export.js#L16
+        },
+      },
       settings: {
         'import/parsers': {
-          '@typescript-eslint/parser': ['.ts', '.tsx'],
+          '@typescript-eslint/parser': ['.ts', '.tsx', '.mts'],
           espree: ['.js'],
         },
         'import/resolver': {

@@ -1,10 +1,10 @@
-import { clsx } from "clsx";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import CodeBlock from "@theme/CodeBlock";
-import Layout from "@theme/Layout";
-import SheriffLogo from "../../static/img/sheriff-logo.svg";
-import styles from "./index.module.css";
+import { clsx } from 'clsx';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import CodeBlock from '@theme/CodeBlock';
+import Layout from '@theme/Layout';
+import SheriffLogo from '../../static/img/sheriff-logo.svg';
+import styles from './index.module.css';
 
 const Homepage = (): JSX.Element => {
   const { siteConfig } = useDocusaurusContext();
@@ -21,13 +21,13 @@ const Homepage = (): JSX.Element => {
             <SheriffLogo />
           </div>
           <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className={"hero__subtitle margin-bottom--lg"}>
+          <p className={'hero__subtitle margin-bottom--lg'}>
             {siteConfig.tagline}
           </p>
           <div className={styles.heroActionsBlock}>
             <div
               className={clsx(
-                "margin-bottom--lg padding-top--md",
+                'margin-bottom--lg padding-top--md',
                 styles.buttons,
               )}
             >
@@ -54,4 +54,5 @@ const Homepage = (): JSX.Element => {
   );
 };
 
+// eslint-disable-next-line import/no-default-export
 export default Homepage;
