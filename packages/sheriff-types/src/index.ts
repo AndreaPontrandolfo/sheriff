@@ -90,10 +90,6 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
    */
   pathsOverrides?: {
     /**
-     * With this setting, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config Sheriff will pickup. You can also specify a list of paths, see: https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root.
-     */
-    tsconfigLocation?: string | string[];
-    /**
      * This setting overrides the default Sheriff filepaths for test files. It accepts an array of filepaths, dictaced by minimatch syntax. Sheriff will apply Jest or Vitest rules only on these files.
      */
     tests?: string[];
@@ -115,6 +111,15 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
    * This setting accepts an array of filepaths, dictaced by minimatch syntax. Only the matching files found in this array will be linted. All other files will be ignored. This is useful if you want to lint only a subset of your project.
    */
   files?: string[];
+  /**
+   * `projectService` is enabled by default. If for whatever reason `projectService` is causing you issues, you can disable it.
+   * For example, if you want to just use the legacy `project` option.
+   * See https://typescript-eslint.io/packages/parser/#projectservice.
+   *
+   * WARNING: disabling `projectService` is extremely discouraged, as the entire linting will probably break.
+   * At the very least, you should enable the `project` option as an alternative.
+   */
+  disableProjectService?: boolean;
 }
 
 export interface ServerResponse {

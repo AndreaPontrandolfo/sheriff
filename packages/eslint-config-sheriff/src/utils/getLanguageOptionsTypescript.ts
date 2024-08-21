@@ -1,13 +1,15 @@
-import tseslint from 'typescript-eslint';
+import { getLegacyCompatDirname } from './getLegacyCompatDirname';
 
 export const getLanguageOptionsTypescript = (
-  userChosenTSConfig?: string | string[],
+  disableProjectService: boolean,
 ) => {
   return {
-    parser: tseslint.parser,
     parserOptions: {
       ecmaFeatures: { modules: true },
-      project: userChosenTSConfig || true,
+      ...(disableProjectService ? {} : { projectService: true }),
+      tsconfigRootDir: disableProjectService
+        ? undefined
+        : getLegacyCompatDirname(),
     },
   };
 };

@@ -348,71 +348,9 @@ As outlined in the [criteria](./core-philosophy/criteria.md) page, Sheriff comes
 
 ```ts
 pathsOverrides: {
-  tsconfigLocation: string | string[];
   tests: string[];
 }
 ```
-
-#### `pathsOverrides.tsconfigLocation`
-
-By default, Sheriff will use the `project: true` option to locate the `tsconfig.json` of your project.
-
-But, if you have multiple `tsconfig.json` files in your project (like `tsconfig.json`, `tsconfig.eslint.json`, `tsconfig.node.json`, etc...), you can use this parameter to specify which config Sheriff will pickup.
-
-You can pass it a path as a string (or a list of paths as a array of strings, see: [one-tsconfigjson-per-package](https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root)).
-
-Example:
-
-<Tabs groupId="esmorcjs">
-  <TabItem value="ESM" label="ESM">
-
-```js title="eslint.config.js"
-import sheriff from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
-
-const sheriffOptions = {
-  react: false,
-  next: false,
-  astro: false,
-  lodash: false,
-  playwright: false,
-  jest: false,
-  vitest: false,
-  pathsOverrides: {
-    // highlight-next-line
-    tsconfigLocation: "./tsconfig.eslint.json",
-  },
-};
-
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
-```
-
-</TabItem>
-<TabItem value="CommonJS" label="CommonJS">
-
-```js title="eslint.config.js"
-const { sheriff } = require("eslint-config-sheriff");
-const { defineFlatConfig } = require("eslint-define-config");
-
-const sheriffOptions = {
-  react: false,
-  next: false,
-  astro: false,
-  lodash: false,
-  playwright: false,
-  jest: false,
-  vitest: false,
-  pathsOverrides: {
-    // highlight-next-line
-    tsconfigLocation: "./tsconfig.eslint.json",
-  },
-};
-
-module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
-```
-
-  </TabItem>
-</Tabs>
 
 #### `pathsOverrides.tests`
 
