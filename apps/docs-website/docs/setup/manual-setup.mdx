@@ -16,117 +16,53 @@ Follow these steps:
    npm install -D eslint eslint-define-config eslint-config-sheriff
    ```
 
-1. Create a `eslint.config.js` file at the root of your project and copy/paste the contents of the following snippet of code:
+1. Create a `eslint.config.mjs` file at the root of your project and copy/paste the contents of the following snippet of code:
 
-      <Tabs groupId="esmorcjs">
-        <TabItem value="ESM" label="ESM">
+    ```js title="eslint.config.mjs"
+    import sheriff from "eslint-config-sheriff";
+    import { defineFlatConfig } from "eslint-define-config";
 
-        ```js title="eslint.config.js"
-        import sheriff from "eslint-config-sheriff";
-        import { defineFlatConfig } from "eslint-define-config";
+    const sheriffOptions = {
+      react: false,
+      next: false,
+      astro: false,
+      lodash: false,
+      playwright: false,
+      jest: false,
+      vitest: false,
+    };
 
-        const sheriffOptions = {
-          react: false,
-          next: false,
-          astro: false,
-          lodash: false,
-          playwright: false,
-          jest: false,
-          vitest: false,
-        };
+    export default defineFlatConfig([...sheriff(sheriffOptions)]);
+    ```
 
-        export default defineFlatConfig([...sheriff(sheriffOptions)]);
-        ```
+    or, if you already have a `eslint.config.mjs` in your project, just append Sheriff to the configs array, like this:
 
-        </TabItem>
-        <TabItem value="CommonJS" label="CommonJS">
+    ```js title="eslint.config.mjs"
+    // highlight-next-line
+    import sheriff from "eslint-config-sheriff"; // add this
+    // highlight-next-line
+    import { defineFlatConfig } from "eslint-define-config"; // add this
+    // my other imports...
 
-        ```js title="eslint.config.js"
-        const { sheriff } = require("eslint-config-sheriff");
-        const { defineFlatConfig } = require("eslint-define-config");
+    // highlight-start
+    // add this
+    const sheriffOptions = {
+      react: false,
+      next: false,
+      astro: false,
+      lodash: false,
+      playwright: false,
+      jest: false,
+      vitest: false,
+    };
+    // highlight-end
 
-        const sheriffOptions = {
-          react: false,
-          next: false,
-          astro: false,
-          lodash: false,
-          playwright: false,
-          jest: false,
-          vitest: false,
-        };
-
-        module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);
-        ```
-
-        </TabItem>
-
-      </Tabs>
-
-      or, if you already have a `eslint.config.js` in your project, just append Sheriff to the configs array, like this:
-
-      <Tabs groupId="esmorcjs">
-        <TabItem value="ESM" label="ESM">
-
-        ```js title="eslint.config.js"
-        // highlight-next-line
-        import sheriff from "eslint-config-sheriff"; // add this
-        // highlight-next-line
-        import { defineFlatConfig } from "eslint-define-config"; // add this
-        // my other imports...
-
-        // highlight-start
-        // add this
-        const sheriffOptions = {
-          react: false,
-          next: false,
-          astro: false,
-          lodash: false,
-          playwright: false,
-          jest: false,
-          vitest: false,
-        };
-        // highlight-end
-
-        export default [
-          // highlight-next-line
-          ...sheriff(sheriffOptions), // add this
-          // my other configurations...
-        ];
-        ```
-
-        </TabItem>
-        <TabItem value="CommonJS" label="CommonJS">
-
-        ```js title="eslint.config.js"
-        // highlight-next-line
-        const { sheriff } = require("eslint-config-sheriff"); // add this
-        // highlight-next-line
-        const { defineFlatConfig } = require("eslint-define-config"); // add this
-        // my other imports...
-
-        // highlight-start
-        // add this
-        const sheriffOptions = {
-          react: false,
-          next: false,
-          astro: false,
-          lodash: false,
-          playwright: false,
-          jest: false,
-          vitest: false,
-        };
-        // highlight-end
-
-        module.exports = [
-          // highlight-next-line
-          ...sheriff(sheriffOptions), // add this
-          // my other configurations...
-        ];
-        ```
-
-        </TabItem>
-
-      </Tabs>
+    export default [
+      // highlight-next-line
+      ...sheriff(sheriffOptions), // add this
+      // my other configurations...
+    ];
+    ```
 
 1.  Adopt `eslint.config.ts` (_optional_).
 
@@ -136,7 +72,7 @@ Follow these steps:
         ```bash npm2yarn
         npm install -D eslint-ts-patch eslint@npm:eslint-ts-patch @sherifforg/types
         ```
-      - change the extension of `eslint.config.js` from `.js` to `.ts`
+      - change the extension of `eslint.config.mjs` from `.mjs` to `.ts`
       - define the types of the `sheriffOptions` object:
 
         ```ts title="eslint.config.ts"

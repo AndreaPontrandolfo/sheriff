@@ -10,18 +10,22 @@ export const setEslintConfig = async (
   isEslintTsPatchRequired: boolean,
   customProjectRootPath: string | null,
 ): Promise<void> => {
-  // TODO: add case for .cjs and .mjs
   const ESLINT_CONFIG_JS_FILE_NAME = 'eslint.config.js';
+  const ESLINT_CONFIG_MJS_FILE_NAME = 'eslint.config.mjs';
   const ESLINT_CONFIG_TS_FILE_NAME = 'eslint.config.ts';
   const ESLINT_IGNORE_FILE_NAME = '.eslintignore';
 
   try {
-    const eslintConfigJsFile = await patchedFindUp(
-      ESLINT_CONFIG_JS_FILE_NAME,
-      customProjectRootPath,
-    );
     const eslintConfigTsFile = await patchedFindUp(
       ESLINT_CONFIG_TS_FILE_NAME,
+      customProjectRootPath,
+    );
+    const eslintConfigMjsFile = await patchedFindUp(
+      ESLINT_CONFIG_MJS_FILE_NAME,
+      customProjectRootPath,
+    );
+    const eslintConfigJsFile = await patchedFindUp(
+      ESLINT_CONFIG_JS_FILE_NAME,
       customProjectRootPath,
     );
     const eslintIgnoreFile = await patchedFindUp(
@@ -35,24 +39,19 @@ export const setEslintConfig = async (
       );
     }
 
-    if (eslintConfigJsFile) {
-      consola.info(
-        `${colors.bold(ESLINT_CONFIG_JS_FILE_NAME)} file found. Skipping ${colors.bold(ESLINT_CONFIG_JS_FILE_NAME)} file generation and configuration.`,
-      );
+    const foundConfigFile =
+      eslintConfigTsFile || eslintConfigMjsFile || eslintConfigJsFile;
 
-      return;
-    }
-
-    if (eslintConfigTsFile) {
+    if (foundConfigFile) {
       consola.info(
-        `${colors.bold(ESLINT_CONFIG_TS_FILE_NAME)} file found. Skipping ${colors.bold(ESLINT_CONFIG_TS_FILE_NAME)} file generation and configuration.`,
+        `${colors.bold(foundConfigFile)} file found. Skipping ${colors.bold(foundConfigFile)} file generation and configuration.`,
       );
 
       return;
     }
 
     consola.start(
-      `Neither a ${colors.bold(ESLINT_CONFIG_TS_FILE_NAME)} nor a ${colors.bold(ESLINT_CONFIG_JS_FILE_NAME)} file were found. Generating and configuring ${
+      `No ESLint config files were found. Generating and configuring ${
         isEslintTsPatchRequired
           ? colors.bold(ESLINT_CONFIG_TS_FILE_NAME)
           : colors.bold(ESLINT_CONFIG_JS_FILE_NAME)
@@ -76,15 +75,15 @@ export const setEslintConfig = async (
     const root = await getPackageJsonContents(customProjectRootPath);
 
     if (!root) {
-      consola.warn(
-        "couldn't read the package.json. Defaulting to Commonjs imports style",
-      );
+      consola.warn("couldn't read the package.json. Defaulting to MJS.");
       createFile(
-        ESLINT_CONFIG_JS_FILE_NAME,
-        await getEslintConfigRawText('commonjs', customProjectRootPath),
+        ESLINT_CONFIG_MJS_FILE_NAME,
+        await getEslintConfigRawText('esm', customProjectRootPath),
         customProjectRootPath,
       );
     }
+
+    // TODO: this is a useless distinction, we could just create always the mjs file.
     if (root) {
       if (root.packageJson.type === 'module') {
         createFile(
@@ -94,8 +93,8 @@ export const setEslintConfig = async (
         );
       } else {
         createFile(
-          ESLINT_CONFIG_JS_FILE_NAME,
-          await getEslintConfigRawText('commonjs', customProjectRootPath),
+          ESLINT_CONFIG_MJS_FILE_NAME,
+          await getEslintConfigRawText('esm', customProjectRootPath),
           customProjectRootPath,
         );
       }

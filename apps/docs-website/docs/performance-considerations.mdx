@@ -26,7 +26,7 @@ Learn more in the [ESLint official docs section ↗](https://eslint.org/docs/lat
 
 ## Rules performance optimization strategies
 
-There are a few techniques you can leverage to improve linting time. <br />
+There are a few techniques you can leverage to improve slow linting time. <br />
 You can choose which technique to employ or mix-and-match them.
 
 ### Disable some of the heaviest rules
@@ -39,8 +39,8 @@ This approach has a little more overhead, but you could try to run the heaviest 
 
 Here is an example on how you can achieve it:
 
-<Tabs groupId="esmorcjs">
-  <TabItem value="ESM" label="ESM">
+<Tabs groupId="tsorjs">
+  <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";
@@ -68,13 +68,14 @@ export default defineFlatConfig([
 ```
 
 </TabItem>
-<TabItem value="CommonJS" label="CommonJS">
+<TabItem value="TS" label="TS">
 
-```js title="eslint.config.js"
-const { sheriff } = require("eslint-config-sheriff");
-const { defineFlatConfig } = require("eslint-define-config");
+```ts title="eslint.config.ts"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+import type { SheriffSettings } from "@sherifforg/types";
 
-const sheriffOptions = {
+const sheriffOptions: SheriffSettings = {
   react: false,
   next: false,
   astro: false,
@@ -84,7 +85,7 @@ const sheriffOptions = {
   vitest: false,
 };
 
-module.exports = defineFlatConfig([
+export default defineFlatConfig([
   ...sheriff(sheriffOptions),
   {
     rules: {

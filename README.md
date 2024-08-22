@@ -12,12 +12,12 @@
 
 This repository is a monorepo that hosts the sourcecode of the following projects:
 
-| Link                                                                           | Source                                                                                                            | Description                                                           | Version                                                                                                                                                  |
-| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Sheriff docs website](https://www.eslint-config-sheriff.dev)                          | [docs-website](https://github.com/AndreaPontrandolfo/sheriff/tree/master/apps/docs-website)                       | Sheriff documentation website                                         | |
-| [`eslint-config-sheriff`](https://www.npmjs.com/package/eslint-config-sheriff) | [eslint-config-sheriff](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/eslint-config-sheriff) | A comprehensive and opinionated Typescript-first ESLint configuration | [![npm](https://img.shields.io/npm/v/eslint-config-sheriff.svg)](https://www.npmjs.com/package/eslint-config-sheriff)                                    |
-| [`create-sheriff-config`](https://www.npmjs.com/package/create-sheriff-config) | [create-sheriff-config](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/create-sheriff-config) | CLI/starter to bootstrap a Sheriff config                             | [![npm](https://img.shields.io/npm/v/create-sheriff-config.svg)](https://www.npmjs.com/package/create-sheriff-config)                                    |
-| [`@sherifforg/types`](https://www.npmjs.com/package/@sherifforg/types)         | [sheriff-types](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/sheriff-types)                 | Sheriff types package                                                 | [![npm](https://img.shields.io/npm/v/@sherifforg/types.svg)](https://www.npmjs.com/package/@sherifforg/types)                                            |
+| Link                                                                           | Source                                                                                                            | Description                                                           | Version                                                                                                               |
+| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| [Sheriff docs website](https://www.eslint-config-sheriff.dev)                  | [docs-website](https://github.com/AndreaPontrandolfo/sheriff/tree/master/apps/docs-website)                       | Sheriff documentation website                                         |                                                                                                                       |
+| [`eslint-config-sheriff`](https://www.npmjs.com/package/eslint-config-sheriff) | [eslint-config-sheriff](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/eslint-config-sheriff) | A comprehensive and opinionated Typescript-first ESLint configuration | [![npm](https://img.shields.io/npm/v/eslint-config-sheriff.svg)](https://www.npmjs.com/package/eslint-config-sheriff) |
+| [`create-sheriff-config`](https://www.npmjs.com/package/create-sheriff-config) | [create-sheriff-config](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/create-sheriff-config) | CLI/starter to bootstrap a Sheriff config                             | [![npm](https://img.shields.io/npm/v/create-sheriff-config.svg)](https://www.npmjs.com/package/create-sheriff-config) |
+| [`@sherifforg/types`](https://www.npmjs.com/package/@sherifforg/types)         | [sheriff-types](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/sheriff-types)                 | Sheriff types package                                                 | [![npm](https://img.shields.io/npm/v/@sherifforg/types.svg)](https://www.npmjs.com/package/@sherifforg/types)         |
 
 ## 🚀 Getting Started
 
@@ -37,8 +37,9 @@ Please use the discussions tab or the issues tab for new rules proposals.
 
 ### Development
 
-1. Clone the repo
-1. Install the dependencies with pnpm
+1. Clone this repository
+1. Enable Corepack using corepack enable
+1. Install dependencies using pnpm install
 1. Do the changes
 
 ## 🌤 Changelog
