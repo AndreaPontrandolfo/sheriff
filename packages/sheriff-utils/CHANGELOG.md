@@ -1,5 +1,13 @@
 # @sheriff/utils
 
+## 1.1.5
+
+### Patch Changes
+
+- 350edfb: fix(cli): remove CJS support for config file and fix crash. Fixes #222
+  feat(cli): added version and help commands with aliases to cli
+  feat(cli): added welcome message
+
 ## 1.1.4
 
 ### Patch Changes

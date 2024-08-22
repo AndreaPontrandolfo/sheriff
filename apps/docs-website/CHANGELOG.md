@@ -1,5 +1,17 @@
 # docs-website
 
+## 2.4.1
+
+### Patch Changes
+
+- 350edfb: fix(cli): remove CJS support for config file and fix crash. Fixes #222
+  feat(cli): added version and help commands with aliases to cli
+  feat(cli): added welcome message
+- 8210524: fix(config): fixed import/no-default-export rule
+  Closes #218
+- Updated dependencies [350edfb]
+  - @sherifforg/constants@0.0.4
+
 ## 2.4.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # create-sheriff-config
 
+## 6.0.0
+
+### Major Changes
+
+- 350edfb: fix(cli): remove CJS support for config file and fix crash. Fixes #222
+  feat(cli): added version and help commands with aliases to cli
+  feat(cli): added welcome message
+
+### Patch Changes
+
+- c8f8f09: fix bug with ts-patch installation
+
 ## 5.2.2
 
 ### Patch Changes
