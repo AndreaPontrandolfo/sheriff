@@ -656,7 +656,7 @@ export default defineFlatConfig([
 #### Shrink
 
 Conveniently, Sheriff exports it's own `no-restricted-syntax` entry as the `baseNoRestrictedSyntaxRules` array.<br/>
-To shrink the Sheriff entry of `no-restricted-syntax`, you can use the Javascript [toSpliced() ↗](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced) method to remove the entries that you don't like.<br/>
+To shrink the Sheriff entry of `no-restricted-syntax`, you can use the Javascript [toSpliced()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced) method to remove the entries that you don't like.<br/>
 Every entry prints the index of itself at the end of the `message` property, so you can easily identify which one you want to remove.
 
 Example:
