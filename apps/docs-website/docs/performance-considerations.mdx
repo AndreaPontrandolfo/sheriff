@@ -12,9 +12,9 @@ Depending on the device you are operating on, in-editor performance can be a con
 
 ## Rules performance benchmarking
 
-The currently known slowest rules in Sheriff are the ones of `@typescript-eslint` that [requires type information ↗](https://typescript-eslint.io/getting-started/typed-linting) to work.
+The currently known slowest rules in Sheriff are the ones of `@typescript-eslint` that [requires type information](https://typescript-eslint.io/getting-started/typed-linting) to work.
 
-[List of types-aware rules ↗](https://typescript-eslint.io/rules/?=typeInformation).
+[List of types-aware rules](https://typescript-eslint.io/rules/?=typeInformation).
 
 You can benchmark rules performance by yourself by running the following command in the terminal:
 
@@ -22,11 +22,11 @@ You can benchmark rules performance by yourself by running the following command
 TIMING=1 npm run eslint
 ```
 
-Learn more in the [ESLint official docs section ↗](https://eslint.org/docs/latest/extend/custom-rules#profile-rule-performance).
+Learn more in the [ESLint official docs section](https://eslint.org/docs/latest/extend/custom-rules#profile-rule-performance).
 
 ## Rules performance optimization strategies
 
-There are a few techniques you can leverage to improve linting time. <br />
+There are a few techniques you can leverage to improve slow linting time. <br />
 You can choose which technique to employ or mix-and-match them.
 
 ### Disable some of the heaviest rules
@@ -39,8 +39,8 @@ This approach has a little more overhead, but you could try to run the heaviest 
 
 Here is an example on how you can achieve it:
 
-<Tabs groupId="esmorcjs">
-  <TabItem value="ESM" label="ESM">
+<Tabs groupId="tsorjs">
+  <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
 import sheriff from "eslint-config-sheriff";
@@ -68,13 +68,14 @@ export default defineFlatConfig([
 ```
 
 </TabItem>
-<TabItem value="CommonJS" label="CommonJS">
+<TabItem value="TS" label="TS">
 
-```js title="eslint.config.js"
-const { sheriff } = require("eslint-config-sheriff");
-const { defineFlatConfig } = require("eslint-define-config");
+```ts title="eslint.config.ts"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+import type { SheriffSettings } from "@sherifforg/types";
 
-const sheriffOptions = {
+const sheriffOptions: SheriffSettings = {
   react: false,
   next: false,
   astro: false,
@@ -84,7 +85,7 @@ const sheriffOptions = {
   vitest: false,
 };
 
-module.exports = defineFlatConfig([
+export default defineFlatConfig([
   ...sheriff(sheriffOptions),
   {
     rules: {
@@ -106,8 +107,8 @@ ESLint features an internal cache where you can store your previous runs.
 
 This technique has pretty much no downsides and you should employ it in any case, regardless of any other factor.
 
-Read the official docs on ESLint caching here: [command-line-interface#caching ↗](https://eslint.org/docs/latest/use/command-line-interface#caching). <br />
-Instead, if your project lives in a monorepo, you can follow [this guide ↗](https://www.shew.dev/monorepos/guardrails/eslint).
+Read the official docs on ESLint caching here: [command-line-interface#caching](https://eslint.org/docs/latest/use/command-line-interface#caching). <br />
+Instead, if your project lives in a monorepo, you can follow [this guide](https://www.shew.dev/monorepos/guardrails/eslint).
 
 ### Review glob patterns
 

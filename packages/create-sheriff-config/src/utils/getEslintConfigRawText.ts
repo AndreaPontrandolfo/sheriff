@@ -3,7 +3,7 @@ import { setSheriffConfig } from './setSheriffConfig';
 import { throwError } from './throwError';
 
 export const getEslintConfigRawText = async (
-  fileType: 'ts' | 'esm' | 'commonjs',
+  fileType: 'ts' | 'esm',
   customProjectRootPath: string | null,
 ): Promise<string> => {
   let sheriffConfig = sheriffStartingOptions;
@@ -36,22 +36,11 @@ import { defineFlatConfig } from 'eslint-define-config';
 const sheriffOptions = ${JSON.stringify(sheriffConfig, null, 2)};
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);`,
-
-    commonjs: `const { sheriff } = require('eslint-config-sheriff');
-const { defineFlatConfig } = require('eslint-define-config');
-
-const sheriffOptions = ${JSON.stringify(sheriffConfig, null, 2)};
-
-module.exports = defineFlatConfig([...sheriff(sheriffOptions)]);`,
   };
 
   if (fileType === 'ts') {
     return eslintConfigRawText.ts;
   }
 
-  if (fileType === 'esm') {
-    return eslintConfigRawText.esm;
-  }
-
-  return eslintConfigRawText.commonjs;
+  return eslintConfigRawText.esm;
 };

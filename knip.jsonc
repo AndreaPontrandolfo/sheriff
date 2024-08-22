@@ -7,10 +7,6 @@
     "apps/docs-website",
   ],
   "ignore": ["packages/create-sheriff-config/src/utils/gracefullyAbort.ts"],
-  "ignoreDependencies": [
-    "@turbo/gen",
-    "eslint-import-resolver-typescript",
-    "type-fest",
-  ],
+  "ignoreDependencies": ["@turbo/gen", "eslint-import-resolver-typescript"],
   "ignoreBinaries": ["only-allow"],
 }

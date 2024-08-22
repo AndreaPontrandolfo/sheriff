@@ -37,8 +37,9 @@ Please use the discussions tab or the issues tab for new rules proposals.
 
 ### Development
 
-1. Clone the repo
-1. Install the dependencies with pnpm
+1. Clone this repository
+1. Enable Corepack using `corepack enable`
+1. Install dependencies using `pnpm install`
 1. Do the changes
 
 ## 🌤 Changelog
