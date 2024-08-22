@@ -295,9 +295,6 @@ importers:
       tsx:
         specifier: ^4.16.2
         version: 4.16.2
-      type-fest:
-        specifier: ^4.21.0
-        version: 4.21.0
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -538,9 +535,6 @@ importers:
       tsconfig:
         specifier: workspace:*
         version: link:../tsconfig
-      type-fest:
-        specifier: ^4.21.0
-        version: 4.21.0
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -577,9 +571,6 @@ importers:
       tsx:
         specifier: ^4.16.2
         version: 4.16.2
-      type-fest:
-        specifier: ^4.21.0
-        version: 4.21.0
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -8724,10 +8715,6 @@ packages:
   type-fest@3.13.1:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
-
-  type-fest@4.21.0:
-    resolution: {integrity: sha512-ADn2w7hVPcK6w1I0uWnM//y1rLXZhzB9mr0a3OirzclKF1Wp6VzevUmzz/NRAWunOT6E8HrnpGY7xOfc6K57fA==}
-    engines: {node: '>=16'}
 
   type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
@@ -19755,8 +19742,6 @@ snapshots:
   type-fest@2.19.0: {}
 
   type-fest@3.13.1: {}
-
-  type-fest@4.21.0: {}
 
   type-is@1.6.18:
     dependencies:
