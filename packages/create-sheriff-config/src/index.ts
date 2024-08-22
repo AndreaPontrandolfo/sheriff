@@ -11,6 +11,7 @@ import { setDependencies } from './utils/setDependencies';
 import { setEslintConfig } from './utils/setEslintConfig';
 import { setPrettierConfig } from './utils/setPrettierConfig';
 import { setPrettierIgnore } from './utils/setPrettierIgnore';
+import { showWelcome } from './utils/showWelcome';
 
 const { argv } = yargs(hideBin(process.argv))
   .version(packageJson.version)
@@ -26,6 +27,9 @@ const { argv } = yargs(hideBin(process.argv))
 async function main() {
   const commandArguments = await argv;
   const isWorkspace = Boolean(commandArguments.filter);
+
+  showWelcome();
+  consola.log(''); // space
   const customProjectRootPath = isWorkspace ? await askForCustomPath() : null;
   const hasLocalPrettierSupport = isWorkspace
     ? await askForPrettierSupport()
