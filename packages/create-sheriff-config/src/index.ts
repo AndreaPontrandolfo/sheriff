@@ -3,6 +3,7 @@
 import { consola } from 'consola';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import packageJson from '../package.json';
 import { askForCustomPath } from './utils/askForCustomPath';
 import { askForEslintTsPatch } from './utils/askForEslintTsPatch';
 import { askForPrettierSupport } from './utils/askForPrettierSupport';
@@ -11,10 +12,15 @@ import { setEslintConfig } from './utils/setEslintConfig';
 import { setPrettierConfig } from './utils/setPrettierConfig';
 import { setPrettierIgnore } from './utils/setPrettierIgnore';
 
-const { argv } = yargs(hideBin(process.argv)).option('filter', {
-  type: 'string',
-  description: 'Filter for specific workspace',
-});
+const { argv } = yargs(hideBin(process.argv))
+  .version(packageJson.version)
+  .alias('v', 'version')
+  .option('filter', {
+    type: 'string',
+    description: 'Filter for specific workspace',
+  })
+  .help()
+  .alias('h', 'help');
 
 // eslint-disable-next-line
 async function main() {
