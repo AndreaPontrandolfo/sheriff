@@ -1,5 +1,17 @@
 # sheriff-webservices
 
+## 3.2.6
+
+### Patch Changes
+
+- 350edfb: fix(cli): remove CJS support for config file and fix crash. Fixes #222
+  feat(cli): added version and help commands with aliases to cli
+  feat(cli): added welcome message
+- Updated dependencies [9eafd0f]
+- Updated dependencies [350edfb]
+- Updated dependencies [8210524]
+  - eslint-config-sheriff@21.0.0
+
 ## 3.2.5
 
 ### Patch Changes

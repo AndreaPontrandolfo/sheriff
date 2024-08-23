@@ -1,5 +1,23 @@
 # eslint-config-sheriff
 
+## 21.0.0
+
+### Major Changes
+
+- 8210524: fix(config): fixed import/no-default-export rule
+  Closes #218
+
+### Minor Changes
+
+- 9eafd0f: feat(config): added no-useless-assignment rule
+  Fixes #186
+
+### Patch Changes
+
+- 350edfb: fix(cli): remove CJS support for config file and fix crash. Fixes #222
+  feat(cli): added version and help commands with aliases to cli
+  feat(cli): added welcome message
+
 ## 20.0.0
 
 ### Major Changes
