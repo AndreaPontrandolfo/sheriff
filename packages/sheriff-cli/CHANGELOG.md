@@ -1,4 +1,4 @@
-# create-sheriff-config
+# @sherifforg/cli
 
 ## 6.0.0
 

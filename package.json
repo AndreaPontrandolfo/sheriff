@@ -30,8 +30,8 @@
   "dependencies": {
     "@changesets/cli": "^2.27.7",
     "@manypkg/cli": "^0.21.4",
-    "@turbo/gen": "^2.0.9",
     "@sherifforg/cli": "workspace:*",
+    "@turbo/gen": "^2.0.9",
     "knip": "^5.25.1",
     "prettier": "^3.3.2",
     "turbo": "^2.0.9",
