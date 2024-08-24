@@ -25,8 +25,8 @@
     "yargs": "^17.7.2"
   },
   "bin": {
-    "create-sheriff-config": "./dist/index.js",
-    "sheriff": "./dist/index.js"
+    "create-sheriff-config": "dist/index.js",
+    "sheriff": "dist/index.js"
   },
   "devDependencies": {
     "@sherifforg/constants": "workspace:*",
@@ -44,7 +44,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AndreaPontrandolfo/sheriff.git",
+    "url": "git+https://github.com/AndreaPontrandolfo/sheriff.git",
     "directory": "packages/sheriff-cli"
   },
   "author": {
