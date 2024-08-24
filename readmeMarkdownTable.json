@@ -12,10 +12,10 @@
     "Version": "[![npm](https://img.shields.io/npm/v/eslint-config-sheriff.svg)](https://www.npmjs.com/package/eslint-config-sheriff)"
   },
   {
-    "Link": "[`create-sheriff-config`](https://www.npmjs.com/package/create-sheriff-config)",
-    "Source": "[create-sheriff-config](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/create-sheriff-config)",
-    "Description": "CLI/starter to bootstrap a Sheriff config",
-    "Version": "[![npm](https://img.shields.io/npm/v/create-sheriff-config.svg)](https://www.npmjs.com/package/create-sheriff-config)"
+    "Link": "[`@sherifforg/cli`](https://www.npmjs.com/package/@sherifforg/cli)",
+    "Source": "[sheriff-cli](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/sheriff-cli)",
+    "Description": "The Sheriff CLI. Used to create and manage Sheriff-based ESLint configs.",
+    "Version": "[![npm](https://img.shields.io/npm/v/@sherifforg/cli.svg)](https://www.npmjs.com/package/@sherifforg/cli)"
   },
   {
     "Link": "[`@sherifforg/types`](https://www.npmjs.com/package/@sherifforg/types)",
