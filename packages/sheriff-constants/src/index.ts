@@ -1,4 +1,4 @@
-import { SheriffConfigurablePlugins } from '@sherifforg/types';
+import type { SheriffConfigurablePlugins } from '@sherifforg/types';
 
 export const sheriffStartingOptions: SheriffConfigurablePlugins = {
   react: false,

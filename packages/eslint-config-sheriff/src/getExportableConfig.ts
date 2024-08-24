@@ -1,7 +1,7 @@
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
 import type { FlatESLintConfig } from 'eslint-define-config';
-import { SheriffSettings } from '@sherifforg/types';
+import type { SheriffSettings } from '@sherifforg/types';
 import { ignores, sheriffStartingOptions } from '@sherifforg/constants';
 import { getReactConfig } from './getReactConfig';
 import { getBaseConfig } from './getBaseConfig';
