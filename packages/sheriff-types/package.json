@@ -5,29 +5,26 @@
   "license": "MIT",
   "type": "module",
   "files": [
-    "src"
+    "dist"
   ],
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
-  "module": "./src/index.ts",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "import": "./src/index.ts",
-      "require": "./src/index.ts"
+      "import": "./dist/index.js"
     }
   },
   "scripts": {
     "clean": "rm -rf .turbo dist",
     "typecheck": "tsc --noEmit",
     "publint": "publint",
-    "are-the-types-wrong": "attw --pack ."
+    "build": "tsup",
+    "are-the-types-wrong": "attw $(pnpm pack) --ignore-rules cjs-resolves-to-esm no-resolution && rm sherifforg-types-*.tgz"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.15.4",
     "@types/node": "^20.14.10",
     "publint": "^0.2.10",
     "tsconfig": "workspace:*",
+    "tsup": "^8.2.4",
     "typescript": "^5.5.3"
   },
   "repository": {

@@ -1,36 +1,22 @@
 {
   "name": "@sherifforg/constants",
-  "description": "Sheriff constants variables.",
+  "description": "Sheriff constants & variables.",
   "version": "0.0.4",
   "private": true,
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
-    }
+    ".": "./src/index.ts"
   },
   "files": [
-    "dist",
+    "src",
     "CHANGELOG.md"
   ],
   "scripts": {
-    "publint": "publint",
-    "clean": "rm -rf .turb dist",
-    "build": "tsup",
-    "are-the-types-wrong": "attw --pack ."
+    "clean": "rm -rf .turbo"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.15.4",
     "@sherifforg/types": "workspace:*",
-    "publint": "^0.2.10",
     "tsconfig": "workspace:*",
     "typescript": "^5.5.3"
-  },
-  "dependencies": {
-    "tsup": "^6.2.3"
   }
 }
