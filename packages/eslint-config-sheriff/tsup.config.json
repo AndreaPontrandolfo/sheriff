@@ -1,8 +1,13 @@
 {
   "entry": ["./src/index.ts"],
   "format": "esm",
-  "dts": true,
+  "dts": {
+    "entry": "src/index.ts",
+    "resolve": ["@sherifforg/constants"]
+  },
   "splitting": false,
   "sourcemap": false,
-  "clean": true
+  "clean": true,
+  "noExternal": ["@sherifforg/constants"],
+  "skipNodeModulesBundle": true
 }
