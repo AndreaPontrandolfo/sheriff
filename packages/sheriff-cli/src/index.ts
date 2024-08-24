@@ -29,7 +29,6 @@ async function main() {
   const isWorkspace = Boolean(commandArguments.filter);
 
   showWelcome();
-  consola.log(''); // space
   const customProjectRootPath = isWorkspace ? await askForCustomPath() : null;
   const hasLocalPrettierSupport = isWorkspace
     ? await askForPrettierSupport()

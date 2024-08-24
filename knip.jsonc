@@ -6,7 +6,7 @@
     "apps/cli-playground",
     "apps/docs-website",
   ],
-  "ignore": ["packages/create-sheriff-config/src/utils/gracefullyAbort.ts"],
+  "ignore": ["packages/sheriff-cli/src/utils/gracefullyAbort.ts"],
   "ignoreDependencies": ["@turbo/gen", "eslint-import-resolver-typescript"],
   "ignoreBinaries": ["only-allow"],
 }

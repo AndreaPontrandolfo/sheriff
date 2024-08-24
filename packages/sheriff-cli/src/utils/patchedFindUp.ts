@@ -1,5 +1,5 @@
 import { findUp } from 'find-up';
-import { dirname,resolve } from 'pathe';
+import { dirname, resolve } from 'pathe';
 
 /**
  * Finds the first occurrence of a file in the directory hierarchy starting from the current working directory.

@@ -14,12 +14,12 @@ importers:
       '@manypkg/cli':
         specifier: ^0.21.4
         version: 0.21.4
+      '@sherifforg/cli':
+        specifier: workspace:*
+        version: link:packages/sheriff-cli
       '@turbo/gen':
         specifier: ^2.0.9
         version: 2.0.9(@types/node@22.3.0)(typescript@5.5.4)
-      create-sheriff-config:
-        specifier: workspace:*
-        version: link:packages/create-sheriff-config
       knip:
         specifier: ^5.25.1
         version: 5.26.0(@types/node@22.3.0)(typescript@5.5.4)
@@ -299,73 +299,6 @@ importers:
         specifier: ^5.5.3
         version: 5.5.3
 
-  packages/create-sheriff-config:
-    dependencies:
-      cli-highlight:
-        specifier: ^2.1.11
-        version: 2.1.11
-      consola:
-        specifier: ^3.2.3
-        version: 3.2.3
-      find-up:
-        specifier: ^6.3.0
-        version: 6.3.0
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
-      nypm:
-        specifier: ^0.3.9
-        version: 0.3.9
-      pathe:
-        specifier: ^1.1.2
-        version: 1.1.2
-      read-pkg-up:
-        specifier: 9.1.0
-        version: 9.1.0
-      typescript:
-        specifier: ^5.5.3
-        version: 5.5.3
-      yargs:
-        specifier: ^17.7.2
-        version: 17.7.2
-    devDependencies:
-      '@sherifforg/constants':
-        specifier: workspace:*
-        version: link:../sheriff-constants
-      '@sherifforg/types':
-        specifier: workspace:*
-        version: link:../sheriff-types
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
-      '@types/node':
-        specifier: ^20.14.10
-        version: 20.14.10
-      '@types/yargs':
-        specifier: ^17.0.32
-        version: 17.0.32
-      eslint:
-        specifier: ^9.9.0
-        version: 9.9.0(jiti@1.21.6)
-      eslint-config-sheriff:
-        specifier: workspace:*
-        version: link:../eslint-config-sheriff
-      eslint-define-config:
-        specifier: ^2.1.0
-        version: 2.1.0
-      publint:
-        specifier: ^0.2.10
-        version: 0.2.10
-      tsconfig:
-        specifier: workspace:*
-        version: link:../tsconfig
-      tsup:
-        specifier: ^6.2.3
-        version: 6.7.0(postcss@8.4.39)(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.3))(typescript@5.5.3)
-      tsx:
-        specifier: ^4.16.2
-        version: 4.16.2
-
   packages/eslint-config-sheriff:
     dependencies:
       '@eslint-react/eslint-plugin':
@@ -498,6 +431,73 @@ importers:
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
+
+  packages/sheriff-cli:
+    dependencies:
+      cli-highlight:
+        specifier: ^2.1.11
+        version: 2.1.11
+      consola:
+        specifier: ^3.2.3
+        version: 3.2.3
+      find-up:
+        specifier: ^6.3.0
+        version: 6.3.0
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      nypm:
+        specifier: ^0.3.9
+        version: 0.3.9
+      pathe:
+        specifier: ^1.1.2
+        version: 1.1.2
+      read-pkg-up:
+        specifier: 9.1.0
+        version: 9.1.0
+      typescript:
+        specifier: ^5.5.3
+        version: 5.5.4
+      yargs:
+        specifier: ^17.7.2
+        version: 17.7.2
+    devDependencies:
+      '@sherifforg/constants':
+        specifier: workspace:*
+        version: link:../sheriff-constants
+      '@sherifforg/types':
+        specifier: workspace:*
+        version: link:../sheriff-types
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
+      '@types/node':
+        specifier: ^20.14.10
+        version: 20.14.10
+      '@types/yargs':
+        specifier: ^17.0.32
+        version: 17.0.32
+      eslint:
+        specifier: ^9.9.0
+        version: 9.9.0(jiti@1.21.6)
+      eslint-config-sheriff:
+        specifier: workspace:*
+        version: link:../eslint-config-sheriff
+      eslint-define-config:
+        specifier: ^2.1.0
+        version: 2.1.0
+      publint:
+        specifier: ^0.2.10
+        version: 0.2.10
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      tsup:
+        specifier: ^6.2.3
+        version: 6.7.0(postcss@8.4.39)(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.4))(typescript@5.5.4)
+      tsx:
+        specifier: ^4.16.2
+        version: 4.16.2
 
   packages/sheriff-constants:
     dependencies:
@@ -2845,9 +2845,6 @@ packages:
 
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
-
-  '@types/eslint@8.56.10':
-    resolution: {integrity: sha512-Shavhk87gCtY2fhXDctcfS3e6FdxWkCx1iUZ9eEUbh7rTqlZT0/IzOkCOVt0fCjcFuZ9FPYfuezTBImfHCDBGQ==}
 
   '@types/eslint@9.6.0':
     resolution: {integrity: sha512-gi6WQJ7cHRgZxtkQEoyHMppPjq9Kxo5Tjn2prSKDSmZrCz8TZ3jSRCeTJm+WoM+oB0WG37bRqLzaaU3q7JypGg==}
@@ -12523,17 +12520,12 @@ snapshots:
 
   '@types/eslint-plugin-jsx-a11y@6.9.0':
     dependencies:
-      '@types/eslint': 8.56.10
+      '@types/eslint': 9.6.0
 
   '@types/eslint-scope@3.7.7':
     dependencies:
-      '@types/eslint': 8.56.10
+      '@types/eslint': 9.6.0
       '@types/estree': 1.0.5
-
-  '@types/eslint@8.56.10':
-    dependencies:
-      '@types/estree': 1.0.5
-      '@types/json-schema': 7.0.15
 
   '@types/eslint@9.6.0':
     dependencies:
@@ -12542,7 +12534,7 @@ snapshots:
 
   '@types/eslint__js@8.42.3':
     dependencies:
-      '@types/eslint': 8.56.10
+      '@types/eslint': 9.6.0
 
   '@types/estree-jsx@1.0.5':
     dependencies:
@@ -17540,7 +17532,7 @@ snapshots:
   normalize-package-data@3.0.3:
     dependencies:
       hosted-git-info: 4.1.0
-      is-core-module: 2.13.1
+      is-core-module: 2.15.0
       semver: 7.6.3
       validate-npm-package-license: 3.0.4
 
@@ -18075,6 +18067,14 @@ snapshots:
     optionalDependencies:
       postcss: 8.4.39
       ts-node: 10.9.2(@types/node@20.14.10)(typescript@5.5.3)
+
+  postcss-load-config@3.1.4(postcss@8.4.39)(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.4)):
+    dependencies:
+      lilconfig: 2.1.0
+      yaml: 1.10.2
+    optionalDependencies:
+      postcss: 8.4.39
+      ts-node: 10.9.2(@types/node@20.14.10)(typescript@5.5.4)
 
   postcss-load-config@3.1.4(postcss@8.4.39)(ts-node@10.9.2(@types/node@22.3.0)(typescript@5.5.3)):
     dependencies:
@@ -19664,6 +19664,25 @@ snapshots:
       yn: 3.1.1
     optional: true
 
+  ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.4):
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.11
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 20.14.10
+      acorn: 8.12.1
+      acorn-walk: 8.3.2
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: 5.5.4
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+    optional: true
+
   ts-node@10.9.2(@types/node@22.3.0)(typescript@5.5.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
@@ -19737,6 +19756,29 @@ snapshots:
     optionalDependencies:
       postcss: 8.4.39
       typescript: 5.5.3
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
+
+  tsup@6.7.0(postcss@8.4.39)(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.4))(typescript@5.5.4):
+    dependencies:
+      bundle-require: 4.1.0(esbuild@0.17.19)
+      cac: 6.7.14
+      chokidar: 3.6.0
+      debug: 4.3.5
+      esbuild: 0.17.19
+      execa: 5.1.1
+      globby: 11.1.0
+      joycon: 3.1.1
+      postcss-load-config: 3.1.4(postcss@8.4.39)(ts-node@10.9.2(@types/node@20.14.10)(typescript@5.5.4))
+      resolve-from: 5.0.0
+      rollup: 3.29.4
+      source-map: 0.8.0-beta.0
+      sucrase: 3.35.0
+      tree-kill: 1.2.2
+    optionalDependencies:
+      postcss: 8.4.39
+      typescript: 5.5.4
     transitivePeerDependencies:
       - supports-color
       - ts-node
