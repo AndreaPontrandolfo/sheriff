@@ -1,6 +1,6 @@
 {
   "name": "@sherifforg/cli",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "type": "module",
   "description": "The Sheriff CLI. Used to create and manage Sheriff-based ESLint configs.",
   "main": "dist/index.js",

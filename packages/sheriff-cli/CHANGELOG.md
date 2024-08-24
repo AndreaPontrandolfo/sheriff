@@ -1,5 +1,12 @@
 # @sherifforg/cli
 
+## 7.0.0
+
+### Major Changes
+
+- bd82253: feat(cli): renamed create-sheriff-config to @sherifforg/cli
+  Fixes #226
+
 ## 6.0.0
 
 ### Major Changes
