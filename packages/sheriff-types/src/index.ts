@@ -16,19 +16,20 @@ export interface Entry {
 }
 
 export type NumericSeverity = 0 | 1 | 2;
-
-export type Severity = NumericSeverity | 'error' | 'warn' | 'off';
+export type StringSeverity = 'error' | 'warn' | 'off';
+export type Severity = NumericSeverity | StringSeverity;
 
 export type RuleOptions =
   | [Severity, ...(Record<string, unknown> | string)[]]
-  | Severity;
+  | Severity
+  | undefined;
 
 export type Plugins =
   | {
       [key: string]:
         | {
             files?: string[];
-            rules: any;
+            rules?: any;
             configs?: any;
           }
         | undefined;

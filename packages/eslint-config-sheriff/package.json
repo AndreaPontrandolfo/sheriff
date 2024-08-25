@@ -2,14 +2,10 @@
   "name": "eslint-config-sheriff",
   "version": "21.0.0",
   "description": "A comprehensive and opinionated Typescript-first ESLint configuration.",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
       "import": "./dist/index.js"
     }
   },
@@ -24,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AndreaPontrandolfo/sheriff.git",
+    "url": "git+https://github.com/AndreaPontrandolfo/sheriff.git",
     "directory": "packages/eslint-config-sheriff"
   },
   "keywords": [
@@ -53,7 +49,7 @@
     "typecheck": "tsc --noEmit",
     "publint": "publint",
     "typesync": "typesync --dry=fail",
-    "are-the-types-wrong": "attw --pack ."
+    "are-the-types-wrong": "attw $(pnpm pack) --ignore-rules cjs-resolves-to-esm no-resolution && rm eslint-config-sheriff-*.tgz"
   },
   "dependencies": {
     "@eslint-react/eslint-plugin": "^1.10.1",
@@ -107,7 +103,7 @@
     "lodash": "^4.17.21",
     "publint": "^0.2.10",
     "tsconfig": "workspace:*",
-    "tsup": "^6.2.3",
+    "tsup": "^8.2.4",
     "typescript": "^5.5.3"
   },
   "publishConfig": {

@@ -13,7 +13,7 @@ import fsecond from 'eslint-plugin-fsecond';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import stylistic from '@stylistic/eslint-plugin';
 import { supportedFileTypes, allJsExtensions } from '@sherifforg/constants';
-import { SheriffSettings } from '@sherifforg/types';
+import type { SheriffSettings } from '@sherifforg/types';
 import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 import { importHandPickedRules } from './handpickedRules/importHandPickedRules';
 import { jsdocHandPickedRules } from './handpickedRules/jsdocHandPickedRules';

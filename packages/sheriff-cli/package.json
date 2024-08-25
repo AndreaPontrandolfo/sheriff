@@ -3,7 +3,6 @@
   "version": "7.0.0",
   "type": "module",
   "description": "The Sheriff CLI. Used to create and manage Sheriff-based ESLint configs.",
-  "main": "dist/index.js",
   "scripts": {
     "dev": "tsx ./src/index.ts",
     "clean": "rm -rf .turbo dist",
@@ -26,8 +25,8 @@
     "yargs": "^17.7.2"
   },
   "bin": {
-    "create-sheriff-config": "./dist/index.js",
-    "sheriff": "./dist/index.js"
+    "create-sheriff-config": "dist/index.js",
+    "sheriff": "dist/index.js"
   },
   "devDependencies": {
     "@sherifforg/constants": "workspace:*",
@@ -40,12 +39,12 @@
     "eslint-define-config": "^2.1.0",
     "publint": "^0.2.10",
     "tsconfig": "workspace:*",
-    "tsup": "^6.2.3",
+    "tsup": "^8.2.4",
     "tsx": "^4.16.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AndreaPontrandolfo/sheriff.git",
+    "url": "git+https://github.com/AndreaPontrandolfo/sheriff.git",
     "directory": "packages/sheriff-cli"
   },
   "author": {
