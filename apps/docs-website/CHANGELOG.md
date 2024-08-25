@@ -1,5 +1,16 @@
 # docs-website
 
+## 2.5.0
+
+### Minor Changes
+
+- bd82253: feat(cli): renamed create-sheriff-config to @sherifforg/cli
+  Fixes #226
+
+### Patch Changes
+
+- @sherifforg/constants@0.0.4
+
 ## 2.4.1
 
 ### Patch Changes
