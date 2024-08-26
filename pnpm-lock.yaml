@@ -511,6 +511,73 @@ importers:
         specifier: ^5.5.3
         version: 5.5.4
 
+  packages/sheriff-create-config:
+    dependencies:
+      cli-highlight:
+        specifier: ^2.1.11
+        version: 2.1.11
+      consola:
+        specifier: ^3.2.3
+        version: 3.2.3
+      find-up:
+        specifier: ^6.3.0
+        version: 6.3.0
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      nypm:
+        specifier: ^0.3.9
+        version: 0.3.9
+      pathe:
+        specifier: ^1.1.2
+        version: 1.1.2
+      read-pkg-up:
+        specifier: 9.1.0
+        version: 9.1.0
+      typescript:
+        specifier: ^5.5.3
+        version: 5.5.4
+      yargs:
+        specifier: ^17.7.2
+        version: 17.7.2
+    devDependencies:
+      '@sherifforg/constants':
+        specifier: workspace:*
+        version: link:../sheriff-constants
+      '@sherifforg/types':
+        specifier: workspace:*
+        version: link:../sheriff-types
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
+      '@types/node':
+        specifier: ^20.14.10
+        version: 20.14.10
+      '@types/yargs':
+        specifier: ^17.0.32
+        version: 17.0.32
+      eslint:
+        specifier: ^9.9.0
+        version: 9.9.0(jiti@1.21.6)
+      eslint-config-sheriff:
+        specifier: workspace:*
+        version: link:../eslint-config-sheriff
+      eslint-define-config:
+        specifier: ^2.1.0
+        version: 2.1.0
+      publint:
+        specifier: ^0.2.10
+        version: 0.2.10
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      tsup:
+        specifier: ^8.2.4
+        version: 8.2.4(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.4)(yaml@2.4.2)
+      tsx:
+        specifier: ^4.16.2
+        version: 4.16.2
+
   packages/sheriff-types:
     devDependencies:
       '@arethetypeswrong/cli':
@@ -3981,7 +4048,7 @@ packages:
     engines: {node: '>= 0.8.0'}
 
   concat-map@0.0.1:
-    resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+    resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
 
   concat-stream@2.0.0:
     resolution: {integrity: sha512-MWufYdFw53ccGjCA+Ol7XJYpAlW6/prSMzuPOTRnJGcGzuhLn4Scrz7qf6o8bROZ514ltazcIFJZevcfbo0x7A==}
