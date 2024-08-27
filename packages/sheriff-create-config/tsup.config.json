@@ -1,0 +1,7 @@
+{
+  "entry": ["./src/index.ts"],
+  "format": "esm",
+  "splitting": false,
+  "sourcemap": false,
+  "clean": true
+}

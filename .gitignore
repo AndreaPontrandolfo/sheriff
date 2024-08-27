@@ -53,3 +53,5 @@ apps/cli-playground/*
 !apps/cli-playground/package.json
 !apps/cli-playground/tsconfig.json
 
+# tsx trash files
+apps/sheriff-webservices/undefined

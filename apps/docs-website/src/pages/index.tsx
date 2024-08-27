@@ -45,7 +45,7 @@ const Homepage = (): JSX.Element => {
               </Link>
             </div>
             <CodeBlock className={styles.codeblock} language="bash">
-              npm init sheriff-config
+              npm init @sherifforg/config
             </CodeBlock>
           </div>
         </main>
