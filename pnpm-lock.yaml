@@ -14,9 +14,9 @@ importers:
       '@manypkg/cli':
         specifier: ^0.21.4
         version: 0.21.4
-      '@sherifforg/cli':
+      '@sherifforg/create-config':
         specifier: workspace:*
-        version: link:packages/sheriff-cli
+        version: link:packages/sheriff-create-config
       '@turbo/gen':
         specifier: ^2.0.9
         version: 2.0.9(@types/node@22.3.0)(typescript@5.5.4)

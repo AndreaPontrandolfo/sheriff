@@ -2,7 +2,7 @@
   "name": "@sherifforg/cli",
   "version": "7.0.0",
   "type": "module",
-  "description": "The Sheriff CLI. Used to create and manage Sheriff-based ESLint configs.",
+  "description": "The Sheriff CLI. Used to manage Sheriff-based ESLint configs.",
   "scripts": {
     "dev": "tsx ./src/index.ts",
     "clean": "rm -rf .turbo dist",
@@ -25,7 +25,6 @@
     "yargs": "^17.7.2"
   },
   "bin": {
-    "create-sheriff-config": "dist/index.js",
     "sheriff": "dist/index.js"
   },
   "devDependencies": {

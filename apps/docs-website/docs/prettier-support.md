@@ -8,11 +8,11 @@ Sheriff tries to incorporate [Prettier](https://prettier.io/) out-of-the-box.
 
 ## Setup
 
-The `npm init sheriff-config` command will spin up for you a default `.prettierrc.json` configuration. You _can_ modify it if you need to, but [it is discouraged](https://prettier.io/docs/en/option-philosophy.html). Act with caution.
+The `npm init @sherifforg/config` command will spin up for you a default `.prettierrc.json` configuration. You _can_ modify it if you need to, but [it is discouraged](https://prettier.io/docs/en/option-philosophy.html). Act with caution.
 
-If you don't use the `npm init sheriff-config` command, you will have to provide a prettier config yourself. Also don't forget the [`.prettierignore` file](https://prettier.io/docs/en/ignore.html).
+If you don't use the `npm init @sherifforg/config` command, you will have to provide a prettier config yourself. Also don't forget the [`.prettierignore` file](https://prettier.io/docs/en/ignore.html).
 
-If you already have a Prettier config in your project, you are good to go. The `npm init sheriff-config` command won't create a new Prettier config, nor will attempt to modify the existing one.
+If you already have a Prettier config in your project, you are good to go. The `npm init @sherifforg/config` command won't create a new Prettier config, nor will attempt to modify the existing one.
 
 ## Usage
 
