@@ -1,4 +1,4 @@
-import eslintRecommended from '@eslint/js';
+import eslintJs from '@eslint/js';
 import type { TSESLint } from '@typescript-eslint/utils';
 import tseslint from 'typescript-eslint';
 import unicorn from 'eslint-plugin-unicorn';
@@ -34,7 +34,7 @@ export const getBaseConfig = (
   return tseslint.config(
     {
       files: [supportedFileTypes],
-      extends: [eslintRecommended.configs.recommended],
+      extends: [eslintJs.configs.recommended],
     },
     {
       files: [supportedFileTypes],
@@ -133,6 +133,7 @@ export const getBaseConfig = (
       languageOptions: {
         parserOptions: {
           sourceType: 'module', // required for https://github.com/import-js/eslint-plugin-import/blob/09476d7dac1ab36668283f9626f85e2223652b37/src/rules/no-default-export.js#L16
+          ecmaVersion: 'latest', // required by eslint-plugin-import when using sourceType: 'module'
         },
       },
       settings: {

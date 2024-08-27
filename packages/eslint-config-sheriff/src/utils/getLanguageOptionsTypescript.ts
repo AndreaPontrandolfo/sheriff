@@ -6,7 +6,6 @@ export const getLanguageOptionsTypescript = (
   return {
     parser: tseslint.parser,
     parserOptions: {
-      ecmaVersion: 'latest',
       ecmaFeatures: { modules: true },
       project: userChosenTSConfig || true,
     },

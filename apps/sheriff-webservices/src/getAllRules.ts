@@ -71,7 +71,6 @@ export const getAllRules = (
     ),
     ...prependRulesWithPluginName(arrowReturnStyle.rules, 'arrow-return-style'),
     // Stylistic's types are wrong, `default` should not be needed.
-    // Oh well. Casting it is, I guess.
     ...prependRulesWithPluginName(
       (stylistic as unknown as Plugin).rules,
       '@stylistic',
