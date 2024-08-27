@@ -1,5 +1,18 @@
 # @sherifforg/cli
 
+## 7.1.0
+
+### Minor Changes
+
+- 701edf5: feat!: esm-only bundling (follow up to #225)
+  fix: don't bundle node_modules
+  fix: webservices types
+  feat!: enable verbatimModuleSyntax
+
+### Patch Changes
+
+- b6649e0: feat(cli): added new package @sherifforg/create-config
+
 ## 7.0.0
 
 ### Major Changes
