@@ -110,7 +110,7 @@ const extractNumericSeverityFromRuleOptions = (
     return severityRemapper(ruleOptions[0]);
   }
 
-  return severityRemapper(ruleOptions ?? 'off');
+  return severityRemapper(ruleOptions ?? 0);
 };
 
 const getCompiledConfig = (
