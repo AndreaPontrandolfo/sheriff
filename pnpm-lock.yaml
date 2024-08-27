@@ -580,9 +580,6 @@ importers:
 
   packages/sheriff-types:
     devDependencies:
-      '@arethetypeswrong/cli':
-        specifier: ^0.15.4
-        version: 0.15.4
       '@types/node':
         specifier: ^20.14.10
         version: 20.14.10
