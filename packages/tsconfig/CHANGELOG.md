@@ -1,5 +1,14 @@
 # tsconfig
 
+## 0.1.0
+
+### Minor Changes
+
+- 701edf5: feat!: esm-only bundling (follow up to #225)
+  fix: don't bundle node_modules
+  fix: webservices types
+  feat!: enable verbatimModuleSyntax
+
 ## 0.0.2
 
 ### Patch Changes

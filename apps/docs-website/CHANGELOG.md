@@ -1,5 +1,13 @@
 # docs-website
 
+## 2.5.1
+
+### Patch Changes
+
+- b6649e0: feat(cli): added new package @sherifforg/create-config
+- Updated dependencies [701edf5]
+  - @sherifforg/constants@0.1.0
+
 ## 2.5.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @sherifforg/cli
 
+## 8.0.0
+
+### Major Changes
+
+- b6649e0: feat(cli): added new package @sherifforg/create-config
+
 ## 7.0.0
 
 ### Major Changes

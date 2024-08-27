@@ -1,5 +1,16 @@
 # sheriff-webservices
 
+## 3.2.7
+
+### Patch Changes
+
+- 701edf5: feat!: esm-only bundling (follow up to #225)
+  fix: don't bundle node_modules
+  fix: webservices types
+  feat!: enable verbatimModuleSyntax
+- Updated dependencies [701edf5]
+  - eslint-config-sheriff@21.1.0
+
 ## 3.2.6
 
 ### Patch Changes
