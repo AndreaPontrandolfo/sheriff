@@ -1,5 +1,16 @@
 # sheriff-webservices
 
+## 3.2.8
+
+### Patch Changes
+
+- 1e98283: feat(cli): added prompt graceful cancellation
+  Fix #241
+- Updated dependencies [f9f7cd2]
+- Updated dependencies [1e98283]
+- Updated dependencies [70f740b]
+  - eslint-config-sheriff@21.2.0
+
 ## 3.2.7
 
 ### Patch Changes
