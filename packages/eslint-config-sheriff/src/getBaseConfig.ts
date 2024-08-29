@@ -12,6 +12,7 @@ import storybook from 'eslint-plugin-storybook';
 import fsecond from 'eslint-plugin-fsecond';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import stylistic from '@stylistic/eslint-plugin';
+import * as regexpPlugin from 'eslint-plugin-regexp';
 import { supportedFileTypes, allJsExtensions } from '@sherifforg/constants';
 import type { SheriffSettings } from '@sherifforg/types';
 import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
@@ -89,6 +90,11 @@ export const getBaseConfig = (
       },
       plugins: { unicorn },
       rules: unicornHandPickedRules,
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: { regexp: regexpPlugin },
+      rules: regexpPlugin.configs['flat/recommended'].rules,
     },
     {
       files: [supportedFileTypes],
