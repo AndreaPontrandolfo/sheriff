@@ -1,5 +1,4 @@
 export const unicornHandPickedRules = {
-  'unicorn/better-regex': 2,
   'unicorn/explicit-length-check': 2,
   'unicorn/consistent-function-scoping': 2,
   'unicorn/prefer-default-parameters': 2,
