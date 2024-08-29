@@ -67,7 +67,6 @@ export const getReactConfig = (
     {
       files: [supportedFileTypes],
       plugins: {
-        '@eslint-react/hooks-extra': rel1cxReact,
         '@eslint-react': rel1cxReact,
       },
       rules: {
