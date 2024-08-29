@@ -1,5 +1,20 @@
 # eslint-config-sheriff
 
+## 21.2.0
+
+### Minor Changes
+
+- f9f7cd2: fix(config): implemented @eslint-react/eslint-plugin manually
+  Fixes #244
+- 70f740b: feat(plugins): added `eslint-plugin-regexp`
+  feat(rules): removed unicorn/better-regex
+  Closes #195
+
+### Patch Changes
+
+- 1e98283: feat(cli): added prompt graceful cancellation
+  Fix #241
+
 ## 21.1.0
 
 ### Minor Changes

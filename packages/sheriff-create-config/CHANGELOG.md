@@ -1,5 +1,12 @@
 # @sherifforg/cli
 
+## 8.1.0
+
+### Minor Changes
+
+- 1e98283: feat(cli): added prompt graceful cancellation
+  Fix #241
+
 ## 8.0.0
 
 ### Major Changes
