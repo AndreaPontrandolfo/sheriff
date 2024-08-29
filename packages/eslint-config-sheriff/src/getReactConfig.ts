@@ -67,11 +67,13 @@ export const getReactConfig = (
     {
       files: [supportedFileTypes],
       plugins: {
-        '@eslint-react': rel1cxReact,
+        '@eslint-react': rel1cxReact.configs.all.plugins['@eslint-react'],
+        '@eslint-react/hooks-extra':
+          rel1cxReact.configs.all.plugins['@eslint-react/hooks-extra'],
       },
       rules: {
-        '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 2,
         '@eslint-react/no-leaked-conditional-rendering': 2,
+        '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 2,
       },
     },
     {
