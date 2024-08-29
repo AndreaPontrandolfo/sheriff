@@ -66,10 +66,10 @@ export const getReactConfig = (
     },
     {
       files: [supportedFileTypes],
-      ...rel1cxReact.configs.off,
-    },
-    {
-      files: [supportedFileTypes],
+      plugins: {
+        '@eslint-react/hooks-extra': rel1cxReact,
+        '@eslint-react': rel1cxReact,
+      },
       rules: {
         '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 2,
         '@eslint-react/no-leaked-conditional-rendering': 2,
