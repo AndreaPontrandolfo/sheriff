@@ -24,7 +24,6 @@ export const reactHandPickedRules = {
   ],
   'react/no-multi-comp': 2,
   'react/no-array-index-key': 2,
-  'react/jsx-props-no-spreading': 2,
   'react/checked-requires-onchange-or-readonly': 2,
   'react/jsx-sort-props': [
     2,

@@ -1,7 +1,7 @@
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
-import docusaurusEslintPlugin from "@docusaurus/eslint-plugin";
-import { flat, flatCodeBlocks, createRemarkProcessor } from "eslint-plugin-mdx";
+import { sheriff } from 'eslint-config-sheriff';
+import { defineFlatConfig } from 'eslint-define-config';
+import docusaurusEslintPlugin from '@docusaurus/eslint-plugin';
+import { flat, flatCodeBlocks, createRemarkProcessor } from 'eslint-plugin-mdx';
 
 const sheriffOptions = {
   react: true,
@@ -16,15 +16,15 @@ const sheriffOptions = {
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
   {
-    files: ["*.tsx", "*.ts"], // .mdx?
+    files: ['*.tsx', '*.ts'], // .mdx?
     plugins: {
-      "@docusaurus": docusaurusEslintPlugin,
+      '@docusaurus': docusaurusEslintPlugin,
     },
     rules: {
-      "@docusaurus/no-untranslated-text": 0, // enable when we have translations
-      "@docusaurus/string-literal-i18n-messages": 0, // enable when we have translations,
-      "@docusaurus/no-html-links": 2,
-      "@docusaurus/prefer-docusaurus-heading": 2,
+      '@docusaurus/no-untranslated-text': 0, // enable when we have translations
+      '@docusaurus/string-literal-i18n-messages': 0, // enable when we have translations,
+      '@docusaurus/no-html-links': 2,
+      '@docusaurus/prefer-docusaurus-heading': 2,
     },
   },
   {
@@ -41,11 +41,10 @@ export default defineFlatConfig([
     },
   },
   {
-    files: ["**/*ts", "**/*tsx"],
+    files: ['**/*ts', '**/*tsx'],
     rules: {
-      "sonarjs/no-duplicate-string": 0,
-      "react/jsx-props-no-spreading": 0,
-      "@typescript-eslint/no-misused-promises": [
+      'sonarjs/no-duplicate-string': 0,
+      '@typescript-eslint/no-misused-promises': [
         2,
         {
           checksVoidReturn: {
@@ -53,22 +52,22 @@ export default defineFlatConfig([
           },
         },
       ],
-      "import/no-unresolved": [
+      'import/no-unresolved': [
         2,
         {
           commonjs: true,
           caseSensitiveStrict: true,
-          ignore: ["^@theme", "^@docusaurus"],
+          ignore: ['^@theme', '^@docusaurus'],
         },
       ],
     },
   },
   {
     ignores: [
-      ".docusaurus/**/*",
-      ".turbo/**/*",
-      "babel.config.js",
-      "CHANGELOG.md",
+      '.docusaurus/**/*',
+      '.turbo/**/*',
+      'babel.config.js',
+      'CHANGELOG.md',
     ],
   },
 ]);
