@@ -107,6 +107,7 @@ export const getBaseEslintHandPickedRules = () => {
     'prefer-rest-params': 2,
     'no-param-reassign': [2, { props: true }],
     'no-redeclare': 2,
+    'no-useless-computed-key': 2,
     'array-callback-return': [2, { allowImplicit: true, checkForEach: true }],
     'object-shorthand': 2,
     'no-unneeded-ternary': [2, { defaultAssignment: false }],
