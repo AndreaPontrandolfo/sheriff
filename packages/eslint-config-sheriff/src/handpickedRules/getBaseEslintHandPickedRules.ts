@@ -1,4 +1,5 @@
 import { getIndexedBaseNoRestrictedSyntaxRules } from '../utils/getIndexedBaseNoRestrictedSyntaxRules';
+import confusingBrowserGlobals from 'confusing-browser-globals';
 
 export const getBaseEslintHandPickedRules = () => {
   return {
@@ -6,27 +7,6 @@ export const getBaseEslintHandPickedRules = () => {
     'no-promise-executor-return': 2,
     'no-unreachable-loop': 2,
     'no-caller': 2,
-    'no-restricted-imports': [
-      2,
-      {
-        paths: [
-          {
-            name: 'prop-types',
-            message: 'Dont use prop-types. Use Typescript instead.',
-          },
-        ],
-        patterns: [
-          {
-            group: ['node_modules'],
-            message: 'Imports from node_modules are likely a user mistake.',
-          },
-          {
-            group: ['dist'],
-            message: 'Imports from dist are likely a user mistake.',
-          },
-        ],
-      },
-    ],
     'no-extend-native': 2,
     'no-extra-bind': 2,
     'no-extra-label': 2,
@@ -35,39 +15,6 @@ export const getBaseEslintHandPickedRules = () => {
     'no-negated-condition': 2,
     'no-new-wrappers': 2,
     'no-new-object': 2,
-    'no-restricted-properties': [
-      2,
-      {
-        object: 'global',
-        property: 'isFinite',
-        message: 'Please use Number.isFinite instead',
-      },
-      {
-        object: 'self',
-        property: 'isFinite',
-        message: 'Please use Number.isFinite instead',
-      },
-      {
-        object: 'window',
-        property: 'isFinite',
-        message: 'Please use Number.isFinite instead',
-      },
-      {
-        object: 'global',
-        property: 'isNaN',
-        message: 'Please use Number.isNaN instead',
-      },
-      {
-        object: 'self',
-        property: 'isNaN',
-        message: 'Please use Number.isNaN instead',
-      },
-      {
-        object: 'window',
-        property: 'isNaN',
-        message: 'Please use Number.isNaN instead',
-      },
-    ],
     strict: [2, 'never'],
     'no-octal-escape': 2,
     'no-proto': 2,
@@ -117,8 +64,63 @@ export const getBaseEslintHandPickedRules = () => {
     curly: [2, 'all'],
     eqeqeq: 2,
     'prefer-arrow-callback': 2,
-    'no-restricted-syntax': [2, ...getIndexedBaseNoRestrictedSyntaxRules()],
     'no-useless-assignment': 2,
+    'no-restricted-imports': [
+      2,
+      {
+        paths: [
+          {
+            name: 'prop-types',
+            message: 'Dont use prop-types. Use Typescript instead.',
+          },
+        ],
+        patterns: [
+          {
+            group: ['node_modules'],
+            message: 'Imports from node_modules are likely a user mistake.',
+          },
+          {
+            group: ['dist'],
+            message: 'Imports from dist are likely a user mistake.',
+          },
+        ],
+      },
+    ],
+    'no-restricted-properties': [
+      2,
+      {
+        object: 'global',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'self',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'window',
+        property: 'isFinite',
+        message: 'Please use Number.isFinite instead',
+      },
+      {
+        object: 'global',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+      {
+        object: 'self',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+      {
+        object: 'window',
+        property: 'isNaN',
+        message: 'Please use Number.isNaN instead',
+      },
+    ],
+    'no-restricted-syntax': [2, ...getIndexedBaseNoRestrictedSyntaxRules()],
+    'no-restricted-globals': [2, ...confusingBrowserGlobals],
     'no-return-await': 0, // we are using the @typescript/eslint version
     'no-use-before-define': 0, // we are using the @typescript/eslint version
     'no-unused-expressions': 0, // we are using the @typescript/eslint version

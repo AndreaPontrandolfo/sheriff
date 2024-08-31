@@ -322,6 +322,9 @@ importers:
       '@vitest/eslint-plugin':
         specifier: ^1.0.3
         version: 1.0.3(@typescript-eslint/utils@8.2.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4)(vitest@2.0.3(@types/node@20.14.10)(terser@5.31.0))
+      confusing-browser-globals:
+        specifier: ^1.0.11
+        version: 1.0.11
       eslint-config-flat-gitignore:
         specifier: ^0.1.8
         version: 0.1.8
@@ -398,6 +401,9 @@ importers:
       '@sherifforg/types':
         specifier: workspace:*
         version: link:../sheriff-types
+      '@types/confusing-browser-globals':
+        specifier: ^1.0.3
+        version: 1.0.3
       '@types/eslint-plugin-jsx-a11y':
         specifier: ^6.9.0
         version: 6.9.0
@@ -2894,6 +2900,9 @@ packages:
   '@types/concat-stream@2.0.3':
     resolution: {integrity: sha512-3qe4oQAPNwVNwK4C9c8u+VJqv9kez+2MR4qJpoPFfXtgxxif1QbFusvXzK0/Wra2VX07smostI2VMmJNSpZjuQ==}
 
+  '@types/confusing-browser-globals@1.0.3':
+    resolution: {integrity: sha512-q+6axdE3RyjrSsy2ONE4UpF89rwOfpoMBP3lqJ+OzLuOeYHwP+o2GITzuleKb1UT3FSYybO8QmeACgyHleu2CA==}
+
   '@types/connect-history-api-fallback@1.5.4':
     resolution: {integrity: sha512-n6Cr2xS1h4uAulPRdlw6Jl6s1oG8KrVilPN2yUITEs+K48EzMJJ3W1xy8K5eWuFvjp3R74AOIGSmp2UfBJ8HFw==}
 
@@ -4063,6 +4072,9 @@ packages:
   configstore@6.0.0:
     resolution: {integrity: sha512-cD31W1v3GqUlQvbBCGcXmd2Nj9SvLDOP1oQ0YFuLETufzSPaKp11rYBsSOm7rCsW3OnIRAFM3OxRhceaXNYHkA==}
     engines: {node: '>=12'}
+
+  confusing-browser-globals@1.0.11:
+    resolution: {integrity: sha512-JsPKdmh8ZkmnHxDk55FZ1TqVLvEQTvoByJZRN9jzI0UjxK/QgAmsphz7PGtqgPieQZ/CQcHWXCR7ATDNhGe+YA==}
 
   connect-history-api-fallback@2.0.0:
     resolution: {integrity: sha512-U73+6lQFmfiNPrYbXqr6kZ1i1wiRqXnp2nhMsINseWXO8lDau0LGEffJ8kQi4EjLZympVgRdvqjAgiZ1tgzDDA==}
@@ -12522,6 +12534,8 @@ snapshots:
     dependencies:
       '@types/node': 20.14.10
 
+  '@types/confusing-browser-globals@1.0.3': {}
+
   '@types/connect-history-api-fallback@1.5.4':
     dependencies:
       '@types/express-serve-static-core': 4.19.5
@@ -13998,6 +14012,8 @@ snapshots:
       unique-string: 3.0.0
       write-file-atomic: 3.0.3
       xdg-basedir: 5.1.0
+
+  confusing-browser-globals@1.0.11: {}
 
   connect-history-api-fallback@2.0.0: {}
 
