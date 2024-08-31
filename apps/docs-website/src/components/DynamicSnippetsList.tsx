@@ -1,4 +1,4 @@
-import type React from "react";
+import type { JSX } from 'react';
 
 interface DynamicSnippetsListProps {
   paths: string[];
@@ -6,12 +6,16 @@ interface DynamicSnippetsListProps {
 
 export const DynamicSnippetsList = ({
   paths,
-}: DynamicSnippetsListProps): React.JSX.Element => 
-  { return <ul>
-    {paths.map((path) => 
-      { return <li key={path}>
-        <code>{path}</code>
-      </li> }
-    )}
-  </ul> }
-;
+}: DynamicSnippetsListProps): JSX.Element => {
+  return (
+    <ul>
+      {paths.map((path) => {
+        return (
+          <li key={path}>
+            <code>{path}</code>
+          </li>
+        );
+      })}
+    </ul>
+  );
+};

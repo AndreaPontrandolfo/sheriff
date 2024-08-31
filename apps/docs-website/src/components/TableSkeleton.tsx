@@ -1,4 +1,5 @@
-import ContentLoader, { type IContentLoaderProps } from "react-content-loader";
+import type { JSX } from 'react';
+import ContentLoader, { type IContentLoaderProps } from 'react-content-loader';
 
 export const TableSkeleton = (props: IContentLoaderProps): JSX.Element => {
   return (

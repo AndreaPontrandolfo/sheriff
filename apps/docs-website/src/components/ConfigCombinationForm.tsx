@@ -1,7 +1,8 @@
-import { useForm } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
-import { configCombinationDefaultValues } from "@sherifforg/constants";
-import styles from "./ConfigCombinationForm.module.css";
+import type { JSX } from 'react';
+import { useForm } from 'react-hook-form';
+import { DevTool } from '@hookform/devtools';
+import { configCombinationDefaultValues } from '@sherifforg/constants';
+import styles from './ConfigCombinationForm.module.css';
 
 interface ConfigCombinationFormProps {
   setTableData: (data: FormInputs) => void;
@@ -24,18 +25,18 @@ export const ConfigCombinationForm = ({
   });
 
   const handleVitestChange = (isChecked: boolean) => {
-    setValue("vitest", isChecked, { shouldDirty: true, shouldTouch: true });
+    setValue('vitest', isChecked, { shouldDirty: true, shouldTouch: true });
 
     if (isChecked) {
-      setValue("jest", false, { shouldDirty: true, shouldTouch: true });
+      setValue('jest', false, { shouldDirty: true, shouldTouch: true });
     }
   };
 
   const handleJestChange = (isChecked: boolean) => {
-    setValue("jest", isChecked, { shouldDirty: true, shouldTouch: true });
+    setValue('jest', isChecked, { shouldDirty: true, shouldTouch: true });
 
     if (isChecked) {
-      setValue("vitest", false, { shouldDirty: true, shouldTouch: true });
+      setValue('vitest', false, { shouldDirty: true, shouldTouch: true });
     }
   };
 
@@ -48,7 +49,7 @@ export const ConfigCombinationForm = ({
     >
       <div className={styles.nativeCheckbox}>
         <input
-          {...register("react")}
+          {...register('react')}
           defaultChecked
           type="checkbox"
           id="react"
@@ -57,7 +58,7 @@ export const ConfigCombinationForm = ({
       </div>
       <div className={styles.nativeCheckbox}>
         <input
-          {...register("lodash")}
+          {...register('lodash')}
           defaultChecked
           type="checkbox"
           id="lodash"
@@ -65,12 +66,12 @@ export const ConfigCombinationForm = ({
         <label htmlFor="lodash">Lodash</label>
       </div>
       <div className={styles.nativeCheckbox}>
-        <input {...register("next")} defaultChecked type="checkbox" id="next" />
+        <input {...register('next')} defaultChecked type="checkbox" id="next" />
         <label htmlFor="next">Next</label>
       </div>
       <div className={styles.nativeCheckbox}>
         <input
-          {...register("playwright")}
+          {...register('playwright')}
           defaultChecked
           type="checkbox"
           id="playwright"
@@ -79,7 +80,7 @@ export const ConfigCombinationForm = ({
       </div>
       <div className={styles.nativeCheckbox}>
         <input
-          {...register("vitest")}
+          {...register('vitest')}
           defaultChecked
           type="checkbox"
           id="vitest"
@@ -92,7 +93,7 @@ export const ConfigCombinationForm = ({
 
       <div className={styles.nativeCheckbox}>
         <input
-          {...register("jest")}
+          {...register('jest')}
           type="checkbox"
           id="jest"
           onChange={(e) => {

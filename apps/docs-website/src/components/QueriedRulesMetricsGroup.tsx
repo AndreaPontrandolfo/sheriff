@@ -1,4 +1,5 @@
-import styles from "./QueriedRulesMetricsGroup.module.css";
+import type { JSX } from 'react';
+import styles from './QueriedRulesMetricsGroup.module.css';
 
 interface QueriedRulesMetricsGroupProps {
   totalAvailableRulesAmount: number;
