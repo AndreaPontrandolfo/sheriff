@@ -19,7 +19,7 @@
     "build": "tsup"
   },
   "devDependencies": {
-    "@types/node": "^20.14.10",
+    "@types/node": "^22.5.1",
     "publint": "^0.2.10",
     "tsconfig": "workspace:*",
     "tsup": "^8.2.4",
