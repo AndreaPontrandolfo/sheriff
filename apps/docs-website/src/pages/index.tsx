@@ -1,4 +1,5 @@
 import { clsx } from 'clsx';
+import type { JSX } from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import CodeBlock from '@theme/CodeBlock';

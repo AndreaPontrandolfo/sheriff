@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-import { isEmpty } from "lodash-es";
-import { useEffect, useRef, useState } from "react";
-import { DebounceInput } from "react-debounce-input";
-import Select from "react-select";
-import { configCombinationDefaultValues } from "@sherifforg/constants";
-import type { Entry, ServerResponse, SheriffSettings } from "@sherifforg/types";
+import { isEmpty } from 'lodash-es';
+import { type JSX, useEffect, useRef, useState } from 'react';
+import { DebounceInput } from 'react-debounce-input';
+import Select from 'react-select';
+import { configCombinationDefaultValues } from '@sherifforg/constants';
+import type { Entry, ServerResponse, SheriffSettings } from '@sherifforg/types';
 import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
   useReactTable,
-} from "@tanstack/react-table";
-import { filterDuplicateRules } from "../utils/filterDuplicatedRules";
-import { ConfigCombinationForm } from "./ConfigCombinationForm";
-import { QueriedRulesMetricsGroup } from "./QueriedRulesMetricsGroup";
-import styles from "./RulesTable.module.css";
-import { TableSkeleton } from "./TableSkeleton";
+} from '@tanstack/react-table';
+import { filterDuplicateRules } from '../utils/filterDuplicatedRules';
+import { ConfigCombinationForm } from './ConfigCombinationForm';
+import { QueriedRulesMetricsGroup } from './QueriedRulesMetricsGroup';
+import styles from './RulesTable.module.css';
+import { TableSkeleton } from './TableSkeleton';
 
 interface FilterOption {
   value: string;
@@ -26,33 +26,35 @@ interface FilterOption {
 const columnHelper = createColumnHelper<Entry>();
 
 const columns = [
-  columnHelper.accessor("ruleName", {
-    header: "Rule",
+  columnHelper.accessor('ruleName', {
+    header: 'Rule',
     cell: (info) => <code>{info.getValue()}</code>,
   }),
-  columnHelper.accessor("parentPluginName", {
-    header: "Plugin",
+  columnHelper.accessor('parentPluginName', {
+    header: 'Plugin',
     cell: (info) => info.getValue(),
   }),
-  columnHelper.accessor("severity", {
-    header: "Severity",
+  columnHelper.accessor('severity', {
+    header: 'Severity',
     cell: (info) => info.getValue(),
   }),
-  columnHelper.accessor("ruleOptions", {
-    header: "Options",
+  columnHelper.accessor('ruleOptions', {
+    header: 'Options',
     cell: (info) =>
-      isEmpty(info.getValue()) ? "No options" : JSON.stringify(info.getValue()),
+      isEmpty(info.getValue()) ? 'No options' : JSON.stringify(info.getValue()),
   }),
-  columnHelper.accessor("docs", {
-    header: "Docs",
-    cell: (info) => 
-      { return <a href={info.getValue().url} target="_blank" rel="noreferrer">
-        {info.getValue().description || info.getValue().url}
-      </a> }
-    ,
+  columnHelper.accessor('docs', {
+    header: 'Docs',
+    cell: (info) => {
+      return (
+        <a href={info.getValue().url} target="_blank" rel="noreferrer">
+          {info.getValue().description || info.getValue().url}
+        </a>
+      );
+    },
   }),
-  columnHelper.accessor("affectedFiles", {
-    header: "Files",
+  columnHelper.accessor('affectedFiles', {
+    header: 'Files',
     cell: (info) => info.getValue(),
   }),
 ];
@@ -65,8 +67,8 @@ export const RulesTable = (): JSX.Element => {
   const [configCombination, setConfigCombination] = useState<SheriffSettings>(
     configCombinationDefaultValues,
   );
-  const [globalFilter, setGlobalFilter] = useState("");
-  const [inputValue, setInputValue] = useState("");
+  const [globalFilter, setGlobalFilter] = useState('');
+  const [inputValue, setInputValue] = useState('');
   const [selectValue, setSelectValue] = useState<FilterOption | null>(null);
   const [tableMaximumAllowedWidth, setTableMaximumAllowedWidth] =
     useState<number>(0);
@@ -87,14 +89,14 @@ export const RulesTable = (): JSX.Element => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          process?.env?.NODE_ENV === "development"
-            ? "http://localhost:5001/api/get-new-sheriff-config"
-            : "https://sheriff-webservices.onrender.com/api/get-new-sheriff-config",
+          process?.env?.NODE_ENV === 'development'
+            ? 'http://localhost:5001/api/get-new-sheriff-config'
+            : 'https://sheriff-webservices.onrender.com/api/get-new-sheriff-config',
           {
-            method: "POST",
+            method: 'POST',
             headers: {
-              "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "*",
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*',
             },
             body: JSON.stringify(configCombination),
           },
@@ -122,7 +124,7 @@ export const RulesTable = (): JSX.Element => {
   };
 
   const resetInputValue = () => {
-    setInputValue("");
+    setInputValue('');
   };
 
   const table = useReactTable({
@@ -161,64 +163,80 @@ export const RulesTable = (): JSX.Element => {
             placeholder="Filter by plugins..."
             value={selectValue}
             styles={{
-              control: (baseStyles) => { return {
-                ...baseStyles,
-                minWidth: "300px",
-                backgroundColor:
-                  "var(--ifm-color-secondary-contrast-background)",
-              } },
-              input: (baseStyles) => { return {
-                ...baseStyles,
-                color: "var(--ifm-font-color-primary)",
-              } },
-              menu: (baseStyles) => { return {
-                ...baseStyles,
-                backgroundColor:
-                  "var(--ifm-color-secondary-contrast-background)",
-              } },
-              option: (baseStyles, state) => { return {
-                ...baseStyles,
-                transition:
-                  "color var(--ifm-transition-fast) var(--ifm-transition-timing-default)",
-                backgroundColor: state.isFocused
-                  ? "var(--ifm-menu-color-background-hover)"
-                  : "var(--ifm-color-secondary-contrast-background)",
-                color: state.isFocused
-                  ? "var(--ifm-menu-color)"
-                  : "var(--ifm-font-color-secondary)",
-                ":active": {
-                  backgroundColor: "var(--ifm-menu-color-background-hover)",
-                },
-              } },
-              singleValue: (baseStyles) => { return {
-                ...baseStyles,
-                color: "var(--ifm-font-color-primary)",
-              } },
-              clearIndicator: (baseStyles) => { return {
-                ...baseStyles,
-                color: "var(--ifm-font-color-secondary)",
-                ":hover": {
-                  color: "var(--ifm-font-color-primary)",
-                },
-                cursor: "pointer",
-              } },
-              dropdownIndicator: (baseStyles) => { return {
-                ...baseStyles,
-                color: "var(--ifm-font-color-secondary)",
-                ":hover": {
-                  color: "var(--ifm-font-color-primary)",
-                },
-                cursor: "pointer",
-              } },
+              control: (baseStyles) => {
+                return {
+                  ...baseStyles,
+                  minWidth: '300px',
+                  backgroundColor:
+                    'var(--ifm-color-secondary-contrast-background)',
+                };
+              },
+              input: (baseStyles) => {
+                return {
+                  ...baseStyles,
+                  color: 'var(--ifm-font-color-primary)',
+                };
+              },
+              menu: (baseStyles) => {
+                return {
+                  ...baseStyles,
+                  backgroundColor:
+                    'var(--ifm-color-secondary-contrast-background)',
+                };
+              },
+              option: (baseStyles, state) => {
+                return {
+                  ...baseStyles,
+                  transition:
+                    'color var(--ifm-transition-fast) var(--ifm-transition-timing-default)',
+                  backgroundColor: state.isFocused
+                    ? 'var(--ifm-menu-color-background-hover)'
+                    : 'var(--ifm-color-secondary-contrast-background)',
+                  color: state.isFocused
+                    ? 'var(--ifm-menu-color)'
+                    : 'var(--ifm-font-color-secondary)',
+                  ':active': {
+                    backgroundColor: 'var(--ifm-menu-color-background-hover)',
+                  },
+                };
+              },
+              singleValue: (baseStyles) => {
+                return {
+                  ...baseStyles,
+                  color: 'var(--ifm-font-color-primary)',
+                };
+              },
+              clearIndicator: (baseStyles) => {
+                return {
+                  ...baseStyles,
+                  color: 'var(--ifm-font-color-secondary)',
+                  ':hover': {
+                    color: 'var(--ifm-font-color-primary)',
+                  },
+                  cursor: 'pointer',
+                };
+              },
+              dropdownIndicator: (baseStyles) => {
+                return {
+                  ...baseStyles,
+                  color: 'var(--ifm-font-color-secondary)',
+                  ':hover': {
+                    color: 'var(--ifm-font-color-primary)',
+                  },
+                  cursor: 'pointer',
+                };
+              },
             }}
-            options={pluginsNames.map((pluginName) => { return {
-              value: pluginName,
-              label: pluginName,
-            } })}
+            options={pluginsNames.map((pluginName) => {
+              return {
+                value: pluginName,
+                label: pluginName,
+              };
+            })}
             onChange={(selectedOption) => {
               setSelectValue(selectedOption);
               resetInputValue();
-              setGlobalFilter(selectedOption?.value ?? "");
+              setGlobalFilter(selectedOption?.value ?? '');
             }}
           />
         </div>
@@ -233,43 +251,54 @@ export const RulesTable = (): JSX.Element => {
       ) : (
         <table>
           <thead>
-            {table.getHeaderGroups().map((headerGroup) => 
-              { return <tr key={headerGroup.id}>
-                {headerGroup.headers.map((header) => 
-                  { return <th
-                    key={header.id}
-                    className={styles.th}
-                    style={{
-                      maxWidth: cellMaxWidth,
-                    }}
-                  >
-                    {header.isPlaceholder
-                      ? null
-                      : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext(),
-                        )}
-                  </th> }
-                )}
-              </tr> }
-            )}
+            {table.getHeaderGroups().map((headerGroup) => {
+              return (
+                <tr key={headerGroup.id}>
+                  {headerGroup.headers.map((header) => {
+                    return (
+                      <th
+                        key={header.id}
+                        className={styles.th}
+                        style={{
+                          maxWidth: cellMaxWidth,
+                        }}
+                      >
+                        {header.isPlaceholder
+                          ? null
+                          : flexRender(
+                              header.column.columnDef.header,
+                              header.getContext(),
+                            )}
+                      </th>
+                    );
+                  })}
+                </tr>
+              );
+            })}
           </thead>
           <tbody>
-            {table.getRowModel().rows.map((row) => 
-              { return <tr key={row.id} className={styles.tr}>
-                {row.getVisibleCells().map((cell) => 
-                  { return <td
-                    key={cell.id}
-                    className={styles.td}
-                    style={{
-                      maxWidth: cellMaxWidth,
-                    }}
-                  >
-                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                  </td> }
-                )}
-              </tr> }
-            )}
+            {table.getRowModel().rows.map((row) => {
+              return (
+                <tr key={row.id} className={styles.tr}>
+                  {row.getVisibleCells().map((cell) => {
+                    return (
+                      <td
+                        key={cell.id}
+                        className={styles.td}
+                        style={{
+                          maxWidth: cellMaxWidth,
+                        }}
+                      >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext(),
+                        )}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       )}
