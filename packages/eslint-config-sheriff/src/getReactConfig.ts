@@ -52,10 +52,7 @@ export const getReactConfig = (
     },
     {
       files: [`**/*{${allJsxExtensions}}`],
-      plugins: {
-        'jsx-a11y': reactAccessibility,
-      },
-      rules: reactAccessibility.configs.strict.rules,
+      ...reactAccessibility.flatConfigs.recommended,
     },
     {
       files: [supportedFileTypes],
