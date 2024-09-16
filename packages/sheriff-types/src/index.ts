@@ -64,6 +64,10 @@ export interface SheriffConfigurablePlugins {
    */
   lodash: boolean;
   /**
+   * Remeda support.
+   */
+  remeda: boolean;
+  /**
    * Nextjs support.
    */
   next: boolean;

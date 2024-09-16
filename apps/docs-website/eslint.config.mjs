@@ -6,6 +6,7 @@ import { flat, flatCodeBlocks, createRemarkProcessor } from 'eslint-plugin-mdx';
 const sheriffOptions = {
   react: true,
   lodash: true,
+  remeda: false,
   next: false,
   astro: false,
   playwright: false,

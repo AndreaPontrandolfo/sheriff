@@ -15,6 +15,7 @@
     "are-the-types-wrong": "turbo run are-the-types-wrong",
     "manypkg": "manypkg check",
     "typesync": "turbo run typesync",
+    "typecheck": "turbo run typecheck",
     "knip": "knip",
     "validate-config": "turbo run validate-config",
     "merge-checks": "turbo run publint manypkg typesync knip typecheck lint validate-config check-deduped-deps are-the-types-wrong",
@@ -37,7 +38,7 @@
     "turbo": "^2.0.9",
     "typesync": "^0.13.0"
   },
-  "packageManager": "pnpm@9.7.1",
+  "packageManager": "pnpm@9.10.0",
   "engines": {
     "node": ">=20.10.0"
   },

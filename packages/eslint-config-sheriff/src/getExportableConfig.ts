@@ -12,6 +12,7 @@ import { lodashConfig } from './lodashConfig';
 import { getJestConfig } from './getJestConfig';
 import { getVitestConfig } from './getVitestConfig';
 import { type TSESLint } from '@typescript-eslint/utils';
+import { remedaConfig } from './remedaConfig';
 
 export const getExportableConfig = (
   userConfigChoices: SheriffSettings = sheriffStartingOptions,
@@ -57,6 +58,10 @@ export const getExportableConfig = (
 
   if (userConfigChoices.lodash) {
     exportableConfig.push(lodashConfig);
+  }
+
+  if (userConfigChoices.remeda) {
+    exportableConfig.push(...remedaConfig);
   }
 
   if (userConfigChoices.astro) {

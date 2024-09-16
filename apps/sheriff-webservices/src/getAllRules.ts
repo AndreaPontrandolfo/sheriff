@@ -11,6 +11,7 @@ import playwright from 'eslint-plugin-playwright';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import remedaPlugin from 'eslint-plugin-remeda';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import sonarjs from 'eslint-plugin-sonarjs';
 import storybook from 'eslint-plugin-storybook';
@@ -88,6 +89,9 @@ export const getAllRules = (
       : {}),
     ...(settings.lodash
       ? prependRulesWithPluginName(lodashPlugin.rules, 'lodash-f')
+      : {}),
+    ...(settings.remeda
+      ? prependRulesWithPluginName(remedaPlugin.rules, 'remeda')
       : {}),
     ...(settings.jest ? prependRulesWithPluginName(jest.rules, 'jest') : {}),
     ...(settings.vitest

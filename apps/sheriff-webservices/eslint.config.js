@@ -4,6 +4,7 @@ import { defineFlatConfig } from 'eslint-define-config';
 const sheriffOptions = {
   react: false,
   lodash: true,
+  remeda: false,
   next: false,
   astro: false,
   playwright: false,

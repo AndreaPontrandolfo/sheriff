@@ -63,6 +63,13 @@ export const setSheriffConfig = async (
     finalPluginsConfigurationSetup.lodash = true;
   }
 
+  if (userProjectDependencies.remeda) {
+    consola.start(
+      "'Remeda' package found in the project. Setting up support for it...",
+    );
+    finalPluginsConfigurationSetup.remeda = true;
+  }
+
   if (userProjectDependencies.jest) {
     consola.start(
       "'Jest' package found in the project. Setting up support for it...",

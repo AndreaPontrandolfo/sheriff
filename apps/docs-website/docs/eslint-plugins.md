@@ -21,6 +21,7 @@ sidebar_position: 7
 - [@vitest/eslint-plugin](https://github.com/vitest-dev/eslint-plugin-vitest)
 - [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import) with [eslint-import-resolver-typescript](https://github.com/import-js/eslint-import-resolver-typescript)
 - [eslint-plugin-lodash-f](https://github.com/AndreaPontrandolfo/eslint-plugin-lodash) (my fork of [eslint-plugin-lodash](https://github.com/wix/eslint-plugin-lodash))
+- [eslint-plugin-remeda](https://github.com/AndreaPontrandolfo/eslint-plugin-remeda)
 - [@next/eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next)
 - [eslint-plugin-playwright](https://github.com/playwright-community/eslint-plugin-playwright)
 - [eslint-plugin-storybook](https://github.com/storybookjs/eslint-plugin-storybook)
