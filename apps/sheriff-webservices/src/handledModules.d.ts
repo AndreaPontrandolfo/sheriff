@@ -19,6 +19,13 @@ declare module 'eslint-plugin-lodash-f' {
 
   export default config;
 }
+declare module 'eslint-plugin-remeda' {
+  const config: {
+    rules: Record<string, import('@sherifforg/types').RuleOptions>;
+  };
+
+  export default config;
+}
 declare module 'eslint-plugin-import' {
   const config: {
     rules: Record<string, import('@sherifforg/types').RuleOptions>;

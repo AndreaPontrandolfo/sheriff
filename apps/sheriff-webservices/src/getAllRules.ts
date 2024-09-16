@@ -7,6 +7,7 @@ import jest from 'eslint-plugin-jest';
 import jsdoc from 'eslint-plugin-jsdoc';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import lodashPlugin from 'eslint-plugin-lodash-f';
+import remedaPlugin from 'eslint-plugin-remeda';
 import playwright from 'eslint-plugin-playwright';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -88,6 +89,9 @@ export const getAllRules = (
       : {}),
     ...(settings.lodash
       ? prependRulesWithPluginName(lodashPlugin.rules, 'lodash-f')
+      : {}),
+    ...(settings.remeda
+      ? prependRulesWithPluginName(remedaPlugin.rules, 'remeda')
       : {}),
     ...(settings.jest ? prependRulesWithPluginName(jest.rules, 'jest') : {}),
     ...(settings.vitest

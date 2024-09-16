@@ -3,6 +3,7 @@ import type { SheriffConfigurablePlugins } from '@sherifforg/types';
 export const sheriffStartingOptions: SheriffConfigurablePlugins = {
   react: false,
   lodash: false,
+  remeda: false,
   next: false,
   astro: false,
   playwright: false,
@@ -13,6 +14,7 @@ export const sheriffStartingOptions: SheriffConfigurablePlugins = {
 export const configCombinationDefaultValues = {
   react: true,
   lodash: true,
+  remeda: true,
   next: true,
   astro: true,
   playwright: true,

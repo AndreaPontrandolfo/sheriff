@@ -11,6 +11,7 @@ interface ConfigCombinationFormProps {
 interface FormInputs {
   react: boolean;
   lodash: boolean;
+  remeda: boolean;
   next: boolean;
   playwright: boolean;
   vitest: boolean;
@@ -64,6 +65,15 @@ export const ConfigCombinationForm = ({
           id="lodash"
         />
         <label htmlFor="lodash">Lodash</label>
+      </div>
+      <div className={styles.nativeCheckbox}>
+        <input
+          {...register('remeda')}
+          defaultChecked
+          type="checkbox"
+          id="remeda"
+        />
+        <label htmlFor="remeda">Remeda</label>
       </div>
       <div className={styles.nativeCheckbox}>
         <input {...register('next')} defaultChecked type="checkbox" id="next" />

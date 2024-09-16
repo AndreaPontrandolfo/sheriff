@@ -22,6 +22,7 @@ interface TableEntry {
   TSDoc: '✅' | '❌';
   Import: '✅' | '❌';
   Lodash: '✅' | '❌';
+  Remeda: '✅' | '❌';
   Nextjs: '✅' | '❌';
   Jest: '✅' | '❌';
   Vitest: '✅' | '❌';
@@ -67,6 +68,7 @@ const entriesTable: EntriesTable = {
     TSDoc: '✅',
     Import: '✅',
     Lodash: '✅',
+    Remeda: '✅',
     Nextjs: '✅',
     Jest: '✅',
     Vitest: '✅',
@@ -97,6 +99,7 @@ const entriesTable: EntriesTable = {
     TSDoc: '❌',
     Import: '✅',
     Lodash: '❌',
+    Remeda: '❌',
     Nextjs: '❌',
     Jest: '❌',
     Vitest: '❌',
@@ -127,6 +130,7 @@ const entriesTable: EntriesTable = {
     TSDoc: '❌',
     Import: '✅',
     Lodash: '❌',
+    Remeda: '❌',
     Nextjs: '❌',
     Jest: '❌',
     Vitest: '❌',
@@ -157,6 +161,7 @@ const entriesTable: EntriesTable = {
     TSDoc: '❌',
     Import: '✅',
     Lodash: '❌',
+    Remeda: '❌',
     Nextjs: '❌',
     Jest: '❌',
     Vitest: '❌',
@@ -187,6 +192,7 @@ const entriesTable: EntriesTable = {
     TSDoc: '❌',
     Import: '✅',
     Lodash: '❌',
+    Remeda: '❌',
     Nextjs: '✅',
     Jest: '❌',
     Vitest: '✅',
@@ -217,6 +223,7 @@ const entriesTable: EntriesTable = {
     TSDoc: '❌',
     Import: '✅',
     Lodash: '❌',
+    Remeda: '❌',
     Nextjs: '❌',
     Jest: '❌',
     Vitest: '❌',
@@ -247,6 +254,7 @@ const entriesTable: EntriesTable = {
     TSDoc: '❌',
     Import: '✅',
     Lodash: '✅',
+    Remeda: '❌',
     Nextjs: '✅',
     Jest: '✅',
     Vitest: '✅',
@@ -277,6 +285,7 @@ const entriesTable: EntriesTable = {
     TSDoc: '❌',
     Import: '✅',
     Lodash: '❌',
+    Remeda: '❌',
     Nextjs: '✅',
     Jest: '❌',
     Vitest: '❌',
@@ -307,6 +316,7 @@ const entriesTable: EntriesTable = {
     TSDoc: '❌',
     Import: '✅',
     Lodash: '❌',
+    Remeda: '❌',
     Nextjs: '✅',
     Jest: '✅',
     Vitest: '❌',
@@ -337,6 +347,7 @@ const entriesTable: EntriesTable = {
     TSDoc: '❌',
     Import: '✅',
     Lodash: '❌',
+    Remeda: '❌',
     Nextjs: '❌',
     Jest: '✅',
     Vitest: '❌',

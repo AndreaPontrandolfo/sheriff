@@ -26,6 +26,7 @@ app.post('/api/get-new-sheriff-config', async (context) => {
     {
       react: true,
       lodash: true,
+      remeda: true,
       next: true,
       playwright: true,
       jest: true,
