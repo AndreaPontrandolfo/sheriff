@@ -102,7 +102,7 @@
     "@types/lodash": "^4.17.6",
     "@types/node": "^22.5.1",
     "@typescript-eslint/utils": "^8.3.0",
-    "eslint": "^9.9.0",
+    "eslint": "^9.10.0",
     "eslint-define-config": "^2.1.0",
     "lodash": "^4.17.21",
     "publint": "^0.2.10",
