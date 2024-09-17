@@ -1,5 +1,11 @@
 # @sherifforg/constants
 
+## 0.1.1
+
+### Patch Changes
+
+- 28b9143: feat(plugins): added eslint-plugin-remeda support
+
 ## 0.1.0
 
 ### Minor Changes
