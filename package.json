@@ -2,11 +2,10 @@
   "name": "sheriff-monorepo",
   "private": true,
   "scripts": {
+    "dev": "turbo watch build-watch start",
     "build": "turbo run build",
-    "start:docs": "turbo run start --filter=docs-website --filter=sheriff-webservices",
     "playground": "pnpm --filter=cli-playground exec create-config",
     "playground:mimic-monorepo": "pnpm exec create-config --filter=cli-playground",
-    "webservices:dev": "turbo run start --filter=sheriff-webservices",
     "webservices:deploy": "turbo run serve --filter=sheriff-webservices",
     "preview-docs": "turbo run serve --filter=docs-website",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
@@ -35,7 +34,7 @@
     "@turbo/gen": "^2.0.9",
     "knip": "^5.25.1",
     "prettier": "^3.3.2",
-    "turbo": "^2.0.9",
+    "turbo": "^2.1.2",
     "typesync": "^0.13.0"
   },
   "packageManager": "pnpm@9.10.0",

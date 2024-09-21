@@ -46,6 +46,7 @@
     "preinstall": "npx only-allow pnpm",
     "clean": "rm -rf .turbo dist",
     "build": "tsup",
+    "build-watch": "tsup",
     "typecheck": "tsc --noEmit",
     "publint": "publint",
     "typesync": "typesync --dry=fail",
