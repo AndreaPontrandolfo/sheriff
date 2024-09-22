@@ -1,5 +1,11 @@
 # @sherifforg/cli
 
+## 9.0.0
+
+### Major Changes
+
+- ed243c3: feat: force version update
+
 ## 8.1.2
 
 ### Patch Changes
