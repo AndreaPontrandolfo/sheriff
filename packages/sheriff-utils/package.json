@@ -13,7 +13,6 @@
     }
   },
   "scripts": {
-    "start": "tsx watch ./src/generateRulesDataset.ts",
     "rulesgen": "tsx ./src/generateRulesDataset.ts",
     "publint": "publint",
     "clean": "rm -rf .turb dist"

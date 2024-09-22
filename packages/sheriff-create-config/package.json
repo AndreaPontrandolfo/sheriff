@@ -7,6 +7,7 @@
     "dev": "tsx ./src/index.ts",
     "clean": "rm -rf .turbo dist",
     "build": "tsup",
+    "build-watch": "tsup",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache",
     "publint": "publint",
