@@ -1,6 +1,5 @@
 {
   "name": "cli-playground",
-  "version": "0.0.0",
   "description": "Playground for playtesting create-eslint-config.",
   "private": true,
   "type": "module",

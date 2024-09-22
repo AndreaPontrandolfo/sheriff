@@ -1,6 +1,5 @@
 {
   "name": "config-validation-playground",
-  "version": "0.0.1",
   "description": "Playground for validating eslint-config-sheriff.",
   "private": true,
   "type": "module",
