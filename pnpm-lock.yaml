@@ -598,15 +598,9 @@ importers:
       '@types/node':
         specifier: ^22.5.1
         version: 22.5.1
-      publint:
-        specifier: ^0.2.10
-        version: 0.2.10
       tsconfig:
         specifier: workspace:*
         version: link:../tsconfig
-      tsup:
-        specifier: ^8.2.4
-        version: 8.2.4(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.4)(yaml@2.4.2)
       typescript:
         specifier: ^5.5.3
         version: 5.5.4
