@@ -1,5 +1,13 @@
 # @sheriff/utils
 
+## 1.1.7
+
+### Patch Changes
+
+- a48a0ba: feat: force version bump
+- e598bd7: chore(internals): implemented turbo watch on dev command
+  Fixes #227
+
 ## 1.1.6
 
 ### Patch Changes

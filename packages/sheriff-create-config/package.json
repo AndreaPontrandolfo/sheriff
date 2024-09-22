@@ -1,6 +1,6 @@
 {
   "name": "@sherifforg/create-config",
-  "version": "8.1.1",
+  "version": "8.1.2",
   "type": "module",
   "description": "This package creates new Sheriff configs.",
   "scripts": {
