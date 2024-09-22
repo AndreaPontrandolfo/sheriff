@@ -72,15 +72,14 @@ Follow these steps:
 
       -
         ```bash npm2yarn
-        npm install -D eslint-ts-patch eslint@npm:eslint-ts-patch @sherifforg/types
+        npm install -D eslint-ts-patch eslint@npm:eslint-ts-patch
         ```
       - change the extension of `eslint.config.mjs` from `.mjs` to `.ts`
       - define the types of the `sheriffOptions` object:
 
         ```ts title="eslint.config.ts"
-        import sheriff from "eslint-config-sheriff";
+        import sheriff, { SheriffSettings } from "eslint-config-sheriff";
         import { defineFlatConfig } from "eslint-define-config";
-        import type { SheriffSettings } from "@sherifforg/types";
 
         const sheriffOptions: SheriffSettings = {
           react: false,
