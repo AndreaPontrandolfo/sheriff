@@ -2,7 +2,6 @@
 'eslint-config-sheriff': major
 '@sherifforg/create-config': patch
 '@sherifforg/cli': patch
-'docs-website': patch
 ---
 
 feat(types): now Sheriff types are exposed through the eslint-config-sheriff package instead of @sherifforg/types.
