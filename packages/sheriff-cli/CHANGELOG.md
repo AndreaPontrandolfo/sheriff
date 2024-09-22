@@ -1,5 +1,13 @@
 # @sherifforg/cli
 
+## 7.1.2
+
+### Patch Changes
+
+- dd35dfb: feat(types): now Sheriff types are exposed through the eslint-config-sheriff package instead of @sherifforg/types.
+  Closes #233
+- a48a0ba: feat: force version bump
+
 ## 7.1.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # tsconfig
 
+## 0.1.1
+
+### Patch Changes
+
+- a48a0ba: feat: force version bump
+
 ## 0.1.0
 
 ### Minor Changes
