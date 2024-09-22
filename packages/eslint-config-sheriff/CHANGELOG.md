@@ -1,5 +1,11 @@
 # eslint-config-sheriff
 
+## 24.0.0
+
+### Major Changes
+
+- ed243c3: feat: force version update
+
 ## 23.0.0
 
 ### Major Changes
