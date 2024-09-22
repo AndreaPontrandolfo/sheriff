@@ -22,4 +22,7 @@ export {
   supportedFileTypes,
   testsFilePatterns,
 };
+
+export type * from '@sherifforg/types';
+
 export default getExportableConfig;

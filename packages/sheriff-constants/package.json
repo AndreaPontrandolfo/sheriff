@@ -1,15 +1,13 @@
 {
   "name": "@sherifforg/constants",
   "description": "Sheriff constants.",
-  "version": "0.1.1",
   "private": true,
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "files": [
-    "src",
-    "CHANGELOG.md"
+    "src"
   ],
   "scripts": {
     "clean": "rm -rf .turbo"
@@ -18,5 +16,18 @@
     "@sherifforg/types": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">=20.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaPontrandolfo/sheriff.git",
+    "directory": "packages/sheriff-constants"
+  },
+  "author": {
+    "name": "Andrea Pontrandolfo",
+    "email": "andrea.pontra@gmail.com",
+    "url": "https://github.com/AndreaPontrandolfo"
   }
 }

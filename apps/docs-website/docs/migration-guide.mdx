@@ -50,9 +50,8 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import sheriff from "eslint-config-sheriff";
+import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
-import type { SheriffSettings } from "@sherifforg/types";
 
 const sheriffOptions: SheriffSettings = {
   // highlight-next-line

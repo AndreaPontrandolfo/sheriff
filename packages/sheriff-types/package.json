@@ -1,28 +1,20 @@
 {
   "name": "@sherifforg/types",
   "description": "Sheriff types.",
-  "version": "4.1.1",
-  "license": "MIT",
   "type": "module",
-  "files": [
-    "dist"
-  ],
   "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    }
+    ".": "./src/index.ts"
   },
+  "files": [
+    "src"
+  ],
   "scripts": {
     "clean": "rm -rf .turbo dist",
-    "typecheck": "tsc --noEmit",
-    "publint": "publint",
-    "build": "tsup"
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^22.5.1",
-    "publint": "^0.2.10",
     "tsconfig": "workspace:*",
-    "tsup": "^8.2.4",
     "typescript": "^5.5.3"
   },
   "repository": {
@@ -35,16 +27,6 @@
     "email": "andrea.pontra@gmail.com",
     "url": "https://github.com/AndreaPontrandolfo"
   },
-  "publishConfig": {
-    "access": "public"
-  },
-  "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
-  "keywords": [
-    "javascript",
-    "eslint",
-    "typescript",
-    "types"
-  ],
   "engines": {
     "node": ">=20.10.0"
   }

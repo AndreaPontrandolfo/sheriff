@@ -17,8 +17,6 @@ export const getRequiredPackages = (
   if (isEslintTsPatchRequired) {
     requiredPackages.push(`eslint-ts-patch`, `eslint@npm:eslint-ts-patch`);
     consola.start("Installing 'eslint-ts-patch'...");
-    requiredPackages.push('@sherifforg/types');
-    consola.start("Installing '@sherifforg/types'...");
   }
 
   return requiredPackages;
