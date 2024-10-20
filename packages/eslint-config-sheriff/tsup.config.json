@@ -8,6 +8,5 @@
   "splitting": false,
   "sourcemap": false,
   "clean": true,
-  "noExternal": ["@sherifforg/constants"],
-  "skipNodeModulesBundle": true
+  "noExternal": ["@sherifforg/constants"]
 }
