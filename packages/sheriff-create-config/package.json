@@ -39,7 +39,7 @@
     "eslint-define-config": "^2.1.0",
     "publint": "^0.2.10",
     "tsconfig": "workspace:*",
-    "tsup": "^8.2.4",
+    "tsup": "^8.3.0",
     "tsx": "^4.16.2"
   },
   "repository": {

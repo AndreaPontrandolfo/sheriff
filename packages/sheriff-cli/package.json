@@ -8,6 +8,7 @@
     "clean": "rm -rf .turbo dist",
     "build": "tsup",
     "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache",
     "publint": "publint",
     "typesync": "typesync --dry=fail"
   },
@@ -37,7 +38,7 @@
     "eslint-define-config": "^2.1.0",
     "publint": "^0.2.10",
     "tsconfig": "workspace:*",
-    "tsup": "^8.2.4",
+    "tsup": "^8.3.0",
     "tsx": "^4.16.2"
   },
   "repository": {

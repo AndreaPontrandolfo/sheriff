@@ -6,7 +6,7 @@
   "compilerOptions": {
     "composite": false,
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "Preserve",
     "moduleResolution": "bundler",
     "allowJs": false,
     "isolatedModules": true,
