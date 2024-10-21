@@ -25,16 +25,16 @@
     "reset-node-modules-and-lockfile": "pnpm delete-node-modules && pnpm exec rm -rf ./pnpm-lock.yaml && pnpm i",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo build --filter='./packages/*' && changeset publish"
+    "release": "turbo run build --filter=./packages/* && changeset publish"
   },
   "dependencies": {
-    "@changesets/cli": "^2.27.7",
+    "@changesets/cli": "2.27.9",
     "@manypkg/cli": "^0.21.4",
     "@sherifforg/create-config": "workspace:*",
-    "@turbo/gen": "^2.0.9",
+    "@turbo/gen": "^2.2.3",
     "knip": "^5.25.1",
     "prettier": "^3.3.2",
-    "turbo": "^2.1.2",
+    "turbo": "^2.2.3",
     "typesync": "^0.13.0"
   },
   "packageManager": "pnpm@9.10.0",
