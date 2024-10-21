@@ -1,5 +1,11 @@
 # eslint-config-sheriff
 
+## 25.0.0
+
+### Major Changes
+
+- 44643a6: feat: introduced dts-bundle-generator to bundle @sherifforg/types
+
 ## 24.0.0
 
 ### Major Changes
