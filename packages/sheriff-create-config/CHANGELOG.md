@@ -1,5 +1,11 @@
 # @sherifforg/cli
 
+## 9.1.0
+
+### Minor Changes
+
+- 44643a6: feat: introduced dts-bundle-generator to bundle @sherifforg/types
+
 ## 9.0.0
 
 ### Major Changes
