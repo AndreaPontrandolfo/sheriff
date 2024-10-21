@@ -1,5 +1,15 @@
 # eslint-config-sheriff
 
+## 25.1.0
+
+### Minor Changes
+
+- 527bedd: feature(rules): allow side-effects imports in no-restricted-imports
+
+### Patch Changes
+
+- 09f4162: feature(deps): updated eslint-plugin-react-hooks to V5
+
 ## 25.0.0
 
 ### Major Changes
