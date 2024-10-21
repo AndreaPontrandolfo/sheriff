@@ -78,10 +78,12 @@ export const getBaseEslintHandPickedRules = () => {
           {
             group: ['node_modules'],
             message: 'Imports from node_modules are likely a user mistake.',
+            importNamePattern: '^', // this is to allow side-effects imports. See: https://github.com/eslint/eslint/pull/18997.
           },
           {
             group: ['dist'],
             message: 'Imports from dist are likely a user mistake.',
+            importNamePattern: '^', // this is to allow side-effects imports. See: https://github.com/eslint/eslint/pull/18997.
           },
         ],
       },
