@@ -44,7 +44,6 @@ export const getAllRules = (
   const reactRulesCatalog = {
     ...react.configs.flat.recommended.rules,
     ...react.configs.flat['jsx-runtime'].rules,
-    // @ts-expect-error
     ...prependRulesWithPluginName(reactAccessibility.rules, 'jsx-a11y'),
     ...prependRulesWithPluginName(reactHooks.rules, 'react-hooks'),
     ...prependRulesWithPluginName(reactRefresh.rules, 'react-refresh'),
