@@ -19,6 +19,18 @@ To make the [VSCode ESLint Extension](https://marketplace.visualstudio.com/items
 }
 ```
 
+## Typescript support
+
+### Using official ESlint > v9.9.0
+
+If you are using an `eslint.config.ts` with [ESLint's experimental support for Typescript based configuration files](https://github.com/eslint/eslint/releases/tag/v9.9.0), add this to your workspace's `.vscode/settings.json`:
+
+```JSONC title=".vscode/settings.json"
+"eslint.options": {
+  "flags": ["unstable_ts_config"]
+}
+```
+
 ## Astro support
 
 For [Astro](https://astro.build/) projects, add the astro extension too:
