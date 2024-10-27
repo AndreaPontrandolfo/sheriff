@@ -53,14 +53,6 @@ export default defineFlatConfig([
           },
         },
       ],
-      'import/no-unresolved': [
-        2,
-        {
-          commonjs: true,
-          caseSensitiveStrict: true,
-          ignore: ['^@theme', '^@docusaurus'],
-        },
-      ],
     },
   },
   {
