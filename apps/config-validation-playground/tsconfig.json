@@ -7,7 +7,6 @@
     "module": "ESNext",
     "composite": false,
     "incremental": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     "jsx": "react-jsx",
     "skipLibCheck": true,
     "allowJs": false,

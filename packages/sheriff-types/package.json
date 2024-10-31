@@ -10,7 +10,7 @@
     "src"
   ],
   "scripts": {
-    "clean": "rm -rf .turbo dist",
+    "clean": "rm -rf .turbo dist node_modules/.cache",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
