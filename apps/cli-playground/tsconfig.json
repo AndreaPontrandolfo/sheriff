@@ -10,7 +10,6 @@
     "jsx": "react-jsx",
     "composite": false, // you should enable this only for using TS project references. But they are fairly discourages nowadays.
     "incremental": true,
-    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     "strict": true, // this is required for Sheriff to perform correctly.
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,

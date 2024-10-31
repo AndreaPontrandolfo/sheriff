@@ -5,7 +5,7 @@
   "description": "The Sheriff CLI. Used to manage Sheriff-based ESLint configs.",
   "scripts": {
     "dev": "tsx ./src/index.ts",
-    "clean": "rm -rf .turbo dist",
+    "clean": "rm -rf .turbo dist node_modules/.cache",
     "build": "tsup",
     "typecheck": "tsc --noEmit",
     "lint": "eslint ./src --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache",

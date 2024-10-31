@@ -5,7 +5,7 @@
   "description": "This package creates new Sheriff configs.",
   "scripts": {
     "dev": "tsx ./src/index.ts",
-    "clean": "rm -rf .turbo dist",
+    "clean": "rm -rf .turbo dist node_modules/.cache",
     "build": "tsup",
     "build-watch": "tsup",
     "typecheck": "tsc --noEmit",

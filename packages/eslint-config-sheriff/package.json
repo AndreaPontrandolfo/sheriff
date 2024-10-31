@@ -45,7 +45,7 @@
   "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "clean": "rm -rf .turbo dist",
+    "clean": "rm -rf .turbo dist node_modules/.cache",
     "re-bundle-types": "dts-bundle-generator -out-file=dist/index.d.ts ./dist/index.d.ts",
     "build": "tsup && pnpm re-bundle-types",
     "build-watch": "tsup && pnpm re-bundle-types",
