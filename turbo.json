@@ -46,7 +46,7 @@
       "persistent": true,
       "dependsOn": ["build"]
     },
-    "check-deduped-deps": {
+    "//#check-deduped-deps": {
       "inputs": [
         "package.json",
         "apps/*/package.json",
