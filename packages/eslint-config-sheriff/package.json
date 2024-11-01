@@ -48,7 +48,6 @@
     "clean": "rm -rf .turbo dist node_modules/.cache",
     "re-bundle-types": "dts-bundle-generator -out-file=dist/index.d.ts ./dist/index.d.ts",
     "build": "tsup && pnpm re-bundle-types",
-    "build-watch": "tsup && pnpm re-bundle-types",
     "typecheck": "tsc --noEmit",
     "lint": "eslint src --max-warnings=0 --flag unstable_ts_config",
     "publint": "publint",
