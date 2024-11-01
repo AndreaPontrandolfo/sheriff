@@ -10,5 +10,13 @@ export const nextjsConfig = {
   rules: {
     ...nextjs.configs.recommended.rules,
     ...nextjs.configs['core-web-vitals'].rules,
+    'import/no-default-export': 0,
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: 'function-declaration',
+        unnamedComponents: 'function-expression',
+      },
+    ],
   },
 };
