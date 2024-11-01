@@ -10,6 +10,10 @@
     "packages/sheriff-create-config/src/utils/gracefullyAbort.ts",
     "packages/sheriff-cli/src/utils/gracefullyAbort.ts",
   ],
-  "ignoreDependencies": ["@turbo/gen", "eslint-import-resolver-typescript"],
+  "ignoreDependencies": [
+    "@arethetypeswrong/cli",
+    "@turbo/gen",
+    "eslint-import-resolver-typescript",
+  ],
   "ignoreBinaries": ["only-allow"],
 }

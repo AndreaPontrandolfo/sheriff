@@ -47,7 +47,7 @@
     "preinstall": "npx only-allow pnpm",
     "clean": "rm -rf .turbo dist node_modules/.cache",
     "re-bundle-types": "dts-bundle-generator --config dts-config.json",
-    "are-the-types-wrong": "attw $(pnpm pack) --ignore-rules cjs-resolves-to-esm no-resolution && rm eslint-config-sheriff-*.tgz",
+    "are-the-types-wrong": "bash -c 'attw $(pnpm pack) --ignore-rules cjs-resolves-to-esm no-resolution && rm eslint-config-sheriff-*.tgz'",
     "build": "tsup && pnpm re-bundle-types",
     "build-watch": "tsup && pnpm re-bundle-types",
     "typecheck": "tsc --noEmit",
