@@ -46,7 +46,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "clean": "rm -rf .turbo dist node_modules/.cache",
-    "re-bundle-types": "dts-bundle-generator -out-file=dist/index.d.ts ./dist/index.d.ts",
+    "re-bundle-types": "dts-bundle-generator --config dts-config.json",
     "build": "tsup && pnpm re-bundle-types",
     "build-watch": "tsup && pnpm re-bundle-types",
     "typecheck": "tsc --noEmit",
