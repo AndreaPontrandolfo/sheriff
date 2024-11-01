@@ -30,8 +30,8 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3
       typesync:
-        specifier: ^0.13.0
-        version: 0.13.0(typescript@5.5.4)
+        specifier: ^0.13.3
+        version: 0.13.3(typescript@5.5.4)
 
   apps/cli-playground: {}
 
@@ -413,9 +413,6 @@ importers:
       '@types/eslint__js':
         specifier: ^8.42.3
         version: 8.42.3
-      '@types/lodash':
-        specifier: ^4.17.6
-        version: 4.17.6
       '@types/node':
         specifier: ^22.5.1
         version: 22.5.1
@@ -754,6 +751,10 @@ packages:
     resolution: {integrity: sha512-BcYH1CVJBO9tvyIZ2jVeXgSIMvGZ2FDRvDdOIVQyuklNKSsx+eppDEBq/g47Ayw+RqNFE+URvOShmf+f/qwAlA==}
     engines: {node: '>=6.9.0'}
 
+  '@babel/code-frame@7.26.2':
+    resolution: {integrity: sha512-RJlIHRueQgwWitWgF8OdFYGZX328Ax5BCemNGlqHfplnRT9ESi8JkFlvaVYbS+UubVY6dpv87Fs2u5M29iNFVQ==}
+    engines: {node: '>=6.9.0'}
+
   '@babel/compat-data@7.24.8':
     resolution: {integrity: sha512-c4IM7OTg6k1Q+AJ153e2mc2QVTezTwnb4VzquwcyiEzGnW0Kedv4do/TrkU98qPeC5LNiMt/QXwIjzYXLBpyZg==}
     engines: {node: '>=6.9.0'}
@@ -859,6 +860,10 @@ packages:
 
   '@babel/helper-validator-identifier@7.24.7':
     resolution: {integrity: sha512-rR+PBcQ1SMQDDyF6X0wxtG8QyLCgUB0eRAGguqRLfkCA87l7yAP7ehq8SNj96OOGTO8OBV70KhuFYcIkHXOg0w==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/helper-validator-identifier@7.25.9':
+    resolution: {integrity: sha512-Ed61U6XJc3CVRfkERJWDz4dJwKe7iLmmJsbOGu9wSloNSFttHV0I8g6UAgb7qnK5ly5bGLPd4oXZlxCdANBOWQ==}
     engines: {node: '>=6.9.0'}
 
   '@babel/helper-validator-option@7.24.8':
@@ -5406,8 +5411,8 @@ packages:
   for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
 
-  foreground-child@3.2.1:
-    resolution: {integrity: sha512-PXUUyLqrR2XCWICfv6ukppP96sdFwWbNEnfEMt7jNsISjMsvaLNinAHNDYyvkyU+SZG2BTSbT5NjG+vZslfGTA==}
+  foreground-child@3.3.0:
+    resolution: {integrity: sha512-Ld2g8rrAyMYFXBhEqMz8ZAHBi4J4uS1i/CxGMDnjyFWddMXLVcDp051DZfu+t7+ab7Wv6SMqpWmyFIj5UbfFvg==}
     engines: {node: '>=14'}
 
   fork-ts-checker-webpack-plugin@6.5.3:
@@ -7001,6 +7006,10 @@ packages:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
 
+  negotiator@0.6.4:
+    resolution: {integrity: sha512-myRT3DiWPHqho5PrJaIRyaMv2kgYf0mUVgBNOYMuCH5Ki1yEiQaf/ZJuQ62nvpc44wL5WDbTX7yGJi1Neevw8w==}
+    engines: {node: '>= 0.6'}
+
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
@@ -7308,8 +7317,8 @@ packages:
     resolution: {integrity: sha512-5NPgf87AT2STgwa2ntRMr45jTKrYBGkVU36yT0ig/n/GMAa3oPqhZfIQ2kMEimReg0+t9kZViDVZ83qfVUlckg==}
     engines: {node: '>= 14'}
 
-  package-json-from-dist@1.0.0:
-    resolution: {integrity: sha512-dATvCeZN/8wQsGywez1mzHtTlP22H8OEfPrVMLNr4/eGa+ijtLn/6M5f0dY8UKNrC2O9UCU6SSoG3qRKnt7STw==}
+  package-json-from-dist@1.0.1:
+    resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
   package-json@8.1.1:
     resolution: {integrity: sha512-cbH9IAIJHNj9uXi196JVsRlt7cHKak6u/e6AkL/bkRelZ7rlL3X1YKxsZwa36xipOEKAsdtmaG6aAJoM1fx2zA==}
@@ -8969,6 +8978,9 @@ packages:
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
+  tslib@2.8.1:
+    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+
   tsup@8.3.0:
     resolution: {integrity: sha512-ALscEeyS03IomcuNdFdc0YWGVIkwH1Ws7nfTbAPuoILvEV2hpGQAY72LIOjglGo4ShWpZfpBqP/jpQVCzqYQag==}
     engines: {node: '>=18'}
@@ -9110,8 +9122,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typesync@0.13.0:
-    resolution: {integrity: sha512-t5+DHmXqNHJyX9PSocEEB6c5gQlO0j0LLxEiZ/HMz0lWJWBf+bKEXTORkquAuUgjMZ7U5Hx8w63Qmebx7bK2FA==}
+  typesync@0.13.3:
+    resolution: {integrity: sha512-pX4DFcdF6fJGShG269lYih8ZaGH9KzbXVq/Oo9wYyy8ni8/UOBZ/UXzfABqS9A3mXlgRYO8kGR9cGIq9efBxnQ==}
     engines: {node: '>=16.0.0'}
     hasBin: true
 
@@ -9829,6 +9841,12 @@ snapshots:
       '@babel/highlight': 7.24.7
       picocolors: 1.1.1
 
+  '@babel/code-frame@7.26.2':
+    dependencies:
+      '@babel/helper-validator-identifier': 7.25.9
+      js-tokens: 4.0.0
+      picocolors: 1.1.1
+
   '@babel/compat-data@7.24.8': {}
 
   '@babel/core@7.24.9':
@@ -9978,6 +9996,8 @@ snapshots:
   '@babel/helper-string-parser@7.24.8': {}
 
   '@babel/helper-validator-identifier@7.24.7': {}
+
+  '@babel/helper-validator-identifier@7.25.9': {}
 
   '@babel/helper-validator-option@7.24.8': {}
 
@@ -11490,7 +11510,7 @@ snapshots:
 
   '@emnapi/runtime@1.2.0':
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
     optional: true
 
   '@emotion/babel-plugin@11.11.0':
@@ -13857,7 +13877,7 @@ snapshots:
 
   ast-types@0.13.4:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   astring@1.8.6: {}
 
@@ -14195,7 +14215,7 @@ snapshots:
   camel-case@4.1.2:
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   camelcase@6.3.0: {}
 
@@ -16000,7 +16020,7 @@ snapshots:
     dependencies:
       is-callable: 1.2.7
 
-  foreground-child@3.2.1:
+  foreground-child@3.3.0:
     dependencies:
       cross-spawn: 7.0.3
       signal-exit: 4.1.0
@@ -16168,11 +16188,11 @@ snapshots:
 
   glob@10.4.5:
     dependencies:
-      foreground-child: 3.2.1
+      foreground-child: 3.3.0
       jackspeak: 3.4.3
       minimatch: 9.0.5
       minipass: 7.1.2
-      package-json-from-dist: 1.0.0
+      package-json-from-dist: 1.0.1
       path-scurry: 1.11.1
 
   glob@7.1.7:
@@ -17267,7 +17287,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   lowercase-keys@3.0.0: {}
 
@@ -17308,7 +17328,7 @@ snapshots:
       minipass-fetch: 3.0.5
       minipass-flush: 1.0.5
       minipass-pipeline: 1.2.4
-      negotiator: 0.6.3
+      negotiator: 0.6.4
       proc-log: 4.2.0
       promise-retry: 2.0.1
       ssri: 10.0.6
@@ -17995,6 +18015,8 @@ snapshots:
 
   negotiator@0.6.3: {}
 
+  negotiator@0.6.4: {}
+
   neo-async@2.6.2: {}
 
   netmask@2.0.2: {}
@@ -18035,7 +18057,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   node-emoji@2.1.3:
     dependencies:
@@ -18368,7 +18390,7 @@ snapshots:
       degenerator: 5.0.1
       netmask: 2.0.2
 
-  package-json-from-dist@1.0.0: {}
+  package-json-from-dist@1.0.1: {}
 
   package-json@8.1.1:
     dependencies:
@@ -18421,14 +18443,14 @@ snapshots:
 
   parse-json@5.2.0:
     dependencies:
-      '@babel/code-frame': 7.24.7
+      '@babel/code-frame': 7.26.2
       error-ex: 1.3.2
       json-parse-even-better-errors: 2.3.1
       lines-and-columns: 1.2.4
 
   parse-json@7.1.1:
     dependencies:
-      '@babel/code-frame': 7.24.7
+      '@babel/code-frame': 7.26.2
       error-ex: 1.3.2
       json-parse-even-better-errors: 3.0.2
       lines-and-columns: 2.0.4
@@ -18474,7 +18496,7 @@ snapshots:
   pascal-case@3.1.2:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.6.3
+      tslib: 2.8.1
 
   path-case@2.1.1:
     dependencies:
@@ -20241,6 +20263,8 @@ snapshots:
 
   tslib@2.6.3: {}
 
+  tslib@2.8.1: {}
+
   tsup@8.3.0(@microsoft/api-extractor@7.47.11(@types/node@22.5.1))(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.4)(yaml@2.4.2):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.1)
@@ -20385,7 +20409,7 @@ snapshots:
 
   typescript@5.5.4: {}
 
-  typesync@0.13.0(typescript@5.5.4):
+  typesync@0.13.3(typescript@5.5.4):
     dependencies:
       awilix: 10.0.2
       chalk: 4.1.2

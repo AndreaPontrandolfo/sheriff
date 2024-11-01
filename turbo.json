@@ -36,7 +36,6 @@
     },
     "//#manypkg": {},
     "//#knip": {},
-    "typesync": {},
     "are-the-types-wrong": {
       "dependsOn": ["build"]
     },
