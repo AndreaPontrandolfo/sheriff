@@ -18,5 +18,6 @@ export const nextjsConfig = {
         unnamedComponents: 'function-expression',
       },
     ],
+    '@next/next/no-html-link-for-pages': 0, // pages router is legacy at this point. We don't need to support this rule anymore.
   },
 };
