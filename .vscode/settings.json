@@ -2,7 +2,6 @@
   "eslint.workingDirectories": [
     "./packages/sheriff-create-config",
     "./packages/sheriff-cli",
-    "./packages/sheriff-utils",
     "./packages/sheriff-types",
     "./apps/docs-website",
     "./apps/sheriff-webservices",
