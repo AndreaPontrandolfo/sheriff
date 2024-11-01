@@ -1,0 +1,13 @@
+name: Scheduled API Request
+
+on:
+  schedule:
+    - cron: '*/13 * * * *' # Schedule every 13 minutes
+
+jobs:
+  api-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run API Request Script
+        run: |
+          curl -X GET https://sheriff-webservices.onrender.com/api/keepalive
