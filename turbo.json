@@ -11,7 +11,11 @@
       "outputs": [".docusaurus/**", "dist/**"]
     },
     "build-watch": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "eslint-config-sheriff#build",
+        "@sherifforg/create-config#build",
+        "sheriff-webservices#start"
+      ],
       "outputs": ["dist/**"]
     },
     "start": {
