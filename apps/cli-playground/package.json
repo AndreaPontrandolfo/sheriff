@@ -3,6 +3,5 @@
   "description": "Playground for playtesting create-eslint-config.",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@9.7.1",
-  "devDependencies": {}
+  "packageManager": "pnpm@9.7.1"
 }
