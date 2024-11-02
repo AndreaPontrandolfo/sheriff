@@ -62,6 +62,9 @@ importers:
       '@storybook/react':
         specifier: ^7.6.20
         version: 7.6.20(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
+      '@types/lodash':
+        specifier: ~4.17.13
+        version: 4.17.13
       '@types/node':
         specifier: ^22.5.1
         version: 22.5.1
@@ -413,6 +416,9 @@ importers:
       '@types/eslint__js':
         specifier: ^8.42.3
         version: 8.42.3
+      '@types/lodash':
+        specifier: ~4.17.13
+        version: 4.17.13
       '@types/node':
         specifier: ^22.5.1
         version: 22.5.1
@@ -3139,6 +3145,9 @@ packages:
 
   '@types/lodash-es@4.17.12':
     resolution: {integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==}
+
+  '@types/lodash@4.17.13':
+    resolution: {integrity: sha512-lfx+dftrEZcdBPczf9d0Qv0x+j/rfNCMuC6OcfXmO8gkfeNAY88PgKUbvG56whcN23gc27yenwF6oJZXGFpYxg==}
 
   '@types/lodash@4.17.6':
     resolution: {integrity: sha512-OpXEVoCKSS3lQqjx9GGGOapBeuW5eUboYHRlHP9urXPX25IKZ6AnP5ZRxtVf63iieUbsHxLn8NQ5Nlftc6yzAA==}
@@ -13058,6 +13067,8 @@ snapshots:
   '@types/lodash-es@4.17.12':
     dependencies:
       '@types/lodash': 4.17.6
+
+  '@types/lodash@4.17.13': {}
 
   '@types/lodash@4.17.6': {}
 
