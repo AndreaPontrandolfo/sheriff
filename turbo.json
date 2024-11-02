@@ -36,6 +36,9 @@
     },
     "//#manypkg": {},
     "//#knip": {},
+    "//#typesync": {
+      "inputs": ["**/package.json", ".typesyncrc"]
+    },
     "are-the-types-wrong": {
       "dependsOn": ["build"]
     },

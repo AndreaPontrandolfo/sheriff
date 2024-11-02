@@ -8,7 +8,6 @@
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings=0 --cache --cache-location=node_modules/.cache/.eslintcache",
-    "typesync": "typesync --dry=fail",
     "serve": "node ./dist/index.js",
     "clean": "rm -rf .turbo dist node_modules/.cache"
   },
