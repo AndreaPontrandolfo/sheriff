@@ -97,9 +97,9 @@
   "devDependencies": {
     "@sherifforg/constants": "workspace:*",
     "@sherifforg/types": "workspace:*",
-    "@types/confusing-browser-globals": "^1.0.3",
-    "@types/eslint-plugin-jsx-a11y": "^6.9.0",
-    "@types/eslint__js": "^8.42.3",
+    "@types/confusing-browser-globals": "~1.0.3",
+    "@types/eslint-plugin-jsx-a11y": "~6.9.0",
+    "@types/eslint__js": "~8.42.3",
     "@types/lodash": "~4.17.13",
     "@types/node": "^22.5.1",
     "@typescript-eslint/utils": "^8.6.0",

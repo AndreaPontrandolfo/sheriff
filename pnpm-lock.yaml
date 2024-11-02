@@ -69,11 +69,11 @@ importers:
         specifier: ^22.5.1
         version: 22.5.1
       '@types/react':
-        specifier: ^18.3.3
+        specifier: ~18.3.3
         version: 18.3.3
       '@types/react-dom':
-        specifier: ^18.2.15
-        version: 18.3.0
+        specifier: ~18.3.1
+        version: 18.3.1
       eslint:
         specifier: ^9.10.0
         version: 9.13.0(jiti@1.21.6)
@@ -157,17 +157,17 @@ importers:
         specifier: workspace:*
         version: link:../../packages/sheriff-types
       '@types/lodash-es':
-        specifier: ^4.17.12
+        specifier: ~4.17.12
         version: 4.17.12
       '@types/node':
         specifier: ^22.5.1
         version: 22.5.1
       '@types/react':
-        specifier: ^18.3.3
+        specifier: ~18.3.3
         version: 18.3.3
       '@types/react-dom':
-        specifier: ^18.2.15
-        version: 18.3.0
+        specifier: ~18.3.1
+        version: 18.3.1
       eslint:
         specifier: ^9.10.0
         version: 9.13.0(jiti@1.21.6)
@@ -284,14 +284,14 @@ importers:
         specifier: ^18.12.5
         version: 18.12.5
       '@types/eslint-plugin-jsx-a11y':
-        specifier: ^6.9.0
+        specifier: ~6.9.0
         version: 6.9.0
       '@types/eslint__js':
-        specifier: ^8.42.3
+        specifier: ~8.42.3
         version: 8.42.3
       '@types/lodash':
-        specifier: ^4.17.6
-        version: 4.17.6
+        specifier: ~4.17.13
+        version: 4.17.13
       '@types/node':
         specifier: ^22.5.1
         version: 22.5.1
@@ -408,13 +408,13 @@ importers:
         specifier: workspace:*
         version: link:../sheriff-types
       '@types/confusing-browser-globals':
-        specifier: ^1.0.3
+        specifier: ~1.0.3
         version: 1.0.3
       '@types/eslint-plugin-jsx-a11y':
-        specifier: ^6.9.0
+        specifier: ~6.9.0
         version: 6.9.0
       '@types/eslint__js':
-        specifier: ^8.42.3
+        specifier: ~8.42.3
         version: 8.42.3
       '@types/lodash':
         specifier: ~4.17.13
@@ -487,13 +487,13 @@ importers:
         specifier: workspace:*
         version: link:../sheriff-types
       '@types/lodash-es':
-        specifier: ^4.17.12
+        specifier: ~4.17.12
         version: 4.17.12
       '@types/node':
         specifier: ^22.5.1
         version: 22.5.1
       '@types/yargs':
-        specifier: ^17.0.32
+        specifier: ~17.0.32
         version: 17.0.32
       eslint:
         specifier: ^9.10.0
@@ -566,13 +566,13 @@ importers:
         specifier: workspace:*
         version: link:../sheriff-types
       '@types/lodash-es':
-        specifier: ^4.17.12
+        specifier: ~4.17.12
         version: 4.17.12
       '@types/node':
         specifier: ^22.5.1
         version: 22.5.1
       '@types/yargs':
-        specifier: ^17.0.32
+        specifier: ~17.0.32
         version: 17.0.32
       eslint:
         specifier: ^9.10.0
@@ -614,7 +614,7 @@ importers:
         specifier: workspace:*
         version: link:../sheriff-types
       '@types/lodash-es':
-        specifier: ^4.17.12
+        specifier: ~4.17.12
         version: 4.17.12
       '@types/node':
         specifier: ^22.5.1
@@ -3215,8 +3215,8 @@ packages:
   '@types/range-parser@1.2.7':
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
 
-  '@types/react-dom@18.3.0':
-    resolution: {integrity: sha512-EhwApuTmMBmXuFOikhQLIBUn6uFg81SwLMOAUgodJF14SOBOCMdU04gDoYi0WOJJHD144TL32z4yDqCW3dnkQg==}
+  '@types/react-dom@18.3.1':
+    resolution: {integrity: sha512-qW1Mfv8taImTthu4KoXgDfLuk4bydU6Q/TkADnDWWHwi4NX4BR+LWfTp2sVmTqRrsHvyDDTelgelxJ+SsejKKQ==}
 
   '@types/react-router-config@5.0.11':
     resolution: {integrity: sha512-WmSAg7WgqW7m4x8Mt4N6ZyKz0BubSj/2tVUMsAHp+Yd2AMwcSbeFq9WympT19p5heCFmF97R9eD5uUR/t4HEqw==}
@@ -13066,7 +13066,7 @@ snapshots:
 
   '@types/lodash-es@4.17.12':
     dependencies:
-      '@types/lodash': 4.17.6
+      '@types/lodash': 4.17.13
 
   '@types/lodash@4.17.13': {}
 
@@ -13131,7 +13131,7 @@ snapshots:
 
   '@types/range-parser@1.2.7': {}
 
-  '@types/react-dom@18.3.0':
+  '@types/react-dom@18.3.1':
     dependencies:
       '@types/react': 18.3.3
 
