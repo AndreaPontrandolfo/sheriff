@@ -14,11 +14,11 @@
   },
   "devDependencies": {
     "@sherifforg/types": "workspace:*",
-    "@tsconfig/node-lts": "^18.12.5",
+    "@tsconfig/node-lts": "^22.0.0",
     "@types/eslint-plugin-jsx-a11y": "^6.9.0",
     "@types/eslint__js": "^8.42.3",
     "@types/lodash": "^4.17.6",
-    "@types/node": "^22.5.1",
+    "@types/node": "^22.8.7",
     "eslint-define-config": "^2.1.0",
     "tsx": "^4.16.2",
     "typescript": "^5.6.3"

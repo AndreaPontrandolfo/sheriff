@@ -32,7 +32,7 @@
     "@sherifforg/constants": "workspace:*",
     "@sherifforg/types": "workspace:*",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^22.5.1",
+    "@types/node": "^22.8.7",
     "@types/yargs": "^17.0.32",
     "eslint": "^9.10.0",
     "eslint-config-sheriff": "workspace:*",
