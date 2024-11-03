@@ -83,8 +83,8 @@
     "eslint-plugin-storybook": "^0.6.11",
     "eslint-plugin-tsdoc": "^0.2.17",
     "eslint-plugin-unicorn": "^55.0.0",
-    "globals": "^15.9.0",
-    "typescript-eslint": "^8.6.0"
+    "globals": "^15.11.0",
+    "typescript-eslint": "^8.12.2"
   },
   "peerDependencies": {
     "eslint": ">=9.0.0",
@@ -102,7 +102,7 @@
     "@types/eslint__js": "^8.42.3",
     "@types/lodash": "^4.17.6",
     "@types/node": "^22.8.7",
-    "@typescript-eslint/utils": "^8.6.0",
+    "@typescript-eslint/utils": "^8.12.2",
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^9.10.0",
     "eslint-define-config": "^2.1.0",
