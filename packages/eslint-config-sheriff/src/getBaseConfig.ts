@@ -162,16 +162,14 @@ export const getBaseConfig = (
       ],
       plugins: { storybook: fixupPluginRules(storybook) },
       rules: {
-        ...storybook.configs.recommended.overrides[0].rules,
-        ...storybook.configs.csf.overrides[0].rules,
-        ...storybook.configs['csf-strict'].rules,
+        ...storybook.configs['flat/recommended'][1].rules,
+        ...storybook.configs['flat/csf'][1].rules,
         'import/no-default-export': 0,
       },
     },
     {
       files: ['**/.storybook/main.@(js|cjs|mjs|ts)'],
-      plugins: { storybook: fixupPluginRules(storybook) },
-      rules: storybook.configs.recommended.overrides[1].rules,
+      rules: { ...storybook.configs['flat/recommended'][2].rules },
     },
     {
       files: [supportedFileTypes],

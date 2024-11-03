@@ -256,8 +256,8 @@ importers:
         specifier: ^1.0.4
         version: 1.0.4(eslint@9.14.0(jiti@1.21.6))
       eslint-plugin-storybook:
-        specifier: ^0.6.11
-        version: 0.6.11(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)
+        specifier: ^0.10.2
+        version: 0.10.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)
       eslint-plugin-tsdoc:
         specifier: ^0.2.17
         version: 0.2.17
@@ -380,8 +380,8 @@ importers:
         specifier: ^1.0.4
         version: 1.0.4(eslint@9.14.0(jiti@1.21.6))
       eslint-plugin-storybook:
-        specifier: ^0.6.11
-        version: 0.6.11(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)
+        specifier: ^0.10.2
+        version: 0.10.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)
       eslint-plugin-tsdoc:
         specifier: ^0.2.17
         version: 0.2.17
@@ -2814,9 +2814,6 @@ packages:
   '@storybook/core-events@7.6.20':
     resolution: {integrity: sha512-tlVDuVbDiNkvPDFAu+0ou3xBBYbx9zUURQz4G9fAq0ScgBOs/bpzcRrFb4mLpemUViBAd47tfZKdH4MAX45KVQ==}
 
-  '@storybook/csf@0.0.1':
-    resolution: {integrity: sha512-USTLkZze5gkel8MYCujSRBVIrUQ3YPBrLOx7GNk/0wttvVtlzWXAq9eLbQ4p/NicGxP+3T7KPEMVV//g+yubpw==}
-
   '@storybook/csf@0.1.11':
     resolution: {integrity: sha512-dHYFQH3mA+EtnCkHXzicbLgsvzYjcDJ1JWsogbItZogkPHgSJM/Wr71uMkcvw8v9mmCyP4NpXJuu6bPoVsOnzg==}
 
@@ -5155,9 +5152,9 @@ packages:
     peerDependencies:
       eslint: ^8.0.0 || ^9.0.0
 
-  eslint-plugin-storybook@0.6.11:
-    resolution: {integrity: sha512-lIVmCqQgA0bhcuS1yWYBFrnPHBKPEQI+LHPDtlN81UE1/17onCqgwUW7Nyt7gS2OHjCAiOR4npjTGEoe0hssKw==}
-    engines: {node: 12.x || 14.x || >= 16}
+  eslint-plugin-storybook@0.10.2:
+    resolution: {integrity: sha512-iOrFJfyLgRLIbWDLbbs3J4yrknvIB+uiZ8KGqGOEXTL7/BGuBMZLiIU9Q4Pm/VYJrHN4JqmMtwCSrAemHL2nFg==}
+    engines: {node: '>= 18'}
     peerDependencies:
       eslint: '>=6'
 
@@ -8222,10 +8219,6 @@ packages:
 
   require-like@0.1.2:
     resolution: {integrity: sha512-oyrU88skkMtDdauHDuKVrgR+zuItqr6/c//FXzvmxRGMexSDc6hNvJInGW3LL46n+8b50RykrvwSUIIQH2LQ5A==}
-
-  requireindex@1.2.0:
-    resolution: {integrity: sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==}
-    engines: {node: '>=0.10.5'}
 
   requires-port@1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
@@ -12640,10 +12633,6 @@ snapshots:
     dependencies:
       ts-dedent: 2.2.0
 
-  '@storybook/csf@0.0.1':
-    dependencies:
-      lodash: 4.17.21
-
   '@storybook/csf@0.1.11':
     dependencies:
       type-fest: 2.19.0
@@ -15687,12 +15676,11 @@ snapshots:
     dependencies:
       eslint: 9.14.0(jiti@1.21.6)
 
-  eslint-plugin-storybook@0.6.11(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3):
+  eslint-plugin-storybook@0.10.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3):
     dependencies:
-      '@storybook/csf': 0.0.1
-      '@typescript-eslint/utils': 5.62.0(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)
+      '@storybook/csf': 0.1.11
+      '@typescript-eslint/utils': 8.12.2(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)
       eslint: 9.14.0(jiti@1.21.6)
-      requireindex: 1.2.0
       ts-dedent: 2.2.0
     transitivePeerDependencies:
       - supports-color
@@ -19433,8 +19421,6 @@ snapshots:
   require-from-string@2.0.2: {}
 
   require-like@0.1.2: {}
-
-  requireindex@1.2.0: {}
 
   requires-port@1.0.0: {}
 
