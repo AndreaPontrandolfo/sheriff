@@ -22,6 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "verbatimModuleSyntax": true,
-    "tsBuildInfoFile": "${configDir}/node_modules/.cache/tsbuildinfo.json"
+    "tsBuildInfoFile": "${configDir}/node_modules/.cache/tsbuildinfo.json",
+    "noUncheckedSideEffectImports": true
   }
 }
