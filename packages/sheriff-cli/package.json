@@ -52,7 +52,7 @@
     "url": "https://github.com/AndreaPontrandolfo"
   },
   "engines": {
-    "node": "22.6.0"
+    "node": "20.10.0"
   },
   "keywords": [
     "javascript",
