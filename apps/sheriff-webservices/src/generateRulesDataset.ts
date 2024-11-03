@@ -3,7 +3,7 @@
 /* eslint-disable lodash-f/import-scope */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 // import { Linter } from 'eslint';
-import lodash from 'lodash';
+import lodash, { isNumber } from 'lodash';
 import type {
   BarebonesConfigAtom,
   Entry,
@@ -26,13 +26,13 @@ const getParentPluginName = (rule: string): string => {
     if (!isEmpty(ruleParts)) {
       if (rule.includes('@')) {
         if (ruleParts[2]) {
-          return `${ruleParts[0]}/eslint-plugin-${ruleParts[1]}`;
+          return `${ruleParts[0] ?? ''}/eslint-plugin-${ruleParts[1] ?? ''}`;
         }
 
-        return `${ruleParts[0]}/eslint-plugin`;
+        return `${ruleParts[0] ?? ''}/eslint-plugin`;
       }
 
-      return `eslint-plugin-${ruleParts[0]}`;
+      return `eslint-plugin-${ruleParts[0] ?? ''}`;
     }
   }
 
@@ -40,6 +40,10 @@ const getParentPluginName = (rule: string): string => {
 };
 
 const severityRemapper = (severity: Severity): NumericSeverity => {
+  if (isNumber(severity)) {
+    return severity;
+  }
+
   switch (severity) {
     case 'off': {
       return 0;
