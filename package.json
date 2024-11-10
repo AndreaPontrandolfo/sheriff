@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "turbo watch build-watch start",
+    "dev:norebuild": "turbo start",
     "build": "turbo run build",
     "playground": "pnpm --filter=cli-playground exec create-config",
     "playground:mimic-monorepo": "pnpm exec create-config --filter=cli-playground",

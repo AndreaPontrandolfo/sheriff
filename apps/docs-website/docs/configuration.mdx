@@ -12,6 +12,7 @@ import {
   ignores,
   sheriffStartingOptions,
   testsFilePatterns,
+  allJsExtensions
 } from "@sherifforg/constants";
 
 # 🧠 Configuration
@@ -489,6 +490,83 @@ const sheriffOptions: SheriffSettings = {
   pathsOverrides: {
     // highlight-start
     tests: [
+      "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts}",
+      "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts}",
+      "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}",
+    ],
+    // highlight-end
+  },
+};
+
+export default defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+  </TabItem>
+</Tabs>
+
+#### `pathsOverrides.playwrightTests`
+
+By default, Sheriff will apply Playwright rules only on specific files.
+
+<CodeBlock language="ts">
+  {JSON.stringify(allJsExtensions, null, 2)}
+</CodeBlock>
+
+This setting overrides this default.
+
+It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax.
+
+Example:
+
+<Tabs groupId="tsorjs">
+  <TabItem value="JS" label="JS">
+
+```js title="eslint.config.js"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  playwrightTests: {
+    // highlight-start
+    tests: [
+      "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts}",
+      "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts}",
+      "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}",
+    ],
+    // highlight-end
+  },
+};
+
+export default defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+</TabItem>
+<TabItem value="TS" label="TS">
+
+```ts title="eslint.config.ts"
+import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+
+const sheriffOptions: SheriffSettings = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  jest: false,
+  vitest: false,
+  pathsOverrides: {
+    // highlight-start
+    playwrightTests: [
       "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts}",
       "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts}",
       "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}",

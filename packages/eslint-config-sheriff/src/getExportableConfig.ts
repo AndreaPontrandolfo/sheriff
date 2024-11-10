@@ -7,7 +7,7 @@ import { getReactConfig } from './getReactConfig';
 import { getBaseConfig } from './getBaseConfig';
 import { nextjsConfig } from './nextjsConfig';
 import { getAstroConfig } from './getAstroConfig';
-import { playwrightConfig } from './playwrightConfig';
+import { getPlaywrightConfig } from './playwrightConfig';
 import { lodashConfig } from './lodashConfig';
 import { getJestConfig } from './getJestConfig';
 import { getVitestConfig } from './getVitestConfig';
@@ -73,8 +73,10 @@ export const getExportableConfig = (
   }
 
   if (userConfigChoices.playwright) {
-    //@ts-expect-error
-    exportableConfig.push(...playwrightConfig);
+    exportableConfig.push(
+      //@ts-expect-error
+      ...getPlaywrightConfig(userConfigChoices.pathsOverrides?.playwrightTests),
+    );
   }
 
   if (userConfigChoices.files) {

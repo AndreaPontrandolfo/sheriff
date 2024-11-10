@@ -99,9 +99,13 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
      */
     tsconfigLocation?: string | string[];
     /**
-     * This setting overrides the default Sheriff filepaths for test files. It accepts an array of filepaths, dictaced by minimatch syntax. Sheriff will apply Jest or Vitest rules only on these files.
+     * This setting overrides the default Sheriff filepaths for Vitest and Jest linting. It accepts an array of filepaths, dictaced by minimatch syntax. Sheriff will apply Jest or Vitest rules only on these files.
      */
     tests?: string[];
+    /**
+     * This setting overrides the default Sheriff filepaths for Playwright linting. It accepts an array of filepaths, dictaced by minimatch syntax. Sheriff will apply Playwright rules only on these files.
+     */
+    playwrightTests: string[];
   };
   /**
    * This setting apply some ignore patterns to the whole config.
