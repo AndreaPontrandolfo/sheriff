@@ -51,6 +51,9 @@ export const typescriptHandPickedRules = {
   '@typescript-eslint/dot-notation': 2,
   '@typescript-eslint/no-import-type-side-effects': 2,
   '@typescript-eslint/default-param-last': 2,
+  '@typescript-eslint/no-empty-object-type': {
+    allowInterfaces: 'with-single-extends',
+  },
   '@typescript-eslint/no-shadow': [
     2,
     {
