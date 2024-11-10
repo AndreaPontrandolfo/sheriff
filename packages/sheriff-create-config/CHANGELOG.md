@@ -1,5 +1,11 @@
 # @sherifforg/cli
 
+## 9.1.1
+
+### Patch Changes
+
+- e47654f: feat(plugins): updated deps
+
 ## 9.1.0
 
 ### Minor Changes
