@@ -3,7 +3,7 @@
 /* eslint-disable lodash-f/import-scope */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 // import { Linter } from 'eslint';
-import lodash, { isNumber } from 'lodash';
+import lodash from 'lodash';
 import type {
   BarebonesConfigAtom,
   Entry,
@@ -15,7 +15,7 @@ import type {
   Severity,
 } from '@sherifforg/types';
 
-const { isArray, isEmpty, last, uniq } = lodash;
+const { isArray, isEmpty, last, uniq, isNumber } = lodash;
 
 // const linter = new Linter();
 
