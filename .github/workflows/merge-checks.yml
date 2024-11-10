@@ -10,7 +10,7 @@ on:
 
 jobs:
   merge-checks:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     if: '!github.event.pull_request.draft'
     steps:
       - name: Checkout
@@ -30,3 +30,5 @@ jobs:
         uses: rharkor/caching-for-turbo@v1.5
       - name: Run qa checks
         run: pnpm merge-checks
+      - name: Check deduped deps
+        run: pnpm exec turbo check-deduped-deps
