@@ -15,7 +15,7 @@ import type {
   Severity,
 } from '@sherifforg/types';
 
-const { isArray, isEmpty, last, uniq } = lodash;
+const { isArray, isEmpty, last, uniq, isNumber } = lodash;
 
 // const linter = new Linter();
 
@@ -26,13 +26,13 @@ const getParentPluginName = (rule: string): string => {
     if (!isEmpty(ruleParts)) {
       if (rule.includes('@')) {
         if (ruleParts[2]) {
-          return `${ruleParts[0]}/eslint-plugin-${ruleParts[1]}`;
+          return `${ruleParts[0] ?? ''}/eslint-plugin-${ruleParts[1] ?? ''}`;
         }
 
-        return `${ruleParts[0]}/eslint-plugin`;
+        return `${ruleParts[0] ?? ''}/eslint-plugin`;
       }
 
-      return `eslint-plugin-${ruleParts[0]}`;
+      return `eslint-plugin-${ruleParts[0] ?? ''}`;
     }
   }
 
@@ -40,6 +40,10 @@ const getParentPluginName = (rule: string): string => {
 };
 
 const severityRemapper = (severity: Severity): NumericSeverity => {
+  if (isNumber(severity)) {
+    return severity;
+  }
+
   switch (severity) {
     case 'off': {
       return 0;

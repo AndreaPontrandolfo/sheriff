@@ -1,3 +1,5 @@
+/* eslint-disable react/function-component-definition */
+
 import type { JSX } from 'react';
 
 export const MyComponent = (): JSX.Element => {

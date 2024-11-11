@@ -1,12 +1,16 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Default",
-  "include": ["src"],
-  "exclude": ["dist", "build", "node_modules"],
+  "include": ["${configDir}/src"],
+  "exclude": [
+    "${configDir}/dist",
+    "${configDir}/build",
+    "${configDir}/node_modules"
+  ],
   "compilerOptions": {
     "composite": false,
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "Preserve",
     "moduleResolution": "bundler",
     "allowJs": false,
     "isolatedModules": true,
@@ -17,6 +21,8 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
-    "verbatimModuleSyntax": true
+    "verbatimModuleSyntax": true,
+    "tsBuildInfoFile": "${configDir}/node_modules/.cache/tsbuildinfo.json",
+    "noUncheckedSideEffectImports": true
   }
 }

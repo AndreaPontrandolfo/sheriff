@@ -10,9 +10,10 @@ interface ConfigCombinationFormProps {
 
 interface FormInputs {
   react: boolean;
+  next: boolean;
+  astro: boolean;
   lodash: boolean;
   remeda: boolean;
-  next: boolean;
   playwright: boolean;
   vitest: boolean;
   jest: boolean;
@@ -58,6 +59,19 @@ export const ConfigCombinationForm = ({
         <label htmlFor="react">React</label>
       </div>
       <div className={styles.nativeCheckbox}>
+        <input {...register('next')} defaultChecked type="checkbox" id="next" />
+        <label htmlFor="next">Next</label>
+      </div>
+      <div className={styles.nativeCheckbox}>
+        <input
+          {...register('astro')}
+          defaultChecked
+          type="checkbox"
+          id="astro"
+        />
+        <label htmlFor="astro">Astro</label>
+      </div>
+      <div className={styles.nativeCheckbox}>
         <input
           {...register('lodash')}
           defaultChecked
@@ -74,10 +88,6 @@ export const ConfigCombinationForm = ({
           id="remeda"
         />
         <label htmlFor="remeda">Remeda</label>
-      </div>
-      <div className={styles.nativeCheckbox}>
-        <input {...register('next')} defaultChecked type="checkbox" id="next" />
-        <label htmlFor="next">Next</label>
       </div>
       <div className={styles.nativeCheckbox}>
         <input

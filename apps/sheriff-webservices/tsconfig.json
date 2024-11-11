@@ -6,9 +6,10 @@
   "compilerOptions": {
     "outDir": "./dist",
     "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx",
     "incremental": true,
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
-    "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
+    "noUncheckedIndexedAccess": true
   }
 }

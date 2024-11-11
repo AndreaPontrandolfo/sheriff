@@ -134,17 +134,11 @@ export const getBaseConfig = (
     },
     {
       files: [supportedFileTypes],
-      plugins: { import: fixupPluginRules(pluginImport) },
+      plugins: { import: pluginImport },
       rules: importHandPickedRules,
-      languageOptions: {
-        parserOptions: {
-          sourceType: 'module', // required for https://github.com/import-js/eslint-plugin-import/blob/09476d7dac1ab36668283f9626f85e2223652b37/src/rules/no-default-export.js#L16
-          ecmaVersion: 'latest', // required by eslint-plugin-import when using sourceType: 'module'
-        },
-      },
       settings: {
         'import/parsers': {
-          '@typescript-eslint/parser': ['.ts', '.tsx', '.mts'],
+          '@typescript-eslint/parser': ['.ts', '.tsx', '.mts', 'cts'],
           espree: ['.js'],
         },
         'import/resolver': {
@@ -156,22 +150,26 @@ export const getBaseConfig = (
       },
     },
     {
+      files: ['**/*.d.ts'],
+      rules: {
+        'import/no-default-export': 0,
+      },
+    },
+    {
       files: [
         '**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)',
         '**/*.story.@(ts|tsx|js|jsx|mjs|cjs)',
       ],
       plugins: { storybook: fixupPluginRules(storybook) },
       rules: {
-        ...storybook.configs.recommended.overrides[0].rules,
-        ...storybook.configs.csf.overrides[0].rules,
-        ...storybook.configs['csf-strict'].rules,
+        ...storybook.configs['flat/recommended'][1].rules,
+        ...storybook.configs['flat/csf'][1].rules,
         'import/no-default-export': 0,
       },
     },
     {
       files: ['**/.storybook/main.@(js|cjs|mjs|ts)'],
-      plugins: { storybook: fixupPluginRules(storybook) },
-      rules: storybook.configs.recommended.overrides[1].rules,
+      rules: { ...storybook.configs['flat/recommended'][2].rules },
     },
     {
       files: [supportedFileTypes],
@@ -189,9 +187,11 @@ export const getBaseConfig = (
       rules: { 'fsecond/prefer-destructured-optionals': 2 },
     },
     {
-      files: [`**/*.config.{${allJsExtensions}}`],
+      files: ['**/*.config.*'],
       rules: {
         'import/no-default-export': 0,
+        'import/no-anonymous-default-export': 0,
+        'arrow-return-style/no-export-default-arrow': 0,
       },
     },
     {

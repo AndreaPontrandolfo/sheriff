@@ -11,6 +11,7 @@ import playwright from 'eslint-plugin-playwright';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import * as regexpPlugin from 'eslint-plugin-regexp';
 import remedaPlugin from 'eslint-plugin-remeda';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import sonarjs from 'eslint-plugin-sonarjs';
@@ -42,9 +43,7 @@ export const getAllRules = (
   ) => Record<string, RuleOptions>,
 ): BarebonesConfigAtom['rules'] => {
   const reactRulesCatalog = {
-    ...react.configs.flat.recommended.rules,
-    ...react.configs.flat['jsx-runtime'].rules,
-    // @ts-expect-error
+    ...prependRulesWithPluginName(react.rules, 'react'),
     ...prependRulesWithPluginName(reactAccessibility.rules, 'jsx-a11y'),
     ...prependRulesWithPluginName(reactHooks.rules, 'react-hooks'),
     ...prependRulesWithPluginName(reactRefresh.rules, 'react-refresh'),
@@ -71,6 +70,7 @@ export const getAllRules = (
       preferEarlyReturn.rules,
       '@regru/prefer-early-return',
     ),
+    ...prependRulesWithPluginName(regexpPlugin.rules, 'regexp'),
     ...prependRulesWithPluginName(arrowReturnStyle.rules, 'arrow-return-style'),
     // Stylistic's types are wrong, `default` should not be needed.
     ...prependRulesWithPluginName(

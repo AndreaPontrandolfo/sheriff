@@ -1,7 +1,7 @@
 {
   "name": "@sherifforg/constants",
   "description": "Sheriff constants.",
-  "private": true,
+  "version": "0.0.0",
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
@@ -15,10 +15,10 @@
   "devDependencies": {
     "@sherifforg/types": "workspace:*",
     "tsconfig": "workspace:*",
-    "typescript": "^5.5.3"
+    "typescript": "^5.6.3"
   },
   "engines": {
-    "node": ">=20.10.0"
+    "node": "20.10.0"
   },
   "repository": {
     "type": "git",
