@@ -24,11 +24,9 @@
       "outputs": ["node_modules/.cache/tsbuildinfo.json"]
     },
     "lint": {
-      "outputs": ["node_modules/.cache/.eslintcache"],
       "dependsOn": ["^topo", "^build"]
     },
     "validate-config": {
-      "outputs": ["node_modules/.cache/.eslintcache"],
       "dependsOn": ["^topo", "^build"]
     },
     "publint": {
