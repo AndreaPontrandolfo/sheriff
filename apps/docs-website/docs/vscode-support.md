@@ -19,11 +19,9 @@ To make the [VSCode ESLint Extension](https://marketplace.visualstudio.com/items
 }
 ```
 
-## Typescript support
+## `eslint.config.ts` support
 
-### Using official ESlint > v9.9.0
-
-If you are using an `eslint.config.ts` with [ESLint's experimental support for Typescript based configuration files](https://github.com/eslint/eslint/releases/tag/v9.9.0), add this to your workspace's `.vscode/settings.json`:
+If you are using the `eslint.config.ts` config, add this to your `.vscode/settings.json`:
 
 ```JSONC title=".vscode/settings.json"
 "eslint.options": {
