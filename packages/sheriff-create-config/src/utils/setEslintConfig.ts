@@ -7,7 +7,7 @@ import { patchedFindUp } from './patchedFindUp';
 import { throwError } from './throwError';
 
 export const setEslintConfig = async (
-  isEslintTsPatchRequired: boolean,
+  isEslintTsConfig: boolean,
   customProjectRootPath: string | null,
 ): Promise<void> => {
   const ESLINT_CONFIG_JS_FILE_NAME = 'eslint.config.js';
@@ -52,7 +52,7 @@ export const setEslintConfig = async (
 
     consola.start(
       `No ESLint config files were found. Generating and configuring ${
-        isEslintTsPatchRequired
+        isEslintTsConfig
           ? colors.bold(ESLINT_CONFIG_TS_FILE_NAME)
           : colors.bold(ESLINT_CONFIG_JS_FILE_NAME)
       } file...`,
@@ -62,7 +62,7 @@ export const setEslintConfig = async (
       'If you have other ESLint configs in your project, remove them',
     );
 
-    if (isEslintTsPatchRequired) {
+    if (isEslintTsConfig) {
       createFile(
         ESLINT_CONFIG_TS_FILE_NAME,
         await getEslintConfigRawText('ts', customProjectRootPath),
