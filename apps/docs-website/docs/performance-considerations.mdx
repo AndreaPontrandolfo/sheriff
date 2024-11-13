@@ -83,7 +83,7 @@ import process from 'node:process';
 import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -92,7 +92,7 @@ const sheriffOptions: SheriffSettings = {
   playwright: false,
   jest: false,
   vitest: false,
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),

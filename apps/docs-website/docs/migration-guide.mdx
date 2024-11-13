@@ -58,7 +58,7 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   // highlight-next-line
   files: ["./src/**/*"], // Only the files in the src directory will be linted.
   react: false,
@@ -69,7 +69,7 @@ const sheriffOptions: SheriffSettings = {
   playwright: false,
   jest: false,
   vitest: false,
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```

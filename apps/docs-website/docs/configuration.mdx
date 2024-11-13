@@ -58,7 +58,7 @@ import { defineFlatConfig } from "eslint-define-config";
 
 // highlight-start
 // Sheriff configuration object
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -67,7 +67,7 @@ const sheriffOptions: SheriffSettings = {
   playwright: false,
   jest: false,
   vitest: false,
-};
+} satisfies SheriffSettings;
 // highlight-end
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
@@ -98,7 +98,7 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
@@ -118,7 +118,7 @@ export default defineFlatConfig([
 import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -127,7 +127,7 @@ const sheriffOptions: SheriffSettings = {
   playwright: false,
   jest: false,
   vitest: false,
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
@@ -161,7 +161,7 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
@@ -181,7 +181,7 @@ export default defineFlatConfig([
 import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -190,7 +190,7 @@ const sheriffOptions: SheriffSettings = {
   playwright: false,
   jest: false,
   vitest: false,
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
@@ -263,7 +263,7 @@ const sheriffOptions = {
     recommended: true, // true by default. False to disable.
   },
   // highlight-end
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
@@ -275,7 +275,7 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -289,7 +289,7 @@ const sheriffOptions: SheriffSettings = {
     recommended: true, // true by default. False to disable.
   },
   // highlight-end
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
@@ -324,7 +324,7 @@ const sheriffOptions = {
     inheritedFromGitignore: true, // true by default. False to disable.
   },
   // highlight-end
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
@@ -336,7 +336,7 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -350,7 +350,7 @@ const sheriffOptions: SheriffSettings = {
     inheritedFromGitignore: true, // true by default. False to disable.
   },
   // highlight-end
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
@@ -405,7 +405,7 @@ const sheriffOptions = {
     // highlight-next-line
     tsconfigLocation: "./tsconfig.eslint.json",
   },
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
@@ -417,7 +417,7 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -430,7 +430,7 @@ const sheriffOptions: SheriffSettings = {
     // highlight-next-line
     tsconfigLocation: "./tsconfig.eslint.json",
   },
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
@@ -477,7 +477,7 @@ const sheriffOptions = {
     ],
     // highlight-end
   },
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
@@ -489,7 +489,7 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -507,7 +507,7 @@ const sheriffOptions: SheriffSettings = {
     ],
     // highlight-end
   },
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
@@ -554,7 +554,7 @@ const sheriffOptions = {
     ],
     // highlight-end
   },
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
@@ -566,7 +566,7 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -584,7 +584,7 @@ const sheriffOptions: SheriffSettings = {
     ],
     // highlight-end
   },
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ```
@@ -623,7 +623,7 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
@@ -647,7 +647,7 @@ export default defineFlatConfig([
 import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -656,7 +656,7 @@ const sheriffOptions: SheriffSettings = {
   playwright: false,
   jest: false,
   vitest: false,
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
@@ -699,7 +699,7 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
@@ -724,7 +724,7 @@ export default defineFlatConfig([
 import sheriff, { baseNoRestrictedSyntaxRules, type SheriffSettings } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -733,7 +733,7 @@ const sheriffOptions: SheriffSettings = {
   playwright: false,
   jest: false,
   vitest: false
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
@@ -781,7 +781,7 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
@@ -805,7 +805,7 @@ export default defineFlatConfig([
 import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
 import { defineFlatConfig } from "eslint-define-config";
 
-const sheriffOptions: SheriffSettings = {
+const sheriffOptions = {
   react: false,
   next: false,
   astro: false,
@@ -814,7 +814,7 @@ const sheriffOptions: SheriffSettings = {
   playwright: false,
   jest: false,
   vitest: false
-};
+} satisfies SheriffSettings;
 
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
