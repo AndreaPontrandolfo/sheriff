@@ -5,7 +5,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import packageJson from '../package.json';
 import { askForCustomPath } from './utils/askForCustomPath';
-import { askForEslintTsPatch } from './utils/askForEslintTsPatch';
+import { askForEslintTsConfig } from './utils/askForEslintTsConfig';
 import { askForPrettierSupport } from './utils/askForPrettierSupport';
 import { setDependencies } from './utils/setDependencies';
 import { setEslintConfig } from './utils/setEslintConfig';
@@ -33,15 +33,15 @@ async function main() {
   const hasLocalPrettierSupport = isWorkspace
     ? await askForPrettierSupport()
     : false;
-  const isEslintTsPatchRequired = await askForEslintTsPatch();
+  const isEslintTsConfig = await askForEslintTsConfig();
 
-  await setEslintConfig(isEslintTsPatchRequired, customProjectRootPath);
+  await setEslintConfig(isEslintTsConfig, customProjectRootPath);
 
   if (!isWorkspace || hasLocalPrettierSupport) {
     await setPrettierConfig(customProjectRootPath);
     await setPrettierIgnore(customProjectRootPath);
   }
-  await setDependencies(isEslintTsPatchRequired, customProjectRootPath);
+  await setDependencies(customProjectRootPath);
   consola.info("You're all set!");
 }
 
