@@ -1,5 +1,20 @@
 # eslint-config-sheriff
 
+## 25.2.0
+
+### Minor Changes
+
+- 091ba74: feat(config): added paths configuration for Playwright rules
+  feat(rules): reconfigured @typescript-eslint/no-empty-object-type rule
+  docs(website): added astro to rules page
+  chore(webservices): added eslint-plugin-regexp to webservice
+- fcc56c9: feature(rules): changed some rules for nextjs
+  Fixes #251
+
+### Patch Changes
+
+- e47654f: feat(plugins): updated deps
+
 ## 25.1.0
 
 ### Minor Changes
