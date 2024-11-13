@@ -9,7 +9,7 @@ import TabItem from "@theme/TabItem";
 
 ## General guidelines
 
-While Sheriff can technically be used at the _root_ of monorepos, it's **not** recommended.<br />
+While Sheriff can technically be used at the _root_ of monorepos, it is **not** recommended.<br />
 It works best when applied to individual packages _within_ a monorepo.
 
 ### Examples
@@ -56,15 +56,19 @@ It works best when applied to individual packages _within_ a monorepo.
 └── .gitignore
 ```
 
-## Usage in VSCode
+## Usage in VS Code
 
-To make use of the [ESLint VScode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) in monorepos, use the [eslint.workingDirectories](https://github.com/microsoft/vscode-eslint#mono-repository-setup) setting.
+To use the [ESLint VS Code extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) in monorepos,
+use the [`eslint.workingDirectories`](https://github.com/microsoft/vscode-eslint#mono-repository-setup) setting.
 
 ## Setup with `npm init @sherifforg/config`
 
-If you want to use `npm init @sherifforg/config` to bootstrap Sheriff in one of your workspace' packages, you can actually do so by following the general usage rules of workspaces, Sheriff will try to mimic the behaviour of popular monorepo CLI tools, so it will feel seamless, intuitive and familiar.
+If you want to use `npm init @sherifforg/config` to bootstrap Sheriff in one of your workspace packages,
+you can do so by following the general rules of workspaces,
+Sheriff will try to mimic the behavior of popular monorepo CLI tools, so it will feel seamless, intuitive and familiar.
 
-Run the command from the root of your monorepo, and then filter by the workspace you want to apply Sheriff to. A chain of prompts will start to guide you through the correct process of installation.
+Run the command from the root of your monorepo, and then filter by the workspace you want to apply Sheriff to.
+A chain of prompts will start to guide you through the correct process of installation.
 
 Examples:
 

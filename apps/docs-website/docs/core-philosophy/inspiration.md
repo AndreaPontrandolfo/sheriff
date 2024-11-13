@@ -3,7 +3,7 @@ sidebar_position: 5
 description: 🤝 Standing on the shoulders of giants
 ---
 
-# Inspired by Style Guides
+# Inspired by style guides
 
 Sheriff design was also inspired by the following style guides:
 
