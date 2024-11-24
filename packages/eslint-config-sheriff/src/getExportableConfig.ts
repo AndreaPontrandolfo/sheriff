@@ -16,6 +16,7 @@ import { remedaConfig } from './remedaConfig';
 
 export const getExportableConfig = (
   userConfigChoices: SheriffSettings = sheriffStartingOptions,
+  /** @internal */
   areAllRulesForced?: boolean,
 ): FlatESLintConfig[] => {
   let exportableConfig: TSESLint.FlatConfig.ConfigArray = [
