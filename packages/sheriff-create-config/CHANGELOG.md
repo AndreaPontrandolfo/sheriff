@@ -1,5 +1,13 @@
 # @sherifforg/cli
 
+## 9.2.0
+
+### Minor Changes
+
+- 9556270: feature(cli): removed eslint-ts-patch
+  Fixes [#201](https://github.com/AndreaPontrandolfo/sheriff/issues/201)
+  Fixes [#268](https://github.com/AndreaPontrandolfo/sheriff/issues/268)
+
 ## 9.1.1
 
 ### Patch Changes
