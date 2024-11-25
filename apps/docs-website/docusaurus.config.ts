@@ -22,7 +22,7 @@ const config: Config = {
   baseUrl: '/',
 
   future: {
-    experimental_faster: false,
+    experimental_faster: true,
   },
 
   // GitHub pages deployment config.

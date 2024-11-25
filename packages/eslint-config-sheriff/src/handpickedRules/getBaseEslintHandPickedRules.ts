@@ -52,7 +52,7 @@ export const getBaseEslintHandPickedRules = () => {
     'logical-assignment-operators': [2, 'never'],
     'prefer-object-spread': 2,
     'prefer-rest-params': 2,
-    'no-param-reassign': [2, { props: true }],
+    'no-param-reassign': 2,
     'no-redeclare': 2,
     'no-useless-computed-key': 2,
     'array-callback-return': [2, { allowImplicit: true, checkForEach: true }],

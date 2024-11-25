@@ -17,10 +17,10 @@
     "clean": "pnpm clear && rm -rf .turbo dist node_modules/.cache"
   },
   "dependencies": {
-    "@docusaurus/core": "3.6.1",
-    "@docusaurus/faster": "^3.6.1",
-    "@docusaurus/preset-classic": "3.6.1",
-    "@docusaurus/remark-plugin-npm2yarn": "^3.6.1",
+    "@docusaurus/core": "3.6.3",
+    "@docusaurus/faster": "^3.6.3",
+    "@docusaurus/preset-classic": "3.6.3",
+    "@docusaurus/remark-plugin-npm2yarn": "^3.6.3",
     "@mdx-js/react": "^3.0.1",
     "@sherifforg/constants": "workspace:*",
     "@tanstack/react-table": "^8.19.2",
@@ -35,10 +35,10 @@
     "react-select": "^5.7.4"
   },
   "devDependencies": {
-    "@docusaurus/eslint-plugin": "^3.6.1",
-    "@docusaurus/module-type-aliases": "3.6.1",
-    "@docusaurus/tsconfig": "^3.6.1",
-    "@docusaurus/types": "^3.6.1",
+    "@docusaurus/eslint-plugin": "^3.6.3",
+    "@docusaurus/module-type-aliases": "3.6.3",
+    "@docusaurus/tsconfig": "^3.6.3",
+    "@docusaurus/types": "^3.6.3",
     "@hookform/devtools": "^4.3.1",
     "@sherifforg/types": "workspace:*",
     "@types/lodash-es": "^4.17.12",
