@@ -2,9 +2,11 @@
 sidebar_position: 11
 ---
 
-# 🚀 VSCode support
+# 🚀 VS Code support
 
-To make the [VSCode ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) work better with Sheriff we can enable a few settings. It's advisable to enable them at the workspace level, meaning in the root of the project at `.vscode/settings.json`
+To make the [VS Code ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+work better with Sheriff, we can enable a few settings.
+It is advisable to enable them at the workspace level, meaning in the root of the project at `.vscode/settings.json`
 
 ## Enable linting on specified file extensions
 
@@ -21,7 +23,7 @@ To make the [VSCode ESLint Extension](https://marketplace.visualstudio.com/items
 
 ## `eslint.config.ts` support
 
-If you are using the `eslint.config.ts` config, add this to your `.vscode/settings.json`:
+If you are using a TypeScript config, add this to your `.vscode/settings.json`:
 
 ```JSONC title=".vscode/settings.json"
 "eslint.options": {
@@ -46,9 +48,10 @@ For [Astro](https://astro.build/) projects, add the astro extension too:
 }
 ```
 
-## Avoid "source.organizeImports"
+## Avoid `source.organizeImports`
 
-Sheriff already handles imports sorting, so if you happen to have enabled the VSCode automatic import sorting feature, you should disable it to avoid conflicts:
+Sheriff already handles imports sorting, so if you happen to have enabled the VS Code automatic import sorting feature,
+you should disable it to avoid conflicts:
 
 ```JSONC title=".vscode/settings.json"
 "editor.codeActionsOnSave": {

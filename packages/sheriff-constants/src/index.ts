@@ -45,7 +45,7 @@ export const ignores = [
   '**/build/**',
   '**/artifacts/**',
   '**/coverage/**',
-  'eslint.config.{js,mjs,cjs}', // we currently cannot lint the eslint.config.js itself. It is currently only provided as a .js file and this config currently only supports .ts files. Therefore, eslint.config.js can only be re-enabled once this config support pure .js files too, or the ESLint team support the eslint.config.ts file.
+  'eslint.config.{js,mjs,cjs}', // We currently cannot lint the `eslint.config.js` itself. Sheriff currently only supports `.ts` files. Therefore, `eslint.config.js` can only be re-enabled once this config supports pure `.js` files too.
 ] as const;
 
 export const baseNoRestrictedSyntaxRules = [

@@ -9,5 +9,8 @@
     "incremental": true,
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     "noUncheckedSideEffectImports": true
+  },
+  "mdx": {
+    "checkMdx": true
   }
 }
