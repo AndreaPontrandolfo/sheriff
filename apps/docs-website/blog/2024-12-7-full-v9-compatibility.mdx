@@ -1,0 +1,83 @@
+---
+slug: sheriff-reboot
+title: A new home for Sheriff
+authors: [andrea]
+tags: [sheriff, eslint, remeda, types]
+image: /img/sheriff_blog_post_1.png
+---
+
+import ThemedImage from "@theme/ThemedImage";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+<ThemedImage
+  alt="Sheriff BlogPost Poster"
+  sources={{
+    light: useBaseUrl("/img/sheriff_blog_post_1_v2.jpg"),
+    dark: useBaseUrl("/img/sheriff_blog_post_1_dark_v2.png"),
+  }}
+/>
+
+{/* truncate */}
+
+This release introduces key updates to Sheriff:
+
+## ESLint V9 APIs Compatibility
+Sheriff now fully supports ESLint V9 APIs for all plugins. [Milestone](https://github.com/AndreaPontrandolfo/sheriff/milestone/1?closed=1).
+
+There were some [problematic](https://github.com/facebook/react/issues/28313) plugins that could cause crashes in some instances, like [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) and [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import/tree/main).
+
+Now every plugin is updated to the V9 compatible version and all issues should be resolved.
+
+## Added `eslint-plugin-remeda`
+Added support for [remeda](https://github.com/remeda/remeda) with [eslint-plugin-remeda](https://github.com/AndreaPontrandolfo/eslint-plugin-remeda).
+
+If you use Remeda instead of Lodash, you should now disable `lodash` in the config and enable `remeda`.
+
+```js title="eslint.config.js"
+import sheriff from "eslint-config-sheriff";
+import { defineFlatConfig } from "eslint-define-config";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  astro: false,
+  // highlight-start
+  lodash: false,
+  remeda: true,
+// highlight-end
+  playwright: false,
+  jest: false,
+  vitest: false,
+};
+
+export default defineFlatConfig([...sheriff(sheriffOptions)]);
+```
+
+## Unified Type Exports
+The types previously exported from `@sherifforg/types` are now exported directly from `eslint-config-sheriff`.
+
+The `@sherifforg/types` package is now deprecated, users can now safely remove it and update the imports accordingly.
+
+## Compliance with the native typescript support for the `eslint.config.ts` file
+
+Sheriff moved away from [eslint-ts-patch](https://github.com/antfu/eslint-ts-patch) and adopted the [native support for TypeScript](https://eslint.org/blog/2024/08/eslint-v9.9.0-released/#experimental-typescript-configuration-files) in the `eslint.config.ts` file.
+
+You can enable it by setting `unstable_ts_config`, both in the CLI commands and in the [VSCode extension settings](https://www.eslint-config-sheriff.dev/docs/vscode-support#eslintconfigts-support).
+
+## New syntax for boostrapping Sheriff projects
+
+Now you can do `pnpm create @sherifforg/config` instead of `pnpm dlx create-sheriff-config` to bootstrap a new Sheriff project.
+
+## Minor improvements
+
+- Astro linting is now configurable
+- the SheriffOptions object is now optional, if you don't specify it, every option will be passed as `false` by default.
+- general fixes and improvements to the cli. The experience should be much better now.
+
+
+## Acknowledgment
+
+Shoutout to [all the people that contributed](https://github.com/AndreaPontrandolfo/sheriff/graphs/contributors) to these releases and special big thanks to [lishaduck](https://github.com/lishaduck) for his big help on a lot of Issues and PRs!
+
+For more details, see the [release notes](https://github.com/AndreaPontrandolfo/sheriff/releases).
+
