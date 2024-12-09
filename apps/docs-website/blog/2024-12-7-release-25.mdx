@@ -1,9 +1,9 @@
 ---
-slug: sheriff-reboot
-title: A new home for Sheriff
+slug: sheriff-v-25
+title: Full v9 compatibility achieved internally
 authors: [andrea]
 tags: [sheriff, eslint, remeda, types]
-image: /img/sheriff_blog_post_1.png
+image: /img/sheriff_blog_post_3.png
 ---
 
 import ThemedImage from "@theme/ThemedImage";
@@ -12,12 +12,14 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 <ThemedImage
   alt="Sheriff BlogPost Poster"
   sources={{
-    light: useBaseUrl("/img/sheriff_blog_post_1_v2.jpg"),
-    dark: useBaseUrl("/img/sheriff_blog_post_1_dark_v2.png"),
+    light: useBaseUrl("/img/sheriff_blog_post_3.png"),
+    dark: useBaseUrl("/img/sheriff_blog_post_3.png"),
   }}
 />
 
 {/* truncate */}
+
+## Sheriff release v25
 
 This release introduces key updates to Sheriff:
 
@@ -56,7 +58,7 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 ## Unified Type Exports
 The types previously exported from `@sherifforg/types` are now exported directly from `eslint-config-sheriff`.
 
-The `@sherifforg/types` package is now deprecated, users can now safely remove it and update the imports accordingly.
+The `@sherifforg/types` package is now deprecated, you can now safely remove it and update the imports accordingly.
 
 ## Compliance with the native typescript support for the `eslint.config.ts` file
 
@@ -71,11 +73,10 @@ Now you can do `pnpm create @sherifforg/config` instead of `pnpm dlx create-sher
 ## Minor improvements
 
 - Astro linting is now configurable
-- the SheriffOptions object is now optional, if you don't specify it, every option will be passed as `false` by default.
-- general fixes and improvements to the cli. The experience should be much better now.
+- the `SheriffOptions` object is now optional, if you don't specify it, every option will be passed as `false` by default.
+- general fixes and improvements to the CLI. The experience should be much better now.
 
-
-## Acknowledgment
+## Acknowledgments
 
 Shoutout to [all the people that contributed](https://github.com/AndreaPontrandolfo/sheriff/graphs/contributors) to these releases and special big thanks to [lishaduck](https://github.com/lishaduck) for his big help on a lot of Issues and PRs!
 
