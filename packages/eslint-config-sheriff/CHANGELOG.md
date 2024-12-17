@@ -1,5 +1,12 @@
 # eslint-config-sheriff
 
+## 25.3.1
+
+### Patch Changes
+
+- e87996d: feat: updated "engines" field
+  Fixes [#318](https://github.com/AndreaPontrandolfo/sheriff/issues/318)
+
 ## 25.3.0
 
 ### Minor Changes
