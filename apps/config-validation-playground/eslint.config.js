@@ -4,6 +4,7 @@ import { defineFlatConfig } from 'eslint-define-config';
 const sheriffOptions = {
   react: true,
   lodash: true,
+  astro: true,
   remeda: true,
   next: true,
   playwright: true,
@@ -17,8 +18,5 @@ export default defineFlatConfig([
     rules: {
       'astro/semi': 0,
     },
-  },
-  {
-    ignores: ['**/*.astro'],
   },
 ]);
