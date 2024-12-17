@@ -41,7 +41,6 @@ interface EntriesTable {
   XO: TableEntry;
   'eslint-config-canonical': TableEntry;
   'eslint-kit': TableEntry;
-  'eslint-config-galex': TableEntry;
   'eslint-config-hardcore': TableEntry;
 }
 
@@ -292,37 +291,6 @@ const entriesTable: EntriesTable = {
     'Testing-library': '❌',
     Playwright: '❌',
     Storybook: '❌',
-    Astro: '❌',
-  },
-  'eslint-config-galex': {
-    FlatConfig: '❌',
-    Maintained: '❌',
-    Customizable: '✅',
-    'Rich Docs': '✅',
-    'Functional programming': '❌',
-    'Advanced ignores management': '❌',
-    'Learning curve': '😔',
-    'Incremental adoption': '✅',
-    'Typesafe config': '❌',
-    Typescript: '✅',
-    React: '✅',
-    Vue: '❌',
-    Solidjs: '❌',
-    Svelte: '❌',
-    GraphQL: '❌',
-    Unicorn: '✅',
-    Sonarjs: '✅',
-    JSDoc: '❌',
-    TSDoc: '❌',
-    Import: '✅',
-    Lodash: '❌',
-    Remeda: '❌',
-    Nextjs: '✅',
-    Jest: '✅',
-    Vitest: '❌',
-    'Testing-library': '✅',
-    Playwright: '❌',
-    Storybook: '✅',
     Astro: '❌',
   },
   'eslint-config-hardcore': {
