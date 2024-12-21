@@ -5,7 +5,7 @@ description: You probably need this too
 
 # Recommendations
 
-- [Node >=20](https://nodejs.org/en/)
+- [Node >=22](https://nodejs.org/en/)
 - [VScode](https://code.visualstudio.com/)
 - [VScode eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [VScode prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)

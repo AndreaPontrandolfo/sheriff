@@ -1,5 +1,5 @@
-import nextjs from '@next/eslint-plugin-next';
 import { fixupPluginRules } from '@eslint/compat';
+import nextjs from '@next/eslint-plugin-next';
 import { supportedFileTypes } from '@sherifforg/constants';
 
 export const nextjsConfig = {
