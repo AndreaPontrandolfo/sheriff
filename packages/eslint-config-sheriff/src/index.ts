@@ -1,4 +1,6 @@
-import { getExportableConfig } from './getExportableConfig';
+/* eslint-disable import/no-default-export */
+/* eslint-disable unicorn/prefer-export-from */
+
 import {
   allJsExtensions,
   allJsxExtensions,
@@ -7,6 +9,7 @@ import {
   supportedFileTypes,
   testsFilePatterns,
 } from '@sherifforg/constants';
+import { getExportableConfig } from './getExportableConfig';
 import { getIndexedBaseNoRestrictedSyntaxRules } from './utils/getIndexedBaseNoRestrictedSyntaxRules';
 
 //#region - these '@sherifforg/constants' variables needs to be re-stored like this, otherwise they will not be bundled. They need to be bundled because we are not publishing the 'sheriff-constants' package, but we are using it as a dependency in this package.
@@ -22,11 +25,11 @@ const indexedBaseNoRestrictedSyntaxRules =
 //#endregion
 
 export {
-  getExportableConfig as sheriff,
-  indexedBaseNoRestrictedSyntaxRules as baseNoRestrictedSyntaxRules,
   exportableAllJsExtensions as allJsExtensions,
   exportableAllJsxExtensions as allJsxExtensions,
+  indexedBaseNoRestrictedSyntaxRules as baseNoRestrictedSyntaxRules,
   exportableIgnores as ignores,
+  getExportableConfig as sheriff,
   exportableSheriffStartingOptions as sheriffStartingOptions,
   exportableSupportedFileTypes as supportedFileTypes,
   exportableTestsFilePatterns as testsFilePatterns,

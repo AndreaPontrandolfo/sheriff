@@ -7,7 +7,7 @@ export const customConsolaPrompt: typeof consola.prompt = async (
   const response = await consola.prompt(message, options);
 
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  if (response.toString() === 'Symbol(clack:cancel)') {
+  if (response?.toString() === 'Symbol(clack:cancel)') {
     consola.info('Aborting...');
     process.exit(0);
   }

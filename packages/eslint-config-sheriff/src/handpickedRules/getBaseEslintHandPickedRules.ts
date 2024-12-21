@@ -1,5 +1,8 @@
-import { getIndexedBaseNoRestrictedSyntaxRules } from '../utils/getIndexedBaseNoRestrictedSyntaxRules';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+
 import confusingBrowserGlobals from 'confusing-browser-globals';
+import type { TSESLint } from '@typescript-eslint/utils';
+import { getIndexedBaseNoRestrictedSyntaxRules } from '../utils/getIndexedBaseNoRestrictedSyntaxRules';
 
 export const getBaseEslintHandPickedRules = () => {
   return {
@@ -131,5 +134,5 @@ export const getBaseEslintHandPickedRules = () => {
     'no-shadow': 0, // we are using the @typescript/eslint version
     'default-param-last': 0, // we are using the @typescript/eslint version
     'arrow-body-style': 0, // we are using the eslint-plugin-arrow-return-style version
-  };
+  } as const satisfies TSESLint.FlatConfig.Rules;
 };

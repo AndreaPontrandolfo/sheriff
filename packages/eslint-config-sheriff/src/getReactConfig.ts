@@ -1,19 +1,19 @@
-import tseslint from 'typescript-eslint';
-import react from 'eslint-plugin-react';
+import fsecond from 'eslint-plugin-fsecond';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
+import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import fsecond from 'eslint-plugin-fsecond';
+import tseslint from 'typescript-eslint';
 import rel1cxReact from '@eslint-react/eslint-plugin';
 import {
   allJsExtensions,
   allJsxExtensions,
   supportedFileTypes,
 } from '@sherifforg/constants';
-import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
+import type { TSESLint } from '@typescript-eslint/utils';
 import { reactHandPickedRules } from './handpickedRules/reactHandPickedRules';
 import { getLanguageOptionsTypescriptReact } from './utils/getLanguageOptionsTypescriptReact';
-import { type TSESLint } from '@typescript-eslint/utils';
+import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 
 export const getReactConfig = (
   customTSConfigPath?: string | string[],
@@ -26,6 +26,7 @@ export const getReactConfig = (
     },
     {
       files: [supportedFileTypes],
+      // @ts-expect-error
       plugins: { react },
       settings: {
         react: {
@@ -33,14 +34,13 @@ export const getReactConfig = (
         },
       },
       rules: {
-        ...react.configs.flat.recommended.rules,
-        ...react.configs.flat['jsx-runtime'].rules,
+        ...react.configs.flat?.recommended.rules,
+        ...react.configs.flat?.['jsx-runtime'].rules,
         ...reactHandPickedRules,
       },
     },
     {
       files: [`**/*{${allJsxExtensions}}`],
-      // @ts-expect-error
       rules: getTsNamingConventionRule({ isTsx: true }),
     },
     {

@@ -6,5 +6,4 @@ declare module 'eslint-plugin-jest';
 declare module 'eslint-plugin-storybook';
 declare module 'eslint-plugin-react*';
 declare module 'eslint-plugin-react-hooks';
-declare module 'eslint-plugin-react-refresh';
 declare module 'eslint-plugin-fsecond';

@@ -26,6 +26,9 @@
     "lint": {
       "dependsOn": ["^topo", "^build"]
     },
+    "eslint-config-sheriff#lint": {
+      "dependsOn": ["^topo", "build"]
+    },
     "validate-config": {
       "dependsOn": ["^topo", "^build"]
     },
