@@ -1,5 +1,12 @@
 # @sherifforg/cli
 
+## 9.2.2
+
+### Patch Changes
+
+- ee74f10: feat(internal): linting core package with itself
+  Fixes #236
+
 ## 9.2.1
 
 ### Patch Changes
