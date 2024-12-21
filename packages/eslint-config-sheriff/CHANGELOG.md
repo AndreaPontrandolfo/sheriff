@@ -1,5 +1,12 @@
 # eslint-config-sheriff
 
+## 25.3.2
+
+### Patch Changes
+
+- ee74f10: feat(internal): linting core package with itself
+  Fixes #236
+
 ## 25.3.1
 
 ### Patch Changes
