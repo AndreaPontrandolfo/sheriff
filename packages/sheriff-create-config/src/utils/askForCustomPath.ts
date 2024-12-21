@@ -9,7 +9,6 @@ Please specify the workspace path relative from the root of the project:`,
       message: 'Package path',
       initial: './',
       placeholder: './path/to/workspace',
-      // onState: gracefullyAbort,
     },
   );
 

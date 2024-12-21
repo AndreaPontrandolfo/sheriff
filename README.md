@@ -44,10 +44,6 @@ Please use the discussions tab or the issues tab for new rules proposals.
 1. Install dependencies using `pnpm install`
 1. Do the changes
 
-## 🌤 Changelog
-
-[Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
-
 ## 💌 Acknowledgments
 
 For some of this configuration, [eslint-config-red](https://github.com/GrosSacASac/JavaScript-Set-Up/blob/master/js/red-javascript-style-guide/index.js) was partially used as a base.<br>
