@@ -1,4 +1,4 @@
-<p align="center">
+<div align="center">
   <a href="https://www.eslint-config-sheriff.dev">
       <img src="https://github.com/AndreaPontrandolfo/sheriff/blob/master/apps/docs-website/static/img/sheriff-logo.svg" width="240">
     <h1 align="center">Sheriff</h1>
@@ -6,9 +6,14 @@
   <p align="center">
     ✨ A comprehensive and opinionated Typescript-first ESLint configuration ✨
   </p>
-</p>
+  <div>
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+[![npm downloads](https://img.shields.io/npm/dm/eslint-config-sheriff.svg?label=npm%20downloads&style=flat)](https://www.npmjs.com/package/eslint-config-sheriff)
+
+  </div>
+</div>
+
 
 ## 🥳 Overview
 
@@ -28,25 +33,6 @@ Visit the [official docs](https://www.eslint-config-sheriff.dev) to get starte
 ## 📝 Updates
 
 You can follow the latest updates on the project in the [official blog](https://www.eslint-config-sheriff.dev/blog).
-
-## 🧡 Contributing
-
-### Suggestions
-
-I consider Sheriff a community effort, and I welcome suggestions and contributions of any kind.
-Feel free to propose suggestions about new rules to implement, or tweaks to existing rules.<br>
-Please use the discussions tab or the issues tab for new rules proposals.
-
-### Development
-
-1. Clone this repository
-1. Enable Corepack using `corepack enable`
-1. Install dependencies using `pnpm install`
-1. Do the changes
-
-## 🌤 Changelog
-
-[Releases](https://github.com/AndreaPontrandolfo/sheriff/releases).
 
 ## 💌 Acknowledgments
 
