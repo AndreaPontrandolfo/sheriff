@@ -1,10 +1,23 @@
+import { consola } from 'consola';
 import { autoInstallPackages } from './autoInstallPackages';
-import { getRequiredPackages } from './getRequiredPackages';
 
 export const setDependencies = async (
   customProjectRootPath: string | null,
+  shouldInstallPrettier: boolean,
 ): Promise<void> => {
-  const packages = getRequiredPackages();
+  const requiredDependencies = [
+    'eslint',
+    'eslint-define-config',
+    'eslint-config-sheriff',
+  ];
 
-  await autoInstallPackages(packages, customProjectRootPath);
+  if (shouldInstallPrettier) {
+    requiredDependencies.push('prettier');
+  }
+
+  for (const requiredDependency of requiredDependencies) {
+    consola.start(`Installing '${requiredDependency}'...`);
+  }
+
+  await autoInstallPackages(requiredDependencies, customProjectRootPath);
 };

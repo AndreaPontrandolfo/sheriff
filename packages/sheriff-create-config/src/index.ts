@@ -6,6 +6,7 @@ import { hideBin } from 'yargs/helpers';
 import packageJson from '../package.json';
 import { askForCustomPath } from './utils/askForCustomPath';
 import { askForEslintTsConfig } from './utils/askForEslintTsConfig';
+import { askForPrettierInstallation } from './utils/askForPrettierInstallation';
 import { askForPrettierSupport } from './utils/askForPrettierSupport';
 import { setDependencies } from './utils/setDependencies';
 import { setEslintConfig } from './utils/setEslintConfig';
@@ -29,19 +30,27 @@ async function main() {
   const isWorkspace = Boolean(commandArguments.filter);
 
   showWelcome();
+
   const customProjectRootPath = isWorkspace ? await askForCustomPath() : null;
-  const hasLocalPrettierSupport = isWorkspace
-    ? await askForPrettierSupport()
-    : false;
+
   const isEslintTsConfig = await askForEslintTsConfig();
 
   await setEslintConfig(isEslintTsConfig, customProjectRootPath);
 
+  let shouldInstallPrettier = false;
+
+  const hasLocalPrettierSupport = isWorkspace
+    ? await askForPrettierSupport()
+    : false;
+
   if (!isWorkspace || hasLocalPrettierSupport) {
+    shouldInstallPrettier = await askForPrettierInstallation();
     await setPrettierConfig(customProjectRootPath);
     await setPrettierIgnore(customProjectRootPath);
   }
-  await setDependencies(customProjectRootPath);
+
+  await setDependencies(customProjectRootPath, shouldInstallPrettier);
+
   consola.info("You're all set!");
 }
 
