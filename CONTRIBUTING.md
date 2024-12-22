@@ -40,7 +40,7 @@ Sheriff thrives on community input. If you have ideas for new rules to implement
 3. Install all required dependencies using:
 
    ```bash
-   pnpm install
+   pnpm i
    ```
 
 4. Create a new branch for your feature or fix:

@@ -49,7 +49,11 @@ async function main() {
     await setPrettierIgnore(customProjectRootPath);
   }
 
-  await setDependencies(customProjectRootPath, shouldInstallPrettier);
+  await setDependencies({
+    customProjectRootPath,
+    shouldInstallPrettier,
+    shouldInstallJiti: isEslintTsConfig,
+  });
 
   consola.info("You're all set!");
 }

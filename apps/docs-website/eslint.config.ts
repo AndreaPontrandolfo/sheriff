@@ -1,9 +1,9 @@
-import { sheriff } from 'eslint-config-sheriff';
+import { sheriff, type SheriffSettings } from 'eslint-config-sheriff';
 import { defineFlatConfig } from 'eslint-define-config';
+import { createRemarkProcessor, flat, flatCodeBlocks } from 'eslint-plugin-mdx';
 import docusaurusEslintPlugin from '@docusaurus/eslint-plugin';
-import { flat, flatCodeBlocks, createRemarkProcessor } from 'eslint-plugin-mdx';
 
-const sheriffOptions = {
+const sheriffOptions: SheriffSettings = {
   react: true,
   lodash: true,
   remeda: false,
@@ -14,6 +14,7 @@ const sheriffOptions = {
   vitest: false,
 };
 
+// @ts-expect-error
 export default defineFlatConfig([
   ...sheriff(sheriffOptions),
   {

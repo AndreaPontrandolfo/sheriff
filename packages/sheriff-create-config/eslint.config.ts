@@ -1,7 +1,7 @@
-import sheriff from 'eslint-config-sheriff';
+import { sheriff, type SheriffSettings } from 'eslint-config-sheriff';
 import { defineFlatConfig } from 'eslint-define-config';
 
-const sheriffOptions = {
+const sheriffOptions: SheriffSettings = {
   react: false,
   lodash: true,
   remeda: false,
