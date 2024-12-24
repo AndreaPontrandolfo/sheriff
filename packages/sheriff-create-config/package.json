@@ -9,7 +9,7 @@
     "build": "tsup",
     "build-watch": "tsup",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint ./src --max-warnings=0",
+    "lint": "eslint ./src --max-warnings=0 --flag unstable_ts_config",
     "publint": "publint",
     "typesync": "typesync --dry=fail"
   },
@@ -37,6 +37,7 @@
     "eslint": "^9.17.0",
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^2.1.0",
+    "jiti": "^2.4.2",
     "publint": "^0.2.10",
     "tsconfig": "workspace:*",
     "tsup": "^8.3.0",

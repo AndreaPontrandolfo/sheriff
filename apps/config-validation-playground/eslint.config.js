@@ -6,6 +6,7 @@ const sheriffOptions = {
   lodash: true,
   remeda: true,
   next: true,
+  astro: true,
   playwright: true,
   jest: false,
   vitest: true,

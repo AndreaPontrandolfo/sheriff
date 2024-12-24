@@ -71,11 +71,15 @@ Follow these steps:
     If you want to have a `.ts` configuration file instead of the default `.js` file, follow these steps:
 
       - make sure your installed ESLint version is `>=9.9.0`
+      - install [jiti](https://github.com/unjs/jiti)
+        ```bash npm2yarn
+        npm install -D jiti
+        ```
       - change the extension of `eslint.config.mjs` from `.mjs` to `.ts`
       - define the types of the `sheriffOptions` object:
 
         ```ts title="eslint.config.ts"
-        import sheriff, { type SheriffSettings } from "eslint-config-sheriff";
+        import { sheriff, type SheriffSettings } from "eslint-config-sheriff";
         import { defineFlatConfig } from "eslint-define-config";
 
         const sheriffOptions: SheriffSettings = {

@@ -110,3 +110,24 @@ export const baseNoRestrictedSyntaxRules = [
     message: 'Avoid classes. Use functions and objects instead.',
   },
 ];
+
+export const CLIOptionsCatalog = {
+  filter: {
+    type: 'string',
+    description: 'Filter for specific workspace.',
+  },
+  typescript: {
+    type: 'boolean',
+    description: 'Add eslint.config.ts boilerplate.',
+  },
+  prettier: {
+    type: 'boolean',
+    description: 'Add Prettier boilerplate.',
+  },
+  'install-deps': {
+    type: 'boolean',
+    description:
+      'Should install the dependencies at the end of the wizard or not.',
+    default: true,
+  },
+} as const;

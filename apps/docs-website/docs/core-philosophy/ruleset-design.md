@@ -5,9 +5,23 @@ description: 📐 What opinions should you expect from Sheriff
 
 # Ruleset design
 
-Sheriff doesn't offer “recommended” or “strict” presets. This config contains a predefined set of rules meant to act as guidelines for a functional-light programming style.
+## No complex presets
 
-Sheriff tries to be as faithful to Javascript as possible and conceives Typescript as a tool to enhance the capabilities that Javascript already has. Becuase of this, Sheriff discourages typescript-only features, like enums and overloads (and classes, and decorators by extensions, even though they also landed in Ecmascript).
+Sheriff doesn't offer “recommended” or “strict” presets. This config contains a predefined set of rules meant to act as guidelines for a **functional-light** programming style.
+
+## No esoteric Typescript-only features
+
+Sheriff tries to be as faithful to Javascript as possible and conceives Typescript as a tool to enhance the capabilities that Javascript already has. Because of this, Sheriff discourages typescript-only features, like enums and overloads (and classes, and decorators by extensions, even though they also landed in Ecmascript).
+
+## Minimal formatting opinions
+
+Unlike other ESLint configurations, Sheriff tries to be as unopinionated as possible about formatting, to be aligned with the community philosophy on the matter ([1](https://eslint.org/blog/2023/10/deprecating-formatting-rules), [2](https://typescript-eslint.io/blog/deprecating-formatting-rules)).
+
+Sheriff encourage you to [bring your own formatting tool](../prettier-support.md#other-formatting-options).
+
+The only formatting rules that Sheriff currently enforces are `@stylistic/padding-line-between-statements` and `curly`.
+
+## Opinionated but flexible
 
 If you just don’t like some rules you can disable them on a case-by-case basis.<br />
 If you want to adopt a more OOP programming style, or if you feel like the config is too strict, you can disable everything that bothers you.
