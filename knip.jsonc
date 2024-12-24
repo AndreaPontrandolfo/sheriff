@@ -6,6 +6,12 @@
     "apps/cli-playground",
     "apps/docs-website",
   ],
-  "ignoreDependencies": ["@turbo/gen", "eslint-import-resolver-typescript"],
+  "ignore": ["**/eslint.config.ts"],
+  "ignoreDependencies": [
+    "@turbo/gen",
+    "eslint-import-resolver-typescript",
+    "eslint-define-config",
+    "eslint-config-sheriff",
+  ],
   "ignoreBinaries": ["only-allow"],
 }
