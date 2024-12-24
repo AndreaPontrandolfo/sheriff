@@ -1,8 +1,10 @@
 #!/usr/bin/env node
+/* eslint-disable sonarjs/no-duplicate-string */
 
 import { consola } from 'consola';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import { CLIOptionsCatalog } from '@sherifforg/constants';
 import packageJson from '../package.json';
 import { askForCustomPath } from './utils/askForCustomPath';
 import { askForEslintTsConfig } from './utils/askForEslintTsConfig';
@@ -18,22 +20,21 @@ const { argv } = yargs(hideBin(process.argv))
   .version(packageJson.version)
   .alias('v', 'version')
   .option('filter', {
-    type: 'string',
-    description: 'Filter for specific workspace.',
+    type: CLIOptionsCatalog.filter.type,
+    description: CLIOptionsCatalog.filter.description,
   })
   .option('typescript', {
-    type: 'boolean',
-    description: 'Add eslint.config.ts boilerplate.',
+    type: CLIOptionsCatalog.typescript.type,
+    description: CLIOptionsCatalog.typescript.description,
   })
   .option('prettier', {
-    type: 'boolean',
-    description: 'Add Prettier boilerplate.',
+    type: CLIOptionsCatalog.prettier.type,
+    description: CLIOptionsCatalog.prettier.description,
   })
   .option('install-deps', {
-    type: 'boolean',
-    description:
-      'Should install the dependencies at the end of the wizard or not.',
-    default: true,
+    type: CLIOptionsCatalog['install-deps'].type,
+    description: CLIOptionsCatalog['install-deps'].description,
+    default: CLIOptionsCatalog['install-deps'].default,
   })
   .help()
   .alias('h', 'help');
