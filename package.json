@@ -18,7 +18,7 @@
     "typecheck": "turbo run typecheck",
     "knip": "knip",
     "validate-config": "turbo run validate-config",
-    "merge-checks": "turbo run publint manypkg typesync knip typecheck lint validate-config check-deduped-deps are-the-types-wrong",
+    "merge-checks": "pnpm build && turbo run publint manypkg typesync knip typecheck lint validate-config check-deduped-deps are-the-types-wrong",
     "check-deduped-deps": "pnpm dedupe --check",
     "clean": "turbo run clean && rm -rf .turbo",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",
