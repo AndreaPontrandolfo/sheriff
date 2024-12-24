@@ -1,5 +1,18 @@
 # eslint-config-sheriff
 
+## 25.4.0
+
+### Minor Changes
+
+- 252bfb0: feat(cli): enhanced prettier support
+  feat(cli): added CLI options
+
+### Patch Changes
+
+- ee74f10: feat(internal): linting core package with itself
+  Fixes #236
+- e196d00: fix(config): limits astro linting to astro files. Fixes #316
+
 ## 25.3.1
 
 ### Patch Changes
