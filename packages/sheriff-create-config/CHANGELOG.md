@@ -1,5 +1,17 @@
 # @sherifforg/cli
 
+## 9.3.0
+
+### Minor Changes
+
+- 252bfb0: feat(cli): enhanced prettier support
+  feat(cli): added CLI options
+
+### Patch Changes
+
+- ee74f10: feat(internal): linting core package with itself
+  Fixes #236
+
 ## 9.2.1
 
 ### Patch Changes
