@@ -1,16 +1,19 @@
 import { consola } from 'consola';
+import { colors } from 'consola/utils';
 import { autoInstallPackages } from './autoInstallPackages';
 
 interface SetDependenciesOptions {
   customProjectRootPath: string | null;
   shouldInstallPrettier: boolean;
   shouldInstallJiti: boolean;
+  shouldInstallDependencies: boolean;
 }
 
 export const setDependencies = async ({
   customProjectRootPath,
   shouldInstallPrettier,
   shouldInstallJiti,
+  shouldInstallDependencies,
 }: SetDependenciesOptions): Promise<void> => {
   const requiredDependencies = [
     'eslint',
@@ -26,9 +29,14 @@ export const setDependencies = async ({
     requiredDependencies.push('jiti');
   }
 
-  for (const requiredDependency of requiredDependencies) {
-    consola.start(`Installing '${requiredDependency}'...`);
+  if (shouldInstallDependencies) {
+    consola.start(
+      `Installing ${colors.bold(requiredDependencies.join(', '))}...`,
+    );
+    await autoInstallPackages(requiredDependencies, customProjectRootPath);
+  } else {
+    consola.info(
+      `${colors.bold(requiredDependencies.join(', '))} would have been installed, but installation was ${colors.yellow('skipped')} as requested by the user.`,
+    );
   }
-
-  await autoInstallPackages(requiredDependencies, customProjectRootPath);
 };

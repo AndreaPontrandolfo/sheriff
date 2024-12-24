@@ -19,7 +19,21 @@ const { argv } = yargs(hideBin(process.argv))
   .alias('v', 'version')
   .option('filter', {
     type: 'string',
-    description: 'Filter for specific workspace',
+    description: 'Filter for specific workspace.',
+  })
+  .option('typescript', {
+    type: 'boolean',
+    description: 'Add eslint.config.ts boilerplate.',
+  })
+  .option('prettier', {
+    type: 'boolean',
+    description: 'Add Prettier boilerplate.',
+  })
+  .option('install-deps', {
+    type: 'boolean',
+    description:
+      'Should install the dependencies at the end of the wizard or not.',
+    default: true,
   })
   .help()
   .alias('h', 'help');
@@ -27,23 +41,31 @@ const { argv } = yargs(hideBin(process.argv))
 // eslint-disable-next-line
 async function main() {
   const commandArguments = await argv;
+
+  /**
+   * When true, the command is being run in a package within a monorepo.
+   */
   const isWorkspace = Boolean(commandArguments.filter);
+  const isTypescriptPreRequested = commandArguments.typescript;
+  const isPrettierPreRequested = commandArguments.prettier;
+  const isDependenciesInstallationPreRequested =
+    commandArguments['install-deps'];
 
   showWelcome();
 
   const customProjectRootPath = isWorkspace ? await askForCustomPath() : null;
 
-  const isEslintTsConfig = await askForEslintTsConfig();
+  const isEslintTsConfig =
+    isTypescriptPreRequested ?? (await askForEslintTsConfig());
 
   await setEslintConfig(isEslintTsConfig, customProjectRootPath);
 
   let shouldInstallPrettier = false;
 
-  const hasLocalPrettierSupport = isWorkspace
-    ? await askForPrettierSupport()
-    : false;
+  const hasLocalPrettierSupport =
+    isPrettierPreRequested ?? (await askForPrettierSupport());
 
-  if (!isWorkspace || hasLocalPrettierSupport) {
+  if (hasLocalPrettierSupport) {
     shouldInstallPrettier = await askForPrettierInstallation();
     await setPrettierConfig(customProjectRootPath);
     await setPrettierIgnore(customProjectRootPath);
@@ -53,9 +75,10 @@ async function main() {
     customProjectRootPath,
     shouldInstallPrettier,
     shouldInstallJiti: isEslintTsConfig,
+    shouldInstallDependencies: isDependenciesInstallationPreRequested,
   });
 
-  consola.info("You're all set!");
+  consola.info("You're all set! Happy coding 🎉");
 }
 
 // eslint-disable-next-line
