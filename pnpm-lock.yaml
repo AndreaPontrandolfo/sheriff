@@ -507,6 +507,9 @@ importers:
       read-pkg:
         specifier: ^9.0.1
         version: 9.0.1
+      remeda:
+        specifier: ^2.19.0
+        version: 2.19.0
       yargs:
         specifier: ^17.7.2
         version: 17.7.2

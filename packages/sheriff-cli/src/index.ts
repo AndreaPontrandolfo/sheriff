@@ -6,8 +6,10 @@ import { ESLint } from 'eslint';
 import { readPackage } from 'read-pkg';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import type { SheriffConfigurablePlugins } from '@sherifforg/types';
 import { parse } from '@typescript-eslint/typescript-estree';
 import packageJson from '../package.json';
+import { throwError } from './utils/throwError';
 
 const taggedDependencies = [
   'react',
@@ -23,15 +25,58 @@ const taggedDependencies = [
   'astro',
 ];
 
+const isPluginValid = (
+  property: any,
+  pluginName: keyof SheriffConfigurablePlugins,
+  isPluginFound: boolean,
+  severityLevel: 'error' | 'warn',
+): boolean => {
+  let isError = false;
+
+  if (
+    property.key.name === pluginName &&
+    property.value.value !== isPluginFound
+  ) {
+    isError = true;
+    if (severityLevel === 'error') {
+      consola.error(
+        `Expected ${pluginName} to be ${String(isPluginFound)} but found ${property.value.value}`,
+      );
+      throwError(
+        `Expected ${pluginName} to be ${String(isPluginFound)} but found ${property.value.value}`,
+      );
+    }
+
+    if (severityLevel === 'warn') {
+      consola.warn(
+        `Expected ${pluginName} to be ${String(isPluginFound)} but found ${property.value.value}.`,
+      );
+    }
+  }
+
+  return !isError;
+};
+
 const { argv } = yargs(hideBin(process.argv))
   .version(packageJson.version)
   .alias('v', 'version')
+  .option('no-fail', {
+    type: 'boolean',
+    description:
+      'If the check fails, do not exit with a non-zero code. Use this if you want to keep CI passing even when a problem is found.',
+    default: false,
+  })
   .help()
   .alias('h', 'help');
 
 // eslint-disable-next-line
 async function main() {
+  consola.start(
+    'Checking that the Sheriff options match the dependencies in package.json...',
+  );
   const commandArguments = await argv;
+
+  const severityLevel = commandArguments['no-fail'] ? 'warn' : 'error';
 
   const packageJSON = await readPackage();
 
@@ -85,107 +130,65 @@ async function main() {
 
   const eslint = new ESLint();
 
+  let configFilePath: string | undefined;
+
   try {
-    const configFile = await eslint.findConfigFile();
-
-    if (!configFile) {
-      consola.error('No ESLint configuration found');
-
-      return;
-    }
-
-    const fileContent = fs.readFileSync(configFile, 'utf-8');
-
-    const ast = parse(fileContent);
-
-    const sheriffOptionsVariableDeclaration = ast.body.find((declaration1) => {
-      return (
-        declaration1.type === 'VariableDeclaration' &&
-        declaration1.declarations.find(
-          (declaration2) => declaration2.id.name === 'sheriffOptions',
-        )
-      );
-    });
-
-    if (!sheriffOptionsVariableDeclaration) {
-      consola.error(
-        'No variable named "sheriffOptions" found in ESLint configuration.',
-      );
-
-      return;
-    }
-
-    const { properties } =
-      sheriffOptionsVariableDeclaration.declarations[0].init;
-
-    for (const property of properties) {
-      if (property.key.name === 'remeda') {
-        if (property.value.value !== isRemeda) {
-          consola.error(
-            `Expected "remeda" to be ${isRemeda} but found ${property.value.value}`,
-          );
-          process.exit(1);
-        }
-      }
-      if (property.key.name === 'lodash') {
-        if (property.value.value !== isLodash) {
-          consola.error(
-            `Expected "lodash" to be ${isLodash} but found ${property.value.value}`,
-          );
-          process.exit(1);
-        }
-      }
-      if (property.key.name === 'react') {
-        if (property.value.value !== isReact) {
-          consola.error(
-            `Expected "react" to be ${isReact} but found ${property.value.value}`,
-          );
-          process.exit(1);
-        }
-      }
-      if (property.key.name === 'next') {
-        if (property.value.value !== isNext) {
-          consola.error(
-            `Expected "next" to be ${isNext} but found ${property.value.value}`,
-          );
-          process.exit(1);
-        }
-      }
-      if (property.key.name === 'vitest') {
-        if (property.value.value !== isVitest) {
-          consola.error(
-            `Expected "vitest" to be ${isVitest} but found ${property.value.value}`,
-          );
-          process.exit(1);
-        }
-      }
-      if (property.key.name === 'jest') {
-        if (property.value.value !== isJest) {
-          consola.error(
-            `Expected "jest" to be ${isJest} but found ${property.value.value}`,
-          );
-          process.exit(1);
-        }
-      }
-      if (property.key.name === 'playwright') {
-        if (property.value.value !== isPlaywright) {
-          consola.error(
-            `Expected "playwright" to be ${isPlaywright} but found ${property.value.value}`,
-          );
-          process.exit(1);
-        }
-      }
-      if (property.key.name === 'astro') {
-        if (property.value.value !== isAstro) {
-          consola.error(
-            `Expected "astro" to be ${isAstro} but found ${property.value.value}`,
-          );
-          process.exit(1);
-        }
-      }
-    }
+    configFilePath = await eslint.findConfigFile();
   } catch (error) {
-    console.error('🚀 ~ main ~ error:', error);
+    throwError("Couldn't find an ESLint configuration file", { error });
+  }
+
+  if (!configFilePath) {
+    consola.error('No ESLint configuration found');
+
+    return;
+  }
+
+  const fileContent = fs.readFileSync(configFilePath, 'utf-8');
+
+  const ast = parse(fileContent);
+
+  const sheriffOptionsVariableDeclaration = ast.body.find((declaration1) => {
+    return (
+      declaration1.type === 'VariableDeclaration' &&
+      declaration1.declarations.find(
+        (declaration2) => declaration2.id.name === 'sheriffOptions',
+      )
+    );
+  });
+
+  if (!sheriffOptionsVariableDeclaration) {
+    consola.error(
+      'No variable named "sheriffOptions" found in ESLint configuration.',
+    );
+
+    return;
+  }
+
+  const { properties } = sheriffOptionsVariableDeclaration.declarations[0].init;
+
+  const pluginsValidations = [];
+
+  for (const property of properties) {
+    pluginsValidations.push(
+      isPluginValid(property, 'react', isReact, severityLevel),
+      isPluginValid(property, 'next', isNext, severityLevel),
+      isPluginValid(property, 'lodash', isLodash, severityLevel),
+      isPluginValid(property, 'remeda', isRemeda, severityLevel),
+      isPluginValid(property, 'vitest', isVitest, severityLevel),
+      isPluginValid(property, 'jest', isJest, severityLevel),
+      isPluginValid(property, 'playwright', isPlaywright, severityLevel),
+      isPluginValid(property, 'astro', isAstro, severityLevel),
+    );
+  }
+
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  const areAllPluginsValid = pluginsValidations.every(Boolean);
+
+  if (areAllPluginsValid) {
+    consola.success('All checks passed! 🎉');
+  } else {
+    consola.warn('Sheriff process ended with warnings.');
   }
 }
 

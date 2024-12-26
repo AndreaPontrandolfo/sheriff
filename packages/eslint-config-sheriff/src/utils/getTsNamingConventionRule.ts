@@ -40,7 +40,7 @@ export const getTsNamingConventionRule = ({
         selector: 'variable',
         types: ['boolean'],
         format: ['PascalCase'],
-        prefix: ['is', 'has', 'should', 'can'],
+        prefix: ['is', 'are', 'has', 'should', 'can'],
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
       },
