@@ -8,8 +8,8 @@
   </p>
   <div>
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
-[![npm downloads](https://img.shields.io/npm/dm/eslint-config-sheriff.svg?label=npm%20downloads&style=flat)](https://www.npmjs.com/package/eslint-config-sheriff)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg?color=1A786D)](CODE_OF_CONDUCT.md)
+[![npm downloads](https://img.shields.io/npm/dm/eslint-config-sheriff.svg?label=npm%20downloads&color=1A786D)](https://www.npmjs.com/package/eslint-config-sheriff)
 
   </div>
 </div>
@@ -22,9 +22,9 @@ This repository is a monorepo that hosts the sourcecode of the following project
 | Link                                                                           | Source                                                                                                            | Description                                                           | Version                                                                                                                                                  |
 | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Sheriff docs website](https://www.eslint-config-sheriff.dev)                          | [docs-website](https://github.com/AndreaPontrandolfo/sheriff/tree/master/apps/docs-website)                       | Sheriff documentation website                                         | |
-| [`eslint-config-sheriff`](https://www.npmjs.com/package/eslint-config-sheriff) | [eslint-config-sheriff](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/eslint-config-sheriff) | A comprehensive and opinionated Typescript-first ESLint configuration | [![npm](https://img.shields.io/npm/v/eslint-config-sheriff.svg)](https://www.npmjs.com/package/eslint-config-sheriff)                                    |
-| [`@sherifforg/create-config`](https://www.npmjs.com/package/@sherifforg/create-config) | [sheriff-create-config](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/sheriff-create-config) | Package used to create Sheriff-based ESLint configs                             | [![npm](https://img.shields.io/npm/v/@sherifforg/create-config.svg)](https://www.npmjs.com/package/@sherifforg/create-config)                                    |
-| [`@sherifforg/cli`](https://www.npmjs.com/package/@sherifforg/cli) | [sheriff-cli](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/sheriff-cli) | The Sheriff CLI. Used to manage Sheriff-based ESLint configs                             | [![npm](https://img.shields.io/npm/v/@sherifforg/cli.svg)](https://www.npmjs.com/package/@sherifforg/cli)                                    |
+| [`eslint-config-sheriff`](https://www.npmjs.com/package/eslint-config-sheriff) | [eslint-config-sheriff](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/eslint-config-sheriff) | A comprehensive and opinionated Typescript-first ESLint configuration | [![npm](https://img.shields.io/npm/v/eslint-config-sheriff.svg?color=1A786D)](https://www.npmjs.com/package/eslint-config-sheriff)                                    |
+| [`@sherifforg/create-config`](https://www.npmjs.com/package/@sherifforg/create-config) | [sheriff-create-config](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/sheriff-create-config) | Package used to create Sheriff-based ESLint configs                             | [![npm](https://img.shields.io/npm/v/@sherifforg/create-config.svg?color=1A786D)](https://www.npmjs.com/package/@sherifforg/create-config)                                    |
+| [`@sherifforg/cli`](https://www.npmjs.com/package/@sherifforg/cli) | [sheriff-cli](https://github.com/AndreaPontrandolfo/sheriff/tree/master/packages/sheriff-cli) | The Sheriff CLI. Used to manage Sheriff-based ESLint configs                             | [![npm](https://img.shields.io/npm/v/@sherifforg/cli.svg?color=1A786D)](https://www.npmjs.com/package/@sherifforg/cli)                                    |
 
 ## 🚀 Getting Started
 

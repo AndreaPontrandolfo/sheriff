@@ -3,5 +3,17 @@
   "description": "Playground for playtesting create-eslint-config.",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@9.15.1"
+  "packageManager": "pnpm@9.15.1",
+  "dependencies": {
+    "@playwright/test": "^1.49.1",
+    "astro": "^4.12.2",
+    "jest": "^29.7.0",
+    "lodash": "^4.17.21",
+    "next": "^14.2.5",
+    "playwright": "^1.45.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remeda": "^2.19.0",
+    "vitest": "^2.0.3"
+  }
 }

@@ -4,8 +4,6 @@
   "exclude": ["dist", "build", "node_modules"],
   "extends": "tsconfig/base.json",
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
     "incremental": true,
     "resolveJsonModule": true
   }
