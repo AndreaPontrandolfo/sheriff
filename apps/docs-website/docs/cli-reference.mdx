@@ -6,7 +6,7 @@ import { CLIOptionsCatalog } from "@sherifforg/constants";
 
 # 🗺️ CLI reference
 
-## @sherifforg/create
+## @sherifforg/create-config
 
 ### --filter
 
@@ -33,3 +33,58 @@ import { CLIOptionsCatalog } from "@sherifforg/constants";
 
 <p>{CLIOptionsCatalog["install-deps"].description}</p>
 
+## @sherifforg/cli
+
+### --no-fail
+- **Type**: boolean
+- **Default**: false
+
+Skips exiting with non-zero if any check fails.
+
+### --ignore-react
+- **Type**: boolean
+- **Default**: false
+
+Skips React checks (React, React DOM, Next).
+
+### --ignore-next
+- **Type**: boolean
+- **Default**: false
+
+Skips Next.js checks.
+
+### --ignore-lodash
+- **Type**: boolean
+- **Default**: false
+
+Skips lodash checks.
+
+### --ignore-remeda
+- **Type**: boolean
+- **Default**: false
+
+Skips remeda checks.
+
+### --ignore-vitest
+- **Type**: boolean
+- **Default**: false
+
+Skips vitest checks.
+
+### --ignore-jest
+- **Type**: boolean
+- **Default**: false
+
+Skips jest checks.
+
+### --ignore-playwright
+- **Type**: boolean
+- **Default**: false
+
+Skips playwright checks.
+
+### --ignore-astro
+- **Type**: boolean
+- **Default**: false
+
+Skips astro checks.
