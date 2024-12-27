@@ -6,9 +6,9 @@ import { ESLint } from 'eslint';
 import { readPackage } from 'read-pkg';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import type { SheriffConfigurablePlugins } from '@sherifforg/types';
 import { parse } from '@typescript-eslint/typescript-estree';
 import packageJson from '../package.json';
+import { isPluginValid } from './utils/isPluginValid';
 import { throwError } from './utils/throwError';
 
 const taggedDependencies = [
@@ -25,38 +25,6 @@ const taggedDependencies = [
   'astro',
 ];
 
-const isPluginValid = (
-  property: any,
-  pluginName: keyof SheriffConfigurablePlugins,
-  isPluginFound: boolean,
-  severityLevel: 'error' | 'warn',
-): boolean => {
-  let isError = false;
-
-  if (
-    property.key.name === pluginName &&
-    property.value.value !== isPluginFound
-  ) {
-    isError = true;
-    if (severityLevel === 'error') {
-      consola.error(
-        `Expected ${pluginName} to be ${String(isPluginFound)} but found ${property.value.value}`,
-      );
-      throwError(
-        `Expected ${pluginName} to be ${String(isPluginFound)} but found ${property.value.value}`,
-      );
-    }
-
-    if (severityLevel === 'warn') {
-      consola.warn(
-        `Expected ${pluginName} to be ${String(isPluginFound)} but found ${property.value.value}.`,
-      );
-    }
-  }
-
-  return !isError;
-};
-
 const { argv } = yargs(hideBin(process.argv))
   .version(packageJson.version)
   .alias('v', 'version')
@@ -64,6 +32,46 @@ const { argv } = yargs(hideBin(process.argv))
     type: 'boolean',
     description:
       'If the check fails, do not exit with a non-zero code. Use this if you want to keep CI passing even when a problem is found.',
+    default: false,
+  })
+  .option('ignore-react', {
+    type: 'boolean',
+    description: 'Skip the react check.',
+    default: false,
+  })
+  .option('ignore-next', {
+    type: 'boolean',
+    description: 'Skip the next check.',
+    default: false,
+  })
+  .option('ignore-lodash', {
+    type: 'boolean',
+    description: 'Skip the lodash check.',
+    default: false,
+  })
+  .option('ignore-remeda', {
+    type: 'boolean',
+    description: 'Skip the remeda check.',
+    default: false,
+  })
+  .option('ignore-vitest', {
+    type: 'boolean',
+    description: 'Skip the vitest check.',
+    default: false,
+  })
+  .option('ignore-jest', {
+    type: 'boolean',
+    description: 'Skip the jest check.',
+    default: false,
+  })
+  .option('ignore-playwright', {
+    type: 'boolean',
+    description: 'Skip the playwright check.',
+    default: false,
+  })
+  .option('ignore-astro', {
+    type: 'boolean',
+    description: 'Skip the astro check.',
     default: false,
   })
   .help()
@@ -77,6 +85,14 @@ async function main() {
   const commandArguments = await argv;
 
   const severityLevel = commandArguments['no-fail'] ? 'warn' : 'error';
+  const shouldIgnoreReact = commandArguments['ignore-react'];
+  const shouldIgnoreNext = commandArguments['ignore-next'];
+  const shouldIgnoreLodash = commandArguments['ignore-lodash'];
+  const shouldIgnoreRemeda = commandArguments['ignore-remeda'];
+  const shouldIgnoreVitest = commandArguments['ignore-vitest'];
+  const shouldIgnoreJest = commandArguments['ignore-jest'];
+  const shouldIgnorePlaywright = commandArguments['ignore-playwright'];
+  const shouldIgnoreAstro = commandArguments['ignore-astro'];
 
   const packageJSON = await readPackage();
 
@@ -171,14 +187,30 @@ async function main() {
 
   for (const property of properties) {
     pluginsValidations.push(
-      isPluginValid(property, 'react', isReact, severityLevel),
-      isPluginValid(property, 'next', isNext, severityLevel),
-      isPluginValid(property, 'lodash', isLodash, severityLevel),
-      isPluginValid(property, 'remeda', isRemeda, severityLevel),
-      isPluginValid(property, 'vitest', isVitest, severityLevel),
-      isPluginValid(property, 'jest', isJest, severityLevel),
-      isPluginValid(property, 'playwright', isPlaywright, severityLevel),
-      isPluginValid(property, 'astro', isAstro, severityLevel),
+      shouldIgnoreReact
+        ? true
+        : isPluginValid(property, 'react', isReact, severityLevel),
+      shouldIgnoreNext
+        ? true
+        : isPluginValid(property, 'next', isNext, severityLevel),
+      shouldIgnoreLodash
+        ? true
+        : isPluginValid(property, 'lodash', isLodash, severityLevel),
+      shouldIgnoreRemeda
+        ? true
+        : isPluginValid(property, 'remeda', isRemeda, severityLevel),
+      shouldIgnoreVitest
+        ? true
+        : isPluginValid(property, 'vitest', isVitest, severityLevel),
+      shouldIgnoreJest
+        ? true
+        : isPluginValid(property, 'jest', isJest, severityLevel),
+      shouldIgnorePlaywright
+        ? true
+        : isPluginValid(property, 'playwright', isPlaywright, severityLevel),
+      shouldIgnoreAstro
+        ? true
+        : isPluginValid(property, 'astro', isAstro, severityLevel),
     );
   }
 
