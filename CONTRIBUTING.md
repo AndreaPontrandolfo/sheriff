@@ -32,40 +32,40 @@ Useful contributions include fixing bugs or inconsistencies, adding or proposing
 
 ### Requirements
 
-- make sure Git is installed in your system
-- make sure Nodejs 20.10.X is installed in your system
-- make sure [Pnpm is installed](https://pnpm.io/installation) in your system. If you are not sure how to install it, use corepack:
+- Ensure Git is installed in your system.
+- Ensure Node.js 20.10.x is installed in your system.
+- Ensure [pnpm is installed](https://pnpm.io/installation) in your system. If you are not sure how to install it, use Corepack:
 
-  ```bash
+  ```sh
   corepack enable
   ```
 
 ### Step-by-Step Guide
 
 1. Start by forking this repository to your own GitHub account.
-2. Clone your fork locally with:
+1. Clone your fork locally with:
 
-   ```bash
+   ```sh
    git clone https://github.com/<your-username>/sheriff.git
    ```
 
-3. Install all required dependencies using:
+1. Install all required dependencies using:
 
-   ```bash
+   ```sh
    pnpm i
    ```
 
-4. Create a new branch for your feature or fix:
+1. Create a new branch for your feature or fix:
 
-   ```bash
+   ```sh
    git checkout -b new-feature
    ```
 
-5. Implement your changes in the codebase.
+1. Implement your changes in the codebase.
 
    - If you need to update the documentation website, you can run it locally with:
 
-     ```bash
+     ```sh
      pnpm dev:norebuild
      ```
 
@@ -73,36 +73,34 @@ Useful contributions include fixing bugs or inconsistencies, adding or proposing
 
    - If you need test the CLI, you can run:
 
-     ```bash
+     ```sh
      pnpm playground
      ```
 
      or:
 
-     ```bash
-       pnpm playground:mimic-monorepo
+     ```sh
+     pnpm playground:mimic-monorepo
      ```
 
-6. Add a `changeset`:
+1. Add a `changeset`:
 
-   ```bash
+   ```sh
    pnpm changeset
    ```
 
-7. Write clear, concise commit messages. Make sure to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification:
+1. Write clear, concise commit messages. Make sure to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification:
 
-   ```bash
+   ```sh
    git commit -am 'feat(context): added feature'
    ```
 
-8. Push your branch to your fork:
+1. Push your branch to your fork:
 
-   ```bash
+   ```sh
    git push origin new-feature
    ```
 
-9.
-
-10. **Open a Pull Request**: Submit your changes by creating a pull request to the main repository.
+1. **Open a Pull Request**: Submit your changes by creating a pull request to the main repository.
 
 Thank you for helping make Sheriff a better project for everyone!
