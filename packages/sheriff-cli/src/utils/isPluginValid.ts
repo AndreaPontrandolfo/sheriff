@@ -33,15 +33,17 @@ export const isPluginValid = (
     property.value.value !== isPluginFound
   ) {
     isError = true;
+    const { value } = property.value;
+
     if (severityLevel === 'error') {
       throwError(
-        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(property.value.value)}.`,
+        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(value ? value.toString() : 'unknown')}.`,
       );
     }
 
     if (severityLevel === 'warn') {
       consola.warn(
-        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(property.value.value)}.`,
+        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(value ? value.toString() : 'unknown')}.`,
       );
     }
   }
