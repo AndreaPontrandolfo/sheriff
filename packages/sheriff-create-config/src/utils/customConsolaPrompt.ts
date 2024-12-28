@@ -1,14 +1,18 @@
 import { consola } from 'consola';
 
+// @ts-expect-error
 export const customConsolaPrompt: typeof consola.prompt = async (
   message,
   options,
 ) => {
-  const response = await consola.prompt(message, options);
+  const response = await consola.prompt(message, {
+    ...options,
+    cancel: 'symbol',
+  });
 
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
-  if (response?.toString() === 'Symbol(clack:cancel)') {
-    consola.info('Aborting...');
+  // @ts-expect-error
+  if (response === Symbol.for('cancel')) {
+    consola.info('Operation cancelled. Aborting...');
     process.exit(0);
   }
 

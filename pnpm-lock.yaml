@@ -502,8 +502,8 @@ importers:
         specifier: ^2.1.11
         version: 2.1.11
       consola:
-        specifier: ^3.2.3
-        version: 3.3.0
+        specifier: ^3.3.3
+        version: 3.3.3
       read-pkg:
         specifier: ^9.0.1
         version: 9.0.1
@@ -566,8 +566,8 @@ importers:
         specifier: ^2.1.11
         version: 2.1.11
       consola:
-        specifier: ^3.2.3
-        version: 3.3.0
+        specifier: ^3.3.3
+        version: 3.3.3
       find-up:
         specifier: ^6.3.0
         version: 6.3.0
@@ -4936,6 +4936,10 @@ packages:
 
   consola@3.3.0:
     resolution: {integrity: sha512-kxltocVQCwQNFvw40dlVRYeAkAvtYjMFZYNlOcsF5wExPpGwPxMwgx4IfDJvBRPtBpnQwItd5WkTaR0ZwT/TmQ==}
+    engines: {node: ^14.18.0 || >=16.10.0}
+
+  consola@3.3.3:
+    resolution: {integrity: sha512-Qil5KwghMzlqd51UXM0b6fyaGHtOC22scxrwrz4A2882LyUMwQjnvaedN1HAeXzphspQ6CpHkzMAWxBTUruDLg==}
     engines: {node: ^14.18.0 || >=16.10.0}
 
   constant-case@2.0.0:
@@ -16311,7 +16315,7 @@ snapshots:
 
   citty@0.1.6:
     dependencies:
-      consola: 3.3.0
+      consola: 3.3.3
 
   cjs-module-lexer@1.4.1: {}
 
@@ -16489,6 +16493,8 @@ snapshots:
   connect-history-api-fallback@2.0.0: {}
 
   consola@3.3.0: {}
+
+  consola@3.3.3: {}
 
   constant-case@2.0.0:
     dependencies:
@@ -20667,7 +20673,7 @@ snapshots:
   nypm@0.3.12:
     dependencies:
       citty: 0.1.6
-      consola: 3.3.0
+      consola: 3.3.3
       execa: 8.0.1
       pathe: 1.1.2
       pkg-types: 1.2.1
@@ -23750,7 +23756,7 @@ snapshots:
     dependencies:
       ansi-escapes: 4.3.2
       chalk: 4.1.2
-      consola: 3.3.0
+      consola: 3.3.3
       figures: 3.2.0
       markdown-table: 2.0.0
       pretty-time: 1.1.0

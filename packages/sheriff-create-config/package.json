@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "cli-highlight": "^2.1.11",
-    "consola": "^3.2.3",
+    "consola": "^3.3.3",
     "find-up": "^6.3.0",
     "lodash-es": "^4.17.21",
     "nypm": "^0.3.9",

@@ -15,7 +15,7 @@
   "dependencies": {
     "@typescript-eslint/typescript-estree": "^8.18.2",
     "cli-highlight": "^2.1.11",
-    "consola": "^3.2.3",
+    "consola": "^3.3.3",
     "read-pkg": "^9.0.1",
     "remeda": "^2.19.0",
     "yargs": "^17.7.2"
