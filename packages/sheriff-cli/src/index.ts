@@ -6,7 +6,11 @@ import { ESLint } from 'eslint';
 import { type NormalizedPackageJson, readPackage } from 'read-pkg';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { parse } from '@typescript-eslint/typescript-estree';
+import {
+  AST_NODE_TYPES,
+  parse,
+  type TSESTree,
+} from '@typescript-eslint/typescript-estree';
 import packageJson from '../package.json';
 import { isPluginValid } from './utils/isPluginValid';
 import { throwError } from './utils/throwError';
@@ -188,20 +192,35 @@ async function main() {
 
     const ast = parse(fileContent);
 
-    const sheriffOptionsVariableDeclaration = ast.body.find((declaration1) => {
-      return (
-        declaration1.type === 'VariableDeclaration' &&
-        declaration1.declarations.find(
-          (declaration2) => declaration2.id.name === 'sheriffOptions',
-        )
-      );
-    });
+    const sheriffOptionsVariableDeclaration = ast.body.find(
+      (declaration1): declaration1 is TSESTree.VariableDeclaration => {
+        return (
+          declaration1.type === AST_NODE_TYPES.VariableDeclaration &&
+          declaration1.declarations.some((declaration2) => {
+            return (
+              declaration2.id.type === AST_NODE_TYPES.Identifier &&
+              declaration2.id.name === 'sheriffOptions'
+            );
+          })
+        );
+      },
+    );
 
     if (!sheriffOptionsVariableDeclaration) {
       // this is only a "debug" level log because it's plausible that the user doesn't have a sheriffOptions variable.
       consola.debug(
         'No variable named "sheriffOptions" found in ESLint configuration.',
       );
+
+      return;
+    }
+
+    if (
+      !sheriffOptionsVariableDeclaration.declarations[0].init ||
+      sheriffOptionsVariableDeclaration.declarations[0].init.type !==
+        AST_NODE_TYPES.ObjectExpression
+    ) {
+      throwError('sheriffOptions must be an ObjectExpression.');
 
       return;
     }

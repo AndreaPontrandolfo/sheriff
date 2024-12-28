@@ -1,6 +1,10 @@
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
 import type { SheriffConfigurablePlugins } from '@sherifforg/types';
+import {
+  AST_NODE_TYPES,
+  type TSESTree,
+} from '@typescript-eslint/typescript-estree';
 import { throwError } from './throwError';
 
 /**
@@ -14,7 +18,7 @@ import { throwError } from './throwError';
  * @throws Will throw an error if the validation fails and the severity level is 'error'.
  */
 export const isPluginValid = (
-  property: any,
+  property: TSESTree.ObjectLiteralElement,
   pluginName: keyof SheriffConfigurablePlugins,
   isPluginFound: boolean,
   severityLevel: 'error' | 'warn',
@@ -22,13 +26,16 @@ export const isPluginValid = (
   let isError = false;
 
   if (
+    property.type === AST_NODE_TYPES.Property &&
+    property.key.type === AST_NODE_TYPES.Identifier &&
     property.key.name === pluginName &&
+    property.value.type === AST_NODE_TYPES.Literal &&
     property.value.value !== isPluginFound
   ) {
     isError = true;
     if (severityLevel === 'error') {
       throwError(
-        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(property.value.value)}`,
+        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(property.value.value)}.`,
       );
     }
 
