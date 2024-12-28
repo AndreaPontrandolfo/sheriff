@@ -27,11 +27,8 @@ export const isPluginValid = (
   ) {
     isError = true;
     if (severityLevel === 'error') {
-      consola.error(
-        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(property.value.value)}`,
-      );
       throwError(
-        `Expected ${pluginName} to be ${String(isPluginFound)} but found ${property.value.value}`,
+        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(property.value.value)}`,
       );
     }
 
