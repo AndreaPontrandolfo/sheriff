@@ -498,18 +498,12 @@ importers:
       '@typescript-eslint/typescript-estree':
         specifier: ^8.18.2
         version: 8.18.2(typescript@5.7.2)
-      cli-highlight:
-        specifier: ^2.1.11
-        version: 2.1.11
       consola:
         specifier: ^3.3.3
         version: 3.3.3
       read-pkg:
         specifier: ^9.0.1
         version: 9.0.1
-      remeda:
-        specifier: ^2.19.0
-        version: 2.19.0
       yargs:
         specifier: ^17.7.2
         version: 17.7.2
