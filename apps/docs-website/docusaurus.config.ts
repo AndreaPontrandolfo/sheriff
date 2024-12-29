@@ -12,7 +12,7 @@ const currentYear = new Date().getFullYear();
 const config: Config = {
   title: 'Sheriff',
   tagline:
-    'A comprehensive and opinionated Typescript-first ESLint configuration.',
+    'A comprehensive and opinionated TypeScript-first ESLint configuration.',
   favicon: 'img/sheriff-logo.svg',
 
   // Set the production url of your site here

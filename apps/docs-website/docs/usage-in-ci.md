@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 15
 ---
 
 # 🤖 Usage in CI
@@ -78,5 +78,5 @@ The `@sherifforg/cli` is very flexible and offers a variety of options to custom
 
 You can:
 
-- skip the check for specific dependencies. This is useful in scenarios where the mismatch is intended, meaning that you don't want Sheriff linting support for a specific dependency even if Sheriff support is available
+- skip the check for a specific dependency. This is useful in scenarios where the mismatch is intended, meaning that you don't want Sheriff linting support for a specific dependency even if Sheriff support is available
 - let the process finish without throwing erros even if problems with the dependencies are found. In this case the CLI will just signal problems as warnings

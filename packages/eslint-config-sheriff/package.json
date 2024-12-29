@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-sheriff",
   "version": "25.4.0",
-  "description": "A comprehensive and opinionated Typescript-first ESLint configuration.",
+  "description": "A comprehensive and opinionated TypeScript-first ESLint configuration.",
   "type": "module",
   "exports": {
     "./package.json": "./package.json",

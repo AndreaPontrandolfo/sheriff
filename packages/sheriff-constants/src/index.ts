@@ -119,16 +119,18 @@ export const CLIOptionsCatalog = {
   },
   typescript: {
     type: 'boolean',
-    description: 'Add eslint.config.ts boilerplate.',
+    description:
+      'eslint.config.ts boilerplate will be added without asking it in the wizard.',
   },
   prettier: {
     type: 'boolean',
-    description: 'Add Prettier boilerplate.',
+    description:
+      'Prettier boilerplate will be added without asking it in the wizard.',
   },
   'install-deps': {
     type: 'boolean',
     description:
-      'Should install the dependencies at the end of the wizard or not.',
+      'Should the dependencies be installed at the end of the wizard or not.',
     default: true,
   },
   'no-fail': {
