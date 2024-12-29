@@ -1,5 +1,12 @@
 # eslint-config-sheriff
 
+## 25.5.0
+
+### Minor Changes
+
+- 3e6fc65: feat(cli): implemented @sherifforg/cli
+  Closes [#332](https://github.com/AndreaPontrandolfo/sheriff/issues/332)
+
 ## 25.4.0
 
 ### Minor Changes
