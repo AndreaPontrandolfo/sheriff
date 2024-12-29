@@ -8,6 +8,8 @@ import { CLIOptionsCatalog } from "@sherifforg/constants";
 
 ## @sherifforg/create-config
 
+CLI options for the `npm init @sherifforg/config` command.
+
 ### --filter
 
 - **Type**: <code>{CLIOptionsCatalog.filter.type}</code>
@@ -35,56 +37,58 @@ import { CLIOptionsCatalog } from "@sherifforg/constants";
 
 ## @sherifforg/cli
 
-### --no-fail
-- **Type**: boolean
-- **Default**: false
+CLI options for the `sheriff` command.
 
-Skips exiting with non-zero if any check fails.
+### --no-fail
+- **Type**: <code>{CLIOptionsCatalog["no-fail"].type}</code>
+- **Default**: <code>{CLIOptionsCatalog["no-fail"].default.toString()}</code>
+
+<p>{CLIOptionsCatalog["no-fail"].description}</p>
 
 ### --ignore-react
-- **Type**: boolean
-- **Default**: false
+- **Type**: <code>{CLIOptionsCatalog["ignore-react"].type}</code>
+- **Default**: <code>{CLIOptionsCatalog["ignore-react"].default.toString()}</code>
 
-Skips React checks (React, React DOM, Next).
+<p>{CLIOptionsCatalog["ignore-react"].description}</p>
 
 ### --ignore-next
-- **Type**: boolean
-- **Default**: false
+- **Type**: <code>{CLIOptionsCatalog["ignore-next"].type}</code>
+- **Default**: <code>{CLIOptionsCatalog["ignore-next"].default.toString()}</code>
 
-Skips Next.js checks.
+<p>{CLIOptionsCatalog["ignore-next"].description}</p>
 
 ### --ignore-lodash
-- **Type**: boolean
-- **Default**: false
+- **Type**: <code>{CLIOptionsCatalog["ignore-lodash"].type}</code>
+- **Default**: <code>{CLIOptionsCatalog["ignore-lodash"].default.toString()}</code>
 
-Skips lodash checks.
+<p>{CLIOptionsCatalog["ignore-lodash"].description}</p>
 
 ### --ignore-remeda
-- **Type**: boolean
-- **Default**: false
+- **Type**: <code>{CLIOptionsCatalog["ignore-remeda"].type}</code>
+- **Default**: <code>{CLIOptionsCatalog["ignore-remeda"].default.toString()}</code>
 
-Skips remeda checks.
+<p>{CLIOptionsCatalog["ignore-remeda"].description}</p>
 
 ### --ignore-vitest
-- **Type**: boolean
-- **Default**: false
+- **Type**: <code>{CLIOptionsCatalog["ignore-vitest"].type}</code>
+- **Default**: <code>{CLIOptionsCatalog["ignore-vitest"].default.toString()}</code>
 
-Skips vitest checks.
+<p>{CLIOptionsCatalog["ignore-vitest"].description}</p>
 
 ### --ignore-jest
-- **Type**: boolean
-- **Default**: false
+- **Type**: <code>{CLIOptionsCatalog["ignore-jest"].type}</code>
+- **Default**: <code>{CLIOptionsCatalog["ignore-jest"].default.toString()}</code>
 
-Skips jest checks.
+<p>{CLIOptionsCatalog["ignore-jest"].description}</p>
 
 ### --ignore-playwright
-- **Type**: boolean
-- **Default**: false
+- **Type**: <code>{CLIOptionsCatalog["ignore-playwright"].type}</code>
+- **Default**: <code>{CLIOptionsCatalog["ignore-playwright"].default.toString()}</code>
 
-Skips playwright checks.
+<p>{CLIOptionsCatalog["ignore-playwright"].description}</p>
 
 ### --ignore-astro
-- **Type**: boolean
-- **Default**: false
+- **Type**: <code>{CLIOptionsCatalog["ignore-astro"].type}</code>
+- **Default**: <code>{CLIOptionsCatalog["ignore-astro"].default.toString()}</code>
 
-Skips astro checks.
+<p>{CLIOptionsCatalog["ignore-astro"].description}</p>

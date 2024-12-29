@@ -48,7 +48,10 @@ const config: Config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+            [
+              require('@docusaurus/remark-plugin-npm2yarn'),
+              { sync: true, converters: ['yarn', 'pnpm', 'bun'] },
+            ],
           ],
         },
         blog: {
@@ -57,7 +60,10 @@ const config: Config = {
             xslt: true,
           },
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+            [
+              require('@docusaurus/remark-plugin-npm2yarn'),
+              { sync: true, converters: ['yarn', 'pnpm', 'bun'] },
+            ],
           ],
         },
         theme: {
