@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "include": ["eslint.config.ts"],
+  "include": ["eslint.config.js"],
   "exclude": ["node_modules", "dist", "build", "coverage"], // this is already a good default. Generally you want to put here build artifacts. Some other possible build artifacts are: "artifacts", "lib"...
   "compilerOptions": {
     "target": "es6",

@@ -7,6 +7,7 @@
     "build": "turbo run build",
     "playground": "pnpm --filter=cli-playground exec create-config",
     "playground:mimic-monorepo": "pnpm exec create-config --filter=cli-playground",
+    "playground:cli-checks": "pnpm --filter=cli-playground exec sheriff",
     "webservices:deploy": "turbo run serve --filter=sheriff-webservices",
     "preview-docs": "turbo run serve --filter=docs-website",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
@@ -31,6 +32,7 @@
   "dependencies": {
     "@changesets/cli": "2.27.10",
     "@manypkg/cli": "^0.21.4",
+    "@sherifforg/cli": "workspace:*",
     "@sherifforg/create-config": "workspace:*",
     "@turbo/gen": "^2.2.3",
     "knip": "^5.25.1",

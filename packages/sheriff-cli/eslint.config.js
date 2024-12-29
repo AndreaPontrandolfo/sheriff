@@ -1,4 +1,4 @@
-import sheriff from 'eslint-config-sheriff';
+import { sheriff } from 'eslint-config-sheriff';
 import { defineFlatConfig } from 'eslint-define-config';
 
 const sheriffOptions = {
@@ -18,5 +18,8 @@ export default defineFlatConfig([
     rules: {
       'fsecond/prefer-destructured-optionals': 0,
     },
+  },
+  {
+    ignores: ['**/tsup.config.js'],
   },
 ]);

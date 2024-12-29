@@ -114,20 +114,74 @@ export const baseNoRestrictedSyntaxRules = [
 export const CLIOptionsCatalog = {
   filter: {
     type: 'string',
-    description: 'Filter for specific workspace.',
+    description:
+      'Filter for specific workspace. More info here https://www.eslint-config-sheriff.dev/docs/monorepo-support#setup-with-npm-init-sherifforgconfig',
   },
   typescript: {
     type: 'boolean',
-    description: 'Add eslint.config.ts boilerplate.',
+    description:
+      'eslint.config.ts boilerplate will be added without asking it in the wizard.',
   },
   prettier: {
     type: 'boolean',
-    description: 'Add Prettier boilerplate.',
+    description:
+      'Prettier boilerplate will be added without asking it in the wizard.',
   },
   'install-deps': {
     type: 'boolean',
     description:
-      'Should install the dependencies at the end of the wizard or not.',
+      'Should the dependencies be installed at the end of the wizard or not.',
     default: true,
+  },
+  'no-fail': {
+    type: 'boolean',
+    description:
+      'If true: when a inconsistency is found, it will be reported as a warning. If false: when a inconsistency is found, it will be reported as an error and the process will fail with exit code 1.',
+    default: false,
+  },
+  debug: {
+    type: 'boolean',
+    description: 'Enables verbose logging.',
+    default: false,
+  },
+  'ignore-react': {
+    type: 'boolean',
+    description: 'Skips React checks (react, react-dom, next).',
+    default: false,
+  },
+  'ignore-next': {
+    type: 'boolean',
+    description: 'Skips Next.js checks.',
+    default: false,
+  },
+  'ignore-lodash': {
+    type: 'boolean',
+    description: 'Skips lodash (lodash, lodash-es) checks.',
+    default: false,
+  },
+  'ignore-remeda': {
+    type: 'boolean',
+    description: 'Skips remeda checks.',
+    default: false,
+  },
+  'ignore-vitest': {
+    type: 'boolean',
+    description: 'Skips vitest checks.',
+    default: false,
+  },
+  'ignore-jest': {
+    type: 'boolean',
+    description: 'Skips jest checks.',
+    default: false,
+  },
+  'ignore-playwright': {
+    type: 'boolean',
+    description: 'Skips playwright (playwright, @playwright/test) checks.',
+    default: false,
+  },
+  'ignore-astro': {
+    type: 'boolean',
+    description: 'Skips astro checks.',
+    default: false,
   },
 } as const;

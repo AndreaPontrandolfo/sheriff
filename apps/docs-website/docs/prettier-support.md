@@ -32,4 +32,4 @@ To enforce Prettier in CI, see the [Prettier CLI docs](https://prettier.io/docs/
 
 As Sheriff doesn’t enforce any formatting rules (except for `@stylistic/padding-line-between-statements` and `curly`), you can use any formatting tool you want to go alongside Sheriff. You are not limited to Prettier.
 
-You can use [Biome.js](https://github.com/biomejs/biome) or [Dprint](https://github.com/dprint/dprint), but the Sheriff CLI will not provide direct support for them. You will have to integrate them yourself.
+You can use [Biome](https://github.com/biomejs/biome) or [Dprint](https://github.com/dprint/dprint), but the Sheriff CLI will not provide direct support for them. You will have to integrate them yourself.

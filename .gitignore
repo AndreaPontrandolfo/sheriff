@@ -50,6 +50,7 @@ megalinter-reports/
 
 # playground
 apps/cli-playground/*
+!apps/cli-playground/eslint.config.js
 !apps/cli-playground/package.json
 !apps/cli-playground/tsconfig.json
 
