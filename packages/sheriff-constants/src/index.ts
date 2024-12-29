@@ -139,6 +139,11 @@ export const CLIOptionsCatalog = {
       'If true: when a inconsistency is found, it will be reported as a warning. If false: when a inconsistency is found, it will be reported as an error and the process will fail with exit code 1.',
     default: false,
   },
+  debug: {
+    type: 'boolean',
+    description: 'Enables verbose logging.',
+    default: false,
+  },
   'ignore-react': {
     type: 'boolean',
     description: 'Skips React checks (react, react-dom, next).',

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable sonarjs/no-duplicate-string */
 
 import fs from 'node:fs';
 import { consola } from 'consola';
@@ -6,6 +7,7 @@ import { ESLint } from 'eslint';
 import { type NormalizedPackageJson, readPackage } from 'read-pkg';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
+import { CLIOptionsCatalog } from '@sherifforg/constants';
 import {
   AST_NODE_TYPES,
   parse,
@@ -33,55 +35,54 @@ const { argv } = yargs(hideBin(process.argv))
   .version(packageJson.version)
   .alias('v', 'version')
   .option('no-fail', {
-    type: 'boolean',
-    description:
-      'If the check fails, do not exit with a non-zero code. Use this if you want to keep CI passing even when a problem is found.',
-    default: false,
+    type: CLIOptionsCatalog['no-fail'].type,
+    description: CLIOptionsCatalog['no-fail'].description,
+    default: CLIOptionsCatalog['no-fail'].default,
   })
   .option('debug', {
-    type: 'boolean',
-    description: 'Enables verbose logging.',
-    default: false,
+    type: CLIOptionsCatalog.debug.type,
+    description: CLIOptionsCatalog.debug.description,
+    default: CLIOptionsCatalog.debug.default,
   })
   .option('ignore-react', {
-    type: 'boolean',
-    description: 'Skip the react check.',
-    default: false,
+    type: CLIOptionsCatalog['ignore-react'].type,
+    description: CLIOptionsCatalog['ignore-react'].description,
+    default: CLIOptionsCatalog['ignore-react'].default,
   })
   .option('ignore-next', {
-    type: 'boolean',
-    description: 'Skip the next check.',
-    default: false,
+    type: CLIOptionsCatalog['ignore-next'].type,
+    description: CLIOptionsCatalog['ignore-next'].description,
+    default: CLIOptionsCatalog['ignore-next'].default,
   })
   .option('ignore-lodash', {
-    type: 'boolean',
-    description: 'Skip the lodash check.',
-    default: false,
+    type: CLIOptionsCatalog['ignore-lodash'].type,
+    description: CLIOptionsCatalog['ignore-lodash'].description,
+    default: CLIOptionsCatalog['ignore-lodash'].default,
   })
   .option('ignore-remeda', {
-    type: 'boolean',
-    description: 'Skip the remeda check.',
-    default: false,
+    type: CLIOptionsCatalog['ignore-remeda'].type,
+    description: CLIOptionsCatalog['ignore-remeda'].description,
+    default: CLIOptionsCatalog['ignore-remeda'].default,
   })
   .option('ignore-vitest', {
-    type: 'boolean',
-    description: 'Skip the vitest check.',
-    default: false,
+    type: CLIOptionsCatalog['ignore-vitest'].type,
+    description: CLIOptionsCatalog['ignore-vitest'].description,
+    default: CLIOptionsCatalog['ignore-vitest'].default,
   })
   .option('ignore-jest', {
-    type: 'boolean',
-    description: 'Skip the jest check.',
-    default: false,
+    type: CLIOptionsCatalog['ignore-jest'].type,
+    description: CLIOptionsCatalog['ignore-jest'].description,
+    default: CLIOptionsCatalog['ignore-jest'].default,
   })
   .option('ignore-playwright', {
-    type: 'boolean',
-    description: 'Skip the playwright check.',
-    default: false,
+    type: CLIOptionsCatalog['ignore-playwright'].type,
+    description: CLIOptionsCatalog['ignore-playwright'].description,
+    default: CLIOptionsCatalog['ignore-playwright'].default,
   })
   .option('ignore-astro', {
-    type: 'boolean',
-    description: 'Skip the astro check.',
-    default: false,
+    type: CLIOptionsCatalog['ignore-astro'].type,
+    description: CLIOptionsCatalog['ignore-astro'].description,
+    default: CLIOptionsCatalog['ignore-astro'].default,
   })
   .help()
   .alias('h', 'help');
