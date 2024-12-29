@@ -38,6 +38,11 @@ const { argv } = yargs(hideBin(process.argv))
       'If the check fails, do not exit with a non-zero code. Use this if you want to keep CI passing even when a problem is found.',
     default: false,
   })
+  .option('debug', {
+    type: 'boolean',
+    description: 'Enables verbose logging.',
+    default: false,
+  })
   .option('ignore-react', {
     type: 'boolean',
     description: 'Skip the react check.',
@@ -83,14 +88,11 @@ const { argv } = yargs(hideBin(process.argv))
 
 // eslint-disable-next-line
 async function main() {
-  consola.start(
-    'Checking that the Sheriff options match the dependencies in package.json...',
-  );
-
   try {
     const commandArguments = await argv;
 
     const severityLevel = commandArguments['no-fail'] ? 'warn' : 'error';
+    const isDebugLevel = commandArguments.debug;
     const shouldIgnoreReact = commandArguments['ignore-react'];
     const shouldIgnoreNext = commandArguments['ignore-next'];
     const shouldIgnoreLodash = commandArguments['ignore-lodash'];
@@ -100,10 +102,18 @@ async function main() {
     const shouldIgnorePlaywright = commandArguments['ignore-playwright'];
     const shouldIgnoreAstro = commandArguments['ignore-astro'];
 
+    consola.level = isDebugLevel ? 5 : 3;
+
+    consola.start(
+      'Checking that the Sheriff options match the dependencies in package.json...',
+    );
+
     let packageJSON: NormalizedPackageJson;
 
     try {
+      consola.debug('Searching and reading package.json...');
       packageJSON = await readPackage();
+      consola.debug('Finished reading package.json.');
     } catch (error) {
       throwError("Couldn't read package.json", { error });
 
@@ -111,7 +121,7 @@ async function main() {
     }
 
     if (!packageJSON.dependencies) {
-      consola.debug('No dependencies found in package.json');
+      consola.info('No dependencies found in package.json');
 
       return;
     }
@@ -125,6 +135,7 @@ async function main() {
     let isPlaywright = false;
     let isAstro = false;
 
+    consola.debug('Checking dependencies in package.json...');
     for (const dependency of Object.keys(packageJSON.dependencies)) {
       if (taggedDependencies.includes(dependency)) {
         if (dependency === 'lodash' || dependency === 'lodash-es') {
@@ -158,12 +169,16 @@ async function main() {
       }
     }
 
+    consola.debug('Finished checking dependencies in package.json.');
+
     const eslint = new ESLint();
 
     let configFilePath: string | undefined;
 
     try {
+      consola.debug('Searching for ESLint configuration file...');
       configFilePath = await eslint.findConfigFile();
+      consola.debug('Finished searching for ESLint configuration file.');
     } catch (error) {
       throwError("Couldn't find an ESLint configuration file", { error });
     }
@@ -177,7 +192,9 @@ async function main() {
     let fileContent = '';
 
     try {
+      consola.debug('Reading ESLint configuration file...');
       fileContent = fs.readFileSync(configFilePath, 'utf-8');
+      consola.debug('Finished reading ESLint configuration file.');
     } catch (error) {
       throwError("Couldn't read the contents of ESLint configuration file.", {
         error,
@@ -190,8 +207,14 @@ async function main() {
       return;
     }
 
+    consola.debug('Parsing ESLint configuration file...');
     const ast = parse(fileContent);
 
+    consola.debug('Finished parsing ESLint configuration file.');
+
+    consola.debug(
+      'Searching for sheriffOptions variable in ESLint configuration file...',
+    );
     const sheriffOptionsVariableDeclaration = ast.body.find(
       (declaration1): declaration1 is TSESTree.VariableDeclaration => {
         return (
@@ -206,10 +229,14 @@ async function main() {
       },
     );
 
+    consola.debug(
+      'Finished searching for sheriffOptions variable in ESLint configuration file.',
+    );
+
     if (!sheriffOptionsVariableDeclaration) {
-      // this is only a "debug" level log because it's plausible that the user doesn't have a sheriffOptions variable.
-      consola.debug(
-        'No variable named "sheriffOptions" found in ESLint configuration.',
+      // this is only a "info" level log because it's plausible that the user doesn't have a sheriffOptions variable.
+      consola.info(
+        'No variable named "sheriffOptions" found in ESLint configuration. This could be intended, or maybe you forgot to name the Sheriff options obejct exactly "sheriffOptions". Check the documentation for more info: https://www.eslint-config-sheriff.dev/docs/usage-in-ci#how-it-works',
       );
 
       return;
@@ -224,6 +251,8 @@ async function main() {
 
       return;
     }
+
+    consola.debug('Validating enabled plugins...');
 
     const { properties } =
       sheriffOptionsVariableDeclaration.declarations[0].init;
@@ -260,6 +289,8 @@ async function main() {
     }
 
     const areAllPluginsValid = pluginsValidations.every(Boolean);
+
+    consola.debug('Finished validating enabled plugins.');
 
     if (areAllPluginsValid) {
       consola.success('All checks passed! 🎉');
