@@ -1,6 +1,6 @@
 import { consola } from 'consola';
 
-interface Error {
+interface OptionalError {
   error?: unknown;
 }
 
@@ -13,7 +13,10 @@ interface Error {
  * @param message - The error message to display.
  * @param error - The error object to display as the cause of the error.
  */
-export const throwError = (message: string, { error }: Error = {}): void => {
+export const throwError = (
+  message: string,
+  { error }: OptionalError = {},
+): void => {
   consola.error(new Error(message, error ? { cause: error } : undefined));
   process.exit(1);
 };
