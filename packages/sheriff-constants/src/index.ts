@@ -65,12 +65,12 @@ export const baseNoRestrictedSyntaxRules = [
   {
     selector: 'ForInStatement',
     message:
-      'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+      'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries} and iterate over the resulting array.',
   },
   {
     selector: "Identifier[name='Reflect']",
     message:
-      'Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development.',
+      'Avoid the Reflect API. It is a very low-level feature that is only needed very rarely, such as in the development of complex libraries. There is no need to use this feature in normal code.',
   },
   {
     selector: "Identifier[name='Proxy']",
@@ -79,7 +79,7 @@ export const baseNoRestrictedSyntaxRules = [
   {
     selector: "BinaryExpression[operator='in']",
     message:
-      "Avoid the 'in' operator. In real-world scenarios there is rarely a need for this operator. For most usecases, basic property access is all you need. For every other case, use the Object.hasOwn() or the Object.prototype.hasOwnProperty() method. In the really niche cases where you actually need to check for the existence of a property both in the object itself AND in it's prototype chain, feel free to disable this rule with the inline eslint-disable syntax.",
+      "Avoid the 'in' operator. In real-world scenarios, there is rarely a need for this operator. In most cases, basic property access is all you need. For every other case, use Object.hasOwn() or the Object.prototype.hasOwnProperty() method. In really niche cases, where you actually need to check for the existence of a property both on an object itself AND it's prototype chain, feel free to disable this rule with the inline eslint-disable syntax.",
   },
   {
     selector: "PropertyDefinition[accessibility='public']",
@@ -103,7 +103,8 @@ export const baseNoRestrictedSyntaxRules = [
   },
   {
     selector: "UnaryExpression[operator='delete']",
-    message: 'Avoid the "delete" operator. Use omit() instead.',
+    message:
+      'Avoid the "delete" operator. Use omit() from a utility library like Remeda instead.',
   },
   {
     selector: 'TSEnumDeclaration',
