@@ -1,5 +1,12 @@
 # @sherifforg/cli
 
+## 9.4.0
+
+### Minor Changes
+
+- 3e6fc65: feat(cli): implemented @sherifforg/cli
+  Closes [#332](https://github.com/AndreaPontrandolfo/sheriff/issues/332)
+
 ## 9.3.0
 
 ### Minor Changes
