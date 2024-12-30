@@ -1,5 +1,5 @@
-import { sheriff, type SheriffSettings } from 'eslint-config-sheriff';
 import { defineFlatConfig } from 'eslint-define-config';
+import { sheriff, type SheriffSettings } from './src';
 
 const sheriffOptions: SheriffSettings = {
   react: false,

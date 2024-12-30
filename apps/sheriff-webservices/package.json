@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsx watch ./src/index.ts",
     "build": "tsc",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc",
     "lint": "eslint --max-warnings=0 --flag unstable_ts_config",
     "typesync": "typesync --dry=fail",
     "serve": "node ./dist/index.js",
