@@ -9,4 +9,11 @@ export default defineConfig({
   noExternal: ['@sherifforg/constants', '@sherifforg/types'],
   skipNodeModulesBundle: true,
   dts: { entry: 'src/index.ts' },
+  // banner: ({ format }) => {
+  //   return format === 'esm'
+  //     ? {
+  //         js: `import { createRequire as __createRequire } from 'node:module'; const require = __createRequire(import.meta.url);`,
+  //       }
+  //     : {};
+  // },
 });
