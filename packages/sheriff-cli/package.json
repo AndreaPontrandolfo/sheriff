@@ -23,8 +23,8 @@
   "devDependencies": {
     "@sherifforg/constants": "workspace:*",
     "@sherifforg/types": "workspace:*",
-    "@types/node": "^22.9.0",
-    "@types/yargs": "^17.0.32",
+    "@types/node": "^22.10.3",
+    "@types/yargs": "^17.0.33",
     "eslint": "^9.17.0",
     "eslint-config-sheriff": "workspace:*",
     "eslint-define-config": "^2.1.0",
