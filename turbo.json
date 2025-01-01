@@ -31,7 +31,9 @@
     "publint": {
       "dependsOn": ["build"]
     },
-    "//#manypkg": {},
+    "//#manypkg": {
+      "inputs": ["**/package.json"]
+    },
     "//#knip": {},
     "typesync": {},
     "are-the-types-wrong": {
@@ -46,12 +48,7 @@
       "dependsOn": ["build"]
     },
     "//#check-deduped-deps": {
-      "inputs": [
-        "package.json",
-        "apps/*/package.json",
-        "packages/*/package.json",
-        "pnpm-lock.yaml"
-      ]
+      "inputs": ["pnpm-lock.yaml"]
     },
     "//#format": {
       "outputs": ["node_modules/.cache/.prettiercache"],
