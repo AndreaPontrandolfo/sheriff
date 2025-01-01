@@ -41,18 +41,24 @@
     "turbo": "^2.2.3",
     "typesync": "0.13.0"
   },
-  "packageManager": "pnpm@9.15.1",
+  "packageManager": "pnpm@9.15.2",
   "engines": {
     "node": ">=20.10.0"
   },
   "pnpm": {
     "peerDependencyRules": {
-      "allowAny": [
-        "typescript"
-      ],
+      "allowedVersions": {
+        "eslint": "^9.0.0",
+        "typescript": "^5.0.0"
+      },
       "ignoreMissing": [
         "vitest"
       ]
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@swc/core",
+      "esbuild",
+      "sharp"
+    ]
   }
 }
