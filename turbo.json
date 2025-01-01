@@ -35,7 +35,9 @@
       "inputs": ["**/package.json"]
     },
     "//#knip": {},
-    "typesync": {},
+    "//#typesync": {
+      "inputs": ["**/package.json"]
+    },
     "are-the-types-wrong": {
       "dependsOn": ["build"]
     },

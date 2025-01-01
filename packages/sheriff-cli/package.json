@@ -8,8 +8,7 @@
     "build": "tsup",
     "typecheck": "tsc",
     "lint": "eslint ./src --max-warnings=0",
-    "publint": "publint",
-    "typesync": "typesync --dry=fail"
+    "publint": "publint"
   },
   "license": "MIT",
   "dependencies": {

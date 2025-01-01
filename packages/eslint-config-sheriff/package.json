@@ -51,8 +51,7 @@
     "build": "tsup && pnpm re-bundle-types",
     "typecheck": "tsc",
     "lint": "eslint src --max-warnings=0 --flag unstable_ts_config",
-    "publint": "publint",
-    "typesync": "typesync --dry=fail"
+    "publint": "publint"
   },
   "dependencies": {
     "@arethetypeswrong/cli": "^0.17.2",
