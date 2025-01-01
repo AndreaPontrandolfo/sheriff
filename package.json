@@ -2,7 +2,7 @@
   "name": "sheriff-monorepo",
   "private": true,
   "scripts": {
-    "dev": "turbo watch build-watch start",
+    "dev": "turbo watch eslint-config-sheriff#build @sherifforg/create-config#build start",
     "dev:norebuild": "turbo start",
     "build": "turbo run build",
     "playground": "pnpm --filter=cli-playground exec create-config",
@@ -10,7 +10,8 @@
     "playground:cli-checks": "pnpm --filter=cli-playground exec sheriff",
     "webservices:deploy": "turbo run serve --filter=sheriff-webservices",
     "preview-docs": "turbo run serve --filter=docs-website",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "prettier . --write --cache --cache-location='node_modules/.cache/.prettiercache' --log-level=warn",
+    "format:check": "prettier . --check --cache --cache-location='node_modules/.cache/.prettiercache'",
     "lint": "turbo run lint",
     "publint": "turbo run publint --concurrency=1",
     "are-the-types-wrong": "turbo run are-the-types-wrong",
@@ -19,7 +20,7 @@
     "typecheck": "turbo run typecheck",
     "knip": "knip",
     "validate-config": "turbo run validate-config",
-    "merge-checks": "pnpm build && turbo run publint manypkg typesync knip typecheck lint validate-config are-the-types-wrong && turbo run check-deduped-deps",
+    "merge-checks": "pnpm build && turbo run publint manypkg typesync knip typecheck lint format:check validate-config are-the-types-wrong && turbo run check-deduped-deps",
     "check-deduped-deps": "pnpm dedupe --check",
     "clean": "turbo run clean && rm -rf .turbo",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",
@@ -40,18 +41,24 @@
     "turbo": "^2.2.3",
     "typesync": "0.13.0"
   },
-  "packageManager": "pnpm@9.15.1",
+  "packageManager": "pnpm@9.15.2",
   "engines": {
     "node": ">=20.10.0"
   },
   "pnpm": {
     "peerDependencyRules": {
-      "allowAny": [
-        "typescript"
-      ],
+      "allowedVersions": {
+        "eslint": "^9.0.0",
+        "typescript": "^5.0.0"
+      },
       "ignoreMissing": [
         "vitest"
       ]
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@swc/core",
+      "esbuild",
+      "sharp"
+    ]
   }
 }

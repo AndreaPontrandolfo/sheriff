@@ -10,10 +10,6 @@
       "dependsOn": ["^build"],
       "outputs": [".docusaurus/**", "dist/**"]
     },
-    "build-watch": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
-    },
     "start": {
       "cache": false,
       "persistent": true,
@@ -35,7 +31,9 @@
     "publint": {
       "dependsOn": ["build"]
     },
-    "//#manypkg": {},
+    "//#manypkg": {
+      "inputs": ["**/package.json"]
+    },
     "//#knip": {},
     "typesync": {},
     "are-the-types-wrong": {
@@ -50,12 +48,14 @@
       "dependsOn": ["build"]
     },
     "//#check-deduped-deps": {
-      "inputs": [
-        "package.json",
-        "apps/*/package.json",
-        "packages/*/package.json",
-        "pnpm-lock.yaml"
-      ]
+      "inputs": ["pnpm-lock.yaml"]
+    },
+    "//#format": {
+      "outputs": ["node_modules/.cache/.prettiercache"],
+      "cache": false
+    },
+    "//#format:check": {
+      "outputs": ["node_modules/.cache/.prettiercache"]
     }
   }
 }

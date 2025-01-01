@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "clean": "rm -rf .turbo dist node_modules/.cache",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",

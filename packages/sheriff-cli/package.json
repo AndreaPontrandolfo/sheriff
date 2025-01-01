@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf .turbo dist node_modules/.cache",
     "build": "tsup",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc",
     "lint": "eslint ./src --max-warnings=0",
     "publint": "publint",
     "typesync": "typesync --dry=fail"
