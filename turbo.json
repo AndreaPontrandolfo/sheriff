@@ -52,6 +52,13 @@
         "packages/*/package.json",
         "pnpm-lock.yaml"
       ]
+    },
+    "//#format": {
+      "outputs": ["node_modules/.cache/.prettiercache"],
+      "cache": false
+    },
+    "//#format:check": {
+      "outputs": ["node_modules/.cache/.prettiercache"]
     }
   }
 }
