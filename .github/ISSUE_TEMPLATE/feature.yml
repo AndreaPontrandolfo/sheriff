@@ -46,6 +46,6 @@ body:
   - type: checkboxes
     attributes:
       label: I will submit a PR
-      description: If you are willing to submit a PR to fix this issue, please check the box below.
+      description: If you are willing to submit a PR to do this feature, please check the box below.
       options:
         - label: I'd be willing to submit a PR for this issue.

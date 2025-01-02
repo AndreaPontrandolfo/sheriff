@@ -8,7 +8,7 @@ export default defineConfig({
   clean: true,
   noExternal: ['@sherifforg/constants', '@sherifforg/types'],
   skipNodeModulesBundle: true,
-  dts: { entry: 'src/index.ts' },
+  dts: { entry: 'src/index.ts' /* ,resolve: true */ },
   // banner: ({ format }) => {
   //   return format === 'esm'
   //     ? {
