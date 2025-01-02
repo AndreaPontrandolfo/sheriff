@@ -105,7 +105,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${currentYear.toString()} Sheriff. Built with Docusaurus.`,
+      copyright: `Copyright © ${currentYear.toString()} Sheriff. Built with Docusaurus, hosted on Vercel.`,
     },
     prism: {
       theme: lightCodeTheme,
