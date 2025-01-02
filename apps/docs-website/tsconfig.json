@@ -16,5 +16,9 @@
     "incremental": true,
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     "noUncheckedSideEffectImports": true
+  },
+  "mdx": {
+    // https://github.com/mdx-js/mdx-analyzer#typescript
+    "checkMdx": true
   }
 }
