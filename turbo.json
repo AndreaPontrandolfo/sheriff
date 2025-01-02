@@ -10,6 +10,11 @@
       "dependsOn": ["^build"],
       "outputs": [".docusaurus/**", "dist/**"]
     },
+    "build:watch": {
+      "cache": false,
+      "persistent": true,
+      "outputs": ["dist/**"]
+    },
     "start": {
       "cache": false,
       "persistent": true,

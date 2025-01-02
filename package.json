@@ -2,7 +2,7 @@
   "name": "sheriff-monorepo",
   "private": true,
   "scripts": {
-    "dev": "turbo watch eslint-config-sheriff#build @sherifforg/create-config#build start",
+    "dev": "turbo start build:watch",
     "dev:norebuild": "turbo start",
     "build": "turbo run build",
     "playground": "pnpm --filter=cli-playground exec create-config",
