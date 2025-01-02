@@ -7,8 +7,13 @@
       "dependsOn": ["^topo"]
     },
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^topo", "^build"],
       "outputs": [".docusaurus/**", "dist/**"]
+    },
+    "build:watch": {
+      "cache": false,
+      "persistent": true,
+      "outputs": ["dist/**"]
     },
     "start": {
       "cache": false,

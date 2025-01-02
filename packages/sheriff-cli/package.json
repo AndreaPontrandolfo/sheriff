@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rm -rf .turbo dist node_modules/.cache",
     "build": "tsup",
+    "build:watch": "tsup --watch",
     "typecheck": "tsc",
     "lint": "eslint ./src --max-warnings=0",
     "publint": "publint"

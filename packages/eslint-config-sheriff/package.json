@@ -49,6 +49,7 @@
     "re-bundle-types": "dts-bundle-generator --config dts-config.json",
     "are-the-types-wrong": "attw --pack --profile=esm-only",
     "build": "tsup && pnpm re-bundle-types",
+    "build:watch": "tsup --watch",
     "typecheck": "tsc",
     "lint": "eslint src --max-warnings=0 --flag unstable_ts_config",
     "publint": "publint"
