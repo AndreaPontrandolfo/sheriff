@@ -19,7 +19,7 @@ Follow these steps:
 1. Create a `eslint.config.mjs` file at the root of your project and copy/paste the contents of the following snippet of code:
 
     ```js title="eslint.config.mjs"
-    import sheriff from "eslint-config-sheriff";
+    import { sheriff } from "eslint-config-sheriff";
     import { defineFlatConfig } from "eslint-define-config";
 
     const sheriffOptions = {
@@ -40,7 +40,7 @@ Follow these steps:
 
     ```js title="eslint.config.mjs"
     // highlight-next-line
-    import sheriff from "eslint-config-sheriff"; // add this
+    import { sheriff } from "eslint-config-sheriff"; // add this
     // highlight-next-line
     import { defineFlatConfig } from "eslint-define-config"; // add this
     // my other imports...

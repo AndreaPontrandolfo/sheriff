@@ -1,0 +1,51 @@
+name: '✨ Feature request'
+description: Suggest a feature or an improvement
+labels: ['triaging']
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for taking the time to fill out this feature request!
+  - type: markdown
+    attributes:
+      value: If you are proposing a new plugin or a new rule to be added to the config, please prefix the issue title with [ADD].
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Describe the feature
+      description: A clear and concise description of what you think would be a helpful addition, including the possible use cases and alternatives you have considered.
+      placeholder: Feature description
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Motivation
+      description: Please try to outline the motivation for the proposal, why it should be implemented and why do you think it would be valuable for the project.
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Project
+      description: Please choose the project related to the feature you are proposing.
+      multiple: true
+      options:
+        - 'eslint-config-sheriff'
+        - '@sherifforg/cli'
+        - '@sherifforg/create-config'
+        - the documentation website
+        - the root of the monorepository
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct.
+      options:
+        - label: I agree to follow this project's [Code of Conduct](https://github.com/AndreaPontrandolfo/sheriff/blob/master/CODE_OF_CONDUCT.md)
+          required: true
+        - label: I have read the [Contributing Guidelines on Pull Requests](https://github.com/AndreaPontrandolfo/sheriff/blob/master/CONTRIBUTING.md#opening-a-new-pull-request).
+          required: true
+  - type: checkboxes
+    attributes:
+      label: I will submit a PR
+      description: If you are willing to submit a PR to fix this issue, please check the box below.
+      options:
+        - label: I'd be willing to submit a PR for this issue.

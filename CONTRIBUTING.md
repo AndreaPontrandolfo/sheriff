@@ -4,17 +4,29 @@ First off, thank you for considering contributing to Sheriff! Your support and i
 
 ## Contribution Guidelines
 
-Sheriff thrives on community input. If you have ideas for new rules to implement or tweaks to existing ones, we encourage you to share them! Here’s how:
+Sheriff thrives on community input. If you have ideas for new rules to implement or tweaks to existing ones, we encourage you to share them!
 
-- **Contributions Welcome**: Useful contributions include fixing bugs, adding new features, improving documentation, or helping to triage and respond to issues.
-- **Create an Issue**: Please ensure there is an open issue before creating a pull request. If an issue does not exist, consider opening one first to discuss your proposed changes.
-- **Check for Duplicates**: Before opening a new issue, ensure that a similar issue does not already exist. If you find a similar issue, consider upvoting the issue or adding a comment to the existing issue instead.
-- **Good first issues**: if you want to contribute but don't know where to start, consider checking the [good first issue](https://github.com/AndreaPontrandolfo/sheriff/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) labeled issues.
-- **Repro example**: If you are reporting a bug, consider providing a minimal reproducible example. This will ensure that the issue will be looked at earlier.
-- **Use Discussions for Ideas**: If you wish to discuss open points or share ideas that do not translate well into actionable issues, please open a Discussion instead under the appropriate **[Discussions](https://github.com/AndreaPontrandolfo/sheriff/discussions)** tab.
+Useful contributions include fixing bugs or inconsistencies, adding or proposing new features or improving documentation.
+
+### Opening a new Issue
+
+- **Check for duplicates**: Before opening a new issue, ensure that a similar issue does not already exist. If you find a similar issue, consider upvoting the issue or adding a comment to the existing issue instead.
+- **Check the docs**: Before opening a new issue, ensure that the [documentation](https://www.eslint-config-sheriff.dev/) does not already cover the topic, especially the [troubleshooting section](https://www.eslint-config-sheriff.dev/docs/troubleshooting).
+- **Be specific**: If you are reporting a bug there are various way to help us better understand the problem. Consider to do any of these:
+  - providing a minimal reproducible example
+  - list the steps to reproduce the issue
+  - provide the error logs
+- **Use Discussions for ideas**: If you wish to discuss open points or share ideas that do not translate well into actionable issues, please open a Discussion instead, under the appropriate **[Discussions](https://github.com/AndreaPontrandolfo/sheriff/discussions)** tab.
 - **Follow the Code of Conduct**: By contributing, you agree to abide by the project’s [Code of Conduct](./CODE_OF_CONDUCT.md).
-- **Pass Quality Checks**: Pull requests will only be merged if they pass the quality checks performed by the `pnpm merge-checks` command.
-- **Update Documentation**: Update documentation to reflect your changes, if applicable.
+
+### Opening a new Pull Request
+
+- **Contribute orientation**: if you want to contribute but don't know where to start, consider checking the [good first issue](https://github.com/AndreaPontrandolfo/sheriff/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) labeled issues. Alternatively, consider checking the [help wanted](https://github.com/AndreaPontrandolfo/sheriff/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) labeled issues.
+- **Issues as pre-requirement policy**: Please ensure there is an open issue before creating a pull request. If an issue does not exist, you need to open one first. After this, the maintainers will discuss your proposed changes and provide feedback. If the issue is approved, you can proceed by creating a pull request. Approved issues will be marked with the green `approved` label. If an issue hasn't been approved yet (it still has the `triaging` label), and you create a pull request, it will be immediately declined.
+- **Small and focused**: Keep your pull requests as small and as focused as possible. This will make it easier for maintainers to review and merge your changes.
+- **Pass quality checks**: Pull requests will only be merged if they pass the quality checks performed by the `pnpm merge-checks` command.
+- **Update documentation**: Update documentation to reflect your changes, if applicable.
+- **Follow the Code of Conduct**: By contributing, you agree to abide by the project’s [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 ## Development
 
