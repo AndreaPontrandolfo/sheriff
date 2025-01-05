@@ -2,59 +2,59 @@
 sidebar_position: 2
 ---
 
-# TSConfig guidelines
+# `tsconfig.json` guidelines
 
-Typescript configuration is a very wide and complex topic. Depending on the environments that you are going to target, setting up correctly a proper `TSConfig` can be daunting and time consuming.<br />
-In this section I'll try to illustrate a rundown of the choices that you should make when tweaking a `TSConfig` in a modern Typescript project that use Sheriff.
-
-If you don't know much about `TSConfig` and you are uncertain, this can be a good starting point. But in the end you must be sure that the chosen settings fit your project.
+TypeScript configuration is a vastly complex topic. Depending on the environments that you are going to target, setting up correctly a proper `tsconfig` can be daunting and time-consuming.<br />
+This section will illustrate the choices that you should make when tweaking a `tsconfig` in a modern TypeScript project that uses Sheriff. If you don’t know much about `tsconfig`s and are uncertain what do choose,
+this can be a good starting point. In the end, however, you must be sure the chosen settings fit your project.
 
 ## Resources
 
-- in [this project](https://github.com/tsconfig/bases/tree/main) you can find a lot of `TSConfig` examples for different scenarios
+- In the [tsconfig project](https://github.com/tsconfig/bases/tree/main), you can find a lot of examples for different scenarios
 - If you are having hard-to-debug issues, consider using [these debugging tools](https://www.typescriptlang.org/tsconfig#Compiler_Diagnostics_6251)
-- for any doubt, make sure to check out the official [TSConfigs documentation](https://www.typescriptlang.org/tsconfig)
-- [here](https://www.totaltypescript.com/tsconfig-cheat-sheet) you can also find an interesting deep-dive
+- When in any doubt, make sure to check out the official [tsconfig documentation](https://www.typescriptlang.org/tsconfig)
+- Matt Peacock has also published an [interesting deep-dive](https://www.totaltypescript.com/tsconfig-cheat-sheet)
 
-## Sheriff's TSConfig reference
+## Sheriff’s reference `tsconfig`
 
 ```JSONC title="tsconfig.json"
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "build", "coverage"], // this is already a good default. Generally you want to put here build artifacts. Some other possible build artifacts are: "artifacts", "lib"...
+  "exclude": ["node_modules", "dist", "build", "coverage"], // This is already a good default. Generally, you want to put build artifacts here. Some other possible build artifacts include: "artifacts", "lib"...
   "compilerOptions": {
     "target": "es6",
-    "module": "preserve", // this assumes that you are gonna build your project with a modern bundler instead of tsc.
-    "moduleResolution": "bundler", // this assumes that you are gonna build your project with a modern bundler instead of tsc.
-    "noEmit": true, // this assumes that you are gonna build your project with a modern bundler instead of tsc.
-    "allowImportingTsExtensions": true, // this assumes that you are gonna build your project with a modern bundler instead of tsc.
+    "module": "preserve", // This assumes that you are gonna build your project with a modern bundler instead of `tsc`.
+    "moduleResolution": "bundler", // This assumes that you are gonna build your project with a modern bundler instead of `tsc`.
+    "noEmit": true, // This assumes that you are gonna build your project with a modern bundler instead of `tsc`.
+    "allowImportingTsExtensions": true, // This assumes that you are gonna build your project with a modern bundler instead of `tsc`.
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx",
-    "composite": false, // you should enable this only for using TS project references. But they are fairly discourages nowadays.
+    "composite": false, // TS project references are fairly discouraged nowadays.
     "incremental": true,
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     // highlight-next-line
-    "strict": true, // this is required for Sheriff to perform correctly.
+    "strict": true, // This is required for Sheriff to perform correctly.
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitReturns": true,
-    "exactOptionalPropertyTypes": false, // this looks nice on paper, but is actually extremely annoying in practice.
-    "noUnusedLocals": false, // this is already covered by Sheriff.
-    "noUnusedParameters": false, // this is already covered by Sheriff.
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": false, // This looks nice on paper, but is actually extremely annoying in practice due to lack of ecosystem buy-in.
+    "noUnusedLocals": false, // This is already covered by Sheriff.
+    "noUnusedParameters": false, // This is already covered by Sheriff.
     // highlight-next-line
-    "isolatedModules": true, // this is required for Sheriff to perform correctly.
+    "isolatedModules": true, // This is required for Sheriff to perform correctly.
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
+    "noUncheckedSideEffectImports": true,
     // highlight-next-line
-    "verbatimModuleSyntax": true, // this is required for Sheriff to perform correctly.
+    "verbatimModuleSyntax": true, // This is required for Sheriff to perform correctly.
     "skipLibCheck": true,
     "allowJs": false,
-    "checkJs": false,
+    "checkJs": false, // Sheriff doesn’t support vanilla JS.
     "experimentalDecorators": false,
-    "paths": {}, // define here your paths if you want to use absolute paths in your project, which is highly recommended.
   },
 }
 ```

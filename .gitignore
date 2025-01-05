@@ -56,3 +56,5 @@ apps/cli-playground/*
 
 # tsx trash files
 apps/sheriff-webservices/undefined
+
+README.md
