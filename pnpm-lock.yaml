@@ -357,9 +357,6 @@ importers:
 
   packages/eslint-config-sheriff:
     dependencies:
-      '@arethetypeswrong/cli':
-        specifier: ^0.17.2
-        version: 0.17.2
       '@eslint-react/eslint-plugin':
         specifier: ^1.10.1
         version: 1.21.0(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
@@ -454,6 +451,9 @@ importers:
         specifier: ^8.15.0
         version: 8.18.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
     devDependencies:
+      '@arethetypeswrong/cli':
+        specifier: ^0.17.2
+        version: 0.17.2
       '@sherifforg/constants':
         specifier: workspace:*
         version: link:../sheriff-constants
