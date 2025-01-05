@@ -31,7 +31,7 @@ npm run sheriff
 
 ## How it works
 
-The `sheriff` command will scan your project dependencies and your Sheriff configuration object. If Sheriff finds some dependencies that don't have the corresponding Sheriff option enabled, it will throw an error.
+The `sheriff` command will scan your project dependencies and your Sheriff configuration object. If Sheriff finds some dependencies that don't have the corresponding Sheriff options enabled, it will throw an error.
 
 Example:
 
