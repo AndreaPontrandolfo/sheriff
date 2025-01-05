@@ -14,7 +14,7 @@
     "typecheck": "tsc"
   },
   "devDependencies": {
-    "@types/node": "^22.9.0",
+    "@types/node": "^22.10.3",
     "tsconfig": "workspace:*",
     "typescript": "^5.6.3"
   },
