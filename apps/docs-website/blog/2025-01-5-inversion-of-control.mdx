@@ -1,0 +1,162 @@
+---
+slug: inversion-of-control
+title: Library design - Inversion of Control
+authors: [andrea]
+tags: [sheriff, eslint]
+---
+
+{/* truncate */}
+
+I wanted to give a glimpse into the architectural design decisions going on in Sheriff behind the scenes, so I'm sharing a deep dive into the [Inversion of Control](https://en.wikipedia.org/wiki/Inversion_of_control) principle and how it helped Sheriff achieve a more flexible and accessible options API.
+
+:::info
+
+I know, Inversion of Control is an expression that can have many different meanings in computer programming, depending on the context, but in this article I'm using it in loose terms to describe the process of giving the user more control over the library's behavior.
+
+:::
+
+## Why
+
+One of the coolest things about Sheriff is the way it encapsulates the complexity of ESLint and its ecosystem, most of the times hiding the ugly details behind the curtains. The problem is that sometimes the level of abstraction is too intrusive and can obstacolate the user's ability to customize the configuration to their needs. It's a delicate balance to strike.
+
+In this article we will explore why the Inversion of Control principle is often the key to unlock the best solution.
+
+## The `noRestrictedSyntaxOverride` option
+
+### The problem
+
+ESLint offers a rule called [`no-restricted-syntax`](https://eslint.org/docs/latest/rules/no-restricted-syntax) that allows you to disallow specific Javascript syntax features.
+
+Sheriff comes with a preconfigured `no-restricted-syntax` rule that disallows some of the most common syntax features that are considered harmful or confusing.
+
+The problem is that the rule accepts an array of features, meaning that if the user doesn't like just one of these features, they had only 2 options:
+
+- disable the rule entirely
+
+  ```ts
+  noRestrictedSyntax: 0
+  ```
+- override the rule with a new one
+
+  ```ts
+  noRestrictedSyntax: [
+    2,
+    {
+      selector: "...",
+      message: "...",
+    },
+    {
+      selector: "...",
+      message: "...",
+    },
+  ]
+  ```
+
+So in Sheriff we came up with a solution that allows the user to disable just the specific feature they don't like or append new ones.
+
+The API looked like this:
+
+```ts
+noRestrictedSyntaxOverride: {
+    adjuncts: [
+        {
+            selector: "LabeledStatement",
+            message: "...",
+        },
+        {
+            selector: "ForInStatement",
+            message: "...",
+        },
+    ],
+    allows: [
+        "LabeledStatement",
+        "ForInStatement",
+    ],
+},
+```
+
+In the `adjuncts` array, the user can add new syntax features to disallow on-top of the default ones, while in the `allows` array they can disable some of the default ones.
+
+As you can see, the offered API looked pretty complex, arbitrary, tangled and unintuitive. Both `adjuncts` and `allows` suggest at "adding" something, so it could be confusing to understand "what did what" for newcomers of the library. In short: it was not user-friendly at all.
+
+### The solution
+
+Inversion of control to the rescue.
+
+Instead of wrapping the `no-restricted-syntax` option into the Sheriff options, we let the users define and configure the `no-restricted-syntax` rule directly in their own config and offer them **composables** around it. This way the user is back in the driver seat and has full control again.
+
+Sheriff now expose a variable called `baseNoRestrictedSyntaxRules` that contains the contents of the Sheriff-configured `no-restricted-syntax` rule. So adding new restricted features on top of the default ones is as simple as:
+
+```ts
+no-restricted-syntax: [
+    2,
+    ...baseNoRestrictedSyntaxRules,
+    // your custom rules here...
+],
+```
+
+While disabling some of the default ones is a little more involved.
+
+Every entry prints the index of itself at the end of the message property, so users should use the index to identify which entry they want to remove.
+
+In the docs we suggest using the native Javascript [`toSpliced()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced) method to remove an entry from the `baseNoRestrictedSyntaxRules` array:
+
+```ts
+no-restricted-syntax: [
+    2,
+    ...baseNoRestrictedSyntaxRules.toSpliced(2, 1)
+    // your custom rules here...
+],
+```
+
+[🠪 Learn more about this API in the docs](https://www.eslint-config-sheriff.dev/docs/configuration#customizing-the-no-restricted-syntax).
+
+### Going forward
+
+Recently an ESlint contributor released a very interesting alternative to the `no-restricted-syntax` rule called [eslint-no-restricted](https://github.com/bradzacher/eslint-no-restricted).
+
+Sheriff will most likely adopt this library in the future and abandon the current "homegrown" solution, as it seems to provide a superior DX.
+
+## Typescript-eslint `project` API
+
+Another case where Sheriff was swallowing up complexity at the cost of giving up a level of control to the user was the `parserOptions.project` API.
+
+### The problem
+
+Sheriff was passing the `tsconfig.json` to the ESLint config in a hard-coded way:
+
+```ts
+project: './tsconfig.json'
+```
+
+Naturally users with multiple `tsconfig.json` on the same level were feeling limited, because it wasn't possible to specify different paths for the `tsconfig.json`.
+
+### The solution
+
+The solution was to let the user define the `project` path through the Sheriff options:
+
+```ts
+pathsOverrides: {
+    tsconfigLocation: "./tsconfig.sample.json",
+},
+```
+
+and fallback to the [default one](https://typescript-eslint.io/blog/parser-options-project-true/) if not specified:
+
+```ts
+parserOptions: {
+    project: userChosenTSConfig || true,
+},
+```
+
+### Going forward
+
+Since then the typescript-eslint team moved to a new option called [`projectService`](https://typescript-eslint.io/blog/announcing-typescript-eslint-v8-beta#project-service).
+
+This option is meant to definitely get rid of the need for the custom tsconfigs, like `tsconfig.eslint.json` etc, that some users had for some advanced use-cases. It also has other benefits. [Learn more](https://typescript-eslint.io/packages/parser#projectservice).
+
+Sheriff is currently exploring on adopting this new API ([Issue](https://github.com/AndreaPontrandolfo/sheriff/issues/203) | [PR](https://github.com/AndreaPontrandolfo/sheriff/pull/205)), but it seems like the feature is still experimental and [has some issues to iron out first](https://github.com/microsoft/vscode-eslint/issues/1911).
+
+## Conclusion
+
+By simplifying APIs and empowering advanced users with more granular controls, Sheriff strikes a balance between ease of use and developer freedom. As the library evolves, it remains committed to enhancing developer experience with modern, user-focused solutions.
