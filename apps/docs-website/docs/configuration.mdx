@@ -27,8 +27,7 @@ Every config option can be set on/off (you just pass them a boolean value). As t
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 // highlight-start
 // Sheriff configuration object
@@ -44,15 +43,14 @@ const sheriffOptions = {
 };
 // highlight-end
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
 
 // highlight-start
 // Sheriff configuration object
@@ -68,7 +66,7 @@ const sheriffOptions: SheriffSettings = {
 };
 // highlight-end
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
   </TabItem>
@@ -84,8 +82,7 @@ For example, let's say you want to disable a Sheriff rule, like `import/first`:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -98,23 +95,21 @@ const sheriffOptions = {
   vitest: false,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       // highlight-next-line
       "import/first": 0, // 'import/first' is now disabled everywhere.
     },
   },
-]);
+);
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -127,15 +122,14 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       // highlight-next-line
       "import/first": 0, // 'import/first' is now disabled everywhere.
     },
   },
-]);
+);
 ```
 
   </TabItem>
@@ -147,8 +141,7 @@ Likewise, let's say you want to enable a new rule:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -161,23 +154,21 @@ const sheriffOptions = {
   vitest: false,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       // highlight-next-line
       "import/first": 2, // 'import/first' is now enabled everywhere.
     },
   },
-]);
+);
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -190,15 +181,14 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       // highlight-next-line
       "import/first": 2, // 'import/first' is now enabled everywhere.
     },
   },
-]);
+);
 ```
 
   </TabItem>
@@ -241,8 +231,7 @@ Example:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -260,15 +249,14 @@ const sheriffOptions = {
   // highlight-end
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -286,7 +274,7 @@ const sheriffOptions: SheriffSettings = {
   // highlight-end
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
   </TabItem>
@@ -302,8 +290,7 @@ Example:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -321,15 +308,14 @@ const sheriffOptions = {
   // highlight-end
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -347,7 +333,7 @@ const sheriffOptions: SheriffSettings = {
   // highlight-end
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
   </TabItem>
@@ -378,8 +364,7 @@ Example:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -396,15 +381,14 @@ const sheriffOptions = {
   },
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -421,7 +405,7 @@ const sheriffOptions: SheriffSettings = {
   },
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
   </TabItem>
@@ -445,8 +429,7 @@ Example:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -468,15 +451,14 @@ const sheriffOptions = {
   },
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -498,7 +480,7 @@ const sheriffOptions: SheriffSettings = {
   },
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
   </TabItem>
@@ -522,8 +504,7 @@ Example:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -534,9 +515,9 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
-  playwrightTests: {
+  pathsOverrides: {
     // highlight-start
-    tests: [
+    playwrightTests: [
       "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts}",
       "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts}",
       "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}",
@@ -545,15 +526,14 @@ const sheriffOptions = {
   },
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -575,7 +555,7 @@ const sheriffOptions: SheriffSettings = {
   },
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
   </TabItem>
@@ -583,7 +563,7 @@ export default defineFlatConfig([...sheriff(sheriffOptions)]);
 
 ### Customizing the `no-restricted-syntax`
 
-ESLint provides a very powerful rule called `no-restricted-syntax` ([docs](https://eslint.org/docs/latest/rules/no-restricted-syntax)). It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to forbid.
+ESLint provides a very powerful rule called [`no-restricted-syntax`](https://eslint.org/docs/latest/rules/no-restricted-syntax). It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to forbid.
 Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, you can customize it in different ways.
 
 #### Override
@@ -597,8 +577,7 @@ Example:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -611,8 +590,7 @@ const sheriffOptions = {
   vitest: false,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       "no-restricted-syntax": [
@@ -623,15 +601,14 @@ export default defineFlatConfig([
       ],
     },
   }
-]);
+);
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -644,8 +621,7 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       "no-restricted-syntax": [
@@ -656,7 +632,7 @@ export default defineFlatConfig([
       ],
     },
   }
-]);
+);
 ```
 
   </TabItem>
@@ -673,8 +649,7 @@ Example:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import sheriff, { baseNoRestrictedSyntaxRules } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { baseNoRestrictedSyntaxRules, sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -687,8 +662,7 @@ const sheriffOptions = {
   vitest: false
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       "no-restricted-syntax": [
@@ -700,15 +674,14 @@ export default defineFlatConfig([
       ],
     },
   }
-]);
+);
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import sheriff, { baseNoRestrictedSyntaxRules, type SheriffSettings } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { baseNoRestrictedSyntaxRules, sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -721,8 +694,7 @@ const sheriffOptions: SheriffSettings = {
   vitest: false
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       "no-restricted-syntax": [
@@ -734,7 +706,7 @@ export default defineFlatConfig([
       ],
     },
   }
-]);
+);
 ```
 
   </TabItem>
@@ -752,8 +724,7 @@ Example:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -766,8 +737,7 @@ const sheriffOptions = {
   vitest: false
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       "no-restricted-syntax": [
@@ -778,15 +748,14 @@ export default defineFlatConfig([
       ],
     },
   };
-]);
+);
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -799,8 +768,7 @@ const sheriffOptions: SheriffSettings = {
   vitest: false
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       "no-restricted-syntax": [
@@ -811,7 +779,7 @@ export default defineFlatConfig([
       ],
     },
   };
-]);
+);
 ```
 
   </TabItem>

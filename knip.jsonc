@@ -10,7 +10,6 @@
   "ignoreDependencies": [
     "@turbo/gen",
     "eslint-import-resolver-typescript",
-    "eslint-define-config",
     "eslint-config-sheriff",
   ],
   "ignoreBinaries": ["only-allow"],

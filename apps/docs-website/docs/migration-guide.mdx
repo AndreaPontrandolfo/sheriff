@@ -28,8 +28,7 @@ You can achieve this by leveraging 2 techniques:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { sheriff } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   // highlight-next-line
@@ -44,15 +43,14 @@ const sheriffOptions = {
   vitest: false,
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   // highlight-next-line
@@ -67,7 +65,7 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
   </TabItem>

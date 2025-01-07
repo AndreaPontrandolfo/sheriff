@@ -45,25 +45,23 @@ Example:
 ```
 
 ```js title="eslint.config.mjs"
-import { sheriff } from 'eslint-config-sheriff';
-import { defineFlatConfig } from 'eslint-define-config';
+import { sheriff, tseslint } from 'eslint-config-sheriff';
 
 const sheriffOptions = {
   react: false, // ❌ this will throw an error
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
 ```js title="eslint.config.mjs"
-import { sheriff } from 'eslint-config-sheriff';
-import { defineFlatConfig } from 'eslint-define-config';
+import { sheriff, tseslint } from 'eslint-config-sheriff';
 
 const sheriffOptions = {
-  react: false, // ✅ this will pass
+  react: true, // ✅ this will pass
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
 :::warning

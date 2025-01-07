@@ -66,7 +66,7 @@ Useful contributions include fixing bugs or inconsistencies, adding or proposing
    - If you need to update the documentation website, you can run it locally with:
 
      ```bash
-     pnpm dev:norebuild
+     pnpm dev
      ```
 
      The website will be available at `http://localhost:3000`.

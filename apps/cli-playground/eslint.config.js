@@ -1,5 +1,4 @@
-import { sheriff } from 'eslint-config-sheriff';
-import { defineFlatConfig } from 'eslint-define-config';
+import { sheriff, tseslint } from 'eslint-config-sheriff';
 
 const sheriffOptions = {
   react: true,
@@ -12,4 +11,4 @@ const sheriffOptions = {
   vitest: true,
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint(sheriff(sheriffOptions));

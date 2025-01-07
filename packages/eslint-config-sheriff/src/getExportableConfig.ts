@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
-import type { FlatESLintConfig } from 'eslint-define-config';
 import lodash from 'lodash';
 import { ignores, sheriffStartingOptions } from '@sherifforg/constants';
 import type { SheriffSettings } from '@sherifforg/types';
@@ -19,7 +18,7 @@ export const getExportableConfig = (
   userConfigChoices: SheriffSettings = sheriffStartingOptions,
   /** @internal */
   areAllRulesForced?: boolean,
-): FlatESLintConfig[] => {
+): TSESLint.FlatConfig.ConfigArray => {
   let exportableConfig: TSESLint.FlatConfig.ConfigArray =
     getBaseConfig(userConfigChoices);
 
@@ -116,5 +115,5 @@ export const getExportableConfig = (
     ],
   });
 
-  return exportableConfig as FlatESLintConfig[];
+  return exportableConfig;
 };
