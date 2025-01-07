@@ -15,11 +15,7 @@ export const setDependencies = async ({
   shouldInstallJiti,
   shouldInstallDependencies,
 }: SetDependenciesOptions): Promise<void> => {
-  const requiredDependencies = [
-    'eslint',
-    'eslint-define-config',
-    'eslint-config-sheriff',
-  ];
+  const requiredDependencies = ['eslint', 'eslint-config-sheriff'];
 
   if (shouldInstallPrettier) {
     requiredDependencies.push('prettier');

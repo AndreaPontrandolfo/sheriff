@@ -37,3 +37,5 @@ export {
   getExportableConfig as sheriff,
 } from './getExportableConfig';
 export type * from '@sherifforg/types';
+export { type TSESLint } from '@typescript-eslint/utils';
+export { default as tseslint } from 'typescript-eslint';

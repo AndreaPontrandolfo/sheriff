@@ -54,9 +54,6 @@
       "persistent": true,
       "dependsOn": ["build"]
     },
-    "//#check-deduped-deps": {
-      "inputs": ["pnpm-lock.yaml"]
-    },
     "//#format": {
       "outputs": ["node_modules/.cache/.prettiercache"],
       "cache": false

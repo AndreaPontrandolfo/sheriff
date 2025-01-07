@@ -1,5 +1,4 @@
-import { sheriff, type SheriffSettings } from 'eslint-config-sheriff';
-import { defineFlatConfig } from 'eslint-define-config';
+import { sheriff, type SheriffSettings, tseslint } from 'eslint-config-sheriff';
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -12,11 +11,8 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
-  {
-    rules: {
-      'fsecond/prefer-destructured-optionals': 0,
-    },
+export default tseslint.config(sheriff(sheriffOptions), {
+  rules: {
+    'fsecond/prefer-destructured-optionals': 0,
   },
-]);
+});

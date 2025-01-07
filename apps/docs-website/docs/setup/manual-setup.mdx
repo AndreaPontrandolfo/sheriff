@@ -13,14 +13,13 @@ Follow these steps:
 1. Install the package from [npm](https://www.npmjs.com/package/eslint-config-sheriff).
 
    ```bash npm2yarn
-   npm install -D eslint eslint-define-config eslint-config-sheriff
+   npm install -D eslint eslint-config-sheriff
    ```
 
 1. Create a `eslint.config.mjs` file at the root of your project and copy/paste the contents of the following snippet of code:
 
     ```js title="eslint.config.mjs"
-    import { sheriff } from "eslint-config-sheriff";
-    import { defineFlatConfig } from "eslint-define-config";
+    import { sheriff, tseslint } from "eslint-config-sheriff";
 
     const sheriffOptions = {
       react: false,
@@ -33,16 +32,14 @@ Follow these steps:
       vitest: false,
     };
 
-    export default defineFlatConfig([...sheriff(sheriffOptions)]);
+    export default tseslint.config(sheriff(sheriffOptions));
     ```
 
     or, if you already have a `eslint.config.mjs` in your project, just append Sheriff to the configs array, like this:
 
     ```js title="eslint.config.mjs"
     // highlight-next-line
-    import { sheriff } from "eslint-config-sheriff"; // add this
-    // highlight-next-line
-    import { defineFlatConfig } from "eslint-define-config"; // add this
+    import { sheriff, tseslint } from "eslint-config-sheriff"; // add this
     // my other imports...
 
     // highlight-start
@@ -59,16 +56,16 @@ Follow these steps:
     };
     // highlight-end
 
-    export default [
+    export default tseslint(
       // highlight-next-line
-      ...sheriff(sheriffOptions), // add this
+      sheriff(sheriffOptions), // add this
       // my other configurations...
-    ];
+    );
     ```
 
 1.  Adopt `eslint.config.ts` (_optional_).
 
-    If you want to have a `.ts` configuration file instead of the default `.js` file, follow these steps:
+    If you want to have a `.ts` configuration file ([learn more](../typescript-support/eslint-config-ts.md)) instead of the default `.js` file, follow these steps:
 
       - make sure your installed ESLint version is `>=9.9.0`
       - install [jiti](https://github.com/unjs/jiti)
@@ -79,8 +76,7 @@ Follow these steps:
       - define the types of the `sheriffOptions` object:
 
         ```ts title="eslint.config.ts"
-        import { sheriff, type SheriffSettings } from "eslint-config-sheriff";
-        import { defineFlatConfig } from "eslint-define-config";
+        import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
         const sheriffOptions: SheriffSettings = {
           react: false,
@@ -93,7 +89,7 @@ Follow these steps:
           vitest: false,
         };
 
-        export default defineFlatConfig([...sheriff(sheriffOptions)]);
+        export default tseslint.config(sheriff(sheriffOptions));
         ```
 
 1.  [Configure Sheriff](../configuration.mdx) (_optional_)
