@@ -1,5 +1,12 @@
 # eslint-config-sheriff
 
+## 25.6.0
+
+### Minor Changes
+
+- 823696e: feat(config): replace eslint-define-config with tseslint.config().
+  Fixes #343
+
 ## 25.5.0
 
 ### Minor Changes

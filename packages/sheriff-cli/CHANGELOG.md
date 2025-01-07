@@ -1,5 +1,12 @@
 # @sherifforg/cli
 
+## 8.1.0
+
+### Minor Changes
+
+- 823696e: feat(config): replace eslint-define-config with tseslint.config().
+  Fixes #343
+
 ## 8.0.0
 
 ### Major Changes
