@@ -8,7 +8,6 @@ import lodash from 'lodash';
 import type {
   Entry,
   NumericSeverity,
-  Plugins,
   RuleOptions,
   RuleOptionsConfig,
   ServerResponse,
@@ -60,7 +59,10 @@ const severityRemapper = (severity: Severity): NumericSeverity => {
   }
 };
 
-const getDocs = (ruleName: string, plugins?: Plugins) => {
+const getDocs = (
+  ruleName: string,
+  plugins?: TSESLint.FlatConfig.Config['plugins'],
+) => {
   const docs = {
     description: '',
     url: '',
@@ -68,15 +70,19 @@ const getDocs = (ruleName: string, plugins?: Plugins) => {
 
   if (plugins) {
     for (const pluginContents of Object.values(plugins)) {
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       if (pluginContents) {
         const ruleNameWithoutPrefix = last(ruleName.split('/'));
 
         if (ruleNameWithoutPrefix) {
           docs.description =
-            pluginContents.rules[ruleNameWithoutPrefix]?.meta?.docs
+            // @ts-expect-error
+            pluginContents.rules?.[ruleNameWithoutPrefix]?.meta?.docs
               ?.description ?? '';
           docs.url =
-            pluginContents.rules[ruleNameWithoutPrefix]?.meta?.docs?.url ?? '';
+            // @ts-expect-error
+            pluginContents.rules?.[ruleNameWithoutPrefix]?.meta?.docs?.url ??
+            '';
         }
       }
     }
