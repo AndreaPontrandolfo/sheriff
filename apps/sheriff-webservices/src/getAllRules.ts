@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import type { ESLint } from 'eslint';
+import type { TSESLint } from 'eslint-config-sheriff';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import astro from 'eslint-plugin-astro';
 import fsecond from 'eslint-plugin-fsecond';
@@ -24,11 +25,7 @@ import eslintJs from '@eslint/js';
 import rel1cxReact from '@eslint-react/eslint-plugin';
 import nextjs from '@next/eslint-plugin-next';
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
-import type {
-  BarebonesConfigAtom,
-  RuleOptions,
-  SheriffSettings,
-} from '@sherifforg/types';
+import type { RuleOptions, SheriffSettings } from '@sherifforg/types';
 import stylistic from '@stylistic/eslint-plugin';
 import vitest from '@vitest/eslint-plugin';
 
@@ -42,7 +39,7 @@ export const getAllRules = (
     rules: Record<string, RuleOptions> | ESLint.Plugin['rules'] | undefined,
     pluginName: string,
   ) => Record<string, RuleOptions>,
-): BarebonesConfigAtom['rules'] => {
+): TSESLint.FlatConfig.Config['rules'] => {
   const reactRulesCatalog = {
     // @ts-expect-error
     ...prependRulesWithPluginName(react.rules, 'react'),
@@ -57,7 +54,7 @@ export const getAllRules = (
     ...prependRulesWithPluginName(fsecond.rules, 'fsecond'),
   };
 
-  const rules: BarebonesConfigAtom['rules'] = {
+  const rules: TSESLint.FlatConfig.Config['rules'] = {
     ...eslintJs.configs.all.rules,
     ...prependRulesWithPluginName(
       //@ts-expect-error

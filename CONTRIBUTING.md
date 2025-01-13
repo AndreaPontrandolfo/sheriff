@@ -71,7 +71,7 @@ Useful contributions include fixing bugs or inconsistencies, adding or proposing
 
      The website will be available at `http://localhost:3000`.
 
-   - If you need test the CLI, you can run:
+   - To test `@sherifforg/create-config`, run:
 
      ```bash
      pnpm playground
@@ -83,7 +83,13 @@ Useful contributions include fixing bugs or inconsistencies, adding or proposing
        pnpm playground:mimic-monorepo
      ```
 
-6. Add a `changeset`:
+   - To test `@sherifforg/cli`, run:
+
+     ```bash
+     playground:cli-checks
+     ```
+
+6. If the PR contains a feature or a bugfix (meaning that it's not a chore, a documentation update or a refactoring), add a `changeset`:
 
    ```bash
    pnpm changeset

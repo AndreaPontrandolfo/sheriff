@@ -24,7 +24,7 @@ body:
       required: true
   - type: dropdown
     attributes:
-      label: Project
+      label: Projects
       description: Please choose the project related to the feature you are proposing.
       multiple: true
       options:
