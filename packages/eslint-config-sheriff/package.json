@@ -85,6 +85,7 @@
     "eslint-plugin-tsdoc": "^0.2.17",
     "eslint-plugin-unicorn": "^55.0.0",
     "globals": "^15.11.0",
+    "lodash": "^4.17.21",
     "typescript-eslint": "^8.19.0"
   },
   "peerDependencies": {
@@ -107,7 +108,6 @@
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^9.17.0",
     "jiti": "^2.4.2",
-    "lodash": "^4.17.21",
     "publint": "^0.2.10",
     "tsconfig": "workspace:*",
     "tsup": "^8.3.0",
