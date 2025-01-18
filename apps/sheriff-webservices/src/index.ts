@@ -1,8 +1,8 @@
-import getSheriffConfig from 'eslint-config-sheriff';
+import { sheriff } from 'eslint-config-sheriff';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { serve } from '@hono/node-server';
-import type { BarebonesConfigAtom, SheriffSettings } from '@sherifforg/types';
+import type { SheriffSettings } from '@sherifforg/types';
 import { generateRulesDataset } from './generateRulesDataset.js';
 import { getAllRules } from './getAllRules.js';
 import { prependRulesWithPluginName } from './prependRulesWithPluginName.js';
@@ -21,8 +21,8 @@ app.post('/api/get-new-sheriff-config', async (context) => {
     prependRulesWithPluginName,
   );
 
-  const newConfig: BarebonesConfigAtom[] = getSheriffConfig(userConfigChoices);
-  const anyRuleAllowedConfig: BarebonesConfigAtom[] = getSheriffConfig(
+  const newConfig = sheriff(userConfigChoices);
+  const anyRuleAllowedConfig = sheriff(
     {
       react: true,
       lodash: true,

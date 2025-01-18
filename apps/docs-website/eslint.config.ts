@@ -1,9 +1,8 @@
-import { sheriff } from 'eslint-config-sheriff';
-import { defineFlatConfig } from 'eslint-define-config';
+import { sheriff, type SheriffSettings, tseslint } from 'eslint-config-sheriff';
+import { createRemarkProcessor, flat, flatCodeBlocks } from 'eslint-plugin-mdx';
 import docusaurusEslintPlugin from '@docusaurus/eslint-plugin';
-import { flat, flatCodeBlocks, createRemarkProcessor } from 'eslint-plugin-mdx';
 
-const sheriffOptions = {
+const sheriffOptions: SheriffSettings = {
   react: true,
   lodash: true,
   remeda: false,
@@ -14,8 +13,8 @@ const sheriffOptions = {
   vitest: false,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(
+  sheriff(sheriffOptions),
   {
     files: ['*.tsx', '*.ts'], // .mdx?
     plugins: {
@@ -63,4 +62,4 @@ export default defineFlatConfig([
       'CHANGELOG.md',
     ],
   },
-]);
+);

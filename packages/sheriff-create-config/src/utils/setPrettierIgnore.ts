@@ -9,6 +9,7 @@ const prettierIgnoreRawText = `/node_modules/
 /build/
 /artifacts/
 /coverage/
+/pnpm-lock.yaml
 .git/`;
 
 export const setPrettierIgnore = async (

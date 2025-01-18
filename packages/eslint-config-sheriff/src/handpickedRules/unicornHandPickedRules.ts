@@ -1,3 +1,5 @@
+import type { TSESLint } from '@typescript-eslint/utils';
+
 export const unicornHandPickedRules = {
   'unicorn/explicit-length-check': 2,
   'unicorn/consistent-function-scoping': 2,
@@ -42,4 +44,4 @@ export const unicornHandPickedRules = {
   'unicorn/no-single-promise-in-promise-methods': 2,
   'unicorn/consistent-empty-array-spread': 2,
   'unicorn/no-unused-properties': 2,
-};
+} as const satisfies TSESLint.FlatConfig.Rules;

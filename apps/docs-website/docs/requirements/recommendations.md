@@ -5,7 +5,9 @@ description: You probably need this too
 
 # Recommendations
 
-- [Node >=20](https://nodejs.org/en/)
+- [Node >=22](https://nodejs.org/en/)
+- [ESLint >=9.0.0](https://eslint.org/)
+- [Typescript >= 5.0.0](https://www.typescriptlang.org/)
 - [VScode](https://code.visualstudio.com/)
 - [VScode eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [VScode prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)

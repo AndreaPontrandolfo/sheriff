@@ -1,12 +1,12 @@
 ---
-sidebar_position: 11
+sidebar_position: 12
 ---
 
 # 🚀 VSCode support
 
 To make the [VSCode ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) work better with Sheriff we can enable a few settings. It's advisable to enable them at the workspace level, meaning in the root of the project at `.vscode/settings.json`
 
-## Enable linting on specified file extensions
+## Enable linting on specific file extensions
 
 ```JSONC title=".vscode/settings.json"
 {
@@ -19,17 +19,7 @@ To make the [VSCode ESLint Extension](https://marketplace.visualstudio.com/items
 }
 ```
 
-## `eslint.config.ts` support
-
-If you are using the `eslint.config.ts` config, add this to your `.vscode/settings.json`:
-
-```JSONC title=".vscode/settings.json"
-"eslint.options": {
-  "flags": ["unstable_ts_config"]
-}
-```
-
-## Astro support
+### Astro support
 
 For [Astro](https://astro.build/) projects, add the astro extension too:
 
@@ -43,6 +33,16 @@ For [Astro](https://astro.build/) projects, add the astro extension too:
     // highlight-next-line
     "astro"
   ]
+}
+```
+
+## `eslint.config.ts` support
+
+If you are using the `eslint.config.ts` config, add this to your `.vscode/settings.json`:
+
+```JSONC title=".vscode/settings.json"
+"eslint.options": {
+  "flags": ["unstable_ts_config"]
 }
 ```
 

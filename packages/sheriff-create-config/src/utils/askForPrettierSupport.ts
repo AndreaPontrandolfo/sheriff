@@ -6,7 +6,6 @@ export const askForPrettierSupport = async (): Promise<boolean> => {
 Tip: if you want to use Prettier from the root of the monorepo, choose 'No'.`,
     {
       type: 'confirm',
-      // onState: gracefullyAbort,
     },
   );
 

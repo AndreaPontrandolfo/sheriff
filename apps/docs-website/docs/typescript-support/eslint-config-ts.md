@@ -12,6 +12,8 @@ Instead, if you choose the manual installation, follow the instruction in the [m
 
 Also check the specific docs for the [VSCode integration](../vscode-support.md#eslintconfigts-support).
 
+For more details, checkout [the official ESLint documentation on the topic](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files).
+
 :::warning
 
 This feature is available only with ESLint version `>=9.9.0`.

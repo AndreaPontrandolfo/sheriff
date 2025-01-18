@@ -1,31 +1,31 @@
-import eslintJs from '@eslint/js';
-import type { TSESLint } from '@typescript-eslint/utils';
-import tseslint from 'typescript-eslint';
-import unicorn from 'eslint-plugin-unicorn';
-import sonarjs from 'eslint-plugin-sonarjs';
-import jsdoc from 'eslint-plugin-jsdoc';
-import pluginImport from 'eslint-plugin-import';
-import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
-import tsdoc from 'eslint-plugin-tsdoc';
-import storybook from 'eslint-plugin-storybook';
-import fsecond from 'eslint-plugin-fsecond';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
-import stylistic from '@stylistic/eslint-plugin';
+import fsecond from 'eslint-plugin-fsecond';
+import pluginImport from 'eslint-plugin-import';
+import jsdoc from 'eslint-plugin-jsdoc';
 import * as regexpPlugin from 'eslint-plugin-regexp';
-import { supportedFileTypes, allJsExtensions } from '@sherifforg/constants';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import sonarjs from 'eslint-plugin-sonarjs';
+import storybook from 'eslint-plugin-storybook';
+import tsdoc from 'eslint-plugin-tsdoc';
+import unicorn from 'eslint-plugin-unicorn';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import { fixupPluginRules } from '@eslint/compat';
+import eslintJs from '@eslint/js';
+import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
+import { allJsExtensions, supportedFileTypes } from '@sherifforg/constants';
 import type { SheriffSettings } from '@sherifforg/types';
-import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
+import stylistic from '@stylistic/eslint-plugin';
+import type { TSESLint } from '@typescript-eslint/utils';
+import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
 import { importHandPickedRules } from './handpickedRules/importHandPickedRules';
 import { jsdocHandPickedRules } from './handpickedRules/jsdocHandPickedRules';
 import { sonarjsHandPickedRules } from './handpickedRules/sonarjsHandPickedRules';
 import { stylisticHandPickedRules } from './handpickedRules/stylisticHandPickedRules';
 import { typescriptHandPickedRules } from './handpickedRules/typescriptHandPickedRules';
 import { unicornHandPickedRules } from './handpickedRules/unicornHandPickedRules';
-import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
 import { getLanguageOptionsTypescript } from './utils/getLanguageOptionsTypescript';
-import globals from 'globals';
-import { fixupPluginRules } from '@eslint/compat';
+import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 
 export const getBaseConfig = (
   userConfigChoices: SheriffSettings,
@@ -39,7 +39,6 @@ export const getBaseConfig = (
     },
     {
       files: [supportedFileTypes],
-      // @ts-expect-error
       rules: getBaseEslintHandPickedRules(),
     },
     {
@@ -52,6 +51,7 @@ export const getBaseConfig = (
     },
     {
       files: [supportedFileTypes],
+      // @ts-expect-error
       rules: {
         ...typescriptHandPickedRules,
         ...getTsNamingConventionRule({ isTsx: false }),

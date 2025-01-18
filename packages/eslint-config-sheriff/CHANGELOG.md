@@ -1,5 +1,39 @@
 # eslint-config-sheriff
 
+## 25.6.0
+
+### Minor Changes
+
+- 823696e: feat(config): replace eslint-define-config with tseslint.config().
+  Fixes #343
+
+## 25.5.0
+
+### Minor Changes
+
+- 3e6fc65: feat(cli): implemented @sherifforg/cli
+  Closes [#332](https://github.com/AndreaPontrandolfo/sheriff/issues/332)
+
+## 25.4.0
+
+### Minor Changes
+
+- 252bfb0: feat(cli): enhanced prettier support
+  feat(cli): added CLI options
+
+### Patch Changes
+
+- ee74f10: feat(internal): linting core package with itself
+  Fixes #236
+- e196d00: fix(config): limits astro linting to astro files. Fixes #316
+
+## 25.3.1
+
+### Patch Changes
+
+- e87996d: feat: updated "engines" field
+  Fixes [#318](https://github.com/AndreaPontrandolfo/sheriff/issues/318)
+
 ## 25.3.0
 
 ### Minor Changes

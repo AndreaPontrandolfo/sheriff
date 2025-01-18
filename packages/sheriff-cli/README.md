@@ -2,4 +2,6 @@
 
 This is the package of `@sherifforg/cli`.
 
-You can find all the relevant information at [this link](https://www.eslint-config-sheriff.dev/docs/setup/automatic-setup).
+The Sheriff CLI is used to manage Sheriff-based ESLint configs.
+
+[Learn more](https://www.eslint-config-sheriff.dev/docs/usage-in-ci).

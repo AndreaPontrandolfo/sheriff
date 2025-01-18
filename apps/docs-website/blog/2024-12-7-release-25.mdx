@@ -36,8 +36,7 @@ Added support for [remeda](https://github.com/remeda/remeda) with [eslint-plugin
 If you use Remeda instead of Lodash, you should now disable `lodash` in the config and enable `remeda`.
 
 ```js title="eslint.config.js"
-import sheriff from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -52,7 +51,7 @@ const sheriffOptions = {
   vitest: false,
 };
 
-export default defineFlatConfig([...sheriff(sheriffOptions)]);
+export default tseslint.config(sheriff(sheriffOptions));
 ```
 
 ## Unified Type Exports

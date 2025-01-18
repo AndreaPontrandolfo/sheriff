@@ -3,12 +3,11 @@
 /* eslint-disable lodash-f/import-scope */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 // import { Linter } from 'eslint';
+import type { TSESLint } from 'eslint-config-sheriff';
 import lodash from 'lodash';
 import type {
-  BarebonesConfigAtom,
   Entry,
   NumericSeverity,
-  Plugins,
   RuleOptions,
   RuleOptionsConfig,
   ServerResponse,
@@ -60,7 +59,10 @@ const severityRemapper = (severity: Severity): NumericSeverity => {
   }
 };
 
-const getDocs = (ruleName: string, plugins?: Plugins) => {
+const getDocs = (
+  ruleName: string,
+  plugins?: TSESLint.FlatConfig.Config['plugins'],
+) => {
   const docs = {
     description: '',
     url: '',
@@ -68,15 +70,19 @@ const getDocs = (ruleName: string, plugins?: Plugins) => {
 
   if (plugins) {
     for (const pluginContents of Object.values(plugins)) {
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       if (pluginContents) {
         const ruleNameWithoutPrefix = last(ruleName.split('/'));
 
         if (ruleNameWithoutPrefix) {
           docs.description =
-            pluginContents.rules[ruleNameWithoutPrefix]?.meta?.docs
+            // @ts-expect-error
+            pluginContents.rules?.[ruleNameWithoutPrefix]?.meta?.docs
               ?.description ?? '';
           docs.url =
-            pluginContents.rules[ruleNameWithoutPrefix]?.meta?.docs?.url ?? '';
+            // @ts-expect-error
+            pluginContents.rules?.[ruleNameWithoutPrefix]?.meta?.docs?.url ??
+            '';
         }
       }
     }
@@ -118,8 +124,8 @@ const extractNumericSeverityFromRuleOptions = (
 };
 
 const getCompiledConfig = (
-  config: BarebonesConfigAtom[],
-  allRulesRaw: BarebonesConfigAtom['rules'],
+  config: TSESLint.FlatConfig.ConfigArray,
+  allRulesRaw: TSESLint.FlatConfig.Config['rules'],
 ) => {
   const pluginsNames: string[] = [];
 
@@ -137,7 +143,9 @@ const getCompiledConfig = (
       const ruleRecord: Entry = {
         ruleName,
         parentPluginName,
+        //@ts-expect-error
         severity: extractNumericSeverityFromRuleOptions(ruleOptions),
+        //@ts-expect-error
         ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
         affectedFiles: configAtom.files ? configAtom.files.join(', ') : 'none',
         docs: getDocs(ruleName, configAtom.plugins),
@@ -160,6 +168,7 @@ const getCompiledConfig = (
           ruleName,
           parentPluginName,
           severity: 0,
+          //@ts-expect-error
           ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
           affectedFiles: 'none',
           docs: getDocs(ruleName),
@@ -174,8 +183,8 @@ const getCompiledConfig = (
 };
 
 export const generateRulesDataset = (
-  config: BarebonesConfigAtom[],
-  allRulesRaw: BarebonesConfigAtom['rules'],
+  config: TSESLint.FlatConfig.ConfigArray,
+  allRulesRaw: TSESLint.FlatConfig.Config['rules'],
 ): ServerResponse => {
   const { compiledConfig, pluginsNames } = getCompiledConfig(
     config,

@@ -1,8 +1,8 @@
-import type { ESLint } from "eslint";
-import type { RuleOptions } from "@sherifforg/types";
+import type { ESLint } from 'eslint';
+import type { RuleOptions } from '@sherifforg/types';
 
 export const prependRulesWithPluginName = (
-  rules: Record<string, RuleOptions> | ESLint.Plugin["rules"] | undefined,
+  rules: Record<string, RuleOptions> | ESLint.Plugin['rules'] | undefined,
   pluginName: string,
 ): Record<string, RuleOptions> => {
   if (!rules) {

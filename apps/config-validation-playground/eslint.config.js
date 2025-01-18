@@ -1,5 +1,4 @@
-import sheriff from 'eslint-config-sheriff';
-import { defineFlatConfig } from 'eslint-define-config';
+import { sheriff, tseslint } from 'eslint-config-sheriff';
 
 const sheriffOptions = {
   react: true,
@@ -7,16 +6,14 @@ const sheriffOptions = {
   astro: true,
   remeda: true,
   next: true,
+  astro: true,
   playwright: true,
   jest: false,
   vitest: true,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
-  {
-    rules: {
-      'astro/semi': 0,
-    },
+export default tseslint.config(sheriff(sheriffOptions), {
+  rules: {
+    'astro/semi': 0,
   },
-]);
+});

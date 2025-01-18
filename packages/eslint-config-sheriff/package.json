@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-sheriff",
-  "version": "25.3.0",
-  "description": "A comprehensive and opinionated Typescript-first ESLint configuration.",
+  "version": "25.6.0",
+  "description": "A comprehensive and opinionated TypeScript-first ESLint configuration.",
   "type": "module",
   "exports": {
     "./package.json": "./package.json",
@@ -46,17 +46,18 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "clean": "rm -rf .turbo dist node_modules/.cache",
-    "re-bundle-types": "dts-bundle-generator -out-file=dist/index.d.ts ./dist/index.d.ts",
+    "re-bundle-types": "dts-bundle-generator --config dts-config.json",
+    "are-the-types-wrong": "attw --pack --profile=esm-only",
     "build": "tsup && pnpm re-bundle-types",
-    "build-watch": "tsup && pnpm re-bundle-types",
-    "typecheck": "tsc --noEmit",
-    "publint": "publint",
-    "typesync": "typesync --dry=fail"
+    "build:watch": "tsup --watch",
+    "typecheck": "tsc",
+    "lint": "eslint src --max-warnings=0 --flag unstable_ts_config",
+    "publint": "publint"
   },
   "dependencies": {
     "@eslint-react/eslint-plugin": "^1.10.1",
-    "@eslint/compat": "^1.1.1",
-    "@eslint/js": "^9.14.0",
+    "@eslint/compat": "^1.2.4",
+    "@eslint/js": "^9.17.0",
     "@next/eslint-plugin-next": "^13.2.3",
     "@regru/eslint-plugin-prefer-early-return": "^1.0.0",
     "@stylistic/eslint-plugin": "^2.6.4",
@@ -84,29 +85,29 @@
     "eslint-plugin-tsdoc": "^0.2.17",
     "eslint-plugin-unicorn": "^55.0.0",
     "globals": "^15.11.0",
-    "typescript-eslint": "^8.15.0"
+    "lodash": "^4.17.21",
+    "typescript-eslint": "^8.19.0"
   },
   "peerDependencies": {
     "eslint": ">=9.0.0",
     "typescript": ">=5.0.0"
   },
   "engines": {
-    "node": "20.10.0"
+    "node": ">=20.10.0"
   },
   "license": "MIT",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.2",
     "@sherifforg/constants": "workspace:*",
     "@sherifforg/types": "workspace:*",
     "@types/confusing-browser-globals": "^1.0.3",
-    "@types/eslint-plugin-jsx-a11y": "^6.9.0",
-    "@types/eslint-plugin-react-refresh": "^0.4.0",
-    "@types/lodash": "^4.17.6",
-    "@types/node": "^22.9.0",
-    "@typescript-eslint/utils": "^8.15.0",
+    "@types/eslint-plugin-jsx-a11y": "^6.10.0",
+    "@types/lodash": "^4.17.13",
+    "@types/node": "^22.10.3",
+    "@typescript-eslint/utils": "^8.19.0",
     "dts-bundle-generator": "^9.5.1",
-    "eslint": "^9.14.0",
-    "eslint-define-config": "^2.1.0",
-    "lodash": "^4.17.21",
+    "eslint": "^9.17.0",
+    "jiti": "^2.4.2",
     "publint": "^0.2.10",
     "tsconfig": "workspace:*",
     "tsup": "^8.3.0",
