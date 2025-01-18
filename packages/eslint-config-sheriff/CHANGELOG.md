@@ -1,5 +1,12 @@
 # eslint-config-sheriff
 
+## 25.7.0
+
+### Minor Changes
+
+- 2f982b3: fix(config): playwrightTests is now optional
+  Fixes #353
+
 ## 25.6.0
 
 ### Minor Changes
