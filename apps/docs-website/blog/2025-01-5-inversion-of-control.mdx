@@ -11,7 +11,7 @@ I wanted to give a glimpse into the architectural design decisions going on in S
 
 :::info
 
-I know, Inversion of Control is an expression that can have many different meanings in computer programming, depending on the context, but in this article I'm using it in loose terms to describe the process of giving the user more control over the library's behavior.
+I know, "Inversion of Control" is an expression that can have many different meanings in computer programming, depending on the context, but in this article I'm using it in loose terms to describe the process of giving the user more control over the library's behavior. Sorry, Java bros!
 
 :::
 
@@ -157,6 +157,20 @@ This option is meant to definitely get rid of the need for the custom tsconfigs,
 
 Sheriff is currently exploring on adopting this new API ([Issue](https://github.com/AndreaPontrandolfo/sheriff/issues/203) | [PR](https://github.com/AndreaPontrandolfo/sheriff/pull/205)), but it seems like the feature is still experimental and [has some issues to iron out first](https://github.com/microsoft/vscode-eslint/issues/1911).
 
+## FlatConfig VS ESLint wrappers
+
+:::info
+
+This topic is also briefly covered in the [prior-art section](../docs/prior-art#why-sheriff-is-not-an-eslint-wrapper).
+
+:::
+
+While Sheriff has [many unique features](../docs/prior-art#features-comparison-table), it strives to still be just an ESLint config at its core.
+
+This means, again, that the user has **all** the power in its hands over the linting experience. Sheriff takes nothing out of ESLint, it only _enhances_ it.
+
+While, on the contrary, ESLint wrappers hinder the power of ESLint, by removing control from the hands of the users.
+
 ## Conclusion
 
-By simplifying APIs and empowering advanced users with more granular controls, Sheriff strikes a balance between ease of use and developer freedom. As the library evolves, it remains committed to enhancing developer experience with modern, user-focused solutions.
+By simplifying APIs and empowering advanced users with more granular controls, Sheriff strikes a balance between ease of use and developer freedom.
