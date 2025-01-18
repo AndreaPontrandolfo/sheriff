@@ -77,7 +77,7 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
     /**
      * This setting overrides the default Sheriff filepaths for Playwright linting. It accepts an array of filepaths, dictaced by minimatch syntax. Sheriff will apply Playwright rules only on these files.
      */
-    playwrightTests: string[];
+    playwrightTests?: string[];
   };
   /**
    * This setting apply some ignore patterns to the whole config.
