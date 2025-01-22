@@ -58,7 +58,7 @@ export const getBaseConfig = (
       },
     },
     {
-      files: [supportedFileTypes],
+      files: ['**/*.{ts,mts,cts,tsx,mtsx,astro}'],
       plugins: {
         tsdoc,
       },
