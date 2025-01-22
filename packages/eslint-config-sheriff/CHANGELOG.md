@@ -1,5 +1,17 @@
 # eslint-config-sheriff
 
+## 25.7.0
+
+### Minor Changes
+
+- 2f982b3: fix(config): playwrightTests is now optional
+  Fixes #353
+
+### Patch Changes
+
+- 0033374: fix(config): don't run `tsdoc` rules on JS files
+  Fixes #362
+
 ## 25.6.0
 
 ### Minor Changes
