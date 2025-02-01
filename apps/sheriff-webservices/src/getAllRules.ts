@@ -41,11 +41,9 @@ export const getAllRules = (
   ) => Record<string, RuleOptions>,
 ): TSESLint.FlatConfig.Config['rules'] => {
   const reactRulesCatalog = {
-    // @ts-expect-error
     ...prependRulesWithPluginName(react.rules, 'react'),
     ...prependRulesWithPluginName(reactAccessibility.rules, 'jsx-a11y'),
     ...prependRulesWithPluginName(reactHooks.rules, 'react-hooks'),
-    // @ts-expect-error
     ...prependRulesWithPluginName(reactRefresh.rules, 'react-refresh'),
     ...prependRulesWithPluginName(
       (rel1cxReact as unknown as Plugin).rules,
@@ -86,8 +84,7 @@ export const getAllRules = (
       ? prependRulesWithPluginName(nextjs.rules, '@next/next')
       : {}),
     ...(settings.playwright
-      ? // @ts-expect-error
-        prependRulesWithPluginName(playwright.rules, 'playwright')
+      ? prependRulesWithPluginName(playwright.rules, 'playwright')
       : {}),
     ...(settings.lodash
       ? prependRulesWithPluginName(lodashPlugin.rules, 'lodash-f')
