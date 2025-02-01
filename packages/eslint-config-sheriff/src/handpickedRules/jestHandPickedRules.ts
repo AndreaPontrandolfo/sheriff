@@ -6,7 +6,6 @@ export const jestHandPickedRules = {
   'jest/no-alias-methods': 2,
   'jest/no-export': 2,
   'jest/no-duplicate-hooks': 2,
-  'jest/no-done-callback': 2,
   'jest/no-identical-title': 2,
   'jest/no-focused-tests': 2,
   'jest/no-jasmine-globals': 2,
