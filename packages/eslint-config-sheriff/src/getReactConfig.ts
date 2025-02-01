@@ -47,7 +47,10 @@ export const getReactConfig = (
       files: [`**/*{${allJsxExtensions}}`],
       plugins: { 'react-refresh': reactRefresh },
       rules: {
-        'react-refresh/only-export-components': 2,
+        'react-refresh/only-export-components': [
+          2,
+          { allowExportNames: ['loader'] },
+        ],
       },
     },
     {

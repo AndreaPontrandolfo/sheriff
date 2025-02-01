@@ -52,7 +52,7 @@ export const getExportableConfig = (
   }
 
   if (userConfigChoices.next) {
-    exportableConfig.push(nextjsConfig);
+    exportableConfig.push(...nextjsConfig);
   }
 
   if (userConfigChoices.lodash) {
