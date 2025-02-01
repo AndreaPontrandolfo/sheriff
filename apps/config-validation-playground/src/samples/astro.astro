@@ -1,16 +1,20 @@
-
 ---
-/* eslint-disable @typescript-eslint/naming-convention */
-import React from 'react';
-import {InfoButton} from '../mocks/InfoButton';
+const foo = 'Hello, Astro!'
 ---
-{/* eslint-disable @next/next/no-head-element */}
 
 <html lang="en">
-    <head>
-        <title>Astro with React</title>
-    </head>
-    <body>
-        <InfoButton text='click me' />
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator"  >
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Astro</h1>
+    <p set:text={foo}>!</p>
+    <p set:html={foo}>!</p>
+
+    <img />
+  </body>
 </html>

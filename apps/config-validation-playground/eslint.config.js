@@ -5,7 +5,7 @@ const sheriffOptions = {
   lodash: true,
   astro: true,
   remeda: true,
-  next: true,
+  next: false,
   astro: true,
   playwright: true,
   jest: false,
@@ -15,5 +15,6 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions), {
   rules: {
     'astro/semi': 0,
+    'astro/jsx-a11y/alt-text': 2,
   },
 });
