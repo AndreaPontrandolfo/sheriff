@@ -187,7 +187,7 @@ export const getBaseConfig = (
       rules: { 'fsecond/prefer-destructured-optionals': 2 },
     },
     {
-      files: ['**/*.config.*'],
+      files: [`**/*.config.{${allJsExtensions}}`],
       rules: {
         'import/no-default-export': 0,
         'import/no-anonymous-default-export': 0,
