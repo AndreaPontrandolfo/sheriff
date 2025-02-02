@@ -13,7 +13,12 @@ import tseslint from 'typescript-eslint';
 import { fixupPluginRules } from '@eslint/compat';
 import eslintJs from '@eslint/js';
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
-import { allJsExtensions, supportedFileTypes } from '@sherifforg/constants';
+import {
+  allJsExtensions,
+  supportedFileTypes,
+  tsExtensions,
+  tsxExtensions,
+} from '@sherifforg/constants';
 import type { SheriffSettings } from '@sherifforg/types';
 import stylistic from '@stylistic/eslint-plugin';
 import type { TSESLint } from '@typescript-eslint/utils';
@@ -58,7 +63,7 @@ export const getBaseConfig = (
       },
     },
     {
-      files: ['**/*.{ts,mts,cts,tsx,mtsx,astro}'],
+      files: [`**/*.{${tsExtensions},${tsxExtensions},astro}`],
       plugins: {
         tsdoc,
       },

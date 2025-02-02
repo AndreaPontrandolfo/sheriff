@@ -1,11 +1,11 @@
 import { fixupPluginRules } from '@eslint/compat';
 import nextjs from '@next/eslint-plugin-next';
-import { supportedFileTypes } from '@sherifforg/constants';
+import { allJsExtensions, allJsxExtensions } from '@sherifforg/constants';
 import type { TSESLint } from '@typescript-eslint/utils';
 
 export const nextjsConfig: TSESLint.FlatConfig.ConfigArray = [
   {
-    files: [supportedFileTypes],
+    files: [`**/*.{${allJsExtensions},${allJsxExtensions}}`],
     plugins: {
       '@next/next': fixupPluginRules(nextjs),
     },
@@ -25,8 +25,8 @@ export const nextjsConfig: TSESLint.FlatConfig.ConfigArray = [
   },
   {
     files: [
-      '**/page.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
-      '**/layout.{js,mjs,cjs,ts,mts,cts,jsx,tsx,mtsx,mjsx}',
+      `**/page.{${allJsExtensions},${allJsxExtensions}}`,
+      `**/layout.{${allJsExtensions},${allJsxExtensions}}`,
     ],
     rules: {
       'react-refresh/only-export-components': [
