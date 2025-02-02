@@ -6,7 +6,7 @@ description: You probably need this too
 # Recommendations
 
 - [Node >=22](https://nodejs.org/en/)
-- [ESLint >=9.0.0](https://eslint.org/)
+- [ESLint >=9.19.0](https://eslint.org/)
 - [Typescript >= 5.0.0](https://www.typescriptlang.org/)
 - [VScode](https://code.visualstudio.com/)
 - [VScode eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)

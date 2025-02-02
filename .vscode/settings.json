@@ -17,9 +17,6 @@
     "markdown",
     "astro"
   ],
-  "eslint.options": {
-    "flags": ["unstable_ts_config"]
-  },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
