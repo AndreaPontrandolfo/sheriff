@@ -22,9 +22,17 @@ export const configCombinationDefaultValues = {
   vitest: true,
 } as const;
 
-export const allJsExtensions = 'js,mjs,cjs,ts,mts,cts';
+export const jsExtensions = 'js,mjs,cjs';
 
-export const allJsxExtensions = 'jsx,tsx,mtsx,mjsx';
+export const jsxExtensions = 'jsx,mjsx';
+
+export const tsExtensions = 'ts,mts,cts';
+
+export const tsxExtensions = 'tsx,mtsx';
+
+export const allJsExtensions = `${jsExtensions},${tsExtensions}`;
+
+export const allJsxExtensions = `${jsxExtensions},${tsxExtensions}`;
 
 export const supportedFileTypes = `**/*{${allJsExtensions},${allJsxExtensions},astro}`;
 
