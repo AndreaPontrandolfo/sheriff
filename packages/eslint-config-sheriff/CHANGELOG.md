@@ -1,5 +1,24 @@
 # eslint-config-sheriff
 
+## 25.8.0
+
+### Minor Changes
+
+- 218ff22: feat(config): removed `vitest/no-done-callback` and `jest/no-done-callback`
+  Fixes #358
+- 73ec66a: feat(plugins): updated eslint and plugins
+  Closes #354
+  Closes #371
+- 98e3829: feat(config): Drop no-new-object in favor of no-object-constructor
+  Fixes #367
+
+### Patch Changes
+
+- e1ba9e1: feat(config): added constraints to globs of config files
+  Fixes #359
+- 066db53: fix: whitelist certain export names
+  Fixes #364
+
 ## 25.7.0
 
 ### Minor Changes
