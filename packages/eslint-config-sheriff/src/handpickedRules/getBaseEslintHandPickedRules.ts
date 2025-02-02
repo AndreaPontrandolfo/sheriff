@@ -17,7 +17,7 @@ export const getBaseEslintHandPickedRules = () => {
     'no-multi-str': 2,
     'no-negated-condition': 2,
     'no-new-wrappers': 2,
-    'no-new-object': 2,
+    'no-object-constructor': 2,
     strict: [2, 'never'],
     'no-octal-escape': 2,
     'no-proto': 2,
