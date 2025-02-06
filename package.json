@@ -2,23 +2,24 @@
   "name": "sheriff-monorepo",
   "private": true,
   "scripts": {
-    "dev": "turbo watch build-watch start",
-    "dev:norebuild": "turbo start",
+    "dev": "turbo start build:watch",
     "build": "turbo run build",
     "playground": "pnpm --filter=cli-playground exec create-config",
     "playground:mimic-monorepo": "pnpm exec create-config --filter=cli-playground",
+    "playground:cli-checks": "pnpm --filter=cli-playground exec sheriff",
     "webservices:deploy": "turbo run serve --filter=sheriff-webservices",
     "preview-docs": "turbo run serve --filter=docs-website",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "prettier . --write --cache --cache-location=node_modules/.cache/.prettiercache --log-level=warn",
+    "format:check": "prettier . --check --cache --cache-location=node_modules/.cache/.prettiercache",
     "lint": "turbo run lint",
     "publint": "turbo run publint --concurrency=1",
     "are-the-types-wrong": "turbo run are-the-types-wrong",
     "manypkg": "manypkg check",
-    "typesync": "turbo run typesync",
+    "typesync": "typesync --dry=fail",
     "typecheck": "turbo run typecheck",
     "knip": "knip",
     "validate-config": "turbo run validate-config",
-    "merge-checks": "turbo run publint manypkg typesync knip typecheck lint validate-config check-deduped-deps are-the-types-wrong",
+    "merge-checks": "pnpm build && turbo run publint manypkg typesync knip typecheck lint validate-config are-the-types-wrong && pnpm check-deduped-deps",
     "check-deduped-deps": "pnpm dedupe --check",
     "clean": "turbo run clean && rm -rf .turbo",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",
@@ -31,25 +32,32 @@
   "dependencies": {
     "@changesets/cli": "2.27.10",
     "@manypkg/cli": "^0.21.4",
+    "@sherifforg/cli": "workspace:*",
     "@sherifforg/create-config": "workspace:*",
     "@turbo/gen": "^2.2.3",
-    "knip": "^5.25.1",
+    "knip": "^5.42.0",
     "prettier": "^3.3.2",
     "turbo": "^2.2.3",
-    "typesync": "0.13.0"
+    "typesync": "0.14.0"
   },
-  "packageManager": "pnpm@9.10.0",
+  "packageManager": "pnpm@9.15.2",
   "engines": {
     "node": ">=20.10.0"
   },
   "pnpm": {
     "peerDependencyRules": {
-      "allowAny": [
-        "typescript"
-      ],
+      "allowedVersions": {
+        "eslint": "^9.0.0",
+        "typescript": "^5.0.0"
+      },
       "ignoreMissing": [
         "vitest"
       ]
-    }
+    },
+    "onlyBuiltDependencies": [
+      "@swc/core",
+      "esbuild",
+      "sharp"
+    ]
   }
 }

@@ -8,15 +8,12 @@ export default defineConfig({
   clean: true,
   noExternal: ['@sherifforg/constants', '@sherifforg/types'],
   skipNodeModulesBundle: true,
-  dts: {
-    entry: 'src/index.ts',
-    resolve: true,
-  },
-  banner: ({ format }) => {
-    if (format === 'esm')
-      return {
-        js: `import { createRequire } from 'module'; const require = createRequire(import.meta.url);`,
-      };
-    return {};
-  },
+  dts: { entry: 'src/index.ts' /* ,resolve: true */ },
+  // banner: ({ format }) => {
+  //   return format === 'esm'
+  //     ? {
+  //         js: `import { createRequire as __createRequire } from 'node:module'; const require = __createRequire(import.meta.url);`,
+  //       }
+  //     : {};
+  // },
 });

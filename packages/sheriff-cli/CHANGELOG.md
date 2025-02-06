@@ -1,5 +1,27 @@
 # @sherifforg/cli
 
+## 8.2.0
+
+### Minor Changes
+
+- 73ec66a: feat(plugins): updated eslint and plugins
+  Closes #354
+  Closes #371
+
+## 8.1.0
+
+### Minor Changes
+
+- 823696e: feat(config): replace eslint-define-config with tseslint.config().
+  Fixes #343
+
+## 8.0.0
+
+### Major Changes
+
+- 3e6fc65: feat(cli): implemented @sherifforg/cli
+  Closes [#332](https://github.com/AndreaPontrandolfo/sheriff/issues/332)
+
 ## 7.2.0
 
 ### Minor Changes

@@ -12,7 +12,7 @@ const currentYear = new Date().getFullYear();
 const config: Config = {
   title: 'Sheriff',
   tagline:
-    'A comprehensive and opinionated Typescript-first ESLint configuration.',
+    'A comprehensive and opinionated TypeScript-first ESLint configuration.',
   favicon: 'img/sheriff-logo.svg',
 
   // Set the production url of your site here
@@ -48,7 +48,10 @@ const config: Config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+            [
+              require('@docusaurus/remark-plugin-npm2yarn'),
+              { sync: true, converters: ['yarn', 'pnpm', 'bun'] },
+            ],
           ],
         },
         blog: {
@@ -57,7 +60,10 @@ const config: Config = {
             xslt: true,
           },
           remarkPlugins: [
-            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+            [
+              require('@docusaurus/remark-plugin-npm2yarn'),
+              { sync: true, converters: ['yarn', 'pnpm', 'bun'] },
+            ],
           ],
         },
         theme: {
@@ -99,7 +105,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${currentYear.toString()} Sheriff. Built with Docusaurus.`,
+      copyright: `Copyright © ${currentYear.toString()} Sheriff. Built with Docusaurus, hosted on Vercel.`,
     },
     prism: {
       theme: lightCodeTheme,

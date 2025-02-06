@@ -10,8 +10,9 @@
       "dependsOn": ["^build"],
       "outputs": [".docusaurus/**", "dist/**"]
     },
-    "build-watch": {
-      "dependsOn": ["^build"],
+    "build:watch": {
+      "cache": false,
+      "persistent": true,
       "outputs": ["dist/**"]
     },
     "start": {
@@ -26,15 +27,22 @@
     "lint": {
       "dependsOn": ["^topo", "^build"]
     },
+    "eslint-config-sheriff#lint": {
+      "dependsOn": ["^topo", "build"]
+    },
     "validate-config": {
       "dependsOn": ["^topo", "^build"]
     },
     "publint": {
       "dependsOn": ["build"]
     },
-    "//#manypkg": {},
+    "//#manypkg": {
+      "inputs": ["**/package.json"]
+    },
     "//#knip": {},
-    "typesync": {},
+    "//#typesync": {
+      "inputs": ["**/package.json"]
+    },
     "are-the-types-wrong": {
       "dependsOn": ["build"]
     },
@@ -46,13 +54,12 @@
       "persistent": true,
       "dependsOn": ["build"]
     },
-    "check-deduped-deps": {
-      "inputs": [
-        "package.json",
-        "apps/*/package.json",
-        "packages/*/package.json",
-        "pnpm-lock.yaml"
-      ]
+    "//#format": {
+      "outputs": ["node_modules/.cache/.prettiercache"],
+      "cache": false
+    },
+    "//#format:check": {
+      "outputs": ["node_modules/.cache/.prettiercache"]
     }
   }
 }

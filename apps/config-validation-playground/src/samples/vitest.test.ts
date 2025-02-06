@@ -11,7 +11,7 @@ test('addition', () => {
 });
 
 // Test case 2
-test('substraction', () => {
+test('subtraction', () => {
   const result = 5 - 2;
 
   if (result !== 3) {

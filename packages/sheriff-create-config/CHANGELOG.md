@@ -1,5 +1,39 @@
 # @sherifforg/cli
 
+## 9.6.0
+
+### Minor Changes
+
+- 73ec66a: feat(plugins): updated eslint and plugins
+  Closes #354
+  Closes #371
+
+## 9.5.0
+
+### Minor Changes
+
+- 823696e: feat(config): replace eslint-define-config with tseslint.config().
+  Fixes #343
+
+## 9.4.0
+
+### Minor Changes
+
+- 3e6fc65: feat(cli): implemented @sherifforg/cli
+  Closes [#332](https://github.com/AndreaPontrandolfo/sheriff/issues/332)
+
+## 9.3.0
+
+### Minor Changes
+
+- 252bfb0: feat(cli): enhanced prettier support
+  feat(cli): added CLI options
+
+### Patch Changes
+
+- ee74f10: feat(internal): linting core package with itself
+  Fixes #236
+
 ## 9.2.1
 
 ### Patch Changes

@@ -1,4 +1,5 @@
-import { getExportableConfig } from './getExportableConfig';
+/* eslint-disable import/no-default-export */
+
 import {
   allJsExtensions,
   allJsxExtensions,
@@ -19,19 +20,22 @@ const exportableTestsFilePatterns = testsFilePatterns;
 
 const indexedBaseNoRestrictedSyntaxRules =
   getIndexedBaseNoRestrictedSyntaxRules();
-//#endregion
 
 export {
-  getExportableConfig as sheriff,
-  indexedBaseNoRestrictedSyntaxRules as baseNoRestrictedSyntaxRules,
   exportableAllJsExtensions as allJsExtensions,
   exportableAllJsxExtensions as allJsxExtensions,
+  indexedBaseNoRestrictedSyntaxRules as baseNoRestrictedSyntaxRules,
   exportableIgnores as ignores,
   exportableSheriffStartingOptions as sheriffStartingOptions,
   exportableSupportedFileTypes as supportedFileTypes,
   exportableTestsFilePatterns as testsFilePatterns,
 };
+//#endregion
 
+export {
+  getExportableConfig as default,
+  getExportableConfig as sheriff,
+} from './getExportableConfig';
 export type * from '@sherifforg/types';
-
-export default getExportableConfig;
+export { type TSESLint } from '@typescript-eslint/utils';
+export { default as tseslint } from 'typescript-eslint';

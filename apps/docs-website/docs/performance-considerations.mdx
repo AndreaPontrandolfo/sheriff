@@ -1,5 +1,5 @@
 ---
-sidebar_position: 14
+sidebar_position: 16
 ---
 
 import Tabs from "@theme/Tabs";
@@ -19,7 +19,7 @@ The currently known slowest rules in Sheriff are the ones of `@typescript-eslint
 You can benchmark rules performance by yourself by running the following command in the terminal:
 
 ```bash npm2yarn
-TIMING=1 npm run eslint
+TIMING=1 npx eslint
 ```
 
 Learn more in the [ESLint official docs section](https://eslint.org/docs/latest/extend/custom-rules#profile-rule-performance).
@@ -43,8 +43,7 @@ Here is an example on how you can achieve it:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import sheriff from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -57,23 +56,21 @@ const sheriffOptions = {
   vitest: false,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       // highlight-next-line
       "@typescript-eslint/no-misused-promises": process.env.CI ? 2 : 0,
     },
   },
-]);
+);
 ```
 
 </TabItem>
 <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import sheriff, { type SheriffSettings  } from "eslint-config-sheriff";
-import { defineFlatConfig } from "eslint-define-config";
+import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -86,15 +83,14 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
+export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       // highlight-next-line
       "@typescript-eslint/no-misused-promises": process.env.CI ? 2 : 0,
     },
   },
-]);
+);
 ```
 
   </TabItem>

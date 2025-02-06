@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 interface GetTsNamingConventionRuleOptions {
   isTsx: boolean;
 }
@@ -39,7 +40,7 @@ export const getTsNamingConventionRule = ({
         selector: 'variable',
         types: ['boolean'],
         format: ['PascalCase'],
-        prefix: ['is', 'has', 'should', 'can'],
+        prefix: ['is', 'are', 'has', 'should', 'can'],
         leadingUnderscore: 'forbid',
         trailingUnderscore: 'forbid',
       },

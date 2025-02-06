@@ -38,12 +38,7 @@ This project, **Sheriff**, is a community-driven effort and is not sponsored by 
 
 ### Contribution Guidelines
 
-- Please ensure there is an open issue before creating a pull request. If an issue does not exist, consider opening one first to discuss your proposed changes.
-- If you wish to discuss open points or share ideas that do not translate well into actionable issues, please open a Discussion instead under the appropriate [**Discussions** tab](https://github.com/AndreaPontrandolfo/sheriff/discussions).
-- You can find additional guidelines for contributing in our [CONTRIBUTING.md](./CONTRIBUTING.md) file.
-- Examples of useful contributions include fixing bugs, adding new features, improving documentation, or helping to triage and respond to issues.
-
-Your help is vital to ensure this project’s growth and sustainability. Together, we can build something exceptional.
+Find the guidelines for contributing to this project in the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## Enforcement
 

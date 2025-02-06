@@ -1,27 +1,26 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
-import type { FlatESLintConfig } from 'eslint-define-config';
-import type { SheriffSettings } from '@sherifforg/types';
 import { ignores, sheriffStartingOptions } from '@sherifforg/constants';
-import { getReactConfig } from './getReactConfig';
-import { getBaseConfig } from './getBaseConfig';
-import { nextjsConfig } from './nextjsConfig';
+import type { SheriffSettings } from '@sherifforg/types';
+import type { TSESLint } from '@typescript-eslint/utils';
 import { getAstroConfig } from './getAstroConfig';
-import { getPlaywrightConfig } from './playwrightConfig';
-import { lodashConfig } from './lodashConfig';
+import { getBaseConfig } from './getBaseConfig';
 import { getJestConfig } from './getJestConfig';
+import { getReactConfig } from './getReactConfig';
 import { getVitestConfig } from './getVitestConfig';
-import { type TSESLint } from '@typescript-eslint/utils';
+import { lodashConfig } from './lodashConfig';
+import { nextjsConfig } from './nextjsConfig';
+import { getPlaywrightConfig } from './playwrightConfig';
 import { remedaConfig } from './remedaConfig';
 
 export const getExportableConfig = (
   userConfigChoices: SheriffSettings = sheriffStartingOptions,
   /** @internal */
   areAllRulesForced?: boolean,
-): FlatESLintConfig[] => {
-  let exportableConfig: TSESLint.FlatConfig.ConfigArray = [
-    ...getBaseConfig(userConfigChoices),
-  ];
+): TSESLint.FlatConfig.ConfigArray => {
+  let exportableConfig: TSESLint.FlatConfig.ConfigArray =
+    getBaseConfig(userConfigChoices);
 
   if (userConfigChoices.react || userConfigChoices.next) {
     // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
@@ -48,13 +47,12 @@ export const getExportableConfig = (
 
   if (userConfigChoices.vitest) {
     exportableConfig.push(
-      //@ts-expect-error
       getVitestConfig(userConfigChoices.pathsOverrides?.tests),
     );
   }
 
   if (userConfigChoices.next) {
-    exportableConfig.push(nextjsConfig);
+    exportableConfig.push(...nextjsConfig);
   }
 
   if (userConfigChoices.lodash) {
@@ -75,7 +73,6 @@ export const getExportableConfig = (
 
   if (userConfigChoices.playwright) {
     exportableConfig.push(
-      //@ts-expect-error
       ...getPlaywrightConfig(userConfigChoices.pathsOverrides?.playwrightTests),
     );
   }
@@ -86,7 +83,7 @@ export const getExportableConfig = (
     );
 
     exportableConfig = exportableConfig.map((configSlice) => {
-      if (configSlice.ignores?.length && configSlice.ignores.length > 0) {
+      if (configSlice.ignores?.length && !lodash.isEmpty(configSlice.ignores)) {
         return configSlice;
       }
 
@@ -118,5 +115,5 @@ export const getExportableConfig = (
     ],
   });
 
-  return exportableConfig as FlatESLintConfig[];
+  return exportableConfig;
 };
