@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 12
 ---
 
 # 🚀 VSCode support
@@ -38,7 +38,15 @@ For [Astro](https://astro.build/) projects, add the astro extension too:
 
 ## `eslint.config.ts` support
 
-If you are using the `eslint.config.ts` config, add this to your `.vscode/settings.json`:
+Follow these instructions if you are using the `eslint.config.ts` configuration file.
+
+### With ESLint >= 9.18.0
+
+No further action is required. You are good to go!
+
+### With ESLint < 9.18.0
+
+Add this to your `.vscode/settings.json`:
 
 ```JSONC title=".vscode/settings.json"
 "eslint.options": {

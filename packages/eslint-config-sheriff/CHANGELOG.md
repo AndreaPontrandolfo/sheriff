@@ -1,5 +1,63 @@
 # eslint-config-sheriff
 
+## 25.8.0
+
+### Minor Changes
+
+- 218ff22: feat(config): removed `vitest/no-done-callback` and `jest/no-done-callback`
+  Fixes #358
+- 73ec66a: feat(plugins): updated eslint and plugins
+  Closes #354
+  Closes #371
+- 98e3829: feat(config): Drop no-new-object in favor of no-object-constructor
+  Fixes #367
+
+### Patch Changes
+
+- e1ba9e1: feat(config): added constraints to globs of config files
+  Fixes #359
+- 066db53: fix: whitelist certain export names
+  Fixes #364
+
+## 25.7.0
+
+### Minor Changes
+
+- 2f982b3: fix(config): playwrightTests is now optional
+  Fixes #353
+
+### Patch Changes
+
+- 0033374: fix(config): don't run `tsdoc` rules on JS files
+  Fixes #362
+
+## 25.6.0
+
+### Minor Changes
+
+- 823696e: feat(config): replace eslint-define-config with tseslint.config().
+  Fixes #343
+
+## 25.5.0
+
+### Minor Changes
+
+- 3e6fc65: feat(cli): implemented @sherifforg/cli
+  Closes [#332](https://github.com/AndreaPontrandolfo/sheriff/issues/332)
+
+## 25.4.0
+
+### Minor Changes
+
+- 252bfb0: feat(cli): enhanced prettier support
+  feat(cli): added CLI options
+
+### Patch Changes
+
+- ee74f10: feat(internal): linting core package with itself
+  Fixes #236
+- e196d00: fix(config): limits astro linting to astro files. Fixes #316
+
 ## 25.3.1
 
 ### Patch Changes

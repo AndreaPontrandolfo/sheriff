@@ -8,6 +8,7 @@
     "${configDir}/node_modules"
   ],
   "compilerOptions": {
+    "noEmit": true,
     "composite": false,
     "target": "ESNext",
     "module": "Preserve",

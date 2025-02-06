@@ -1,3 +1,5 @@
+import type { TSESLint } from '@typescript-eslint/utils';
+
 export const reactHandPickedRules = {
   'react/prop-types': 0,
   'react/no-unstable-nested-components': [2, { allowAsProps: false }],
@@ -38,4 +40,4 @@ export const reactHandPickedRules = {
       reservedFirst: false,
     },
   ],
-};
+} as const satisfies TSESLint.FlatConfig.Rules;

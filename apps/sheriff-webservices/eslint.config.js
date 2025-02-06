@@ -1,5 +1,4 @@
-import sheriff from 'eslint-config-sheriff';
-import { defineFlatConfig } from 'eslint-define-config';
+import { sheriff, tseslint } from 'eslint-config-sheriff';
 
 const sheriffOptions = {
   react: false,
@@ -12,15 +11,12 @@ const sheriffOptions = {
   vitest: false,
 };
 
-export default defineFlatConfig([
-  ...sheriff(sheriffOptions),
-  {
-    ignores: [
-      '**/dist/**/*',
-      '**/node_modules/**/*',
-      '**/turbo/**/*',
-      'eslint.config.js',
-      'src/handledModules.d.ts',
-    ],
-  },
-]);
+export default tseslint.config(sheriff(sheriffOptions), {
+  ignores: [
+    '**/dist/**/*',
+    '**/node_modules/**/*',
+    '**/turbo/**/*',
+    'eslint.config.js',
+    'src/handledModules.d.ts',
+  ],
+});

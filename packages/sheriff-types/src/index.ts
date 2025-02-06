@@ -24,34 +24,6 @@ export type RuleOptions =
   | Severity
   | undefined;
 
-export type Plugins =
-  | {
-      [key: string]:
-        | {
-            files?: string[];
-            rules?: any;
-            configs?: any;
-          }
-        | undefined;
-    }
-  | null
-  | undefined;
-
-export interface BarebonesConfigAtom {
-  rules?: Record<string, RuleOptions> | undefined;
-  plugins?: Plugins;
-  files?: string[] | undefined;
-}
-
-export interface ExportableConfigAtom {
-  rules?: Record<string, any>;
-  plugins?: Plugins;
-  files?: string[];
-  languageOptions?: Record<string, unknown>;
-  settings?: Record<string, unknown>;
-  ignores?: string[];
-}
-
 export type RuleOptionsConfig = (Record<string, any> | string)[];
 
 export interface SheriffConfigurablePlugins {
@@ -105,7 +77,7 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
     /**
      * This setting overrides the default Sheriff filepaths for Playwright linting. It accepts an array of filepaths, dictaced by minimatch syntax. Sheriff will apply Playwright rules only on these files.
      */
-    playwrightTests: string[];
+    playwrightTests?: string[];
   };
   /**
    * This setting apply some ignore patterns to the whole config.

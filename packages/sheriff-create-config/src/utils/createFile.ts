@@ -1,4 +1,4 @@
-import { writeFile } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
 import { throwError } from './throwError';
@@ -12,16 +12,15 @@ export const createFile = (
     !customProjectRootPath || customProjectRootPath.endsWith('/') ? '' : '/'
   }${fileName}`;
 
-  writeFile(completeFilePath, fileBody, (error) => {
-    if (error) {
-      throwError(
-        `Couldn't write ${colors.bold(fileName)} file to the filesystem`,
-        {
-          error,
-        },
-      );
-    }
-
+  try {
+    writeFileSync(completeFilePath, fileBody);
     consola.success(`Successfully generated ${colors.bold(fileName)} file`);
-  });
+  } catch (error) {
+    throwError(
+      `Couldn't write ${colors.bold(fileName)} file to the filesystem`,
+      {
+        error,
+      },
+    );
+  }
 };

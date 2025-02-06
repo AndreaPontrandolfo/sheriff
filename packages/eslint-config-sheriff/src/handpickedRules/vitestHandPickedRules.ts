@@ -1,3 +1,5 @@
+import type { TSESLint } from '@typescript-eslint/utils';
+
 export const vitestHandPickedRules = {
   'vitest/consistent-test-it': [2, { fn: 'test', withinDescribe: 'test' }],
   'vitest/expect-expect': 2,
@@ -5,7 +7,6 @@ export const vitestHandPickedRules = {
   'vitest/no-conditional-expect': 2,
   'vitest/no-conditional-in-test': 2,
   'vitest/no-disabled-tests': 2,
-  'vitest/no-done-callback': 2,
   'vitest/no-duplicate-hooks': 2,
   'vitest/no-identical-title': 2,
   'vitest/no-focused-tests': 2,
@@ -34,4 +35,4 @@ export const vitestHandPickedRules = {
   'vitest/require-top-level-describe': 2,
   'vitest/valid-describe-callback': 2,
   'vitest/valid-expect': 2,
-};
+} as const satisfies TSESLint.FlatConfig.Rules;

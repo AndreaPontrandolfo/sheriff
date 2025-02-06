@@ -27,7 +27,7 @@
 }
 
 .nativeCheckbox label:before {
-  content: "";
+  content: '';
   -webkit-appearance: none;
   background-color: transparent;
   border: 2px solid var(--ifm-toc-border-color);
@@ -45,7 +45,7 @@
 }
 
 .nativeCheckbox input:checked + label:after {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 3px;

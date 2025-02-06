@@ -40,8 +40,11 @@ const columns = [
   }),
   columnHelper.accessor('ruleOptions', {
     header: 'Options',
-    cell: (info) =>
-      isEmpty(info.getValue()) ? 'No options' : JSON.stringify(info.getValue()),
+    cell: (info) => {
+      return isEmpty(info.getValue())
+        ? 'No options'
+        : JSON.stringify(info.getValue());
+    },
   }),
   columnHelper.accessor('docs', {
     header: 'Docs',
