@@ -1,5 +1,11 @@
 # eslint-config-sheriff
 
+## 25.8.1
+
+### Patch Changes
+
+- c0ac830: Removing preinstall script from package.json.
+
 ## 25.8.0
 
 ### Minor Changes
