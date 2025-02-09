@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-sheriff",
-  "version": "25.8.0",
+  "version": "25.8.1",
   "description": "A comprehensive and opinionated TypeScript-first ESLint configuration.",
   "type": "module",
   "exports": {
