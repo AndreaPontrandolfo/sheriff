@@ -12,7 +12,7 @@ import {
   ignores,
   sheriffStartingOptions,
   testsFilePatterns,
-  allJsExtensions
+  allJsExtensions,
 } from "@sherifforg/constants";
 
 # 🧠 Configuration
@@ -20,8 +20,8 @@ import {
 ## Base options
 
 The `eslint-config-sheriff` package exports a `sheriff` function.<br />
-You can configure Sheriff as desired using a simple javascript object as the first input parameter of the `sheriff` function.<br />
-Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with `npm init @sherifforg/config` some of these values will be inferred automatically from your project.
+You can configure Sheriff by passing an object to the `sheriff` function.<br />
+Every config option can be set on and off (by passing them booleans). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with `npm init @sherifforg/config` some of these values will be inferred automatically from your project.
 
 <Tabs groupId="tsorjs">
   <TabItem value="JS" label="JS">
@@ -46,11 +46,11 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions));
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+    </TabItem>
+    <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 // highlight-start
 // Sheriff configuration object
@@ -76,7 +76,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 
 You can override any Sheriff rule as desired in the `eslint.config.js` file.
 
-For example, let's say you want to disable a Sheriff rule, like `import/first`:
+For example, let's say you want to disable a Sheriff rule, like 'import/first':
 
 <Tabs groupId="tsorjs">
   <TabItem value="JS" label="JS">
@@ -95,21 +95,19 @@ const sheriffOptions = {
   vitest: false,
 };
 
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      // highlight-next-line
-      "import/first": 0, // 'import/first' is now disabled everywhere.
-    },
+export default tseslint.config(sheriff(sheriffOptions), {
+  rules: {
+    // highlight-next-line
+    "import/first": 0, // 'import/first' is now disabled everywhere.
   },
-);
+});
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+  </TabItem>
+  <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -122,14 +120,12 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      // highlight-next-line
-      "import/first": 0, // 'import/first' is now disabled everywhere.
-    },
+export default tseslint.config(sheriff(sheriffOptions), {
+  rules: {
+    // highlight-next-line
+    "import/first": 0, // 'import/first' is now disabled everywhere.
   },
-);
+});
 ```
 
   </TabItem>
@@ -154,18 +150,16 @@ const sheriffOptions = {
   vitest: false,
 };
 
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      // highlight-next-line
-      "import/first": 2, // 'import/first' is now enabled everywhere.
-    },
+export default tseslint.config(sheriff(sheriffOptions), {
+  rules: {
+    // highlight-next-line
+    "import/first": 2, // 'import/first' is now enabled everywhere.
   },
-);
+});
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+  </TabItem>
+  <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
@@ -181,26 +175,24 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      // highlight-next-line
-      "import/first": 2, // 'import/first' is now enabled everywhere.
-    },
+export default tseslint.config(sheriff(sheriffOptions), {
+  rules: {
+    // highlight-next-line
+    "import/first": 2, // 'import/first' is now enabled everywhere.
   },
-);
+});
 ```
 
   </TabItem>
 </Tabs>
 
-This is just the standard behavior of the `FlatConfig` system of ESLint, which is being illustrated here for your convenience. Sheriff doesn't alter this in any way.
+This is just the standard behavior for ESLint’s “flat” configuration system, illustrated here for your convenience. Sheriff doesn’t alter this in any way.
 
 For more in-depth information, refer to the [official docs](https://eslint.org/docs/latest/use/configure/configuration-files).
 
 ## Advanced options
 
-The upcoming configuration options are meant to be situational, tailored to serve only a niche group of users and designed to address specific use cases. **Use these only if and when you end up needing them**.
+The upcoming configuration options are meant to be situational, tailored to serve only a niche group of users and designed to address specific use cases. **Only use these if you end up needing them**.
 
 ### `files`
 
@@ -210,7 +202,7 @@ Learn more in the [♻ Migration guide](./migration-guide.mdx#progressive-adopti
 
 ### `ignores`
 
-By default, Sheriff will ignore certain filepaths, but you can choose to opt-out of this behavior.
+By default, Sheriff will ignore certain filepaths, but you can choose to opt out of this behavior.
 
 ```ts
 ignores: {
@@ -252,8 +244,8 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions));
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+  </TabItem>
+  <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
@@ -311,8 +303,8 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions));
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+  </TabItem>
+  <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
@@ -341,7 +333,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 
 ### `pathsOverrides`
 
-As outlined in the [criteria](./core-philosophy/criteria.md) page, Sheriff comes with sensible defaults. However, as your project grows, your team may come across the need to override some of these defaults. This option lets you do just that.
+As outlined in the [criteria](./core-philosophy/criteria.md) page, Sheriff comes with sensible defaults. However, as your project grows, your team may need to override some of these defaults. This option lets you do that.
 
 ```ts
 pathsOverrides: {
@@ -352,11 +344,11 @@ pathsOverrides: {
 
 #### `pathsOverrides.tsconfigLocation`
 
-By default, Sheriff will use the `project: true` option to locate the `tsconfig.json` of your project.
+By default, Sheriff will use the `project: true` option to locate your project’s `tsconfig.json`.
 
-But, if you have multiple `tsconfig.json` files in your project (like `tsconfig.json`, `tsconfig.eslint.json`, `tsconfig.node.json`, etc...), you can use this parameter to specify which config Sheriff will pickup.
+However, if you have multiple `tsconfig.json` files in your project (like `tsconfig.json`, `tsconfig.eslint.json`, `tsconfig.node.json`, etc...), you can use this parameter to specify which config Sheriff will pick up.
 
-You can pass it a path as a string (or a list of paths as a array of strings, see: [one-tsconfigjson-per-package](https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root)).
+You can pass it a path as a string (or a list of paths as a array of strings, see: [One `tsconfig.json` per package](https://typescript-eslint.io/troubleshooting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root)).
 
 Example:
 
@@ -384,8 +376,8 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions));
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+  </TabItem>
+  <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
@@ -413,15 +405,15 @@ export default tseslint.config(sheriff(sheriffOptions));
 
 #### `pathsOverrides.tests`
 
-By default, Sheriff will apply Jest or Vitest rules only on specific files.
+By default, Sheriff will only apply Jest or Vitest rules on specific files.
 
 <CodeBlock language="ts">
   {JSON.stringify(testsFilePatterns, null, 2)}
 </CodeBlock>
 
-This setting overrides this default.
+This setting overrides the default.
 
-It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax.
+It accepts an array of filepaths, and supports [minimatch](https://github.com/isaacs/minimatch) syntax.
 
 Example:
 
@@ -454,8 +446,8 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions));
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+  </TabItem>
+  <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
@@ -488,15 +480,13 @@ export default tseslint.config(sheriff(sheriffOptions));
 
 #### `pathsOverrides.playwrightTests`
 
-By default, Sheriff will apply Playwright rules only on specific files.
+By default, Sheriff will only apply Playwright rules on specific files.
 
-<CodeBlock language="ts">
-  {JSON.stringify(allJsExtensions, null, 2)}
-</CodeBlock>
+<CodeBlock language="ts">{JSON.stringify(allJsExtensions, null, 2)}</CodeBlock>
 
-This setting overrides this default.
+This setting overrides the default.
 
-It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax.
+It accepts an array of filepaths, and supports [minimatch](https://github.com/isaacs/minimatch) syntax.
 
 Example:
 
@@ -529,8 +519,8 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions));
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+  </TabItem>
+  <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
@@ -561,15 +551,16 @@ export default tseslint.config(sheriff(sheriffOptions));
   </TabItem>
 </Tabs>
 
-### Customizing the `no-restricted-syntax`
+### Customizing the `no-restricted-syntax` options
 
-ESLint provides a very powerful rule called [`no-restricted-syntax`](https://eslint.org/docs/latest/rules/no-restricted-syntax). It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to forbid.
-Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, you can customize it in different ways.
+ESLint provides a very powerful rule called [`no-restricted-syntax`](https://eslint.org/docs/latest/rules/no-restricted-syntax). It accepts an array of objects. Each object represents a specific syntax feature that you want to forbid.
+Sheriff already comes with a preconfigured `no-restricted-syntax` entry. However, you can customize it in a few different ways.
 
 #### Override
 
 Override the rule in full.<br/ >
-You provide your own `no-restricted-syntax` rule and it will override the Sheriff one. You can do this as you normally would, appending the rule to the `FlatConfig` array, after Sheriff.
+You can add `no-restricted-syntax` to a configuration object of your own to fully override the Sheriff one.
+You can do this as you normally would, appending the rule to the configuration array after Sheriff.
 
 Example:
 
@@ -590,22 +581,20 @@ const sheriffOptions = {
   vitest: false,
 };
 
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      "no-restricted-syntax": [
-        2,
-        // highlight-start
-        // your custom rules here...
-        // highlight-end
-      ],
-    },
-  }
-);
+export default tseslint.config(sheriff(sheriffOptions), {
+  rules: {
+    "no-restricted-syntax": [
+      2,
+      // highlight-start
+      // Your custom rules here…
+      // highlight-end
+    ],
+  },
+});
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+  </TabItem>
+  <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
@@ -621,18 +610,16 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      "no-restricted-syntax": [
-        2,
-        // highlight-start
-        // your custom rules here...
-        // highlight-end
-      ],
-    },
-  }
-);
+export default tseslint.config(sheriff(sheriffOptions), {
+  rules: {
+    "no-restricted-syntax": [
+      2,
+      // highlight-start
+      // Your custom rules here…
+      // highlight-end
+    ],
+  },
+});
 ```
 
   </TabItem>
@@ -640,8 +627,8 @@ export default tseslint.config(sheriff(sheriffOptions),
 
 #### Extend
 
-Conveniently, Sheriff exports it's own `no-restricted-syntax` entry as the `baseNoRestrictedSyntaxRules` array.
-To extend the Sheriff entry of `no-restricted-syntax`, you can use the Javascript spread syntax.
+Conveniently, Sheriff exports its own `no-restricted-syntax` entry as the `baseNoRestrictedSyntaxRules` array.
+To extend Sheriff’s entry of `no-restricted-syntax`, you can use the JavaScript spread syntax.
 
 Example:
 
@@ -649,7 +636,11 @@ Example:
   <TabItem value="JS" label="JS">
 
 ```js title="eslint.config.js"
-import { baseNoRestrictedSyntaxRules, sheriff, tseslint } from "eslint-config-sheriff";
+import {
+  baseNoRestrictedSyntaxRules,
+  sheriff,
+  tseslint,
+} from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: false,
@@ -659,29 +650,32 @@ const sheriffOptions = {
   remeda: false,
   playwright: false,
   jest: false,
-  vitest: false
+  vitest: false,
 };
 
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      "no-restricted-syntax": [
-        2,
-        // highlight-start
-        ...baseNoRestrictedSyntaxRules,
-        // your custom rules here...
-        // highlight-end
-      ],
-    },
-  }
-);
+export default tseslint.config(sheriff(sheriffOptions), {
+  rules: {
+    "no-restricted-syntax": [
+      2,
+      // highlight-start
+      ...baseNoRestrictedSyntaxRules,
+      // Your custom rules here…
+      // highlight-end
+    ],
+  },
+});
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+  </TabItem>
+  <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
-import { baseNoRestrictedSyntaxRules, sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
+import {
+  baseNoRestrictedSyntaxRules,
+  sheriff,
+  type SheriffSettings,
+  tseslint,
+} from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -691,22 +685,20 @@ const sheriffOptions: SheriffSettings = {
   remeda: false,
   playwright: false,
   jest: false,
-  vitest: false
+  vitest: false,
 };
 
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      "no-restricted-syntax": [
-        2,
-        // highlight-start
-        ...baseNoRestrictedSyntaxRules,
-        // your custom rules here...
-        // highlight-end
-      ],
-    },
-  }
-);
+export default tseslint.config(sheriff(sheriffOptions), {
+  rules: {
+    "no-restricted-syntax": [
+      2,
+      // highlight-start
+      ...baseNoRestrictedSyntaxRules,
+      // Your custom rules here…
+      // highlight-end
+    ],
+  },
+});
 ```
 
   </TabItem>
@@ -714,8 +706,9 @@ export default tseslint.config(sheriff(sheriffOptions),
 
 #### Shrink
 
-Conveniently, Sheriff exports it's own `no-restricted-syntax` entry as the `baseNoRestrictedSyntaxRules` array.<br/>
-To shrink the Sheriff entry of `no-restricted-syntax`, you can use the Javascript [toSpliced()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced) method to remove the entries that you don't like.<br/>
+Conveniently, Sheriff exports its own `no-restricted-syntax` entry as the `baseNoRestrictedSyntaxRules` array.<br />
+To shrink Sheriff’s entry of `no-restricted-syntax`, you can use the [`Array#toSpliced()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced) method
+to remove entries you dislike.<br />
 Every entry prints the index of itself at the end of the `message` property, so you can easily identify which one you want to remove.
 
 Example:
@@ -743,7 +736,7 @@ export default tseslint.config(sheriff(sheriffOptions),
       "no-restricted-syntax": [
         2,
         // highlight-start
-        ...baseNoRestrictedSyntaxRules.toSpliced(2, 1) // this will result in baseNoRestrictedSyntaxRules without the third element.
+        ...baseNoRestrictedSyntaxRules.toSpliced(2, 1) // This results in `baseNoRestrictedSyntaxRules` without the third element.
         // highlight-end
       ],
     },
@@ -751,8 +744,8 @@ export default tseslint.config(sheriff(sheriffOptions),
 );
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+  </TabItem>
+  <TabItem value="TS" label="TS">
 
 ```ts title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
@@ -774,7 +767,7 @@ export default tseslint.config(sheriff(sheriffOptions),
       "no-restricted-syntax": [
         2,
         // highlight-start
-        ...baseNoRestrictedSyntaxRules.toSpliced(2, 1) // this will result in baseNoRestrictedSyntaxRules without the third element.
+        ...baseNoRestrictedSyntaxRules.toSpliced(2, 1) // This results in `baseNoRestrictedSyntaxRules` without the third element.
         // highlight-end
       ],
     },

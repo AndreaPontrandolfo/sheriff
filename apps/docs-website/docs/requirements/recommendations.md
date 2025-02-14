@@ -5,10 +5,10 @@ description: You probably need this too
 
 # Recommendations
 
-- [Node >=22](https://nodejs.org/en/)
+- [Node.js >=22.0.0](https://nodejs.org/en/)
 - [ESLint >=9.19.0](https://eslint.org/)
-- [Typescript >= 5.0.0](https://www.typescriptlang.org/)
-- [VScode](https://code.visualstudio.com/)
-- [VScode eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [VScode prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- Either `strict: true` or at least `strictNullChecks: true` in `tsconfig`. Some `@typescript/eslint` rules requires `strictNullChecks` turned on. This shouldn't be a problem because Sheriff is meant to be used with `strict` turned on anyway
+- [Typescript >=5.0.0](https://www.typescriptlang.org/)
+- [VS Code](https://code.visualstudio.com/)
+- [VS Code ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [VS Code Prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- `compilerOptions.strict: true` in your `tsconfig.json`

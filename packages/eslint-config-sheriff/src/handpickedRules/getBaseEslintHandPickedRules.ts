@@ -126,13 +126,13 @@ export const getBaseEslintHandPickedRules = () => {
     ],
     'no-restricted-syntax': [2, ...getIndexedBaseNoRestrictedSyntaxRules()],
     'no-restricted-globals': [2, ...confusingBrowserGlobals],
-    'no-return-await': 0, // we are using the @typescript/eslint version
-    'no-use-before-define': 0, // we are using the @typescript/eslint version
-    'no-unused-expressions': 0, // we are using the @typescript/eslint version
-    'no-empty-function': 0, // we are using the @typescript/eslint version
-    'dot-notation': 0, // we are using the @typescript/eslint version
-    'no-shadow': 0, // we are using the @typescript/eslint version
-    'default-param-last': 0, // we are using the @typescript/eslint version
+    'no-return-await': 0, // we are using the typescript-eslint version
+    'no-use-before-define': 0, // we are using the typescript-eslint version
+    'no-unused-expressions': 0, // we are using the typescript-eslint version
+    'no-empty-function': 0, // we are using the typescript-eslint version
+    'dot-notation': 0, // we are using the typescript-eslint version
+    'no-shadow': 0, // we are using the typescript-eslint version
+    'default-param-last': 0, // we are using the typescript-eslint version
     'arrow-body-style': 0, // we are using the eslint-plugin-arrow-return-style version
   } as const satisfies TSESLint.FlatConfig.Rules;
 };

@@ -24,6 +24,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 This release introduces key updates to Sheriff:
 
 ## ESLint V9 APIs Compatibility
+
 Sheriff now fully supports ESLint V9 APIs for all plugins. [Milestone](https://github.com/AndreaPontrandolfo/sheriff/milestone/1?closed=1).
 
 There were some [problematic](https://github.com/facebook/react/issues/28313) plugins that could cause crashes in some instances, like [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) and [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import/tree/main).
@@ -31,7 +32,8 @@ There were some [problematic](https://github.com/facebook/react/issues/28313) pl
 Now all plugins have been updated to their V9-compatible versions, resolving these issues.
 
 ## Added `eslint-plugin-remeda`
-Added support for [remeda](https://github.com/remeda/remeda) with [eslint-plugin-remeda](https://github.com/AndreaPontrandolfo/eslint-plugin-remeda).
+
+Added support for [Remeda](https://github.com/remeda/remeda) with [eslint-plugin-remeda](https://github.com/AndreaPontrandolfo/eslint-plugin-remeda).
 
 If you use Remeda instead of Lodash, you should now disable `lodash` in the config and enable `remeda`.
 
@@ -45,7 +47,7 @@ const sheriffOptions = {
   // highlight-start
   lodash: false,
   remeda: true,
-// highlight-end
+  // highlight-end
   playwright: false,
   jest: false,
   vitest: false,
@@ -55,6 +57,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 ```
 
 ## Unified Type Exports
+
 The types previously exported from `@sherifforg/types` are now exported directly from `eslint-config-sheriff`.
 
 The `@sherifforg/types` package is now deprecated. You can safely remove it and update your imports accordingly.
@@ -63,11 +66,11 @@ The `@sherifforg/types` package is now deprecated. You can safely remove it and 
 
 Sheriff moved away from [eslint-ts-patch](https://github.com/antfu/eslint-ts-patch) and adopted the [native support for TypeScript](https://eslint.org/blog/2024/08/eslint-v9.9.0-released/#experimental-typescript-configuration-files) in the `eslint.config.ts` file.
 
-You can enable it by setting `unstable_ts_config`, both in the CLI commands and in the [VSCode extension settings](https://www.eslint-config-sheriff.dev/docs/vscode-support#eslintconfigts-support).
+You can enable it by setting `unstable_ts_config`, both in the CLI commands and in the [VS Code extension settings](https://www.eslint-config-sheriff.dev/docs/vscode-support#eslintconfigts-support).
 
 ## New syntax for bootstrapping Sheriff projects
 
-Now you can do `pnpm create @sherifforg/config` instead of `pnpm dlx create-sheriff-config` to bootstrap a new Sheriff project.
+Now you can run `pnpm create @sherifforg/config` instead of `pnpm dlx create-sheriff-config` to bootstrap a new Sheriff project.
 
 ## Minor improvements
 
@@ -81,7 +84,7 @@ For more details, see the [release notes](https://github.com/AndreaPontrandolfo/
 
 ## Acknowledgments
 
-Shoutout to [all the people that contributed](https://github.com/AndreaPontrandolfo/sheriff/graphs/contributors) to these releases and special big thanks to [lishaduck](https://github.com/lishaduck) for his big help on a lot of Issues and PRs!
+Shoutout to [all the people that contributed](https://github.com/AndreaPontrandolfo/sheriff/graphs/contributors) to these releases and a special big thanks to [lishaduck](https://github.com/lishaduck) for his help on a lot of issues and PRs!
 
 ## How to Contribute
 
@@ -91,6 +94,3 @@ Sheriff thrives on community support. Here is how you can help:
 - Give a Star: Found Sheriff useful? ⭐ the project on GitHub to show your support.
 
 Your support helps Sheriff move forward. Thank you!
-
-
-

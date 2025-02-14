@@ -8,12 +8,12 @@ sidebar_position: 15
 
 The Sheriff CLI is composed of 2 packages:
 
-- `@sherifforg/create-config`: **generates** the boilerplate to setup Sheriff in your project
-- `@sherifforg/cli`: **self-lint** the Sheriff configuration
+- `@sherifforg/create-config` **generates** the boilerplate to setup Sheriff in your project
+- `@sherifforg/cli` **lints** the Sheriff configuration
 
-The `@sherifforg/cli` is invoked in the CLI with the `sheriff` command.
+The `@sherifforg/cli` is invoked via the `sheriff` command.
 
-It is advised to integrate the `@sherifforg/cli` in your CI pipelines to ensure that the Sheriff configuration is always correct and up-to-date, but you can also integarte it into pre-commit hooks if that's your preference.
+It is advised to integrate `@sherifforg/cli` in your CI pipelines to ensure that the Sheriff configuration is always correct and up-to-date, but you can also integrate it into pre-commit hooks if that’s your preference.
 
 ## Usage
 
@@ -26,7 +26,7 @@ npm i -D @sherifforg/cli
 And then run it:
 
 ```bash npm2yarn
-npm run sheriff
+npx sheriff
 ```
 
 ## How it works
@@ -66,15 +66,15 @@ export default tseslint.config(sheriff(sheriffOptions));
 
 :::warning
 
-Sheriff will scan the config file trying to find a variable named **exactly** `sheriffOptions`. If your configuration object variable is called in any other way, nothing will work. Make sure the variable is named `sheriffOptions`.
+Sheriff will scan the config file trying to find a variable named **exactly** `sheriffOptions`. If your configuration object variable is called anything else, the CLI will fail to flag any issues. Ensure the variable is named `sheriffOptions`.
 
 :::
 
 ## Options
 
-The `@sherifforg/cli` is very flexible and offers a variety of options to customize it's behavior. Look at the [API reference](./cli-reference#sherifforgcli) for detailed info on the available options.
+`@sherifforg/cli` is very flexible and offers a variety of options to customize it’s behavior. Look at the [API reference](./cli-reference#sherifforgcli) for the available options.
 
 You can:
 
-- skip the check for a specific dependency. This is useful in scenarios where the mismatch is intended, meaning that you don't want Sheriff linting support for a specific dependency even if Sheriff support is available
-- let the process finish without throwing erros even if problems with the dependencies are found. In this case the CLI will just signal problems as warnings
+- skip the check for a specific dependency. This is useful in scenarios where a mismatch is intended, i.e. you don't want Sheriff linting support for a specific dependency, even if Sheriff support is available
+- let the process finish without throwing errors even if problems with the dependencies are found. In this case, the CLI will convert all problems to warnings
