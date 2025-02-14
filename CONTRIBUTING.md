@@ -21,7 +21,7 @@ Useful contributions include fixing bugs or inconsistencies, adding or proposing
 
 ### Opening a new Pull Request
 
-- **Contributions orientation**: if you want to contribute but don't know where to start, consider checking the [good first issue](https://github.com/AndreaPontrandolfo/sheriff/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) labeled issues. Alternatively, consider checking the [help wanted](https://github.com/AndreaPontrandolfo/sheriff/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) labeled issues.
+- **Contributions orientation**: if you want to contribute, but don't know where to start, consider checking for issues labels ["good first issue"](https://github.com/AndreaPontrandolfo/sheriff/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22). Alternatively, consider checking for issues labeled ["help wanted"](https://github.com/AndreaPontrandolfo/sheriff/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22).
 - **Issues as pre-requirement policy**: Please ensure there is an open issue before creating a pull request. If an issue does not exist, you need to open one first. After this, the maintainers will discuss your proposed changes and provide feedback. If the issue is approved, you can proceed by creating a pull request. Approved issues will be marked with the green `approved` label. If an issue hasn't been approved yet (it still has the `triaging` label), and you create a pull request, it will be immediately declined.
 - **Small and focused**: Keep your pull requests as small and as focused as possible. This will make it easier for maintainers to review and merge your changes.
 - **Pass quality checks**: Pull requests will only be merged if they pass the quality checks performed by the `pnpm merge-checks` command.
@@ -32,40 +32,40 @@ Useful contributions include fixing bugs or inconsistencies, adding or proposing
 
 ### Requirements
 
-- make sure Git is installed in your system
-- make sure Nodejs 20.10.X is installed in your system
-- make sure [Pnpm is installed](https://pnpm.io/installation) in your system. If you are not sure how to install it, use corepack:
+- Ensure Git is installed in your system.
+- Ensure Node.js 20.10.x is installed in your system.
+- Ensure [pnpm is installed](https://pnpm.io/installation) in your system. If you are not sure how to install it, use Corepack:
 
-  ```bash
+  ```sh
   corepack enable
   ```
 
 ### Step-by-Step Guide
 
 1. Start by forking this repository to your own GitHub account.
-2. Clone your fork locally with:
+1. Clone your fork locally with:
 
-   ```bash
+   ```sh
    git clone https://github.com/<your-username>/sheriff.git
    ```
 
-3. Install all required dependencies using:
+1. Install all required dependencies using:
 
-   ```bash
+   ```sh
    pnpm i
    ```
 
-4. Create a new branch for your feature or fix:
+1. Create a new branch for your feature or fix:
 
-   ```bash
+   ```sh
    git checkout -b new-feature
    ```
 
-5. Implement your changes in the codebase.
+1. Implement your changes in the codebase.
 
    - If you need to update the documentation website, you can run it locally with:
 
-     ```bash
+     ```sh
      pnpm dev
      ```
 
@@ -73,14 +73,14 @@ Useful contributions include fixing bugs or inconsistencies, adding or proposing
 
    - To test `@sherifforg/create-config`, run:
 
-     ```bash
+     ```sh
      pnpm playground
      ```
 
      or:
 
-     ```bash
-       pnpm playground:mimic-monorepo
+     ```sh
+     pnpm playground:mimic-monorepo
      ```
 
    - To test `@sherifforg/cli`, run:
@@ -89,26 +89,24 @@ Useful contributions include fixing bugs or inconsistencies, adding or proposing
      playground:cli-checks
      ```
 
-6. If the PR contains a feature or a bugfix (meaning that it's not a chore, a documentation update or a refactoring), add a `changeset`:
+1. If the PR contains a feature or a bugfix (meaning that it's not a chore, a documentation update or a refactoring), add a `changeset`:
 
-   ```bash
+   ```sh
    pnpm changeset
    ```
 
-7. Write clear, concise commit messages. Make sure to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification:
+1. Write clear, concise commit messages. Make sure to follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification:
 
-   ```bash
+   ```sh
    git commit -am 'feat(context): added feature'
    ```
 
-8. Push your branch to your fork:
+1. Push your branch to your fork:
 
-   ```bash
+   ```sh
    git push origin new-feature
    ```
 
-9.
-
-10. **Open a Pull Request**: Submit your changes by creating a pull request to the main repository.
+1. **Open a Pull Request**: Submit your changes by creating a pull request to the main repository.
 
 Thank you for helping make Sheriff a better project for everyone!

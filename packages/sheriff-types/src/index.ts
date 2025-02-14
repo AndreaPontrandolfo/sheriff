@@ -67,15 +67,18 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
    */
   pathsOverrides?: {
     /**
-     * With this setting, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config Sheriff will pickup. You can also specify a list of paths, see: https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root.
+     *
+     * With this setting, if you have multiple `tsconfig.json` files in your project (like `tsconfig.json`, `tsconfig.eslint.json`, `tsconfig.node.json`, etc...), you can specify which config Sheriff will pick up.
+     *
+     * You pass it a path as a string (or a list of paths as a array of strings, see: [One `tsconfig.json` per package](https://typescript-eslint.io/troubleshooting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root)).
      */
     tsconfigLocation?: string | string[];
     /**
-     * This setting overrides the default Sheriff filepaths for Vitest and Jest linting. It accepts an array of filepaths, dictaced by minimatch syntax. Sheriff will apply Jest or Vitest rules only on these files.
+     * This setting overrides the default Sheriff filepaths for Vitest and Jest linting. It accepts an array of filepaths, and supports [minimatch](https://github.com/isaacs/minimatch) syntax. Sheriff will apply Jest or Vitest rules only on these files.
      */
     tests?: string[];
     /**
-     * This setting overrides the default Sheriff filepaths for Playwright linting. It accepts an array of filepaths, dictaced by minimatch syntax. Sheriff will apply Playwright rules only on these files.
+     * This setting overrides the default Sheriff filepaths for Playwright linting. It accepts an array of filepaths, and supports [minimatch](https://github.com/isaacs/minimatch) syntax. Sheriff will apply Playwright rules only on these files.
      */
     playwrightTests?: string[];
   };
@@ -93,7 +96,7 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
     inheritedFromGitignore?: boolean;
   };
   /**
-   * This setting accepts an array of filepaths, dictaced by minimatch syntax. Only the matching files found in this array will be linted. All other files will be ignored. This is useful if you want to lint only a subset of your project.
+   * This setting accepts an array of filepaths, and supports [minimatch](https://github.com/isaacs/minimatch) syntax. Only the matching files found in this array will be linted. All other files will be ignored. This is useful if you want to lint only a subset of your project.
    */
   files?: string[];
 }

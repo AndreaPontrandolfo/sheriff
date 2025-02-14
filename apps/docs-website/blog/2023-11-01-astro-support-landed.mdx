@@ -21,19 +21,25 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 
 ## Sheriff release v16
 
-Sheriff continues his quest to conquer the JS ecosystem.
+Sheriff continues its quest to conquer the JS ecosystem.
 
 ## Sheriff extends support for Astro
 
-This release introduces support for [Astro.js](https://astro.build/), thanks to [ota-meshi](https://github.com/ota-meshi) libraries, [eslint-plugin-astro](https://github.com/ota-meshi/eslint-plugin-astro) and [astro-eslint-parser](https://github.com/ota-meshi/astro-eslint-parser).
+This release introduces support for [Astro](https://astro.build/), thanks to [ota-meshi](https://github.com/ota-meshi)’s libraries, [eslint-plugin-astro](https://github.com/ota-meshi/eslint-plugin-astro) and [astro-eslint-parser](https://github.com/ota-meshi/astro-eslint-parser).
 
 The integration is provided out-of-the-box, meaning nothing has to be configured on the user side. Sheriff will automatically detect Astro projects and run the appropriate rules. All you have to do is upgrade Sheriff to this version.
+
+:::important
+
+As of Sheriff v19, Astro support has been moved behind an option.
+
+:::
 
 This integration presented significant challenges, as the pertinent ESLint plugins are still in experimental status and also because this integration provides JSX-relevant ESLint rules inside `.astro` files, meaning that we are now parsing `.astro` files (in a Typescript-aware way) and provide Astro and React relevant rules inside them. This has not been trivial.
 
 ## Sheriff meets Algolia
 
-The Sheriff documentation website has now a full-text search powered by [Algolia Docsearch](https://docsearch.algolia.com/), generously provided for free by the open-source projects sponsorship by [Algolia](https://www.algolia.com/) . The documentation is now easier than ever to navigate.
+The Sheriff documentation website has now a full-text search powered by [Algolia Docsearch](https://docsearch.algolia.com/), generously provided for free by the open-source projects sponsorship by [Algolia](https://www.algolia.com/). The documentation is now easier than ever to navigate.
 
 The "Ask AI" feature, instead, didn't make it in this release. There aren't yet solid solutions in this space, for now.
 
@@ -44,7 +50,7 @@ Finally, as the last treat, my newest `eslint-plugin`, [fsecond](https://github.
 Fsecond adds 2 new rules:
 
 - `fsecond/prefer-destructured-optionals`: enforce placing optional parameters to the end of the function signature as destructured objects
-- `fsecond/valid-event-listener`: enforce using a `useEventListener` utility function instead of `addEventListener` methods, or, optionally, you can disable that behaviour and the rule will just warn against incorrect usage of addEventListener methods
+- `fsecond/valid-event-listener`: enforce using a `useEventListener` utility function instead of `addEventListener` methods, or, optionally, you can disable that behavior and the rule will just warn against incorrect usage of addEventListener methods
 
 ## What's Next
 
@@ -58,6 +64,6 @@ The commitment to improving Sheriff remains strong. Here's a glimpse of what's o
 
 ## Conclusion
 
-As always, if you feel like contributing, feel free to propose suggestions or pull-requests. And if you just want to show appreciation, leave a star on Github.
+As always, if you feel like contributing, feel free to propose suggestions or pull-requests. And if you just want to show appreciation, leave a star on GitHub.
 
 Sheriff is actively dedicated to becoming even more adaptable and feature-rich. Stay tuned for further updates and enhancements!

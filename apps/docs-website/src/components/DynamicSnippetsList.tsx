@@ -1,7 +1,7 @@
 import type { JSX } from 'react';
 
 interface DynamicSnippetsListProps {
-  paths: string[];
+  paths: readonly string[];
 }
 
 export const DynamicSnippetsList = ({
