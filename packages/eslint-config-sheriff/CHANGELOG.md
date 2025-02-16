@@ -1,5 +1,12 @@
 # eslint-config-sheriff
 
+## 26.0.0
+
+### Major Changes
+
+- cd80b61: feat(config): Implemented eslint-no-restricted
+  Closes #375
+
 ## 25.8.1
 
 ### Patch Changes
