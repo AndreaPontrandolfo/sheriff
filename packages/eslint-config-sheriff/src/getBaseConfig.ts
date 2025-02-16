@@ -1,3 +1,4 @@
+import createNoRestrictedProperties from 'eslint-no-restricted/properties';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import fsecond from 'eslint-plugin-fsecond';
 import pluginImport from 'eslint-plugin-import';
@@ -31,6 +32,50 @@ import { typescriptHandPickedRules } from './handpickedRules/typescriptHandPicke
 import { unicornHandPickedRules } from './handpickedRules/unicornHandPickedRules';
 import { getLanguageOptionsTypescript } from './utils/getLanguageOptionsTypescript';
 import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
+import { noRestrictedSyntax } from './utils/noRestrictedSyntax';
+
+const baseNoRestrictedPropertiesRules = [
+  {
+    name: 'isFinite',
+    message: 'Please use Number.isFinite instead',
+    property: [
+      {
+        object: 'global',
+        property: 'isFinite',
+      },
+      {
+        object: 'self',
+        property: 'isFinite',
+      },
+      {
+        object: 'window',
+        property: 'isFinite',
+      },
+    ],
+  },
+  {
+    name: 'isNaN',
+    message: 'Please use Number.isNaN instead',
+    property: [
+      {
+        object: 'global',
+        property: 'isNaN',
+      },
+      {
+        object: 'self',
+        property: 'isNaN',
+      },
+      {
+        object: 'window',
+        property: 'isNaN',
+      },
+    ],
+  },
+];
+
+const noRestrictedProperties = createNoRestrictedProperties(
+  ...baseNoRestrictedPropertiesRules,
+);
 
 export const getBaseConfig = (
   userConfigChoices: SheriffSettings,
@@ -61,6 +106,14 @@ export const getBaseConfig = (
         ...typescriptHandPickedRules,
         ...getTsNamingConventionRule({ isTsx: false }),
       },
+    },
+    {
+      extends: [noRestrictedSyntax.configs.recommended],
+      files: [supportedFileTypes],
+    },
+    {
+      extends: [noRestrictedProperties.configs.recommended],
+      files: [supportedFileTypes],
     },
     {
       files: [`**/*.{${tsExtensions},${tsxExtensions},astro}`],
