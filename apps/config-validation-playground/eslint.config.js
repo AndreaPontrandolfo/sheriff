@@ -16,6 +16,5 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions), {
   rules: {
     'astro/semi': 0,
-    'astro/jsx-a11y/alt-text': 2,
   },
 });
