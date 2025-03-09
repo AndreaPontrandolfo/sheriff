@@ -261,7 +261,7 @@ importers:
         specifier: ^1.3.0
         version: 1.3.1(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.2)
       eslint-plugin-astro:
-        specifier: ^1.2.3
+        specifier: ^1.3.1
         version: 1.3.1(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.2)
       eslint-plugin-fsecond:
         specifier: ^1.1.1
@@ -385,7 +385,7 @@ importers:
         specifier: ^1.3.0
         version: 1.3.1(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.2)
       eslint-plugin-astro:
-        specifier: ^1.2.3
+        specifier: ^1.3.1
         version: 1.3.1(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.2)
       eslint-plugin-fsecond:
         specifier: ^1.1.1
@@ -469,6 +469,9 @@ importers:
       '@types/node':
         specifier: ^22.10.3
         version: 22.10.3
+      '@typescript-eslint/parser':
+        specifier: ^8.26.0
+        version: 8.26.0(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.2)
       '@typescript-eslint/utils':
         specifier: ^8.26.0
         version: 8.26.0(eslint@9.19.0(jiti@2.4.2))(typescript@5.7.2)

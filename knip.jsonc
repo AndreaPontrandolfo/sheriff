@@ -11,6 +11,6 @@
     "@turbo/gen",
     "eslint-import-resolver-typescript",
     "eslint-config-sheriff",
+    "@typescript-eslint/parser",
   ],
-  "ignoreBinaries": ["only-allow"],
 }

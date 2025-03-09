@@ -54,8 +54,8 @@ export const getReactConfig = (
       },
     },
     {
+      extends: [reactAccessibility.flatConfigs.recommended],
       files: [`**/*{${allJsxExtensions}}`],
-      ...reactAccessibility.flatConfigs.recommended,
     },
     {
       files: [supportedFileTypes],
