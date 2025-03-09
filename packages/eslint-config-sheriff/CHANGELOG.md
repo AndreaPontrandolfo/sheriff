@@ -1,5 +1,17 @@
 # eslint-config-sheriff
 
+## 27.0.0
+
+### Major Changes
+
+- 342025e: feat(config): reworked astro config
+  Fixes [#335](https://github.com/AndreaPontrandolfo/sheriff/issues/335)
+
+### Minor Changes
+
+- d83fe89: feat(config): Move Storybook support behind an option
+  Fixes [#355](https://github.com/AndreaPontrandolfo/sheriff/issues/355)
+
 ## 26.0.0
 
 ### Major Changes

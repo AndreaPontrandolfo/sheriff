@@ -1,5 +1,12 @@
 # @sherifforg/cli
 
+## 9.7.0
+
+### Minor Changes
+
+- d83fe89: feat(config): Move Storybook support behind an option
+  Fixes [#355](https://github.com/AndreaPontrandolfo/sheriff/issues/355)
+
 ## 9.6.0
 
 ### Minor Changes
