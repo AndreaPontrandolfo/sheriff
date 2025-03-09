@@ -85,14 +85,6 @@ export const getReactConfig = (
         'fsecond/valid-event-listener': 2,
       },
     },
-    // Specific overrides for storybook
-    {
-      files: ['**/*.stories.tsx'],
-      plugins: { 'react-refresh': reactRefresh },
-      rules: {
-        'react-refresh/only-export-components': 0,
-      },
-    },
     // Specific overrides for astro
     {
       files: ['**/*.astro'],

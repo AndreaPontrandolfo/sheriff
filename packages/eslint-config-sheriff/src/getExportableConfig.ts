@@ -8,6 +8,7 @@ import { getAstroConfig } from './getAstroConfig';
 import { getBaseConfig } from './getBaseConfig';
 import { getJestConfig } from './getJestConfig';
 import { getReactConfig } from './getReactConfig';
+import { getStorybookConfig } from './getStorybookConfig';
 import { getVitestConfig } from './getVitestConfig';
 import { lodashConfig } from './lodashConfig';
 import { nextjsConfig } from './nextjsConfig';
@@ -22,7 +23,9 @@ export const getExportableConfig = (
   let exportableConfig: TSESLint.FlatConfig.ConfigArray =
     getBaseConfig(userConfigChoices);
 
-  if (userConfigChoices.react || userConfigChoices.next) {
+  const hasReact = Boolean(userConfigChoices.react);
+
+  if (hasReact || userConfigChoices.next) {
     // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
     exportableConfig.push(
       ...getReactConfig(userConfigChoices.pathsOverrides?.tsconfigLocation),
@@ -66,7 +69,6 @@ export const getExportableConfig = (
   if (userConfigChoices.astro) {
     const customTSConfigPath =
       userConfigChoices.pathsOverrides?.tsconfigLocation;
-    const hasReact = Boolean(userConfigChoices.react);
 
     exportableConfig.push(...getAstroConfig(hasReact, customTSConfigPath));
   }
@@ -75,6 +77,10 @@ export const getExportableConfig = (
     exportableConfig.push(
       ...getPlaywrightConfig(userConfigChoices.pathsOverrides?.playwrightTests),
     );
+  }
+
+  if (userConfigChoices.storybook) {
+    exportableConfig.push(...getStorybookConfig());
   }
 
   if (userConfigChoices.files) {

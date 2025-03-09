@@ -81,7 +81,7 @@
     "eslint-plugin-remeda": "^1.4.0",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "eslint-plugin-sonarjs": "^1.0.4",
-    "eslint-plugin-storybook": "^0.10.2",
+    "eslint-plugin-storybook": "^0.11.4",
     "eslint-plugin-tsdoc": "^0.2.17",
     "eslint-plugin-unicorn": "^56.0.1",
     "globals": "^15.11.0",

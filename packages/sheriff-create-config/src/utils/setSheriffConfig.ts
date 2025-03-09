@@ -13,7 +13,7 @@ export const setSheriffConfig = async (
 
   if (!root) {
     throwError(
-      "couldn't read the package.json. Every setting will be set to false",
+      "couldn't read the package.json. Every setting will be set to default values.",
     );
 
     return finalPluginsConfigurationSetup;
