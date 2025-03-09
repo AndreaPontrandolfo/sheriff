@@ -6,12 +6,10 @@ import jsdoc from 'eslint-plugin-jsdoc';
 import * as regexpPlugin from 'eslint-plugin-regexp';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import sonarjs from 'eslint-plugin-sonarjs';
-import storybook from 'eslint-plugin-storybook';
 import tsdoc from 'eslint-plugin-tsdoc';
 import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import { fixupPluginRules } from '@eslint/compat';
 import eslintJs from '@eslint/js';
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import {
@@ -84,16 +82,16 @@ export const getBaseConfig = (
 
   return tseslint.config(
     {
-      files: [supportedFileTypes],
       extends: [eslintJs.configs.recommended],
+      files: [supportedFileTypes],
     },
     {
       files: [supportedFileTypes],
       rules: getBaseEslintHandPickedRules(),
     },
     {
-      files: [supportedFileTypes],
       extends: tseslint.configs.strictTypeChecked,
+      files: [supportedFileTypes],
     },
     {
       files: [`**/*{${allJsExtensions}}`],
@@ -212,22 +210,6 @@ export const getBaseConfig = (
       rules: {
         'import/no-default-export': 0,
       },
-    },
-    {
-      files: [
-        '**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)',
-        '**/*.story.@(ts|tsx|js|jsx|mjs|cjs)',
-      ],
-      plugins: { storybook: fixupPluginRules(storybook) },
-      rules: {
-        ...storybook.configs['flat/recommended'][1].rules,
-        ...storybook.configs['flat/csf'][1].rules,
-        'import/no-default-export': 0,
-      },
-    },
-    {
-      files: ['**/.storybook/main.@(js|cjs|mjs|ts)'],
-      rules: { ...storybook.configs['flat/recommended'][2].rules },
     },
     {
       files: [supportedFileTypes],

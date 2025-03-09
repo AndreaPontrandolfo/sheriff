@@ -7,6 +7,7 @@ const sheriffOptions = {
   next: true,
   astro: true,
   playwright: true,
+  storybook: true,
   jest: false,
   vitest: true,
 };

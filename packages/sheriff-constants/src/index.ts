@@ -7,6 +7,7 @@ export const sheriffStartingOptions: SheriffConfigurablePlugins = {
   next: false,
   astro: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
 } as const;
@@ -18,6 +19,7 @@ export const configCombinationDefaultValues = {
   next: true,
   astro: true,
   playwright: true,
+  storybook: true,
   jest: false,
   vitest: true,
 } as const;
