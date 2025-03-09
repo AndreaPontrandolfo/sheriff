@@ -77,6 +77,7 @@ export const getAllRules = (
     ),
     ...prependRulesWithPluginName(simpleImportSort.rules, 'simple-import-sort'),
     ...prependRulesWithPluginName(pluginImport.rules, 'import'),
+    // @ts-expect-error
     ...prependRulesWithPluginName(storybook.rules, 'storybook'),
     ...prependRulesWithPluginName(astro.rules, 'astro'),
     ...(settings.react ? reactRulesCatalog : {}),

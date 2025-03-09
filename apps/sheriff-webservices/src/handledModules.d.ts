@@ -40,13 +40,6 @@ declare module 'eslint-plugin-jest' {
 
   export default config;
 }
-declare module 'eslint-plugin-storybook' {
-  const config: {
-    rules: Record<string, import('@sherifforg/types').RuleOptions>;
-  };
-
-  export default config;
-}
 declare module 'eslint-plugin-react*' {
   const config: {
     rules: Record<string, import('@sherifforg/types').RuleOptions>;

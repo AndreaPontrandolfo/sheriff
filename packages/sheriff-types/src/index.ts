@@ -52,6 +52,10 @@ export interface SheriffConfigurablePlugins {
    */
   playwright: boolean;
   /**
+   * Storybook support.
+   */
+  storybook: boolean;
+  /**
    * Jest support. Select this or vitest, not both.
    */
   jest: boolean;

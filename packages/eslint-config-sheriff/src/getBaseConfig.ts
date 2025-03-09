@@ -1,3 +1,4 @@
+import createNoRestrictedProperties from 'eslint-no-restricted/properties';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import fsecond from 'eslint-plugin-fsecond';
 import pluginImport from 'eslint-plugin-import';
@@ -5,15 +6,18 @@ import jsdoc from 'eslint-plugin-jsdoc';
 import * as regexpPlugin from 'eslint-plugin-regexp';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import sonarjs from 'eslint-plugin-sonarjs';
-import storybook from 'eslint-plugin-storybook';
 import tsdoc from 'eslint-plugin-tsdoc';
 import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import { fixupPluginRules } from '@eslint/compat';
 import eslintJs from '@eslint/js';
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
-import { allJsExtensions, supportedFileTypes } from '@sherifforg/constants';
+import {
+  allJsExtensions,
+  supportedFileTypes,
+  tsExtensions,
+  tsxExtensions,
+} from '@sherifforg/constants';
 import type { SheriffSettings } from '@sherifforg/types';
 import stylistic from '@stylistic/eslint-plugin';
 import type { TSESLint } from '@typescript-eslint/utils';
@@ -26,6 +30,50 @@ import { typescriptHandPickedRules } from './handpickedRules/typescriptHandPicke
 import { unicornHandPickedRules } from './handpickedRules/unicornHandPickedRules';
 import { getLanguageOptionsTypescript } from './utils/getLanguageOptionsTypescript';
 import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
+import { noRestrictedSyntax } from './utils/noRestrictedSyntax';
+
+const baseNoRestrictedPropertiesRules = [
+  {
+    name: 'isFinite',
+    message: 'Please use Number.isFinite instead',
+    property: [
+      {
+        object: 'global',
+        property: 'isFinite',
+      },
+      {
+        object: 'self',
+        property: 'isFinite',
+      },
+      {
+        object: 'window',
+        property: 'isFinite',
+      },
+    ],
+  },
+  {
+    name: 'isNaN',
+    message: 'Please use Number.isNaN instead',
+    property: [
+      {
+        object: 'global',
+        property: 'isNaN',
+      },
+      {
+        object: 'self',
+        property: 'isNaN',
+      },
+      {
+        object: 'window',
+        property: 'isNaN',
+      },
+    ],
+  },
+];
+
+const noRestrictedProperties = createNoRestrictedProperties(
+  ...baseNoRestrictedPropertiesRules,
+);
 
 export const getBaseConfig = (
   userConfigChoices: SheriffSettings,
@@ -34,16 +82,16 @@ export const getBaseConfig = (
 
   return tseslint.config(
     {
-      files: [supportedFileTypes],
       extends: [eslintJs.configs.recommended],
+      files: [supportedFileTypes],
     },
     {
       files: [supportedFileTypes],
       rules: getBaseEslintHandPickedRules(),
     },
     {
-      files: [supportedFileTypes],
       extends: tseslint.configs.strictTypeChecked,
+      files: [supportedFileTypes],
     },
     {
       files: [`**/*{${allJsExtensions}}`],
@@ -58,7 +106,15 @@ export const getBaseConfig = (
       },
     },
     {
+      extends: [noRestrictedSyntax.configs.recommended],
       files: [supportedFileTypes],
+    },
+    {
+      extends: [noRestrictedProperties.configs.recommended],
+      files: [supportedFileTypes],
+    },
+    {
+      files: [`**/*.{${tsExtensions},${tsxExtensions},astro}`],
       plugins: {
         tsdoc,
       },
@@ -156,22 +212,6 @@ export const getBaseConfig = (
       },
     },
     {
-      files: [
-        '**/*.stories.@(ts|tsx|js|jsx|mjs|cjs)',
-        '**/*.story.@(ts|tsx|js|jsx|mjs|cjs)',
-      ],
-      plugins: { storybook: fixupPluginRules(storybook) },
-      rules: {
-        ...storybook.configs['flat/recommended'][1].rules,
-        ...storybook.configs['flat/csf'][1].rules,
-        'import/no-default-export': 0,
-      },
-    },
-    {
-      files: ['**/.storybook/main.@(js|cjs|mjs|ts)'],
-      rules: { ...storybook.configs['flat/recommended'][2].rules },
-    },
-    {
       files: [supportedFileTypes],
       plugins: { jsdoc },
       rules: jsdocHandPickedRules,
@@ -187,7 +227,7 @@ export const getBaseConfig = (
       rules: { 'fsecond/prefer-destructured-optionals': 2 },
     },
     {
-      files: ['**/*.config.*'],
+      files: [`**/*.config.{${allJsExtensions}}`],
       rules: {
         'import/no-default-export': 0,
         'import/no-anonymous-default-export': 0,

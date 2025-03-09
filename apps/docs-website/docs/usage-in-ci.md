@@ -13,7 +13,7 @@ The Sheriff CLI is composed of 2 packages:
 
 The `@sherifforg/cli` is invoked in the CLI with the `sheriff` command.
 
-It is advised to integrate the `@sherifforg/cli` in your CI pipelines to ensure that the Sheriff configuration is always correct and up-to-date, but you can also integarte it into pre-commit hooks if that's your preference.
+It is advised to integrate the `@sherifforg/cli` in your CI pipelines to ensure that the Sheriff configuration is always correct and up-to-date, but you can also integrate it into pre-commit hooks if that's your preference.
 
 ## Usage
 

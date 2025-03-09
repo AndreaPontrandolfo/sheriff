@@ -38,6 +38,7 @@ const sheriffOptions = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
 };
@@ -61,6 +62,7 @@ const sheriffOptions: SheriffSettings = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
 };
@@ -91,6 +93,7 @@ const sheriffOptions = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
 };
@@ -118,6 +121,7 @@ const sheriffOptions: SheriffSettings = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
 };
@@ -150,6 +154,7 @@ const sheriffOptions = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
 };
@@ -177,6 +182,7 @@ const sheriffOptions: SheriffSettings = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
 };
@@ -240,6 +246,7 @@ const sheriffOptions = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
   // highlight-start
@@ -265,6 +272,7 @@ const sheriffOptions: SheriffSettings = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
   // highlight-start
@@ -299,6 +307,7 @@ const sheriffOptions = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
   // highlight-start
@@ -324,6 +333,7 @@ const sheriffOptions: SheriffSettings = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
   // highlight-start
@@ -373,6 +383,7 @@ const sheriffOptions = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
   pathsOverrides: {
@@ -397,6 +408,7 @@ const sheriffOptions: SheriffSettings = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
   pathsOverrides: {
@@ -438,6 +450,7 @@ const sheriffOptions = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
   pathsOverrides: {
@@ -467,6 +480,7 @@ const sheriffOptions: SheriffSettings = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
   pathsOverrides: {
@@ -513,6 +527,7 @@ const sheriffOptions = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
   pathsOverrides: {
@@ -542,6 +557,7 @@ const sheriffOptions: SheriffSettings = {
   lodash: false,
   remeda: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
   pathsOverrides: {
@@ -561,226 +577,3 @@ export default tseslint.config(sheriff(sheriffOptions));
   </TabItem>
 </Tabs>
 
-### Customizing the `no-restricted-syntax`
-
-ESLint provides a very powerful rule called [`no-restricted-syntax`](https://eslint.org/docs/latest/rules/no-restricted-syntax). It accepts an array of objects. Each object represent a specific Javascript syntax feature that you may want to forbid.
-Sheriff already come with a preconfigured `no-restricted-syntax` entry. However, you can customize it in different ways.
-
-#### Override
-
-Override the rule in full.<br/ >
-You provide your own `no-restricted-syntax` rule and it will override the Sheriff one. You can do this as you normally would, appending the rule to the `FlatConfig` array, after Sheriff.
-
-Example:
-
-<Tabs groupId="tsorjs">
-  <TabItem value="JS" label="JS">
-
-```js title="eslint.config.js"
-import { sheriff, tseslint } from "eslint-config-sheriff";
-
-const sheriffOptions = {
-  react: false,
-  next: false,
-  astro: false,
-  lodash: false,
-  remeda: false,
-  playwright: false,
-  jest: false,
-  vitest: false,
-};
-
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      "no-restricted-syntax": [
-        2,
-        // highlight-start
-        // your custom rules here...
-        // highlight-end
-      ],
-    },
-  }
-);
-```
-
-</TabItem>
-<TabItem value="TS" label="TS">
-
-```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
-
-const sheriffOptions: SheriffSettings = {
-  react: false,
-  next: false,
-  astro: false,
-  lodash: false,
-  remeda: false,
-  playwright: false,
-  jest: false,
-  vitest: false,
-};
-
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      "no-restricted-syntax": [
-        2,
-        // highlight-start
-        // your custom rules here...
-        // highlight-end
-      ],
-    },
-  }
-);
-```
-
-  </TabItem>
-</Tabs>
-
-#### Extend
-
-Conveniently, Sheriff exports it's own `no-restricted-syntax` entry as the `baseNoRestrictedSyntaxRules` array.
-To extend the Sheriff entry of `no-restricted-syntax`, you can use the Javascript spread syntax.
-
-Example:
-
-<Tabs groupId="tsorjs">
-  <TabItem value="JS" label="JS">
-
-```js title="eslint.config.js"
-import { baseNoRestrictedSyntaxRules, sheriff, tseslint } from "eslint-config-sheriff";
-
-const sheriffOptions = {
-  react: false,
-  next: false,
-  astro: false,
-  lodash: false,
-  remeda: false,
-  playwright: false,
-  jest: false,
-  vitest: false
-};
-
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      "no-restricted-syntax": [
-        2,
-        // highlight-start
-        ...baseNoRestrictedSyntaxRules,
-        // your custom rules here...
-        // highlight-end
-      ],
-    },
-  }
-);
-```
-
-</TabItem>
-<TabItem value="TS" label="TS">
-
-```ts title="eslint.config.ts"
-import { baseNoRestrictedSyntaxRules, sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
-
-const sheriffOptions: SheriffSettings = {
-  react: false,
-  next: false,
-  astro: false,
-  lodash: false,
-  remeda: false,
-  playwright: false,
-  jest: false,
-  vitest: false
-};
-
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      "no-restricted-syntax": [
-        2,
-        // highlight-start
-        ...baseNoRestrictedSyntaxRules,
-        // your custom rules here...
-        // highlight-end
-      ],
-    },
-  }
-);
-```
-
-  </TabItem>
-</Tabs>
-
-#### Shrink
-
-Conveniently, Sheriff exports it's own `no-restricted-syntax` entry as the `baseNoRestrictedSyntaxRules` array.<br/>
-To shrink the Sheriff entry of `no-restricted-syntax`, you can use the Javascript [toSpliced()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSpliced) method to remove the entries that you don't like.<br/>
-Every entry prints the index of itself at the end of the `message` property, so you can easily identify which one you want to remove.
-
-Example:
-
-<Tabs groupId="tsorjs">
-  <TabItem value="JS" label="JS">
-
-```js title="eslint.config.js"
-import { sheriff, tseslint } from "eslint-config-sheriff";
-
-const sheriffOptions = {
-  react: false,
-  next: false,
-  astro: false,
-  lodash: false,
-  remeda: false,
-  playwright: false,
-  jest: false,
-  vitest: false
-};
-
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      "no-restricted-syntax": [
-        2,
-        // highlight-start
-        ...baseNoRestrictedSyntaxRules.toSpliced(2, 1) // this will result in baseNoRestrictedSyntaxRules without the third element.
-        // highlight-end
-      ],
-    },
-  };
-);
-```
-
-</TabItem>
-<TabItem value="TS" label="TS">
-
-```ts title="eslint.config.ts"
-import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
-
-const sheriffOptions: SheriffSettings = {
-  react: false,
-  next: false,
-  astro: false,
-  lodash: false,
-  remeda: false,
-  playwright: false,
-  jest: false,
-  vitest: false
-};
-
-export default tseslint.config(sheriff(sheriffOptions),
-  {
-    rules: {
-      "no-restricted-syntax": [
-        2,
-        // highlight-start
-        ...baseNoRestrictedSyntaxRules.toSpliced(2, 1) // this will result in baseNoRestrictedSyntaxRules without the third element.
-        // highlight-end
-      ],
-    },
-  };
-);
-```
-
-  </TabItem>
-</Tabs>

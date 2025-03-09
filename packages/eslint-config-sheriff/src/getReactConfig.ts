@@ -47,7 +47,10 @@ export const getReactConfig = (
       files: [`**/*{${allJsxExtensions}}`],
       plugins: { 'react-refresh': reactRefresh },
       rules: {
-        'react-refresh/only-export-components': 2,
+        'react-refresh/only-export-components': [
+          2,
+          { allowExportNames: ['loader'] },
+        ],
       },
     },
     {
@@ -80,14 +83,6 @@ export const getReactConfig = (
       },
       rules: {
         'fsecond/valid-event-listener': 2,
-      },
-    },
-    // Specific overrides for storybook
-    {
-      files: ['**/*.stories.tsx'],
-      plugins: { 'react-refresh': reactRefresh },
-      rules: {
-        'react-refresh/only-export-components': 0,
       },
     },
     // Specific overrides for astro

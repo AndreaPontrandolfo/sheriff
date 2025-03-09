@@ -7,7 +7,6 @@ export const vitestHandPickedRules = {
   'vitest/no-conditional-expect': 2,
   'vitest/no-conditional-in-test': 2,
   'vitest/no-disabled-tests': 2,
-  'vitest/no-done-callback': 2,
   'vitest/no-duplicate-hooks': 2,
   'vitest/no-identical-title': 2,
   'vitest/no-focused-tests': 2,

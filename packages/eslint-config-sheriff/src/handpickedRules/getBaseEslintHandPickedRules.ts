@@ -2,7 +2,6 @@
 
 import confusingBrowserGlobals from 'confusing-browser-globals';
 import type { TSESLint } from '@typescript-eslint/utils';
-import { getIndexedBaseNoRestrictedSyntaxRules } from '../utils/getIndexedBaseNoRestrictedSyntaxRules';
 
 export const getBaseEslintHandPickedRules = () => {
   return {
@@ -17,7 +16,7 @@ export const getBaseEslintHandPickedRules = () => {
     'no-multi-str': 2,
     'no-negated-condition': 2,
     'no-new-wrappers': 2,
-    'no-new-object': 2,
+    'no-object-constructor': 2,
     strict: [2, 'never'],
     'no-octal-escape': 2,
     'no-proto': 2,
@@ -91,40 +90,6 @@ export const getBaseEslintHandPickedRules = () => {
         ],
       },
     ],
-    'no-restricted-properties': [
-      2,
-      {
-        object: 'global',
-        property: 'isFinite',
-        message: 'Please use Number.isFinite instead',
-      },
-      {
-        object: 'self',
-        property: 'isFinite',
-        message: 'Please use Number.isFinite instead',
-      },
-      {
-        object: 'window',
-        property: 'isFinite',
-        message: 'Please use Number.isFinite instead',
-      },
-      {
-        object: 'global',
-        property: 'isNaN',
-        message: 'Please use Number.isNaN instead',
-      },
-      {
-        object: 'self',
-        property: 'isNaN',
-        message: 'Please use Number.isNaN instead',
-      },
-      {
-        object: 'window',
-        property: 'isNaN',
-        message: 'Please use Number.isNaN instead',
-      },
-    ],
-    'no-restricted-syntax': [2, ...getIndexedBaseNoRestrictedSyntaxRules()],
     'no-restricted-globals': [2, ...confusingBrowserGlobals],
     'no-return-await': 0, // we are using the @typescript/eslint version
     'no-use-before-define': 0, // we are using the @typescript/eslint version

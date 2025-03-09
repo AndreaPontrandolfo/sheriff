@@ -11,6 +11,12 @@ In this case you can simply install them yourself. The `yarn create @sherifforg/
 
 Alternatively, consider switching package manager to [pnpm](https://pnpm.io/).
 
+## I'm using Nextjs and the Sheriff rules doesn't seem to apply
+
+In a Nextjs project, you shouldn't follow any of Nextjs' ESLint instructions, including the usage of the command `next lint`. Just use the basic ESlint command `eslint`.
+
+Refer to the [Nextjs compatibility documentation](./faq.md#is-sheriff-compatible-with-x).
+
 ## My editor feels slow
 
 Make sure to read the appropriate docs [here](./performance-considerations.mdx).

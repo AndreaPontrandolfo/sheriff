@@ -15,6 +15,7 @@ interface FormInputs {
   lodash: boolean;
   remeda: boolean;
   playwright: boolean;
+  storybook: boolean;
   vitest: boolean;
   jest: boolean;
 }
@@ -97,6 +98,15 @@ export const ConfigCombinationForm = ({
           id="playwright"
         />
         <label htmlFor="playwright">Playwright</label>
+      </div>
+      <div className={styles.nativeCheckbox}>
+        <input
+          {...register('storybook')}
+          defaultChecked
+          type="checkbox"
+          id="storybook"
+        />
+        <label htmlFor="storybook">Storybook</label>
       </div>
       <div className={styles.nativeCheckbox}>
         <input

@@ -1,6 +1,6 @@
 {
   "name": "@sherifforg/create-config",
-  "version": "9.5.0",
+  "version": "9.6.0",
   "type": "module",
   "description": "This package creates new Sheriff configs.",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "tsup",
     "build:watch": "tsup --watch",
     "typecheck": "tsc",
-    "lint": "eslint ./src --max-warnings=0 --flag unstable_ts_config",
+    "lint": "eslint ./src --max-warnings=0",
     "publint": "publint"
   },
   "license": "MIT",
@@ -33,7 +33,7 @@
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^22.10.3",
     "@types/yargs": "^17.0.33",
-    "eslint": "^9.17.0",
+    "eslint": "^9.19.0",
     "eslint-config-sheriff": "workspace:*",
     "jiti": "^2.4.2",
     "publint": "^0.2.10",

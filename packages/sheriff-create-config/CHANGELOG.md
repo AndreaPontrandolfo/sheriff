@@ -1,5 +1,13 @@
 # @sherifforg/cli
 
+## 9.6.0
+
+### Minor Changes
+
+- 73ec66a: feat(plugins): updated eslint and plugins
+  Closes #354
+  Closes #371
+
 ## 9.5.0
 
 ### Minor Changes

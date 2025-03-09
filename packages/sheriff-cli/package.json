@@ -1,6 +1,6 @@
 {
   "name": "@sherifforg/cli",
-  "version": "8.1.0",
+  "version": "8.2.0",
   "type": "module",
   "description": "The Sheriff CLI. Used to manage Sheriff-based ESLint configs.",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/typescript-estree": "^8.18.2",
+    "@typescript-eslint/typescript-estree": "^8.26.0",
     "consola": "^3.3.3",
     "read-pkg": "^9.0.1",
     "yargs": "^17.7.2"
@@ -26,12 +26,15 @@
     "@sherifforg/types": "workspace:*",
     "@types/node": "^22.10.3",
     "@types/yargs": "^17.0.33",
-    "eslint": "^9.17.0",
+    "eslint": "^9.19.0",
     "eslint-config-sheriff": "workspace:*",
     "publint": "^0.2.10",
     "tsconfig": "workspace:*",
     "tsup": "^8.3.0",
     "typescript": "^5.6.3"
+  },
+  "peerDependencies": {
+    "eslint": ">=9.18.0"
   },
   "repository": {
     "type": "git",

@@ -172,7 +172,7 @@ async function main() {
 
     consola.debug('Finished checking dependencies in package.json.');
 
-    const eslint = new ESLint({ flags: ['unstable_ts_config'] });
+    const eslint = new ESLint();
 
     let configFilePath: string | undefined;
 

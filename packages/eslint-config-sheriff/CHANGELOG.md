@@ -1,5 +1,49 @@
 # eslint-config-sheriff
 
+## 26.0.0
+
+### Major Changes
+
+- cd80b61: feat(config): Implemented eslint-no-restricted
+  Closes #375
+
+## 25.8.1
+
+### Patch Changes
+
+- c0ac830: Removing preinstall script from package.json.
+
+## 25.8.0
+
+### Minor Changes
+
+- 218ff22: feat(config): removed `vitest/no-done-callback` and `jest/no-done-callback`
+  Fixes #358
+- 73ec66a: feat(plugins): updated eslint and plugins
+  Closes #354
+  Closes #371
+- 98e3829: feat(config): Drop no-new-object in favor of no-object-constructor
+  Fixes #367
+
+### Patch Changes
+
+- e1ba9e1: feat(config): added constraints to globs of config files
+  Fixes #359
+- 066db53: fix: whitelist certain export names
+  Fixes #364
+
+## 25.7.0
+
+### Minor Changes
+
+- 2f982b3: fix(config): playwrightTests is now optional
+  Fixes #353
+
+### Patch Changes
+
+- 0033374: fix(config): don't run `tsdoc` rules on JS files
+  Fixes #362
+
 ## 25.6.0
 
 ### Minor Changes
