@@ -41,6 +41,10 @@ Visit the [official docs](https://www.eslint-config-sheriff.dev/docs/introducti
 
 You can follow the latest updates on the project in the [official blog](https://www.eslint-config-sheriff.dev/blog).
 
+## 📈 Pulse
+
+![Alt](https://repobeats.axiom.co/api/embed/a1f7ee2ca3d90888bb893a21c14fc8af99ac3086.svg "Repobeats analytics image")
+
 ## 💌 Acknowledgments
 
 For some of this configuration, [eslint-config-red](https://github.com/GrosSacASac/JavaScript-Set-Up/blob/master/js/red-javascript-style-guide/index.js) was partially used as a base. Additionally, inspiration was drawn from [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) for some of the rules in `no-restricted-syntax`.
