@@ -26,7 +26,7 @@ npm i -D @sherifforg/cli
 And then run it:
 
 ```bash npm2yarn
-npm run sheriff
+npm exec sheriff
 ```
 
 ## How it works
