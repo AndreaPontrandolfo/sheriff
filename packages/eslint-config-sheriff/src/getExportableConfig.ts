@@ -79,7 +79,7 @@ export const getExportableConfig = (
     );
   }
 
-  if (userConfigChoices.storybook) {
+  if (userConfigChoices.storybook !== false) {
     exportableConfig.push(...getStorybookConfig());
   }
 
