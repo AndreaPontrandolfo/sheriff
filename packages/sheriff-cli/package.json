@@ -28,10 +28,10 @@
     "@types/yargs": "^17.0.33",
     "eslint": "^9.19.0",
     "eslint-config-sheriff": "workspace:*",
-    "publint": "^0.2.10",
+    "publint": "^0.3.11",
     "tsconfig": "workspace:*",
     "tsup": "^8.3.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "eslint": ">=9.18.0"

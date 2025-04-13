@@ -21,7 +21,7 @@
     "nypm": "^0.4.1",
     "pathe": "^1.1.2",
     "read-pkg-up": "9.1.0",
-    "typescript": "^5.6.3",
+    "typescript": "^5.8.3",
     "yargs": "^17.7.2"
   },
   "bin": {
@@ -36,7 +36,7 @@
     "eslint": "^9.19.0",
     "eslint-config-sheriff": "workspace:*",
     "jiti": "^2.4.2",
-    "publint": "^0.2.10",
+    "publint": "^0.3.11",
     "tsconfig": "workspace:*",
     "tsup": "^8.3.0",
     "tsx": "^4.16.2"

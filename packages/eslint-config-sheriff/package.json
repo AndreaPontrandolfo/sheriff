@@ -86,7 +86,7 @@
     "eslint-plugin-unicorn": "^56.0.1",
     "globals": "^15.11.0",
     "lodash": "^4.17.21",
-    "typescript-eslint": "^8.26.0"
+    "typescript-eslint": "^8.29.1"
   },
   "peerDependencies": {
     "eslint": ">=9.0.0",
@@ -97,22 +97,22 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.17.2",
+    "@arethetypeswrong/cli": "^0.17.4",
     "@sherifforg/constants": "workspace:*",
     "@sherifforg/types": "workspace:*",
     "@types/confusing-browser-globals": "^1.0.3",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/lodash": "^4.17.13",
     "@types/node": "^22.10.3",
-    "@typescript-eslint/parser": "^8.26.0",
-    "@typescript-eslint/utils": "^8.26.0",
+    "@typescript-eslint/parser": "^8.29.1",
+    "@typescript-eslint/utils": "^8.29.1",
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^9.19.0",
     "jiti": "^2.4.2",
-    "publint": "^0.2.10",
+    "publint": "^0.3.11",
     "tsconfig": "workspace:*",
     "tsup": "^8.3.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.8.3"
   },
   "publishConfig": {
     "access": "public"
