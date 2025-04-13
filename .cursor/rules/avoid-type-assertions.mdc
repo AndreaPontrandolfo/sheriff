@@ -3,12 +3,6 @@ description:
 globs: 
 alwaysApply: true
 ---
----
-description: 
-globs: 
-alwaysApply: true
----
-
 # Your rule content
 
 Avoid using Typescript type assertions as much as possible.

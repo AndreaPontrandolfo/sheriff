@@ -3,12 +3,6 @@ description:
 globs: 
 alwaysApply: true
 ---
----
-description: 
-globs: 
-alwaysApply: true
----
-
 # Your rule content
 
 When naming variables or parameters, avoid using 1-letter abbreaviations, if possible.
