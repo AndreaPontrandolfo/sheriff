@@ -2,6 +2,9 @@
 sidebar_position: 2
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # TSConfig guidelines
 
 Typescript configuration is a very wide and complex topic. Depending on the environments that you are going to target, setting up correctly a proper `TSConfig` can be daunting and time consuming.<br />
@@ -18,6 +21,9 @@ If you don't know much about `TSConfig` and you are uncertain, this can be a goo
 
 ## Sheriff's TSConfig reference
 
+<Tabs groupId="tscorbundler">
+  <TabItem value="bundler" label="Build with bundler">
+
 ```JSONC title="tsconfig.json"
 {
   "$schema": "https://json.schemastore.org/tsconfig",
@@ -25,10 +31,10 @@ If you don't know much about `TSConfig` and you are uncertain, this can be a goo
   "exclude": ["node_modules", "dist", "build", "coverage"], // this is already a good default. Generally you want to put here build artifacts. Some other possible build artifacts are: "artifacts", "lib"...
   "compilerOptions": {
     "target": "es6",
-    "module": "preserve", // this assumes that you are gonna build your project with a modern bundler instead of tsc.
-    "moduleResolution": "bundler", // this assumes that you are gonna build your project with a modern bundler instead of tsc.
-    "noEmit": true, // this assumes that you are gonna build your project with a modern bundler instead of tsc.
-    "allowImportingTsExtensions": true, // this assumes that you are gonna build your project with a modern bundler instead of tsc.
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx",
     "composite": false, // you should enable this only for using TS project references. But they are fairly discourages nowadays.
@@ -50,6 +56,7 @@ If you don't know much about `TSConfig` and you are uncertain, this can be a goo
     "resolveJsonModule": true,
     // highlight-next-line
     "verbatimModuleSyntax": true, // this is required for Sheriff to perform correctly.
+    "erasableSyntaxOnly": true,
     "skipLibCheck": true,
     "allowJs": false,
     "checkJs": false,
@@ -58,3 +65,51 @@ If you don't know much about `TSConfig` and you are uncertain, this can be a goo
   },
 }
 ```
+
+  </TabItem>
+  <TabItem value="tsc" label="Build with tsc">
+
+```JSONC title="tsconfig.json"
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "build", "coverage"], // this is already a good default. Generally you want to put here build artifacts. Some other possible build artifacts are: "artifacts", "lib"...
+  "compilerOptions": {
+    "target": "es6",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",
+    "composite": false, // you should enable this only for using TS project references. But they are fairly discourages nowadays.
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    // highlight-next-line
+    "strict": true, // this is required for Sheriff to perform correctly.
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": false, // this looks nice on paper, but is actually extremely annoying in practice.
+    "noUnusedLocals": false, // this is already covered by Sheriff.
+    "noUnusedParameters": false, // this is already covered by Sheriff.
+    // highlight-next-line
+    "isolatedModules": true, // this is required for Sheriff to perform correctly.
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    // highlight-next-line
+    "verbatimModuleSyntax": true, // this is required for Sheriff to perform correctly.
+    "erasableSyntaxOnly": true,
+    "skipLibCheck": true,
+    "allowJs": false,
+    "checkJs": false,
+    "experimentalDecorators": false,
+    "paths": {}, // define here your paths if you want to use absolute paths in your project, which is highly recommended.
+  },
+}
+```
+
+  </TabItem>
+</Tabs>
