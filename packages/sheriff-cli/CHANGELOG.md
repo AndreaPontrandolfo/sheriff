@@ -1,5 +1,13 @@
 # @sherifforg/cli
 
+## 8.3.0
+
+### Minor Changes
+
+- bcb1abd: fix(config): update Storybook config condition to be enabled if not specified otherwise
+  fix(cli): fixed a bug with @sherifforg/cli
+  feat(deps): updated some deps
+
 ## 8.2.0
 
 ### Minor Changes

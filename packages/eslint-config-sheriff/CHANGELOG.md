@@ -1,5 +1,13 @@
 # eslint-config-sheriff
 
+## 27.1.0
+
+### Minor Changes
+
+- bcb1abd: fix(config): update Storybook config condition to be enabled if not specified otherwise
+  fix(cli): fixed a bug with @sherifforg/cli
+  feat(deps): updated some deps
+
 ## 27.0.0
 
 ### Major Changes
