@@ -16,6 +16,7 @@
     "@typescript-eslint/typescript-estree": "^8.26.0",
     "consola": "^3.3.3",
     "read-pkg": "^9.0.1",
+    "remeda": "^2.19.0",
     "yargs": "^17.7.2"
   },
   "bin": {

@@ -37,13 +37,13 @@ export const isPluginValid = (
 
     if (severityLevel === 'error') {
       throwError(
-        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(value ? value.toString() : 'unknown')}.`,
+        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(JSON.stringify(value))}.`,
       );
     }
 
     if (severityLevel === 'warn') {
       consola.warn(
-        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(value ? value.toString() : 'unknown')}.`,
+        `Expected ${pluginName} to be ${colors.bold(String(isPluginFound))} but found ${colors.bold(JSON.stringify(value))}.`,
       );
     }
   }
