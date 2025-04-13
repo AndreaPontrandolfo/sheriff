@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import { consola } from 'consola';
 import { ESLint } from 'eslint';
 import { type NormalizedPackageJson, readPackage } from 'read-pkg';
+import { isEmpty } from 'remeda';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { CLIOptionsCatalog } from '@sherifforg/constants';
@@ -121,7 +122,12 @@ async function main() {
       return;
     }
 
-    if (!packageJSON.dependencies) {
+    const allDependencies = {
+      ...packageJSON.dependencies,
+      ...packageJSON.devDependencies,
+    };
+
+    if (isEmpty(allDependencies)) {
       consola.info('No dependencies found in package.json');
 
       return;
@@ -137,7 +143,8 @@ async function main() {
     let isAstro = false;
 
     consola.debug('Checking dependencies in package.json...');
-    for (const dependency of Object.keys(packageJSON.dependencies)) {
+
+    for (const dependency of Object.keys(allDependencies)) {
       if (taggedDependencies.includes(dependency)) {
         if (dependency === 'lodash' || dependency === 'lodash-es') {
           isLodash = true;

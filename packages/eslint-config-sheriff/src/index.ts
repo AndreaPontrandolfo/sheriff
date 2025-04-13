@@ -1,5 +1,3 @@
-/* eslint-disable import/no-default-export */
-
 import {
   allJsExtensions,
   allJsxExtensions,

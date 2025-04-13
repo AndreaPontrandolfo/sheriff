@@ -8,8 +8,9 @@
   </p>
   <div>
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg?color=1A786D)](CODE_OF_CONDUCT.md)
 [![npm downloads](https://img.shields.io/npm/dm/eslint-config-sheriff.svg?label=npm%20downloads&color=1A786D)](https://www.npmjs.com/package/eslint-config-sheriff)
+[![Libraries.io SourceRank](https://img.shields.io/librariesio/sourcerank/npm/eslint-config-sheriff?logo=librariesdotio&style=flat-square&color=1A786D)](https://libraries.io/npm/eslint-config-sheriff/sourcerank)<br />
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg?color=1A786D)](CODE_OF_CONDUCT.md)
 
   </div>
 </div>
@@ -39,6 +40,10 @@ Visit the [official docs](https://www.eslint-config-sheriff.dev/docs/introducti
 ## 📝 Blog
 
 You can follow the latest updates on the project in the [official blog](https://www.eslint-config-sheriff.dev/blog).
+
+## 📈 Pulse
+
+![Alt](https://repobeats.axiom.co/api/embed/a1f7ee2ca3d90888bb893a21c14fc8af99ac3086.svg "Repobeats analytics image")
 
 ## 💌 Acknowledgments
 

@@ -1,0 +1,30 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Your rule content
+
+When declaring new variables, prefer having the type inferred by the initial value. If this is impossible or unconvenient, it's ok to express the type annotation explicitly, but if the type is complex, prefer declaring an interface separately and then annotate the variable with the interface.
+
+## Examples
+
+### Wrong
+
+```
+const x: {
+    y?: string
+    z?: number
+} = {}
+```
+
+### Correct
+
+```
+interface X = {
+    y?: string
+    z?: number
+}
+
+const x: X = {}
+```
