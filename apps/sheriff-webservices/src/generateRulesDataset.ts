@@ -1,10 +1,7 @@
 /* eslint-disable fsecond/prefer-destructured-optionals */
-/* eslint-disable @typescript-eslint/unbound-method */
-/* eslint-disable lodash-f/import-scope */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-// import { Linter } from 'eslint';
 import type { TSESLint } from 'eslint-config-sheriff';
-import lodash from 'lodash';
+import { isArray, isEmpty, isNumber, last, unique } from 'remeda';
 import type {
   Entry,
   NumericSeverity,
@@ -13,10 +10,6 @@ import type {
   ServerResponse,
   Severity,
 } from '@sherifforg/types';
-
-const { isArray, isEmpty, last, uniq, isNumber } = lodash;
-
-// const linter = new Linter();
 
 const getParentPluginName = (rule: string): string => {
   if (rule.includes('/')) {
@@ -77,12 +70,11 @@ const getDocs = (
         if (ruleNameWithoutPrefix) {
           docs.description =
             // @ts-expect-error
-            pluginContents.rules?.[ruleNameWithoutPrefix]?.meta?.docs
+            pluginContents.rules?.[ruleNameWithoutPrefix].meta?.docs
               ?.description ?? '';
           docs.url =
             // @ts-expect-error
-            pluginContents.rules?.[ruleNameWithoutPrefix]?.meta?.docs?.url ??
-            '';
+            pluginContents.rules?.[ruleNameWithoutPrefix].meta?.docs?.url ?? '';
         }
       }
     }
@@ -179,7 +171,7 @@ const getCompiledConfig = (
     }
   }
 
-  return { compiledConfig, pluginsNames: uniq(pluginsNames) };
+  return { compiledConfig, pluginsNames: unique(pluginsNames) };
 };
 
 export const generateRulesDataset = (

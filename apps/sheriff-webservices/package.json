@@ -15,7 +15,6 @@
     "@sherifforg/types": "workspace:*",
     "@tsconfig/node-lts": "^22.0.0",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
-    "@types/lodash": "^4.17.13",
     "@types/node": "^22.10.3",
     "tsx": "^4.16.2",
     "typescript": "^5.8.3"
@@ -50,7 +49,7 @@
     "eslint-plugin-tsdoc": "^0.2.17",
     "eslint-plugin-unicorn": "^56.0.1",
     "hono": "^3.12.0",
-    "lodash": "^4.17.21",
+    "remeda": "^2.21.3",
     "typescript-eslint": "^8.31.0"
   },
   "packageManager": "pnpm@9.15.1",

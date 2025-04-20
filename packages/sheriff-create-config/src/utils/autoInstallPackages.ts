@@ -1,7 +1,7 @@
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
-import { isNumber } from 'lodash-es';
 import { addDependency, detectPackageManager } from 'nypm';
+import { isNumber } from 'remeda';
 import { getInstallationCommand } from './getInstallationCommand';
 import { getPackageJsonContents } from './getPackageJsonContents';
 import { throwError } from './throwError';
@@ -32,13 +32,11 @@ export const autoInstallPackages = async (
     }
 
     if (selectedProject) {
-      consola.start(
-        `Installing dependendencies in project ${selectedProject}...`,
-      );
+      consola.start(`Installing dependencies in project ${selectedProject}...`);
     }
 
     if (!selectedProject) {
-      consola.start(`Installing dependendencies...`);
+      consola.start(`Installing dependencies...`);
     }
 
     try {

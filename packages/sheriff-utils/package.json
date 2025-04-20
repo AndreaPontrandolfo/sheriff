@@ -19,11 +19,9 @@
   },
   "devDependencies": {
     "@sherifforg/types": "workspace:*",
-    "@types/lodash-es": "^4.17.12",
     "@types/node": "^22.10.3",
     "eslint": "^9.25.1",
     "eslint-config-sheriff": "workspace:*",
-    "lodash-es": "^4.17.21",
     "publint": "^0.3.11",
     "tsconfig": "workspace:*",
     "tsx": "^4.16.2",

@@ -3,8 +3,8 @@ import { sheriff, type SheriffSettings, tseslint } from './src';
 const sheriffOptions: SheriffSettings = {
   react: false,
   next: false,
-  lodash: true,
-  remeda: false,
+  lodash: false,
+  remeda: true,
   astro: false,
   playwright: false,
   jest: false,
