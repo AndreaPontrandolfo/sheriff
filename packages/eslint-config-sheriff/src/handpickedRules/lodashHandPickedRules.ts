@@ -1,6 +1,6 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 
-export const lodashHandPickedRules = {
+export const lodashHandPickedRules: TSESLint.FlatConfig.Rules = {
   'lodash-f/import-scope': [2, 'member'],
   'lodash-f/prefer-some': [2, { includeNative: false }],
   'lodash-f/prefer-includes': [2, { includeNative: false }],
@@ -10,4 +10,4 @@ export const lodashHandPickedRules = {
   'lodash-f/prefer-over-quantifier': 0,
   'lodash-f/prefer-get': 0,
   'unicorn/no-instanceof-array': 0, // we are enabling "prefer-lodash-typecheck", therefore we need to disable this.
-} as const satisfies TSESLint.FlatConfig.Rules;
+};

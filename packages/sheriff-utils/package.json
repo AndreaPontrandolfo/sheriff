@@ -14,7 +14,6 @@
   },
   "scripts": {
     "rulesgen": "tsx ./src/generateRulesDataset.ts",
-    "publint": "publint",
     "clean": "rm -rf .turb dist node_modules/.cache"
   },
   "devDependencies": {
@@ -24,7 +23,7 @@
     "eslint": "^9.25.1",
     "eslint-config-sheriff": "workspace:*",
     "lodash-es": "^4.17.21",
-    "publint": "^0.3.11",
+    "publint": "^0.3.12",
     "tsconfig": "workspace:*",
     "tsx": "^4.16.2",
     "typescript": "^5.8.3"

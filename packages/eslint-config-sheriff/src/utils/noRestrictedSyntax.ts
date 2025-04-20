@@ -63,6 +63,5 @@ const baseNoRestrictedSyntaxRules = [
   },
 ];
 
-export const noRestrictedSyntax = createNoRestrictedSyntax(
-  ...baseNoRestrictedSyntaxRules,
-);
+export const noRestrictedSyntax: ReturnType<typeof createNoRestrictedSyntax> =
+  createNoRestrictedSyntax(...baseNoRestrictedSyntaxRules);

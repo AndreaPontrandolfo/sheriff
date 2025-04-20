@@ -11,7 +11,7 @@
     "noEmit": true,
     "composite": false,
     "target": "ESNext",
-    "module": "Preserve",
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "allowJs": false,
     "isolatedModules": true,

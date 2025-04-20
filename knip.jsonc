@@ -6,10 +6,14 @@
     "apps/cli-playground",
     "apps/docs-website",
   ],
-  "ignoreDependencies": [
-    "@turbo/gen",
-    "eslint-import-resolver-typescript",
-    "eslint-config-sheriff",
-    "@typescript-eslint/parser",
-  ],
+  "ignore": ["**/tsdown.config.ts"],
+  "ignoreDependencies": ["@turbo/gen"],
+  "workspaces": {
+    "./packages/eslint-config-sheriff": {
+      "ignoreDependencies": [
+        "eslint-import-resolver-typescript",
+        "@typescript-eslint/parser",
+      ],
+    },
+  },
 }

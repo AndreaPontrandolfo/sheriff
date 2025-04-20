@@ -1,7 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "include": ["src"],
-  "exclude": ["dist", "build", "node_modules"],
   "extends": "tsconfig/base.json",
   "compilerOptions": {
     "incremental": true,

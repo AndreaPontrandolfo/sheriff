@@ -1,8 +1,9 @@
 import lodashPlugin from 'eslint-plugin-lodash-f';
 import { supportedFileTypes } from '@sherifforg/constants';
+import type { TSESLint } from '@typescript-eslint/utils';
 import { lodashHandPickedRules } from './handpickedRules/lodashHandPickedRules';
 
-export const lodashConfig = {
+export const lodashConfig: TSESLint.FlatConfig.Config = {
   files: [supportedFileTypes],
   plugins: {
     'lodash-f': lodashPlugin,

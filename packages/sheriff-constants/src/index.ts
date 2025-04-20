@@ -1,4 +1,7 @@
-import type { SheriffConfigurablePlugins } from '@sherifforg/types';
+import type {
+  NoRestrictedSyntaxSlice,
+  SheriffConfigurablePlugins,
+} from '@sherifforg/types';
 
 export const sheriffStartingOptions: SheriffConfigurablePlugins = {
   react: false,
@@ -32,19 +35,19 @@ export const tsExtensions = 'ts,mts,cts';
 
 export const tsxExtensions = 'tsx,mtsx';
 
-export const allJsExtensions = `${jsExtensions},${tsExtensions}`;
+export const allJsExtensions: string = `${jsExtensions},${tsExtensions}`;
 
-export const allJsxExtensions = `${jsxExtensions},${tsxExtensions}`;
+export const allJsxExtensions: string = `${jsxExtensions},${tsxExtensions}`;
 
-export const supportedFileTypes = `**/*{${allJsExtensions},${allJsxExtensions},astro}`;
+export const supportedFileTypes: string = `**/*{${allJsExtensions},${allJsxExtensions},astro}`;
 
-export const testsFilePatterns = [
+export const testsFilePatterns: string[] = [
   `**/*.{test,spec}.{${allJsExtensions}}`,
   `**/tests/**/*.{${allJsExtensions}}`,
   `**/__tests__/**/*.{${allJsExtensions}}`,
 ] as const;
 
-export const ignores = [
+export const ignores: string[] = [
   '**/node_modules/**',
   '**/dist/**',
   '**/build/**',

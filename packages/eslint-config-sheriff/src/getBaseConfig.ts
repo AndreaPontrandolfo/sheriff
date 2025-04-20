@@ -99,7 +99,6 @@ export const getBaseConfig = (
     },
     {
       files: [supportedFileTypes],
-      // @ts-expect-error
       rules: {
         ...typescriptHandPickedRules,
         ...getTsNamingConventionRule({ isTsx: false }),
