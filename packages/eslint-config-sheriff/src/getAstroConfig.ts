@@ -1,4 +1,4 @@
-import astro from 'eslint-plugin-astro';
+import * as astro from 'eslint-plugin-astro';
 import tseslint from 'typescript-eslint';
 import type { TSESLint } from '@typescript-eslint/utils';
 
@@ -37,7 +37,7 @@ export const getAstroConfig = (
         },
       },
       settings: {
-        // 'import/core-modules': [
+        // 'import-x/core-modules': [
         //   'astro:actions',
         //   'astro:assets',
         //   'astro:db',
@@ -49,11 +49,6 @@ export const getAstroConfig = (
         //   'astro:transitions',
         //   'astro:transitions/client',
         // ],
-        'import/parsers': {
-          'astro-eslint-parser': ['.astro'],
-          '@typescript-eslint/parser': ['.ts', '.tsx', 'mts', 'cts'],
-          espree: ['.js'],
-        },
       },
     },
   );

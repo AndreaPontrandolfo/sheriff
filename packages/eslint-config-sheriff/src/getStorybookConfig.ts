@@ -9,7 +9,7 @@ export const getStorybookConfig = (): TSESLint.FlatConfig.ConfigArray => {
       storybook.configs['flat/csf'],
     ],
     rules: {
-      'import/no-default-export': 0,
+      'import-x/no-default-export': 0,
     },
     ignores: ['!.storybook'],
   });

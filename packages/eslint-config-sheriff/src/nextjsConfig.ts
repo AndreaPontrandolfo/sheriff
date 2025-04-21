@@ -12,7 +12,7 @@ export const nextjsConfig: TSESLint.FlatConfig.ConfigArray = [
     rules: {
       ...nextjs.configs.recommended.rules,
       ...nextjs.configs['core-web-vitals'].rules,
-      'import/no-default-export': 0,
+      'import-x/no-default-export': 0,
       'react/function-component-definition': [
         2,
         {

@@ -78,7 +78,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 
 You can override any Sheriff rule as desired in the `eslint.config.js` file.
 
-For example, let's say you want to disable a Sheriff rule, like `import/first`:
+For example, let's say you want to disable a Sheriff rule, like `import-x/first`:
 
 <Tabs groupId="tsorjs">
   <TabItem value="JS" label="JS">
@@ -102,7 +102,7 @@ export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       // highlight-next-line
-      "import/first": 0, // 'import/first' is now disabled everywhere.
+      "import-x/first": 0, // 'import-x/first' is now disabled everywhere.
     },
   },
 );
@@ -130,7 +130,7 @@ export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       // highlight-next-line
-      "import/first": 0, // 'import/first' is now disabled everywhere.
+      "import-x/first": 0, // 'import-x/first' is now disabled everywhere.
     },
   },
 );
@@ -163,7 +163,7 @@ export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       // highlight-next-line
-      "import/first": 2, // 'import/first' is now enabled everywhere.
+      "import-x/first": 2, // 'import-x/first' is now enabled everywhere.
     },
   },
 );
@@ -191,7 +191,7 @@ export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
       // highlight-next-line
-      "import/first": 2, // 'import/first' is now enabled everywhere.
+      "import-x/first": 2, // 'import-x/first' is now enabled everywhere.
     },
   },
 );

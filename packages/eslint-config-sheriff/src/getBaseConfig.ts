@@ -1,7 +1,8 @@
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 import createNoRestrictedProperties from 'eslint-no-restricted/properties';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import fsecond from 'eslint-plugin-fsecond';
-import pluginImport from 'eslint-plugin-import';
+import * as pluginImportX from 'eslint-plugin-import-x';
 import jsdoc from 'eslint-plugin-jsdoc';
 import * as regexpPlugin from 'eslint-plugin-regexp';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
@@ -190,25 +191,21 @@ export const getBaseConfig = (
     },
     {
       files: [supportedFileTypes],
-      plugins: { import: pluginImport },
+      plugins: { pluginImportX },
       rules: importHandPickedRules,
       settings: {
-        'import/parsers': {
-          '@typescript-eslint/parser': ['.ts', '.tsx', '.mts', 'cts'],
-          espree: ['.js'],
-        },
-        'import/resolver': {
-          typescript: {
-            alwaysTryTypes: true,
-          },
-          node: true,
-        },
+        'import-x/resolver-next': [
+          pluginImportX.createNodeResolver({}),
+          createTypeScriptImportResolver({
+            project: userConfigChoices.pathsOverrides?.tsconfigLocation,
+          }),
+        ],
       },
     },
     {
       files: ['**/*.d.ts'],
       rules: {
-        'import/no-default-export': 0,
+        'import-x/no-default-export': 0,
       },
     },
     {
@@ -229,8 +226,8 @@ export const getBaseConfig = (
     {
       files: [`**/*.config.{${allJsExtensions}}`],
       rules: {
-        'import/no-default-export': 0,
-        'import/no-anonymous-default-export': 0,
+        'import-x/no-default-export': 0,
+        'import-x/no-anonymous-default-export': 0,
         'arrow-return-style/no-export-default-arrow': 0,
       },
     },

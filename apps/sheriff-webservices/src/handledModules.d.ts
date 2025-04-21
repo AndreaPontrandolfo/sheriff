@@ -26,13 +26,6 @@ declare module 'eslint-plugin-remeda' {
 
   export default config;
 }
-declare module 'eslint-plugin-import' {
-  const config: {
-    rules: Record<string, import('@sherifforg/types').RuleOptions>;
-  };
-
-  export default config;
-}
 declare module 'eslint-plugin-jest' {
   const config: {
     rules: Record<string, import('@sherifforg/types').RuleOptions>;

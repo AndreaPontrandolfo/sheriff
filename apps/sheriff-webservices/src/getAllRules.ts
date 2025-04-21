@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import type { ESLint } from 'eslint';
 import type { TSESLint } from 'eslint-config-sheriff';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
-import astro from 'eslint-plugin-astro';
+import * as astro from 'eslint-plugin-astro';
 import fsecond from 'eslint-plugin-fsecond';
-import pluginImport from 'eslint-plugin-import';
+import * as pluginImportX from 'eslint-plugin-import-x';
 import jest from 'eslint-plugin-jest';
 import jsdoc from 'eslint-plugin-jsdoc';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
@@ -39,7 +38,7 @@ export const getAllRules = (
     rules: Record<string, RuleOptions> | ESLint.Plugin['rules'] | undefined,
     pluginName: string,
   ) => Record<string, RuleOptions>,
-): TSESLint.FlatConfig.Config['rules'] => {
+): TSESLint.FlatConfig.Rules => {
   const reactRulesCatalog = {
     ...prependRulesWithPluginName(react.rules, 'react'),
     // @ts-expect-error
@@ -53,7 +52,7 @@ export const getAllRules = (
     ...prependRulesWithPluginName(fsecond.rules, 'fsecond'),
   };
 
-  const rules: TSESLint.FlatConfig.Config['rules'] = {
+  const rules: TSESLint.FlatConfig.Rules = {
     ...eslintJs.configs.all.rules,
     ...prependRulesWithPluginName(
       //@ts-expect-error
@@ -77,7 +76,8 @@ export const getAllRules = (
       '@stylistic',
     ),
     ...prependRulesWithPluginName(simpleImportSort.rules, 'simple-import-sort'),
-    ...prependRulesWithPluginName(pluginImport.rules, 'import'),
+    // @ts-expect-error
+    ...prependRulesWithPluginName(pluginImportX.rules, 'import'),
     // @ts-expect-error
     ...prependRulesWithPluginName(storybook.rules, 'storybook'),
     ...prependRulesWithPluginName(astro.rules, 'astro'),
@@ -86,8 +86,11 @@ export const getAllRules = (
       ? prependRulesWithPluginName(nextjs.rules, '@next/next')
       : {}),
     ...(settings.playwright
-      ? // @ts-expect-error
-        prependRulesWithPluginName(playwright.rules, 'playwright')
+      ? prependRulesWithPluginName(
+          // @ts-expect-error
+          (playwright as typeof playwright.default).rules,
+          'playwright',
+        )
       : {}),
     ...(settings.lodash
       ? prependRulesWithPluginName(lodashPlugin.rules, 'lodash-f')

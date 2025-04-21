@@ -19,7 +19,7 @@ sidebar_position: 7
 - [eslint-plugin-tsdoc](https://www.npmjs.com/package/eslint-plugin-tsdoc)
 - [eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
 - [@vitest/eslint-plugin](https://github.com/vitest-dev/eslint-plugin-vitest)
-- [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import) with [eslint-import-resolver-typescript](https://github.com/import-js/eslint-import-resolver-typescript)
+- [eslint-plugin-import-x](https://github.com/un-ts/eslint-plugin-import-x)
 - [eslint-plugin-lodash-f](https://github.com/AndreaPontrandolfo/eslint-plugin-lodash) (my fork of [eslint-plugin-lodash](https://github.com/wix/eslint-plugin-lodash))
 - [eslint-plugin-remeda](https://github.com/AndreaPontrandolfo/eslint-plugin-remeda)
 - [@next/eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next)
