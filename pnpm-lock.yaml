@@ -297,8 +297,8 @@ importers:
         specifier: ^2.7.0
         version: 2.7.0(eslint@9.19.0(jiti@2.4.2))
       eslint-plugin-remeda:
-        specifier: ^1.4.0
-        version: 1.4.0(eslint@9.19.0(jiti@2.4.2))
+        specifier: 1.8.0
+        version: 1.8.0(eslint@9.19.0(jiti@2.4.2))
       eslint-plugin-simple-import-sort:
         specifier: ^12.1.0
         version: 12.1.1(eslint@9.19.0(jiti@2.4.2))
@@ -421,8 +421,8 @@ importers:
         specifier: ^2.7.0
         version: 2.7.0(eslint@9.19.0(jiti@2.4.2))
       eslint-plugin-remeda:
-        specifier: ^1.4.0
-        version: 1.4.0(eslint@9.19.0(jiti@2.4.2))
+        specifier: 1.8.0
+        version: 1.8.0(eslint@9.19.0(jiti@2.4.2))
       eslint-plugin-simple-import-sort:
         specifier: ^12.1.0
         version: 12.1.1(eslint@9.19.0(jiti@2.4.2))
@@ -5899,8 +5899,8 @@ packages:
     peerDependencies:
       eslint: '>=8.44.0'
 
-  eslint-plugin-remeda@1.4.0:
-    resolution: {integrity: sha512-HbsAJhTNdz+ewSY9Icp59lCjj6fz7XZ/fcO97Jrh3sRNP+EsvzZRIhDJKIuXTMbvy+n44fdSlVWQ9BLtfavEWA==}
+  eslint-plugin-remeda@1.8.0:
+    resolution: {integrity: sha512-D2aZpnJ5e1nAPLySgceVDgBG4P5XtovfcbHYy0K+pPS/ZYo/ihG68FZYTzRjpWJe7kNtwt6xNMT5KJdnPMHDaA==}
     engines: {node: '>=20'}
     peerDependencies:
       eslint: '>=9.0.0'
@@ -17909,10 +17909,9 @@ snapshots:
       regexp-ast-analysis: 0.7.1
       scslre: 0.3.0
 
-  eslint-plugin-remeda@1.4.0(eslint@9.19.0(jiti@2.4.2)):
+  eslint-plugin-remeda@1.8.0(eslint@9.19.0(jiti@2.4.2)):
     dependencies:
       eslint: 9.19.0(jiti@2.4.2)
-      lodash-es: 4.17.21
 
   eslint-plugin-simple-import-sort@12.1.1(eslint@9.19.0(jiti@2.4.2)):
     dependencies:
