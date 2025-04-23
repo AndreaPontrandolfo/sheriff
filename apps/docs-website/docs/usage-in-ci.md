@@ -23,10 +23,20 @@ To get started, install it in your project:
 npm i -D @sherifforg/cli
 ```
 
+Add the command to your `package.json` scripts:
+
+```JSON title="package.json"
+{
+  "scripts": {
+    "sheriff": "sheriff"
+  }
+}
+```
+
 And then run it:
 
 ```bash npm2yarn
-npm exec sheriff
+npm run sheriff
 ```
 
 ## How it works
