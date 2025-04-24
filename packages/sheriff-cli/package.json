@@ -27,7 +27,7 @@
     "@sherifforg/types": "workspace:*",
     "@types/node": "^22.10.3",
     "@types/yargs": "^17.0.33",
-    "eslint": "^9.19.0",
+    "eslint": "^9.25.1",
     "eslint-config-sheriff": "workspace:*",
     "publint": "^0.3.11",
     "tsconfig": "workspace:*",
