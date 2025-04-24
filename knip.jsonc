@@ -1,12 +1,11 @@
 {
-  "$schema": "https://unpkg.com/knip@3/schema-jsonc.json",
+  "$schema": "https://unpkg.com/knip@5/schema-jsonc.json",
   "ignoreWorkspaces": [
     "packages/sheriff-utils",
     "apps/config-validation-playground",
     "apps/cli-playground",
     "apps/docs-website",
   ],
-  "ignore": ["**/eslint.config.ts"],
   "ignoreDependencies": [
     "@turbo/gen",
     "eslint-import-resolver-typescript",
