@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
+import { globalIgnores } from 'eslint/config';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
 import { ignores, sheriffStartingOptions } from '@sherifforg/constants';
@@ -112,14 +113,14 @@ export const getExportableConfig = (
     ? userConfigChoices.ignores?.inheritedFromGitignore
     : true;
 
-  exportableConfig.push({
-    ignores: [
+  exportableConfig.push(
+    globalIgnores([
       ...(hasIgnoresRecommended ? ignores : []),
       ...(hasIgnoresInheritedFromGitignore
         ? getGitignorePatterns({ strict: false }).ignores
         : []),
-    ],
-  });
+    ]),
+  );
 
   return exportableConfig;
 };
