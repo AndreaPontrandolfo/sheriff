@@ -1,0 +1,99 @@
+---
+title: Prior Art
+description: A comparison of Sheriff with other ESLint configurations
+---
+
+# 🧐 Prior art
+
+import { ComparisonTable } from "../../src/components/ComparisonTable";
+
+## Why yet another Eslint config?
+
+As you might have noticed, there are already a lot of ESLint configurations in the wild (have a look [here](#related-projects) or [here](https://github.com/dustinspecker/awesome-eslint#configs)).<br />
+None of these projects share the same goals of Sheriff.<br />
+Sheriff has a particular vision.
+
+The main reasons that led to it's creation are:
+
+- easy to setup and use (thanks to `@sherifforg/create-config`)
+- easy to customize (thanks to the `FlatConfig` format)
+- sensible defaults, based on years of real world experience in production scenarios
+
+After exploring every possible alternative, i came to the conclusion that none of the other options where close to what i needed for my projects and everyday use. **That’s why i still opted for making Sheriff**.
+
+## Related projects
+
+### Simple ESLint configs
+
+- [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb) ([comparison](#sheriff-vs-eslint-config-airbnb))
+- [@antfu/eslint-config](https://github.com/antfu/eslint-config) ([comparison](#sheriff-vs-antfu-config))
+- [eslint-config-canonical](https://github.com/gajus/eslint-config-canonical)
+- [eslint-config-hardcore](https://github.com/EvgenyOrekhov/eslint-config-hardcore)
+
+### ESLint wrappers
+
+These tools are not just sharable ESLint configs, but are wrappers for ESLint (and in some cases Prettier too) and also provide their CLI and their Editor integrations.
+
+- [xo](https://github.com/xojs/xo) ([comparison](#sheriff-vs-xo))
+- [standard](https://github.com/standard/standard)
+- [gts](https://github.com/google/gts)
+- [eslint-kit](https://github.com/eslint-kit/eslint-kit)
+
+#### Why Sheriff is NOT an ESLint wrapper
+
+Sheriff is **NOT** an ESLint wrapper.
+
+Meaning, you can do with Sheriff anything you can do with ESLint. ESLint wrappers instead limits you in the ability to do so. They lock you into their limited ecosystem.
+
+I believe that ESLint wrappers had their place once upon a time when the FlatConfig wasn't a thing. But today their usecases are largely obsolete.
+
+If you want a simple all-in-one solution, that only handles basic Javascript and doesn't require any customization, just go with something like [Biome](https://github.com/biomejs/biome), atleast it's fast. Instead, if you want something more advanced, that handle more usecases and offer more granular control to the user, go with something like Sheriff.
+
+## In-depth comparisons
+
+The main technical difference between Sheriff and the other projects is that Sheriff is updated to the most recent version of ESLint and supports the new `FlatConfig` instead of relying on weird hacks using the [@rushstack/eslint-patch](https://www.npmjs.com/package/@rushstack/eslint-patch). Because of the technical limitation imposed by this hack, these configs are harder to work with, at multiple levels.
+
+Another key difference is that the design of most of these configs seems to revolve around the idea of stuffing as much rules as possible into the config, regardless of the quality of the experience and the goal of the project.<br />
+Sheriff instead was [shaped around solid principles](./core-philosophy/criteria.md) and only includes the rules that let it achieve its goals.
+
+In addition, Sheriff features a lot of unique goodies and little nicities that other libraries lack.
+For a quick glance at the differences between Sheriff and some of the other ESLint configurations mentioned above, have a look at the table below.
+
+### Features comparison table
+
+<ComparisonTable />
+
+### Sheriff VS `eslint-config-airbnb`
+
+I cannot not mention the fact that `eslint-config-airbnb` is apparently the most popular ESLint config.
+
+However there are a few specific reasons that led to this, and none of them has to do with the quality of the config itself:
+
+- it was one of the first ESLint configs to be created
+- the starred repository actually contains a stylistic guide, not just the ESLint config. The endorsements are for the guide, not the ESLint config
+- the repository is owned by Airbnb. Many developers through the years starred it just for their enthusiasm for the company, not for the ESLint library in particular
+- for many years, it was the deafult ESLint config in many popular boilerplates and React guides/articles
+
+As of today it's frowned upon by many industry professionals. Some of the most glaring issues:
+
+- it's largely outdated and not maintained since quite some time
+- It's big, bloated, too strict for most projects
+- it doesn't support TypeScript out of the box, to get it you actually have to use a different library, even less maintained and supported than the original one
+
+### Sheriff VS `@antfu/eslint-config` \{#sheriff-vs-antfu-config}
+
+Antfu config shares many similarities with Sheriff, but is less mature and has less features.
+
+Also, it's important to note that it goes for a very opinionated route toward styling, where instead of adopting Prettier, it relies on [eslint-stylistic](https://github.com/eslint-community/eslint-stylistic) for it's formatting needs.
+
+That being said, Antfu is a prominent figure in the Javascript community and Sheriff takes some inpiration from his config.
+
+Ultimately, both Sheriff and Antfu are good choices, but they have different flavors.
+
+### Sheriff VS XO
+
+XO is an interesting project. It uses ESLint and Prettier under the hood, but don't directly expose them to you. Instead of relying on the ESLint CLI and VSCode Extensions, it has it's own CLI and VSCode Extension. On the surface, it can seem like a good thing because it allows them to provide a more integrated experience, but it also means that you are locked into their ecosystem and you cannot freely extend them.
+
+It is very opinionated in their stylistic and formatting choices and doesn't allow for much flexibility.
+
+XO has many issues that ESLint and Prettier don't have.
