@@ -1,0 +1,85 @@
+---
+title: Monorepo Support
+description: How to configure Sheriff in a monorepo setup.
+---
+
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import { RiJavascriptFill,  } from "react-icons/ri";
+import { ImGit } from "react-icons/im";
+import { SiPnpm } from "react-icons/si";
+import { VscJson } from "react-icons/vsc";
+import { LiaReadme } from "react-icons/lia";
+
+# 🌎 Monorepo support
+
+## General guidelines
+
+While Sheriff can technically be used at the _root_ of monorepos, it's **not** recommended.
+
+Sheriff works best when applied to individual packages _within_ a monorepo.
+
+### Examples
+
+#### Recommended ✅
+
+<Files>
+  <Folder name="apps" defaultOpen>
+    <Folder name="website" defaultOpen>
+      <File name="eslint.config.mjs" icon={<RiJavascriptFill />} />
+    </Folder>
+    <Folder name="docs" defaultOpen>
+      <File name="eslint.config.mjs" icon={<RiJavascriptFill />} />
+    </Folder>
+  </Folder>
+  <Folder name="packages" defaultOpen>
+    <Folder name="ui" defaultOpen>
+      <File name="eslint.config.mjs" icon={<RiJavascriptFill />} />
+    </Folder>
+    <Folder name="utils" defaultOpen>
+      <File name="eslint.config.mjs" icon={<RiJavascriptFill />} />
+    </Folder>
+    <Folder name="types" defaultOpen>
+      <File name="eslint.config.mjs" icon={<RiJavascriptFill />} />
+    </Folder>
+  </Folder>
+  <File name="package.json" icon={<VscJson />} />
+  <File name="pnpm-lock.yaml" icon={<SiPnpm />} />
+  <File name=".gitignore" icon={<ImGit />} />
+  <File name="README" icon={<LiaReadme />} />
+</Files>
+
+
+#### Not Recommended ❌
+
+<Files>
+  <Folder name="apps" defaultOpen>
+    <Folder name="website" />
+    <Folder name="docs" />
+  </Folder>
+  <Folder name="packages" defaultOpen>
+    <Folder name="ui" />
+    <Folder name="utils" />
+    <Folder name="types" />
+  </Folder>
+  <File name="eslint.config.mjs" icon={<RiJavascriptFill />} />
+  <File name="package.json" icon={<VscJson />} />
+  <File name="pnpm-lock.yaml" icon={<SiPnpm />} />
+  <File name=".gitignore" icon={<ImGit />} />
+  <File name="README" icon={<LiaReadme />} />
+</Files>
+
+## Usage in VSCode
+
+To make use of the [ESLint VScode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) in monorepos, use the [eslint.workingDirectories](https://github.com/microsoft/vscode-eslint#mono-repository-setup) setting.
+
+## Setup with `npm init @sherifforg/config`
+
+If you want to use `npm init @sherifforg/config` to bootstrap Sheriff in one of your workspace' packages, you can actually do so by following the general usage rules of workspaces, Sheriff will try to mimic the behaviour of popular monorepo CLI tools, so it will feel seamless, intuitive and familiar.
+
+Run the command from the root of your monorepo, and then filter by the workspace you want to apply Sheriff to. A chain of prompts will start to guide you through the correct process of installation.
+
+### Example
+
+```bash
+npm init @sherifforg/config --filter=path/to/my/package
+```
