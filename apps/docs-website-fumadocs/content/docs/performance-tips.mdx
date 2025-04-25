@@ -1,9 +1,9 @@
 ---
-sidebar_position: 15
+title: Performance Tips
+description: Tips for improving ESLint performance when using Sheriff.
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 # ⚡ Performance tips
 
@@ -18,8 +18,8 @@ The currently known slowest rules in Sheriff are the ones of `@typescript-eslint
 
 You can benchmark rules performance by yourself by running the following command in the terminal:
 
-```bash npm2yarn
-TIMING=1 npx eslint
+```bash
+TIMING=1 pnpm dlx eslint
 ```
 
 Learn more in the [ESLint official docs section](https://eslint.org/docs/latest/extend/custom-rules#profile-rule-performance).
@@ -39,8 +39,8 @@ This approach has a little more overhead, but you could try to run the heaviest 
 
 Here is an example on how you can achieve it:
 
-<Tabs groupId="tsorjs">
-  <TabItem value="JS" label="JS">
+<Tabs groupId="tsorjs" items={['JS', 'TS']} persist>
+  <Tab value="JS">
 
 ```js title="eslint.config.js"
 import { sheriff, tseslint } from "eslint-config-sheriff";
@@ -60,15 +60,14 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
-      // highlight-next-line
-      "@typescript-eslint/no-misused-promises": process.env.CI ? 2 : 0,
+      "@typescript-eslint/no-misused-promises": process.env.CI ? 2 : 0, // [!code highlight]
     },
   },
 );
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+</Tab>
+<Tab value="TS">
 
 ```ts title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
@@ -88,14 +87,13 @@ const sheriffOptions: SheriffSettings = {
 export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
-      // highlight-next-line
-      "@typescript-eslint/no-misused-promises": process.env.CI ? 2 : 0,
+      "@typescript-eslint/no-misused-promises": process.env.CI ? "error" : "off", // [!code highlight]
     },
   },
 );
 ```
 
-  </TabItem>
+  </Tab>
 </Tabs>
 
 This is a tradeoff, as this approach is a DX degradation and could lead to some developer frustration, because perfectly valid code in local environment could instead fail in CI.
@@ -112,7 +110,7 @@ Instead, if your project lives in a monorepo, you can follow [this guide](https:
 
 ### Review glob patterns
 
-ESLint, Typescript and Sheriff use minimatch syntax to handle glob patterns. <br />
+ESLint, Typescript and Sheriff use minimatch syntax to handle glob patterns.
 Wide glob patterns can lead to performance degradation.
 
 Pay special attention to:
