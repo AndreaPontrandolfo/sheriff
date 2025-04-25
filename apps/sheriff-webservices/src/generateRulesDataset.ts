@@ -59,10 +59,7 @@ const severityRemapper = (severity: Severity): NumericSeverity => {
   }
 };
 
-const getDocs = (
-  ruleName: string,
-  plugins?: TSESLint.FlatConfig.Config['plugins'],
-) => {
+const getDocs = (ruleName: string, plugins?: TSESLint.FlatConfig.Plugins) => {
   const docs = {
     description: '',
     url: '',
@@ -125,7 +122,7 @@ const extractNumericSeverityFromRuleOptions = (
 
 const getCompiledConfig = (
   config: TSESLint.FlatConfig.ConfigArray,
-  allRulesRaw: TSESLint.FlatConfig.Config['rules'],
+  allRulesRaw: TSESLint.FlatConfig.Rules,
 ) => {
   const pluginsNames: string[] = [];
 
@@ -159,23 +156,21 @@ const getCompiledConfig = (
 
   const declaredRules = compiledConfig.map((rule) => rule.ruleName);
 
-  if (allRulesRaw) {
-    for (const [ruleName, ruleOptions] of Object.entries(allRulesRaw)) {
-      if (!declaredRules.includes(ruleName)) {
-        const parentPluginName = getParentPluginName(ruleName);
+  for (const [ruleName, ruleOptions] of Object.entries(allRulesRaw)) {
+    if (!declaredRules.includes(ruleName)) {
+      const parentPluginName = getParentPluginName(ruleName);
 
-        const ruleRecord: Entry = {
-          ruleName,
-          parentPluginName,
-          severity: 0,
-          //@ts-expect-error
-          ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
-          affectedFiles: 'none',
-          docs: getDocs(ruleName),
-        };
+      const ruleRecord: Entry = {
+        ruleName,
+        parentPluginName,
+        severity: 0,
+        //@ts-expect-error
+        ruleOptions: extractOptionsFromRuleEntry(ruleOptions),
+        affectedFiles: 'none',
+        docs: getDocs(ruleName),
+      };
 
-        compiledConfig.push(ruleRecord);
-      }
+      compiledConfig.push(ruleRecord);
     }
   }
 
@@ -184,7 +179,7 @@ const getCompiledConfig = (
 
 export const generateRulesDataset = (
   config: TSESLint.FlatConfig.ConfigArray,
-  allRulesRaw: TSESLint.FlatConfig.Config['rules'],
+  allRulesRaw: TSESLint.FlatConfig.Rules,
 ): ServerResponse => {
   const { compiledConfig, pluginsNames } = getCompiledConfig(
     config,
