@@ -1,5 +1,12 @@
 # eslint-config-sheriff
 
+## 27.2.0
+
+### Minor Changes
+
+- a418973: feat: bumped some deps
+- e14e7b8: feat(deps): updated and pinned eslint-plugin-remeda. Fixes [#393](https://github.com/AndreaPontrandolfo/sheriff/issues/393)
+
 ## 27.1.0
 
 ### Minor Changes
