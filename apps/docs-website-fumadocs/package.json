@@ -1,20 +1,22 @@
 {
   "name": "docs-website-fumadocs",
-  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "dev": "next dev --turbo",
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
     "start": "next start",
-    "postinstall": "fumadocs-mdx"
+    "postinstall": "fumadocs-mdx",
+    "typecheck": "tsc",
+    "lint": "eslint --max-warnings=0",
+    "clean": "rm -rf .turbo dist node_modules/.cache"
   },
   "dependencies": {
-    "next": "15.3.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
     "fumadocs-ui": "15.2.11",
     "fumadocs-core": "15.2.11",
-    "fumadocs-mdx": "11.6.1"
+    "fumadocs-mdx": "11.6.1",
+    "next": "15.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@types/node": "22.15.2",
@@ -23,7 +25,8 @@
     "typescript": "^5.8.3",
     "@types/mdx": "^2.0.13",
     "@tailwindcss/postcss": "^4.1.4",
+    "postcss": "^8.5.3",
     "tailwindcss": "^4.1.4",
-    "postcss": "^8.5.3"
+    "tsconfig": "workspace:*"
   }
 }

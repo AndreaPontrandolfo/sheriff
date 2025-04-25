@@ -2,7 +2,7 @@
   "name": "sheriff-monorepo",
   "private": true,
   "scripts": {
-    "dev": "turbo start build:watch",
+    "dev": "turbo dev build:watch",
     "build": "turbo run build",
     "playground": "pnpm --filter=cli-playground exec create-config",
     "playground:mimic-monorepo": "pnpm exec create-config --filter=cli-playground",
@@ -37,6 +37,7 @@
     "@turbo/gen": "^2.2.3",
     "knip": "^5.50.5",
     "prettier": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.2.3",
     "typesync": "0.14.0"
   },
