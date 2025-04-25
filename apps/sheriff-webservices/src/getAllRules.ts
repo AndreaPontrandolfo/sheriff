@@ -43,6 +43,7 @@ export const getAllRules = (
   const reactRulesCatalog = {
     // @ts-expect-error
     ...prependRulesWithPluginName(react.rules, 'react'),
+    // @ts-expect-error
     ...prependRulesWithPluginName(reactAccessibility.rules, 'jsx-a11y'),
     ...prependRulesWithPluginName(reactHooks.rules, 'react-hooks'),
     // @ts-expect-error

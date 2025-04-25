@@ -83,7 +83,7 @@ Sheriff will scan the config file trying to find a variable named **exactly** `s
 
 ## Options
 
-The `@sherifforg/cli` is very flexible and offers a variety of options to customize it's behavior. Look at the [API reference](./cli-usage/commands-reference#sherifforgcli) for detailed info on the available options.
+The `@sherifforg/cli` is very flexible and offers a variety of options to customize it's behavior. Look at the [API reference](./commands-reference#sherifforgcli) for detailed info on the available options.
 
 You can:
 

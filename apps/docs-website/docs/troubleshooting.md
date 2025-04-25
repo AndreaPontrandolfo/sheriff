@@ -19,4 +19,4 @@ Refer to the [Nextjs compatibility documentation](./faq.md#is-sheriff-compatible
 
 ## My editor feels slow
 
-Make sure to read the appropriate docs [here](./performance-considerations.mdx).
+Make sure to read the appropriate docs [here](./performance-tips.mdx).

@@ -56,8 +56,10 @@
     },
     "onlyBuiltDependencies": [
       "@swc/core",
+      "core-js",
       "esbuild",
-      "sharp"
+      "sharp",
+      "unrs-resolver"
     ]
   }
 }
