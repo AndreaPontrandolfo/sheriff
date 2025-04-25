@@ -26,7 +26,6 @@ export const getReactConfig = (
     },
     {
       files: [supportedFileTypes],
-      // @ts-expect-error
       plugins: { react },
       settings: {
         react: {
@@ -34,13 +33,14 @@ export const getReactConfig = (
         },
       },
       rules: {
-        ...react.configs.flat?.recommended.rules,
-        ...react.configs.flat?.['jsx-runtime'].rules,
+        ...react.configs.flat.recommended.rules,
+        ...react.configs.flat['jsx-runtime'].rules,
         ...reactHandPickedRules,
       },
     },
     {
       files: [`**/*{${allJsxExtensions}}`],
+      // @ts-expect-error
       rules: getTsNamingConventionRule({ isTsx: true }),
     },
     {

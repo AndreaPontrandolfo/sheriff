@@ -33,6 +33,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Launch Turborepo Remote Caching
-        uses: rharkor/caching-for-turbo@v1.5
+        uses: rharkor/caching-for-turbo@v1.8
       - name: Run qa checks
         run: pnpm merge-checks

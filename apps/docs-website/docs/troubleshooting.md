@@ -1,5 +1,5 @@
 ---
-sidebar_position: 20
+sidebar_position: 19
 ---
 
 # 🩹 Troubleshooting
@@ -19,4 +19,4 @@ Refer to the [Nextjs compatibility documentation](./faq.md#is-sheriff-compatible
 
 ## My editor feels slow
 
-Make sure to read the appropriate docs [here](./performance-considerations.mdx).
+Make sure to read the appropriate docs [here](./performance-tips.mdx).

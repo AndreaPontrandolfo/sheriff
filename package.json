@@ -35,12 +35,12 @@
     "@sherifforg/cli": "workspace:*",
     "@sherifforg/create-config": "workspace:*",
     "@turbo/gen": "^2.2.3",
-    "knip": "^5.42.0",
+    "knip": "^5.50.5",
     "prettier": "^3.3.2",
     "turbo": "^2.2.3",
     "typesync": "0.14.0"
   },
-  "packageManager": "pnpm@9.15.2",
+  "packageManager": "pnpm@10.9.0",
   "engines": {
     "node": ">=20.10.0"
   },
@@ -56,8 +56,10 @@
     },
     "onlyBuiltDependencies": [
       "@swc/core",
+      "core-js",
       "esbuild",
-      "sharp"
+      "sharp",
+      "unrs-resolver"
     ]
   }
 }

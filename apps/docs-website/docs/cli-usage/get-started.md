@@ -1,8 +1,9 @@
 ---
-sidebar_position: 15
+sidebar_position: 1
+description: 'How to use the Sheriff CLI.'
 ---
 
-# 🤖 Usage in CI
+# Get started
 
 ## Intro
 
@@ -13,9 +14,9 @@ The Sheriff CLI is composed of 2 packages:
 
 The `@sherifforg/cli` is invoked in the CLI with the `sheriff` command.
 
-It is advised to integrate the `@sherifforg/cli` in your CI pipelines to ensure that the Sheriff configuration is always correct and up-to-date, but you can also integrate it into pre-commit hooks if that's your preference.
+It is advised to integrate the `@sherifforg/cli` in your **CI pipelines** to ensure that the Sheriff configuration is always correct and up-to-date, but you can also integrate it into pre-commit hooks if that's your preference.
 
-## Usage
+## How to run it
 
 To get started, install it in your project:
 
@@ -82,7 +83,7 @@ Sheriff will scan the config file trying to find a variable named **exactly** `s
 
 ## Options
 
-The `@sherifforg/cli` is very flexible and offers a variety of options to customize it's behavior. Look at the [API reference](./cli-reference#sherifforgcli) for detailed info on the available options.
+The `@sherifforg/cli` is very flexible and offers a variety of options to customize it's behavior. Look at the [API reference](./commands-reference#sherifforgcli) for detailed info on the available options.
 
 You can:
 
