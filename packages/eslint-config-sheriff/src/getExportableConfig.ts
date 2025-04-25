@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 import { globalIgnores } from 'eslint/config';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
-import lodash from 'lodash';
+import { isBoolean, isEmpty } from 'remeda';
 import { ignores, sheriffStartingOptions } from '@sherifforg/constants';
 import type { SheriffSettings } from '@sherifforg/types';
 import type { TSESLint } from '@typescript-eslint/utils';
@@ -90,7 +90,7 @@ export const getExportableConfig = (
     );
 
     exportableConfig = exportableConfig.map((configSlice) => {
-      if (configSlice.ignores?.length && !lodash.isEmpty(configSlice.ignores)) {
+      if (configSlice.ignores?.length && !isEmpty(configSlice.ignores)) {
         return configSlice;
       }
 
@@ -101,13 +101,13 @@ export const getExportableConfig = (
     });
   }
 
-  const hasIgnoresRecommended = lodash.isBoolean(
+  const hasIgnoresRecommended = isBoolean(
     userConfigChoices.ignores?.recommended,
   )
     ? userConfigChoices.ignores?.recommended
     : true;
 
-  const hasIgnoresInheritedFromGitignore = lodash.isBoolean(
+  const hasIgnoresInheritedFromGitignore = isBoolean(
     userConfigChoices.ignores?.inheritedFromGitignore,
   )
     ? userConfigChoices.ignores?.inheritedFromGitignore

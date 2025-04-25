@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-import { isEmpty } from 'lodash-es';
 import { type JSX, useEffect, useRef, useState } from 'react';
 import { DebounceInput } from 'react-debounce-input';
 import Select from 'react-select';
+import { isEmpty } from 'remeda';
 import { configCombinationDefaultValues } from '@sherifforg/constants';
 import type { Entry, ServerResponse, SheriffSettings } from '@sherifforg/types';
 import {

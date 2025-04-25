@@ -1,11 +1,11 @@
-import { isEqual } from 'lodash-es';
+import { isDeepEqual } from 'remeda';
 import type { Entry } from '@sherifforg/types';
 import { removeElementFromArrayByValue } from './removeElementFromArrayByValue';
 
 const isSameItem = (firstOccurrence: Entry, secondOccurrence: Entry) => {
   return (
-    isEqual(firstOccurrence.ruleOptions, secondOccurrence.ruleOptions) &&
-    isEqual(firstOccurrence.affectedFiles, secondOccurrence.affectedFiles)
+    isDeepEqual(firstOccurrence.ruleOptions, secondOccurrence.ruleOptions) &&
+    isDeepEqual(firstOccurrence.affectedFiles, secondOccurrence.affectedFiles)
   );
 };
 
@@ -16,7 +16,7 @@ export const filterDuplicateRules = (rules: Entry[]): Entry[] => {
   const alreadyFoundOccurrences: Entry[] = [];
 
   for (const currentRule of rules) {
-    // TODO: this is O(n^2), it is probabably slow and should be optimized, either with Map or object lookup
+    // TODO: this is O(n^2), it is probably slow and should be optimized, either with Map or object lookup
     const ruleWithSameName = alreadyFoundOccurrences.find(
       (occurrence) => occurrence.ruleName === currentRule.ruleName,
     );

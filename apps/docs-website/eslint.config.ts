@@ -4,8 +4,8 @@ import docusaurusEslintPlugin from '@docusaurus/eslint-plugin';
 
 const sheriffOptions: SheriffSettings = {
   react: true,
-  lodash: true,
-  remeda: false,
+  lodash: false,
+  remeda: true,
   next: false,
   astro: false,
   playwright: false,

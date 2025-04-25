@@ -2,8 +2,8 @@ import { sheriff, tseslint } from 'eslint-config-sheriff';
 
 const sheriffOptions = {
   react: false,
-  lodash: true,
-  remeda: false,
+  lodash: false,
+  remeda: true,
   next: false,
   astro: false,
   playwright: false,
