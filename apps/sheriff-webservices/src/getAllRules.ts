@@ -41,12 +41,10 @@ export const getAllRules = (
   ) => Record<string, RuleOptions>,
 ): TSESLint.FlatConfig.Config['rules'] => {
   const reactRulesCatalog = {
-    // @ts-expect-error
     ...prependRulesWithPluginName(react.rules, 'react'),
     // @ts-expect-error
     ...prependRulesWithPluginName(reactAccessibility.rules, 'jsx-a11y'),
     ...prependRulesWithPluginName(reactHooks.rules, 'react-hooks'),
-    // @ts-expect-error
     ...prependRulesWithPluginName(reactRefresh.rules, 'react-refresh'),
     ...prependRulesWithPluginName(
       (rel1cxReact as unknown as Plugin).rules,
