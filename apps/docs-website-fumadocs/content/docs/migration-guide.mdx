@@ -1,9 +1,10 @@
 ---
-sidebar_position: 16
+title: Migration Guide
+description: How to migrate an existing codebase to Sheriff.
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import { Callout } from "fumadocs-ui/components/callout";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 # ♻ Migration guide
 
@@ -24,15 +25,14 @@ You can achieve this by leveraging 2 techniques:
 
   See example below:
 
-<Tabs groupId="tsorjs">
-  <TabItem value="JS" label="JS">
+<Tabs groupId="tsorjs" items={['JS', 'TS']} persist>
+  <Tab value="JS">
 
 ```js title="eslint.config.js"
 import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
-  // highlight-next-line
-  files: ["src/**/*"], // Only the files in the src directory will be linted.
+  files: ["src/**/*"], // Only the files in the src directory will be linted. [!code highlight]
   react: false,
   next: false,
   astro: false,
@@ -47,15 +47,14 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions));
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+</Tab>
+<Tab value="TS">
 
 ```ts title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
-  // highlight-next-line
-  files: ["src/**/*"], // Only the files in the src directory will be linted.
+  files: ["src/**/*"], // Only the files in the src directory will be linted. [!code highlight]
   react: false,
   next: false,
   astro: false,
@@ -70,13 +69,11 @@ const sheriffOptions: SheriffSettings = {
 export default tseslint.config(sheriff(sheriffOptions));
 ```
 
-  </TabItem>
+  </Tab>
 </Tabs>
 
-:::info
-
+<Callout title="Info">
 By default, the [automatic setup process](./setup/automatic-setup.mdx) will not add the `files` in the object and every js/ts file will be linted. Use this only if you want to specifically lint just a subsection of the codebase.
-
-:::
+</Callout>
 
 - use [eslint-interactive](https://github.com/mizdra/eslint-interactive)
