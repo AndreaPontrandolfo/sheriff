@@ -87,7 +87,7 @@ const sheriffOptions: SheriffSettings = {
 export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
-      "@typescript-eslint/no-misused-promises": process.env.CI ? "error" : "off", // [!code highlight]
+      "@typescript-eslint/no-misused-promises": process.env.CI ? 2 : 0, // [!code highlight]
     },
   },
 );
