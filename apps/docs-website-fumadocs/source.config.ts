@@ -9,6 +9,16 @@ export const docs = defineDocs({
 
 export default defineConfig({
   mdxOptions: {
-    remarkPlugins: [remarkInstall, remarkTypeScriptToJavaScript],
+    remarkPlugins: [
+      [
+        remarkInstall,
+        {
+          persist: {
+            id: 'packagemanagers',
+          },
+        },
+      ],
+      remarkTypeScriptToJavaScript,
+    ],
   },
 });

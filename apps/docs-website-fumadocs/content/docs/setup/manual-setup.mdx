@@ -1,0 +1,107 @@
+---
+title: Manual setup
+order: 2
+description: DIY
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Steps } from 'fumadocs-ui/components/steps';
+import { CodeBlock } from 'fumadocs-ui/components/codeblock';
+
+# Manual setup
+
+Follow these steps:
+
+<Steps>
+
+1.  Install the package from [npm](https://www.npmjs.com/package/eslint-config-sheriff).
+
+    ```package-install
+    npm install -D eslint eslint-config-sheriff
+    ```
+
+2.  Create a `eslint.config.mjs` file at the root of your project and copy/paste the contents of the following snippet of code:
+
+    ```js title="eslint.config.mjs"
+    import { sheriff, tseslint } from "eslint-config-sheriff";
+
+    const sheriffOptions = {
+      react: false,
+      next: false,
+      astro: false,
+      lodash: false,
+      remeda: false,
+      playwright: false,
+      storybook: true,
+      jest: false,
+      vitest: false,
+    };
+
+    export default tseslint.config(sheriff(sheriffOptions));
+    ```
+
+    or, if you already have a `eslint.config.mjs` in your project, just append Sheriff to the configs array, like this:
+
+    ```js title="eslint.config.mjs"
+    import { sheriff, tseslint } from "eslint-config-sheriff"; // add this [!code highlight]
+    // my other imports...
+
+    // add this // [!code highlight:12]
+    const sheriffOptions = {
+      react: false,
+      next: false,
+      astro: false,
+      lodash: false,
+      remeda: false,
+      playwright: false,
+      storybook: true,
+      jest: false,
+      vitest: false,
+    };
+
+
+    export default tseslint(
+      sheriff(sheriffOptions), // add this [!code highlight]
+      // my other configurations...
+    );
+    ```
+
+3.  Adopt `eslint.config.ts` (_optional_).
+
+    If you want to have a `.ts` configuration file ([learn more](/docs/typescript-support/eslint-config-ts)) instead of the default `.mjs` file, follow these steps:
+
+      1. make sure your installed ESLint version is `>=9.9.0` (preferably `>=9.18.0`. [See why](/docs/vscode-support#eslintconfigts-support))
+      2. install [jiti](https://github.com/unjs/jiti)
+        ```package-install
+        npm install -D jiti
+        ```
+      3. change the extension of `eslint.config.mjs` from `.mjs` to `.ts`
+      4. define the types of the `sheriffOptions` object:
+
+        ```ts title="eslint.config.ts"
+        import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
+
+        const sheriffOptions: SheriffSettings = {
+          react: false,
+          next: false,
+          astro: false,
+          lodash: false,
+          remeda: false,
+          playwright: false,
+          storybook: true,
+          jest: false,
+          vitest: false,
+        };
+
+        export default tseslint.config(sheriff(sheriffOptions));
+        ```
+
+4.  [Configure Sheriff](/docs/configuration) (_optional_)
+5.  [Setup Prettier](/docs/prettier-support#setup) (_optional_)
+6.  [Setup VSCode support](/docs/vscode-support) (_optional_)
+
+</Steps>
+
+<Callout type="warn" title="Warning">
+  Sheriff is based on the [new format of ESLint configs](https://eslint.org/docs/latest/user-guide/configuring/configuration-files-new). You cannot extend Sheriff from an [old config format](https://eslint.org/docs/latest/user-guide/configuring/configuration-files), it wouldn't work.
+</Callout>
