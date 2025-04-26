@@ -14,7 +14,7 @@
   },
   "scripts": {
     "rulesgen": "tsx ./src/generateRulesDataset.ts",
-    "clean": "rm -rf .turb dist node_modules/.cache"
+    "clean": "rm -rf .turbo dist node_modules/.cache"
   },
   "devDependencies": {
     "@sherifforg/types": "workspace:*",
