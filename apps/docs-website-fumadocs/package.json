@@ -11,6 +11,7 @@
     "clean": "rm -rf .turbo dist node_modules/.cache"
   },
   "dependencies": {
+    "@sherifforg/constants": "workspace:*",
     "fumadocs-core": "15.2.11",
     "fumadocs-mdx": "11.6.1",
     "fumadocs-ui": "15.2.11",
