@@ -1,9 +1,8 @@
 ---
 title: Techs
 description: List of supported technologies
+icon: HiMiniCpuChip
 ---
-
-# 🖥️ Techs
 
 - [Eslint](https://eslint.org)
 - [Prettier](https://prettier.io)

@@ -1,9 +1,8 @@
 ---
 title: ESLint Plugins
 description: List of ESLint plugins used in Sheriff
+icon: IoExtensionPuzzleSharp
 ---
-
-# 🔌 ESLint plugins
 
 - [@eslint/js](https://www.npmjs.com/package/@eslint/js)
 - [@typescript/eslint](https://github.com/typescript-eslint/typescript-eslint)

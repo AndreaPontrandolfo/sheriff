@@ -1,9 +1,8 @@
 ---
 title: FAQ
 description: Frequently Asked Questions about Sheriff
+icon: SlSpeech
 ---
-
-# 📚 FAQ
 
 ## Why you didn’t include ESLint plugins/rules for "X" library?
 

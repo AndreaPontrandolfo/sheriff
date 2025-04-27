@@ -1,9 +1,8 @@
 ---
 title: VSCode Support
 description: Configure VSCode settings for optimal Sheriff integration
+icon: VscVscode
 ---
-
-# 🚀 VSCode support
 
 To make the [VSCode ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) work better with Sheriff we can enable a few settings. It's advisable to enable them at the workspace level, meaning in the root of the project at `.vscode/settings.json`
 

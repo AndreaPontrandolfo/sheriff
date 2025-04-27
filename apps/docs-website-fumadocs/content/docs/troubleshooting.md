@@ -1,9 +1,8 @@
 ---
 title: Troubleshooting
 description: Troubleshooting Sheriff
+icon: MdTroubleshoot
 ---
-
-# 🩹 Troubleshooting
 
 ## The command `yarn create @sherifforg/config` fails when using yarn
 

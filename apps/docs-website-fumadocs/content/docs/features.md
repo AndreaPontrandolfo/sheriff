@@ -1,9 +1,8 @@
 ---
 title: Features
 description: Key features of Sheriff
+icon: BsStars
 ---
-
-# ✨ Features
 
 - ⚡ **Batteries included**: Sheriff is a all-in-one solution. You don't need to install or configure separately anything else. Everything is included here
 - ∞ **Seamless**: if you know ESLint, you know Sheriff

@@ -2,7 +2,7 @@
   "name": "sheriff-monorepo",
   "private": true,
   "scripts": {
-    "dev": "turbo dev build:watch --filter=!@sherifforg/create-config",
+    "dev": "turbo dev build:watch --filter=!@sherifforg/create-config --filter=!@sherifforg/cli",
     "build": "turbo run build",
     "playground": "pnpm --filter=cli-playground exec create-config",
     "playground:mimic-monorepo": "pnpm exec create-config --filter=cli-playground",

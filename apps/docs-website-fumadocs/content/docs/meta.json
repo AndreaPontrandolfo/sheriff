@@ -6,6 +6,7 @@
     "techs",
     "setup",
     "requirements",
+    "eslint-plugins",
     "configuration",
     "prettier-support",
     "vscode-support",
@@ -16,6 +17,8 @@
     "migration-guide",
     "prior-art",
     "faq",
-    "troubleshooting"
+    "troubleshooting",
+    "[LuCalendarDays][Changelog](https://github.com/AndreaPontrandolfo/sheriff/releases)",
+    "..."
   ]
 }
