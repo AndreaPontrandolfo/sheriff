@@ -11,6 +11,7 @@
     "clean": "rm -rf .turbo dist node_modules/.cache"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.0",
     "@sherifforg/constants": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^1.2.1",
