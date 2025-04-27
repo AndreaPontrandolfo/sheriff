@@ -14,6 +14,8 @@ import {
   allJsExtensions
 } from "@sherifforg/constants";
 
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+
 ## Base options
 
 The `eslint-config-sheriff` package exports a `sheriff` function.<br />
@@ -382,9 +384,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 
 By default, Sheriff will apply Jest or Vitest rules only on specific files.
 
-<CodeBlock>
-  {JSON.stringify(testsFilePatterns, null, 2)}
-</CodeBlock>
+<DynamicCodeBlock lang="ts" code={JSON.stringify(testsFilePatterns, null, 2)} />
 
 This setting overrides this default.
 
@@ -451,9 +451,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 
 By default, Sheriff will apply Playwright rules only on specific files.
 
-<CodeBlock>
-  {JSON.stringify(allJsExtensions, null, 2)}
-</CodeBlock>
+<DynamicCodeBlock lang="ts" code={JSON.stringify(allJsExtensions, null, 2)} />
 
 This setting overrides this default.
 
