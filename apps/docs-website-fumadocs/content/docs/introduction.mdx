@@ -1,19 +1,24 @@
 ---
 title: Introduction
-description: Welcome to Sheriff
+description: Welcome to Sheriff!
 icon: HiOutlineBarsArrowDown
 ---
 
 import { IoLogoGithub } from "react-icons/io5";
 import { IoLogoNpm } from "react-icons/io5";
+import { Button } from "@/components/ui/Button"
 
 This is the official website of the open-source library **Sheriff**.
 
-<a href="https://github.com/AndreaPontrandolfo/sheriff" className="flex items-center gap-2">
-  <IoLogoGithub /><span>Github Link</span>
+<a href="https://github.com/AndreaPontrandolfo/sheriff" target="_blank">
+  <Button className='cursor-pointer'>
+    <IoLogoGithub /><span>Github</span>
+  </Button>
 </a>
-<a href="https://www.npmjs.com/package/eslint-config-sheriff" className="flex items-center gap-2">
-  <IoLogoNpm /><span>npm Link</span>
+<a href="https://www.npmjs.com/package/eslint-config-sheriff" target="_blank">
+  <Button className='cursor-pointer'>
+    <IoLogoNpm /><span>npm</span>
+  </Button>
 </a>
 
 ## What is Sheriff?

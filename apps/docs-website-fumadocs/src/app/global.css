@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/shadcn.css';
 @import 'fumadocs-ui/css/preset.css';
+
+/*#region - shadcn/ui */
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
@@ -120,3 +122,5 @@
     @apply bg-background text-foreground;
   } */
 }
+
+/*#endregion*/
