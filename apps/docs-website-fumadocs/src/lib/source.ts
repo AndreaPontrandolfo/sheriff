@@ -14,6 +14,7 @@ import { GrUpdate } from 'react-icons/gr';
 import { FaTruck } from 'react-icons/fa6';
 import { PiListMagnifyingGlassBold } from 'react-icons/pi';
 import { MdTroubleshoot } from 'react-icons/md';
+import { HiOutlineBarsArrowDown } from 'react-icons/hi2';
 
 const icons = {
   BsStars,
@@ -35,6 +36,7 @@ const icons = {
   PiListMagnifyingGlassBold,
   SlSpeech,
   MdTroubleshoot,
+  HiOutlineBarsArrowDown,
 };
 
 // See https://fumadocs.vercel.app/docs/headless/source-api for more info
