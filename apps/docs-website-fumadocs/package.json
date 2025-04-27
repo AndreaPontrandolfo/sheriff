@@ -12,14 +12,18 @@
   },
   "dependencies": {
     "@sherifforg/constants": "workspace:*",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^1.2.1",
     "fumadocs-core": "15.2.11",
     "fumadocs-mdx": "11.6.1",
     "fumadocs-typescript": "^4.0.3",
     "fumadocs-ui": "15.2.11",
+    "lucide-react": "^0.503.0",
     "next": "15.3.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.4",
@@ -32,6 +36,7 @@
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.4",
     "tsconfig": "workspace:*",
+    "tw-animate-css": "^1.2.8",
     "typescript": "^5.8.3"
   }
 }
