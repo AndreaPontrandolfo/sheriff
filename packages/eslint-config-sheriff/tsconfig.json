@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "include": ["src", "eslint.config.ts"],
-  "exclude": ["dist", "build", "node_modules"],
   "extends": "tsconfig/base.json",
   "compilerOptions": {
-    "incremental": true
+    "incremental": true,
+    "declaration": true,
+    "isolatedDeclarations": true
   }
 }

@@ -1,6 +1,6 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 
-export const jestHandPickedRules = {
+export const jestHandPickedRules: TSESLint.FlatConfig.Rules = {
   'jest/no-conditional-expect': 2,
   'jest/no-conditional-in-test': 2,
   'jest/no-alias-methods': 2,
@@ -25,4 +25,4 @@ export const jestHandPickedRules = {
   'jest/valid-expect': 2,
   'jest/consistent-test-it': [2, { fn: 'test', withinDescribe: 'test' }],
   'jest/unbound-method': 2, // we need to overwrite @typescript-eslint/unbound-method.
-} as const satisfies TSESLint.FlatConfig.Rules;
+};

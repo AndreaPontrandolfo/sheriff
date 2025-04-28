@@ -1,4 +1,28 @@
+peerDependencyRules:
+  allowedVersions:
+    eslint: ^9.0.0
+    typescript: ^5.0.0
+    hono: ^3.0.0
+
+  ignoreMissing:
+    - vitest
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild
+  - rolldown
+  - sharp
+  - unrs-resolver
+
+ignoredBuiltDependencies:
+  - core-js
+  - core-js-pure
+
+disallowWorkspaceCycles: true
+shellEmulator: true
+strictDepBuilds: true
+verifyDepsBeforeRun: warn
+
 packages:
   - 'apps/*'
   - 'packages/*'
-verifyDepsBeforeRun: warn

@@ -1,0 +1,14 @@
+import { defineConfig } from 'tsdown';
+
+export default defineConfig({
+  entry: ['./src/index.ts'],
+  format: 'esm',
+  target: 'node20',
+  platform: 'node',
+  clean: true,
+  sourcemap: false,
+  skipNodeModulesBundle: true,
+  publint: { strict: true },
+  noExternal: ['@sherifforg/constants', '@sherifforg/types'],
+  dts: { isolatedDeclarations: true },
+});

@@ -1,6 +1,6 @@
 import type { TSESLint } from '@typescript-eslint/utils';
 
-export const typescriptHandPickedRules = {
+export const typescriptHandPickedRules: TSESLint.FlatConfig.Rules = {
   '@typescript-eslint/no-unsafe-assignment': 0,
   '@typescript-eslint/no-array-constructor': 0,
   '@typescript-eslint/use-unknown-in-catch-callback-variable': 0,
@@ -68,4 +68,4 @@ export const typescriptHandPickedRules = {
       ignoreFunctionTypeParameterNameValueShadow: true,
     },
   ],
-} as const satisfies TSESLint.FlatConfig.Rules;
+};

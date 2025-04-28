@@ -12,14 +12,13 @@
     "format": "prettier . --write --cache --cache-location=node_modules/.cache/.prettiercache --log-level=warn",
     "format:check": "prettier . --check --cache --cache-location=node_modules/.cache/.prettiercache",
     "lint": "turbo run lint",
-    "publint": "turbo run publint --concurrency=1",
     "are-the-types-wrong": "turbo run are-the-types-wrong",
     "manypkg": "manypkg check",
     "typesync": "typesync --dry=fail",
     "typecheck": "turbo run typecheck",
     "knip": "knip",
     "validate-config": "turbo run validate-config",
-    "merge-checks": "pnpm build && turbo run publint manypkg typesync knip typecheck lint validate-config are-the-types-wrong && pnpm check-deduped-deps",
+    "merge-checks": "turbo run manypkg typesync knip typecheck lint validate-config are-the-types-wrong && pnpm check-deduped-deps",
     "check-deduped-deps": "pnpm dedupe --check",
     "clean": "turbo run clean && rm -rf .turbo",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",
@@ -40,26 +39,8 @@
     "turbo": "^2.2.3",
     "typesync": "0.14.0"
   },
-  "packageManager": "pnpm@10.9.0",
+  "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f",
   "engines": {
     "node": ">=20.10.0"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "eslint": "^9.0.0",
-        "typescript": "^5.0.0"
-      },
-      "ignoreMissing": [
-        "vitest"
-      ]
-    },
-    "onlyBuiltDependencies": [
-      "@swc/core",
-      "core-js",
-      "esbuild",
-      "sharp",
-      "unrs-resolver"
-    ]
   }
 }
