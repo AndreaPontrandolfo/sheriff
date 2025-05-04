@@ -1,9 +1,10 @@
 ---
 title: Get started
-description: 'How to use the Sheriff CLI.'
+description: How to use the Sheriff CLI
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
 
 ## Intro
 
@@ -18,27 +19,33 @@ It is advised to integrate the `@sherifforg/cli` in your **CI pipelines** to ens
 
 ## How to run it
 
-To get started, install it in your project:
+<Steps>
+  <Step>
+  To get started, install it in your project:
 
-```package-install
-npm i -D @sherifforg/cli
-```
+  ```package-install
+  npm i -D @sherifforg/cli
+  ```
+  </Step>
+  <Step>
+  Add the command to your `package.json` scripts:
 
-Add the command to your `package.json` scripts:
-
-```json title="package.json"
-{
-  "scripts": {
-    "sheriff": "sheriff"
+  ```json title="package.json"
+  {
+    "scripts": {
+      "sheriff": "sheriff"
+    }
   }
-}
-```
+  ```
+  </Step>
+  <Step>
+  And then run it:
 
-And then run it:
-
-```package-install
-npm run sheriff
-```
+  ```bash
+  pnpm sheriff
+  ```
+  </Step>
+</Steps>
 
 ## How it works
 

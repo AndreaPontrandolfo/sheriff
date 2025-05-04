@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex min-h-screen flex-col">
         <RootProvider>{children}</RootProvider>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

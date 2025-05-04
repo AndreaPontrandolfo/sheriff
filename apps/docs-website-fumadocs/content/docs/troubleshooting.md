@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting
-description: Troubleshooting Sheriff
+description: Having unexpected issues? Checkout this section
 icon: MdTroubleshoot
 ---
 

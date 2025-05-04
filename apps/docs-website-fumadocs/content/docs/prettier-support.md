@@ -1,11 +1,11 @@
 ---
 title: Prettier Support
-description: Configure Prettier support in your project
+description: How to setup and configure Prettier alongside Sheriff
 icon: SiPrettier
 ---
 
 Sheriff is designed to coexist smoothly with [Prettier](https://prettier.io/), allowing both tools to complement each other effectively.
-If you want Prettier support in your project, the next sections will guide you through the setup and usage of it.
+If you want Prettier support in your project, the following sections will guide you through the setup and usage of it.
 
 ## Setup
 
