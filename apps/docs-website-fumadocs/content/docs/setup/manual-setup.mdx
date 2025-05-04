@@ -1,26 +1,26 @@
 ---
 title: Manual setup
-order: 2
-description: DIY
+description: Set up the configuration yourself step-by-step
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout';
-import { Steps } from 'fumadocs-ui/components/steps';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { CodeBlock } from 'fumadocs-ui/components/codeblock';
-
-# Manual setup
 
 Follow these steps:
 
 <Steps>
 
-1.  Install the package from [npm](https://www.npmjs.com/package/eslint-config-sheriff).
+<Step>
+    Install the package from [npm](https://www.npmjs.com/package/eslint-config-sheriff).
 
     ```package-install
     npm install -D eslint eslint-config-sheriff
     ```
+</Step>
 
-2.  Create a `eslint.config.mjs` file at the root of your project and copy/paste the contents of the following snippet of code:
+<Step>
+    Create a `eslint.config.mjs` file at the root of your project and copy/paste the contents of the following snippet of code:
 
     ```js title="eslint.config.mjs"
     import { sheriff, tseslint } from "eslint-config-sheriff";
@@ -66,8 +66,10 @@ Follow these steps:
       // my other configurations...
     );
     ```
+</Step>
 
-3.  Adopt `eslint.config.ts` (_optional_).
+<Step>
+    Adopt `eslint.config.ts` (_optional_).
 
     If you want to have a `.ts` configuration file ([learn more](/docs/typescript-support/eslint-config-ts)) instead of the default `.mjs` file, follow these steps:
 
@@ -97,11 +99,18 @@ Follow these steps:
 
         export default tseslint.config(sheriff(sheriffOptions));
         ```
+</Step>
 
-4.  [Configure Sheriff](/docs/configuration) (_optional_)
-5.  [Setup Prettier](/docs/prettier-support#setup) (_optional_)
-6.  [Setup VSCode support](/docs/vscode-support) (_optional_)
+<Step>
+    [Configure Sheriff](/docs/configuration) (_optional_)
+</Step>
 
+<Step>
+    [Setup Prettier](/docs/prettier-support#setup) (_optional_)
+</Step>
+<Step>
+    [Setup VSCode support](/docs/vscode-support) (_optional_)
+</Step>
 </Steps>
 
 <Callout type="warn" title="Warning">

@@ -1,9 +1,7 @@
 ---
 title: Inspired by Style Guides
-description: 🤝 Standing on the shoulders of giants
+description: Standing on the shoulders of giants
 ---
-
-# Inspired by Style Guides
 
 Sheriff design was also inspired by the following style guides:
 

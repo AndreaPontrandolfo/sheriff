@@ -1,9 +1,7 @@
 ---
 title: Why
-description: 🤔 Motivations for the project
+description: Motivations for the project
 ---
-
-# Why
 
 Managing a complex ESLint configuration takes time and effort. **Sheriff does it for you.**
 

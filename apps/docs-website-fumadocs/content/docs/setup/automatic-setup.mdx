@@ -1,18 +1,14 @@
 ---
 title: Automatic setup
-order: 1
+description: Let the CLI handle everything (Recommended)
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout';
-import { Steps } from 'fumadocs-ui/components/steps';
-
-# Automatic setup (recommended)
-
-Let the CLI take care of everything!
+import { Steps, Step } from 'fumadocs-ui/components/steps';
 
 <Steps>
-
-1.  Just run this command in your terminal:
+<Step>
+    Just run this command in your terminal:
 
     ```package-install
     npm init @sherifforg/config
@@ -23,9 +19,10 @@ Let the CLI take care of everything!
     <Callout title="Tip">
       For monorepos, refer to the extra details in the [monorepo support](/docs/monorepo-support#setup-with-npm-init-sherifforgconfig) guide.
     </Callout>
-
-2.  [Setup VSCode support](/docs/vscode-support) (_optional_)
-
+</Step>
+<Step>
+    [Setup VSCode support](/docs/vscode-support) (_optional_)
+</Step>
 </Steps>
 
 ...and you are good to go! Happy hacking 🎉

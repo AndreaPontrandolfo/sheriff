@@ -1,9 +1,7 @@
 ---
 title: Criteria
-description: 🎯 What line of reasoning drives Sheriff development
+description: Sheriff's guiding principles
 ---
-
-# Criteria
 
 This library is very opinionated, but it's for the better. A lot of decisions were taken so you don't have to.<br />
 You can now quickstart static analysis in all your Typescript projects with ease. <br />

@@ -1,9 +1,7 @@
 ---
 title: Ruleset design
-description: 📐 What opinions should you expect from Sheriff
+description: What opinions should you expect from Sheriff
 ---
-
-# Ruleset design
 
 ## No complex presets
 
