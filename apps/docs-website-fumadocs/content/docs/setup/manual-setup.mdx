@@ -43,10 +43,11 @@ Follow these steps:
     or, if you already have a `eslint.config.mjs` in your project, just append Sheriff to the configs array, like this:
 
     ```js title="eslint.config.mjs"
-    import { sheriff, tseslint } from "eslint-config-sheriff"; // add this [!code highlight]
+    import { tseslint } from "eslint-config-sheriff"; // [!code --]
+    import { sheriff, tseslint } from "eslint-config-sheriff"; // [!code ++]
     // my other imports...
 
-    // add this // [!code highlight:12]
+    // [!code ++:11]
     const sheriffOptions = {
       react: false,
       next: false,
@@ -60,8 +61,8 @@ Follow these steps:
     };
 
 
-    export default tseslint(
-      sheriff(sheriffOptions), // add this [!code highlight]
+    export default tseslint.config(
+      sheriff(sheriffOptions), // [!code ++]
       // my other configurations...
     );
     ```
@@ -79,9 +80,10 @@ Follow these steps:
       4. define the types of the `sheriffOptions` object:
 
         ```ts title="eslint.config.ts"
-        import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
+        import { sheriff, tseslint } from "eslint-config-sheriff"; // [!code --]
+        import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff"; // [!code ++]
 
-        const sheriffOptions: SheriffSettings = {
+        const sheriffOptions: SheriffSettings = { // [!code ++] [!code word:SheriffSettings]
           react: false,
           next: false,
           astro: false,
