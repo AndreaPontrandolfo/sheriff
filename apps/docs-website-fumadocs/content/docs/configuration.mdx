@@ -5,7 +5,6 @@ icon: BsFillGearFill
 ---
 
 import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
-import { CodeBlock } from 'fumadocs-ui/components/codeblock';
 import { DynamicSnippetsList } from "../../src/components/DynamicSnippetsList";
 import {
   ignores,
@@ -24,7 +23,7 @@ Every config option can be set on/off (you just pass them a boolean value). As t
 
 <Tabs items={["JS", "TS"]}>
   <Tab value="JS">
-```js title="eslint.config.js"
+```js title="eslint.config.mjs"
 import { sheriff, tseslint } from "eslint-config-sheriff";
 
 // Sheriff configuration object
@@ -73,7 +72,7 @@ For example, let's say you want to disable a Sheriff rule, like `import/first`:
 
 <Tabs items={["JS", "TS"]}>
   <Tab value="JS">
-```js title="eslint.config.js"
+```js title="eslint.config.mjs"
 import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
@@ -128,7 +127,7 @@ Likewise, let's say you want to enable a new rule:
 
 <Tabs items={["JS", "TS"]}>
   <Tab value="JS">
-```js title="eslint.config.js"
+```js title="eslint.config.mjs"
 import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
@@ -214,7 +213,7 @@ Example:
 
 <Tabs items={["JS", "TS"]}>
   <Tab value="JS">
-```js title="eslint.config.js"
+```js title="eslint.config.mjs"
 import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
@@ -267,7 +266,7 @@ Example:
 
 <Tabs items={["JS", "TS"]}>
   <Tab value="JS">
-```js title="eslint.config.js"
+```js title="eslint.config.mjs"
 import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
@@ -335,7 +334,7 @@ Example:
 
 <Tabs items={["JS", "TS"]}>
   <Tab value="JS">
-```js title="eslint.config.js"
+```js title="eslint.config.mjs"
 import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
@@ -394,7 +393,7 @@ Example:
 
 <Tabs items={["JS", "TS"]}>
   <Tab value="JS">
-```js title="eslint.config.js"
+```js title="eslint.config.mjs"
 import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
@@ -461,7 +460,7 @@ Example:
 
 <Tabs items={["JS", "TS"]}>
   <Tab value="JS">
-```js title="eslint.config.js"
+```js title="eslint.config.mjs"
 import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
