@@ -9,13 +9,13 @@ If you want Prettier support in your project, the following sections will guide 
 
 ## Setup
 
-The `npm init @sherifforg/config` command will:
+The `pnpm create @sherifforg/config` command will:
 
 - attempt to spin up for you a default `.prettierrc.json` configuration. You _can_ modify it if you need to, but [it is discouraged](https://prettier.io/docs/en/option-philosophy.html). Act with caution. If you already have a Prettier config in your project, the command will not overwrite it, nor will it attempt to modify it.
 - attempt to install the `prettier` dependency in your project.
 - attempt to create a [`.prettierignore` file](https://prettier.io/docs/en/ignore.html) in your project.
 
-If you don't use the `npm init @sherifforg/config` command, you will have to do above setup steps manually yourself.
+If you don't use the `pnpm create @sherifforg/config` command, you will have to do above setup steps manually yourself.
 
 ## Usage
 

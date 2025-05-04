@@ -5,7 +5,7 @@ description: Sheriff's guiding principles
 
 This library is very opinionated, but it's for the better. A lot of decisions were taken so you don't have to.<br />
 You can now quickstart static analysis in all your Typescript projects with ease. <br />
-Just type `npm init @sherifforg/config` in a CLI and you are good to go.
+Just type `pnpm create @sherifforg/config` in a CLI and you are good to go.
 
 Easiness of use without compromises is the top priority of Sheriff. The basic principle behind many design decisions of Sheriff is to require as less inputs from the user as possible. <br />
 You can think of Sheriff like Prettier or `create-react-app`. It's a tool that comes battery-packed with optimal defaults. It removes configuration decisions from the equation, so you or your team can focus on developing the actual product.<br />

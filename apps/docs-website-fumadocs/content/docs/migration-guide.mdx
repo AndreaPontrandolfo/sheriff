@@ -12,7 +12,7 @@ If you are setting up Sheriff in an already established codebase, follow these s
 
 <Steps>
   <Step>
-  Start by running the `npm init @sherifforg/config` command and follow the advices that it prints in the console
+  Start by running the `pnpm create @sherifforg/config` command and follow the advices that it prints in the console
   </Step>
   <Step>
   Make sure that the only ESLint config file present in any workspace's package is the `eslint.config.js`
@@ -82,7 +82,7 @@ export default tseslint.config(sheriff(sheriffOptions));
   </Tab>
 </Tabs>
 
-<Callout title="Info">
+<Callout title="Tip">
 By default, the [automatic setup process](./setup/automatic-setup.mdx) will not add the `files` in the object and every js/ts file will be linted. Use this only if you want to specifically lint just a subsection of the codebase.
 </Callout>
 
