@@ -6,7 +6,7 @@ import { FaRegCompass, FaKey, FaWrench } from 'react-icons/fa';
 import { LuCalendarDays } from 'react-icons/lu';
 import { HiMiniCpuChip } from 'react-icons/hi2';
 import { SlSpeech } from 'react-icons/sl';
-import { SiPrettier, SiTypescript } from 'react-icons/si';
+import { SiPrettier } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 import { RiTerminalBoxFill } from 'react-icons/ri';
 import { IoFlash, IoExtensionPuzzleSharp } from 'react-icons/io5';
@@ -15,6 +15,7 @@ import { FaTruck } from 'react-icons/fa6';
 import { PiListMagnifyingGlassBold } from 'react-icons/pi';
 import { MdTroubleshoot } from 'react-icons/md';
 import { HiOutlineBarsArrowDown } from 'react-icons/hi2';
+import { BiLogoTypescript } from 'react-icons/bi';
 
 const icons = {
   BsStars,
@@ -28,7 +29,7 @@ const icons = {
   SiPrettier,
   VscVscode,
   BsStack,
-  SiTypescript,
+  BiLogoTypescript,
   RiTerminalBoxFill,
   IoFlash,
   GrUpdate,
