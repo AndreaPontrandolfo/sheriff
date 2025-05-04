@@ -29,10 +29,9 @@ For [Astro](https://astro.build/) projects, add the astro extension too:
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
-    // highlight-next-line
-    "astro"
-  ]
+    "typescriptreact",
+    "astro", // [!code ++]
+  ],
 }
 ```
 

@@ -66,7 +66,7 @@ Example:
 import { sheriff, tseslint } from 'eslint-config-sheriff';
 
 const sheriffOptions = {
-  react: false, // ❌ this will throw an error
+  react: false, // ❌ this will throw an error // [!code word:false]
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -76,7 +76,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 import { sheriff, tseslint } from 'eslint-config-sheriff';
 
 const sheriffOptions = {
-  react: true, // ✅ this will pass
+  react: true, // ✅ this will pass // [!code word:true]
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
