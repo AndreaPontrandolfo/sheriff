@@ -7,6 +7,7 @@
     "setup",
     "requirements",
     "eslint-plugins",
+    "rules",
     "configuration",
     "prettier-support",
     "vscode-support",

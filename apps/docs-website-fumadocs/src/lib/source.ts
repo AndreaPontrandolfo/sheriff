@@ -2,7 +2,7 @@ import { docs } from '@/.source';
 import { loader } from 'fumadocs-core/source';
 import { createElement } from 'react';
 import { BsStars, BsFillGearFill, BsStack } from 'react-icons/bs';
-import { FaRegCompass, FaKey, FaWrench } from 'react-icons/fa';
+import { FaRegCompass, FaKey, FaWrench, FaClipboardList } from 'react-icons/fa';
 import { LuCalendarDays } from 'react-icons/lu';
 import { HiMiniCpuChip } from 'react-icons/hi2';
 import { SlSpeech } from 'react-icons/sl';
@@ -38,6 +38,7 @@ const icons = {
   SlSpeech,
   MdTroubleshoot,
   HiOutlineBarsArrowDown,
+  FaClipboardList,
 };
 
 // See https://fumadocs.vercel.app/docs/headless/source-api for more info
