@@ -1,0 +1,84 @@
+'use client';
+
+import { Settings2, Check } from 'lucide-react';
+import type { Table, Column } from '@tanstack/react-table';
+import * as React from 'react';
+
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/Button';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import {
+  Command,
+  CommandGroup,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+} from '@/components/ui/command';
+
+interface DataTableViewOptionsProps<TData> {
+  table: Table<TData>;
+}
+
+export function DataTableViewOptions<TData>({
+  table,
+}: DataTableViewOptionsProps<TData>) {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const ToggableColumns = table
+    .getAllColumns()
+    .filter(
+      (column) =>
+        typeof column.accessorFn !== 'undefined' && column.getCanHide(),
+    );
+
+  return (
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
+      <PopoverTrigger asChild>
+        <Button
+          variant="outline"
+          size="sm"
+          className="ml-auto hidden h-8 lg:flex"
+        >
+          <Settings2 className="mr-2 h-4 w-4" />
+          View
+        </Button>
+      </PopoverTrigger>
+      <PopoverContent className="w-40 p-0" align="end">
+        <Command>
+          <CommandList>
+            <CommandGroup heading="Toggle Columns">
+              {ToggableColumns.map((column: Column<TData, unknown>) => {
+                return (
+                  <CommandItem
+                    key={column.id}
+                    onSelect={() => {
+                      column.toggleVisibility(!column.getIsVisible());
+                      // Keep popover open for multiple selections or setIsOpen(false) to close
+                    }}
+                    className="cursor-pointer"
+                  >
+                    <div
+                      className={cn(
+                        'border-primary mr-2 flex h-4 w-4 items-center justify-center rounded-sm border',
+                        column.getIsVisible()
+                          ? 'bg-primary text-primary-foreground'
+                          : 'opacity-50 [&_svg]:invisible',
+                      )}
+                    >
+                      <Check className={cn('h-4 w-4')} />
+                    </div>
+                    <span className="capitalize">{column.id}</span>
+                  </CommandItem>
+                );
+              })}
+            </CommandGroup>
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
+  );
+}
