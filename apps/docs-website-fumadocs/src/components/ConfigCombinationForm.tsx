@@ -61,7 +61,25 @@ const FormSchema = z.object({
   }),
 });
 
-export function ConfigCombinationForm() {
+interface FormInputs {
+  react: boolean;
+  next: boolean;
+  astro: boolean;
+  lodash: boolean;
+  remeda: boolean;
+  playwright: boolean;
+  storybook: boolean;
+  vitest: boolean;
+  jest: boolean;
+}
+
+interface ConfigCombinationFormProps {
+  setTableData: (data: FormInputs) => void;
+}
+
+export function ConfigCombinationForm({
+  setTableData,
+}: ConfigCombinationFormProps) {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -79,7 +97,7 @@ export function ConfigCombinationForm() {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data);
+    setTableData(data);
   }
 
   return (

@@ -28,7 +28,7 @@ function debounce<F extends (...args: any[]) => any>(func: F, waitFor: number) {
   return debounced as (...args: Parameters<F>) => ReturnType<F>;
 }
 
-export const SheriffShadcnTable: React.FC = () => {
+export const RulesTable: React.FC = () => {
   const [data, setData] = useState<RuleEntry[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [pluginsNames, setPluginsNames] = useState<string[]>([]);
