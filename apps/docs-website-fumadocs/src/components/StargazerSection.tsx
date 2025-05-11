@@ -90,7 +90,7 @@ export const StargazerSection = () => {
         </p>
         <div className="flex flex-col items-center gap-2">
           <Button
-            className="button text-muted-foreground group order-2 h-11 rounded-xl px-4 has-[>svg]:px-10"
+            className="button text-muted-foreground group order-2 h-11 rounded-full px-4 has-[>svg]:px-10"
             variant="outline"
             asChild
           >
