@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { TextEffect } from '@/components/ui/text-effect';
 import { AnimatedGroup } from '@/components/ui/animated-group';
+import { GridBackground } from './ui/grid-background';
 
 const transitionVariants = {
   item: {
@@ -31,6 +32,8 @@ export function HeroSection() {
         <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
         <div className="mx-auto max-w-5xl px-6">
           <div className="sm:mx-auto lg:mr-auto lg:mt-0">
+            <GridBackground />
+
             <TextEffect
               preset="fade-in-blur"
               speedSegment={0.3}
@@ -39,6 +42,7 @@ export function HeroSection() {
             >
               The Nextgen Typescript Linting Experience
             </TextEffect>
+
             <TextEffect
               per="line"
               preset="fade-in-blur"
