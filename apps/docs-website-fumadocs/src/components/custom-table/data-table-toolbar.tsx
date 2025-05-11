@@ -3,7 +3,7 @@
 import { Check, ChevronsUpDown, XIcon } from 'lucide-react';
 import * as React from 'react';
 import type { Table } from '@tanstack/react-table';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 import {
   Command,
   CommandEmpty,

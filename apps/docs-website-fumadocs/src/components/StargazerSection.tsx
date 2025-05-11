@@ -1,7 +1,7 @@
 'use client';
 import { LuStar } from 'react-icons/lu';
 import { useQuery } from '@tanstack/react-query';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -100,7 +100,7 @@ export const StargazerSection = () => {
               rel="noreferrer"
               className="flex items-center gap-1"
             >
-              Star on GitHub
+              Star us on GitHub
               <LuStar className="group-hover:fill-foreground size-4 shrink-0 transition-colors" />
               {count}
             </a>

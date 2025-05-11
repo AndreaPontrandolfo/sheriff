@@ -11,7 +11,7 @@ import type { Column } from '@tanstack/react-table';
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 import {
   Popover,
   PopoverContent,
