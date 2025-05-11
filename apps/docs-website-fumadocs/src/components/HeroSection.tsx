@@ -96,8 +96,8 @@ export function HeroSection() {
                   </Link>
                 </Button>
               </div>
-              <div className="mt-3 flex items-center justify-between rounded-md bg-zinc-900 px-4 py-2">
-                <code className="text-sm text-zinc-400">
+              <div className="mt-3 flex w-fit items-center justify-between gap-2 rounded-md bg-zinc-900 px-4 py-2">
+                <code className="text-zinc-200">
                   pnpm create @sherifforg/config
                 </code>
                 <CopyToClipboard value="pnpm create @sherifforg/config"></CopyToClipboard>
