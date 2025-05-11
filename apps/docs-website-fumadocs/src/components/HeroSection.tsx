@@ -5,6 +5,8 @@ import { TextEffect } from '@/components/ui/text-effect';
 import { AnimatedGroup } from '@/components/ui/animated-group';
 import { GridBackground } from './ui/grid-background';
 import { CopyToClipboard } from './ui/copy-to-clipboard';
+import { RainbowButton } from './magicui/rainbow-button';
+import { LuChevronRight } from 'react-icons/lu';
 
 const transitionVariants = {
   item: {
@@ -70,33 +72,29 @@ export function HeroSection() {
               className="mt-12"
             >
               <div className="flex items-center gap-2">
-                <div
-                  key={1}
-                  className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
-                >
-                  <Button
-                    asChild
-                    size="lg"
-                    className="rounded-xl px-5 text-base"
-                  >
-                    <Link href="/docs/introduction">
-                      <span className="text-nowrap">Get started</span>
-                    </Link>
-                  </Button>
-                </div>
+                <RainbowButton>
+                  <Link href="/docs/introduction">
+                    <div className="flex items-center gap-2 text-nowrap">
+                      Get started
+                      <LuChevronRight />
+                    </div>
+                  </Link>
+                </RainbowButton>
                 <Button
-                  key={2}
                   asChild
                   size="lg"
-                  variant="ghost"
-                  className="h-10.5 rounded-xl px-5 text-base"
+                  variant="outline"
+                  className="dark:bg-background h-11 rounded-xl px-10 py-2 text-base dark:hover:bg-zinc-800"
                 >
                   <Link href="/docs/rules">
-                    <span className="text-nowrap">Rules</span>
+                    <div className="flex items-center gap-2 text-nowrap">
+                      Rules
+                      <LuChevronRight />
+                    </div>
                   </Link>
                 </Button>
               </div>
-              <div className="mt-3 flex w-fit items-center justify-between gap-2 rounded-md bg-zinc-900 px-4 py-2">
+              <div className="mt-4 flex w-fit items-center justify-between gap-2 rounded-xl bg-zinc-900 px-4 py-2">
                 <code className="text-zinc-200">
                   pnpm create @sherifforg/config
                 </code>
