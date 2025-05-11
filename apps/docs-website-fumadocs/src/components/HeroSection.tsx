@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { TextEffect } from '@/components/ui/text-effect';
 import { AnimatedGroup } from '@/components/ui/animated-group';
 import { GridBackground } from './ui/grid-background';
+import { CopyToClipboard } from './ui/copy-to-clipboard';
 
 const transitionVariants = {
   item: {
@@ -66,29 +67,41 @@ export function HeroSection() {
                 },
                 ...transitionVariants,
               }}
-              className="mt-12 flex items-center gap-2"
+              className="mt-12"
             >
-              <div
-                key={1}
-                className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
-              >
-                <Button asChild size="lg" className="rounded-xl px-5 text-base">
-                  <Link href="/docs/introduction">
-                    <span className="text-nowrap">Get started</span>
+              <div className="flex items-center gap-2">
+                <div
+                  key={1}
+                  className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
+                >
+                  <Button
+                    asChild
+                    size="lg"
+                    className="rounded-xl px-5 text-base"
+                  >
+                    <Link href="/docs/introduction">
+                      <span className="text-nowrap">Get started</span>
+                    </Link>
+                  </Button>
+                </div>
+                <Button
+                  key={2}
+                  asChild
+                  size="lg"
+                  variant="ghost"
+                  className="h-10.5 rounded-xl px-5 text-base"
+                >
+                  <Link href="/docs/rules">
+                    <span className="text-nowrap">Rules</span>
                   </Link>
                 </Button>
               </div>
-              <Button
-                key={2}
-                asChild
-                size="lg"
-                variant="ghost"
-                className="h-10.5 rounded-xl px-5 text-base"
-              >
-                <Link href="/docs/rules">
-                  <span className="text-nowrap">Rules</span>
-                </Link>
-              </Button>
+              <div className="mt-3 flex items-center justify-between rounded-md bg-zinc-900 px-4 py-2">
+                <code className="text-sm text-zinc-400">
+                  pnpm create @sherifforg/config
+                </code>
+                <CopyToClipboard value="pnpm create @sherifforg/config"></CopyToClipboard>
+              </div>
             </AnimatedGroup>
           </div>
         </div>
