@@ -35,9 +35,9 @@ export function HeroSection() {
               preset="fade-in-blur"
               speedSegment={0.3}
               as="h1"
-              className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16"
+              className="mt-8 max-w-2xl text-5xl font-medium md:text-6xl lg:mt-16"
             >
-              Build and Ship 10x faster with NS
+              The Nextgen Typescript Linting Experience
             </TextEffect>
             <TextEffect
               per="line"
@@ -47,8 +47,7 @@ export function HeroSection() {
               as="p"
               className="mt-8 max-w-2xl text-pretty text-lg dark:text-zinc-400"
             >
-              Tailwindcss highly customizable components for building modern
-              websites and applications that look and feel the way you mean it.
+              All the power of ESLint at your fingertips, without the hassle.
             </TextEffect>
 
             <AnimatedGroup
@@ -70,7 +69,7 @@ export function HeroSection() {
                 className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
               >
                 <Button asChild size="lg" className="rounded-xl px-5 text-base">
-                  <Link href="#link">
+                  <Link href="/docs/introduction">
                     <span className="text-nowrap">Get started</span>
                   </Link>
                 </Button>
@@ -82,7 +81,7 @@ export function HeroSection() {
                 variant="ghost"
                 className="h-10.5 rounded-xl px-5 text-base"
               >
-                <Link href="#link">
+                <Link href="/docs/rules">
                   <span className="text-nowrap">Rules</span>
                 </Link>
               </Button>
