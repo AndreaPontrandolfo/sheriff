@@ -52,7 +52,7 @@ export function HeroSection() {
               speedSegment={0.3}
               delay={0.5}
               as="p"
-              className="mt-8 max-w-2xl text-pretty text-lg dark:text-zinc-400"
+              className="mt-6 max-w-2xl text-pretty text-lg dark:text-zinc-400"
             >
               All the power of ESLint at your fingertips, without the hassle.
             </TextEffect>

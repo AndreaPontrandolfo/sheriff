@@ -60,7 +60,7 @@ export const StargazerSection = () => {
                           )}
                           rel="noreferrer nofollow"
                         >
-                          <Avatar className="ring-muted-foreground/70 size-9 ring-2 transition-opacity duration-200">
+                          <Avatar className="ring-muted-foreground/70 dark:bg-background bg-background size-9 ring-2 transition-opacity duration-200">
                             <AvatarImage
                               src={`https://avatars.githubusercontent.com/${o.login}`}
                             />
