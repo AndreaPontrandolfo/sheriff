@@ -4,41 +4,74 @@ import { Marquee } from './magicui/marquee';
 
 const features = [
   {
-    title: 'HIPAA and SOC2 Compliant',
+    title: 'Preconfigured ignores',
     description:
-      "I've never seen anything like this before. It's amazing. I love it.",
+      'Comes prepackaged with commonly ignored paths and respects your .gitignore file.',
   },
   {
-    title: 'Automated Social Media Posting',
-    description: "I don't know what to say. I'm speechless. This is amazing.",
+    title: 'Batteries included',
+    description:
+      'All-in-one solution with everything included. No need to install or configure anything separately.',
   },
   {
-    title: 'Advanced Analytics',
-    description: "I'm at a loss for words. This is amazing. I love it.",
+    title: 'No lock-in',
+    description:
+      'Extended capabilities beyond a simple eslint config, but not a framework. Extend or disable rules as needed.',
   },
   {
-    title: 'Content Calendar',
-    description: "I'm at a loss for words. This is amazing. I love it.",
+    title: 'Sheriff meets you where you are at',
+    description:
+      'Formatting agnostic with no style restrictions. Works perfectly with Prettier or without it.',
   },
   {
-    title: 'Social Listening',
-    description: "I'm at a loss for words. This is amazing. I love it.",
+    title: 'Frictionless by design',
+    description:
+      'Setup with a single command that automatically infers project details for optimal configuration.',
   },
   {
-    title: 'Audience Targeting',
-    description: "I'm at a loss for words. This is amazing. I love it.",
+    title: 'Interoperability',
+    description:
+      'Install at any point in your project. The setup command configures everything automatically.',
   },
   {
-    title: 'Email Marketing',
-    description: "This is revolutionary. I can't believe how effective it is.",
+    title: 'Cutting-edge',
+    description:
+      'Early adopter of the new eslint FlatConfig format. Easily migrate your project without effort.',
   },
   {
-    title: 'Customer Segmentation',
-    description: 'The results speak for themselves. Absolutely outstanding.',
+    title: 'Sensible',
+    description:
+      'Hand-picked rules to prevent real-world production issues and ensure style consistency. No bloat.',
   },
   {
-    title: 'Conversion Tracking',
-    description: "I'm impressed by how intuitive and powerful this feature is.",
+    title: 'Typesafe',
+    description: 'Configuration file can be fully typesafe.',
+  },
+  {
+    title: 'Configurable',
+    description: 'Fully configurable with its own config object.',
+  },
+  {
+    title: 'Modular',
+    description: 'Opt-in support for a wide array of libraries.',
+  },
+  {
+    title: 'Extensible',
+    description:
+      'Designed for easy extension. Add your own rules, plugins, and configurations with minimal effort.',
+  },
+  {
+    title: 'Best practices',
+    description: 'Built around the best practices of the JavaScript ecosystem.',
+  },
+  {
+    title: 'SemVer authoring',
+    description:
+      'Follows Semantic Versioning with Conventional Commits standards.',
+  },
+  {
+    title: 'Comprehensive',
+    description: 'Supports up to 10 different technologies.',
   },
 ];
 
