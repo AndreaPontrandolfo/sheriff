@@ -1,6 +1,5 @@
 import React from 'react';
 import { useId } from 'react';
-import { cn } from '@/lib/utils';
 import { Marquee } from './magicui/marquee';
 
 const features = [
@@ -29,73 +28,33 @@ const features = [
     title: 'Audience Targeting',
     description: "I'm at a loss for words. This is amazing. I love it.",
   },
+  {
+    title: 'Email Marketing',
+    description: "This is revolutionary. I can't believe how effective it is.",
+  },
+  {
+    title: 'Customer Segmentation',
+    description: 'The results speak for themselves. Absolutely outstanding.',
+  },
+  {
+    title: 'Conversion Tracking',
+    description: "I'm impressed by how intuitive and powerful this feature is.",
+  },
 ];
 
-const firstRow = features.slice(0, features.length / 2);
-const secondRow = features.slice(features.length / 2);
-
-const ReviewCard = ({
-  img,
-  name,
-  username,
-  body,
-}: {
-  img: string;
-  name: string;
-  username: string;
-  body: string;
-}) => {
-  return (
-    <figure
-      className={cn(
-        'relative h-full w-64 cursor-pointer overflow-hidden rounded-xl border p-4',
-        // light styles
-        'border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]',
-        // dark styles
-        'dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]',
-      )}
-    >
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium dark:text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium dark:text-white/40">{username}</p>
-        </div>
-      </div>
-      <blockquote className="mt-2 text-sm">{body}</blockquote>
-    </figure>
-  );
-};
+const rowSize = Math.ceil(features.length / 3);
+const firstRow = features.slice(0, rowSize);
+const secondRow = features.slice(rowSize, rowSize * 2);
+const thirdRow = features.slice(rowSize * 2);
 
 export function FeaturesSection() {
-  return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-      <Marquee pauseOnHover className="[--duration:80s]">
-        {firstRow.map((review) => (
-          <p key={review.body}>{review.body}</p>
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:80s]">
-        {secondRow.map((review) => (
-          <p key={review.body}>{review.body}</p>
-        ))}
-      </Marquee>
-      <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r"></div>
-      <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l"></div>
-    </div>
-  );
-}
-
-export function FeaturesSection2() {
   return (
     <div className="relative py-20 lg:py-40">
       <Marquee pauseOnHover className="[--duration:80s]">
         {firstRow.map((feature) => (
           <div
             key={feature.title}
-            className="relative max-w-64 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-100 to-white p-6 dark:from-neutral-900 dark:to-neutral-950"
+            className="relative min-h-48 max-w-64 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-100 to-white p-6 dark:from-neutral-900 dark:to-neutral-950"
           >
             <Grid size={20} />
             <p className="relative z-20 text-base font-bold text-neutral-800 dark:text-white">
@@ -111,7 +70,23 @@ export function FeaturesSection2() {
         {secondRow.map((feature) => (
           <div
             key={feature.title}
-            className="relative max-w-64 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-100 to-white p-6 dark:from-neutral-900 dark:to-neutral-950"
+            className="relative min-h-48 max-w-64 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-100 to-white p-6 dark:from-neutral-900 dark:to-neutral-950"
+          >
+            <Grid size={20} />
+            <p className="relative z-20 text-base font-bold text-neutral-800 dark:text-white">
+              {feature.title}
+            </p>
+            <p className="relative z-20 mt-4 text-base font-normal text-neutral-600 dark:text-neutral-400">
+              {feature.description}
+            </p>
+          </div>
+        ))}
+      </Marquee>
+      <Marquee pauseOnHover className="[--duration:80s]">
+        {thirdRow.map((feature) => (
+          <div
+            key={feature.title}
+            className="relative min-h-48 max-w-64 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-100 to-white p-6 dark:from-neutral-900 dark:to-neutral-950"
           >
             <Grid size={20} />
             <p className="relative z-20 text-base font-bold text-neutral-800 dark:text-white">
@@ -128,49 +103,6 @@ export function FeaturesSection2() {
     </div>
   );
 }
-
-const grid = [
-  {
-    title: 'HIPAA and SOC2 Compliant',
-    description:
-      'Our applications are HIPAA and SOC2 compliant, your data is safe with us, always.',
-  },
-  {
-    title: 'Automated Social Media Posting',
-    description:
-      'Schedule and automate your social media posts across multiple platforms to save time and maintain a consistent online presence.',
-  },
-  {
-    title: 'Advanced Analytics',
-    description:
-      'Gain insights into your social media performance with detailed analytics and reporting tools to measure engagement and ROI.',
-  },
-  {
-    title: 'Content Calendar',
-    description:
-      'Plan and organize your social media content with an intuitive calendar view, ensuring you never miss a post.',
-  },
-  {
-    title: 'Audience Targeting',
-    description:
-      'Reach the right audience with advanced targeting options, including demographics, interests, and behaviors.',
-  },
-  {
-    title: 'Social Listening',
-    description:
-      'Monitor social media conversations and trends to stay informed about what your audience is saying and respond in real-time.',
-  },
-  {
-    title: 'Customizable Templates',
-    description:
-      "Create stunning social media posts with our customizable templates, designed to fit your brand's unique style and voice.",
-  },
-  {
-    title: 'Collaboration Tools',
-    description:
-      'Work seamlessly with your team using our collaboration tools, allowing you to assign tasks, share drafts, and provide feedback in real-time.',
-  },
-];
 
 export const Grid = ({
   pattern,
