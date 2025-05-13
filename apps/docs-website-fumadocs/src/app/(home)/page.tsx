@@ -2,6 +2,10 @@ import { StargazerSection } from '@/components/StargazerSection';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { HeroSection } from '@/components/HeroSection';
+import {
+  FeaturesSection,
+  FeaturesSection2,
+} from '@/components/FeaturesSection';
 
 export default function HomePage() {
   // bg-background and text-foreground were added here because of shadcn compatibility. Reference: https://github.com/fuma-nama/fumadocs-shadcn?tab=readme-ov-file#with-shadcn-ui
@@ -10,6 +14,7 @@ export default function HomePage() {
       <div className="bg-background text-foreground flex flex-1 flex-col justify-center">
         <div className="center mx-auto h-[85vh] max-w-4xl px-2 lg:h-[90vh]">
           <HeroSection />
+          <FeaturesSection2 />
           <div className="animate-in mt-10 text-center sm:mt-16">
             <div className="flex-row-center mx-auto max-w-fit gap-4 py-4">
               <Button asChild>

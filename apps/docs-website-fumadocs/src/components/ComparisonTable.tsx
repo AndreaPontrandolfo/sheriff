@@ -6,7 +6,7 @@ interface TableEntry {
   Customizable: '✅' | '❌';
   'Rich docs': '✅' | '❌';
   'Functional programming': '✅' | '❌';
-  'Advanced ignores management': '✅' | '❌';
+  'Preconfigured ignores': '✅' | '❌';
   'Learning curve': '😔' | '😐' | '😊';
   'Incremental adoption': '✅' | '❌';
   'Typesafe config': '✅' | '❌';
@@ -53,7 +53,7 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '✅',
-    'Advanced ignores management': '✅',
+    'Preconfigured ignores': '✅',
     'Learning curve': '😊',
     'Incremental adoption': '✅',
     'Typesafe config': '✅',
@@ -86,7 +86,7 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
@@ -119,7 +119,7 @@ const entriesTable: EntriesTable = {
     Customizable: '❌',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
@@ -152,7 +152,7 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '❌',
     'Functional programming': '❌',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
@@ -185,7 +185,7 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '✅',
+    'Preconfigured ignores': '✅',
     'Learning curve': '😔',
     'Incremental adoption': '❌',
     'Typesafe config': '✅',
@@ -218,7 +218,7 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '✅',
+    'Preconfigured ignores': '✅',
     'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
@@ -251,7 +251,7 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😔',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
@@ -284,7 +284,7 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😔',
     'Incremental adoption': '✅',
     'Typesafe config': '❌',
@@ -317,7 +317,7 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '✅',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
