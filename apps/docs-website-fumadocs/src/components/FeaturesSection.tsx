@@ -16,10 +16,10 @@ const features = [
   {
     title: 'No lock-in',
     description:
-      'Extended capabilities beyond a simple eslint config, but not a framework. Extend or disable rules as needed.',
+      'Extended capabilities beyond a simple ESLint config, but not a framework. Extend or disable rules as needed.',
   },
   {
-    title: 'Sheriff meets you where you are at',
+    title: 'Meets you where you are at',
     description:
       'Formatting agnostic with no style restrictions. Works perfectly with Prettier or without it.',
   },
@@ -63,6 +63,10 @@ const features = [
   {
     title: 'Best practices',
     description: 'Built around the best practices of the JavaScript ecosystem.',
+  },
+  {
+    title: 'Incrementally adoptable',
+    description: 'Can be adopted incrementally with the "files" filter.',
   },
   {
     title: 'SemVer authoring',

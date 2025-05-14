@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { HeroSection } from '@/components/HeroSection';
 import { FeaturesSection } from '@/components/FeaturesSection';
+import IntegrationsSection from '@/components/IntegrationsSection';
 
 export default function HomePage() {
   // bg-background and text-foreground were added here because of shadcn compatibility. Reference: https://github.com/fuma-nama/fumadocs-shadcn?tab=readme-ov-file#with-shadcn-ui
@@ -12,6 +13,7 @@ export default function HomePage() {
         <div className="center mx-auto h-[85vh] max-w-4xl px-2 lg:h-[90vh]">
           <HeroSection />
           <FeaturesSection />
+          <IntegrationsSection />
           <div className="animate-in mt-10 text-center sm:mt-16">
             <div className="flex-row-center mx-auto max-w-fit gap-4 py-4">
               <Button asChild>
