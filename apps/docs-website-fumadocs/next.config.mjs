@@ -6,6 +6,9 @@ const withMDX = createMDX();
 const config = {
   reactStrictMode: true,
   serverExternalPackages: ['oxc-transform'],
+  images: {
+    dangerouslyAllowSVG: true,
+  },
 };
 
 export default withMDX(config);

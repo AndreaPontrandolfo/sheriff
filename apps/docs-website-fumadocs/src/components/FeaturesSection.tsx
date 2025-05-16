@@ -69,11 +69,6 @@ const features = [
     description: 'Can be adopted incrementally with the "files" filter.',
   },
   {
-    title: 'SemVer authoring',
-    description:
-      'Follows Semantic Versioning with Conventional Commits standards.',
-  },
-  {
     title: 'Comprehensive',
     description: 'Supports up to 10 different technologies.',
   },

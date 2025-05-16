@@ -1,194 +1,244 @@
 'use client';
 
 import React, { useRef, forwardRef } from 'react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 import { AnimatedBeam } from '@/components/magicui/animated-beam';
-import Link from 'next/link';
-import {
-  Gem,
-  Code2,
-  Wand2,
-  Codepen,
-  FileCode,
-  BrainCircuit,
-  Sparkles,
-  Database,
-  Cloud,
-  Globe,
-  Cpu,
-} from 'lucide-react';
+import EslintLogo from '@/assets/logos/eslint.svg';
+import LodashLogo from '@/assets/logos/lodash.svg';
+import RamdaLogo from '@/assets/logos/ramda.svg';
+import TypescriptLogo from '@/assets/logos/typescript.svg';
+import VitestLogo from '@/assets/logos/vitest.svg';
+import JestLogo from '@/assets/logos/jest.svg';
+import PlaywrightLogo from '@/assets/logos/playwright.svg';
+import NextjsLogo from '@/assets/logos/nextjs.svg';
+import ReactLogo from '@/assets/logos/react.svg';
+import StorybookLogo from '@/assets/logos/storybook.svg';
+import AstroLightLogo from '@/assets/logos/astro-icon-light.svg';
+import AstroDarkLogo from '@/assets/logos/astro-icon-dark.svg';
+import { useTheme } from 'next-themes';
+import { HPSectionStart } from './HPSectionStart';
 
 export default function IntegrationsSection() {
+  const { theme } = useTheme();
   const containerRef = useRef<HTMLDivElement>(null);
   const centerRef = useRef<HTMLDivElement>(null);
 
   // Refs for left-side cards
-  const gemRef = useRef<HTMLDivElement>(null);
-  const databaseRef = useRef<HTMLDivElement>(null);
-  const code2Ref = useRef<HTMLDivElement>(null);
-  const cloudRef = useRef<HTMLDivElement>(null);
-  const wand2Ref = useRef<HTMLDivElement>(null);
+  const leftTop1Ref = useRef<HTMLDivElement>(null);
+  const leftTop2Ref = useRef<HTMLDivElement>(null);
+  const leftMiddleRef = useRef<HTMLDivElement>(null);
+  const leftBottom1Ref = useRef<HTMLDivElement>(null);
+  const leftBottom2Ref = useRef<HTMLDivElement>(null);
 
   // Refs for right-side cards
-  const codepenRef = useRef<HTMLDivElement>(null);
-  const globeRef = useRef<HTMLDivElement>(null);
-  const fileCodeRef = useRef<HTMLDivElement>(null);
-  const cpuRef = useRef<HTMLDivElement>(null);
-  const brainCircuitRef = useRef<HTMLDivElement>(null);
+  const rightTop1Ref = useRef<HTMLDivElement>(null);
+  const rightTop2Ref = useRef<HTMLDivElement>(null);
+  const rightMiddleRef = useRef<HTMLDivElement>(null);
+  const rightBottom1Ref = useRef<HTMLDivElement>(null);
+  const rightBottom2Ref = useRef<HTMLDivElement>(null);
+
+  const iconSize = 24; // For side icons
+  const centerIconSize = 32; // For center icon
 
   return (
     <section>
-      <div className="py-24 md:py-32">
-        <div className="mx-auto max-w-5xl px-6">
+      <HPSectionStart
+        title="Batteries included"
+        description="Sheriff is designed to be an all-in-one solution. Forget about dependency management hell. Everything you need is already built-in."
+        buttonText="Learn more about the techs involved"
+        buttonLink="/docs/techs"
+      />
+
+      <div className="mx-auto max-w-5xl px-6">
+        <div
+          className="relative mx-auto flex max-w-sm items-center justify-between"
+          ref={containerRef}
+        >
+          <div className="space-y-5">
+            <IntegrationCard ref={leftTop2Ref} position="left-top-2">
+              <Image
+                src={TypescriptLogo}
+                alt="TypeScript Logo"
+                width={iconSize}
+                height={iconSize}
+              />
+            </IntegrationCard>
+            <IntegrationCard ref={leftTop1Ref} position="left-top-1">
+              <Image
+                src={ReactLogo}
+                alt="React Logo"
+                width={iconSize}
+                height={iconSize}
+              />
+            </IntegrationCard>
+            <IntegrationCard ref={leftMiddleRef} position="left-middle">
+              <Image
+                src={NextjsLogo}
+                alt="Next.js Logo"
+                width={iconSize}
+                height={iconSize}
+              />
+            </IntegrationCard>
+            <IntegrationCard ref={leftBottom1Ref} position="left-bottom-1">
+              <Image
+                src={StorybookLogo}
+                alt="Storybook Logo"
+                width={iconSize}
+                height={iconSize}
+              />
+            </IntegrationCard>
+            <IntegrationCard ref={leftBottom2Ref} position="left-bottom-2">
+              <Image
+                src={theme === 'dark' ? AstroLightLogo : AstroDarkLogo}
+                alt="Astro Logo"
+                width={iconSize}
+                height={iconSize}
+              />
+            </IntegrationCard>
+          </div>
+          <div className="mx-auto my-2 flex w-fit justify-center gap-2">
+            <div className="bg-muted relative z-20 rounded-2xl border p-1">
+              <IntegrationCard
+                ref={centerRef}
+                className="shadow-black-950/10 dark:bg-background size-16 border-black/25 shadow-xl dark:border-white/25 dark:shadow-white/10"
+                isCenter={true}
+              >
+                <Image
+                  src={EslintLogo}
+                  alt="ESLint Logo"
+                  width={centerIconSize}
+                  height={centerIconSize}
+                />
+              </IntegrationCard>
+            </div>
+          </div>
           <div
-            className="relative mx-auto flex max-w-sm items-center justify-between"
-            ref={containerRef}
-          >
-            <div className="space-y-5">
-              <IntegrationCard ref={gemRef} position="left-top-1">
-                <Gem className="text-purple-500" />
-              </IntegrationCard>
-              <IntegrationCard ref={databaseRef} position="left-top-2">
-                <Database className="text-blue-400" />
-              </IntegrationCard>
-              <IntegrationCard ref={code2Ref} position="left-middle">
-                <Code2 className="text-orange-500" />
-              </IntegrationCard>
-              <IntegrationCard ref={cloudRef} position="left-bottom-1">
-                <Cloud className="text-sky-500" />
-              </IntegrationCard>
-              <IntegrationCard ref={wand2Ref} position="left-bottom-2">
-                <Wand2 className="text-pink-500" />
-              </IntegrationCard>
-            </div>
-            <div className="mx-auto my-2 flex w-fit justify-center gap-2">
-              <div className="bg-muted relative z-20 rounded-2xl border p-1">
-                <IntegrationCard
-                  ref={centerRef}
-                  className="shadow-black-950/10 dark:bg-background size-16 border-black/25 shadow-xl dark:border-white/25 dark:shadow-white/10"
-                  isCenter={true}
-                >
-                  <Sparkles className="text-teal-500" />
-                </IntegrationCard>
-              </div>
-            </div>
-            <div
-              role="presentation"
-              className="absolute inset-1/3 bg-[radial-gradient(var(--dots-color)_1px,transparent_1px)] opacity-50 [--dots-color:black] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:[--dots-color:white]"
-            ></div>
+            role="presentation"
+            className="absolute inset-1/3 bg-[radial-gradient(var(--dots-color)_1px,transparent_1px)] opacity-50 [--dots-color:black] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:[--dots-color:white]"
+          ></div>
 
-            <div className="space-y-5">
-              <IntegrationCard ref={codepenRef} position="right-top-1">
-                <Codepen className="text-blue-500" />
-              </IntegrationCard>
-              <IntegrationCard ref={globeRef} position="right-top-2">
-                <Globe className="text-green-500" />
-              </IntegrationCard>
-              <IntegrationCard ref={fileCodeRef} position="right-middle">
-                <FileCode className="text-violet-500" />
-              </IntegrationCard>
-              <IntegrationCard ref={cpuRef} position="right-bottom-1">
-                <Cpu className="text-amber-500" />
-              </IntegrationCard>
-              <IntegrationCard ref={brainCircuitRef} position="right-bottom-2">
-                <BrainCircuit className="text-emerald-500" />
-              </IntegrationCard>
-            </div>
-
-            {/* AnimatedBeams */}
-            {/* Left side to Center */}
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={gemRef}
-              toRef={centerRef}
-              duration={3}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={databaseRef}
-              toRef={centerRef}
-              duration={3}
-              delay={0.2}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={code2Ref}
-              toRef={centerRef}
-              duration={3}
-              delay={0.4}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={cloudRef}
-              toRef={centerRef}
-              duration={3}
-              delay={0.6}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={wand2Ref}
-              toRef={centerRef}
-              duration={3}
-              delay={0.8}
-            />
-
-            {/* Right side to Center (reversed) */}
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={codepenRef}
-              toRef={centerRef}
-              duration={3}
-              reverse
-              delay={0.1}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={globeRef}
-              toRef={centerRef}
-              duration={3}
-              reverse
-              delay={0.3}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={fileCodeRef}
-              toRef={centerRef}
-              duration={3}
-              reverse
-              delay={0.5}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={cpuRef}
-              toRef={centerRef}
-              duration={3}
-              reverse
-              delay={0.7}
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={brainCircuitRef}
-              toRef={centerRef}
-              duration={3}
-              reverse
-              delay={0.9}
-            />
+          <div className="space-y-5">
+            <IntegrationCard ref={rightTop1Ref} position="right-top-1">
+              <Image
+                src={JestLogo}
+                alt="Jest Logo"
+                width={iconSize}
+                height={iconSize}
+              />
+            </IntegrationCard>
+            <IntegrationCard ref={rightTop2Ref} position="right-top-2">
+              <Image
+                src={VitestLogo}
+                alt="Vitest Logo"
+                width={iconSize}
+                height={iconSize}
+              />
+            </IntegrationCard>
+            <IntegrationCard ref={rightMiddleRef} position="right-middle">
+              <Image
+                src={PlaywrightLogo}
+                alt="Playwright Logo"
+                width={iconSize}
+                height={iconSize}
+              />
+            </IntegrationCard>
+            <IntegrationCard ref={rightBottom1Ref} position="right-bottom-1">
+              <Image
+                src={RamdaLogo}
+                alt="Ramda Logo"
+                width={iconSize}
+                height={iconSize}
+              />
+            </IntegrationCard>
+            <IntegrationCard ref={rightBottom2Ref} position="right-bottom-2">
+              <Image
+                src={LodashLogo}
+                alt="Lodash Logo"
+                width={iconSize}
+                height={iconSize}
+              />
+            </IntegrationCard>
           </div>
 
-          <div className="mx-auto mt-12 max-w-lg space-y-6 text-center">
-            <h2 className="text-balance text-3xl font-semibold md:text-4xl">
-              Integrate with your favorite tools
-            </h2>
-            <p className="text-muted-foreground">
-              Connect seamlessly with popular platforms and services to enhance
-              your workflow.
-            </p>
+          {/* AnimatedBeams */}
+          {/* Left side to Center */}
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={leftTop1Ref}
+            toRef={centerRef}
+            duration={3}
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={leftTop2Ref}
+            toRef={centerRef}
+            duration={3}
+            delay={0.2}
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={leftMiddleRef}
+            toRef={centerRef}
+            duration={3}
+            delay={0.4}
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={leftBottom1Ref}
+            toRef={centerRef}
+            duration={3}
+            delay={0.6}
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={leftBottom2Ref}
+            toRef={centerRef}
+            duration={3}
+            delay={0.8}
+          />
 
-            <Button variant="outline" size="sm" asChild>
-              <Link href="#">Get Started</Link>
-            </Button>
-          </div>
+          {/* Right side to Center (reversed) */}
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={rightTop1Ref}
+            toRef={centerRef}
+            duration={3}
+            reverse
+            delay={0.1}
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={rightTop2Ref}
+            toRef={centerRef}
+            duration={3}
+            reverse
+            delay={0.3}
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={rightMiddleRef}
+            toRef={centerRef}
+            duration={3}
+            reverse
+            delay={0.5}
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={rightBottom1Ref}
+            toRef={centerRef}
+            duration={3}
+            reverse
+            delay={0.7}
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={rightBottom2Ref}
+            toRef={centerRef}
+            duration={3}
+            reverse
+            delay={0.9}
+          />
         </div>
       </div>
     </section>
@@ -218,7 +268,7 @@ const IntegrationCard = forwardRef<
     <div
       ref={ref}
       className={cn(
-        'bg-background relative flex size-12 rounded-xl border dark:bg-transparent',
+        'bg-muted relative z-10 flex size-12 rounded-xl border dark:bg-zinc-700',
         className,
       )}
     >
