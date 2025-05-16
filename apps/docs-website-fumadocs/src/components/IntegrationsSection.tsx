@@ -1,26 +1,36 @@
 'use client';
 
-import React, { useRef, forwardRef } from 'react';
+import React, { useRef, forwardRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { AnimatedBeam } from '@/components/magicui/animated-beam';
-import EslintLogo from '@/assets/logos/eslint.svg';
-import LodashLogo from '@/assets/logos/lodash.svg';
-import RamdaLogo from '@/assets/logos/ramda.svg';
-import TypescriptLogo from '@/assets/logos/typescript.svg';
-import VitestLogo from '@/assets/logos/vitest.svg';
-import JestLogo from '@/assets/logos/jest.svg';
-import PlaywrightLogo from '@/assets/logos/playwright.svg';
-import NextjsLogo from '@/assets/logos/nextjs.svg';
-import ReactLogo from '@/assets/logos/react.svg';
-import StorybookLogo from '@/assets/logos/storybook.svg';
-import AstroLightLogo from '@/assets/logos/astro-icon-light.svg';
-import AstroDarkLogo from '@/assets/logos/astro-icon-dark.svg';
+import EslintLogo from '@/assets/logos/eslint.svg?url';
+import LodashLogo from '@/assets/logos/lodash.svg?url';
+import RamdaLogo from '@/assets/logos/ramda.svg?url';
+import TypescriptLogo from '@/assets/logos/typescript.svg?url';
+import VitestLogo from '@/assets/logos/vitest.svg?url';
+import JestLogo from '@/assets/logos/jest.svg?url';
+import PlaywrightLogo from '@/assets/logos/playwright.svg?url';
+import NextjsLogo from '@/assets/logos/nextjs.svg?url';
+import ReactLogo from '@/assets/logos/react.svg?url';
+import StorybookLogo from '@/assets/logos/storybook.svg?url';
+import AstroLightLogo from '@/assets/logos/astro-icon-light.svg?url';
+import AstroDarkLogo from '@/assets/logos/astro-icon-dark.svg?url';
 import { useTheme } from 'next-themes';
 import { HPSectionStart } from './HPSectionStart';
 
 export default function IntegrationsSection() {
   const { theme } = useTheme();
+
+  // #region Mounting state
+  // This is a specific workaround to resolve a hydration error caused by the dynamic Astro logo.
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  // #endregion
+
   const containerRef = useRef<HTMLDivElement>(null);
   const centerRef = useRef<HTMLDivElement>(null);
 
@@ -42,7 +52,7 @@ export default function IntegrationsSection() {
   const centerIconSize = 32; // For center icon
 
   return (
-    <section>
+    <section className="py-20">
       <HPSectionStart
         title="Batteries included"
         description="Sheriff is designed to be an all-in-one solution. Forget about dependency management hell. Everything you need is already built-in."
@@ -89,12 +99,14 @@ export default function IntegrationsSection() {
               />
             </IntegrationCard>
             <IntegrationCard ref={leftBottom2Ref} position="left-bottom-2">
-              <Image
-                src={theme === 'dark' ? AstroLightLogo : AstroDarkLogo}
-                alt="Astro Logo"
-                width={iconSize}
-                height={iconSize}
-              />
+              {isMounted && (
+                <Image
+                  src={theme === 'dark' ? AstroLightLogo : AstroDarkLogo}
+                  alt="Astro Logo"
+                  width={iconSize}
+                  height={iconSize}
+                />
+              )}
             </IntegrationCard>
           </div>
           <div className="mx-auto my-2 flex w-fit justify-center gap-2">

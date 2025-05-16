@@ -1,6 +1,7 @@
 import React from 'react';
 import { useId } from 'react';
 import { Marquee } from './magicui/marquee';
+import { HPSectionStart } from './HPSectionStart';
 
 const features = [
   {
@@ -81,7 +82,13 @@ const thirdRow = features.slice(rowSize * 2);
 
 export function FeaturesSection() {
   return (
-    <div className="relative py-20 lg:py-40">
+    <div className="relative py-20">
+      <HPSectionStart
+        title="A different ESLint Config"
+        description="Sheriff is a complete rethinking of the DevEx a modern ESLint config should provide."
+        buttonText="Learn what makes Sheriff different"
+        buttonLink="/docs/features"
+      />
       <Marquee pauseOnHover className="[--duration:80s]">
         {firstRow.map((feature) => (
           <div
@@ -191,10 +198,10 @@ export function GridPattern({ width, height, x, y, squares, ...props }: any) {
       />
       {squares && (
         <svg x={x} y={y} className="overflow-visible">
-          {squares.map(([x, y]: any) => (
+          {squares.map(([x, y]: any, index: number) => (
             <rect
               strokeWidth="0"
-              key={`${x}-${y}`}
+              key={`${x}-${y}-${index}`}
               width={width + 1}
               height={height + 1}
               x={x * width}
