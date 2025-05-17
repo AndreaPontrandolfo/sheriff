@@ -82,7 +82,7 @@ const thirdRow = features.slice(rowSize * 2);
 
 export function FeaturesSection() {
   return (
-    <div className="relative py-20">
+    <section className="relative py-20">
       <HPSectionStart
         title="A different ESLint Config"
         description="Sheriff is a complete rethinking of the DevEx a modern ESLint config should provide."
@@ -139,7 +139,7 @@ export function FeaturesSection() {
       </Marquee>
       <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r"></div>
       <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l"></div>
-    </div>
+    </section>
   );
 }
 

@@ -19,7 +19,7 @@ import AstroDarkLogo from '@/assets/logos/astro-icon-dark.svg?url';
 import { useTheme } from 'next-themes';
 import { HPSectionStart } from './HPSectionStart';
 
-export default function IntegrationsSection() {
+export const IntegrationsSection = () => {
   const { theme } = useTheme();
 
   // #region Mounting state
@@ -255,7 +255,7 @@ export default function IntegrationsSection() {
       </div>
     </section>
   );
-}
+};
 
 const IntegrationCard = forwardRef<
   HTMLDivElement,
