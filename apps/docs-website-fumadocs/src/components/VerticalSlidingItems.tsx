@@ -42,7 +42,7 @@ export const VerticalSlidingItems = () => {
         setCurrentFeature((prev) => (prev + 1) % features.length);
         setProgress(0);
       }
-    }, 100);
+    }, 50);
 
     return () => clearInterval(timer);
   }, [progress]);
@@ -60,11 +60,11 @@ export const VerticalSlidingItems = () => {
           >
             <motion.div
               className={`flex h-8 w-8 items-center justify-center rounded-full md:h-10 md:w-10 ${
-                index === currentFeature
-                  ? 'scale-110 bg-blue-500'
-                  : 'bg-gray-500'
+                index === currentFeature ? 'bg-accent scale-110' : 'bg-muted'
               } border-2 ${
-                index === currentFeature ? 'border-blue-400' : 'border-gray-400'
+                index === currentFeature
+                  ? 'border-primary'
+                  : 'border-primary-foreground'
               }`}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
