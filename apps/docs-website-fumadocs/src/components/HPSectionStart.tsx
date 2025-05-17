@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { LuChevronRight } from 'react-icons/lu';
+import { HPSectionTitle } from './HPSectionTitle';
 
 interface HPSectionStartProps {
   title: string;
-  description: string;
-  buttonText: string;
-  buttonLink: string;
+  description?: string;
+  buttonText?: string;
+  buttonLink?: string;
 }
 
 export const HPSectionStart = ({
@@ -17,16 +18,16 @@ export const HPSectionStart = ({
 }: HPSectionStartProps) => {
   return (
     <div className="mx-auto mb-20 max-w-lg space-y-6 text-center">
-      <h2 className="text-balance text-3xl font-semibold md:text-4xl">
-        {title}
-      </h2>
-      <p className="text-muted-foreground">{description}</p>
+      <HPSectionTitle title={title} />
+      {description && <p className="text-muted-foreground">{description}</p>}
 
-      <Button variant="outline" size="sm" asChild>
-        <Link href={buttonLink}>
-          {buttonText} <LuChevronRight />
-        </Link>
-      </Button>
+      {buttonText && buttonLink && (
+        <Button variant="outline" size="sm" asChild>
+          <Link href={buttonLink}>
+            {buttonText} <LuChevronRight />
+          </Link>
+        </Button>
+      )}
     </div>
   );
 };

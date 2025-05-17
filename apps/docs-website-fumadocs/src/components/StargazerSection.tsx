@@ -24,7 +24,7 @@ export const StargazerSection = () => {
     : '...';
 
   return (
-    <section className="relative w-full py-6">
+    <section className="relative">
       <div className="flex w-full flex-col items-center gap-4 px-4 pt-2 sm:px-0">
         <div className="flex items-center gap-2">
           <div className="flex flex-wrap items-center justify-center">
@@ -85,9 +85,6 @@ export const StargazerSection = () => {
             </div>
           </div>
         </div>
-        <p className="text-muted-foreground max-w-prose text-pretty text-center text-lg/7 sm:text-wrap">
-          Join our stargazers!
-        </p>
         <div className="flex flex-col items-center gap-2">
           <Button
             className="button text-muted-foreground group order-2 h-11 rounded-full px-4 has-[>svg]:px-10"
