@@ -1,18 +1,29 @@
 ---
-sidebar_position: 16
+title: Migration Guide
+description: How to introduce Sheriff in large codebases
+icon: FaTruck
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
-# ♻ Migration guide
+import { Callout } from "fumadocs-ui/components/callout";
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Steps, Step } from 'fumadocs-ui/components/steps';
 
 If you are setting up Sheriff in an already established codebase, follow these steps:
 
-1. Start by running the `npm init @sherifforg/config` command and follow the advices that it prints in the console
-1. Make sure that the only ESLint config file present in any workspace' package is the `eslint.config.js`
-1. If you want to keep your existing custom rules on-top of Sheriff, move them to the `eslint.config.js`, after the `sheriff` function, so they will override it. Refer to the [configuration instructions](./configuration.mdx)
-1. Make sure to uninstall all the packages that Sheriff already incorporates out-of-the-box. [Here](./eslint-plugins.md) is the list
+<Steps>
+  <Step>
+  Start by running the `pnpm create @sherifforg/config` command and follow the advices that it prints in the console
+  </Step>
+  <Step>
+  Make sure that the only ESLint config file present in any workspace's package is the `eslint.config.js`
+  </Step>
+  <Step>
+  If you want to keep your existing custom rules on-top of Sheriff, move them to the `eslint.config.js`, after the `sheriff` function, so they will override it. Refer to the [configuration instructions](./configuration.mdx)
+  </Step>
+  <Step>
+  Make sure to uninstall all the packages that Sheriff already incorporates out-of-the-box. [Here](./eslint-plugins.md) is the list
+  </Step>
+</Steps>
 
 ## Progressive adoption story
 
@@ -24,15 +35,14 @@ You can achieve this by leveraging 2 techniques:
 
   See example below:
 
-<Tabs groupId="tsorjs">
-  <TabItem value="JS" label="JS">
+<Tabs groupId="tsorjs" items={['JS', 'TS']} persist>
+  <Tab value="JS">
 
-```js title="eslint.config.js"
+```js title="eslint.config.mjs"
 import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
-  // highlight-next-line
-  files: ["src/**/*"], // Only the files in the src directory will be linted.
+  files: ["src/**/*"], // Only the files in the src directory will be linted. [!code highlight]
   react: false,
   next: false,
   astro: false,
@@ -47,15 +57,14 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions));
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+</Tab>
+<Tab value="TS">
 
 ```ts title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
-  // highlight-next-line
-  files: ["src/**/*"], // Only the files in the src directory will be linted.
+  files: ["src/**/*"], // Only the files in the src directory will be linted. [!code highlight]
   react: false,
   next: false,
   astro: false,
@@ -70,13 +79,11 @@ const sheriffOptions: SheriffSettings = {
 export default tseslint.config(sheriff(sheriffOptions));
 ```
 
-  </TabItem>
+  </Tab>
 </Tabs>
 
-:::info
-
+<Callout title="Tip">
 By default, the [automatic setup process](./setup/automatic-setup.mdx) will not add the `files` in the object and every js/ts file will be linted. Use this only if you want to specifically lint just a subsection of the codebase.
-
-:::
+</Callout>
 
 - use [eslint-interactive](https://github.com/mizdra/eslint-interactive)
