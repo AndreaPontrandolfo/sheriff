@@ -2,24 +2,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 
-const features = [
-  {
-    step: 'Scaffolder',
-    content: 'Start your Web3 journey by learning the basics of blockchain.',
-  },
-  {
-    step: 'Config',
-    content:
-      'Dive deep into blockchain fundamentals and smart contract development.',
-  },
-  {
-    step: 'Doctor',
-    content:
-      'Graduate with hands-on Web3 experience through building decentralized applications.',
-  },
-];
+interface VerticalSlidingItemsProps {
+  features: {
+    step: string;
+    content: string;
+  }[];
+}
 
-export const VerticalSlidingItems = () => {
+export const VerticalSlidingItems = ({
+  features,
+}: VerticalSlidingItemsProps) => {
   const [currentFeature, setCurrentFeature] = useState(0);
   const [progress, setProgress] = useState(0);
   const [, setIsMobile] = useState(false);
@@ -42,7 +34,7 @@ export const VerticalSlidingItems = () => {
         setCurrentFeature((prev) => (prev + 1) % features.length);
         setProgress(0);
       }
-    }, 50);
+    }, 80);
 
     return () => clearInterval(timer);
   }, [progress]);
