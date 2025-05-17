@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { LuChevronRight } from 'react-icons/lu';
 
 interface HPSectionStartProps {
   title: string;
@@ -22,7 +23,9 @@ export const HPSectionStart = ({
       <p className="text-muted-foreground">{description}</p>
 
       <Button variant="outline" size="sm" asChild>
-        <Link href={buttonLink}>{buttonText}</Link>
+        <Link href={buttonLink}>
+          {buttonText} <LuChevronRight />
+        </Link>
       </Button>
     </div>
   );
