@@ -6,9 +6,8 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { CheckIcon, XIcon } from 'lucide-react';
+import { LuCheck, LuX, LuTally1, LuTally2, LuTally3 } from 'react-icons/lu';
 
-// Data from ComparisonTable.tsx, transformed
 const rawData = {
   sheriff: {
     FlatConfig: '✅',
@@ -17,7 +16,7 @@ const rawData = {
     'Rich docs': '✅',
     'Functional programming': '✅',
     'Preconfigured ignores': '✅',
-    // 'Learning curve': '😊', // Omitted as per plan
+    'Learning curve': '😊',
     'Incremental adoption': '✅',
     'Typesafe config': '✅',
     Scaffolder: '✅',
@@ -50,7 +49,7 @@ const rawData = {
     'Rich docs': '✅',
     'Functional programming': '❌',
     'Preconfigured ignores': '❌',
-    // 'Learning curve': '😐', // Omitted
+    'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
@@ -83,7 +82,7 @@ const rawData = {
     'Rich docs': '✅',
     'Functional programming': '❌',
     'Preconfigured ignores': '❌',
-    // 'Learning curve': '😐', // Omitted
+    'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
@@ -116,7 +115,7 @@ const rawData = {
     'Rich docs': '❌',
     'Functional programming': '❌',
     'Preconfigured ignores': '❌',
-    // 'Learning curve': '😐', // Omitted
+    'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
@@ -149,7 +148,7 @@ const rawData = {
     'Rich docs': '✅',
     'Functional programming': '❌',
     'Preconfigured ignores': '✅',
-    // 'Learning curve': '😔', // Omitted
+    'Learning curve': '😔',
     'Incremental adoption': '❌',
     'Typesafe config': '✅',
     Scaffolder: '✅',
@@ -182,7 +181,7 @@ const rawData = {
     'Rich docs': '✅',
     'Functional programming': '❌',
     'Preconfigured ignores': '✅',
-    // 'Learning curve': '😐', // Omitted
+    'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
@@ -215,7 +214,7 @@ const rawData = {
     'Rich docs': '✅',
     'Functional programming': '❌',
     'Preconfigured ignores': '❌',
-    // 'Learning curve': '😔', // Omitted
+    'Learning curve': '😔',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
@@ -248,7 +247,7 @@ const rawData = {
     'Rich docs': '✅',
     'Functional programming': '❌',
     'Preconfigured ignores': '❌',
-    // 'Learning curve': '😔', // Omitted
+    'Learning curve': '😔',
     'Incremental adoption': '✅',
     'Typesafe config': '❌',
     Scaffolder: '✅',
@@ -281,7 +280,7 @@ const rawData = {
     'Rich docs': '✅',
     'Functional programming': '✅',
     'Preconfigured ignores': '❌',
-    // 'Learning curve': '😐', // Omitted
+    'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
@@ -310,7 +309,7 @@ const rawData = {
 };
 
 const eslintConfigs = Object.keys(rawData);
-const features = Object.keys(rawData.sheriff); // All configs share the same features (excluding Learning curve)
+const features = Object.keys(rawData.sheriff);
 
 export const ComparisonTableHP = () => {
   return (
@@ -340,31 +339,69 @@ export const ComparisonTableHP = () => {
               {featureName}
             </TableHead>
             {eslintConfigs.map((configName) => {
-              const isSupported =
+              const featureValue =
                 rawData[configName as keyof typeof rawData]?.[
                   featureName as keyof typeof rawData.sheriff
-                ] === '✅';
-              return (
-                <TableCell
-                  key={configName} // configName is unique within this row context
-                  className="space-y-1 text-center"
-                >
-                  {isSupported ? (
-                    <CheckIcon
+                ];
+              let iconContent = null;
+              let screenReaderText = '';
+
+              if (featureName === 'Learning curve') {
+                if (featureValue === '😊') {
+                  iconContent = (
+                    <LuTally1
                       className="inline-flex stroke-emerald-600"
                       size={16}
                       aria-hidden="true"
                     />
-                  ) : (
-                    <XIcon
+                  );
+                  screenReaderText = 'Easy learning curve';
+                } else if (featureValue === '😐') {
+                  iconContent = (
+                    <LuTally2
+                      className="inline-flex stroke-yellow-600"
+                      size={16}
+                      aria-hidden="true"
+                    />
+                  );
+                  screenReaderText = 'Medium learning curve';
+                } else if (featureValue === '😔') {
+                  iconContent = (
+                    <LuTally3
                       className="inline-flex stroke-red-600"
                       size={16}
                       aria-hidden="true"
                     />
-                  )}
-                  <span className="sr-only">
-                    {isSupported ? 'Supported' : 'Not supported'}
-                  </span>
+                  );
+                  screenReaderText = 'Hard learning curve';
+                }
+              } else {
+                const isSupported = featureValue === '✅';
+                if (isSupported) {
+                  iconContent = (
+                    <LuCheck
+                      className="inline-flex stroke-emerald-600"
+                      size={16}
+                      aria-hidden="true"
+                    />
+                  );
+                  screenReaderText = 'Supported';
+                } else {
+                  iconContent = (
+                    <LuX
+                      className="inline-flex stroke-red-600"
+                      size={16}
+                      aria-hidden="true"
+                    />
+                  );
+                  screenReaderText = 'Not supported';
+                }
+              }
+
+              return (
+                <TableCell key={configName} className="space-y-1 text-center">
+                  {iconContent}
+                  <span className="sr-only">{screenReaderText}</span>
                 </TableCell>
               );
             })}

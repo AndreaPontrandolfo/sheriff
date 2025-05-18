@@ -1,6 +1,6 @@
 import React from 'react';
 import { HPSectionStart } from './HPSectionStart';
-import ComparisonTableHP from './ComparisonTableHP';
+import { ComparisonTableHP } from './ComparisonTableHP';
 
 export const ComparisonsSection = () => {
   return (

@@ -16,8 +16,8 @@ export default function HomePage() {
           <FeaturesSection />
           <IntegrationsSection />
           <EcosystemSection />
-          <StatsSection />
           <ComparisonsSection />
+          <StatsSection />
           <JoinUsSection />
         </div>
       </div>
