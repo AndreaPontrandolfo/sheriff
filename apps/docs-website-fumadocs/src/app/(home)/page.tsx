@@ -4,6 +4,7 @@ import { IntegrationsSection } from '@/components/IntegrationsSection';
 import { EcosystemSection } from '@/components/EcosystemSection';
 import { StatsSection } from '@/components/StatsSection';
 import { JoinUsSection } from '@/components/JoinUsSection';
+import { ComparisonsSection } from '@/components/ComparisonsSection';
 
 export default function HomePage() {
   // bg-background and text-foreground were added here because of shadcn compatibility. Reference: https://github.com/fuma-nama/fumadocs-shadcn?tab=readme-ov-file#with-shadcn-ui
@@ -16,6 +17,7 @@ export default function HomePage() {
           <IntegrationsSection />
           <EcosystemSection />
           <StatsSection />
+          <ComparisonsSection />
           <JoinUsSection />
         </div>
       </div>
