@@ -71,7 +71,7 @@ export function HeroSection() {
             className="mt-12"
           >
             <div className="flex items-center gap-2">
-              <RainbowButton>
+              <RainbowButton className="rounded-xl" size="lg">
                 <Link href="/docs/introduction">
                   <div className="flex items-center gap-2 text-nowrap">
                     Get started
