@@ -81,8 +81,24 @@
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
+  /* Marquee end */
+
+  /* Shine start */
+  --animate-shine: shine var(--duration) infinite linear;
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    to {
+      background-position: 0% 0%;
+    }
+  }
+  /* Shine end */
 }
-/* Marquee end */
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
