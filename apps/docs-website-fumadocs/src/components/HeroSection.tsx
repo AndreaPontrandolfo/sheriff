@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { TextEffect } from '@/components/ui/text-effect';
 import { AnimatedGroup } from '@/components/ui/animated-group';
-import { GridBackground } from './ui/grid-background';
-import { CopyToClipboard } from './ui/copy-to-clipboard';
-import { RainbowButton } from './magicui/rainbow-button';
+import { GridBackground } from '@/components/ui/grid-background';
+import { CopyToClipboard } from '@/components/ui/copy-to-clipboard';
+import { RainbowButton } from '@/components/magicui/rainbow-button';
 import { LuChevronRight } from 'react-icons/lu';
 
 const transitionVariants = {
@@ -34,8 +34,11 @@ export function HeroSection() {
       <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
       <div className="mx-auto max-w-5xl px-6">
         <div className="pb-20 sm:mx-auto lg:mr-auto lg:mt-0">
-          <GridBackground />
-
+          <GridBackground
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          />
           <TextEffect
             preset="fade-in-blur"
             speedSegment={0.3}
