@@ -37,7 +37,7 @@ export function HeroSection() {
           <GridBackground
             animate={{ opacity: 1 }}
             initial={{ opacity: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5 }}
           />
           <TextEffect
             preset="fade-in-blur"
@@ -52,7 +52,7 @@ export function HeroSection() {
             per="line"
             preset="fade-in-blur"
             speedSegment={0.3}
-            delay={0.5}
+            delay={0.3}
             as="p"
             className="mt-6 max-w-2xl text-pretty text-lg dark:text-zinc-400"
           >
@@ -64,6 +64,7 @@ export function HeroSection() {
               container: {
                 visible: {
                   transition: {
+                    duration: 0.4,
                     staggerChildren: 0.05,
                     delayChildren: 0.75,
                   },
