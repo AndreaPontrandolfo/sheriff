@@ -27,6 +27,7 @@ import type { RuleEntry } from './columns'; // Assuming columns.tsx exports Rule
 import { DataTablePagination } from './data-table-pagination';
 import { DataTableToolbar } from './data-table-toolbar';
 import { isEmpty } from 'lodash-es';
+import { QueriedRulesMetricsGroup } from '../QueriedRulesMetricsGroup';
 
 interface DataTableProps<TData extends RuleEntry, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -35,12 +36,14 @@ interface DataTableProps<TData extends RuleEntry, TValue> {
    * For the toolbar's plugin filter.
    */
   pluginsNames: string[];
+  totalAvailableRulesAmount: number;
 }
 
 export function DataTable<TData extends RuleEntry, TValue>({
   columns,
   data,
   pluginsNames,
+  totalAvailableRulesAmount,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
@@ -100,8 +103,16 @@ export function DataTable<TData extends RuleEntry, TValue>({
         pluginColumnFilter={pluginColumnFilter}
         setPluginColumnFilter={setPluginColumnFilter}
       />
-      <div className="rounded-md border">
-        <Table>
+      <QueriedRulesMetricsGroup
+        totalAvailableRulesAmount={totalAvailableRulesAmount}
+        fetchedConfigRulesAmount={data.length}
+        // Filtered rules amount would now come from the table instance if needed,
+        // but DataTable doesn't expose it directly here.
+        // For simplicity, we might omit it or pass table.getFilteredRowModel().rows.length if feasible.
+        filteredRulesAmount={data.length} // Placeholder, actual filtered count is within DataTable
+      />
+      <div className="rounded-xl border">
+        <Table className="mb-0 mt-0">
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => {
               return (

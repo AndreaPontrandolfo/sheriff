@@ -110,12 +110,12 @@ export function ConfigCombinationForm({
             <FormItem>
               <div className="mb-4">
                 <FormLabel className="text-base">Technologies</FormLabel>
-                <FormDescription>
+                <FormDescription className="mb-0">
                   Select the technologies that should compose your ESLint
                   configuration.
                 </FormDescription>
               </div>
-              <div className="max-w-220 flex flex-wrap justify-evenly gap-3 rounded-md border py-4 shadow">
+              <div className="mb-4 flex flex-wrap justify-evenly gap-3 rounded-md border py-2 shadow">
                 {items.map((item) => (
                   <FormField
                     key={item.id}
@@ -125,7 +125,7 @@ export function ConfigCombinationForm({
                       return (
                         <FormItem
                           key={item.id}
-                          className="flex cursor-pointer flex-row gap-0 space-x-2"
+                          className="flex cursor-pointer flex-row items-center gap-0 space-x-2"
                         >
                           <FormControl className="cursor-pointer">
                             <Checkbox

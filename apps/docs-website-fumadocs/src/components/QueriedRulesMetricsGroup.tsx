@@ -1,3 +1,4 @@
+import { Separator } from '@radix-ui/react-separator';
 import type { JSX } from 'react';
 
 interface QueriedRulesMetricsGroupProps {
@@ -12,18 +13,20 @@ export const QueriedRulesMetricsGroup = ({
   filteredRulesAmount,
 }: QueriedRulesMetricsGroupProps): JSX.Element => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex gap-4">
       <div>
-        <span className="text-sm font-medium">Total available rules: </span>
-        <span className="text-sm font-medium">{totalAvailableRulesAmount}</span>
+        <span>Total available rules: </span>
+        <span className="text-lg font-bold">{totalAvailableRulesAmount}</span>
       </div>
+      <Separator orientation="vertical" className="bg-border w-px" />
       <div>
-        <span className="text-sm font-medium">Current config rules: </span>
-        <span className="text-sm font-medium">{fetchedConfigRulesAmount}</span>
+        <span>Current config rules: </span>
+        <span className="text-lg font-bold">{fetchedConfigRulesAmount}</span>
       </div>
+      <Separator orientation="vertical" className="bg-border w-px" />
       <div>
-        <span className="text-sm font-medium">Filtered rules: </span>
-        <span className="text-sm font-medium">{filteredRulesAmount}</span>
+        <span>Filtered rules: </span>
+        <span className="text-lg font-bold">{filteredRulesAmount}</span>
       </div>
     </div>
   );

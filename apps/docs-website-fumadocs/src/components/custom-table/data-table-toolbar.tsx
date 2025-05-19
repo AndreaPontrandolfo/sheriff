@@ -64,77 +64,74 @@ export function DataTableToolbar<TData>({
   };
 
   return (
-    <div className="flex items-center justify-between py-4">
-      <div className="flex flex-1 items-center space-x-2">
-        <Input
-          placeholder="Filter rules, docs..."
-          value={globalFilter ?? ''} // Use the prop for global filter
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            setGlobalFilter(event.target.value)
-          } // Use setter prop
-          className="h-8 w-[150px] lg:w-[250px]"
-        />
-        <Popover
-          open={isPluginsPopoverOpen}
-          onOpenChange={setIsPluginsPopoverOpen}
-        >
-          <PopoverTrigger asChild>
-            <Button
-              variant="outline"
-              role="combobox"
-              aria-expanded={isPluginsPopoverOpen}
-              className="text-muted-foreground hover:text-foreground h-8 w-[200px] justify-between"
-            >
-              {pluginColumnFilter
-                ? pluginsNames.find(
-                    (pluginName) => pluginName === pluginColumnFilter,
-                  )
-                : 'Filter by plugin...'}
-              <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-[200px] p-0">
-            <Command>
-              <CommandInput placeholder="Search plugin..." />
-              <CommandList>
-                <CommandEmpty>No plugin found.</CommandEmpty>
-                <CommandGroup>
-                  {pluginsNames.map((pluginName) => {
-                    return (
-                      <CommandItem
-                        key={pluginName}
-                        value={pluginName}
-                        onSelect={handlePluginSelect}
-                      >
-                        <Check
-                          className={cn(
-                            'mr-2 h-4 w-4',
-                            pluginColumnFilter === pluginName
-                              ? 'opacity-100'
-                              : 'opacity-0',
-                          )}
-                        />
-                        {pluginName}
-                      </CommandItem>
-                    );
-                  })}
-                </CommandGroup>
-              </CommandList>
-            </Command>
-          </PopoverContent>
-        </Popover>
-        {isFiltered ? (
+    <div className="flex flex-1 items-center gap-4">
+      <Input
+        placeholder="Filter rules, docs..."
+        value={globalFilter ?? ''} // Use the prop for global filter
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+          setGlobalFilter(event.target.value)
+        } // Use setter prop
+        className="h-8 w-[150px] lg:w-[250px]"
+      />
+      <Popover
+        open={isPluginsPopoverOpen}
+        onOpenChange={setIsPluginsPopoverOpen}
+      >
+        <PopoverTrigger asChild>
           <Button
-            variant="ghost"
-            onClick={resetFilters}
-            className="h-8 px-2 lg:px-3"
+            variant="outline"
+            role="combobox"
+            aria-expanded={isPluginsPopoverOpen}
+            className="text-muted-foreground hover:text-foreground h-8 min-w-[200px] justify-between"
           >
-            Reset
-            <XIcon className="ml-2 h-4 w-4" />
+            {pluginColumnFilter
+              ? pluginsNames.find(
+                  (pluginName) => pluginName === pluginColumnFilter,
+                )
+              : 'Filter by plugin...'}
+            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
-        ) : null}
-      </div>
-      <DataTableViewOptions table={table} />
+        </PopoverTrigger>
+        <PopoverContent className="w-[200px] p-0">
+          <Command>
+            <CommandInput placeholder="Search plugin..." />
+            <CommandList>
+              <CommandEmpty>No plugin found.</CommandEmpty>
+              <CommandGroup>
+                {pluginsNames.map((pluginName) => {
+                  return (
+                    <CommandItem
+                      key={pluginName}
+                      value={pluginName}
+                      onSelect={handlePluginSelect}
+                    >
+                      <Check
+                        className={cn(
+                          'mr-2 h-4 w-4',
+                          pluginColumnFilter === pluginName
+                            ? 'opacity-100'
+                            : 'opacity-0',
+                        )}
+                      />
+                      {pluginName}
+                    </CommandItem>
+                  );
+                })}
+              </CommandGroup>
+            </CommandList>
+          </Command>
+        </PopoverContent>
+      </Popover>
+      {isFiltered ? (
+        <Button
+          variant="ghost"
+          onClick={resetFilters}
+          className="h-8 px-2 lg:px-3"
+        >
+          Reset
+          <XIcon className="ml-2 h-4 w-4" />
+        </Button>
+      ) : null}
     </div>
   );
 }

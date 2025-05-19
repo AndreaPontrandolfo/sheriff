@@ -103,19 +103,16 @@ export const RulesTable: React.FC = () => {
       <div /* className={styles.tableControlsContainer} - adapt styling as needed */
       >
         <ConfigCombinationForm setTableData={debouncedSetConfigCombination} />
-        <QueriedRulesMetricsGroup
-          totalAvailableRulesAmount={totalAvailableRulesAmount}
-          fetchedConfigRulesAmount={data.length}
-          // Filtered rules amount would now come from the table instance if needed,
-          // but DataTable doesn't expose it directly here.
-          // For simplicity, we might omit it or pass table.getFilteredRowModel().rows.length if feasible.
-          filteredRulesAmount={data.length} // Placeholder, actual filtered count is within DataTable
-        />
       </div>
       {isLoading && isEmpty(data) ? (
         'Skeleton'
       ) : (
-        <DataTable columns={columns} data={data} pluginsNames={pluginsNames} />
+        <DataTable
+          columns={columns}
+          data={data}
+          pluginsNames={pluginsNames}
+          totalAvailableRulesAmount={totalAvailableRulesAmount}
+        />
       )}
     </div>
   );

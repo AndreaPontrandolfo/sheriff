@@ -53,33 +53,34 @@ export const columns: ColumnDef<RuleEntry>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Severity" />
     ),
-    cell: ({ row }): JSX.Element => {
+    cell: ({ row }): JSX.Element | string => {
       const severityValue = row.getValue('severity') as Severity | undefined;
       let variant: 'default' | 'secondary' | 'destructive' | 'outline' =
         'outline';
       const severityText = String(severityValue ?? 'off');
 
-      if (typeof severityValue === 'number') {
-        if (severityValue === 2) {
-          variant = 'destructive';
-        } else if (severityValue === 1) {
-          variant = 'secondary';
-        } else {
-          variant = 'default'; // Assuming 0 or other numbers like "off" (mapped to 0)
-        }
-      } else if (typeof severityValue === 'string') {
-        const lowerSeverityText = severityValue.toLowerCase();
+      // if (typeof severityValue === 'number') {
+      //   if (severityValue === 2) {
+      //     variant = 'destructive';
+      //   } else if (severityValue === 1) {
+      //     variant = 'secondary';
+      //   } else {
+      //     variant = 'default'; // Assuming 0 or other numbers like "off" (mapped to 0)
+      //   }
+      // } else if (typeof severityValue === 'string') {
+      //   const lowerSeverityText = severityValue.toLowerCase();
 
-        if (lowerSeverityText === 'error') {
-          variant = 'destructive';
-        } else if (lowerSeverityText === 'warn') {
-          variant = 'secondary';
-        } else {
-          variant = 'default'; // For "off"
-        }
-      }
+      //   if (lowerSeverityText === 'error') {
+      //     variant = 'destructive';
+      //   } else if (lowerSeverityText === 'warn') {
+      //     variant = 'secondary';
+      //   } else {
+      //     variant = 'default'; // For "off"
+      //   }
+      // }
 
-      return <Badge variant={variant}>{severityText}</Badge>;
+      // return <Badge variant={variant}>{severityText}</Badge>;
+      return severityText;
     },
     enableSorting: true,
     enableHiding: true,
