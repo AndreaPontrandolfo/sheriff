@@ -7,6 +7,7 @@ import type {
   ServerResponse,
   SheriffConfigurablePlugins,
 } from '@sherifforg/types';
+import { useQuery } from '@tanstack/react-query';
 import { ConfigCombinationForm } from './ConfigCombinationForm';
 import { columns, type RuleEntry } from './custom-table/columns';
 import { DataTable } from './custom-table/data-table';
@@ -14,68 +15,63 @@ import { isArray, isEmpty } from 'lodash-es';
 import { filterDuplicateRules } from '@/lib/filterDuplicatedRules';
 
 export const RulesTable: React.FC = () => {
-  const [data, setData] = useState<RuleEntry[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [pluginsNames, setPluginsNames] = useState<string[]>([]);
-  const [totalAvailableRulesAmount, setTotalAvailableRulesAmount] = useState(0);
   const [configCombination, setConfigCombination] =
     useState<SheriffConfigurablePlugins>(configCombinationDefaultValues);
 
-  useEffect(() => {
-    const fetchFreshRuleset = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch(
-          process.env.NODE_ENV === 'development'
-            ? 'http://localhost:5001/api/get-new-sheriff-config'
-            : 'https://sheriff-webservices.onrender.com/api/get-new-sheriff-config',
-          {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*', // Consider if this is needed for production
-            },
-            body: JSON.stringify(configCombination),
-          },
-        );
+  const fetchFreshRuleset = async (
+    currentConfigCombination: SheriffConfigurablePlugins,
+  ): Promise<{
+    data: RuleEntry[];
+    pluginsNames: string[];
+    totalAvailableRulesAmount: number;
+  }> => {
+    const response = await fetch(
+      process.env.NODE_ENV === 'development'
+        ? 'http://localhost:5001/api/get-new-sheriff-config'
+        : 'https://sheriff-webservices.onrender.com/api/get-new-sheriff-config',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*', // Consider if this is needed for production
+        },
+        body: JSON.stringify(currentConfigCombination),
+      },
+    );
 
-        if (!response.ok) {
-          // Handle HTTP errors
-          console.error(`HTTP error! status: ${response.status}`);
-          // Potentially set an error state here to display to the user
-          setData([]); // Clear data on error
-          setPluginsNames([]);
-          setTotalAvailableRulesAmount(0);
-          setIsLoading(false);
+    if (!response.ok) {
+      console.error(`HTTP error! status: ${response.status}`);
+      // For TanStack Query, throwing an error here will put the query in an error state
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-          return;
-        }
+    const fetchedData: ServerResponse = await response.json();
 
-        const fetchedData: ServerResponse = await response.json();
+    const compiledConfigArray = isArray(fetchedData.compiledConfig)
+      ? fetchedData.compiledConfig
+      : [];
 
-        setTotalAvailableRulesAmount(
-          fetchedData.totalAvailableRulesAmount ?? 0,
-        );
-        setPluginsNames(fetchedData.pluginsNames ?? []);
-        // Ensure fetchedData.compiledConfig is an array before filtering
-        const compiledConfigArray = isArray(fetchedData.compiledConfig)
-          ? fetchedData.compiledConfig
-          : [];
-
-        setData(filterDuplicateRules(compiledConfigArray));
-      } catch (error) {
-        console.error('Failed to fetch ruleset:', error);
-        setData([]); // Clear data on error
-        setPluginsNames([]);
-        setTotalAvailableRulesAmount(0);
-        // Potentially set an error state here
-      } finally {
-        setIsLoading(false);
-      }
+    return {
+      data: filterDuplicateRules(compiledConfigArray),
+      pluginsNames: fetchedData.pluginsNames ?? [],
+      totalAvailableRulesAmount: fetchedData.totalAvailableRulesAmount ?? 0,
     };
+  };
 
-    fetchFreshRuleset().catch(console.error);
-  }, [configCombination]); // Effect runs when configCombination changes
+  const {
+    data: queryData,
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ['ruleset', configCombination],
+    queryFn: () => fetchFreshRuleset(configCombination),
+    // Consider adding options like staleTime, cacheTime, refetchOnWindowFocus, etc.
+  });
+
+  // Default values for when data is loading or an error occurs
+  const data = queryData?.data ?? [];
+  const pluginsNames = queryData?.pluginsNames ?? [];
+  const totalAvailableRulesAmount = queryData?.totalAvailableRulesAmount ?? 0;
 
   return (
     <div>
@@ -84,6 +80,8 @@ export const RulesTable: React.FC = () => {
       </div>
       {isLoading && isEmpty(data) ? (
         'Skeleton'
+      ) : isError ? (
+        'Error loading rules. Please try again.' // Display an error message
       ) : (
         <DataTable
           columns={columns}

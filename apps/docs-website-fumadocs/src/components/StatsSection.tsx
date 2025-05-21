@@ -1,7 +1,7 @@
-import { Pencil, Settings2, Sparkles } from 'lucide-react';
-import { HPSectionTitle } from './HPSectionTitle';
 import { HPSectionStart } from './HPSectionStart';
 import { AnimatedNumberInView } from './AnimatedNumberOnview';
+
+// TODO: most of these numbers could be inferred dynamically
 
 export const StatsSection = () => {
   return (
