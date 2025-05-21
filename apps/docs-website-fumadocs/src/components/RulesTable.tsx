@@ -13,6 +13,7 @@ import { columns, type RuleEntry } from './custom-table/columns';
 import { DataTable } from './custom-table/data-table';
 import { isArray, isEmpty } from 'lodash-es';
 import { filterDuplicateRules } from '@/lib/filterDuplicatedRules';
+import { RulesTableSkeleton } from './RulesTableSkeleton';
 
 export const RulesTable: React.FC = () => {
   const [configCombination, setConfigCombination] =
@@ -79,7 +80,7 @@ export const RulesTable: React.FC = () => {
         <ConfigCombinationForm setTableData={setConfigCombination} />
       </div>
       {isLoading && isEmpty(data) ? (
-        'Skeleton'
+        <RulesTableSkeleton />
       ) : isError ? (
         'Error loading rules. Please try again.' // Display an error message
       ) : (
