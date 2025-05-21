@@ -15,46 +15,22 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import type { SheriffConfigurablePlugins } from '@sherifforg/types';
-import { sheriffStartingOptions } from '@sherifforg/constants';
+import {
+  sheriffStartingOptions,
+  configCombinationDefaultValues,
+} from '@sherifforg/constants';
 
-const items = [
-  {
-    id: 'react',
-    label: 'React',
-  },
-  {
-    id: 'next',
-    label: 'Next',
-  },
-  {
-    id: 'astro',
-    label: 'Astro',
-  },
-  {
-    id: 'lodash',
-    label: 'Lodash',
-  },
-  {
-    id: 'remeda',
-    label: 'Remeda',
-  },
-  {
-    id: 'playwright',
-    label: 'Playwright',
-  },
-  {
-    id: 'storybook',
-    label: 'Storybook',
-  },
-  {
-    id: 'vitest',
-    label: 'Vitest',
-  },
-  {
-    id: 'jest',
-    label: 'Jest',
-  },
-] as const;
+interface FormItem {
+  id: string;
+  label: string;
+}
+
+const items: FormItem[] = Object.keys(configCombinationDefaultValues).map(
+  (key) => ({
+    id: key,
+    label: key.charAt(0).toUpperCase() + key.slice(1),
+  }),
+);
 
 const FormSchema = z.object({
   items: z.array(z.string()),
