@@ -20,7 +20,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
-import { DataTableViewOptions } from './data-table-view-options';
+import { LuFilter } from 'react-icons/lu';
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
@@ -86,6 +86,7 @@ export function DataTableToolbar<TData>({
 
   return (
     <div className="flex flex-1 items-center gap-4">
+      <LuFilter size={20} />
       <Input
         placeholder="Filter rules, docs..."
         value={inputValue} // Use local state for input value
