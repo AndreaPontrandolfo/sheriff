@@ -57,9 +57,7 @@ const items = [
 ] as const;
 
 const FormSchema = z.object({
-  items: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: 'You have to select at least one item.',
-  }),
+  items: z.array(z.string()),
 });
 
 interface ConfigCombinationFormProps {
@@ -72,16 +70,7 @@ export function ConfigCombinationForm({
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      items: [
-        'react',
-        'next',
-        'astro',
-        'lodash',
-        'remeda',
-        'playwright',
-        'storybook',
-        'vitest',
-      ],
+      items: items.map((item) => item.id),
     },
   });
 
