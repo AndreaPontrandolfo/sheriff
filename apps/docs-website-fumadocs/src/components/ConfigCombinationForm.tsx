@@ -14,7 +14,8 @@ import {
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
+import type { SheriffConfigurablePlugins } from '@sherifforg/types';
+import { sheriffStartingOptions } from '@sherifforg/constants';
 
 const items = [
   {
@@ -61,20 +62,8 @@ const FormSchema = z.object({
   }),
 });
 
-interface FormInputs {
-  react: boolean;
-  next: boolean;
-  astro: boolean;
-  lodash: boolean;
-  remeda: boolean;
-  playwright: boolean;
-  storybook: boolean;
-  vitest: boolean;
-  jest: boolean;
-}
-
 interface ConfigCombinationFormProps {
-  setTableData: (data: FormInputs) => void;
+  setTableData: (data: SheriffConfigurablePlugins) => void;
 }
 
 export function ConfigCombinationForm({
@@ -97,7 +86,17 @@ export function ConfigCombinationForm({
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    setTableData(data);
+    const transformedData: SheriffConfigurablePlugins = {
+      ...sheriffStartingOptions,
+    };
+
+    for (const item of data.items) {
+      if (item in transformedData) {
+        transformedData[item as keyof SheriffConfigurablePlugins] = true;
+      }
+    }
+
+    setTableData(transformedData);
   }
 
   return (

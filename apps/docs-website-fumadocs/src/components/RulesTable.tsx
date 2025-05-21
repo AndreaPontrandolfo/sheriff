@@ -3,7 +3,10 @@
 import type React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { configCombinationDefaultValues } from '@sherifforg/constants';
-import type { ServerResponse, SheriffSettings } from '@sherifforg/types';
+import type {
+  ServerResponse,
+  SheriffConfigurablePlugins,
+} from '@sherifforg/types';
 import { ConfigCombinationForm } from './ConfigCombinationForm';
 import { columns, type RuleEntry } from './custom-table/columns';
 import { DataTable } from './custom-table/data-table';
@@ -15,9 +18,8 @@ export const RulesTable: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [pluginsNames, setPluginsNames] = useState<string[]>([]);
   const [totalAvailableRulesAmount, setTotalAvailableRulesAmount] = useState(0);
-  const [configCombination, setConfigCombination] = useState<SheriffSettings>(
-    configCombinationDefaultValues,
-  );
+  const [configCombination, setConfigCombination] =
+    useState<SheriffConfigurablePlugins>(configCombinationDefaultValues);
 
   useEffect(() => {
     const fetchFreshRuleset = async () => {
@@ -59,10 +61,6 @@ export const RulesTable: React.FC = () => {
         const compiledConfigArray = isArray(fetchedData.compiledConfig)
           ? fetchedData.compiledConfig
           : [];
-        console.log(
-          '🚀 ~ fetchFreshRuleset ~ compiledConfigArray:',
-          compiledConfigArray,
-        );
 
         setData(filterDuplicateRules(compiledConfigArray));
       } catch (error) {
