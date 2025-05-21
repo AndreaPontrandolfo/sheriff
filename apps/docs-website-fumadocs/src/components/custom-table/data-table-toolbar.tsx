@@ -44,9 +44,21 @@ export function DataTableToolbar<TData>({
   setPluginColumnFilter,
 }: DataTableToolbarProps<TData>) {
   const [isPluginsPopoverOpen, setIsPluginsPopoverOpen] = React.useState(false);
+  const [inputValue, setInputValue] = React.useState(globalFilter ?? '');
 
   // Combined filter check: global filter or plugin filter
   const isFiltered = globalFilter || pluginColumnFilter;
+
+  React.useEffect(() => {
+    setInputValue(globalFilter ?? '');
+  }, [globalFilter]);
+
+  React.useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setGlobalFilter(inputValue);
+    }, 300); // 300ms debounce delay
+    return () => clearTimeout(timeoutId);
+  }, [inputValue, setGlobalFilter]);
 
   const handlePluginSelect = (currentValue: string) => {
     const newValue =
@@ -59,6 +71,7 @@ export function DataTableToolbar<TData>({
   const resetFilters = () => {
     setGlobalFilter('');
     setPluginColumnFilter(undefined);
+    setInputValue(''); // Reset input value as well
     // table.resetGlobalFilter(); // Handled by parent
     // table.getColumn("parentPluginName")?.setFilterValue(undefined); // Handled by parent
   };
@@ -67,10 +80,10 @@ export function DataTableToolbar<TData>({
     <div className="flex flex-1 items-center gap-4">
       <Input
         placeholder="Filter rules, docs..."
-        value={globalFilter ?? ''} // Use the prop for global filter
+        value={inputValue} // Use local state for input value
         onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-          setGlobalFilter(event.target.value)
-        } // Use setter prop
+          setInputValue(event.target.value)
+        } // Update local state
         className="h-8 w-[150px] lg:w-[250px]"
       />
       <Popover
