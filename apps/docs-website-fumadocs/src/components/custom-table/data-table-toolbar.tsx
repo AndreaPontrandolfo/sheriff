@@ -4,6 +4,7 @@ import { Check, ChevronsUpDown, XIcon } from 'lucide-react';
 import * as React from 'react';
 import type { Table } from '@tanstack/react-table';
 import { Button } from '@/components/ui/button';
+import { debounce } from 'lodash-es';
 import {
   Command,
   CommandEmpty,
@@ -53,12 +54,19 @@ export function DataTableToolbar<TData>({
     setInputValue(globalFilter ?? '');
   }, [globalFilter]);
 
+  // Debounced version of setGlobalFilter
+  const debouncedSetGlobalFilter = React.useMemo(
+    () => debounce(setGlobalFilter, 300),
+    [setGlobalFilter],
+  );
+
   React.useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setGlobalFilter(inputValue);
-    }, 300); // 300ms debounce delay
-    return () => clearTimeout(timeoutId);
-  }, [inputValue, setGlobalFilter]);
+    debouncedSetGlobalFilter(inputValue);
+    // Cleanup on unmount or if debouncedSetGlobalFilter changes
+    return () => {
+      debouncedSetGlobalFilter.cancel();
+    };
+  }, [inputValue, debouncedSetGlobalFilter]);
 
   const handlePluginSelect = (currentValue: string) => {
     const newValue =
