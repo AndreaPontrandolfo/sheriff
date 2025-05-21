@@ -5,6 +5,7 @@
     "apps/config-validation-playground",
     "apps/cli-playground",
     "apps/docs-website",
+    "apps/docs-website-fumadocs",
   ],
   "ignoreDependencies": [
     "@turbo/gen",

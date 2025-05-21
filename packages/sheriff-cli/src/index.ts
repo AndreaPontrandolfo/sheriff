@@ -8,7 +8,7 @@ import { type NormalizedPackageJson, readPackage } from 'read-pkg';
 import { isEmpty } from 'remeda';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { CLIOptionsCatalog } from '@sherifforg/constants';
+import { cliOptionsReference } from '@sherifforg/constants';
 import {
   AST_NODE_TYPES,
   parse,
@@ -36,54 +36,54 @@ const { argv } = yargs(hideBin(process.argv))
   .version(packageJson.version)
   .alias('v', 'version')
   .option('no-fail', {
-    type: CLIOptionsCatalog['no-fail'].type,
-    description: CLIOptionsCatalog['no-fail'].description,
-    default: CLIOptionsCatalog['no-fail'].default,
+    type: cliOptionsReference['no-fail'].type,
+    description: cliOptionsReference['no-fail'].description,
+    default: cliOptionsReference['no-fail'].default,
   })
   .option('debug', {
-    type: CLIOptionsCatalog.debug.type,
-    description: CLIOptionsCatalog.debug.description,
-    default: CLIOptionsCatalog.debug.default,
+    type: cliOptionsReference.debug.type,
+    description: cliOptionsReference.debug.description,
+    default: cliOptionsReference.debug.default,
   })
   .option('ignore-react', {
-    type: CLIOptionsCatalog['ignore-react'].type,
-    description: CLIOptionsCatalog['ignore-react'].description,
-    default: CLIOptionsCatalog['ignore-react'].default,
+    type: cliOptionsReference['ignore-react'].type,
+    description: cliOptionsReference['ignore-react'].description,
+    default: cliOptionsReference['ignore-react'].default,
   })
   .option('ignore-next', {
-    type: CLIOptionsCatalog['ignore-next'].type,
-    description: CLIOptionsCatalog['ignore-next'].description,
-    default: CLIOptionsCatalog['ignore-next'].default,
+    type: cliOptionsReference['ignore-next'].type,
+    description: cliOptionsReference['ignore-next'].description,
+    default: cliOptionsReference['ignore-next'].default,
   })
   .option('ignore-lodash', {
-    type: CLIOptionsCatalog['ignore-lodash'].type,
-    description: CLIOptionsCatalog['ignore-lodash'].description,
-    default: CLIOptionsCatalog['ignore-lodash'].default,
+    type: cliOptionsReference['ignore-lodash'].type,
+    description: cliOptionsReference['ignore-lodash'].description,
+    default: cliOptionsReference['ignore-lodash'].default,
   })
   .option('ignore-remeda', {
-    type: CLIOptionsCatalog['ignore-remeda'].type,
-    description: CLIOptionsCatalog['ignore-remeda'].description,
-    default: CLIOptionsCatalog['ignore-remeda'].default,
+    type: cliOptionsReference['ignore-remeda'].type,
+    description: cliOptionsReference['ignore-remeda'].description,
+    default: cliOptionsReference['ignore-remeda'].default,
   })
   .option('ignore-vitest', {
-    type: CLIOptionsCatalog['ignore-vitest'].type,
-    description: CLIOptionsCatalog['ignore-vitest'].description,
-    default: CLIOptionsCatalog['ignore-vitest'].default,
+    type: cliOptionsReference['ignore-vitest'].type,
+    description: cliOptionsReference['ignore-vitest'].description,
+    default: cliOptionsReference['ignore-vitest'].default,
   })
   .option('ignore-jest', {
-    type: CLIOptionsCatalog['ignore-jest'].type,
-    description: CLIOptionsCatalog['ignore-jest'].description,
-    default: CLIOptionsCatalog['ignore-jest'].default,
+    type: cliOptionsReference['ignore-jest'].type,
+    description: cliOptionsReference['ignore-jest'].description,
+    default: cliOptionsReference['ignore-jest'].default,
   })
   .option('ignore-playwright', {
-    type: CLIOptionsCatalog['ignore-playwright'].type,
-    description: CLIOptionsCatalog['ignore-playwright'].description,
-    default: CLIOptionsCatalog['ignore-playwright'].default,
+    type: cliOptionsReference['ignore-playwright'].type,
+    description: cliOptionsReference['ignore-playwright'].description,
+    default: cliOptionsReference['ignore-playwright'].default,
   })
   .option('ignore-astro', {
-    type: CLIOptionsCatalog['ignore-astro'].type,
-    description: CLIOptionsCatalog['ignore-astro'].description,
-    default: CLIOptionsCatalog['ignore-astro'].default,
+    type: cliOptionsReference['ignore-astro'].type,
+    description: cliOptionsReference['ignore-astro'].description,
+    default: cliOptionsReference['ignore-astro'].default,
   })
   .help()
   .alias('h', 'help');
