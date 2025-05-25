@@ -293,6 +293,9 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.14
         version: 0.4.20(eslint@9.27.0(jiti@2.4.2))
+      eslint-plugin-react-you-might-not-need-an-effect:
+        specifier: ^0.0.33
+        version: 0.0.33(eslint@9.27.0(jiti@2.4.2))
       eslint-plugin-regexp:
         specifier: ^2.7.0
         version: 2.7.0(eslint@9.27.0(jiti@2.4.2))
@@ -417,6 +420,9 @@ importers:
       eslint-plugin-react-refresh:
         specifier: ^0.4.14
         version: 0.4.20(eslint@9.27.0(jiti@2.4.2))
+      eslint-plugin-react-you-might-not-need-an-effect:
+        specifier: ^0.0.33
+        version: 0.0.33(eslint@9.27.0(jiti@2.4.2))
       eslint-plugin-regexp:
         specifier: ^2.7.0
         version: 2.7.0(eslint@9.27.0(jiti@2.4.2))
@@ -6010,6 +6016,12 @@ packages:
       typescript:
         optional: true
 
+  eslint-plugin-react-you-might-not-need-an-effect@0.0.33:
+    resolution: {integrity: sha512-OpIRfNUUEXEAyHUhOFH6YoUzmupf+JjvLTKNSWDL/yZr9HodMxYw431VP/+nIBzh4cnyJcmlPoBXIuu+mOL6lg==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      eslint: '>=7.0.0'
+
   eslint-plugin-react@7.37.5:
     resolution: {integrity: sha512-Qteup0SqU15kdocexFNAJMvCJEfa2xUKNV4CC1xsVMrIIqEy3SQ/rqyxCWNzfrd3/ldy6HMlD2e0JDVpDg2qIA==}
     engines: {node: '>=4'}
@@ -6061,6 +6073,16 @@ packages:
   eslint-scope@8.3.0:
     resolution: {integrity: sha512-pUNxi75F8MJ/GdeKtVLSbYg4ZI34J6C0C7sbL4YOp2exGwen7ZsuBqKzUhXd0qMQ362yET3z+uPwKeg/0C2XCQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  eslint-utils@3.0.0:
+    resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
+    engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
+    peerDependencies:
+      eslint: '>=5'
+
+  eslint-visitor-keys@2.1.0:
+    resolution: {integrity: sha512-0rSmRBzXgDzIsD6mGdJgevzgezI534Cer5L/vyMX0kHzT/jiB43jRhd9YUlMGYLQy2zprNmoT8qasCGtY+QaKw==}
+    engines: {node: '>=10'}
 
   eslint-visitor-keys@3.4.3:
     resolution: {integrity: sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag==}
@@ -16446,7 +16468,7 @@ snapshots:
 
   babel-plugin-macros@3.1.0:
     dependencies:
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.27.1
       cosmiconfig: 7.1.0
       resolve: 1.22.10
 
@@ -17437,7 +17459,7 @@ snapshots:
 
   dom-helpers@5.2.1:
     dependencies:
-      '@babel/runtime': 7.27.0
+      '@babel/runtime': 7.27.1
       csstype: 3.1.3
 
   dom-serializer@1.4.1:
@@ -18123,6 +18145,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  eslint-plugin-react-you-might-not-need-an-effect@0.0.33(eslint@9.27.0(jiti@2.4.2)):
+    dependencies:
+      eslint: 9.27.0(jiti@2.4.2)
+      eslint-utils: 3.0.0(eslint@9.27.0(jiti@2.4.2))
+
   eslint-plugin-react@7.37.5(eslint@9.27.0(jiti@2.4.2)):
     dependencies:
       array-includes: 3.1.8
@@ -18212,6 +18239,13 @@ snapshots:
     dependencies:
       esrecurse: 4.3.0
       estraverse: 5.3.0
+
+  eslint-utils@3.0.0(eslint@9.27.0(jiti@2.4.2)):
+    dependencies:
+      eslint: 9.27.0(jiti@2.4.2)
+      eslint-visitor-keys: 2.1.0
+
+  eslint-visitor-keys@2.1.0: {}
 
   eslint-visitor-keys@3.4.3: {}
 

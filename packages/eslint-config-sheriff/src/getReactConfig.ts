@@ -3,6 +3,7 @@ import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import reactYouMightNotNeedAnEffect from 'eslint-plugin-react-you-might-not-need-an-effect';
 import tseslint from 'typescript-eslint';
 import rel1cxReact from '@eslint-react/eslint-plugin';
 import {
@@ -74,6 +75,15 @@ export const getReactConfig = (
       rules: {
         '@eslint-react/no-leaked-conditional-rendering': 2,
         '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 2,
+      },
+    },
+    {
+      files: [supportedFileTypes],
+      plugins: {
+        'react-you-might-not-need-an-effect': reactYouMightNotNeedAnEffect,
+      },
+      rules: {
+        'react-you-might-not-need-an-effect/you-might-not-need-an-effect': 2,
       },
     },
     {
