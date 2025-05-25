@@ -6,6 +6,7 @@ import {
   supportedFileTypes,
   testsFilePatterns,
 } from '@sherifforg/constants';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 //#region - Re-exports
 // these '@sherifforg/constants' variables needs to be re-stored like this, otherwise they will not be bundled. They need to be bundled because we are not publishing the 'sheriff-constants' package, but we are using it as a dependency in this package.
@@ -31,5 +32,6 @@ export {
   getExportableConfig as sheriff,
 } from './getExportableConfig';
 export type * from '@sherifforg/types';
-export { type TSESLint } from '@typescript-eslint/utils';
+// eslint-disable-next-line unicorn/prefer-export-from
+export type { TSESLint };
 export { default as tseslint } from 'typescript-eslint';
