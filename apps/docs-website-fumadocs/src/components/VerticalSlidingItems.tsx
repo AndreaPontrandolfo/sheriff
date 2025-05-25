@@ -63,23 +63,15 @@ export const VerticalSlidingItems = ({
               transition={{ duration: 0.3 }}
             >
               {index <= currentFeature ? (
-                <span className="text-lg font-bold text-white">
-                  {index + 1}
-                </span>
+                <span className="text-lg font-bold">{index + 1}</span>
               ) : (
-                <span className="text-lg font-semibold text-white">
-                  {index + 1}
-                </span>
+                <span className="text-lg font-semibold">{index + 1}</span>
               )}
             </motion.div>
 
             <div className="flex-1">
-              <h3 className="text-xl font-semibold text-gray-200 md:text-2xl">
-                {feature.step}
-              </h3>
-              <p className="text-sm text-gray-400 md:text-lg">
-                {feature.content}
-              </p>
+              <h3 className="text-2xl font-semibold">{feature.step}</h3>
+              <p className="text-muted-foreground text-lg">{feature.content}</p>
             </div>
           </motion.div>
         ))}
