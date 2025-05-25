@@ -1,5 +1,11 @@
 # @sherifforg/cli
 
+## 8.4.0
+
+### Minor Changes
+
+- a418973: feat: bumped some deps
+
 ## 8.3.0
 
 ### Minor Changes
