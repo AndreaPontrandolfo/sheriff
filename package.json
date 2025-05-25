@@ -35,7 +35,7 @@
     "@sherifforg/cli": "workspace:*",
     "@sherifforg/create-config": "workspace:*",
     "@turbo/gen": "^2.2.3",
-    "knip": "^5.50.5",
+    "knip": "^5.58.0",
     "prettier": "^3.3.2",
     "turbo": "^2.2.3",
     "typesync": "0.14.0"
