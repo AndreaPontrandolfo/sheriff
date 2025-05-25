@@ -66,6 +66,7 @@ export const getBaseEslintHandPickedRules = () => {
     curly: [2, 'all'],
     eqeqeq: 2,
     'prefer-arrow-callback': 2,
+    'no-unassigned-vars': 2,
     'no-useless-assignment': 2,
     'no-restricted-imports': [
       2,
