@@ -12,4 +12,5 @@
     "eslint-config-sheriff",
     "@typescript-eslint/parser",
   ],
+  "treatConfigHintsAsErrors": true,
 }
