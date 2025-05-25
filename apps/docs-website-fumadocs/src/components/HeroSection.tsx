@@ -28,6 +28,8 @@ const transitionVariants = {
   },
 };
 
+// TODO: these fade-in animation destroys SEO ranking especially on mobile. Should remove them.
+
 export function HeroSection() {
   return (
     <section className="relative pt-24">
