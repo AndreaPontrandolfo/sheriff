@@ -24,8 +24,8 @@ export const StargazerSection = () => {
     : '...';
 
   return (
-    <section className="relative">
-      <div className="flex w-full flex-col items-center gap-4 px-4 pt-2 sm:px-0">
+    <div className="relative">
+      <div className="flex w-full flex-col items-center gap-8 px-4 pt-2 sm:px-0">
         <div className="flex items-center gap-2">
           <div className="flex flex-wrap items-center justify-center">
             {isFetching ? (
@@ -60,7 +60,7 @@ export const StargazerSection = () => {
                           )}
                           rel="noreferrer nofollow"
                         >
-                          <Avatar className="ring-muted-foreground/70 dark:bg-background bg-background size-9 ring-2 transition-opacity duration-200">
+                          <Avatar className="text-muted dark:bg-background bg-background size-9 ring-2 transition-opacity duration-200">
                             <AvatarImage
                               src={`https://avatars.githubusercontent.com/${o.login}`}
                             />
@@ -77,7 +77,7 @@ export const StargazerSection = () => {
                 'relative -mx-0.5 transition-all hover:z-10 hover:scale-125',
               )}
             >
-              <Avatar className="ring-muted-foreground/70 bg-secondary flex size-9 items-center justify-center ring-2">
+              <Avatar className="text-muted dark:bg-background bg-background flex size-9 items-center justify-center ring-2">
                 <p className="text-muted-foreground text-xs font-semibold">
                   99+
                 </p>
@@ -87,8 +87,9 @@ export const StargazerSection = () => {
         </div>
         <div className="flex flex-col items-center gap-2">
           <Button
-            className="button text-muted-foreground group order-2 h-11 rounded-full px-4 has-[>svg]:px-10"
+            className="dark:bg-background group h-11 rounded-xl px-10 py-2 text-base dark:hover:bg-zinc-800"
             variant="outline"
+            size="lg"
             asChild
           >
             <a
@@ -104,6 +105,6 @@ export const StargazerSection = () => {
           </Button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

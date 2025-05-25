@@ -280,7 +280,7 @@ const IntegrationCard = forwardRef<
     <div
       ref={ref}
       className={cn(
-        'bg-muted relative z-10 flex size-12 rounded-xl border dark:bg-zinc-700',
+        'bg-muted-foreground dark:bg-muted relative z-10 flex size-12 rounded-xl border',
         className,
       )}
     >

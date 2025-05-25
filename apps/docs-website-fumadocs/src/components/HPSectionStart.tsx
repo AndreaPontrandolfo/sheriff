@@ -6,6 +6,7 @@ import { LuChevronRight } from 'react-icons/lu';
 import { HPSectionTitle } from './HPSectionTitle';
 import { ShineBorder } from './magicui/shine-border';
 import { useTheme } from 'next-themes';
+import { cn } from '@/lib/utils';
 
 interface HPSectionStartProps {
   title: string;
@@ -23,7 +24,12 @@ export const HPSectionStart = ({
   const theme = useTheme();
 
   return (
-    <div className="mx-auto mb-20 max-w-lg space-y-6 text-center">
+    <div
+      className={cn(
+        'mx-auto max-w-lg space-y-6 text-center',
+        buttonText && buttonLink ? 'mb-20' : 'mb-10',
+      )}
+    >
       <HPSectionTitle title={title} />
       {description && <p className="text-muted-foreground">{description}</p>}
 
