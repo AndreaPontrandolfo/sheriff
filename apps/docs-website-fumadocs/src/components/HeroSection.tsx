@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -7,6 +9,7 @@ import { GridBackground } from '@/components/ui/grid-background';
 import { CopyToClipboard } from '@/components/ui/copy-to-clipboard';
 import { RainbowButton } from '@/components/magicui/rainbow-button';
 import { LuChevronRight } from 'react-icons/lu';
+import { useMediaQuery } from '@uidotdev/usehooks';
 
 const transitionVariants = {
   item: {
@@ -31,35 +34,53 @@ const transitionVariants = {
 // TODO: these fade-in animation destroys SEO ranking especially on mobile. Should remove them.
 
 export function HeroSection() {
+  const isMobile = useMediaQuery('only screen and (max-width : 768px)');
+
   return (
     <section className="relative pt-24">
-      <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
+      {!isMobile && (
+        <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
+      )}
       <div className="mx-auto max-w-5xl px-6">
         <div className="pb-20 sm:mx-auto lg:mr-auto lg:mt-0">
-          <GridBackground
-            animate={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          />
-          <TextEffect
-            preset="fade-in-blur"
-            speedSegment={0.3}
-            as="h1"
-            className="mt-8 max-w-2xl text-5xl font-medium md:text-6xl lg:mt-16"
-          >
-            The Nextgen Typescript Linting Experience
-          </TextEffect>
+          {!isMobile && (
+            <GridBackground
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            />
+          )}
+          {isMobile ? (
+            <h1 className="mt-8 text-balance text-center text-5xl font-medium lg:mt-16">
+              The Nextgen Typescript Linting Experience
+            </h1>
+          ) : (
+            <TextEffect
+              preset="fade-in-blur"
+              speedSegment={0.3}
+              as="h1"
+              className="mt-8 text-5xl font-medium md:max-w-2xl md:text-6xl lg:mt-16"
+            >
+              The Nextgen Typescript Linting Experience
+            </TextEffect>
+          )}
 
-          <TextEffect
-            per="line"
-            preset="fade-in-blur"
-            speedSegment={0.3}
-            delay={0.3}
-            as="p"
-            className="dark:text-muted-foreground mt-6 max-w-2xl text-pretty text-lg"
-          >
-            All the power of ESLint at your fingertips, without the hassle.
-          </TextEffect>
+          {isMobile ? (
+            <p className="dark:text-muted-foreground mt-6 text-pretty text-center text-lg">
+              All the power of ESLint at your fingertips, without the hassle
+            </p>
+          ) : (
+            <TextEffect
+              per="line"
+              preset="fade-in-blur"
+              speedSegment={0.3}
+              delay={0.3}
+              as="p"
+              className="dark:text-muted-foreground mt-6 max-w-2xl text-pretty text-lg"
+            >
+              All the power of ESLint at your fingertips, without the hassle.
+            </TextEffect>
+          )}
 
           <AnimatedGroup
             variants={{
@@ -74,7 +95,7 @@ export function HeroSection() {
               },
               ...transitionVariants,
             }}
-            className="mt-12"
+            className="mt-12 flex flex-col items-center md:items-start"
           >
             <div className="flex items-center gap-2">
               <RainbowButton className="rounded-xl text-base" size="lg">
