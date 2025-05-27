@@ -60,9 +60,9 @@ export const IntegrationsSection = () => {
         buttonLink="/docs/techs"
       />
 
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-2xl px-6 md:max-w-5xl">
         <div
-          className="relative mx-auto flex max-w-sm items-center justify-between"
+          className="relative mx-auto flex items-center justify-between md:max-w-sm"
           ref={containerRef}
         >
           <div className="space-y-5">

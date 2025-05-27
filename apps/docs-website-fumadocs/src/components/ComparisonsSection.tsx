@@ -11,7 +11,9 @@ export const ComparisonsSection = () => {
         buttonText="Learn why Sheriff came to be"
         buttonLink="/docs/prior-art"
       />
-      <ComparisonTableHP />
+      <div className="mx-auto max-w-2xl">
+        <ComparisonTableHP />
+      </div>
     </section>
   );
 };
