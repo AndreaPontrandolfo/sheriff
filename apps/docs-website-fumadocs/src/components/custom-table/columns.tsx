@@ -1,10 +1,11 @@
 'use client';
 
-import React, { type JSX } from 'react'; // Import React for JSX
+import React, { type JSX } from 'react';
 import type { Entry, Severity as SheriffSeverity } from '@sherifforg/types';
 import type { ColumnDef } from '@tanstack/react-table';
 import { Badge } from '@/components/ui/badge'; // Assuming you have Badge for severity
 import { DataTableColumnHeader } from './data-table-column-header';
+import { Button } from '@/components/ui/button';
 
 // This type is used to define the shape of our data.
 // We're using the Entry type from @sherifforg/types
@@ -130,14 +131,11 @@ export const columns: ColumnDef<RuleEntry>[] = [
         return <span className="text-muted-foreground text-xs">No docs</span>;
       }
       return (
-        <a
-          href={docInfo.url}
-          target="_blank"
-          rel="noreferrer"
-          className="text-xs text-blue-600 hover:underline"
-        >
-          {docInfo.description || docInfo.url}
-        </a>
+        <Button variant="link" asChild>
+          <a href={docInfo.url} target="_blank" rel="noreferrer">
+            {docInfo.description || docInfo.url}
+          </a>
+        </Button>
       );
     },
     filterFn: (row, columnId, filterValue) => {
