@@ -6,6 +6,7 @@ import type { ColumnDef } from '@tanstack/react-table';
 import { Badge } from '@/components/ui/badge'; // Assuming you have Badge for severity
 import { DataTableColumnHeader } from './data-table-column-header';
 import { Button } from '@/components/ui/button';
+import { isString } from 'lodash-es';
 
 // This type is used to define the shape of our data.
 // We're using the Entry type from @sherifforg/types
@@ -150,13 +151,11 @@ export const columns: ColumnDef<RuleEntry>[] = [
     accessorKey: 'affectedFiles',
     header: 'Files',
     cell: ({ row }): JSX.Element => {
-      const files = row.getValue('affectedFiles') as
-        | RuleEntry['affectedFiles']
-        | undefined;
-      if (!files || !Array.isArray(files) || files.length === 0) {
-        return <span className="text-muted-foreground text-xs">N/A</span>;
+      const files = row.getValue('affectedFiles');
+      if (isString(files)) {
+        return <code className="text-xs">{files}</code>;
       }
-      return <span className="text-xs">{`${files.length} file(s)`}</span>;
+      return <span className="text-muted-foreground text-xs">N/A</span>;
     },
     enableSorting: false,
   },

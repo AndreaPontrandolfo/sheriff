@@ -23,7 +23,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import type { RuleEntry } from './columns'; // Assuming columns.tsx exports RuleEntry
+import type { RuleEntry } from './columns';
 import { DataTablePagination } from './data-table-pagination';
 import { DataTableToolbar } from './data-table-toolbar';
 import { isEmpty } from 'lodash-es';
@@ -94,7 +94,7 @@ export function DataTable<TData extends RuleEntry, TValue>({
   });
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <DataTableToolbar
         table={table}
         pluginsNames={pluginsNames}

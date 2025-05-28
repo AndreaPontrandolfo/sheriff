@@ -79,48 +79,52 @@ export function ConfigCombinationForm({
                   configuration.
                 </FormDescription>
               </div>
-              <div className="mb-4 flex flex-wrap justify-evenly gap-3 rounded-md border py-2 shadow">
-                {items.map((item) => (
-                  <FormField
-                    key={item.id}
-                    control={form.control}
-                    name="items"
-                    render={({ field }) => {
-                      return (
-                        <FormItem
-                          key={item.id}
-                          className="flex cursor-pointer flex-row items-center gap-0 space-x-2"
-                        >
-                          <FormControl className="cursor-pointer">
-                            <Checkbox
-                              checked={field.value?.includes(item.id)}
-                              onCheckedChange={(checked) => {
-                                return checked
-                                  ? field.onChange([...field.value, item.id])
-                                  : field.onChange(
-                                      field.value?.filter(
-                                        (value) => value !== item.id,
-                                      ),
-                                    );
-                              }}
-                            />
-                          </FormControl>
-                          <FormLabel className="cursor-pointer text-sm font-normal">
-                            {item.label}
-                          </FormLabel>
-                        </FormItem>
-                      );
-                    }}
-                  />
-                ))}
+              <div className="mb-6 max-w-lg rounded-md border p-2 shadow">
+                <div className="mb-8 flex flex-wrap gap-6">
+                  {items.map((item) => (
+                    <FormField
+                      key={item.id}
+                      control={form.control}
+                      name="items"
+                      render={({ field }) => {
+                        return (
+                          <FormItem
+                            key={item.id}
+                            className="flex cursor-pointer flex-row items-center"
+                          >
+                            <FormControl className="cursor-pointer">
+                              <Checkbox
+                                checked={field.value?.includes(item.id)}
+                                onCheckedChange={(checked) => {
+                                  return checked
+                                    ? field.onChange([...field.value, item.id])
+                                    : field.onChange(
+                                        field.value?.filter(
+                                          (value) => value !== item.id,
+                                        ),
+                                      );
+                                }}
+                              />
+                            </FormControl>
+                            <FormLabel className="cursor-pointer text-sm font-normal">
+                              {item.label}
+                            </FormLabel>
+                          </FormItem>
+                        );
+                      }}
+                    />
+                  ))}
+                </div>
+                <div>
+                  <Button className="cursor-pointer" type="submit">
+                    Submit
+                  </Button>
+                </div>
               </div>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button className="cursor-pointer" type="submit">
-          Submit
-        </Button>
       </form>
     </Form>
   );
