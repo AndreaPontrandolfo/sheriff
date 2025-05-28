@@ -131,7 +131,7 @@ export const columns: ColumnDef<RuleEntry>[] = [
         return <span className="text-muted-foreground text-xs">No docs</span>;
       }
       return (
-        <Button variant="link" asChild>
+        <Button variant="link" asChild className="whitespace-normal">
           <a href={docInfo.url} target="_blank" rel="noreferrer">
             {docInfo.description || docInfo.url}
           </a>
