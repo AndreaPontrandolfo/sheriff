@@ -97,6 +97,10 @@
     }
   }
   /* Shine end */
+
+  --color-gold-metal-dark: oklch(0.6128 0.1081 97.41);
+  --color-gold-metal-mid: oklch(0.8353 0.1081 97.41);
+  --color-gold-metal-light: oklch(0.8116 0.1455 97.41);
 }
 
 :root {
@@ -140,6 +144,11 @@
   --color-4: oklch(80.2% 0.134 225);
   --color-5: oklch(90.7% 0.231 133);
   /* Rainbow button end */
+
+  /* Gold Metal Gradient Colors */
+  --color-gold-metal-dark: oklch(0.6128 0.1081 97.41);
+  --color-gold-metal-mid: oklch(0.8353 0.1081 97.41);
+  --color-gold-metal-light: oklch(0.8116 0.1455 97.41);
 }
 
 .dark {
@@ -182,6 +191,11 @@
   --color-4: oklch(80.2% 0.134 225);
   --color-5: oklch(90.7% 0.231 133);
   /* Rainbow button end */
+
+  /* Gold Metal Gradient Colors */
+  --color-gold-metal-dark: oklch(0.6128 0.1081 97.41);
+  --color-gold-metal-mid: oklch(0.8353 0.1081 97.41);
+  --color-gold-metal-light: oklch(0.8116 0.1455 97.41);
 }
 
 @layer base {
@@ -194,3 +208,9 @@
 }
 
 /*#endregion*/
+
+@layer components {
+  .text-gradient-gold-metal {
+    @apply bg-linear-to-t/oklch from-gold-metal-dark via-gold-metal-mid to-gold-metal-light from-10% via-30% to-90% bg-clip-text text-transparent;
+  }
+}

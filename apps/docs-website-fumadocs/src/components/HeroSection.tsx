@@ -52,9 +52,7 @@ export function HeroSection() {
           {/* )} */}
           {/* TODO: maybe i should use "prose" class here? */}
           <div className="relative mt-8 text-5xl font-medium md:max-w-2xl md:text-6xl lg:mt-16">
-            <h1 className="bg-linear-to-t/oklch from-[oklch(0.6128_0.1081_97.41)] from-10% via-[oklch(0.8353_0.1081_97.41)] via-30% to-[oklch(0.8116_0.1455_97.41)] to-90% bg-clip-text text-transparent md:text-8xl">
-              Sheriff
-            </h1>
+            <h1 className="text-gradient-gold-metal md:text-8xl">Sheriff</h1>
             <p>The Nextgen Typescript Linting Experience</p>
           </div>
           {/* {isMobile ? (
