@@ -38,21 +38,28 @@ export function HeroSection() {
 
   return (
     <section className="relative pt-24">
-      {!isMobile && (
-        <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
-      )}
+      {/* {!isMobile && ( */}
+      <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
+      {/* )} */}
       <div className="mx-auto max-w-5xl px-6">
         <div className="pb-20 sm:mx-auto lg:mr-auto lg:mt-0">
-          {!isMobile && (
-            <GridBackground
-              animate={{ opacity: 1 }}
-              initial={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            />
-          )}
-          {isMobile ? (
+          {/* {!isMobile && ( */}
+          <GridBackground
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          />
+          {/* )} */}
+          {/* TODO: maybe i should use "prose" class here? */}
+          <div className="relative mt-8 text-5xl font-medium md:max-w-2xl md:text-6xl lg:mt-16">
+            <h1 className="bg-linear-to-t/oklch from-[oklch(0.6128_0.1081_97.41)] from-10% via-[oklch(0.8353_0.1081_97.41)] via-30% to-[oklch(0.8116_0.1455_97.41)] to-90% bg-clip-text text-transparent md:text-8xl">
+              Sheriff
+            </h1>
+            <p>The Nextgen Typescript Linting Experience</p>
+          </div>
+          {/* {isMobile ? (
             <h1 className="mt-8 text-balance text-center text-5xl font-medium lg:mt-16">
-              The Nextgen Typescript Linting Experience
+              Sheriff: The Nextgen Typescript Linting Experience
             </h1>
           ) : (
             <TextEffect
@@ -61,9 +68,9 @@ export function HeroSection() {
               as="h1"
               className="mt-8 text-5xl font-medium md:max-w-2xl md:text-6xl lg:mt-16"
             >
-              The Nextgen Typescript Linting Experience
+              Sheriff: The Nextgen Typescript Linting Experience
             </TextEffect>
-          )}
+          )} */}
 
           {isMobile ? (
             <p className="dark:text-muted-foreground mt-6 text-pretty text-center text-lg">
