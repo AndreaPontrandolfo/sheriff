@@ -62,6 +62,10 @@ const features = [
       'Designed for easy extension. Add your own rules, plugins, and configurations with minimal effort.',
   },
   {
+    title: 'Composable',
+    description: 'A Config, a Scaffolder and a Doctor. Use what you like.',
+  },
+  {
     title: 'Best practices',
     description: 'Built around the best practices of the JavaScript ecosystem.',
   },

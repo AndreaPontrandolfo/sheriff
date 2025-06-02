@@ -23,14 +23,14 @@
     "@mdx-js/react": "^3.0.1",
     "@sherifforg/constants": "workspace:*",
     "@tanstack/react-table": "^8.19.2",
-    "clsx": "^1.2.1",
+    "clsx": "^2.1.1",
     "lodash-es": "^4.17.21",
     "prism-react-renderer": "^2.4.0",
     "react": "^18.3.1",
     "react-content-loader": "^6.2.1",
     "react-debounce-input": "^3.3.0",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.52.1",
+    "react-hook-form": "^7.57.0",
     "react-select": "^5.7.4"
   },
   "devDependencies": {

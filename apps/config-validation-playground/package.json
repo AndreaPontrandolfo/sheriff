@@ -10,7 +10,7 @@
   "dependencies": {
     "astro": "^4.12.2",
     "lodash": "^4.17.21",
-    "next": "^14.2.5",
+    "next": "^15.3.3",
     "playwright": "^1.45.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
