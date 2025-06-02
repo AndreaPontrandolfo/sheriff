@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable lodash-f/import-scope */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-// import { Linter } from 'eslint';
+import UNSAFE_ESLint from 'eslint/use-at-your-own-risk';
 import type { TSESLint } from 'eslint-config-sheriff';
 import lodash from 'lodash';
 import type {
@@ -15,8 +15,6 @@ import type {
 } from '@sherifforg/types';
 
 const { isArray, isEmpty, last, uniq, isNumber } = lodash;
-
-// const linter = new Linter();
 
 const getParentPluginName = (rule: string): string => {
   if (rule.includes('/')) {
@@ -88,13 +86,10 @@ const getDocs = (
     }
   }
 
-  const isEslintRule = ruleName.includes('/');
+  const isEslintRule = !ruleName.includes('/');
 
-  if (!plugins && !isEslintRule) {
-    // TODO: this used to work, but doesn't work anymore with ESlint v9. We need another way to find the description and URL of the core ESLint rules.
-    // docs.description =
-    //   linter.getRules().get(ruleName)?.meta?.docs?.description ?? "";
-    // docs.url = linter.getRules().get(ruleName)?.meta?.docs?.url ?? "";
+  if (!plugins && isEslintRule) {
+    docs.url = UNSAFE_ESLint.builtinRules.get(ruleName)?.meta?.docs?.url ?? '';
   }
 
   return docs;
