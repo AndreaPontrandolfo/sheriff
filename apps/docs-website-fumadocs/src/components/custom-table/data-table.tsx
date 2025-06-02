@@ -53,21 +53,22 @@ export function DataTable<TData extends RuleEntry, TValue>({
   );
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [globalFilter, setGlobalFilter] = React.useState<string>('');
+  const [selectedPlugins, setSelectedPlugins] = React.useState<string[]>([]);
 
-  // Extract plugin filter state for the toolbar
-  const pluginColumnFilter = columnFilters.find(
-    (f) => f.id === 'parentPluginName',
-  )?.value as string | undefined;
-
-  const setPluginColumnFilter = (value: string | undefined) => {
-    setColumnFilters((prev) => {
-      const existing = prev.filter((f) => f.id !== 'parentPluginName');
-      if (value) {
-        return [...existing, { id: 'parentPluginName', value }];
+  React.useEffect(() => {
+    setColumnFilters((prevFilters) => {
+      const otherFilters = prevFilters.filter(
+        (f) => f.id !== 'parentPluginName',
+      );
+      if (selectedPlugins.length > 0) {
+        return [
+          ...otherFilters,
+          { id: 'parentPluginName', value: selectedPlugins },
+        ];
       }
-      return existing;
+      return otherFilters;
     });
-  };
+  }, [selectedPlugins]);
 
   const table = useReactTable<TData>({
     data,
@@ -100,16 +101,13 @@ export function DataTable<TData extends RuleEntry, TValue>({
         pluginsNames={pluginsNames}
         globalFilter={globalFilter}
         setGlobalFilter={setGlobalFilter}
-        pluginColumnFilter={pluginColumnFilter}
-        setPluginColumnFilter={setPluginColumnFilter}
+        selectedPlugins={selectedPlugins}
+        setSelectedPlugins={setSelectedPlugins}
       />
       <QueriedRulesMetricsGroup
         totalAvailableRulesAmount={totalAvailableRulesAmount}
         fetchedConfigRulesAmount={data.length}
-        // Filtered rules amount would now come from the table instance if needed,
-        // but DataTable doesn't expose it directly here.
-        // For simplicity, we might omit it or pass table.getFilteredRowModel().rows.length if feasible.
-        filteredRulesAmount={data.length} // Placeholder, actual filtered count is within DataTable
+        filteredRulesAmount={data.length}
       />
       <div className="rounded-xl border">
         <Table className="mb-0 mt-0">

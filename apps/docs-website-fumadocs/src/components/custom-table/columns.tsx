@@ -46,7 +46,20 @@ export const columns: ColumnDef<RuleEntry>[] = [
         | undefined;
       return <span>{parentPluginName ?? ''}</span>;
     },
-    filterFn: 'includesString',
+    filterFn: (row, columnId, filterValue: string[]) => {
+      if (
+        !filterValue ||
+        !Array.isArray(filterValue) ||
+        filterValue.length === 0
+      ) {
+        return true;
+      }
+      const rowValue = row.getValue(columnId) as string | undefined;
+      if (rowValue === null || typeof rowValue === 'undefined') {
+        return false;
+      }
+      return filterValue.includes(rowValue);
+    },
     enableSorting: true,
     enableHiding: true,
   },

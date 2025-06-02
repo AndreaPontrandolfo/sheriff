@@ -1,5 +1,6 @@
-import { Check, ChevronsUpDown } from 'lucide-react';
+import { Check, ChevronsUpDown, X } from 'lucide-react';
 import * as React from 'react';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   Command,
@@ -18,23 +19,42 @@ import { cn } from '@/lib/utils';
 
 interface DataTableMultiSelectPluginsProps {
   pluginsNames: string[];
-  pluginColumnFilter: string | undefined;
-  setPluginColumnFilter: (value: string | undefined) => void;
+  selectedPlugins?: string[];
+  setSelectedPlugins?: (values: string[]) => void;
 }
+
+// Default no-op function for setSelectedPlugins
+const noOpSetSelectedPlugins = () => {};
 
 export const DataTableMultiSelectPlugins = ({
   pluginsNames,
-  pluginColumnFilter,
-  setPluginColumnFilter,
+  selectedPlugins = [],
+  setSelectedPlugins = noOpSetSelectedPlugins,
 }: DataTableMultiSelectPluginsProps) => {
   const [isPluginsPopoverOpen, setIsPluginsPopoverOpen] = React.useState(false);
 
   const handlePluginSelect = (currentValue: string) => {
-    const newValue =
-      currentValue === pluginColumnFilter ? undefined : currentValue;
-    setPluginColumnFilter(newValue);
-    // table.getColumn("parentPluginName")?.setFilterValue(newValue); // This will be handled by parent via setPluginColumnFilter prop
-    setIsPluginsPopoverOpen(false);
+    const newSelectedPlugins = selectedPlugins.includes(currentValue)
+      ? selectedPlugins.filter((plugin) => plugin !== currentValue)
+      : [...selectedPlugins, currentValue];
+    setSelectedPlugins(newSelectedPlugins);
+    // setIsPluginsPopoverOpen(false); // Keep popover open for multi-selection
+  };
+
+  const handleClearPlugin = (
+    pluginToClear: string,
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) => {
+    event.stopPropagation(); // Prevent popover from closing
+    const newSelectedPlugins = selectedPlugins.filter(
+      (plugin) => plugin !== pluginToClear,
+    );
+    setSelectedPlugins(newSelectedPlugins);
+  };
+
+  const handleClearAll = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    setSelectedPlugins([]);
   };
 
   return (
@@ -44,14 +64,74 @@ export const DataTableMultiSelectPlugins = ({
           variant="outline"
           role="combobox"
           aria-expanded={isPluginsPopoverOpen}
-          className="text-muted-foreground hover:text-foreground h-8 min-w-[200px] justify-between"
+          className="text-muted-foreground hover:text-foreground h-auto min-h-10 min-w-[200px] max-w-lg justify-between px-3 py-1.5 text-base"
         >
-          {pluginColumnFilter
-            ? pluginsNames.find(
-                (pluginName) => pluginName === pluginColumnFilter,
-              )
-            : 'Filter by plugin...'}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          <div className="flex flex-wrap items-center gap-1">
+            {selectedPlugins.map((pluginName) => (
+              <Badge
+                variant="secondary"
+                key={pluginName}
+                className="rounded-sm px-2 font-normal"
+                onClick={(e) => e.stopPropagation()} // Prevent popover from closing
+              >
+                {pluginName}
+                <Button
+                  asChild
+                  variant="ghost"
+                  // Rely on Button's default focus; only add layout/shape classes
+                  className="ml-1 h-auto rounded-full p-0.5"
+                  onClick={(event) => {
+                    handleClearPlugin(pluginName, event as any);
+                  }}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      handleClearPlugin(pluginName, event as any);
+                    }
+                  }}
+                  aria-label={`Remove ${pluginName}`}
+                >
+                  <div role="button" className="px-0!" tabIndex={0}>
+                    <X className="h-3 w-3" />
+                  </div>
+                </Button>
+              </Badge>
+            ))}
+            {/* Always render placeholder text. Add margin if badges are present. */}
+            <span
+              className={cn(
+                'text-muted-foreground',
+                selectedPlugins.length > 0 ? 'ml-1' : '',
+              )}
+            >
+              Filter by plugin...
+            </span>
+          </div>
+          <div className="flex items-center">
+            {selectedPlugins.length > 0 && (
+              <Button
+                asChild
+                variant="ghost"
+                // Rely on Button's default focus; only add layout/shape classes
+                className="mr-1 h-auto rounded-sm p-0.5"
+                onClick={(event) => {
+                  handleClearAll(event as any);
+                }}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    handleClearAll(event as any);
+                  }
+                }}
+                aria-label="Clear all selected plugins"
+              >
+                <div role="button" tabIndex={0}>
+                  <X className="h-4 w-4" />
+                </div>
+              </Button>
+            )}
+            <ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50" />
+          </div>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
@@ -65,12 +145,12 @@ export const DataTableMultiSelectPlugins = ({
                   <CommandItem
                     key={pluginName}
                     value={pluginName}
-                    onSelect={handlePluginSelect}
+                    onSelect={() => handlePluginSelect(pluginName)}
                   >
                     <Check
                       className={cn(
                         'mr-2 h-4 w-4',
-                        pluginColumnFilter === pluginName
+                        selectedPlugins.includes(pluginName)
                           ? 'opacity-100'
                           : 'opacity-0',
                       )}

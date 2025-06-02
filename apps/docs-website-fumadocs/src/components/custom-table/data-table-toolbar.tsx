@@ -19,8 +19,8 @@ interface DataTableToolbarProps<TData> {
   globalFilter: string;
   setGlobalFilter: (value: string) => void;
   // Column filter state for parentPluginName specifically for the combobox
-  pluginColumnFilter: string | undefined;
-  setPluginColumnFilter: (value: string | undefined) => void;
+  selectedPlugins: string[];
+  setSelectedPlugins: (values: string[]) => void;
 }
 
 export function DataTableToolbar<TData>({
@@ -28,13 +28,14 @@ export function DataTableToolbar<TData>({
   pluginsNames,
   globalFilter,
   setGlobalFilter,
-  pluginColumnFilter,
-  setPluginColumnFilter,
+  selectedPlugins,
+  setSelectedPlugins,
 }: DataTableToolbarProps<TData>) {
   const [inputValue, setInputValue] = React.useState(globalFilter ?? '');
 
   // Combined filter check: global filter or plugin filter
-  const isFiltered = globalFilter || pluginColumnFilter;
+  const isFiltered =
+    globalFilter || (selectedPlugins && selectedPlugins.length > 0);
 
   React.useEffect(() => {
     setInputValue(globalFilter ?? '');
@@ -56,27 +57,29 @@ export function DataTableToolbar<TData>({
 
   const resetFilters = () => {
     setGlobalFilter('');
-    setPluginColumnFilter(undefined);
+    setSelectedPlugins([]);
     setInputValue(''); // Reset input value as well
     // table.resetGlobalFilter(); // Handled by parent
     // table.getColumn("parentPluginName")?.setFilterValue(undefined); // Handled by parent
   };
 
   return (
-    <div className="flex flex-1 items-center gap-4">
-      <LuFilter size={20} />
+    <div className="flex flex-1 items-start gap-4">
+      <div className="flex h-10 items-center">
+        <LuFilter size={24} />
+      </div>
       <Input
         placeholder="Filter rules, docs..."
-        value={inputValue} // Use local state for input value
+        value={inputValue}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
           setInputValue(event.target.value)
-        } // Update local state
-        className="h-8 w-[150px] lg:w-[250px]"
+        }
+        className="min-h-10 w-[150px] text-base md:text-base lg:w-[250px]"
       />
       <DataTableMultiSelectPlugins
         pluginsNames={pluginsNames}
-        pluginColumnFilter={pluginColumnFilter}
-        setPluginColumnFilter={setPluginColumnFilter}
+        selectedPlugins={selectedPlugins}
+        setSelectedPlugins={setSelectedPlugins}
       />
       {isFiltered ? (
         <Button
