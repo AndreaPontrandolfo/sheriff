@@ -107,7 +107,7 @@ export function DataTable<TData extends RuleEntry, TValue>({
       <QueriedRulesMetricsGroup
         totalAvailableRulesAmount={totalAvailableRulesAmount}
         fetchedConfigRulesAmount={data.length}
-        filteredRulesAmount={data.length}
+        filteredRulesAmount={table.getFilteredRowModel().rows.length}
       />
       <div className="rounded-xl border">
         <Table className="mb-0 mt-0">
