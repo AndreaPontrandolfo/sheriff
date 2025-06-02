@@ -1,26 +1,13 @@
 'use client';
 
-import { Check, ChevronsUpDown, XIcon } from 'lucide-react';
+import { XIcon } from 'lucide-react';
 import * as React from 'react';
 import type { Table } from '@tanstack/react-table';
 import { Button } from '@/components/ui/button';
 import { debounce } from 'lodash-es';
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-} from '@/components/ui/command';
 import { Input } from '@/components/ui/input';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
-import { cn } from '@/lib/utils';
 import { LuFilter } from 'react-icons/lu';
+import { DataTableMultiSelectPlugins } from './data-table-multi-select-plugins';
 
 interface DataTableToolbarProps<TData> {
   table: Table<TData>;
@@ -44,7 +31,6 @@ export function DataTableToolbar<TData>({
   pluginColumnFilter,
   setPluginColumnFilter,
 }: DataTableToolbarProps<TData>) {
-  const [isPluginsPopoverOpen, setIsPluginsPopoverOpen] = React.useState(false);
   const [inputValue, setInputValue] = React.useState(globalFilter ?? '');
 
   // Combined filter check: global filter or plugin filter
@@ -68,14 +54,6 @@ export function DataTableToolbar<TData>({
     };
   }, [inputValue, debouncedSetGlobalFilter]);
 
-  const handlePluginSelect = (currentValue: string) => {
-    const newValue =
-      currentValue === pluginColumnFilter ? undefined : currentValue;
-    setPluginColumnFilter(newValue);
-    // table.getColumn("parentPluginName")?.setFilterValue(newValue); // This will be handled by parent via setPluginColumnFilter prop
-    setIsPluginsPopoverOpen(false);
-  };
-
   const resetFilters = () => {
     setGlobalFilter('');
     setPluginColumnFilter(undefined);
@@ -95,55 +73,11 @@ export function DataTableToolbar<TData>({
         } // Update local state
         className="h-8 w-[150px] lg:w-[250px]"
       />
-      <Popover
-        open={isPluginsPopoverOpen}
-        onOpenChange={setIsPluginsPopoverOpen}
-      >
-        <PopoverTrigger asChild>
-          <Button
-            variant="outline"
-            role="combobox"
-            aria-expanded={isPluginsPopoverOpen}
-            className="text-muted-foreground hover:text-foreground h-8 min-w-[200px] justify-between"
-          >
-            {pluginColumnFilter
-              ? pluginsNames.find(
-                  (pluginName) => pluginName === pluginColumnFilter,
-                )
-              : 'Filter by plugin...'}
-            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-[200px] p-0">
-          <Command>
-            <CommandInput placeholder="Search plugin..." />
-            <CommandList>
-              <CommandEmpty>No plugin found.</CommandEmpty>
-              <CommandGroup>
-                {pluginsNames.map((pluginName) => {
-                  return (
-                    <CommandItem
-                      key={pluginName}
-                      value={pluginName}
-                      onSelect={handlePluginSelect}
-                    >
-                      <Check
-                        className={cn(
-                          'mr-2 h-4 w-4',
-                          pluginColumnFilter === pluginName
-                            ? 'opacity-100'
-                            : 'opacity-0',
-                        )}
-                      />
-                      {pluginName}
-                    </CommandItem>
-                  );
-                })}
-              </CommandGroup>
-            </CommandList>
-          </Command>
-        </PopoverContent>
-      </Popover>
+      <DataTableMultiSelectPlugins
+        pluginsNames={pluginsNames}
+        pluginColumnFilter={pluginColumnFilter}
+        setPluginColumnFilter={setPluginColumnFilter}
+      />
       {isFiltered ? (
         <Button
           variant="ghost"
