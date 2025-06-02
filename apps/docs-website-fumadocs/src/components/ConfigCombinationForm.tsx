@@ -20,17 +20,35 @@ import {
   configCombinationDefaultValues,
 } from '@sherifforg/constants';
 
-interface FormItem {
-  id: string;
+// Prepare initial selected items based on configCombinationDefaultValues
+// and ensure vitest/jest exclusivity from the start.
+const allTechKeys = Object.keys(configCombinationDefaultValues) as Array<
+  keyof SheriffConfigurablePlugins
+>;
+
+let initialSelectedItems = allTechKeys.filter(
+  (key) => configCombinationDefaultValues[key],
+);
+
+// If both vitest and jest are somehow initially true, default to vitest.
+if (
+  initialSelectedItems.includes('vitest') &&
+  initialSelectedItems.includes('jest')
+) {
+  initialSelectedItems = initialSelectedItems.filter((id) => id !== 'jest');
+}
+
+interface TechnologyFormItem {
+  id: keyof SheriffConfigurablePlugins;
   label: string;
 }
 
-const items: FormItem[] = Object.keys(configCombinationDefaultValues).map(
-  (key) => ({
-    id: key,
-    label: key.charAt(0).toUpperCase() + key.slice(1),
-  }),
-);
+const items: TechnologyFormItem[] = Object.keys(
+  configCombinationDefaultValues,
+).map((key) => ({
+  id: key as keyof SheriffConfigurablePlugins,
+  label: key.charAt(0).toUpperCase() + key.slice(1),
+}));
 
 const FormSchema = z.object({
   items: z.array(z.string()),
@@ -46,7 +64,7 @@ export function ConfigCombinationForm({
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      items: items.map((item) => item.id),
+      items: initialSelectedItems,
     },
   });
 
@@ -96,13 +114,33 @@ export function ConfigCombinationForm({
                               <Checkbox
                                 checked={field.value?.includes(item.id)}
                                 onCheckedChange={(checked) => {
-                                  return checked
-                                    ? field.onChange([...field.value, item.id])
-                                    : field.onChange(
-                                        field.value?.filter(
-                                          (value) => value !== item.id,
-                                        ),
+                                  const currentSelections = field.value || [];
+                                  let newSelections: string[];
+
+                                  if (checked) {
+                                    // Add the current item
+                                    newSelections = [
+                                      ...currentSelections,
+                                      item.id,
+                                    ];
+
+                                    // Handle mutual exclusivity for vitest and jest
+                                    if (item.id === 'vitest') {
+                                      newSelections = newSelections.filter(
+                                        (id) => id !== 'jest',
                                       );
+                                    } else if (item.id === 'jest') {
+                                      newSelections = newSelections.filter(
+                                        (id) => id !== 'vitest',
+                                      );
+                                    }
+                                  } else {
+                                    // Remove the current item
+                                    newSelections = currentSelections.filter(
+                                      (value) => value !== item.id,
+                                    );
+                                  }
+                                  field.onChange(newSelections);
                                 }}
                               />
                             </FormControl>

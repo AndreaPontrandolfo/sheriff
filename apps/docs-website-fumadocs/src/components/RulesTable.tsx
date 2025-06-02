@@ -1,7 +1,7 @@
 'use client';
 
 import type React from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { configCombinationDefaultValues } from '@sherifforg/constants';
 import type {
   ServerResponse,
