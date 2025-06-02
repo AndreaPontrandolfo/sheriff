@@ -1,0 +1,55 @@
+---
+slug: sheriff-x-astro
+title: Astro support landed
+author: andrea
+date: 2023-11-01
+tags: [sheriff, eslint, astro, algolia]
+image: /img/sheriff_blog_post_2.jpg
+---
+
+![Sheriff BlogPost Poster](/img/sheriff_blog_post_2.jpg)
+
+{/* truncate */}
+
+## Sheriff release v16
+
+Sheriff continues his quest to conquer the JS ecosystem.
+
+## Sheriff extends support for Astro
+
+This release introduces support for [Astro.js](https://astro.build/), thanks to [ota-meshi](https://github.com/ota-meshi) libraries, [eslint-plugin-astro](https://github.com/ota-meshi/eslint-plugin-astro) and [astro-eslint-parser](https://github.com/ota-meshi/astro-eslint-parser).
+
+The integration is provided out-of-the-box, meaning nothing has to be configured on the user side. Sheriff will automatically detect Astro projects and run the appropriate rules. All you have to do is upgrade Sheriff to this version.
+
+This integration presented significant challenges, as the pertinent ESLint plugins are still in experimental status and also because this integration provides JSX-relevant ESLint rules inside `.astro` files, meaning that we are now parsing `.astro` files (in a Typescript-aware way) and provide Astro and React relevant rules inside them. This has not been trivial.
+
+## Sheriff meets Algolia
+
+The Sheriff documentation website has now a full-text search powered by [Algolia Docsearch](https://docsearch.algolia.com/), generously provided for free by the open-source projects sponsorship by [Algolia](https://www.algolia.com/) . The documentation is now easier than ever to navigate.
+
+The "Ask AI" feature, instead, didn't make it in this release. There aren't yet solid solutions in this space, for now.
+
+## Sheriff integrates Fsecond
+
+Finally, as the last treat, my newest `eslint-plugin`, [fsecond](https://github.com/AndreaPontrandolfo/eslint-plugin-fsecond) was integrated in Sheriff.
+
+Fsecond adds 2 new rules:
+
+- `fsecond/prefer-destructured-optionals`: enforce placing optional parameters to the end of the function signature as destructured objects
+- `fsecond/valid-event-listener`: enforce using a `useEventListener` utility function instead of `addEventListener` methods, or, optionally, you can disable that behaviour and the rule will just warn against incorrect usage of addEventListener methods
+
+## What's Next
+
+The commitment to improving Sheriff remains strong. Here's a glimpse of what's on the horizon:
+
+- **Performance Improvements**: Potential performance enhancements will be analyzed to ensure that Sheriff runs even smoother, even on lower-end devices.
+
+- **Website Codebase Update**: Plans are in place to update the website to Docusaurus 3.0, modernizing the docs website codebase.
+
+- **Expanded Library Support**: Support for additional libraries is under consideration, with potential candidates for integration including GraphQL, MDX, and Vue.
+
+## Conclusion
+
+As always, if you feel like contributing, feel free to propose suggestions or pull-requests. And if you just want to show appreciation, leave a star on Github.
+
+Sheriff is actively dedicated to becoming even more adaptable and feature-rich. Stay tuned for further updates and enhancements!

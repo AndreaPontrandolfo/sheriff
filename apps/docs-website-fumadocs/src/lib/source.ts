@@ -1,5 +1,6 @@
-import { docs } from '@/.source';
+import { createMDXSource } from 'fumadocs-mdx';
 import { loader } from 'fumadocs-core/source';
+import { docs, blogPosts } from '@/.source';
 import { createElement } from 'react';
 import { BsStars, BsFillGearFill, BsStack } from 'react-icons/bs';
 import { FaRegCompass, FaKey, FaWrench, FaClipboardList } from 'react-icons/fa';
@@ -54,4 +55,10 @@ export const source = loader({
 
     if (icon in icons) return createElement(icons[icon as keyof typeof icons]);
   },
+});
+
+// Loader for the blog posts, exported as 'blog'
+export const blog = loader({
+  baseUrl: '/blog',
+  source: createMDXSource(blogPosts),
 });
