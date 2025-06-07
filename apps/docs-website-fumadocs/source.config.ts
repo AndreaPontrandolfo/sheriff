@@ -9,6 +9,9 @@ import { remarkInstall } from 'fumadocs-docgen';
 import { z } from 'zod';
 import remarkReadingTime from 'remark-reading-time';
 import readingMdxTime from 'remark-reading-time/mdx.js';
+import { transformerTwoslash } from 'fumadocs-twoslash';
+import { createFileSystemTypesCache } from 'fumadocs-twoslash/cache-fs';
+import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins';
 
 // Options: https://fumadocs.vercel.app/docs/mdx/collections#define-docs
 export const docs = defineDocs({
@@ -45,5 +48,19 @@ export default defineConfig({
       remarkReadingTime,
       readingMdxTime,
     ],
+    rehypeCodeOptions: {
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+      transformers: [
+        ...(rehypeCodeDefaultOptions.transformers ?? []),
+        transformerTwoslash({
+          langs: ['ts', 'js'],
+          throws: false,
+          typesCache: createFileSystemTypesCache(),
+        }),
+      ],
+    },
   },
 });

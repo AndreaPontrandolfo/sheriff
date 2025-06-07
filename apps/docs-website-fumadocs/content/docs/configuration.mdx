@@ -43,7 +43,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 ```
   </Tab>
   <Tab value="TS">
-```ts title="eslint.config.ts"
+```ts twoslash title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
 
 // Sheriff configuration object
@@ -97,7 +97,7 @@ export default tseslint.config(sheriff(sheriffOptions),
 ```
   </Tab>
   <Tab value="TS">
-```ts title="eslint.config.ts"
+```ts twoslash title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
@@ -152,7 +152,7 @@ export default tseslint.config(sheriff(sheriffOptions),
 ```
   </Tab>
   <Tab value="TS">
-```ts title="eslint.config.ts"
+```ts twoslash title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
@@ -196,7 +196,7 @@ Learn more in the [♻ Migration guide](./migration-guide.mdx#progressive-adopti
 
 By default, Sheriff will ignore certain filepaths, but you can choose to opt-out of this behavior.
 
-```ts
+```ts twoslash
 ignores: {
   recommended: boolean;
   inheritedFromGitignore: boolean;
@@ -235,7 +235,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 ```
   </Tab>
   <Tab value="TS">
-```ts title="eslint.config.ts"
+```ts twoslash title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
@@ -288,7 +288,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 ```
   </Tab>
   <Tab value="TS">
-```ts title="eslint.config.ts"
+```ts twoslash title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
@@ -315,7 +315,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 
 As outlined in the [criteria](./core-philosophy/criteria.md) page, Sheriff comes with sensible defaults. However, as your project grows, your team may come across the need to override some of these defaults. This option lets you do just that.
 
-```ts
+```ts twoslash
 pathsOverrides: {
   tsconfigLocation: string | string[];
   tests: string[];
@@ -356,7 +356,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 ```
   </Tab>
   <Tab value="TS">
-```ts title="eslint.config.ts"
+```ts twoslash title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
@@ -419,7 +419,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 ```
   </Tab>
   <Tab value="TS">
-```ts title="eslint.config.ts"
+```ts twoslash title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
@@ -486,7 +486,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 ```
   </Tab>
   <Tab value="TS">
-```ts title="eslint.config.ts"
+```ts twoslash title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
