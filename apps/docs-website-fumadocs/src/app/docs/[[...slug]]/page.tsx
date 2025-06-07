@@ -8,6 +8,7 @@ import {
 import { notFound } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
+import { getLastUpdate } from '@/lib/getLastUpdate';
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -18,8 +19,14 @@ export default async function Page(props: {
 
   const MDXContent = page.data.body;
 
+  const lastUpdate = await getLastUpdate(page);
+
   return (
-    <DocsPage toc={page.data.toc} full={page.data.full}>
+    <DocsPage
+      toc={page.data.toc}
+      full={page.data.full}
+      lastUpdate={lastUpdate ?? undefined}
+    >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>

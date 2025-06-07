@@ -7,6 +7,7 @@ import {
 } from 'fumadocs-ui/page';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import { blog } from '@/lib/source';
+import { getLastUpdate } from '@/lib/getLastUpdate';
 // Link component can be re-added later if a "Back to blog" is needed manually
 // import Link from 'next/link';
 
@@ -19,8 +20,10 @@ export default async function Page(props: {
   if (!page) notFound();
   const MdxContent = page.data.body;
 
+  const lastUpdate = await getLastUpdate(page);
+
   return (
-    <DocsPage toc={page.data.toc}>
+    <DocsPage toc={page.data.toc} lastUpdate={lastUpdate ?? undefined}>
       <DocsTitle>{page.data.title}</DocsTitle>
       {page.data.description && (
         <DocsDescription>{page.data.description}</DocsDescription>

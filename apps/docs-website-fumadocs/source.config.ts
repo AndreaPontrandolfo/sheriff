@@ -22,9 +22,11 @@ export const blogPosts = defineCollections({
     author: z.string(),
     date: z.string().date().or(z.date()),
     image: z.string().optional(),
-    readingTime: z.object({
-      text: z.string(),
-    }),
+    readingTime: z
+      .object({
+        text: z.string(),
+      })
+      .optional(),
   }),
 });
 
