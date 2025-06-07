@@ -2,16 +2,10 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import * as motion from 'motion/react-client';
 
-function GridBackgroundRaw(
-  props: React.HTMLAttributes<HTMLDivElement> & {
-    ref?: React.Ref<HTMLDivElement>;
-  },
-) {
-  const { ref, ...rest } = props;
+export function GridBackground(props: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div ref={ref} {...rest}>
+    <div {...props}>
       <div
         className={cn(
           'absolute inset-0',
@@ -26,5 +20,3 @@ function GridBackgroundRaw(
     </div>
   );
 }
-
-export const GridBackground = motion.create(GridBackgroundRaw);

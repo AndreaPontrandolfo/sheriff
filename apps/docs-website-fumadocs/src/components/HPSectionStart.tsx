@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { LuChevronRight } from 'react-icons/lu';
 import { HPSectionTitle } from './HPSectionTitle';
 import { ShineBorder } from './magicui/shine-border';
-import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 
 interface HPSectionStartProps {
@@ -21,8 +20,6 @@ export const HPSectionStart = ({
   buttonText,
   buttonLink,
 }: HPSectionStartProps) => {
-  const theme = useTheme();
-
   return (
     <div
       className={cn(
@@ -36,7 +33,7 @@ export const HPSectionStart = ({
       {buttonText && buttonLink && (
         <div className="relative mx-auto my-0 w-fit overflow-hidden rounded-md">
           <ShineBorder
-            shineColor={theme.theme === 'dark' ? 'white' : 'black'}
+            shineColor="var(--primary)"
             duration={12}
             className="w-full rounded-md"
           />
