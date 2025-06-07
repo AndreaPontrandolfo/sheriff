@@ -214,3 +214,8 @@
     @apply bg-linear-to-t/oklch from-gold-metal-dark via-gold-metal-mid to-gold-metal-light from-10% via-30% to-90% bg-clip-text text-transparent;
   }
 }
+
+button[aria-expanded='true'],
+button[aria-expanded='false'] {
+  cursor: pointer;
+}
