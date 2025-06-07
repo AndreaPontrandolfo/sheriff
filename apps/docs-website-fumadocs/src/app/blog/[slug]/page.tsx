@@ -27,7 +27,7 @@ export default async function Page(props: {
       )}
 
       {/* Author and Date information */}
-      <div className="text-sm text-gray-600 dark:text-gray-400">
+      <div className="text-muted-foreground text-sm">
         {page.data.date && (
           <p>
             <strong>Published:</strong>{' '}
@@ -36,6 +36,11 @@ export default async function Page(props: {
               month: 'long',
               day: 'numeric',
             })}
+          </p>
+        )}
+        {page.data.readingTime && (
+          <p>
+            <strong>Reading time:</strong> {page.data.readingTime.text}
           </p>
         )}
       </div>
