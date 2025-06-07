@@ -23,11 +23,17 @@ function getBlogTree() {
       type: 'folder' as const,
       name: year,
       defaultOpen: true,
-      children: postsByYear[year].map((post) => ({
-        type: 'page' as const,
-        name: post.data.title as string,
-        url: post.url,
-      })),
+      children: postsByYear[year]
+        .sort(
+          (a, b) =>
+            new Date(b.data.date as string | number).getTime() -
+            new Date(a.data.date as string | number).getTime(),
+        )
+        .map((post) => ({
+          type: 'page' as const,
+          name: post.data.title as string,
+          url: post.url,
+        })),
     })),
   };
 }
