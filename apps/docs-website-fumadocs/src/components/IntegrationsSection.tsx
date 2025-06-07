@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useRef, forwardRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
-import { cn } from '@/lib/utils';
 import { AnimatedBeam } from '@/components/magicui/animated-beam';
 import EslintLogo from '@/assets/logos/eslint.svg?url';
 import LodashLogo from '@/assets/logos/lodash.svg?url';
@@ -18,6 +17,7 @@ import AstroLightLogo from '@/assets/logos/astro-icon-light.svg?url';
 import AstroDarkLogo from '@/assets/logos/astro-icon-dark.svg?url';
 import { useTheme } from 'next-themes';
 import { HPSectionStart } from './HPSectionStart';
+import { IntegrationCard } from './IntegrationCard';
 
 export const IntegrationsSection = () => {
   const { theme } = useTheme();
@@ -113,7 +113,7 @@ export const IntegrationsSection = () => {
             <div className="bg-muted relative z-20 rounded-2xl border p-1">
               <IntegrationCard
                 ref={centerRef}
-                className="shadow-black-950/10 dark:bg-background size-16 border-black/25 shadow-xl dark:border-white/25 dark:shadow-white/10"
+                className="shadow-black-950/10 bg-background size-16 border-black/25 shadow-xl dark:border-white/25 dark:shadow-white/10"
                 isCenter={true}
               >
                 <Image
@@ -256,44 +256,3 @@ export const IntegrationsSection = () => {
     </section>
   );
 };
-
-const IntegrationCard = forwardRef<
-  HTMLDivElement,
-  {
-    children: React.ReactNode;
-    className?: string;
-    position?:
-      | 'left-top-1'
-      | 'left-top-2'
-      | 'left-middle'
-      | 'left-bottom-1'
-      | 'left-bottom-2'
-      | 'right-top-1'
-      | 'right-top-2'
-      | 'right-middle'
-      | 'right-bottom-1'
-      | 'right-bottom-2';
-    isCenter?: boolean;
-  }
->(({ children, className, position, isCenter = false }, ref) => {
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        'bg-muted-foreground dark:bg-muted relative z-10 flex size-12 rounded-xl border',
-        className,
-      )}
-    >
-      <div
-        className={cn(
-          'relative z-20 m-auto size-fit *:size-6',
-          isCenter && '*:size-8',
-        )}
-      >
-        {children}
-      </div>
-    </div>
-  );
-});
-
-IntegrationCard.displayName = 'IntegrationCard';
