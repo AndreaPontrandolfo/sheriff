@@ -51,7 +51,9 @@ export function DataTable<TData extends RuleEntry, TValue>({
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     [],
   );
-  const [sorting, setSorting] = React.useState<SortingState>([]);
+  const [sorting, setSorting] = React.useState<SortingState>([
+    { id: 'severity', desc: true },
+  ]);
   const [globalFilter, setGlobalFilter] = React.useState<string>('');
   const [selectedPlugins, setSelectedPlugins] = React.useState<string[]>([]);
 
