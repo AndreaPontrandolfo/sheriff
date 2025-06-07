@@ -5,6 +5,41 @@ import { source, blog } from '@/lib/source';
 import { GithubInfo } from 'fumadocs-ui/components/github-info';
 import type { PageTree } from 'fumadocs-core/server';
 
+function getBlogTree() {
+  const posts = blog.getPages();
+  const postsByYear: Record<string, typeof posts> = {};
+
+  for (const post of posts) {
+    const year = new Date(post.data.date as string | number).getFullYear();
+    if (!postsByYear[year]) {
+      postsByYear[year] = [];
+    }
+    postsByYear[year].push(post);
+  }
+
+  const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
+
+  return {
+    name: 'Blog',
+    children: years.map((year) => ({
+      type: 'folder' as const,
+      name: year,
+      defaultOpen: true,
+      children: postsByYear[year]
+        .sort(
+          (a, b) =>
+            new Date(b.data.date as string | number).getTime() -
+            new Date(a.data.date as string | number).getTime(),
+        )
+        .map((post) => ({
+          type: 'page' as const,
+          name: post.data.title as string,
+          url: post.url,
+        })),
+    })),
+  };
+}
+
 const pageTreeWithCustomRoot: PageTree.Root = {
   name: 'Root',
   children: [
@@ -16,7 +51,7 @@ const pageTreeWithCustomRoot: PageTree.Root = {
     {
       type: 'folder',
       name: 'Blog',
-      children: blog.pageTree.children,
+      children: getBlogTree().children,
     },
   ],
 };
