@@ -27,12 +27,7 @@ export default async function Page(props: {
       )}
 
       {/* Author and Date information */}
-      <div className="mb-6 mt-2 text-sm text-gray-600 dark:text-gray-400">
-        {page.data.author && (
-          <p className="mb-1">
-            <strong>Author:</strong> {page.data.author}
-          </p>
-        )}
+      <div className="text-sm text-gray-600 dark:text-gray-400">
         {page.data.date && (
           <p>
             <strong>Published:</strong>{' '}
