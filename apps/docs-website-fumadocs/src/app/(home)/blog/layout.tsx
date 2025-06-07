@@ -1,15 +1,40 @@
 import { DocsLayout, type DocsLayoutProps } from 'fumadocs-ui/layouts/docs';
 import type { ReactNode } from 'react';
 import { baseOptions } from '@/app/layout.config';
-import { blog } from '@/lib/source'; // Assuming blog loader is in lib/source
+import { blog } from '@/lib/source';
 
-// Configure layout specifically for blog posts
+function getBlogTree() {
+  const posts = blog.getPages();
+  const postsByYear: Record<string, typeof posts> = {};
+
+  for (const post of posts) {
+    const year = new Date(post.data.date as string | number).getFullYear();
+    if (!postsByYear[year]) {
+      postsByYear[year] = [];
+    }
+    postsByYear[year].push(post);
+  }
+
+  const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
+
+  return {
+    name: 'Blog',
+    children: years.map((year) => ({
+      type: 'folder' as const,
+      name: year,
+      defaultOpen: true,
+      children: postsByYear[year].map((post) => ({
+        type: 'page' as const,
+        name: post.data.title as string,
+        url: post.url,
+      })),
+    })),
+  };
+}
+
 const blogOptions: DocsLayoutProps = {
   ...baseOptions,
-  tree: blog.pageTree, // Assumes your blog loader provides a pageTree
-  // You can add other blog-specific layout options here, like:
-  // githubUrl: 'YOUR_REPO_URL/tree/main/content/blog', // Example if blog content is in a subfolder
-  // links: [], // Or specific links for the blog section
+  tree: getBlogTree(),
 };
 
 export default function BlogPageLayout({ children }: { children: ReactNode }) {
