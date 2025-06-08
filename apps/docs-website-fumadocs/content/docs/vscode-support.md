@@ -4,7 +4,7 @@ description: Configure VSCode settings for optimal Sheriff integration
 icon: VscVscode
 ---
 
-To make the [VSCode ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) work better with Sheriff it's recommended to checkout a few settings. It's advisable to enable them at the workspace level, meaning in the root of the project in `.vscode/settings.json`
+To make the [VSCode ESLint Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) work better with Sheriff it's recommended to checkout a few settings. It's advisable to enable them at the workspace level, meaning in the root of the project in `.vscode/settings.json`.
 
 ## Enable linting on specific file extensions
 
