@@ -46,6 +46,20 @@ Compatible out of the box.
 
 Sheriff has explicit support for Next.js. You can enable it in the Sheriff config options. You shouldn't follow any of the steps provided in the [Next.js website](https://nextjs.org/docs/pages/building-your-application/configuring/eslint). Only follow the Sheriff instructions.
 
+It's also recommended to [disable the nextjs default linting from the build process](https://nextjs.org/docs/pages/api-reference/config/eslint#disabling-linting-during-production-builds), to avoid potential conflicts with Sheriff.
+
+```ts twoslash title="next.config.ts"
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};
+
+export default nextConfig;
+```
+
 ### CRA
 
 [CRA](https://create-react-app.dev/).

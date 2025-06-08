@@ -9,6 +9,9 @@ const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   async rewrites() {
     return [
       {
