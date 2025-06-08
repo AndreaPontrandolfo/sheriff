@@ -9,6 +9,18 @@ const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: '/docs/:path*.mdx',
+        destination: '/llms.mdx/:path*',
+      },
+      // {
+      //   source: '/blog/:path*.mdx',
+      //   destination: '/llms.mdx/:path*',
+      // },
+    ];
+  },
 };
 
 export default withMDX(nextConfig);
