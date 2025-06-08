@@ -4,6 +4,7 @@ import { baseOptions } from '@/app/layout.config';
 import { source, blog } from '@/lib/source';
 import { GithubInfo } from 'fumadocs-ui/components/github-info';
 import type { PageTree } from 'fumadocs-core/server';
+import { ErrorBoundary } from 'react-error-boundary';
 
 function getBlogTree() {
   const posts = blog.getPages();
@@ -69,11 +70,14 @@ const docsOptions: DocsLayoutProps = {
     {
       type: 'custom',
       children: (
-        <GithubInfo
-          owner="AndreaPontrandolfo"
-          repo="sheriff"
-          className="lg:-mx-2"
-        />
+        <ErrorBoundary fallback={null}>
+          <GithubInfo
+            owner="AndreaPontrandolfo"
+            repo="sheriff"
+            token={process.env.GITHUB_TOKEN}
+            className="flex-row lg:-mx-2"
+          />
+        </ErrorBoundary>
       ),
     },
   ],

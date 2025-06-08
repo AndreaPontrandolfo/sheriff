@@ -49,6 +49,8 @@ export default defineConfig({
       readingMdxTime,
     ],
     rehypeCodeOptions: {
+      ...rehypeCodeDefaultOptions,
+      langs: ['js', 'ts', 'bash', 'json'],
       themes: {
         light: 'github-light',
         dark: 'github-dark',
