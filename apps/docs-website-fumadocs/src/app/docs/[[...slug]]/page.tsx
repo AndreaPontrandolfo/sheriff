@@ -1,21 +1,25 @@
-import { source } from '@/lib/source';
+import { createRelativeLink } from 'fumadocs-ui/mdx';
 import {
-  DocsPage,
   DocsBody,
   DocsDescription,
+  DocsPage,
   DocsTitle,
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
-import { createRelativeLink } from 'fumadocs-ui/mdx';
-import { getMDXComponents } from '@/mdx-components';
 import { getLastUpdate } from '@/lib/getLastUpdate';
+import { source } from '@/lib/source';
+import { getMDXComponents } from '@/mdx-components';
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
-  const params = await props.params;
+  const { params } = await props;
+  // @ts-expect-error
   const page = source.getPage(params.slug);
-  if (!page) notFound();
+
+  if (!page) {
+    notFound();
+  }
 
   const MDXContent = page.data.body;
 
@@ -41,6 +45,7 @@ export default async function Page(props: {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export async function generateStaticParams() {
   return source.generateParams();
 }
@@ -50,7 +55,10 @@ export async function generateMetadata(props: {
 }) {
   const params = await props.params;
   const page = source.getPage(params.slug);
-  if (!page) notFound();
+
+  if (!page) {
+    notFound();
+  }
 
   return {
     title: page.data.title,

@@ -1,19 +1,20 @@
 'use client';
 
+import { isEmpty } from 'lodash-es';
 import * as React from 'react';
 import {
   type ColumnDef,
   type ColumnFiltersState,
   flexRender,
   getCoreRowModel,
+  getFacetedRowModel,
+  getFacetedUniqueValues,
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
   type SortingState,
   useReactTable,
   type VisibilityState,
-  getFacetedRowModel,
-  getFacetedUniqueValues,
 } from '@tanstack/react-table';
 import {
   Table,
@@ -23,11 +24,10 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { QueriedRulesMetricsGroup } from '../QueriedRulesMetricsGroup';
 import type { RuleEntry } from './columns';
 import { DataTablePagination } from './data-table-pagination';
 import { DataTableToolbar } from './data-table-toolbar';
-import { isEmpty } from 'lodash-es';
-import { QueriedRulesMetricsGroup } from '../QueriedRulesMetricsGroup';
 
 interface DataTableProps<TData extends RuleEntry, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -62,12 +62,14 @@ export function DataTable<TData extends RuleEntry, TValue>({
       const otherFilters = prevFilters.filter(
         (f) => f.id !== 'parentPluginName',
       );
-      if (selectedPlugins.length > 0) {
+
+      if (!isEmpty(selectedPlugins)) {
         return [
           ...otherFilters,
           { id: 'parentPluginName', value: selectedPlugins },
         ];
       }
+
       return otherFilters;
     });
   }, [selectedPlugins]);

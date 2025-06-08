@@ -1,25 +1,22 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+/* eslint-disable @typescript-eslint/no-base-to-string */
 'use client';
 
-import React, { type JSX } from 'react';
-import type { Entry, Severity as SheriffSeverity } from '@sherifforg/types';
+import { isEmpty, isNil, isString } from 'lodash-es';
+import type { JSX } from 'react';
+import type { Entry } from '@sherifforg/types';
 import type { ColumnDef } from '@tanstack/react-table';
-import { Badge } from '@/components/ui/badge'; // Assuming you have Badge for severity
-import { DataTableColumnHeader } from './data-table-column-header';
 import { Button } from '@/components/ui/button';
-import { isString } from 'lodash-es';
+import { DataTableColumnHeader } from './data-table-column-header';
+
+interface DocInfo {
+  url: string;
+  description: string;
+}
 
 // This type is used to define the shape of our data.
 // We're using the Entry type from @sherifforg/types
 export type RuleEntry = Entry;
-
-// Define a more specific type for severity if not directly from @sherifforg/types
-type Severity = SheriffSeverity | 'error' | 'warn' | 'off';
-
-// Define the Docs type based on observed usage if not exported
-interface DocsType {
-  url: string;
-  description?: string;
-}
 
 export const columns: ColumnDef<RuleEntry>[] = [
   {
@@ -28,7 +25,9 @@ export const columns: ColumnDef<RuleEntry>[] = [
       <DataTableColumnHeader column={column} title="Rule" />
     ),
     cell: ({ row }): JSX.Element => {
-      const ruleName = row.getValue('ruleName') as string | undefined;
+      const ruleName = row.getValue('ruleName');
+
+      // @ts-expect-error
       return <code>{ruleName ?? ''}</code>;
     },
     filterFn: 'includesString',
@@ -41,23 +40,22 @@ export const columns: ColumnDef<RuleEntry>[] = [
       <DataTableColumnHeader column={column} title="Plugin" />
     ),
     cell: ({ row }): JSX.Element => {
-      const parentPluginName = row.getValue('parentPluginName') as
-        | string
-        | undefined;
+      const parentPluginName = row.getValue('parentPluginName');
+
+      // @ts-expect-error
       return <span>{parentPluginName ?? ''}</span>;
     },
     filterFn: (row, columnId, filterValue: string[]) => {
-      if (
-        !filterValue ||
-        !Array.isArray(filterValue) ||
-        filterValue.length === 0
-      ) {
+      if (!filterValue || !Array.isArray(filterValue) || isEmpty(filterValue)) {
         return true;
       }
-      const rowValue = row.getValue(columnId) as string | undefined;
-      if (rowValue === null || typeof rowValue === 'undefined') {
+      const rowValue = row.getValue(columnId);
+
+      if (isNil(rowValue)) {
         return false;
       }
+
+      // @ts-expect-error
       return filterValue.includes(rowValue);
     },
     enableSorting: true,
@@ -69,9 +67,8 @@ export const columns: ColumnDef<RuleEntry>[] = [
       <DataTableColumnHeader column={column} title="Severity" />
     ),
     cell: ({ row }): JSX.Element | string => {
-      const severityValue = row.getValue('severity') as Severity | undefined;
-      let variant: 'default' | 'secondary' | 'destructive' | 'outline' =
-        'outline';
+      const severityValue = row.getValue('severity');
+
       const severityText = String(severityValue ?? 'off');
 
       // if (typeof severityValue === 'number') {
@@ -104,16 +101,14 @@ export const columns: ColumnDef<RuleEntry>[] = [
     accessorKey: 'ruleOptions',
     header: 'Options',
     cell: ({ row }): JSX.Element => {
-      const options = row.getValue('ruleOptions') as
-        | RuleEntry['ruleOptions']
-        | undefined;
+      const options = row.getValue('ruleOptions');
       const hasOptions =
         options &&
         (Array.isArray(options)
-          ? options.length > 0
+          ? !isEmpty(options)
           : typeof options === 'object' &&
             options !== null &&
-            Object.keys(options).length > 0);
+            !isEmpty(Object.keys(options)));
 
       if (!hasOptions) {
         return (
@@ -126,7 +121,9 @@ export const columns: ColumnDef<RuleEntry>[] = [
             {JSON.stringify(options, null, 2)}
           </pre>
         );
-      } catch (e) {
+      } catch (error) {
+        console.error(error);
+
         return (
           <span className="text-destructive text-xs">Invalid options</span>
         );
@@ -140,12 +137,14 @@ export const columns: ColumnDef<RuleEntry>[] = [
       <DataTableColumnHeader column={column} title="Docs" />
     ),
     cell: ({ row }): JSX.Element => {
-      const docInfo = row.getValue('docs') as DocsType | undefined;
+      const docInfo = row.getValue('docs') as DocInfo;
+
       if (!docInfo?.url) {
         return <span className="text-muted-foreground text-xs">No docs</span>;
       }
+
       return (
-        <Button variant="link" asChild className="whitespace-normal">
+        <Button asChild variant="link" className="whitespace-normal">
           <a href={docInfo.url} target="_blank" rel="noreferrer">
             {docInfo.description || docInfo.url}
           </a>
@@ -153,9 +152,11 @@ export const columns: ColumnDef<RuleEntry>[] = [
       );
     },
     filterFn: (row, columnId, filterValue) => {
-      const docInfo = row.getValue(columnId) as DocsType | undefined;
+      const docInfo = row.getValue(columnId) as DocInfo;
+
       const searchableText =
         `${docInfo?.url ?? ''} ${docInfo?.description ?? ''}`.toLowerCase();
+
       return searchableText.includes(String(filterValue).toLowerCase());
     },
     enableSorting: false,
@@ -165,9 +166,11 @@ export const columns: ColumnDef<RuleEntry>[] = [
     header: 'Files',
     cell: ({ row }): JSX.Element => {
       const files = row.getValue('affectedFiles');
+
       if (isString(files)) {
         return <code className="text-xs">{files}</code>;
       }
+
       return <span className="text-muted-foreground text-xs">N/A</span>;
     },
     enableSorting: false,

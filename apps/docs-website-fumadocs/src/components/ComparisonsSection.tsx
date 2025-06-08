@@ -1,8 +1,7 @@
-import React from 'react';
-import { HPSectionStart } from './HPSectionStart';
 import { ComparisonTableHP } from './ComparisonTableHP';
+import { HPSectionStart } from './HPSectionStart';
 
-export const ComparisonsSection = () => {
+export function ComparisonsSection() {
   return (
     <section className="relative py-20">
       <HPSectionStart
@@ -16,4 +15,4 @@ export const ComparisonsSection = () => {
       </div>
     </section>
   );
-};
+}

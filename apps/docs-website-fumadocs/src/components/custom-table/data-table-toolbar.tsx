@@ -1,12 +1,12 @@
 'use client';
 
+import { debounce, isEmpty } from 'lodash-es';
 import { XIcon } from 'lucide-react';
 import * as React from 'react';
+import { LuFilter } from 'react-icons/lu';
 import type { Table } from '@tanstack/react-table';
 import { Button } from '@/components/ui/button';
-import { debounce } from 'lodash-es';
 import { Input } from '@/components/ui/input';
-import { LuFilter } from 'react-icons/lu';
 import { DataTableMultiSelectPlugins } from './data-table-multi-select-plugins';
 
 interface DataTableToolbarProps<TData> {
@@ -15,16 +15,19 @@ interface DataTableToolbarProps<TData> {
    * For the plugin filter combobox.
    */
   pluginsNames: string[];
-  // Global filter state and setter if managed outside DataTable component itself
+  /**
+   * Global filter state and setter if managed outside DataTable component itself.
+   */
   globalFilter: string;
   setGlobalFilter: (value: string) => void;
-  // Column filter state for parentPluginName specifically for the combobox
+  /**
+   * Column filter state for parentPluginName specifically for the combobox.
+   */
   selectedPlugins: string[];
   setSelectedPlugins: (values: string[]) => void;
 }
 
 export function DataTableToolbar<TData>({
-  table,
   pluginsNames,
   globalFilter,
   setGlobalFilter,
@@ -35,7 +38,7 @@ export function DataTableToolbar<TData>({
 
   // Combined filter check: global filter or plugin filter
   const isFiltered =
-    globalFilter || (selectedPlugins && selectedPlugins.length > 0);
+    globalFilter || (selectedPlugins && !isEmpty(selectedPlugins));
 
   React.useEffect(() => {
     setInputValue(globalFilter ?? '');
@@ -49,7 +52,10 @@ export function DataTableToolbar<TData>({
 
   React.useEffect(() => {
     debouncedSetGlobalFilter(inputValue);
-    // Cleanup on unmount or if debouncedSetGlobalFilter changes
+
+    /**
+     * Cleanup on unmount or if debouncedSetGlobalFilter changes.
+     */
     return () => {
       debouncedSetGlobalFilter.cancel();
     };
@@ -71,10 +77,10 @@ export function DataTableToolbar<TData>({
       <Input
         placeholder="Filter rules, docs..."
         value={inputValue}
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-          setInputValue(event.target.value)
-        }
         className="min-h-10 w-[150px] text-base md:text-base lg:w-[250px]"
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+          setInputValue(event.target.value);
+        }}
       />
       <DataTableMultiSelectPlugins
         pluginsNames={pluginsNames}
@@ -84,8 +90,8 @@ export function DataTableToolbar<TData>({
       {isFiltered ? (
         <Button
           variant="ghost"
-          onClick={resetFilters}
           className="h-8 px-2 lg:px-3"
+          onClick={resetFilters}
         >
           Reset
           <XIcon className="ml-2 h-4 w-4" />

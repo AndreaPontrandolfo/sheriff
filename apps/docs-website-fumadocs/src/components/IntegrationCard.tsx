@@ -1,32 +1,18 @@
+import type React from 'react';
 import { cn } from '@/lib/utils';
-import type { ReactNode } from 'react';
-
-type IntegrationCardPosition =
-  | 'left-top-1'
-  | 'left-top-2'
-  | 'left-middle'
-  | 'left-bottom-1'
-  | 'left-bottom-2'
-  | 'right-top-1'
-  | 'right-top-2'
-  | 'right-middle'
-  | 'right-bottom-1'
-  | 'right-bottom-2';
 
 export interface IntegrationCardProps {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
-  position?: IntegrationCardPosition;
   isCenter?: boolean;
 }
 
-export const IntegrationCard = ({
+export function IntegrationCard({
   children,
   className,
-  position,
   isCenter = false,
   ref,
-}: IntegrationCardProps & { ref?: React.Ref<HTMLDivElement> }) => {
+}: IntegrationCardProps & { ref?: React.Ref<HTMLDivElement> }) {
   return (
     <div
       ref={ref}
@@ -45,4 +31,4 @@ export const IntegrationCard = ({
       </div>
     </div>
   );
-};
+}

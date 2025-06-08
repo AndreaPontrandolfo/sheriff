@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable fsecond/prefer-destructured-optionals */
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable lodash-f/import-scope */
@@ -89,6 +90,7 @@ const getDocs = (
   const isEslintRule = !ruleName.includes('/');
 
   if (!plugins && isEslintRule) {
+    // eslint-disable-next-line @typescript-eslint/no-deprecated
     docs.url = UNSAFE_ESLint.builtinRules.get(ruleName)?.meta?.docs?.url ?? '';
   }
 

@@ -12,4 +12,29 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-export default tseslint.config(sheriff(sheriffOptions));
+export default tseslint.config(
+  sheriff(sheriffOptions),
+  {
+    rules: {
+      'func-style': 0,
+      'no-negated-condition': 0,
+      'no-nested-ternary': 0,
+      '@typescript-eslint/explicit-module-boundary-types': 0,
+      '@typescript-eslint/restrict-template-expressions': 0,
+      '@typescript-eslint/await-thenable': 0,
+      '@typescript-eslint/no-unsafe-argument': 0,
+      '@typescript-eslint/require-await': 0,
+      '@typescript-eslint/no-explicit-any': 0,
+      '@typescript-eslint/no-unsafe-call': 0,
+      '@typescript-eslint/no-unsafe-member-access': 0,
+      '@typescript-eslint/restrict-plus-operands': 0,
+      '@typescript-eslint/naming-convention': 0,
+      '@typescript-eslint/no-unnecessary-condition': 0,
+      'react/function-component-definition': 0,
+      'lodash-f/prefer-lodash-typecheck': 0,
+    },
+  },
+  {
+    ignores: ['src/components/ui/**/*', 'src/components/magicui/**/*', '*.mjs'],
+  },
+);

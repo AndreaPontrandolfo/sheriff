@@ -1,5 +1,5 @@
-import { HPSectionStart } from './HPSectionStart';
 import { AnimatedNumberInView } from './AnimatedNumberOnview';
+import { HPSectionStart } from './HPSectionStart';
 
 // TODO: most of these numbers could be inferred dynamically
 

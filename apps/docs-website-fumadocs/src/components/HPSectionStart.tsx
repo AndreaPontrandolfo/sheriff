@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { LuChevronRight } from 'react-icons/lu';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { HPSectionTitle } from './HPSectionTitle';
 import { ShineBorder } from './magicui/shine-border';
-import { cn } from '@/lib/utils';
 
 interface HPSectionStartProps {
   title: string;
@@ -14,12 +14,12 @@ interface HPSectionStartProps {
   buttonLink?: string;
 }
 
-export const HPSectionStart = ({
+export function HPSectionStart({
   title,
   description,
   buttonText,
   buttonLink,
-}: HPSectionStartProps) => {
+}: HPSectionStartProps) {
   return (
     <div
       className={cn(
@@ -37,7 +37,7 @@ export const HPSectionStart = ({
             duration={12}
             className="w-full rounded-md"
           />
-          <Button variant="outline" size="sm" className="rounded-md" asChild>
+          <Button asChild variant="outline" size="sm" className="rounded-md">
             <Link href={buttonLink}>
               {buttonText} <LuChevronRight />
             </Link>
@@ -46,4 +46,4 @@ export const HPSectionStart = ({
       )}
     </div>
   );
-};
+}

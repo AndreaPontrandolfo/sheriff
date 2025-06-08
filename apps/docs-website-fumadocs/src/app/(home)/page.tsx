@@ -1,10 +1,10 @@
-import { HeroSection } from '@/components/HeroSection';
-import { FeaturesSection } from '@/components/FeaturesSection';
-import { IntegrationsSection } from '@/components/IntegrationsSection';
-import { EcosystemSection } from '@/components/EcosystemSection';
-import { StatsSection } from '@/components/StatsSection';
-import { JoinUsSection } from '@/components/JoinUsSection';
 import { ComparisonsSection } from '@/components/ComparisonsSection';
+import { EcosystemSection } from '@/components/EcosystemSection';
+import { FeaturesSection } from '@/components/FeaturesSection';
+import { HeroSection } from '@/components/HeroSection';
+import { IntegrationsSection } from '@/components/IntegrationsSection';
+import { JoinUsSection } from '@/components/JoinUsSection';
+import { StatsSection } from '@/components/StatsSection';
 
 export default function HomePage() {
   // bg-background and text-foreground were added here because of shadcn compatibility. Reference: https://github.com/fuma-nama/fumadocs-shadcn?tab=readme-ov-file#with-shadcn-ui

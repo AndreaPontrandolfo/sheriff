@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable react/no-array-index-key */
+import type React from 'react';
 import { Skeleton } from '@/components/ui/skeleton'; // Assuming Skeleton is in ui
 
 export const RulesTableSkeleton: React.FC = () => {
@@ -27,19 +28,21 @@ export const RulesTableSkeleton: React.FC = () => {
         </div>
 
         {/* Table Body Skeleton - Repeat for a few rows */}
-        {Array.from({ length: 10 }).map((_, index) => (
-          <div
-            key={index}
-            className="flex items-center justify-between gap-x-4 border-b p-4 last:border-b-0"
-          >
-            <Skeleton className="h-6 w-1/4" />
-            <Skeleton className="h-6 w-1/4" />
-            <Skeleton className="h-6 w-1/6" />
-            <Skeleton className="h-6 w-1/6" />
-            <Skeleton className="h-6 w-1/6" />
-            <Skeleton className="h-6 w-1/12" />
-          </div>
-        ))}
+        {Array.from({ length: 10 }).map((_, index) => {
+          return (
+            <div
+              key={index}
+              className="flex items-center justify-between gap-x-4 border-b p-4 last:border-b-0"
+            >
+              <Skeleton className="h-6 w-1/4" />
+              <Skeleton className="h-6 w-1/4" />
+              <Skeleton className="h-6 w-1/6" />
+              <Skeleton className="h-6 w-1/6" />
+              <Skeleton className="h-6 w-1/6" />
+              <Skeleton className="h-6 w-1/12" />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

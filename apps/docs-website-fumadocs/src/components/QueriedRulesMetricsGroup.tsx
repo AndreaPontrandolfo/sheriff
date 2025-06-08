@@ -1,5 +1,5 @@
-import { Separator } from '@radix-ui/react-separator';
 import type { JSX } from 'react';
+import { Separator } from '@radix-ui/react-separator';
 
 interface QueriedRulesMetricsGroupProps {
   totalAvailableRulesAmount: number;
@@ -7,11 +7,11 @@ interface QueriedRulesMetricsGroupProps {
   filteredRulesAmount: number;
 }
 
-export const QueriedRulesMetricsGroup = ({
+export function QueriedRulesMetricsGroup({
   totalAvailableRulesAmount,
   fetchedConfigRulesAmount,
   filteredRulesAmount,
-}: QueriedRulesMetricsGroupProps): JSX.Element => {
+}: QueriedRulesMetricsGroupProps): JSX.Element {
   return (
     <div className="flex gap-4">
       <div>
@@ -30,4 +30,4 @@ export const QueriedRulesMetricsGroup = ({
       </div>
     </div>
   );
-};
+}

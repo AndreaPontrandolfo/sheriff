@@ -19,7 +19,7 @@ const features = [
   },
 ];
 
-export const EcosystemSection = () => {
+export function EcosystemSection() {
   return (
     <section className="py-20">
       <HPSectionStart
@@ -31,4 +31,4 @@ export const EcosystemSection = () => {
       <VerticalSlidingItems features={features} />
     </section>
   );
-};
+}

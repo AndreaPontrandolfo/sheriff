@@ -1,10 +1,10 @@
+import type { PageTree } from 'fumadocs-core/server';
+import { GithubInfo } from 'fumadocs-ui/components/github-info';
 import { DocsLayout, type DocsLayoutProps } from 'fumadocs-ui/layouts/docs';
 import type { ReactNode } from 'react';
-import { baseOptions } from '@/app/layout.config';
-import { source, blog } from '@/lib/source';
-import { GithubInfo } from 'fumadocs-ui/components/github-info';
-import type { PageTree } from 'fumadocs-core/server';
 import { ErrorBoundary } from 'react-error-boundary';
+import { baseOptions } from '@/app/layout.config';
+import { blog, source } from '@/lib/source';
 
 function getBlogTree() {
   const posts = blog.getPages();
@@ -12,6 +12,7 @@ function getBlogTree() {
 
   for (const post of posts) {
     const year = new Date(post.data.date as string | number).getFullYear();
+
     if (!postsByYear[year]) {
       postsByYear[year] = [];
     }
@@ -22,22 +23,27 @@ function getBlogTree() {
 
   return {
     name: 'Blog',
-    children: years.map((year) => ({
-      type: 'folder' as const,
-      name: year,
-      defaultOpen: true,
-      children: postsByYear[year]
-        .sort(
-          (a, b) =>
-            new Date(b.data.date as string | number).getTime() -
-            new Date(a.data.date as string | number).getTime(),
-        )
-        .map((post) => ({
-          type: 'page' as const,
-          name: post.data.title as string,
-          url: post.url,
-        })),
-    })),
+    children: years.map((year) => {
+      return {
+        type: 'folder' as const,
+        name: year,
+        defaultOpen: true,
+        children: postsByYear[year]
+          .sort((a, b) => {
+            return (
+              new Date(b.data.date as string | number).getTime() -
+              new Date(a.data.date as string | number).getTime()
+            );
+          })
+          .map((post) => {
+            return {
+              type: 'page' as const,
+              name: post.data.title,
+              url: post.url,
+            };
+          }),
+      };
+    }),
   };
 }
 

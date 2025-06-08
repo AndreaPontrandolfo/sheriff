@@ -3,26 +3,25 @@
 import {
   ArrowDown,
   ArrowUp,
+  Check,
   ChevronsUpDown,
   EyeOff,
-  Check,
 } from 'lucide-react';
-import type { Column } from '@tanstack/react-table';
 import * as React from 'react';
-
-import { cn } from '@/lib/utils';
+import type { Column } from '@tanstack/react-table';
 import { Button } from '@/components/ui/button';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
 import {
   Command,
   CommandGroup,
   CommandItem,
   CommandList,
 } from '@/components/ui/command';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
 
 interface DataTableColumnHeaderProps<TData, TValue>
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -46,13 +45,17 @@ export function DataTableColumnHeader<TData, TValue>({
       label: 'Asc',
       value: 'asc',
       icon: ArrowUp,
-      action: () => column.toggleSorting(false),
+      action: () => {
+        column.toggleSorting(false);
+      },
     },
     {
       label: 'Desc',
       value: 'desc',
       icon: ArrowDown,
-      action: () => column.toggleSorting(true),
+      action: () => {
+        column.toggleSorting(true);
+      },
     },
   ];
 
@@ -82,27 +85,29 @@ export function DataTableColumnHeader<TData, TValue>({
             <CommandList>
               {column.getCanSort() && (
                 <CommandGroup heading="Sort">
-                  {sortActions.map((item) => (
-                    <CommandItem
-                      key={item.value}
-                      onSelect={() => {
-                        item.action();
-                        setIsOpen(false);
-                      }}
-                    >
-                      <item.icon
-                        className={cn(
-                          'text-muted-foreground/70 mr-2 h-3.5 w-3.5',
-                          currentSort === item.value &&
-                            'text-foreground opacity-100',
+                  {sortActions.map((item) => {
+                    return (
+                      <CommandItem
+                        key={item.value}
+                        onSelect={() => {
+                          item.action();
+                          setIsOpen(false);
+                        }}
+                      >
+                        <item.icon
+                          className={cn(
+                            'text-muted-foreground/70 mr-2 h-3.5 w-3.5',
+                            currentSort === item.value &&
+                              'text-foreground opacity-100',
+                          )}
+                        />
+                        {item.label}
+                        {currentSort === item.value && (
+                          <Check className="ml-auto h-4 w-4" />
                         )}
-                      />
-                      {item.label}
-                      {currentSort === item.value && (
-                        <Check className="ml-auto h-4 w-4" />
-                      )}
-                    </CommandItem>
-                  ))}
+                      </CommandItem>
+                    );
+                  })}
                 </CommandGroup>
               )}
               {column.getCanSort() && column.getCanHide() && (

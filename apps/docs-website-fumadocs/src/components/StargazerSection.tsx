@@ -1,15 +1,16 @@
+/* eslint-disable react/no-array-index-key */
 'use client';
 import { LuStar } from 'react-icons/lu';
 import { useQuery } from '@tanstack/react-query';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 import {
-  TooltipProvider,
   Tooltip,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
+import { cn } from '@/lib/utils';
 
 export const StargazerSection = () => {
   const { data, isFetching } = useQuery({
@@ -30,46 +31,50 @@ export const StargazerSection = () => {
           <div className="flex flex-wrap items-center justify-center">
             {isFetching ? (
               <>
-                {Array.from({ length: 6 }).map((_, i) => (
-                  <div
-                    className={cn('relative -mx-0.5 transition-all')}
-                    key={i}
-                  >
-                    <Avatar className="ring-secondary size-10 ring-4">
-                      <div className="bg-secondary h-full w-full rounded-full">
-                        <div className="bg-secondary h-full w-full animate-pulse rounded-full" />
-                      </div>
-                    </Avatar>
-                  </div>
-                ))}
+                {Array.from({ length: 6 }).map((_, i) => {
+                  return (
+                    <div
+                      className={cn('relative -mx-0.5 transition-all')}
+                      key={i}
+                    >
+                      <Avatar className="ring-secondary size-10 ring-4">
+                        <div className="bg-secondary h-full w-full rounded-full">
+                          <div className="bg-secondary h-full w-full animate-pulse rounded-full" />
+                        </div>
+                      </Avatar>
+                    </div>
+                  );
+                })}
               </>
             ) : (
               <>
-                {data?.stargazers.map((o: { id: number; login: string }) => (
-                  <TooltipProvider key={o.id}>
-                    <Tooltip delayDuration={0} key={o.login}>
-                      <TooltipContent className="text-center">
-                        <p>{o.login}</p>
-                      </TooltipContent>
-                      <TooltipTrigger asChild>
-                        <a
-                          target="_blank"
-                          href={`https://github.com/${o.login}`}
-                          className={cn(
-                            'relative -mx-0.5 transition-all hover:z-10 hover:scale-125',
-                          )}
-                          rel="noreferrer nofollow"
-                        >
-                          <Avatar className="text-muted dark:bg-background bg-background size-9 ring-2 transition-opacity duration-200">
-                            <AvatarImage
-                              src={`https://avatars.githubusercontent.com/${o.login}`}
-                            />
-                          </Avatar>
-                        </a>
-                      </TooltipTrigger>
-                    </Tooltip>
-                  </TooltipProvider>
-                ))}
+                {data?.stargazers.map((o: { id: number; login: string }) => {
+                  return (
+                    <TooltipProvider key={o.id}>
+                      <Tooltip delayDuration={0} key={o.login}>
+                        <TooltipContent className="text-center">
+                          <p>{o.login}</p>
+                        </TooltipContent>
+                        <TooltipTrigger asChild>
+                          <a
+                            target="_blank"
+                            href={`https://github.com/${o.login}`}
+                            rel="noreferrer nofollow"
+                            className={cn(
+                              'relative -mx-0.5 transition-all hover:z-10 hover:scale-125',
+                            )}
+                          >
+                            <Avatar className="text-muted dark:bg-background bg-background size-9 ring-2 transition-opacity duration-200">
+                              <AvatarImage
+                                src={`https://avatars.githubusercontent.com/${o.login}`}
+                              />
+                            </Avatar>
+                          </a>
+                        </TooltipTrigger>
+                      </Tooltip>
+                    </TooltipProvider>
+                  );
+                })}
               </>
             )}
             <div
@@ -87,10 +92,10 @@ export const StargazerSection = () => {
         </div>
         <div className="flex flex-col items-center gap-2">
           <Button
+            asChild
             className="dark:bg-background group h-11 rounded-xl px-10 py-2 text-base dark:hover:bg-zinc-800"
             variant="outline"
             size="lg"
-            asChild
           >
             <a
               href="https://github.com/AndreaPontrandolfo/sheriff"

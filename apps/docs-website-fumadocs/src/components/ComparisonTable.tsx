@@ -346,7 +346,7 @@ const entriesTable: EntriesTable = {
   },
 };
 
-export const ComparisonTable = (): JSX.Element => {
+export function ComparisonTable(): JSX.Element {
   return (
     <table>
       <thead>
@@ -379,4 +379,4 @@ export const ComparisonTable = (): JSX.Element => {
       </tbody>
     </table>
   );
-};
+}

@@ -7,12 +7,12 @@ import {
 } from 'motion/react';
 import { useEffect } from 'react';
 
-export type AnimatedNumberProps = {
+export interface AnimatedNumberProps {
   value: number;
   className?: string;
   springOptions?: SpringOptions;
   as?: React.ElementType;
-};
+}
 
 export function AnimatedNumber({
   value,

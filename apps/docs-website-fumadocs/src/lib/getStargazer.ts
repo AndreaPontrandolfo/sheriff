@@ -11,10 +11,10 @@ interface Stargazer {
   avatar_url: string;
 }
 
-type GithubResponse = {
+interface GithubResponse {
   stargazers: Stargazer[];
   stargazerCount: number;
-};
+}
 
 export const getStargazers = async ({
   owner,
@@ -31,8 +31,8 @@ export const getStargazers = async ({
         per_page: 10,
       }),
       octokit.request('GET /repos/{owner}/{repo}', {
-        owner: owner,
-        repo: repo,
+        owner,
+        repo,
         headers: {
           'X-GitHub-Api-Version': '2022-11-28',
           Accept: 'application/vnd.github+json',
@@ -45,16 +45,19 @@ export const getStargazers = async ({
       return { stargazers: [], stargazerCount: 0 };
     }
     if (Array.isArray(resStargazers.data)) {
-      const stargazers = (resStargazers?.data as Stargazer[])?.map((o) => ({
-        login: o.login,
-        avatar_url: o.avatar_url,
-        id: o.id,
-      }));
+      const stargazers = (resStargazers?.data as Stargazer[])?.map((o) => {
+        return {
+          login: o.login,
+          avatar_url: o.avatar_url,
+          id: o.id,
+        };
+      });
 
       return { stargazers, stargazerCount: stargazers_count };
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
+
   return { stargazers: [], stargazerCount: 0 };
 };

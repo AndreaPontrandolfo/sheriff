@@ -1,23 +1,21 @@
 'use client';
 
-import { Settings2, Check } from 'lucide-react';
-import type { Table, Column } from '@tanstack/react-table';
+import { Check, Settings2 } from 'lucide-react';
 import * as React from 'react';
-
-import { cn } from '@/lib/utils';
+import type { Column, Table } from '@tanstack/react-table';
 import { Button } from '@/components/ui/button';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
 import {
   Command,
   CommandGroup,
   CommandItem,
   CommandList,
-  CommandSeparator,
 } from '@/components/ui/command';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import { cn } from '@/lib/utils';
 
 interface DataTableViewOptionsProps<TData> {
   table: Table<TData>;
@@ -51,15 +49,15 @@ export function DataTableViewOptions<TData>({
         <Command>
           <CommandList>
             <CommandGroup heading="Toggle Columns">
-              {ToggableColumns.map((column: Column<TData, unknown>) => {
+              {ToggableColumns.map((column: Column<TData>) => {
                 return (
                   <CommandItem
                     key={column.id}
+                    className="cursor-pointer"
                     onSelect={() => {
                       column.toggleVisibility(!column.getIsVisible());
                       // Keep popover open for multiple selections or setIsOpen(false) to close
                     }}
-                    className="cursor-pointer"
                   >
                     <div
                       className={cn(

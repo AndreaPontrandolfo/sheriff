@@ -1,17 +1,17 @@
+import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins';
+import { remarkInstall } from 'fumadocs-docgen';
+import { remarkTypeScriptToJavaScript } from 'fumadocs-docgen/remark-ts2js';
 import {
-  defineDocs,
-  defineConfig,
   defineCollections,
+  defineConfig,
+  defineDocs,
   frontmatterSchema,
 } from 'fumadocs-mdx/config';
-import { remarkTypeScriptToJavaScript } from 'fumadocs-docgen/remark-ts2js';
-import { remarkInstall } from 'fumadocs-docgen';
-import { z } from 'zod';
-import remarkReadingTime from 'remark-reading-time';
-import readingMdxTime from 'remark-reading-time/mdx.js';
 import { transformerTwoslash } from 'fumadocs-twoslash';
 import { createFileSystemTypesCache } from 'fumadocs-twoslash/cache-fs';
-import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins';
+import remarkReadingTime from 'remark-reading-time';
+import readingMdxTime from 'remark-reading-time/mdx.js';
+import { z } from 'zod';
 
 // Options: https://fumadocs.vercel.app/docs/mdx/collections#define-docs
 export const docs = defineDocs({

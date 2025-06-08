@@ -1,28 +1,27 @@
 'use client';
 
 import {
+  Check,
   ChevronLeft,
   ChevronRight,
   ChevronsLeft,
   ChevronsRight,
-  Check,
   ChevronsUpDown,
 } from 'lucide-react';
-import type { Table } from '@tanstack/react-table';
 import * as React from 'react';
-
+import type { Table } from '@tanstack/react-table';
 import { Button } from '@/components/ui/button';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
 import {
   Command,
   CommandGroup,
   CommandItem,
   CommandList,
 } from '@/components/ui/command';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 
 interface DataTablePaginationProps<TData> {
@@ -60,26 +59,28 @@ export function DataTablePagination<TData>({
               <Command>
                 <CommandList>
                   <CommandGroup>
-                    {pageSizes.map((size) => (
-                      <CommandItem
-                        key={size}
-                        value={String(size)}
-                        onSelect={() => {
-                          table.setPageSize(Number(size));
-                          setIsPageSizePopoverOpen(false);
-                        }}
-                      >
-                        <Check
-                          className={cn(
-                            'mr-2 h-4 w-4',
-                            table.getState().pagination.pageSize === size
-                              ? 'opacity-100'
-                              : 'opacity-0',
-                          )}
-                        />
-                        {size}
-                      </CommandItem>
-                    ))}
+                    {pageSizes.map((size) => {
+                      return (
+                        <CommandItem
+                          key={size}
+                          value={String(size)}
+                          onSelect={() => {
+                            table.setPageSize(Number(size));
+                            setIsPageSizePopoverOpen(false);
+                          }}
+                        >
+                          <Check
+                            className={cn(
+                              'mr-2 h-4 w-4',
+                              table.getState().pagination.pageSize === size
+                                ? 'opacity-100'
+                                : 'opacity-0',
+                            )}
+                          />
+                          {size}
+                        </CommandItem>
+                      );
+                    })}
                   </CommandGroup>
                 </CommandList>
               </Command>
@@ -94,8 +95,10 @@ export function DataTablePagination<TData>({
           <Button
             variant="outline"
             className="hidden h-8 w-8 p-0 lg:flex"
-            onClick={() => table.setPageIndex(0)}
             disabled={!table.getCanPreviousPage()}
+            onClick={() => {
+              table.setPageIndex(0);
+            }}
           >
             <span className="sr-only">Go to first page</span>
             <ChevronsLeft className="h-4 w-4" />
@@ -103,8 +106,10 @@ export function DataTablePagination<TData>({
           <Button
             variant="outline"
             className="h-8 w-8 p-0"
-            onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
+            onClick={() => {
+              table.previousPage();
+            }}
           >
             <span className="sr-only">Go to previous page</span>
             <ChevronLeft className="h-4 w-4" />
@@ -112,8 +117,10 @@ export function DataTablePagination<TData>({
           <Button
             variant="outline"
             className="h-8 w-8 p-0"
-            onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
+            onClick={() => {
+              table.nextPage();
+            }}
           >
             <span className="sr-only">Go to next page</span>
             <ChevronRight className="h-4 w-4" />
@@ -121,8 +128,10 @@ export function DataTablePagination<TData>({
           <Button
             variant="outline"
             className="hidden h-8 w-8 p-0 lg:flex"
-            onClick={() => table.setPageIndex(table.getPageCount() - 1)}
             disabled={!table.getCanNextPage()}
+            onClick={() => {
+              table.setPageIndex(table.getPageCount() - 1);
+            }}
           >
             <span className="sr-only">Go to last page</span>
             <ChevronsRight className="h-4 w-4" />

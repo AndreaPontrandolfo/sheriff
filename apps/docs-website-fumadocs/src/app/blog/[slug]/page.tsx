@@ -1,13 +1,14 @@
-import { notFound } from 'next/navigation';
+/* eslint-disable react/destructuring-assignment */
+import defaultMdxComponents from 'fumadocs-ui/mdx';
 import {
-  DocsPage,
   DocsBody,
   DocsDescription,
+  DocsPage,
   DocsTitle,
 } from 'fumadocs-ui/page';
-import defaultMdxComponents from 'fumadocs-ui/mdx';
-import { blog } from '@/lib/source';
+import { notFound } from 'next/navigation';
 import { getLastUpdate } from '@/lib/getLastUpdate';
+import { blog } from '@/lib/source';
 // Link component can be re-added later if a "Back to blog" is needed manually
 // import Link from 'next/link';
 
@@ -17,7 +18,9 @@ export default async function Page(props: {
   const params = await props.params;
   const page = blog.getPage([params.slug]);
 
-  if (!page) notFound();
+  if (!page) {
+    notFound();
+  }
   const MdxContent = page.data.body;
 
   const lastUpdate = await getLastUpdate(page);
@@ -55,10 +58,13 @@ export default async function Page(props: {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function generateStaticParams(): { slug: string }[] {
-  return blog.getPages().map((page) => ({
-    slug: page.slugs[0],
-  }));
+  return blog.getPages().map((page) => {
+    return {
+      slug: page.slugs[0],
+    };
+  });
 }
 
 export async function generateMetadata(props: {
@@ -66,7 +72,10 @@ export async function generateMetadata(props: {
 }) {
   const params = await props.params;
   const page = blog.getPage([params.slug]);
-  if (!page) notFound();
+
+  if (!page) {
+    notFound();
+  }
 
   return {
     title: page.data.title,

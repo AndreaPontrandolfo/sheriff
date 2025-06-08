@@ -1,25 +1,25 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
-import { AnimatedBeam } from '@/components/magicui/animated-beam';
+import { useTheme } from 'next-themes';
+import { useEffect, useRef, useState } from 'react';
+import AstroDarkLogo from '@/assets/logos/astro-icon-dark.svg?url';
+import AstroLightLogo from '@/assets/logos/astro-icon-light.svg?url';
 import EslintLogo from '@/assets/logos/eslint.svg?url';
-import LodashLogo from '@/assets/logos/lodash.svg?url';
-import RamdaLogo from '@/assets/logos/ramda.svg?url';
-import TypescriptLogo from '@/assets/logos/typescript.svg?url';
-import VitestLogo from '@/assets/logos/vitest.svg?url';
 import JestLogo from '@/assets/logos/jest.svg?url';
-import PlaywrightLogo from '@/assets/logos/playwright.svg?url';
+import LodashLogo from '@/assets/logos/lodash.svg?url';
 import NextjsLogo from '@/assets/logos/nextjs.svg?url';
+import PlaywrightLogo from '@/assets/logos/playwright.svg?url';
+import RamdaLogo from '@/assets/logos/ramda.svg?url';
 import ReactLogo from '@/assets/logos/react.svg?url';
 import StorybookLogo from '@/assets/logos/storybook.svg?url';
-import AstroLightLogo from '@/assets/logos/astro-icon-light.svg?url';
-import AstroDarkLogo from '@/assets/logos/astro-icon-dark.svg?url';
-import { useTheme } from 'next-themes';
+import TypescriptLogo from '@/assets/logos/typescript.svg?url';
+import VitestLogo from '@/assets/logos/vitest.svg?url';
+import { AnimatedBeam } from '@/components/magicui/animated-beam';
 import { HPSectionStart } from './HPSectionStart';
 import { IntegrationCard } from './IntegrationCard';
 
-export const IntegrationsSection = () => {
+export function IntegrationsSection() {
   const { theme } = useTheme();
 
   // #region Mounting state
@@ -48,8 +48,14 @@ export const IntegrationsSection = () => {
   const rightBottom1Ref = useRef<HTMLDivElement>(null);
   const rightBottom2Ref = useRef<HTMLDivElement>(null);
 
-  const iconSize = 24; // For side icons
-  const centerIconSize = 32; // For center icon
+  /**
+   * For side icons.
+   */
+  const iconSize = 24;
+  /**
+   * For center icon.
+   */
+  const centerIconSize = 32;
 
   return (
     <section className="py-20">
@@ -66,7 +72,7 @@ export const IntegrationsSection = () => {
           ref={containerRef}
         >
           <div className="space-y-5">
-            <IntegrationCard ref={leftTop2Ref} position="left-top-2">
+            <IntegrationCard ref={leftTop2Ref}>
               <Image
                 src={TypescriptLogo}
                 alt="TypeScript Logo"
@@ -74,7 +80,7 @@ export const IntegrationsSection = () => {
                 height={iconSize}
               />
             </IntegrationCard>
-            <IntegrationCard ref={leftTop1Ref} position="left-top-1">
+            <IntegrationCard ref={leftTop1Ref}>
               <Image
                 src={ReactLogo}
                 alt="React Logo"
@@ -82,7 +88,7 @@ export const IntegrationsSection = () => {
                 height={iconSize}
               />
             </IntegrationCard>
-            <IntegrationCard ref={leftMiddleRef} position="left-middle">
+            <IntegrationCard ref={leftMiddleRef}>
               <Image
                 src={NextjsLogo}
                 alt="Next.js Logo"
@@ -90,7 +96,7 @@ export const IntegrationsSection = () => {
                 height={iconSize}
               />
             </IntegrationCard>
-            <IntegrationCard ref={leftBottom1Ref} position="left-bottom-1">
+            <IntegrationCard ref={leftBottom1Ref}>
               <Image
                 src={StorybookLogo}
                 alt="Storybook Logo"
@@ -98,7 +104,7 @@ export const IntegrationsSection = () => {
                 height={iconSize}
               />
             </IntegrationCard>
-            <IntegrationCard ref={leftBottom2Ref} position="left-bottom-2">
+            <IntegrationCard ref={leftBottom2Ref}>
               {isMounted && (
                 <Image
                   src={theme === 'dark' ? AstroLightLogo : AstroDarkLogo}
@@ -112,9 +118,9 @@ export const IntegrationsSection = () => {
           <div className="mx-auto my-2 flex w-fit justify-center gap-2">
             <div className="bg-muted relative z-20 rounded-2xl border p-1">
               <IntegrationCard
+                isCenter
                 ref={centerRef}
                 className="shadow-black-950/10 bg-background size-16 border-black/25 shadow-xl dark:border-white/25 dark:shadow-white/10"
-                isCenter={true}
               >
                 <Image
                   src={EslintLogo}
@@ -131,7 +137,7 @@ export const IntegrationsSection = () => {
           ></div>
 
           <div className="space-y-5">
-            <IntegrationCard ref={rightTop1Ref} position="right-top-1">
+            <IntegrationCard ref={rightTop1Ref}>
               <Image
                 src={JestLogo}
                 alt="Jest Logo"
@@ -139,7 +145,7 @@ export const IntegrationsSection = () => {
                 height={iconSize}
               />
             </IntegrationCard>
-            <IntegrationCard ref={rightTop2Ref} position="right-top-2">
+            <IntegrationCard ref={rightTop2Ref}>
               <Image
                 src={VitestLogo}
                 alt="Vitest Logo"
@@ -147,7 +153,7 @@ export const IntegrationsSection = () => {
                 height={iconSize}
               />
             </IntegrationCard>
-            <IntegrationCard ref={rightMiddleRef} position="right-middle">
+            <IntegrationCard ref={rightMiddleRef}>
               <Image
                 src={PlaywrightLogo}
                 alt="Playwright Logo"
@@ -155,7 +161,7 @@ export const IntegrationsSection = () => {
                 height={iconSize}
               />
             </IntegrationCard>
-            <IntegrationCard ref={rightBottom1Ref} position="right-bottom-1">
+            <IntegrationCard ref={rightBottom1Ref}>
               <Image
                 src={RamdaLogo}
                 alt="Ramda Logo"
@@ -163,7 +169,7 @@ export const IntegrationsSection = () => {
                 height={iconSize}
               />
             </IntegrationCard>
-            <IntegrationCard ref={rightBottom2Ref} position="right-bottom-2">
+            <IntegrationCard ref={rightBottom2Ref}>
               <Image
                 src={LodashLogo}
                 alt="Lodash Logo"
@@ -212,47 +218,47 @@ export const IntegrationsSection = () => {
 
           {/* Right side to Center (reversed) */}
           <AnimatedBeam
+            reverse
             containerRef={containerRef}
             fromRef={rightTop1Ref}
             toRef={centerRef}
             duration={3}
-            reverse
             delay={0.1}
           />
           <AnimatedBeam
+            reverse
             containerRef={containerRef}
             fromRef={rightTop2Ref}
             toRef={centerRef}
             duration={3}
-            reverse
             delay={0.3}
           />
           <AnimatedBeam
+            reverse
             containerRef={containerRef}
             fromRef={rightMiddleRef}
             toRef={centerRef}
             duration={3}
-            reverse
             delay={0.5}
           />
           <AnimatedBeam
+            reverse
             containerRef={containerRef}
             fromRef={rightBottom1Ref}
             toRef={centerRef}
             duration={3}
-            reverse
             delay={0.7}
           />
           <AnimatedBeam
+            reverse
             containerRef={containerRef}
             fromRef={rightBottom2Ref}
             toRef={centerRef}
             duration={3}
-            reverse
             delay={0.9}
           />
         </div>
       </div>
     </section>
   );
-};
+}

@@ -1,12 +1,11 @@
 'use client';
 
-import React from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { GridBackground } from '@/components/ui/grid-background';
-import { CopyToClipboard } from '@/components/ui/copy-to-clipboard';
-import { RainbowButton } from '@/components/magicui/rainbow-button';
 import { LuChevronRight } from 'react-icons/lu';
+import { RainbowButton } from '@/components/magicui/rainbow-button';
+import { Button } from '@/components/ui/button';
+import { CopyToClipboard } from '@/components/ui/copy-to-clipboard';
+import { GridBackground } from '@/components/ui/grid-background';
 
 // TODO: these fade-in animation destroys SEO ranking especially on mobile. Should remove them.
 

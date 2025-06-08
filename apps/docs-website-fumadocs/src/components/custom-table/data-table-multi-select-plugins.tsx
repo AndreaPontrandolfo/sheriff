@@ -1,3 +1,6 @@
+/* eslint-disable @regru/prefer-early-return/prefer-early-return */
+/* eslint-disable react/jsx-sort-props */
+import { isEmpty } from 'lodash-es';
 import { Check, ChevronsUpDown, X } from 'lucide-react';
 import * as React from 'react';
 import { Badge } from '@/components/ui/badge';
@@ -23,7 +26,10 @@ interface DataTableMultiSelectPluginsProps {
   setSelectedPlugins?: (values: string[]) => void;
 }
 
-// Default no-op function for setSelectedPlugins
+/**
+ * Default no-op function for setSelectedPlugins.
+ */
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 const noOpSetSelectedPlugins = () => {};
 
 export const DataTableMultiSelectPlugins = ({
@@ -37,6 +43,7 @@ export const DataTableMultiSelectPlugins = ({
     const newSelectedPlugins = selectedPlugins.includes(currentValue)
       ? selectedPlugins.filter((plugin) => plugin !== currentValue)
       : [...selectedPlugins, currentValue];
+
     setSelectedPlugins(newSelectedPlugins);
     // setIsPluginsPopoverOpen(false); // Keep popover open for multi-selection
   };
@@ -49,6 +56,7 @@ export const DataTableMultiSelectPlugins = ({
     const newSelectedPlugins = selectedPlugins.filter(
       (plugin) => plugin !== pluginToClear,
     );
+
     setSelectedPlugins(newSelectedPlugins);
   };
 
@@ -67,53 +75,55 @@ export const DataTableMultiSelectPlugins = ({
           className="text-muted-foreground hover:text-foreground h-auto min-h-10 min-w-[200px] max-w-lg justify-between px-3 py-1.5 text-base"
         >
           <div className="flex flex-wrap items-center gap-1">
-            {selectedPlugins.map((pluginName) => (
-              <Badge
-                variant="secondary"
-                key={pluginName}
-                className="rounded-sm px-2 font-normal"
-                onClick={(e) => e.stopPropagation()} // Prevent popover from closing
-              >
-                {pluginName}
-                <Button
-                  asChild
-                  variant="ghost"
-                  // Rely on Button's default focus; only add layout/shape classes
-                  className="ml-1 h-auto rounded-full p-0.5"
-                  onClick={(event) => {
-                    handleClearPlugin(pluginName, event as any);
-                  }}
-                  onKeyDown={(event) => {
-                    if (event.key === 'Enter' || event.key === ' ') {
-                      event.preventDefault();
-                      handleClearPlugin(pluginName, event as any);
-                    }
-                  }}
-                  aria-label={`Remove ${pluginName}`}
+            {selectedPlugins.map((pluginName) => {
+              return (
+                <Badge
+                  variant="secondary"
+                  key={pluginName}
+                  className="rounded-sm px-2 font-normal"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }} // Prevent popover from closing
                 >
-                  <div role="button" className="px-0!" tabIndex={0}>
-                    <X className="h-3 w-3" />
-                  </div>
-                </Button>
-              </Badge>
-            ))}
+                  {pluginName}
+                  <Button
+                    asChild
+                    aria-label={`Remove ${pluginName}`}
+                    onClick={(event) => {
+                      handleClearPlugin(pluginName, event as any);
+                    }}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        handleClearPlugin(pluginName, event as any);
+                      }
+                    }}
+                    variant="ghost"
+                    // Rely on Button's default focus; only add layout/shape classes
+                    className="ml-1 h-auto rounded-full p-0.5"
+                  >
+                    <div role="button" className="px-0!" tabIndex={0}>
+                      <X className="h-3 w-3" />
+                    </div>
+                  </Button>
+                </Badge>
+              );
+            })}
             {/* Always render placeholder text. Add margin if badges are present. */}
             <span
               className={cn(
                 'text-muted-foreground',
-                selectedPlugins.length > 0 ? 'ml-1' : '',
+                !isEmpty(selectedPlugins) ? 'ml-1' : '',
               )}
             >
               Filter by plugin...
             </span>
           </div>
           <div className="flex items-center">
-            {selectedPlugins.length > 0 && (
+            {!isEmpty(selectedPlugins) && (
               <Button
                 asChild
-                variant="ghost"
-                // Rely on Button's default focus; only add layout/shape classes
-                className="mr-1 h-auto rounded-sm p-0.5"
+                aria-label="Clear all selected plugins"
                 onClick={(event) => {
                   handleClearAll(event as any);
                 }}
@@ -123,7 +133,9 @@ export const DataTableMultiSelectPlugins = ({
                     handleClearAll(event as any);
                   }
                 }}
-                aria-label="Clear all selected plugins"
+                variant="ghost"
+                // Rely on Button's default focus; only add layout/shape classes
+                className="mr-1 h-auto rounded-sm p-0.5"
               >
                 <div role="button" tabIndex={0}>
                   <X className="h-4 w-4" />
@@ -145,7 +157,9 @@ export const DataTableMultiSelectPlugins = ({
                   <CommandItem
                     key={pluginName}
                     value={pluginName}
-                    onSelect={() => handlePluginSelect(pluginName)}
+                    onSelect={() => {
+                      handlePluginSelect(pluginName);
+                    }}
                   >
                     <Check
                       className={cn(

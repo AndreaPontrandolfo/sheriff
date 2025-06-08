@@ -1,17 +1,17 @@
 'use client';
-import { AnimatedNumber } from '@/components/AnimatedNumber';
 import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
+import { AnimatedNumber } from '@/components/AnimatedNumber';
 
-export type AnimatedNumberInViewProps = {
+export interface AnimatedNumberInViewProps {
   number: number;
   durationInMilliseconds?: number;
-};
+}
 
-export const AnimatedNumberInView = ({
+export function AnimatedNumberInView({
   number,
   durationInMilliseconds,
-}: AnimatedNumberInViewProps) => {
+}: AnimatedNumberInViewProps) {
   const [value, setValue] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -23,12 +23,12 @@ export const AnimatedNumberInView = ({
   return (
     <span ref={ref}>
       <AnimatedNumber
+        value={value}
         springOptions={{
           bounce: 0,
           duration: durationInMilliseconds ?? 1000,
         }}
-        value={value}
       />
     </span>
   );
-};
+}

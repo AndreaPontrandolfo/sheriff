@@ -1,18 +1,18 @@
 'use client';
 
-import type React from 'react';
-import { useState } from 'react';
+import { isArray, isEmpty } from 'lodash-es';
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import React, { useState } from 'react';
 import { configCombinationDefaultValues } from '@sherifforg/constants';
 import type {
   ServerResponse,
   SheriffConfigurablePlugins,
 } from '@sherifforg/types';
 import { useQuery } from '@tanstack/react-query';
+import { filterDuplicateRules } from '@/lib/filterDuplicatedRules';
 import { ConfigCombinationForm } from './ConfigCombinationForm';
 import { columns, type RuleEntry } from './custom-table/columns';
 import { DataTable } from './custom-table/data-table';
-import { isArray, isEmpty } from 'lodash-es';
-import { filterDuplicateRules } from '@/lib/filterDuplicatedRules';
 import { RulesTableSkeleton } from './RulesTableSkeleton';
 
 export const RulesTable: React.FC = () => {
