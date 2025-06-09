@@ -6,6 +6,7 @@ import {
   DocsPage,
   DocsTitle,
 } from 'fumadocs-ui/page';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getLastUpdate } from '@/lib/getLastUpdate';
 import { blog } from '@/lib/source';
@@ -69,7 +70,7 @@ export function generateStaticParams(): { slug: string }[] {
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   const params = await props.params;
   const page = blog.getPage([params.slug]);
 
@@ -77,8 +78,17 @@ export async function generateMetadata(props: {
     notFound();
   }
 
+  const image = `/blog-og/${params.slug}-image.png`;
+
   return {
     title: page.data.title,
     description: page.data.description,
+    openGraph: {
+      images: image,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: image,
+    },
   };
 }
