@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import {
   DocsBody,
@@ -13,11 +12,13 @@ import { blog } from '@/lib/source';
 // Link component can be re-added later if a "Back to blog" is needed manually
 // import Link from 'next/link';
 
-export default async function Page(props: {
+export default async function Page({
+  params,
+}: {
   params: Promise<{ slug: string }>;
 }) {
-  const params = await props.params;
-  const page = blog.getPage([params.slug]);
+  const { slug } = await params;
+  const page = blog.getPage([slug]);
 
   if (!page) {
     notFound();
@@ -68,17 +69,19 @@ export function generateStaticParams(): { slug: string }[] {
   });
 }
 
-export async function generateMetadata(props: {
+export async function generateMetadata({
+  params,
+}: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const params = await props.params;
-  const page = blog.getPage([params.slug]);
+  const { slug } = await params;
+  const page = blog.getPage([slug]);
 
   if (!page) {
     notFound();
   }
 
-  const image = `/blog-og/${params.slug}-image.png`;
+  const image = `/blog-og/${slug}-image.png`;
 
   return {
     title: page.data.title,

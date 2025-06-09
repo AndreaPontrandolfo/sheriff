@@ -58,7 +58,7 @@ export function IntegrationsSection() {
   const centerIconSize = 32;
 
   return (
-    <section className="py-20">
+    <section className="px-6 py-20 sm:px-0">
       <HPSectionStart
         title="Batteries included"
         description="Sheriff is the ultimate culmination of the ESLint ecosystem. It is designed to be an all-in-one solution. Forget about dependency management hell. Everything you need is already built-in."
@@ -66,7 +66,7 @@ export function IntegrationsSection() {
         buttonLink="/docs/techs"
       />
 
-      <div className="mx-auto max-w-2xl px-6 md:max-w-5xl">
+      <div className="mx-auto max-w-2xl md:max-w-5xl">
         <div
           className="relative mx-auto flex items-center justify-between md:max-w-sm"
           ref={containerRef}

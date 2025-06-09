@@ -85,69 +85,72 @@ const thirdRow = features.slice(rowSize * 2);
 
 export function FeaturesSection() {
   return (
-    <section className="relative py-20">
+    <section className="py-20">
       <HPSectionStart
         title="A different ESLint Config"
         description="Sheriff is a complete rethinking of the DevEx a modern ESLint config should provide."
         buttonText="Learn what makes Sheriff different"
         buttonLink="/docs/features"
+        className="px-6 sm:px-0"
       />
-      <Marquee pauseOnHover className="[--duration:80s]">
-        {firstRow.map((feature) => {
-          return (
-            <div
-              key={feature.title}
-              className="relative min-h-48 max-w-64 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-100 to-white p-6 dark:from-neutral-900 dark:to-neutral-950"
-            >
-              <Grid size={20} />
-              <p className="relative z-20 text-base font-bold text-neutral-800 dark:text-white">
-                {feature.title}
-              </p>
-              <p className="relative z-20 mt-4 text-base font-normal text-neutral-600 dark:text-neutral-400">
-                {feature.description}
-              </p>
-            </div>
-          );
-        })}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:80s]">
-        {secondRow.map((feature) => {
-          return (
-            <div
-              key={feature.title}
-              className="relative min-h-48 max-w-64 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-100 to-white p-6 dark:from-neutral-900 dark:to-neutral-950"
-            >
-              <Grid size={20} />
-              <p className="relative z-20 text-base font-bold text-neutral-800 dark:text-white">
-                {feature.title}
-              </p>
-              <p className="relative z-20 mt-4 text-base font-normal text-neutral-600 dark:text-neutral-400">
-                {feature.description}
-              </p>
-            </div>
-          );
-        })}
-      </Marquee>
-      <Marquee pauseOnHover className="[--duration:80s]">
-        {thirdRow.map((feature) => {
-          return (
-            <div
-              key={feature.title}
-              className="relative min-h-48 max-w-64 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-100 to-white p-6 dark:from-neutral-900 dark:to-neutral-950"
-            >
-              <Grid size={20} />
-              <p className="relative z-20 text-base font-bold text-neutral-800 dark:text-white">
-                {feature.title}
-              </p>
-              <p className="relative z-20 mt-4 text-base font-normal text-neutral-600 dark:text-neutral-400">
-                {feature.description}
-              </p>
-            </div>
-          );
-        })}
-      </Marquee>
-      <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r"></div>
-      <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l"></div>
+      <div className="relative">
+        <Marquee pauseOnHover className="[--duration:80s]">
+          {firstRow.map((feature) => {
+            return (
+              <div
+                key={feature.title}
+                className="relative min-h-48 max-w-64 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-100 to-white p-6 dark:from-neutral-900 dark:to-neutral-950"
+              >
+                <Grid size={20} />
+                <p className="relative z-20 text-base font-bold text-neutral-800 dark:text-white">
+                  {feature.title}
+                </p>
+                <p className="relative z-20 mt-4 text-base font-normal text-neutral-600 dark:text-neutral-400">
+                  {feature.description}
+                </p>
+              </div>
+            );
+          })}
+        </Marquee>
+        <Marquee reverse pauseOnHover className="[--duration:80s]">
+          {secondRow.map((feature) => {
+            return (
+              <div
+                key={feature.title}
+                className="relative min-h-48 max-w-64 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-100 to-white p-6 dark:from-neutral-900 dark:to-neutral-950"
+              >
+                <Grid size={20} />
+                <p className="relative z-20 text-base font-bold text-neutral-800 dark:text-white">
+                  {feature.title}
+                </p>
+                <p className="relative z-20 mt-4 text-base font-normal text-neutral-600 dark:text-neutral-400">
+                  {feature.description}
+                </p>
+              </div>
+            );
+          })}
+        </Marquee>
+        <Marquee pauseOnHover className="[--duration:80s]">
+          {thirdRow.map((feature) => {
+            return (
+              <div
+                key={feature.title}
+                className="relative min-h-48 max-w-64 overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-100 to-white p-6 dark:from-neutral-900 dark:to-neutral-950"
+              >
+                <Grid size={20} />
+                <p className="relative z-20 text-base font-bold text-neutral-800 dark:text-white">
+                  {feature.title}
+                </p>
+                <p className="relative z-20 mt-4 text-base font-normal text-neutral-600 dark:text-neutral-400">
+                  {feature.description}
+                </p>
+              </div>
+            );
+          })}
+        </Marquee>
+        <div className="from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r"></div>
+        <div className="from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l"></div>
+      </div>
     </section>
   );
 }

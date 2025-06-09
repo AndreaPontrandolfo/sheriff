@@ -11,12 +11,13 @@ import { getLastUpdate } from '@/lib/getLastUpdate';
 import { source } from '@/lib/source';
 import { getMDXComponents } from '@/mdx-components';
 
-export default async function Page(props: {
+export default async function Page({
+  params,
+}: {
   params: Promise<{ slug?: string[] }>;
 }) {
-  const { params } = await props;
-  // @ts-expect-error
-  const page = source.getPage(params.slug);
+  const { slug } = await params;
+  const page = source.getPage(slug);
 
   if (!page) {
     notFound();
@@ -51,17 +52,19 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(props: {
+export async function generateMetadata({
+  params,
+}: {
   params: Promise<{ slug?: string[] }>;
 }): Promise<Metadata> {
-  const params = await props.params;
-  const page = source.getPage(params.slug);
+  const { slug } = await params;
+  const page = source.getPage(slug);
 
   if (!page) {
     notFound();
   }
 
-  const image = ['/docs-og', ...(params.slug ?? []), 'image.png'].join('/');
+  const image = ['/docs-og', ...(slug ?? []), 'image.png'].join('/');
 
   return {
     title: page.data.title,

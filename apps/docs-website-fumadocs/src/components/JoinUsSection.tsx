@@ -3,7 +3,7 @@ import { HPSectionStart } from './HPSectionStart';
 
 export function JoinUsSection() {
   return (
-    <section className="py-20">
+    <section className="pt-20 md:pb-8">
       <HPSectionStart title="Join the revolution" />
       <StargazerSection />
     </section>

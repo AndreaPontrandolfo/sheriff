@@ -21,7 +21,7 @@ const features = [
 
 export function EcosystemSection() {
   return (
-    <section className="py-20">
+    <section className="px-6 py-20 sm:px-0">
       <HPSectionStart
         title="Beyond a config"
         description="Just a config if you want. A whole ecosystem if you need it."

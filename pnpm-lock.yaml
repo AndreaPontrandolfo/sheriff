@@ -329,12 +329,6 @@ importers:
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@19.1.0)
-      remark-reading-time:
-        specifier: ^2.0.2
-        version: 2.0.2
-      shiki:
-        specifier: 3.4.2
-        version: 3.4.2
       tailwind-merge:
         specifier: ^3.3.0
         version: 3.3.0
@@ -396,6 +390,12 @@ importers:
       remark-mdx:
         specifier: ^3.1.0
         version: 3.1.0
+      remark-reading-time:
+        specifier: ^2.0.2
+        version: 2.0.2
+      shiki:
+        specifier: 3.4.2
+        version: 3.4.2
       tailwindcss:
         specifier: ^4.1.8
         version: 4.1.8

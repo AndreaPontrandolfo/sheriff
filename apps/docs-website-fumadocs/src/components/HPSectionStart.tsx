@@ -12,6 +12,7 @@ interface HPSectionStartProps {
   description?: string;
   buttonText?: string;
   buttonLink?: string;
+  className?: string;
 }
 
 export function HPSectionStart({
@@ -19,12 +20,14 @@ export function HPSectionStart({
   description,
   buttonText,
   buttonLink,
+  className,
 }: HPSectionStartProps) {
   return (
     <div
       className={cn(
         'mx-auto max-w-lg space-y-6 text-center',
         buttonText && buttonLink ? 'mb-20' : 'mb-10',
+        className,
       )}
     >
       <HPSectionTitle title={title} />
