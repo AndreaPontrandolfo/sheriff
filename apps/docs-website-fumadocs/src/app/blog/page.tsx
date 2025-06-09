@@ -1,13 +1,21 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { blog } from '@/lib/source';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description:
+    'Latest updates, announcements and technical deep-dives from the eslint-config-sheriff project.',
+};
 
 export default function Home() {
   const posts = blog.getPages();
 
   return (
     <main className="container mx-auto grow px-4 py-8">
-      <h1 className="mb-8 text-4xl font-bold">Latest Blog Posts</h1>
+      <h1 className="mb-8 text-4xl font-bold">Blog</h1>
+      <h2 className="mb-4 text-2xl font-semibold">Latest Posts</h2>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => {
           return (
