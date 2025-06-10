@@ -11,7 +11,7 @@ interface TableEntry {
   'Incremental adoption': '✅' | '❌';
   'Typesafe config': '✅' | '❌';
   Scaffolder: '✅' | '❌';
-  'Self checking in CI': '✅' | '❌';
+  Doctor: '✅' | '❌';
   Typescript: '✅' | '❌';
   React: '✅' | '❌';
   Vue: '✅' | '❌';
@@ -58,7 +58,7 @@ const entriesTable: EntriesTable = {
     'Incremental adoption': '✅',
     'Typesafe config': '✅',
     Scaffolder: '✅',
-    'Self checking in CI': '✅',
+    Doctor: '✅',
     Typescript: '✅',
     React: '✅',
     Vue: '❌',
@@ -91,7 +91,7 @@ const entriesTable: EntriesTable = {
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '❌',
     React: '✅',
     Vue: '❌',
@@ -124,7 +124,7 @@ const entriesTable: EntriesTable = {
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '❌',
     React: '❌',
     Vue: '❌',
@@ -157,7 +157,7 @@ const entriesTable: EntriesTable = {
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '❌',
     React: '❌',
     Vue: '❌',
@@ -190,7 +190,7 @@ const entriesTable: EntriesTable = {
     'Incremental adoption': '❌',
     'Typesafe config': '✅',
     Scaffolder: '✅',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '✅',
     React: '✅',
     Vue: '✅',
@@ -223,7 +223,7 @@ const entriesTable: EntriesTable = {
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '✅',
     React: '✅',
     Vue: '✅',
@@ -256,7 +256,7 @@ const entriesTable: EntriesTable = {
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '✅',
     React: '✅',
     Vue: '❌',
@@ -289,7 +289,7 @@ const entriesTable: EntriesTable = {
     'Incremental adoption': '✅',
     'Typesafe config': '❌',
     Scaffolder: '✅',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '✅',
     React: '✅',
     Vue: '✅',
@@ -322,7 +322,7 @@ const entriesTable: EntriesTable = {
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '✅',
     React: '✅',
     Vue: '✅',

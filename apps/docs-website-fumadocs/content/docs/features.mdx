@@ -5,17 +5,15 @@ icon: BsStars
 ---
 
 import { HiMiniBattery100 } from "react-icons/hi2";
-import { FaUnlockAlt } from "react-icons/fa";
-import { FaHandshake } from "react-icons/fa6";
+import { FaUnlockAlt, FaMountain } from "react-icons/fa";
+import { FaHandshake, FaUserDoctor } from "react-icons/fa6";
 import { PiInfinityBold } from "react-icons/pi";
 import { RiDrinks2Fill } from "react-icons/ri";
-import { FaMountain } from "react-icons/fa";
-import { MdStraighten } from "react-icons/md";
 import { BiLogoTypescript } from "react-icons/bi";
-import {  BsFillGearFill } from 'react-icons/bs';
 import { SiSemver } from "react-icons/si";
-import { MdViewModule } from "react-icons/md";
-import { BsIntersect } from "react-icons/bs";
+import { BsIntersect, BsFillGearFill } from "react-icons/bs";
+import { MdViewModule, MdStraighten } from "react-icons/md";
+import { TbBarrierBlock } from "react-icons/tb";
 
 
 <Cards>
@@ -28,7 +26,7 @@ import { BsIntersect } from "react-icons/bs";
   </Card>
 
   <Card title="No lock-in" icon={<FaUnlockAlt />}>
-    Sheriff has extended capabilities beyond being a simple eslint config, but it's **not** a framework. You can extend the `eslint.config.js` beyond Sheriff as much as you like, just like you normally would. Or you can disable any rule Sheriff comes with. Sheriff doesn't impose any limitation. See: [configuration](./configuration.mdx)
+    Sheriff has extended capabilities beyond being a simple ESLint config, but it's **not** a framework. You can extend the `eslint.config.mjs` beyond Sheriff as much as you like, just like you normally would. Or you can disable any rule Sheriff comes with. Sheriff doesn't impose any limitation. See: [configuration](./configuration.mdx)
   </Card>
 
   <Card title="Sheriff meets you where you are at" icon={<FaHandshake />}>
@@ -36,11 +34,11 @@ import { BsIntersect } from "react-icons/bs";
   </Card>
 
   <Card title="Frictionless by design" icon={<RiDrinks2Fill />}>
-    To setup Sheriff and take off, the only input required from the user is running the `pnpm create @sherifforg/config` command. The command will automatically infer the details of your project and figure out the optimal Sheriff configuration by itself
+    To setup Sheriff and take off, the only input required from the user is running the [Scaffolder](/docs/cli-usage/scaffolder). It will automatically infer the details of your project and figure out the optimal Sheriff configuration by itself
   </Card>
 
   <Card title="Interoperability" icon={<BsIntersect />}>
-    You can plop Sheriff in your project at any moment. `pnpm create @sherifforg/config` will configure automatically everything for you and will warn you if you need to take any special precautions. Bottom line: it's never too late to install Sheriff
+    You can plop Sheriff in your project at any moment. The [Scaffolder](/docs/cli-usage/scaffolder) will configure automatically everything for you and will warn you if you need to take any special precautions. Bottom line: it's never too late to install Sheriff
   </Card>
 
   <Card title="Cutting-edge" icon={<FaMountain />}>
@@ -61,6 +59,14 @@ import { BsIntersect } from "react-icons/bs";
 
   <Card title="Modular" icon={<MdViewModule />}>
     Sheriff has opt-in support for a [wide array of libraries](./techs.md)
+  </Card>
+
+  <Card title="The Doctor" icon={<FaUserDoctor />}>
+    Sheriff provides a [diagnostic tool](/docs/cli-usage/doctor) that helps you maintain your Sheriff configuration and spot inconsistencies. It can easily b run on CI.
+  </Card>
+
+  <Card title="Preconfigured ignores" icon={<TbBarrierBlock />}>
+    Sheriff comes with sensible default ignore patterns out-of-the-box, that also incorporate your `.gitignore` file, so you don't have to worry about excluding common build artifacts, dependencies, and generated files from linting
   </Card>
 
   <Card title="SemVer" icon={<SiSemver />}>

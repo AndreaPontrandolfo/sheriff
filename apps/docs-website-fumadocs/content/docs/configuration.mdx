@@ -19,7 +19,7 @@ import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 
 The `eslint-config-sheriff` package exports a `sheriff` function.<br />
 You can configure Sheriff as desired using a simple javascript object as the first input parameter of the `sheriff` function.<br />
-Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with `pnpm create @sherifforg/config` some of these values will be inferred automatically from your project.
+Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with the [Scaffolder](/docs/cli-usage/scaffolder) some of these values will be inferred automatically from your project.
 
 <Tabs items={["JS", "TS"]}>
   <Tab value="JS">
@@ -66,7 +66,7 @@ export default tseslint.config(sheriff(sheriffOptions));
 
 ## Remodeling
 
-You can override any Sheriff rule as desired in the `eslint.config.js` file.
+You can override any Sheriff rule as desired in the `eslint.config.mjs` file.
 
 For example, let's say you want to disable a Sheriff rule, like `import/first`:
 

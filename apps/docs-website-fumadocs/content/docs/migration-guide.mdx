@@ -8,17 +8,19 @@ import { Callout } from "fumadocs-ui/components/callout";
 import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Steps, Step } from 'fumadocs-ui/components/steps';
 
+## Step-by-step instructions
+
 If you are setting up Sheriff in an already established codebase, follow these steps:
 
 <Steps>
   <Step>
-  Start by running the `pnpm create @sherifforg/config` command and follow the advices that it prints in the console
+  Start by running the [Scaffolder](/docs/cli-usage/scaffolder) and follow the advices that it prints in the console
   </Step>
   <Step>
-  Make sure that the only ESLint config file present in any workspace's package is the `eslint.config.js`
+  Make sure that the only ESLint config file present in any workspace's package is the `eslint.config.mjs`
   </Step>
   <Step>
-  If you want to keep your existing custom rules on-top of Sheriff, move them to the `eslint.config.js`, after the `sheriff` function, so they will override it. Refer to the [configuration instructions](./configuration.mdx)
+  If you want to keep your existing custom rules on-top of Sheriff, move them to the `eslint.config.mjs`, after the `sheriff` function, so they will override it. Refer to the [configuration instructions](./configuration.mdx)
   </Step>
   <Step>
   Make sure to uninstall all the packages that Sheriff already incorporates out-of-the-box. [Here](./eslint-plugins.md) is the list
@@ -29,9 +31,9 @@ If you are setting up Sheriff in an already established codebase, follow these s
 
 In massive codebases it can be troublesome to adapt to all these rules all at once. It is preferable to progressively fix the errors at your own pace, possibly with atomic commits and focused PRs.
 
-You can achieve this by leveraging 2 techniques:
+You can achieve this by leveraging a few techniques:
 
-- open the `eslint.config.js` file and add a key `files` in the `sheriffOptions` object. The value accepts an array of filepaths, dictated by [minimatch](https://github.com/isaacs/minimatch) syntax. Only the matching files found in this array will be linted.
+- open the `eslint.config.mjs` file and add a key `files` in the `sheriffOptions` object. The value accepts an array of filepaths, dictated by [minimatch](https://github.com/isaacs/minimatch) syntax. Only the matching files found in this array will be linted.
 
   See example below:
 
@@ -83,7 +85,8 @@ export default tseslint.config(sheriff(sheriffOptions));
 </Tabs>
 
 <Callout title="Tip">
-By default, the [automatic setup process](./setup/automatic-setup.mdx) will not add the `files` in the object and every js/ts file will be linted. Use this only if you want to specifically lint just a subsection of the codebase.
+By default, the [Scaffolder](/docs/cli-usage/scaffolder) will not add the `files` in the object and every js/ts file will be linted. Use this only if you want to specifically lint just a subsection of the codebase.
 </Callout>
 
 - use [eslint-interactive](https://github.com/mizdra/eslint-interactive)
+- use [ESLint Bulk Suppressions](https://eslint.org/docs/latest/use/suppressions)
