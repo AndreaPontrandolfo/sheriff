@@ -9,7 +9,9 @@
   "ignoreDependencies": [
     "@turbo/gen",
     "eslint-import-resolver-typescript",
-    "eslint-config-sheriff",
     "@typescript-eslint/parser",
+    "@sherifforg/cli",
+    "@sherifforg/create-config",
   ],
+  "treatConfigHintsAsErrors": true,
 }

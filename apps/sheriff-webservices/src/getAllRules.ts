@@ -13,6 +13,7 @@ import playwright from 'eslint-plugin-playwright';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import reactYouMightNotNeedAnEffect from 'eslint-plugin-react-you-might-not-need-an-effect';
 import * as regexpPlugin from 'eslint-plugin-regexp';
 import remedaPlugin from 'eslint-plugin-remeda';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
@@ -49,6 +50,10 @@ export const getAllRules = (
     ...prependRulesWithPluginName(
       (rel1cxReact as unknown as Plugin).rules,
       '@eslint-react',
+    ),
+    ...prependRulesWithPluginName(
+      reactYouMightNotNeedAnEffect.rules,
+      'react-you-might-not-need-an-effect',
     ),
     ...prependRulesWithPluginName(fsecond.rules, 'fsecond'),
   };

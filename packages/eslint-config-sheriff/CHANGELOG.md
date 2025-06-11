@@ -1,5 +1,21 @@
 # eslint-config-sheriff
 
+## 28.0.0
+
+### Major Changes
+
+- e64b713: feat(config): added no-unassigned-vars and react-you-might-not-need-an-effect
+
+### Minor Changes
+
+- a418973: feat: bumped some deps
+- e14e7b8: feat(deps): updated and pinned eslint-plugin-remeda. Fixes [#393](https://github.com/AndreaPontrandolfo/sheriff/issues/393)
+
+### Patch Changes
+
+- dcea3f8: AndreaPontrandolfo/issue401
+  bump
+
 ## 27.1.0
 
 ### Minor Changes

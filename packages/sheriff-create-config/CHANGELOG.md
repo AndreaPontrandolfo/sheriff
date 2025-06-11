@@ -1,5 +1,11 @@
 # @sherifforg/cli
 
+## 9.8.0
+
+### Minor Changes
+
+- a418973: feat: bumped some deps
+
 ## 9.7.1
 
 ### Patch Changes
