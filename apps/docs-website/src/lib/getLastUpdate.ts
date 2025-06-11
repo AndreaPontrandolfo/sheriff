@@ -6,7 +6,7 @@ export async function getLastUpdate(page: Page): Promise<Date | null> {
     const lastUpdate = await getGithubLastEdit({
       owner: 'AndreaPontrandolfo',
       repo: 'sheriff',
-      path: `apps/docs-website-fumadocs/${page.file.path}`,
+      path: `apps/docs-website/${page.file.path}`,
     });
 
     return lastUpdate;

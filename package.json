@@ -2,7 +2,7 @@
   "name": "sheriff-monorepo",
   "private": true,
   "scripts": {
-    "dev": "turbo run build:watch docs-website-fumadocs#dev sheriff-webservices#dev",
+    "dev": "turbo run build:watch docs-website#dev sheriff-webservices#dev",
     "build": "turbo run build",
     "playground": "pnpm --filter=cli-playground exec create-config",
     "playground:mimic-monorepo": "pnpm exec create-config --filter=cli-playground",

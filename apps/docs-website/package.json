@@ -1,5 +1,5 @@
 {
-  "name": "docs-website-fumadocs",
+  "name": "docs-website",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -33,7 +33,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AndreaPontrandolfo/sheriff.git",
-    "directory": "apps/docs-website-fumadocs"
+    "directory": "apps/docs-website"
   },
   "keywords": [
     "documentation",

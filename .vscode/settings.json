@@ -5,7 +5,6 @@
     "./packages/sheriff-cli",
     "./packages/sheriff-utils",
     "./apps/docs-website",
-    "./apps/docs-website-fumadocs",
     "./apps/sheriff-webservices",
     "./apps/config-validation-playground"
   ],
