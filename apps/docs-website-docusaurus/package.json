@@ -1,5 +1,5 @@
 {
-  "name": "docs-website",
+  "name": "docs-website-docusaurus",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -69,7 +69,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AndreaPontrandolfo/sheriff.git",
-    "directory": "apps/docs-website"
+    "directory": "apps/docs-website-docusaurus"
   },
   "keywords": [
     "documentation",
