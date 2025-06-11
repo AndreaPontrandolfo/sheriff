@@ -26,7 +26,9 @@ export function IntegrationsSection() {
   // This is a specific workaround to resolve a hydration error caused by the dynamic Astro logo.
   const [isMounted, setIsMounted] = useState(false);
 
+  // eslint-disable-next-line react-you-might-not-need-an-effect/you-might-not-need-an-effect
   useEffect(() => {
+    // eslint-disable-next-line react-you-might-not-need-an-effect/you-might-not-need-an-effect
     setIsMounted(true);
   }, []);
   // #endregion
