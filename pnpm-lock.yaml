@@ -136,103 +136,6 @@ importers:
 
   apps/docs-website:
     dependencies:
-      '@docusaurus/core':
-        specifier: 3.6.3
-        version: 3.6.3(@docusaurus/faster@3.7.0(@docusaurus/types@3.7.0(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@swc/helpers@0.5.15))(@mdx-js/react@3.1.0(@types/react@19.1.6)(react@18.3.1))(@rspack/core@1.1.8(@swc/helpers@0.5.15))(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(eslint@9.28.0(jiti@2.4.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)
-      '@docusaurus/faster':
-        specifier: ^3.6.3
-        version: 3.7.0(@docusaurus/types@3.7.0(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@swc/helpers@0.5.15)
-      '@docusaurus/preset-classic':
-        specifier: 3.6.3
-        version: 3.6.3(@algolia/client-search@5.18.0)(@docusaurus/faster@3.7.0(@docusaurus/types@3.7.0(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@swc/helpers@0.5.15))(@mdx-js/react@3.1.0(@types/react@19.1.6)(react@18.3.1))(@rspack/core@1.1.8(@swc/helpers@0.5.15))(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/react@19.1.6)(acorn@8.14.1)(eslint@9.28.0(jiti@2.4.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.17.3)(typescript@5.8.3)
-      '@docusaurus/remark-plugin-npm2yarn':
-        specifier: ^3.6.3
-        version: 3.7.0
-      '@mdx-js/react':
-        specifier: ^3.0.1
-        version: 3.1.0(@types/react@19.1.6)(react@18.3.1)
-      '@sherifforg/constants':
-        specifier: workspace:*
-        version: link:../../packages/sheriff-constants
-      '@tanstack/react-table':
-        specifier: ^8.19.2
-        version: 8.21.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
-      prism-react-renderer:
-        specifier: ^2.4.0
-        version: 2.4.1(react@18.3.1)
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-      react-content-loader:
-        specifier: ^6.2.1
-        version: 6.2.1(react@18.3.1)
-      react-debounce-input:
-        specifier: ^3.3.0
-        version: 3.3.0(react@18.3.1)
-      react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
-      react-hook-form:
-        specifier: ^7.57.0
-        version: 7.57.0(react@18.3.1)
-      react-select:
-        specifier: ^5.7.4
-        version: 5.10.1(@types/react@19.1.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-    devDependencies:
-      '@docusaurus/eslint-plugin':
-        specifier: ^3.6.3
-        version: 3.7.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3)
-      '@docusaurus/module-type-aliases':
-        specifier: 3.6.3
-        version: 3.6.3(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@docusaurus/tsconfig':
-        specifier: ^3.6.3
-        version: 3.7.0
-      '@docusaurus/types':
-        specifier: ^3.6.3
-        version: 3.7.0(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@hookform/devtools':
-        specifier: ^4.3.1
-        version: 4.4.0(@types/react@19.1.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@sherifforg/types':
-        specifier: workspace:*
-        version: link:../../packages/sheriff-types
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
-      '@types/node':
-        specifier: ^22.10.3
-        version: 22.15.2
-      '@types/react':
-        specifier: ^19.1.6
-        version: 19.1.6
-      '@types/react-dom':
-        specifier: ^19.1.6
-        version: 19.1.6(@types/react@19.1.6)
-      eslint:
-        specifier: ^9.25.1
-        version: 9.28.0(jiti@2.4.2)
-      eslint-config-sheriff:
-        specifier: workspace:*
-        version: link:../../packages/eslint-config-sheriff
-      eslint-plugin-mdx:
-        specifier: ^3.1.5
-        version: 3.4.1(eslint@9.28.0(jiti@2.4.2))
-      jiti:
-        specifier: ^2.4.2
-        version: 2.4.2
-      typescript:
-        specifier: ^5.8.3
-        version: 5.8.3
-
-  apps/docs-website-fumadocs:
-    dependencies:
       '@hookform/resolvers':
         specifier: ^5.0.1
         version: 5.0.1(react-hook-form@7.57.0(react@19.1.0))
@@ -405,6 +308,103 @@ importers:
       tw-animate-css:
         specifier: ^1.3.3
         version: 1.3.3
+      typescript:
+        specifier: ^5.8.3
+        version: 5.8.3
+
+  apps/docs-website-docusaurus:
+    dependencies:
+      '@docusaurus/core':
+        specifier: 3.6.3
+        version: 3.6.3(@docusaurus/faster@3.7.0(@docusaurus/types@3.7.0(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@swc/helpers@0.5.15))(@mdx-js/react@3.1.0(@types/react@19.1.6)(react@18.3.1))(@rspack/core@1.1.8(@swc/helpers@0.5.15))(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(eslint@9.28.0(jiti@2.4.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)
+      '@docusaurus/faster':
+        specifier: ^3.6.3
+        version: 3.7.0(@docusaurus/types@3.7.0(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@swc/helpers@0.5.15)
+      '@docusaurus/preset-classic':
+        specifier: 3.6.3
+        version: 3.6.3(@algolia/client-search@5.18.0)(@docusaurus/faster@3.7.0(@docusaurus/types@3.7.0(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@swc/helpers@0.5.15))(@mdx-js/react@3.1.0(@types/react@19.1.6)(react@18.3.1))(@rspack/core@1.1.8(@swc/helpers@0.5.15))(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/react@19.1.6)(acorn@8.14.1)(eslint@9.28.0(jiti@2.4.2))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.17.3)(typescript@5.8.3)
+      '@docusaurus/remark-plugin-npm2yarn':
+        specifier: ^3.6.3
+        version: 3.7.0
+      '@mdx-js/react':
+        specifier: ^3.0.1
+        version: 3.1.0(@types/react@19.1.6)(react@18.3.1)
+      '@sherifforg/constants':
+        specifier: workspace:*
+        version: link:../../packages/sheriff-constants
+      '@tanstack/react-table':
+        specifier: ^8.19.2
+        version: 8.21.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      prism-react-renderer:
+        specifier: ^2.4.0
+        version: 2.4.1(react@18.3.1)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-content-loader:
+        specifier: ^6.2.1
+        version: 6.2.1(react@18.3.1)
+      react-debounce-input:
+        specifier: ^3.3.0
+        version: 3.3.0(react@18.3.1)
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-hook-form:
+        specifier: ^7.57.0
+        version: 7.57.0(react@18.3.1)
+      react-select:
+        specifier: ^5.7.4
+        version: 5.10.1(@types/react@19.1.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+    devDependencies:
+      '@docusaurus/eslint-plugin':
+        specifier: ^3.6.3
+        version: 3.7.0(eslint@9.28.0(jiti@2.4.2))(typescript@5.8.3)
+      '@docusaurus/module-type-aliases':
+        specifier: 3.6.3
+        version: 3.6.3(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@docusaurus/tsconfig':
+        specifier: ^3.6.3
+        version: 3.7.0
+      '@docusaurus/types':
+        specifier: ^3.6.3
+        version: 3.7.0(@swc/core@1.10.1(@swc/helpers@0.5.15))(acorn@8.14.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@hookform/devtools':
+        specifier: ^4.3.1
+        version: 4.4.0(@types/react@19.1.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@sherifforg/types':
+        specifier: workspace:*
+        version: link:../../packages/sheriff-types
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
+      '@types/node':
+        specifier: ^22.10.3
+        version: 22.15.2
+      '@types/react':
+        specifier: ^19.1.6
+        version: 19.1.6
+      '@types/react-dom':
+        specifier: ^19.1.6
+        version: 19.1.6(@types/react@19.1.6)
+      eslint:
+        specifier: ^9.25.1
+        version: 9.28.0(jiti@2.4.2)
+      eslint-config-sheriff:
+        specifier: workspace:*
+        version: link:../../packages/eslint-config-sheriff
+      eslint-plugin-mdx:
+        specifier: ^3.1.5
+        version: 3.4.1(eslint@9.28.0(jiti@2.4.2))
+      jiti:
+        specifier: ^2.4.2
+        version: 2.4.2
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
