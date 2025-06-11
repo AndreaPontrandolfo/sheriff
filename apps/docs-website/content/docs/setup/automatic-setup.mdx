@@ -1,0 +1,28 @@
+---
+title: Automatic setup
+description: Let the Scaffolder handle everything (Recommended)
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+
+<Steps>
+<Step>
+    Just run this command in your terminal:
+
+    ```package-install
+    npm init @sherifforg/config
+    ```
+
+    Visit the [Scaffolder commands reference](/docs/cli-usage/commands-reference#sherifforgcreate-config) for a detailed look at the available options.
+
+    <Callout title="Tip">
+      For monorepos, refer to the extra details in the [monorepo support](/docs/monorepo-support#setup-with-npm-init-sherifforgconfig) guide.
+    </Callout>
+</Step>
+<Step>
+    [Setup VSCode support](/docs/vscode-support) (_optional_)
+</Step>
+</Steps>
+
+...and you are good to go! Happy hacking 🎉

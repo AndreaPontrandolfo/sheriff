@@ -4,9 +4,9 @@ interface DynamicSnippetsListProps {
   paths: string[];
 }
 
-export const DynamicSnippetsList = ({
+export function DynamicSnippetsList({
   paths,
-}: DynamicSnippetsListProps): JSX.Element => {
+}: DynamicSnippetsListProps): JSX.Element {
   return (
     <ul>
       {paths.map((path) => {
@@ -18,4 +18,4 @@ export const DynamicSnippetsList = ({
       })}
     </ul>
   );
-};
+}

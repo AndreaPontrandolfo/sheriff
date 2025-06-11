@@ -4,7 +4,7 @@
     "packages/sheriff-utils",
     "apps/config-validation-playground",
     "apps/cli-playground",
-    "apps/docs-website",
+    "apps/docs-website-docusaurus",
   ],
   "ignoreDependencies": [
     "@turbo/gen",

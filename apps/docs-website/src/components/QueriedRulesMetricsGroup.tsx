@@ -1,5 +1,5 @@
 import type { JSX } from 'react';
-import styles from './QueriedRulesMetricsGroup.module.css';
+import { Separator } from '@radix-ui/react-separator';
 
 interface QueriedRulesMetricsGroupProps {
   totalAvailableRulesAmount: number;
@@ -7,25 +7,27 @@ interface QueriedRulesMetricsGroupProps {
   filteredRulesAmount: number;
 }
 
-export const QueriedRulesMetricsGroup = ({
+export function QueriedRulesMetricsGroup({
   totalAvailableRulesAmount,
   fetchedConfigRulesAmount,
   filteredRulesAmount,
-}: QueriedRulesMetricsGroupProps): JSX.Element => {
+}: QueriedRulesMetricsGroupProps): JSX.Element {
   return (
-    <div className={styles.container}>
+    <div className="flex gap-4">
       <div>
-        <span className={styles.label}>Total available rules: </span>
-        <span className={styles.number}>{totalAvailableRulesAmount}</span>
+        <span>Total available rules: </span>
+        <span className="text-lg font-bold">{totalAvailableRulesAmount}</span>
       </div>
+      <Separator orientation="vertical" className="bg-border w-px" />
       <div>
-        <span className={styles.label}>Current config rules: </span>
-        <span className={styles.number}>{fetchedConfigRulesAmount}</span>
+        <span>Current config rules: </span>
+        <span className="text-lg font-bold">{fetchedConfigRulesAmount}</span>
       </div>
+      <Separator orientation="vertical" className="bg-border w-px" />
       <div>
-        <span className={styles.label}>Filtered rules: </span>
-        <span className={styles.number}>{filteredRulesAmount}</span>
+        <span>Filtered rules: </span>
+        <span className="text-lg font-bold">{filteredRulesAmount}</span>
       </div>
     </div>
   );
-};
+}

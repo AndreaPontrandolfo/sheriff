@@ -1,5 +1,5 @@
 {
-  "$schema": "https://turbo.build/schema.json",
+  "$schema": "./node_modules/turbo/schema.json",
   "globalDependencies": ["**/.env.*local"],
   "ui": "tui",
   "tasks": {
@@ -8,17 +8,16 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".docusaurus/**", "dist/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "build:watch": {
       "cache": false,
       "persistent": true,
-      "outputs": ["dist/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
-    "start": {
+    "dev": {
       "cache": false,
-      "persistent": true,
-      "outputs": ["**/.docusaurus/**/*"]
+      "persistent": true
     },
     "typecheck": {
       "dependsOn": ["^topo", "^build"],

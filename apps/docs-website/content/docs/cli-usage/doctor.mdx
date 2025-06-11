@@ -1,0 +1,132 @@
+---
+title: The Doctor
+description:  Self-lint your Sheriff configuration
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+The Doctor is a diagnostic tool that monitor your Sheriff configuration and ensure it stays up-to-date with your project dependencies.
+
+## Example usecase
+
+Picture this: you kickstart your project and opt for [jest](https://jestjs.io/) as your unit testing solution of choice. You setup Sheriff with the [Scaffolder](/docs/cli-usage/scaffolder) and it automatically enables the `jest` support for your project. All great.
+
+But then, one day, you decide to switch to [vitest](https://vitest.dev/). You update your project dependencies and forget to update your Sheriff configuration.
+
+**Here is where the Doctor comes into picture**: it will catch this mismatch and warn you about it, so you can readily turn off the `jest` support in your Sheriff configuration and turn on the `vitest` support.
+
+All is good again.
+
+## How to run it
+
+<Steps>
+  <Step>
+  To get started, install it in your project:
+
+  ```package-install
+  npm i -D @sherifforg/cli
+  ```
+  </Step>
+  <Step>
+  Add the command to your `package.json` scripts:
+
+  ```json title="package.json"
+  {
+    "scripts": {
+      "sheriff": "sheriff"
+    }
+  }
+  ```
+  </Step>
+  <Step>
+  And then run it:
+
+  ```bash
+  pnpm sheriff
+  ```
+  </Step>
+</Steps>
+
+It is advised to integrate the Doctor in your **CI pipelines**, but you can also integrate it into pre-commit hooks if that's your preference.
+
+## How it works
+
+The `sheriff` command will scan your project dependencies and your Sheriff configuration object. If Sheriff finds some dependencies that don't have the corresponding Sheriff options enabled, it will throw an error.
+
+### Example
+
+```json title="package.json"
+{
+  "name": "my-project",
+  "dependencies": {
+    "react": "^18.3.1",
+  }
+}
+```
+
+<Tabs groupId="tsorjs" items={['JS', 'TS']}>
+  <Tab value="JS">
+```js title="eslint.config.mjs"
+import { sheriff, tseslint } from 'eslint-config-sheriff';
+
+const sheriffOptions = {
+  react: false, // ❌ this will throw an error // [!code word:false]
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+  <Tab value="TS">
+```ts twoslash title="eslint.config.ts"
+import { sheriff, type SheriffSettings, tseslint } from 'eslint-config-sheriff';
+
+const sheriffOptions: SheriffSettings = {
+  react: false, // ❌ this will throw an error // [!code word:false]
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+</Tabs>
+
+<Tabs groupId="tsorjs" items={['JS', 'TS']}>
+  <Tab value="JS">
+```js title="eslint.config.mjs"
+import { sheriff, tseslint } from 'eslint-config-sheriff';
+
+const sheriffOptions = {
+  react: true, // ✅ this will pass // [!code word:true]
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+  <Tab value="TS">
+```ts twoslash title="eslint.config.ts"
+import { sheriff, type SheriffSettings, tseslint } from 'eslint-config-sheriff';
+
+const sheriffOptions: SheriffSettings = {
+  react: true, // ✅ this will pass // [!code word:true]
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+</Tabs>
+
+<Callout type="warn" title="Warning">
+
+The Doctor will scan the config file trying to find a variable named **exactly** `sheriffOptions`. If your configuration object variable is called in any other way, nothing will work. Make sure the variable is named `sheriffOptions`.
+
+</Callout>
+
+## Options
+
+The Doctor is very flexible and offers a variety of options to customize it's behavior. Check out the [API reference](./commands-reference#sherifforgcli) for detailed info on the available options.
+
+You can:
+
+- skip the check for a specific dependency. This is useful in scenarios where the mismatch is intended, meaning that you don't want Sheriff linting support for a specific dependency even if Sheriff support is available
+- let the process finish without throwing erros even if problems with the dependencies are found. In this case the Doctor will just signal problems as warnings

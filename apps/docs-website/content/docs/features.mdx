@@ -1,0 +1,75 @@
+---
+title: Features
+description: Sheriff's key features at a glance
+icon: BsStars
+---
+
+import { HiMiniBattery100 } from "react-icons/hi2";
+import { FaUnlockAlt, FaMountain } from "react-icons/fa";
+import { FaHandshake, FaUserDoctor } from "react-icons/fa6";
+import { PiInfinityBold } from "react-icons/pi";
+import { RiDrinks2Fill } from "react-icons/ri";
+import { BiLogoTypescript } from "react-icons/bi";
+import { SiSemver } from "react-icons/si";
+import { BsIntersect, BsFillGearFill } from "react-icons/bs";
+import { MdViewModule, MdStraighten } from "react-icons/md";
+import { TbBarrierBlock } from "react-icons/tb";
+
+
+<Cards>
+  <Card title="Batteries included" icon={<HiMiniBattery100 />}>
+    Sheriff is a all-in-one solution. You don't need to install or configure separately anything else. Everything is included here
+  </Card>
+
+  <Card title="Seamless" icon={<PiInfinityBold />}>
+    If you know ESLint, you know Sheriff
+  </Card>
+
+  <Card title="No lock-in" icon={<FaUnlockAlt />}>
+    Sheriff has extended capabilities beyond being a simple ESLint config, but it's **not** a framework. You can extend the `eslint.config.mjs` beyond Sheriff as much as you like, just like you normally would. Or you can disable any rule Sheriff comes with. Sheriff doesn't impose any limitation. See: [configuration](./configuration.mdx)
+  </Card>
+
+  <Card title="Sheriff meets you where you are at" icon={<FaHandshake />}>
+    Some other configs bundle linting rules with formatting opinions and impose restrictions on how you should format your code. Sheriff does not. If you want to use Prettier alongside Sheriff, Sheriff provides you with the golden path to do it, if you don't it's ok too!
+  </Card>
+
+  <Card title="Frictionless by design" icon={<RiDrinks2Fill />}>
+    To setup Sheriff and take off, the only input required from the user is running the [Scaffolder](/docs/cli-usage/scaffolder). It will automatically infer the details of your project and figure out the optimal Sheriff configuration by itself
+  </Card>
+
+  <Card title="Interoperability" icon={<BsIntersect />}>
+    You can plop Sheriff in your project at any moment. The [Scaffolder](/docs/cli-usage/scaffolder) will configure automatically everything for you and will warn you if you need to take any special precautions. Bottom line: it's never too late to install Sheriff
+  </Card>
+
+  <Card title="Cutting-edge" icon={<FaMountain />}>
+    Sheriff is one of the first attempts in the wild to adhere to the new eslint configuration format, the `FlatConfig`. You can use Sheriff to easily and safely migrate your project to the new config format without effort. See: [migration guide](./migration-guide.mdx)
+  </Card>
+
+  <Card title="Sensible" icon={<MdStraighten />}>
+    All of the rules that were hand-picked in Sheriff were chosen to counter some problematic real-world scenarios that can occur in production projects and to ensure maximum style consistency. No bloat here. See [criteria](./core-philosophy/criteria.md)
+  </Card>
+
+  <Card title="Typesafe" icon={<BiLogoTypescript />}>
+    The Sheriff configuration file can be typesafe! See: [eslint-config-ts](./typescript-support/eslint-config-ts.mdx)
+  </Card>
+
+  <Card title="Configurable" icon={<BsFillGearFill />}>
+    Sheriff is fully configurable with its own config object. See: [configuration](./configuration.mdx)
+  </Card>
+
+  <Card title="Modular" icon={<MdViewModule />}>
+    Sheriff has opt-in support for a [wide array of libraries](./techs.md)
+  </Card>
+
+  <Card title="The Doctor" icon={<FaUserDoctor />}>
+    Sheriff provides a [diagnostic tool](/docs/cli-usage/doctor) that helps you maintain your Sheriff configuration and spot inconsistencies. It can easily b run on CI.
+  </Card>
+
+  <Card title="Preconfigured ignores" icon={<TbBarrierBlock />}>
+    Sheriff comes with sensible default ignore patterns out-of-the-box, that also incorporate your `.gitignore` file, so you don't have to worry about excluding common build artifacts, dependencies, and generated files from linting
+  </Card>
+
+  <Card title="SemVer" icon={<SiSemver />}>
+    Sheriff [releases](https://github.com/AndreaPontrandolfo/sheriff/releases) follows [Semantic Versioning](https://semver.org/) with [Conventional Commits](https://www.conventionalcommits.org/) standards
+  </Card>
+</Cards>

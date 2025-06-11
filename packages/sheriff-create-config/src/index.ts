@@ -4,7 +4,7 @@
 import { consola } from 'consola';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { CLIOptionsCatalog } from '@sherifforg/constants';
+import { createConfigOptionsReference } from '@sherifforg/constants';
 import packageJson from '../package.json';
 import { askForCustomPath } from './utils/askForCustomPath';
 import { askForEslintTsConfig } from './utils/askForEslintTsConfig';
@@ -20,21 +20,21 @@ const { argv } = yargs(hideBin(process.argv))
   .version(packageJson.version)
   .alias('v', 'version')
   .option('filter', {
-    type: CLIOptionsCatalog.filter.type,
-    description: CLIOptionsCatalog.filter.description,
+    type: createConfigOptionsReference.filter.type,
+    description: createConfigOptionsReference.filter.description,
   })
   .option('typescript', {
-    type: CLIOptionsCatalog.typescript.type,
-    description: CLIOptionsCatalog.typescript.description,
+    type: createConfigOptionsReference.typescript.type,
+    description: createConfigOptionsReference.typescript.description,
   })
   .option('prettier', {
-    type: CLIOptionsCatalog.prettier.type,
-    description: CLIOptionsCatalog.prettier.description,
+    type: createConfigOptionsReference.prettier.type,
+    description: createConfigOptionsReference.prettier.description,
   })
   .option('install-deps', {
-    type: CLIOptionsCatalog['install-deps'].type,
-    description: CLIOptionsCatalog['install-deps'].description,
-    default: CLIOptionsCatalog['install-deps'].default,
+    type: createConfigOptionsReference['install-deps'].type,
+    description: createConfigOptionsReference['install-deps'].description,
+    default: createConfigOptionsReference['install-deps'].default,
   })
   .help()
   .alias('h', 'help');

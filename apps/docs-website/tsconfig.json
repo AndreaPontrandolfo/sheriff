@@ -1,20 +1,29 @@
 {
-  // This file is not used in compilation. It is here just for a nice editor experience.
-  "extends": "@docusaurus/tsconfig",
-  "include": [
-    "src",
-    "blog",
-    "docs",
-    "docusaurus.config.ts",
-    "sidebars.ts",
-    "eslint.config.ts"
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules",
+    "src/components/ui",
+    "src/components/magicui"
   ],
+  "extends": "tsconfig/base.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "strict": true,
-    "types": ["@docusaurus/module-type-aliases"],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "resolveJsonModule": true,
+    "jsx": "preserve",
     "incremental": true,
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
-    "noUncheckedSideEffectImports": true
+    "paths": {
+      "@/.source": ["./.source/index.ts"],
+      "@/*": ["./src/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   }
 }

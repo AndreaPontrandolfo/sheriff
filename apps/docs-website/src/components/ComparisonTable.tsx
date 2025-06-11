@@ -6,12 +6,12 @@ interface TableEntry {
   Customizable: '✅' | '❌';
   'Rich docs': '✅' | '❌';
   'Functional programming': '✅' | '❌';
-  'Advanced ignores management': '✅' | '❌';
+  'Preconfigured ignores': '✅' | '❌';
   'Learning curve': '😔' | '😐' | '😊';
   'Incremental adoption': '✅' | '❌';
   'Typesafe config': '✅' | '❌';
   Scaffolder: '✅' | '❌';
-  'Self checking in CI': '✅' | '❌';
+  Doctor: '✅' | '❌';
   Typescript: '✅' | '❌';
   React: '✅' | '❌';
   Vue: '✅' | '❌';
@@ -53,12 +53,12 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '✅',
-    'Advanced ignores management': '✅',
+    'Preconfigured ignores': '✅',
     'Learning curve': '😊',
     'Incremental adoption': '✅',
     'Typesafe config': '✅',
     Scaffolder: '✅',
-    'Self checking in CI': '✅',
+    Doctor: '✅',
     Typescript: '✅',
     React: '✅',
     Vue: '❌',
@@ -86,12 +86,12 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '❌',
     React: '✅',
     Vue: '❌',
@@ -119,12 +119,12 @@ const entriesTable: EntriesTable = {
     Customizable: '❌',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '❌',
     React: '❌',
     Vue: '❌',
@@ -152,12 +152,12 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '❌',
     'Functional programming': '❌',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '❌',
     React: '❌',
     Vue: '❌',
@@ -185,12 +185,12 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '✅',
+    'Preconfigured ignores': '✅',
     'Learning curve': '😔',
     'Incremental adoption': '❌',
     'Typesafe config': '✅',
     Scaffolder: '✅',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '✅',
     React: '✅',
     Vue: '✅',
@@ -218,12 +218,12 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '✅',
+    'Preconfigured ignores': '✅',
     'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '✅',
     React: '✅',
     Vue: '✅',
@@ -251,12 +251,12 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😔',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '✅',
     React: '✅',
     Vue: '❌',
@@ -284,12 +284,12 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '❌',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😔',
     'Incremental adoption': '✅',
     'Typesafe config': '❌',
     Scaffolder: '✅',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '✅',
     React: '✅',
     Vue: '✅',
@@ -317,12 +317,12 @@ const entriesTable: EntriesTable = {
     Customizable: '✅',
     'Rich docs': '✅',
     'Functional programming': '✅',
-    'Advanced ignores management': '❌',
+    'Preconfigured ignores': '❌',
     'Learning curve': '😐',
     'Incremental adoption': '❌',
     'Typesafe config': '❌',
     Scaffolder: '❌',
-    'Self checking in CI': '❌',
+    Doctor: '❌',
     Typescript: '✅',
     React: '✅',
     Vue: '✅',
@@ -346,7 +346,7 @@ const entriesTable: EntriesTable = {
   },
 };
 
-export const ComparisonTable = (): JSX.Element => {
+export function ComparisonTable(): JSX.Element {
   return (
     <table>
       <thead>
@@ -379,4 +379,4 @@ export const ComparisonTable = (): JSX.Element => {
       </tbody>
     </table>
   );
-};
+}

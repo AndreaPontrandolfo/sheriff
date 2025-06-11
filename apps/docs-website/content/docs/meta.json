@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "introduction",
+    "features",
+    "core-philosophy",
+    "techs",
+    "setup",
+    "requirements",
+    "eslint-plugins",
+    "rules",
+    "configuration",
+    "prettier-support",
+    "vscode-support",
+    "monorepo-support",
+    "typescript-support",
+    "cli-usage",
+    "performance-tips",
+    "migration-guide",
+    "prior-art",
+    "faq",
+    "troubleshooting",
+    "[LuCalendarDays][Changelog](https://github.com/AndreaPontrandolfo/sheriff/releases)",
+    "..."
+  ]
+}

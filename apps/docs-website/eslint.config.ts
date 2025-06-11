@@ -1,14 +1,13 @@
 import { sheriff, type SheriffSettings, tseslint } from 'eslint-config-sheriff';
-import { createRemarkProcessor, flat, flatCodeBlocks } from 'eslint-plugin-mdx';
-import docusaurusEslintPlugin from '@docusaurus/eslint-plugin';
 
 const sheriffOptions: SheriffSettings = {
   react: true,
   lodash: true,
   remeda: false,
-  next: false,
+  next: true,
   astro: false,
   playwright: false,
+  storybook: true,
   jest: false,
   vitest: false,
 };
@@ -16,50 +15,26 @@ const sheriffOptions: SheriffSettings = {
 export default tseslint.config(
   sheriff(sheriffOptions),
   {
-    files: ['*.tsx', '*.ts'], // .mdx?
-    plugins: {
-      '@docusaurus': docusaurusEslintPlugin,
-    },
     rules: {
-      '@docusaurus/no-untranslated-text': 0, // enable when we have translations
-      '@docusaurus/string-literal-i18n-messages': 0, // enable when we have translations,
-      '@docusaurus/no-html-links': 2,
-      '@docusaurus/prefer-docusaurus-heading': 2,
+      'func-style': 0,
+      'no-negated-condition': 0,
+      'no-nested-ternary': 0,
+      '@typescript-eslint/explicit-module-boundary-types': 0,
+      '@typescript-eslint/restrict-template-expressions': 0,
+      '@typescript-eslint/await-thenable': 0,
+      '@typescript-eslint/no-unsafe-argument': 0,
+      '@typescript-eslint/require-await': 0,
+      '@typescript-eslint/no-explicit-any': 0,
+      '@typescript-eslint/no-unsafe-call': 0,
+      '@typescript-eslint/no-unsafe-member-access': 0,
+      '@typescript-eslint/restrict-plus-operands': 0,
+      '@typescript-eslint/naming-convention': 0,
+      '@typescript-eslint/no-unnecessary-condition': 0,
+      'react/function-component-definition': 0,
+      'lodash-f/prefer-lodash-typecheck': 0,
     },
   },
   {
-    ...flat,
-    processor: createRemarkProcessor({
-      lintCodeBlocks: false,
-      languageMapper: {},
-    }),
-  },
-  {
-    ...flatCodeBlocks,
-    rules: {
-      ...flatCodeBlocks.rules,
-    },
-  },
-  {
-    files: ['**/*ts', '**/*tsx'],
-    rules: {
-      'sonarjs/no-duplicate-string': 0,
-      '@typescript-eslint/no-misused-promises': [
-        2,
-        {
-          checksVoidReturn: {
-            attributes: false,
-          },
-        },
-      ],
-    },
-  },
-  {
-    ignores: [
-      '.docusaurus/**/*',
-      '.turbo/**/*',
-      'babel.config.js',
-      'CHANGELOG.md',
-    ],
+    ignores: ['src/components/ui/**/*', 'src/components/magicui/**/*', '*.mjs'],
   },
 );

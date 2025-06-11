@@ -1,11 +1,10 @@
 ---
-sidebar_position: 15
+title: Performance Tips
+description: Tips for improving ESLint performance when using Sheriff
+icon: IoFlash
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
-# ⚡ Performance tips
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 
 Depending on the device you are operating on, in-editor performance can be a concern with Sheriff. <br />
 `@typescript-eslint` can be particularly taxing on the system, so, some performance considerations are in order.
@@ -18,8 +17,8 @@ The currently known slowest rules in Sheriff are the ones of `@typescript-eslint
 
 You can benchmark rules performance by yourself by running the following command in the terminal:
 
-```bash npm2yarn
-TIMING=1 npx eslint
+```bash
+TIMING=1 pnpm dlx eslint
 ```
 
 Learn more in the [ESLint official docs section](https://eslint.org/docs/latest/extend/custom-rules#profile-rule-performance).
@@ -39,10 +38,10 @@ This approach has a little more overhead, but you could try to run the heaviest 
 
 Here is an example on how you can achieve it:
 
-<Tabs groupId="tsorjs">
-  <TabItem value="JS" label="JS">
+<Tabs groupId="tsorjs" items={['JS', 'TS']} persist>
+  <Tab value="JS">
 
-```js title="eslint.config.js"
+```js title="eslint.config.mjs"
 import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
@@ -60,17 +59,16 @@ const sheriffOptions = {
 export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
-      // highlight-next-line
-      "@typescript-eslint/no-misused-promises": process.env.CI ? 2 : 0,
+      "@typescript-eslint/no-misused-promises": process.env.CI ? 2 : 0, // [!code highlight]
     },
   },
 );
 ```
 
-</TabItem>
-<TabItem value="TS" label="TS">
+</Tab>
+<Tab value="TS">
 
-```ts title="eslint.config.ts"
+```ts twoslash title="eslint.config.ts"
 import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
 
 const sheriffOptions: SheriffSettings = {
@@ -88,14 +86,13 @@ const sheriffOptions: SheriffSettings = {
 export default tseslint.config(sheriff(sheriffOptions),
   {
     rules: {
-      // highlight-next-line
-      "@typescript-eslint/no-misused-promises": process.env.CI ? 2 : 0,
+      "@typescript-eslint/no-misused-promises": process.env.CI ? 2 : 0, // [!code highlight]
     },
   },
 );
 ```
 
-  </TabItem>
+  </Tab>
 </Tabs>
 
 This is a tradeoff, as this approach is a DX degradation and could lead to some developer frustration, because perfectly valid code in local environment could instead fail in CI.
@@ -112,13 +109,13 @@ Instead, if your project lives in a monorepo, you can follow [this guide](https:
 
 ### Review glob patterns
 
-ESLint, Typescript and Sheriff use minimatch syntax to handle glob patterns. <br />
+ESLint, Typescript and Sheriff use minimatch syntax to handle glob patterns.
 Wide glob patterns can lead to performance degradation.
 
 Pay special attention to:
 
 - [ESLint files and ignore patterns](https://eslint.org/docs/latest/use/configure/configuration-files-new#specifying-files-and-ignores)
-- [Typescript include and exclude patterns](https://typescript-eslint.io/linting/troubleshooting/performance-troubleshooting/#wide-includes-in-your-tsconfig)
+- [Typescript include and exclude patterns](https://typescript-eslint.io/troubleshooting/typed-linting/performance/#wide-includes-in-your-tsconfig)
 - [Sheriff files options](./configuration#files)
 - [Sheriff pathsOverrides options](./configuration#pathsoverrides)
-  - [wide-globs-in-parseroptionsproject](https://typescript-eslint.io/linting/typed-linting/monorepos/#wide-globs-in-parseroptionsproject)
+  - [wide-globs-in-parseroptionsproject](https://typescript-eslint.io/troubleshooting/typed-linting/monorepos/#wide-globs-in-parseroptionsproject)

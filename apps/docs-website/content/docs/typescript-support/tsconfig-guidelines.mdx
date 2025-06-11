@@ -1,0 +1,108 @@
+---
+title: TSConfig guidelines
+description: Recommended tsconfig.json settings when using Sheriff
+---
+
+import { Tabs } from 'fumadocs-ui/components/tabs';
+import { Tab } from 'fumadocs-ui/components/tabs';
+
+Typescript configuration is a very wide and complex topic. Depending on the environments that you are going to target, setting up correctly a proper `tsconfig.json` can be daunting and time consuming.<br />
+In this section I'll try to illustrate a rundown of the choices that you should make when tweaking a `tsconfig.json` in a modern Typescript project that use Sheriff.
+
+If you don't know much about the `tsconfig.json` and you are uncertain, this can be a good starting point. But in the end you must be sure that the chosen settings fit your project.
+
+## Resources
+
+- in [this project](https://github.com/tsconfig/bases/tree/main) you can find a lot of `TSConfig` examples for different scenarios
+- If you are having hard-to-debug issues, consider using [these debugging tools](https://www.typescriptlang.org/tsconfig#Compiler_Diagnostics_6251)
+- for any doubt, make sure to check out the official [TSConfigs documentation](https://www.typescriptlang.org/tsconfig)
+- [here](https://www.totaltypescript.com/tsconfig-cheat-sheet) you can also find an interesting deep-dive
+
+## Sheriff's TSConfig reference
+
+<Tabs items={['Build with bundler', 'Build with tsc']}>
+  <Tab value="Build with bundler">
+
+```jsonc title="tsconfig.json"
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "build", "coverage"], // this is already a good default. Generally you want to put here build artifacts. Some other possible build artifacts are: "artifacts", "lib"...
+  "compilerOptions": {
+    "target": "es6",
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",
+    "composite": false, // you should enable this only for using TS project references. But they are fairly discourages nowadays.
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "strict": true, // this is required for Sheriff to perform correctly. [!code highlight]
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": false, // this looks nice on paper, but is actually extremely annoying in practice.
+    "noUnusedLocals": false, // this is already covered by Sheriff.
+    "noUnusedParameters": false, // this is already covered by Sheriff.
+    "isolatedModules": true, // this is required for Sheriff to perform correctly. [!code highlight]
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true, // this is required for Sheriff to perform correctly. [!code highlight]
+    "erasableSyntaxOnly": true,
+    "skipLibCheck": true,
+    "allowJs": false,
+    "checkJs": false,
+    "experimentalDecorators": false,
+    "paths": {}, // define here your paths if you want to use absolute paths in your project, which is highly recommended.
+  },
+}
+```
+
+  </Tab>
+  <Tab value="Build with tsc">
+
+```jsonc title="tsconfig.json"
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "build", "coverage"], // this is already a good default. Generally you want to put here build artifacts. Some other possible build artifacts are: "artifacts", "lib"...
+  "compilerOptions": {
+    "target": "es6",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",
+    "composite": false, // you should enable this only for using TS project references. But they are fairly discourages nowadays.
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "strict": true, // this is required for Sheriff to perform correctly. [!code highlight]
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "exactOptionalPropertyTypes": false, // this looks nice on paper, but is actually extremely annoying in practice.
+    "noUnusedLocals": false, // this is already covered by Sheriff.
+    "noUnusedParameters": false, // this is already covered by Sheriff.
+    "isolatedModules": true, // this is required for Sheriff to perform correctly. [!code highlight]
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true, // this is required for Sheriff to perform correctly. [!code highlight]
+    "erasableSyntaxOnly": true,
+    "skipLibCheck": true,
+    "allowJs": false,
+    "checkJs": false,
+    "experimentalDecorators": false,
+    "paths": {}, // define here your paths if you want to use absolute paths in your project, which is highly recommended.
+  },
+}
+```
+
+  </Tab>
+</Tabs>

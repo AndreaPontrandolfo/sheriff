@@ -1,0 +1,20 @@
+{
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": "@docusaurus/tsconfig",
+  "include": [
+    "src",
+    "blog",
+    "docs",
+    "docusaurus.config.ts",
+    "sidebars.ts",
+    "eslint.config.ts"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "types": ["@docusaurus/module-type-aliases"],
+    "incremental": true,
+    "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
+    "noUncheckedSideEffectImports": true
+  }
+}

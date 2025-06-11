@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://www.eslint-config-sheriff.dev">
-      <img src="https://github.com/AndreaPontrandolfo/sheriff/blob/master/apps/docs-website/static/img/sheriff-logo.svg" width="240">
+      <img src="https://github.com/AndreaPontrandolfo/sheriff/blob/master/apps/docs-website/public/img/sheriff-logo.svg" width="240">
     <h1 align="center">Sheriff</h1>
   </a>
   <p align="center">

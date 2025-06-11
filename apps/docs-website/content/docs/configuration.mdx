@@ -1,0 +1,515 @@
+---
+title: Configuration
+description: Straightforward at the start, flexible when you need it
+icon: BsFillGearFill
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { DynamicSnippetsList } from "../../src/components/DynamicSnippetsList";
+import {
+  ignores,
+  sheriffStartingOptions,
+  testsFilePatterns,
+  allJsExtensions
+} from "@sherifforg/constants";
+
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+
+## Base options
+
+The `eslint-config-sheriff` package exports a `sheriff` function.<br />
+You can configure Sheriff as desired using a simple javascript object as the first input parameter of the `sheriff` function.<br />
+Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with the [Scaffolder](/docs/cli-usage/scaffolder) some of these values will be inferred automatically from your project.
+
+<Tabs items={["JS", "TS"]}>
+  <Tab value="JS">
+```js title="eslint.config.mjs"
+import { sheriff, tseslint } from "eslint-config-sheriff";
+
+// Sheriff configuration object
+const sheriffOptions = { // [!code highlight]
+  react: false, // [!code highlight]
+  next: false, // [!code highlight]
+  astro: false, // [!code highlight]
+  lodash: false, // [!code highlight]
+  remeda: false, // [!code highlight]
+  playwright: false, // [!code highlight]
+  storybook: true, // [!code highlight]
+  jest: false, // [!code highlight]
+  vitest: false, // [!code highlight]
+}; // [!code highlight]
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+  <Tab value="TS">
+```ts twoslash title="eslint.config.ts"
+import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
+
+// Sheriff configuration object
+const sheriffOptions: SheriffSettings = { // [!code highlight]
+  react: false, // [!code highlight]
+  next: false, // [!code highlight]
+  astro: false, // [!code highlight]
+  lodash: false, // [!code highlight]
+  remeda: false, // [!code highlight]
+  playwright: false, // [!code highlight]
+  storybook: true, // [!code highlight]
+  jest: false, // [!code highlight]
+  vitest: false, // [!code highlight]
+}; // [!code highlight]
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+</Tabs>
+
+## Remodeling
+
+You can override any Sheriff rule as desired in the `eslint.config.mjs` file.
+
+For example, let's say you want to disable a Sheriff rule, like `import/first`:
+
+<Tabs items={["JS", "TS"]}>
+  <Tab value="JS">
+```js title="eslint.config.mjs"
+import { sheriff, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+};
+
+export default tseslint.config(sheriff(sheriffOptions),
+  {
+    rules: {
+      "import/first": 0, // [!code highlight] 'import/first' is now disabled everywhere.
+    },
+  },
+);
+```
+  </Tab>
+  <Tab value="TS">
+```ts twoslash title="eslint.config.ts"
+import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
+
+const sheriffOptions: SheriffSettings = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+};
+
+export default tseslint.config(sheriff(sheriffOptions),
+  {
+    rules: {
+      "import/first": 0, // [!code highlight] 'import/first' is now disabled everywhere.
+    },
+  },
+);
+```
+  </Tab>
+</Tabs>
+
+Likewise, let's say you want to enable a new rule:
+
+<Tabs items={["JS", "TS"]}>
+  <Tab value="JS">
+```js title="eslint.config.mjs"
+import { sheriff, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+};
+
+export default tseslint.config(sheriff(sheriffOptions),
+  {
+    rules: {
+      "import/first": 2, // [!code highlight] 'import/first' is now enabled everywhere.
+    },
+  },
+);
+```
+  </Tab>
+  <Tab value="TS">
+```ts twoslash title="eslint.config.ts"
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions: SheriffSettings = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+};
+
+export default tseslint.config(sheriff(sheriffOptions),
+  {
+    rules: {
+      "import/first": 2, // [!code highlight] 'import/first' is now enabled everywhere.
+    },
+  },
+);
+```
+  </Tab>
+</Tabs>
+
+This is just the standard behavior of the `FlatConfig` system of ESLint, which is being illustrated here for your convenience. Sheriff doesn't alter this in any way.
+
+For more in-depth information, refer to the [official docs](https://eslint.org/docs/latest/use/configure/configuration-files).
+
+## Advanced options
+
+The upcoming configuration options are meant to be situational, tailored to serve only a niche group of users and designed to address specific use cases. **Use these only if and when you end up needing them**.
+
+### `files`
+
+This option is primarily meant to be used while introducing Sheriff to an existing project.
+
+Learn more in the [Migration guide](./migration-guide.mdx#progressive-adoption-story).
+
+### `ignores`
+
+By default, Sheriff will ignore certain filepaths, but you can choose to opt-out of this behavior.
+
+```ts twoslash
+ignores: {
+  recommended: boolean;
+  inheritedFromGitignore: boolean;
+}
+```
+
+#### `ignores.recommended`
+
+With this option, Sheriff will ignore a list of commonly ignored folders:
+
+<DynamicSnippetsList paths={ignores} />
+
+Example:
+
+<Tabs items={["JS", "TS"]}>
+  <Tab value="JS">
+```js title="eslint.config.mjs"
+import { sheriff, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+  ignores: {
+    recommended: true, // [!code highlight] true by default. False to disable.
+  },
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+  <Tab value="TS">
+```ts twoslash title="eslint.config.ts"
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions: SheriffSettings = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+  ignores: {
+    recommended: true, // [!code highlight] true by default. False to disable.
+  },
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+</Tabs>
+
+#### `ignores.inheritedFromGitignore`
+
+With this option, Sheriff will ignore the same filepaths specified in your `.gitignore` file.
+
+Example:
+
+<Tabs items={["JS", "TS"]}>
+  <Tab value="JS">
+```js title="eslint.config.mjs"
+import { sheriff, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+  ignores: {
+    inheritedFromGitignore: true, // [!code highlight] true by default. False to disable.
+  },
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+  <Tab value="TS">
+```ts twoslash title="eslint.config.ts"
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions: SheriffSettings = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+  ignores: {
+    inheritedFromGitignore: true, // [!code highlight] true by default. False to disable.
+  },
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+</Tabs>
+
+### `pathsOverrides`
+
+As outlined in the [criteria](./core-philosophy/criteria.md) page, Sheriff comes with sensible defaults. However, as your project grows, your team may come across the need to override some of these defaults. This option lets you do just that.
+
+```ts twoslash
+pathsOverrides: {
+  tsconfigLocation: string | string[];
+  tests: string[];
+}
+```
+
+#### `pathsOverrides.tsconfigLocation`
+
+By default, Sheriff will use the `project: true` option to locate the `tsconfig.json` of your project.
+
+But, if you have multiple `tsconfig.json` files in your project (like `tsconfig.json`, `tsconfig.eslint.json`, `tsconfig.node.json`, etc...), you can use this parameter to specify which config Sheriff will pickup.
+
+You can pass it a path as a string (or a list of paths as a array of strings, see: [one-tsconfigjson-per-package](https://typescript-eslint.io/troubleshooting/typed-linting/monorepos#one-tsconfigjson-per-package-and-an-optional-one-in-the-root)).
+
+Example:
+
+<Tabs items={["JS", "TS"]}>
+  <Tab value="JS">
+```js title="eslint.config.mjs"
+import { sheriff, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+  pathsOverrides: {
+    tsconfigLocation: "./tsconfig.eslint.json", // [!code highlight]
+  },
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+  <Tab value="TS">
+```ts twoslash title="eslint.config.ts"
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions: SheriffSettings = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+  pathsOverrides: {
+    tsconfigLocation: "./tsconfig.eslint.json", // [!code highlight]
+  },
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+</Tabs>
+
+#### `pathsOverrides.tests`
+
+By default, Sheriff will apply Jest or Vitest rules only on specific files.
+
+<DynamicCodeBlock lang="ts" code={JSON.stringify(testsFilePatterns, null, 2)} />
+
+This setting overrides this default.
+
+It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax.
+
+Example:
+
+<Tabs items={["JS", "TS"]}>
+  <Tab value="JS">
+```js title="eslint.config.mjs"
+import { sheriff, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+  pathsOverrides: {
+    tests: [ // [!code highlight]
+      "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+      "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+      "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+    ], // [!code highlight]
+  },
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+  <Tab value="TS">
+```ts twoslash title="eslint.config.ts"
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions: SheriffSettings = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+  pathsOverrides: {
+    tests: [ // [!code highlight]
+      "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+      "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+      "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+    ], // [!code highlight]
+  },
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+</Tabs>
+
+#### `pathsOverrides.playwrightTests`
+
+By default, Sheriff will apply Playwright rules only on specific files.
+
+<DynamicCodeBlock lang="ts" code={JSON.stringify(allJsExtensions, null, 2)} />
+
+This setting overrides this default.
+
+It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isaacs/minimatch) syntax.
+
+Example:
+
+<Tabs items={["JS", "TS"]}>
+  <Tab value="JS">
+```js title="eslint.config.mjs"
+import { sheriff, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+  pathsOverrides: {
+    playwrightTests: [ // [!code highlight]
+      "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+      "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+      "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+    ], // [!code highlight]
+  },
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+  <Tab value="TS">
+```ts twoslash title="eslint.config.ts"
+import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions: SheriffSettings = {
+  react: false,
+  next: false,
+  astro: false,
+  lodash: false,
+  remeda: false,
+  playwright: false,
+  storybook: true,
+  jest: false,
+  vitest: false,
+  pathsOverrides: {
+    playwrightTests: [ // [!code highlight]
+      "**/*.mySpecialName.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+      "**/mySpecialFolder/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+      "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
+    ], // [!code highlight]
+  },
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+</Tabs>
+

@@ -1,0 +1,122 @@
+---
+title: Commands reference
+description: All the CLI commands
+---
+
+import { createConfigOptionsReference, cliOptionsReference } from "@sherifforg/constants";
+import { TypeTable } from 'fumadocs-ui/components/type-table';
+
+## @sherifforg/create-config
+
+CLI options for the Scaffolder.
+
+### Summary Table
+
+<TypeTable
+  type={Object.fromEntries(Object.entries(createConfigOptionsReference).map(([key, option]) => [
+    key,
+    {
+      ...option,
+      default: option.default?.toString()
+    }
+  ]))} />
+
+### --filter
+
+- **Type**: <code>{createConfigOptionsReference.filter.type}</code>
+
+<p>{createConfigOptionsReference.filter.description}</p>
+
+### --typescript
+
+- **Type**: <code>{createConfigOptionsReference.typescript.type}</code>
+
+<p>{createConfigOptionsReference.typescript.description}</p>
+
+### --prettier
+
+- **Type**: <code>{createConfigOptionsReference.prettier.type}</code>
+
+<p>{createConfigOptionsReference.prettier.description}</p>
+
+### --install-deps
+
+- **Type**: <code>{createConfigOptionsReference["install-deps"].type}</code>
+- **Default**: <code>{createConfigOptionsReference["install-deps"].default.toString()}</code>
+
+<p>{createConfigOptionsReference["install-deps"].description}</p>
+
+## @sherifforg/cli
+
+CLI options for the Doctor.
+
+### Summary Table
+
+<TypeTable
+  type={Object.fromEntries(Object.entries(cliOptionsReference).map(([key, option]) => [
+    key,
+    {
+      ...option,
+      default: option.default.toString()
+    }
+  ]))} />
+
+### --no-fail
+- **Type**: <code>{cliOptionsReference["no-fail"].type}</code>
+- **Default**: <code>{cliOptionsReference["no-fail"].default.toString()}</code>
+
+<p>{cliOptionsReference["no-fail"].description}</p>
+
+### --debug
+- **Type**: <code>{cliOptionsReference.debug.type}</code>
+- **Default**: <code>{cliOptionsReference.debug.default.toString()}</code>
+
+<p>{cliOptionsReference.debug.description}</p>
+
+### --ignore-react
+- **Type**: <code>{cliOptionsReference["ignore-react"].type}</code>
+- **Default**: <code>{cliOptionsReference["ignore-react"].default.toString()}</code>
+
+<p>{cliOptionsReference["ignore-react"].description}</p>
+
+### --ignore-next
+- **Type**: <code>{cliOptionsReference["ignore-next"].type}</code>
+- **Default**: <code>{cliOptionsReference["ignore-next"].default.toString()}</code>
+
+<p>{cliOptionsReference["ignore-next"].description}</p>
+
+### --ignore-lodash
+- **Type**: <code>{cliOptionsReference["ignore-lodash"].type}</code>
+- **Default**: <code>{cliOptionsReference["ignore-lodash"].default.toString()}</code>
+
+<p>{cliOptionsReference["ignore-lodash"].description}</p>
+
+### --ignore-remeda
+- **Type**: <code>{cliOptionsReference["ignore-remeda"].type}</code>
+- **Default**: <code>{cliOptionsReference["ignore-remeda"].default.toString()}</code>
+
+<p>{cliOptionsReference["ignore-remeda"].description}</p>
+
+### --ignore-vitest
+- **Type**: <code>{cliOptionsReference["ignore-vitest"].type}</code>
+- **Default**: <code>{cliOptionsReference["ignore-vitest"].default.toString()}</code>
+
+<p>{cliOptionsReference["ignore-vitest"].description}</p>
+
+### --ignore-jest
+- **Type**: <code>{cliOptionsReference["ignore-jest"].type}</code>
+- **Default**: <code>{cliOptionsReference["ignore-jest"].default.toString()}</code>
+
+<p>{cliOptionsReference["ignore-jest"].description}</p>
+
+### --ignore-playwright
+- **Type**: <code>{cliOptionsReference["ignore-playwright"].type}</code>
+- **Default**: <code>{cliOptionsReference["ignore-playwright"].default.toString()}</code>
+
+<p>{cliOptionsReference["ignore-playwright"].description}</p>
+
+### --ignore-astro
+- **Type**: <code>{cliOptionsReference["ignore-astro"].type}</code>
+- **Default**: <code>{cliOptionsReference["ignore-astro"].default.toString()}</code>
+
+<p>{cliOptionsReference["ignore-astro"].description}</p>

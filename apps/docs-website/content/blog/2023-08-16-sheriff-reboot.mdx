@@ -1,0 +1,59 @@
+---
+slug: sheriff-reboot
+title: A new home for Sheriff
+author: andrea
+date: 2023-08-16
+tags: [sheriff, eslint, rebranding, docusaurus]
+image: /img/sheriff_blog_post_1_v2.jpg
+---
+
+![Sheriff BlogPost Poster](/img/sheriff_blog_post_1_v2.jpg)
+
+{/* truncate */}
+
+## Sheriff release v14
+
+Sheriff, the ESLint sharable config, has exciting news to share!<br />
+With a complete rebranding, a restructured codebase, and exciting plans ahead, Sheriff is set to become an even more essential tool for ensuring code quality and consistency in projects.<br />
+Let's walkthrough the key changes of this release.
+
+## Restructured Codebase in a monorepo
+
+The codebase has been restructured into a monorepo setup with [Turborepo](https://turbo.build/repo) + [pnpm workspaces](https://pnpm.io/workspaces), as it allows for the management of multiple related packages under a single repository, streamlining the development process and enabling better coordination between different parts of the project.
+
+As a side-effect, the project now relies on [changesets](https://github.com/changesets/changesets) to manage semantic versioning, in place of [semantic-release](https://github.com/semantic-release/semantic-release).
+
+## Complete Rebranding
+
+### New Docs
+
+The documentation has been fully revamped, moving on from [Gitbook](https://www.gitbook.com/) to [Docusaurus](https://docusaurus.io/), a modern documentation framework.<br/>
+Whether a newcomer or a seasoned user, the documentation is more accessible and easier to navigate, with a sidebar that allows for quick access to the different sections.<br/>
+Also, a special [Rules page](https://www.eslint-config-sheriff.dev/docs/rules) was carefully crafted to let users explore in detail all the rules that Sheriff enables.
+
+Visit the new docs at this [link](https://www.eslint-config-sheriff.dev).
+
+### New Logo
+
+The beginning of a fresh era for Sheriff is marked by a new logo, that features the iconic ESLint logo and a shield.
+
+![Sheriff Logo](/img/sheriff-logo.svg)
+
+### New Blog
+
+A [brand-new blog](https://www.eslint-config-sheriff.dev/blog) is now available, where I'll keep sharing updates on the projects as it grows along.
+
+## What's Next
+
+The focus remains on continuously improving the tool, making it more adaptable, and responding to the evolving needs of the development community.<br />
+Looking ahead, several exciting developments are in store:
+
+- **Astro Support**: In the continuous effort to integrate more eslint-plugins into Sheriff, the next in line is [eslint-plugin-astro](https://github.com/ota-meshi/eslint-plugin-astro).
+- **Searchbar**: full-text search, powered by [Algolia](https://www.algolia.com/) in the new docs.
+- **Ask AI**: along with the new searchbar will come an "Ask AI bot" feature. Details on this one are still being worked on.
+
+## Conclusion
+
+With this much-needed facelift, Sheriff is ready to keep growing. With a new documentation hub powered by Docusaurus, logo, and blog in place, Sheriff is set to provide an even more exceptional ESLint sharable config experience.<br/>
+If you want to help feel free to propose new features, both for the config and the docs, or report any bug you might come across.<br/>
+Stay tuned for updates and insights on the new blog!

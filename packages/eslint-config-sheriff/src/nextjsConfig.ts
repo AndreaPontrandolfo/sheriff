@@ -31,7 +31,13 @@ export const nextjsConfig: TSESLint.FlatConfig.ConfigArray = [
     rules: {
       'react-refresh/only-export-components': [
         2,
-        { allowExportNames: ['metadata', 'generateMetadata'] },
+        {
+          allowExportNames: [
+            'metadata',
+            'generateMetadata',
+            'generateStaticParams',
+          ],
+        },
       ],
     },
   },

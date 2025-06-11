@@ -1,146 +1,178 @@
-import type { JSX } from 'react';
+/* eslint-disable @typescript-eslint/no-misused-promises */
+'use client';
+
 import { useForm } from 'react-hook-form';
-import { DevTool } from '@hookform/devtools';
-import { configCombinationDefaultValues } from '@sherifforg/constants';
-import styles from './ConfigCombinationForm.module.css';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  configCombinationDefaultValues,
+  sheriffStartingOptions,
+} from '@sherifforg/constants';
+import type { SheriffConfigurablePlugins } from '@sherifforg/types';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+
+// Prepare initial selected items based on configCombinationDefaultValues
+// and ensure vitest/jest exclusivity from the start.
+const allTechKeys = Object.keys(
+  configCombinationDefaultValues,
+) as (keyof SheriffConfigurablePlugins)[];
+
+let initialSelectedItems = allTechKeys.filter(
+  (key) => configCombinationDefaultValues[key],
+);
+
+// If both vitest and jest are somehow initially true, default to vitest.
+if (
+  initialSelectedItems.includes('vitest') &&
+  initialSelectedItems.includes('jest')
+) {
+  initialSelectedItems = initialSelectedItems.filter((id) => id !== 'jest');
+}
+
+interface TechnologyFormItem {
+  id: keyof SheriffConfigurablePlugins;
+  label: string;
+}
+
+const items: TechnologyFormItem[] = Object.keys(
+  configCombinationDefaultValues,
+).map((key) => {
+  return {
+    id: key as keyof SheriffConfigurablePlugins,
+    label: key.charAt(0).toUpperCase() + key.slice(1),
+  };
+});
+
+const FormSchema = z.object({
+  items: z.array(z.string()),
+});
 
 interface ConfigCombinationFormProps {
-  setTableData: (data: FormInputs) => void;
+  setTableData: (data: SheriffConfigurablePlugins) => void;
 }
 
-interface FormInputs {
-  react: boolean;
-  next: boolean;
-  astro: boolean;
-  lodash: boolean;
-  remeda: boolean;
-  playwright: boolean;
-  storybook: boolean;
-  vitest: boolean;
-  jest: boolean;
-}
-
-export const ConfigCombinationForm = ({
+export function ConfigCombinationForm({
   setTableData,
-}: ConfigCombinationFormProps): JSX.Element => {
-  const { register, handleSubmit, control, setValue } = useForm<FormInputs>({
-    defaultValues: configCombinationDefaultValues,
+}: ConfigCombinationFormProps) {
+  const form = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      items: initialSelectedItems,
+    },
   });
 
-  const handleVitestChange = (isChecked: boolean) => {
-    setValue('vitest', isChecked, { shouldDirty: true, shouldTouch: true });
+  function onSubmit(data: z.infer<typeof FormSchema>) {
+    const transformedData: SheriffConfigurablePlugins = {
+      ...sheriffStartingOptions,
+    };
 
-    if (isChecked) {
-      setValue('jest', false, { shouldDirty: true, shouldTouch: true });
+    for (const item of data.items) {
+      if (item in transformedData) {
+        transformedData[item as keyof SheriffConfigurablePlugins] = true;
+      }
     }
-  };
 
-  const handleJestChange = (isChecked: boolean) => {
-    setValue('jest', isChecked, { shouldDirty: true, shouldTouch: true });
-
-    if (isChecked) {
-      setValue('vitest', false, { shouldDirty: true, shouldTouch: true });
-    }
-  };
+    setTableData(transformedData);
+  }
 
   return (
-    <form
-      className={styles.checkboxGroupContainer}
-      onSubmit={handleSubmit((data) => {
-        setTableData(data);
-      })}
-    >
-      <div className={styles.nativeCheckbox}>
-        <input
-          {...register('react')}
-          defaultChecked
-          type="checkbox"
-          id="react"
-        />
-        <label htmlFor="react">React</label>
-      </div>
-      <div className={styles.nativeCheckbox}>
-        <input {...register('next')} defaultChecked type="checkbox" id="next" />
-        <label htmlFor="next">Next</label>
-      </div>
-      <div className={styles.nativeCheckbox}>
-        <input
-          {...register('astro')}
-          defaultChecked
-          type="checkbox"
-          id="astro"
-        />
-        <label htmlFor="astro">Astro</label>
-      </div>
-      <div className={styles.nativeCheckbox}>
-        <input
-          {...register('lodash')}
-          defaultChecked
-          type="checkbox"
-          id="lodash"
-        />
-        <label htmlFor="lodash">Lodash</label>
-      </div>
-      <div className={styles.nativeCheckbox}>
-        <input
-          {...register('remeda')}
-          defaultChecked
-          type="checkbox"
-          id="remeda"
-        />
-        <label htmlFor="remeda">Remeda</label>
-      </div>
-      <div className={styles.nativeCheckbox}>
-        <input
-          {...register('playwright')}
-          defaultChecked
-          type="checkbox"
-          id="playwright"
-        />
-        <label htmlFor="playwright">Playwright</label>
-      </div>
-      <div className={styles.nativeCheckbox}>
-        <input
-          {...register('storybook')}
-          defaultChecked
-          type="checkbox"
-          id="storybook"
-        />
-        <label htmlFor="storybook">Storybook</label>
-      </div>
-      <div className={styles.nativeCheckbox}>
-        <input
-          {...register('vitest')}
-          defaultChecked
-          type="checkbox"
-          id="vitest"
-          onChange={(e) => {
-            handleVitestChange(e.target.checked);
+    <Form {...form}>
+      <form className="space-y-8" onSubmit={form.handleSubmit(onSubmit)}>
+        <FormField
+          control={form.control}
+          name="items"
+          render={() => {
+            return (
+              <FormItem>
+                <div className="mb-4">
+                  <FormLabel className="text-base">Technologies</FormLabel>
+                  <FormDescription className="mb-0">
+                    Select the technologies that should compose your ESLint
+                    configuration.
+                  </FormDescription>
+                </div>
+                <div className="mb-6 max-w-lg rounded-md border p-2 shadow">
+                  <div className="mb-8 flex flex-wrap gap-6">
+                    {items.map((item) => {
+                      return (
+                        <FormField
+                          key={item.id}
+                          control={form.control}
+                          name="items"
+                          render={({ field }) => {
+                            return (
+                              <FormItem
+                                key={item.id}
+                                className="flex cursor-pointer flex-row items-center"
+                              >
+                                <FormControl className="cursor-pointer">
+                                  <Checkbox
+                                    checked={field.value.includes(item.id)}
+                                    onCheckedChange={(checked) => {
+                                      const currentSelections =
+                                        field.value || [];
+                                      let newSelections: string[];
+
+                                      if (checked) {
+                                        // Add the current item
+                                        newSelections = [
+                                          ...currentSelections,
+                                          item.id,
+                                        ];
+
+                                        // Handle mutual exclusivity for vitest and jest
+                                        if (item.id === 'vitest') {
+                                          newSelections = newSelections.filter(
+                                            (id) => id !== 'jest',
+                                          );
+                                        } else if (item.id === 'jest') {
+                                          newSelections = newSelections.filter(
+                                            (id) => id !== 'vitest',
+                                          );
+                                        }
+                                      } else {
+                                        // Remove the current item
+                                        newSelections =
+                                          currentSelections.filter(
+                                            (value) => value !== item.id,
+                                          );
+                                      }
+                                      field.onChange(newSelections);
+                                    }}
+                                  />
+                                </FormControl>
+                                <FormLabel className="cursor-pointer text-sm font-normal">
+                                  {item.label}
+                                </FormLabel>
+                              </FormItem>
+                            );
+                          }}
+                        />
+                      );
+                    })}
+                  </div>
+                  <div>
+                    <Button className="cursor-pointer" type="submit">
+                      Submit
+                    </Button>
+                  </div>
+                </div>
+                <FormMessage />
+              </FormItem>
+            );
           }}
         />
-        <label htmlFor="vitest">Vitest</label>
-      </div>
-
-      <div className={styles.nativeCheckbox}>
-        <input
-          {...register('jest')}
-          type="checkbox"
-          id="jest"
-          onChange={(e) => {
-            handleJestChange(e.target.checked);
-          }}
-        />
-        <label htmlFor="jest">Jest</label>
-      </div>
-
-      <button
-        type="submit"
-        className="button button--sm button--outline button--primary"
-      >
-        SUBMIT
-      </button>
-
-      <DevTool control={control} />
-    </form>
+      </form>
+    </Form>
   );
-};
+}

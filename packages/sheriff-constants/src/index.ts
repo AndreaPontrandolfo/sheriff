@@ -53,28 +53,7 @@ export const ignores = [
   'eslint.config.{js,mjs,cjs}', // we currently cannot lint the eslint.config.js itself. It is currently only provided as a .js file and this config currently only supports .ts files. Therefore, eslint.config.js can only be re-enabled once this config support pure .js files too, or the ESLint team support the eslint.config.ts file.
 ] as const;
 
-export const CLIOptionsCatalog = {
-  filter: {
-    type: 'string',
-    description:
-      'Filter for specific workspace. More info here https://www.eslint-config-sheriff.dev/docs/monorepo-support#setup-with-npm-init-sherifforgconfig',
-  },
-  typescript: {
-    type: 'boolean',
-    description:
-      'eslint.config.ts boilerplate will be added without asking it in the wizard.',
-  },
-  prettier: {
-    type: 'boolean',
-    description:
-      'Prettier boilerplate will be added without asking it in the wizard.',
-  },
-  'install-deps': {
-    type: 'boolean',
-    description:
-      'Should the dependencies be installed at the end of the wizard or not.',
-    default: true,
-  },
+export const cliOptionsReference = {
   'no-fail': {
     type: 'boolean',
     description:
@@ -98,32 +77,56 @@ export const CLIOptionsCatalog = {
   },
   'ignore-lodash': {
     type: 'boolean',
-    description: 'Skips lodash (lodash, lodash-es) checks.',
+    description: 'Skips Lodash (lodash, lodash-es) checks.',
     default: false,
   },
   'ignore-remeda': {
     type: 'boolean',
-    description: 'Skips remeda checks.',
+    description: 'Skips Remeda checks.',
     default: false,
   },
   'ignore-vitest': {
     type: 'boolean',
-    description: 'Skips vitest checks.',
+    description: 'Skips Vitest checks.',
     default: false,
   },
   'ignore-jest': {
     type: 'boolean',
-    description: 'Skips jest checks.',
+    description: 'Skips Jest checks.',
     default: false,
   },
   'ignore-playwright': {
     type: 'boolean',
-    description: 'Skips playwright (playwright, @playwright/test) checks.',
+    description: 'Skips Playwright (playwright, @playwright/test) checks.',
     default: false,
   },
   'ignore-astro': {
     type: 'boolean',
-    description: 'Skips astro checks.',
+    description: 'Skips Astro checks.',
     default: false,
+  },
+} as const;
+
+export const createConfigOptionsReference = {
+  filter: {
+    type: 'string',
+    description:
+      'Filter for specific workspace. More info here https://www.eslint-config-sheriff.dev/docs/monorepo-support#setup-with-npm-init-sherifforgconfig',
+  },
+  typescript: {
+    type: 'boolean',
+    description:
+      'eslint.config.ts boilerplate will be added without asking it in the wizard.',
+  },
+  prettier: {
+    type: 'boolean',
+    description:
+      'Prettier boilerplate will be added without asking it in the wizard.',
+  },
+  'install-deps': {
+    type: 'boolean',
+    description:
+      'Should the dependencies be installed at the end of the wizard or not.',
+    default: true,
   },
 } as const;
