@@ -4,7 +4,10 @@ import { HPSectionStart } from './HPSectionStart';
 export function JoinUsSection() {
   return (
     <section className="pt-20 md:pb-8">
-      <HPSectionStart title="Join the revolution" />
+      <HPSectionStart
+        title="Join the revolution"
+        description="Sheriff grows stronger with every contributor. Join our community and help shape its future!"
+      />
       <StargazerSection />
     </section>
   );

@@ -7,9 +7,17 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 
-The Doctor is a diagnostic tool that monitor your Sheriff configuration and ensure it stays up-to-date with your project dependencies. It can be invoked in the terminal with the `sheriff` command.
+The Doctor is a diagnostic tool that monitor your Sheriff configuration and ensure it stays up-to-date with your project dependencies.
 
-It is advised to integrate the Doctor in your **CI pipelines**, but you can also integrate it into pre-commit hooks if that's your preference.
+## Example usecase
+
+Picture this: you kickstart your project and opt for [jest](https://jestjs.io/) as your unit testing solution of choice. You setup Sheriff with the [Scaffolder](/docs/cli-usage/scaffolder) and it automatically enables the `jest` support for your project. All great.
+
+But then, one day, you decide to switch to [vitest](https://vitest.dev/). You update your project dependencies and forget to update your Sheriff configuration.
+
+**Here is where the Doctor comes into picture**: it will catch this mismatch and warn you about it, so you can readily turn off the `jest` support in your Sheriff configuration and turn on the `vitest` support.
+
+All is good again.
 
 ## How to run it
 
@@ -40,6 +48,8 @@ It is advised to integrate the Doctor in your **CI pipelines**, but you can also
   ```
   </Step>
 </Steps>
+
+It is advised to integrate the Doctor in your **CI pipelines**, but you can also integrate it into pre-commit hooks if that's your preference.
 
 ## How it works
 
