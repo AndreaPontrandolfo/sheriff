@@ -47,7 +47,6 @@ export default async function Page({
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export async function generateStaticParams() {
   return source.generateParams();
 }

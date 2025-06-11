@@ -60,7 +60,6 @@ export default async function Page({
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function generateStaticParams(): { slug: string }[] {
   return blog.getPages().map((page) => {
     return {
