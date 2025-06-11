@@ -217,6 +217,7 @@
 }
 
 button[aria-expanded='true'],
-button[aria-expanded='false'] {
+button[aria-expanded='false'],
+button[role='tab'] {
   cursor: pointer;
 }

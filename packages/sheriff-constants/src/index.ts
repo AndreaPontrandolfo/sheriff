@@ -77,32 +77,32 @@ export const cliOptionsReference = {
   },
   'ignore-lodash': {
     type: 'boolean',
-    description: 'Skips lodash (lodash, lodash-es) checks.',
+    description: 'Skips Lodash (lodash, lodash-es) checks.',
     default: false,
   },
   'ignore-remeda': {
     type: 'boolean',
-    description: 'Skips remeda checks.',
+    description: 'Skips Remeda checks.',
     default: false,
   },
   'ignore-vitest': {
     type: 'boolean',
-    description: 'Skips vitest checks.',
+    description: 'Skips Vitest checks.',
     default: false,
   },
   'ignore-jest': {
     type: 'boolean',
-    description: 'Skips jest checks.',
+    description: 'Skips Jest checks.',
     default: false,
   },
   'ignore-playwright': {
     type: 'boolean',
-    description: 'Skips playwright (playwright, @playwright/test) checks.',
+    description: 'Skips Playwright (playwright, @playwright/test) checks.',
     default: false,
   },
   'ignore-astro': {
     type: 'boolean',
-    description: 'Skips astro checks.',
+    description: 'Skips Astro checks.',
     default: false,
   },
 } as const;

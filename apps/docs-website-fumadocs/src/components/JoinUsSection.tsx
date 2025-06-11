@@ -7,6 +7,7 @@ export function JoinUsSection() {
       <HPSectionStart
         title="Join the revolution"
         description="Sheriff grows stronger with every contributor. Join our community and help shape its future!"
+        className="px-6"
       />
       <StargazerSection />
     </section>

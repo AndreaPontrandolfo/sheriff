@@ -61,7 +61,7 @@ export function IntegrationsSection() {
     <section className="px-6 py-20 sm:px-0">
       <HPSectionStart
         title="Batteries included"
-        description="Sheriff is the ultimate culmination of the ESLint ecosystem. It is designed to be an all-in-one solution. Forget about dependency management hell. Everything you need is already built-in."
+        description="Sheriff is the ultimate culmination of the ESLint ecosystem. It is designed to be an all-in-one solution. Forget about dependency management hell. Everything your project needs is already built-in."
         buttonText="Learn more about the techs involved"
         buttonLink="/docs/techs"
       />
