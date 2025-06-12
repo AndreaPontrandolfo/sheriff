@@ -25,7 +25,7 @@ export default async function Page({
   }
   const MdxContent = page.data.body;
 
-  const lastUpdate = await getLastUpdate(page);
+  const lastUpdate = await getLastUpdate(page, 'blog');
 
   return (
     <DocsPage toc={page.data.toc} lastUpdate={lastUpdate ?? undefined}>

@@ -3,6 +3,8 @@ import { RootProvider } from 'fumadocs-ui/provider';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Footer } from '@/components/Footer';
 import QueryProvider from '@/components/QueryProvider';
 
@@ -79,6 +81,8 @@ export default function Layout({ children }: { children: ReactNode }) {
           <QueryProvider>{children}</QueryProvider>
           <Footer />
         </RootProvider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
