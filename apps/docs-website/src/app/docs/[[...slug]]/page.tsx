@@ -25,7 +25,7 @@ export default async function Page({
 
   const MDXContent = page.data.body;
 
-  const lastUpdate = await getLastUpdate(page);
+  const lastUpdate = await getLastUpdate(page, 'docs');
 
   return (
     <DocsPage
