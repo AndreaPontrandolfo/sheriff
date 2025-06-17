@@ -26,7 +26,7 @@ export function EcosystemSection() {
         title="Beyond a config"
         description="Just a config if you want. A whole ecosystem if you need it."
         buttonText="Enter the ecosystem"
-        buttonLink="/docs/cli-usage/get-started"
+        buttonLink="/docs/cli-usage"
       />
       <VerticalSlidingItems features={features} />
     </section>
