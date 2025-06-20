@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 'use client';
-import { LuStar } from 'react-icons/lu';
+import { Star } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -104,7 +104,7 @@ export const StargazerSection = () => {
               className="flex items-center gap-1"
             >
               Star us on GitHub
-              <LuStar className="group-hover:fill-foreground size-4 shrink-0 transition-colors" />
+              <Star className="group-hover:fill-foreground size-4 shrink-0 transition-colors" />
               {count}
             </a>
           </Button>
