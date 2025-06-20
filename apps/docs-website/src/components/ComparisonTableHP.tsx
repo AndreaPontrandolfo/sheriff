@@ -1,4 +1,4 @@
-import { LuCheck, LuTally1, LuTally2, LuTally3, LuX } from 'react-icons/lu';
+import { Check, Tally1, Tally2, Tally3, X } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -353,7 +353,7 @@ export function ComparisonTableHP() {
                   switch (featureValue) {
                     case '😊': {
                       iconContent = (
-                        <LuTally1
+                        <Tally1
                           className="inline-flex stroke-emerald-600"
                           size={16}
                           aria-hidden="true"
@@ -365,7 +365,7 @@ export function ComparisonTableHP() {
                     }
                     case '😐': {
                       iconContent = (
-                        <LuTally2
+                        <Tally2
                           className="inline-flex stroke-yellow-600"
                           size={16}
                           aria-hidden="true"
@@ -377,7 +377,7 @@ export function ComparisonTableHP() {
                     }
                     case '😔': {
                       iconContent = (
-                        <LuTally3
+                        <Tally3
                           className="inline-flex stroke-red-600"
                           size={16}
                           aria-hidden="true"
@@ -395,7 +395,7 @@ export function ComparisonTableHP() {
 
                   if (isSupported) {
                     iconContent = (
-                      <LuCheck
+                      <Check
                         className="inline-flex stroke-emerald-600"
                         size={16}
                         aria-hidden="true"
@@ -404,7 +404,7 @@ export function ComparisonTableHP() {
                     screenReaderText = 'Supported';
                   } else {
                     iconContent = (
-                      <LuX
+                      <X
                         className="inline-flex stroke-red-600"
                         size={16}
                         aria-hidden="true"

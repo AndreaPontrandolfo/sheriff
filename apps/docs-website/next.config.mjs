@@ -5,6 +5,13 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    useLightningcss: true,
+    // typedRoutes: true, // incompatible with turbopack.
+    cssChunking: true,
+    inlineCss: true,
+    webVitalsAttribution: ['FCP', 'LCP', 'CLS', 'FID', 'TTFB', 'INP'],
+  },
   serverExternalPackages: ['oxc-transform', 'typescript', 'twoslash'],
   images: {
     dangerouslyAllowSVG: true,

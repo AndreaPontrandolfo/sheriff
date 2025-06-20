@@ -221,3 +221,7 @@ button[aria-expanded='false'],
 button[role='tab'] {
   cursor: pointer;
 }
+
+#nd-page > article:first-of-type {
+  @apply pb-50;
+}

@@ -41,7 +41,7 @@ Visit the [official docs](https://www.eslint-config-sheriff.dev/docs/introducti
 
 You can follow the latest updates on the project in the [official blog](https://www.eslint-config-sheriff.dev/blog).
 
-## 📈 Pulse
+## 📈 Activity
 
 ![Alt](https://repobeats.axiom.co/api/embed/a1f7ee2ca3d90888bb893a21c14fc8af99ac3086.svg "Repobeats analytics image")
 

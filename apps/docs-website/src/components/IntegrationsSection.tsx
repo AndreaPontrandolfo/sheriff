@@ -109,7 +109,7 @@ export function IntegrationsSection() {
             <IntegrationCard ref={leftBottom2Ref}>
               {isMounted && (
                 <Image
-                  src={theme === 'dark' ? AstroLightLogo : AstroDarkLogo}
+                  src={theme !== 'light' ? AstroLightLogo : AstroDarkLogo}
                   alt="Astro Logo"
                   width={iconSize}
                   height={iconSize}

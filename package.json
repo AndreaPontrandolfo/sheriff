@@ -41,7 +41,7 @@
     "turbo": "^2.2.3",
     "typesync": "0.14.0"
   },
-  "packageManager": "pnpm@10.9.0",
+  "packageManager": "pnpm@10.12.1",
   "engines": {
     "node": ">=20.10.0"
   },
@@ -58,7 +58,9 @@
     "onlyBuiltDependencies": [
       "@swc/core",
       "@tailwindcss/oxide",
+      "@vercel/speed-insights",
       "core-js",
+      "core-js-pure",
       "esbuild",
       "sharp",
       "unrs-resolver"

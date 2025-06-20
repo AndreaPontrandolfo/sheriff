@@ -9,6 +9,9 @@ import { Logo } from '@/components/Logo';
  * Docs Layout: app/docs/layout.tsx.
  */
 export const baseOptions: BaseLayoutProps = {
+  themeSwitch: {
+    mode: 'light-dark-system',
+  },
   nav: {
     title: (
       <>

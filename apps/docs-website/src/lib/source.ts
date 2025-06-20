@@ -1,5 +1,6 @@
 import { loader } from 'fumadocs-core/source';
 import { createMDXSource } from 'fumadocs-mdx';
+import { CalendarDays } from 'lucide-react';
 import { createElement } from 'react';
 import { BiLogoTypescript } from 'react-icons/bi';
 import { BsFillGearFill, BsStack, BsStars } from 'react-icons/bs';
@@ -8,7 +9,6 @@ import { FaTruck } from 'react-icons/fa6';
 import { GrUpdate } from 'react-icons/gr';
 import { HiMiniCpuChip, HiOutlineBarsArrowDown } from 'react-icons/hi2';
 import { IoExtensionPuzzleSharp, IoFlash } from 'react-icons/io5';
-import { LuCalendarDays } from 'react-icons/lu';
 import { MdTroubleshoot } from 'react-icons/md';
 import { PiListMagnifyingGlassBold } from 'react-icons/pi';
 import { RiTerminalBoxFill } from 'react-icons/ri';
@@ -20,7 +20,7 @@ import { blogPosts, docs } from '@/.source';
 const icons = {
   BsStars,
   FaRegCompass,
-  LuCalendarDays,
+  CalendarDays,
   HiMiniCpuChip,
   FaWrench,
   FaKey,

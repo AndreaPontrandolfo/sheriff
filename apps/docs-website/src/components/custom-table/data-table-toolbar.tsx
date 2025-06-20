@@ -1,9 +1,8 @@
 'use client';
 
 import { debounce, isEmpty } from 'lodash-es';
-import { XIcon } from 'lucide-react';
+import { Filter, XIcon } from 'lucide-react';
 import * as React from 'react';
-import { LuFilter } from 'react-icons/lu';
 import type { Table } from '@tanstack/react-table';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -72,7 +71,7 @@ export function DataTableToolbar<TData>({
   return (
     <div className="flex flex-1 items-start gap-4">
       <div className="flex h-10 items-center">
-        <LuFilter size={24} />
+        <Filter size={24} />
       </div>
       <Input
         placeholder="Filter rules, docs..."
