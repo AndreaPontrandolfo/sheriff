@@ -69,6 +69,7 @@ export const getAllRules = (
     //@ts-expect-error
     ...prependRulesWithPluginName(sonarjs.rules, 'sonarjs'),
     ...prependRulesWithPluginName(jsdoc.rules, 'jsdoc'),
+    //@ts-expect-error
     ...prependRulesWithPluginName(tsdoc.rules, 'tsdoc'),
     ...prependRulesWithPluginName(
       preferEarlyReturn.rules,
