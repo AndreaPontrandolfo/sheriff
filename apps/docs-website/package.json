@@ -104,7 +104,7 @@
     "@types/node": "22.15.2",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
-    "eslint": "^9.25.1",
+    "eslint": "^9.29.0",
     "eslint-config-sheriff": "workspace:*",
     "fumadocs-docgen": "^2.0.0",
     "jiti": "^2.4.2",
