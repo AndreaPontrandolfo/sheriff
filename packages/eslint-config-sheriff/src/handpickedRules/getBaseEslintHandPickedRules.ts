@@ -44,7 +44,6 @@ export const getBaseEslintHandPickedRules = () => {
     ],
     'no-useless-call': 2,
     'prefer-object-has-own': 2,
-    'no-constant-binary-expression': 2,
     'no-lone-blocks': 2,
     'no-eval': 2,
     'no-return-assign': [2, 'always'],
