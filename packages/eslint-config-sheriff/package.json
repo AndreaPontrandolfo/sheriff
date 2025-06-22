@@ -87,7 +87,7 @@
     "eslint-plugin-unicorn": "^56.0.1",
     "globals": "^15.11.0",
     "lodash": "^4.17.21",
-    "typescript-eslint": "^8.31.0"
+    "typescript-eslint": "^8.34.1"
   },
   "peerDependencies": {
     "eslint": ">=9.15.0",
@@ -105,8 +105,8 @@
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/lodash": "^4.17.13",
     "@types/node": "^22.10.3",
-    "@typescript-eslint/parser": "^8.31.0",
-    "@typescript-eslint/utils": "^8.31.0",
+    "@typescript-eslint/parser": "^8.34.1",
+    "@typescript-eslint/utils": "^8.34.1",
     "dts-bundle-generator": "^9.5.1",
     "eslint": "^9.29.0",
     "jiti": "^2.4.2",
