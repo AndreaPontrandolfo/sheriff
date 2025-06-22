@@ -10,6 +10,7 @@
 
 [![npm downloads](https://img.shields.io/npm/dm/eslint-config-sheriff.svg?label=npm%20downloads&color=1A786D)](https://www.npmjs.com/package/eslint-config-sheriff)
 [![Libraries.io SourceRank](https://img.shields.io/librariesio/sourcerank/npm/eslint-config-sheriff?logo=librariesdotio&style=flat-square&color=1A786D)](https://libraries.io/npm/eslint-config-sheriff/sourcerank)<br />
+[![CodeFactor](https://www.codefactor.io/repository/github/andreapontrandolfo/sheriff/badge)](https://www.codefactor.io/repository/github/andreapontrandolfo/sheriff)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg?color=1A786D)](CODE_OF_CONDUCT.md)
 
   </div>
@@ -30,7 +31,7 @@ This repository is a monorepo that hosts the sourcecode of the following project
 ## 🚀 Quickstart
 
 ```bash
-npm init @sherifforg/config
+pnpm create @sherifforg/config
 ```
 
 ## 📋 Docs
