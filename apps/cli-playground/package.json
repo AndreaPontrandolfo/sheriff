@@ -3,7 +3,7 @@
   "description": "Playground for playtesting create-eslint-config.",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@9.15.1",
+  "packageManager": "pnpm@10.12.1",
   "dependencies": {
     "@playwright/test": "^1.49.1",
     "astro": "^4.12.2",

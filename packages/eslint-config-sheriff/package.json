@@ -90,7 +90,7 @@
     "typescript-eslint": "^8.31.0"
   },
   "peerDependencies": {
-    "eslint": ">=9.0.0",
+    "eslint": ">=9.15.0",
     "typescript": ">=5.0.0"
   },
   "engines": {

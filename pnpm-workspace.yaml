@@ -2,4 +2,3 @@ packages:
   - 'apps/*'
   - 'packages/*'
 verifyDepsBeforeRun: warn
-enableGlobalVirtualStore: true
