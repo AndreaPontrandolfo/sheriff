@@ -466,8 +466,8 @@ importers:
         specifier: ^6.10.0
         version: 6.10.2(eslint@9.29.0(jiti@2.4.2))
       eslint-plugin-lodash-f:
-        specifier: ^7.5.3
-        version: 7.5.3(eslint@9.29.0(jiti@2.4.2))
+        specifier: ^7.6.0
+        version: 7.6.0(eslint@9.29.0(jiti@2.4.2))
       eslint-plugin-playwright:
         specifier: ^1.6.2
         version: 1.8.3(eslint-plugin-jest@28.11.0(@typescript-eslint/eslint-plugin@8.34.1(@typescript-eslint/parser@8.34.1(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(jest@29.7.0(@types/node@22.15.2)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/node@22.15.2)(typescript@5.8.3)))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))
@@ -593,8 +593,8 @@ importers:
         specifier: ^6.10.0
         version: 6.10.2(eslint@9.29.0(jiti@2.4.2))
       eslint-plugin-lodash-f:
-        specifier: ^7.5.3
-        version: 7.5.3(eslint@9.29.0(jiti@2.4.2))
+        specifier: ^7.6.0
+        version: 7.6.0(eslint@9.29.0(jiti@2.4.2))
       eslint-plugin-playwright:
         specifier: ^1.6.2
         version: 1.8.3(eslint-plugin-jest@28.11.0(@typescript-eslint/eslint-plugin@8.34.1(@typescript-eslint/parser@8.34.1(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))(jest@29.7.0(@types/node@22.15.2)(babel-plugin-macros@3.1.0)(ts-node@10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/node@22.15.2)(typescript@5.8.3)))(typescript@5.8.3))(eslint@9.29.0(jiti@2.4.2))
@@ -7135,11 +7135,11 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-lodash-f@7.5.3:
-    resolution: {integrity: sha512-WV9/i5UkyFpCnPq4Qk7iePpduhJ4M5EWX6tekelvXxzDsuguBw6ua1oe4/4fHaH4v50C6E/RQi0pdtwBTxFPcw==}
+  eslint-plugin-lodash-f@7.6.0:
+    resolution: {integrity: sha512-6v9oUm4aY6ejlas3lZHn5ruYg+hj6ZP3lEFKjY+YIgkM1o34DbF0AnStk0IuJoqvA+14qjhurF9Ujsvi2o3Zxw==}
     engines: {node: '>=12'}
     peerDependencies:
-      eslint: '>=2'
+      eslint: '>=9.29.0'
 
   eslint-plugin-mdx@3.4.1:
     resolution: {integrity: sha512-dfQ7LthK/Kmfw2d5XrR4CS1ScmFOa1S9vPjBUxtKgCEl6mNnYVfA/yg50xLyab0pI/GEfGEmvlajs2biDHJBsA==}
@@ -20510,7 +20510,7 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-lodash-f@7.5.3(eslint@9.29.0(jiti@2.4.2)):
+  eslint-plugin-lodash-f@7.6.0(eslint@9.29.0(jiti@2.4.2)):
     dependencies:
       eslint: 9.29.0(jiti@2.4.2)
       lodash: 4.17.21
