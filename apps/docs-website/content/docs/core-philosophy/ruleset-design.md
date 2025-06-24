@@ -15,7 +15,7 @@ Sheriff tries to be as faithful to Javascript as possible and conceives Typescri
 
 Unlike other ESLint configurations, Sheriff tries to be as unopinionated as possible about formatting, to be aligned with the community philosophy on the matter ([1](https://eslint.org/blog/2023/10/deprecating-formatting-rules), [2](https://typescript-eslint.io/blog/deprecating-formatting-rules)).
 
-Sheriff encourage you to [bring your own formatting tool](../prettier-support.md#other-formatting-options).
+Sheriff encourage you to [bring your own formatting tool](../prettier-support.mdx#other-formatting-options).
 
 The only formatting rules that Sheriff currently enforces are `@stylistic/padding-line-between-statements` and `curly`.
 

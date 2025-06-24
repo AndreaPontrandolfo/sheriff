@@ -44,7 +44,6 @@ export const getBaseEslintHandPickedRules = () => {
     ],
     'no-useless-call': 2,
     'prefer-object-has-own': 2,
-    'no-constant-binary-expression': 2,
     'no-lone-blocks': 2,
     'no-eval': 2,
     'no-return-assign': [2, 'always'],
@@ -66,7 +65,7 @@ export const getBaseEslintHandPickedRules = () => {
     curly: [2, 'all'],
     eqeqeq: 2,
     'prefer-arrow-callback': 2,
-    'no-unassigned-vars': 2,
+    // 'no-unassigned-vars': 2,
     'no-useless-assignment': 2,
     'no-restricted-imports': [
       2,

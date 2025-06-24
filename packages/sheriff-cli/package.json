@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/typescript-estree": "^8.26.0",
+    "@typescript-eslint/typescript-estree": "^8.34.1",
     "consola": "^3.3.3",
     "read-pkg": "^9.0.1",
     "remeda": "^2.19.0",
@@ -27,7 +27,7 @@
     "@sherifforg/types": "workspace:*",
     "@types/node": "^22.10.3",
     "@types/yargs": "^17.0.33",
-    "eslint": "^9.27.0",
+    "eslint": "^9.29.0",
     "eslint-config-sheriff": "workspace:*",
     "publint": "^0.3.11",
     "tsconfig": "workspace:*",

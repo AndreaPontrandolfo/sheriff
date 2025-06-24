@@ -1,7 +1,7 @@
 'use client';
 
+import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-import { LuChevronRight } from 'react-icons/lu';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { HPSectionTitle } from './HPSectionTitle';
@@ -42,7 +42,7 @@ export function HPSectionStart({
           />
           <Button asChild variant="outline" size="sm" className="rounded-md">
             <Link href={buttonLink}>
-              {buttonText} <LuChevronRight />
+              {buttonText} <ChevronRight />
             </Link>
           </Button>
         </div>
