@@ -1,5 +1,13 @@
 # eslint-config-sheriff
 
+## 28.1.0
+
+### Minor Changes
+
+- eaa727f: fix(config): removed 'no-unassigned-vars'
+  fix(cli): updated deps, fixed typos
+  fix(create): updated deps, fixed typos
+
 ## 28.0.0
 
 ### Major Changes
