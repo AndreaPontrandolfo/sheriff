@@ -244,7 +244,7 @@ async function main() {
     if (!sheriffOptionsVariableDeclaration) {
       // this is only a "info" level log because it's plausible that the user doesn't have a sheriffOptions variable.
       consola.info(
-        'No variable named "sheriffOptions" found in ESLint configuration. This could be intended, or maybe you forgot to name the Sheriff options obejct exactly "sheriffOptions". Check the documentation for more info: https://www.eslint-config-sheriff.dev/docs/cli-usage/doctor#how-it-works',
+        'No variable named "sheriffOptions" found in ESLint configuration. This could be intended, or maybe you forgot to name the Sheriff options object exactly "sheriffOptions". Check the documentation for more info: https://www.eslint-config-sheriff.dev/docs/cli-usage/doctor#how-it-works',
       );
 
       return;
