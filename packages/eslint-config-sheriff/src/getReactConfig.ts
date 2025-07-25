@@ -41,7 +41,6 @@ export const getReactConfig = (
     },
     {
       files: [`**/*{${allJsxExtensions}}`],
-      // @ts-expect-error
       rules: getTsNamingConventionRule({ isTsx: true }),
     },
     {
