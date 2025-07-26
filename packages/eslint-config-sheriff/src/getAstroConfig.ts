@@ -1,6 +1,8 @@
 import astro from 'eslint-plugin-astro';
 import tseslint from 'typescript-eslint';
+import { allJsExtensions } from '@sherifforg/constants';
 import type { TSESLint } from '@typescript-eslint/utils';
+import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 
 // eslint-plugin-astro defines the "jsx-a11y" plugin which conflicts with the original plugin
 // The last config object in astro.configs["flat/jsx-a11y-strict"] is the one that defines the "jsx-a11y" plugin
@@ -32,6 +34,7 @@ export const getAstroConfig = (
       files: ['**/*.astro'],
       languageOptions: {
         parserOptions: {
+          parser: tseslint.parser,
           project: customTSConfigPath || true,
           extraFileExtensions: ['.astro'], // this is probably already included in the recommended preset, but we are keeping it for safety.
         },
@@ -55,6 +58,11 @@ export const getAstroConfig = (
           espree: ['.js'],
         },
       },
+      rules: getTsNamingConventionRule({ isTsx: true }),
+    },
+    {
+      files: [`**/src/pages/**/*.{${allJsExtensions}}`],
+      rules: getTsNamingConventionRule({ isTsx: false, isAstroEndpoint: true }),
     },
   );
 };
