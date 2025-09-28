@@ -13,7 +13,7 @@ export default function Home() {
   const posts = blog.getPages().reverse();
 
   return (
-    <section className="container mx-auto mt-12 grow px-4 py-8 md:mt-0">
+    <section className="container mx-auto grow px-4 py-8 pb-36">
       <h1 className="mb-8 text-4xl font-bold">Blog</h1>
       <h2 className="mb-4 text-2xl font-semibold">Latest Posts</h2>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
