@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable sonarjs/no-duplicate-string */
 
 import fs from 'node:fs';
 import { consola } from 'consola';

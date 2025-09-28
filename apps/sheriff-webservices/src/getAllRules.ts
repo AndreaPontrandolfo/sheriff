@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import type { ESLint } from 'eslint';
 import type { TSESLint } from 'eslint-config-sheriff';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
@@ -92,8 +91,7 @@ export const getAllRules = (
       ? prependRulesWithPluginName(nextjs.rules, '@next/next')
       : {}),
     ...(settings.playwright
-      ? // @ts-expect-error
-        prependRulesWithPluginName(playwright.rules, 'playwright')
+      ? prependRulesWithPluginName(playwright.rules, 'playwright')
       : {}),
     ...(settings.lodash
       ? prependRulesWithPluginName(lodashPlugin.rules, 'lodash-f')

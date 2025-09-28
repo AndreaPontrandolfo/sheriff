@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable sonarjs/no-duplicate-string */
 
 import { consola } from 'consola';
 import yargs from 'yargs';

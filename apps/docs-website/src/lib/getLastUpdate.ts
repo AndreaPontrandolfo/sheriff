@@ -11,7 +11,7 @@ export async function getLastUpdate(
     const lastUpdate = await getGithubLastEdit({
       owner: 'AndreaPontrandolfo',
       repo: 'sheriff',
-      path: `apps/docs-website/content/${contentType}/${page.file.path}`,
+      path: `apps/docs-website/content/${contentType}/${page.path}`,
       sha: 'master',
       token: process.env.GITHUB_TOKEN,
     });

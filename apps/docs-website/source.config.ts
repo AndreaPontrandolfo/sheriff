@@ -15,6 +15,11 @@ import { z } from 'zod';
 // Options: https://fumadocs.vercel.app/docs/mdx/collections#define-docs
 export const docs = defineDocs({
   dir: 'content/docs',
+  docs: {
+    postprocess: {
+      includeProcessedMarkdown: true,
+    },
+  },
 });
 
 export const blogPosts = defineCollections({
@@ -22,7 +27,7 @@ export const blogPosts = defineCollections({
   dir: 'content/blog',
   schema: frontmatterSchema.extend({
     author: z.string(),
-    date: z.string().date().or(z.date()),
+    date: z.iso.date().or(z.date()),
     image: z.string().optional(),
     readingTime: z
       .object({
