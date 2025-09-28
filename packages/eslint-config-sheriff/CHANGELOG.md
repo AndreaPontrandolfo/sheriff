@@ -1,5 +1,13 @@
 # eslint-config-sheriff
 
+## 29.0.0
+
+### Major Changes
+
+- 6e5ec03: feat(config): removed sonarjs/no-duplicate-string rule
+  feat(config): updated Playwright rules list
+  chore(deps): update eslint-plugin-playwright and eslint-plugin-react-you-might-not-need-an-effect versions
+
 ## 28.1.0
 
 ### Minor Changes
