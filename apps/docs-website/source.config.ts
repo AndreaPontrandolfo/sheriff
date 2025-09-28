@@ -1,5 +1,4 @@
-import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins';
-import { remarkInstall } from 'fumadocs-docgen';
+import { rehypeCodeDefaultOptions, remarkNpm } from 'fumadocs-core/mdx-plugins';
 import { remarkTypeScriptToJavaScript } from 'fumadocs-docgen/remark-ts2js';
 import {
   defineCollections,
@@ -37,7 +36,7 @@ export default defineConfig({
   mdxOptions: {
     remarkPlugins: [
       [
-        remarkInstall,
+        remarkNpm,
         {
           persist: {
             id: 'packagemanagers',

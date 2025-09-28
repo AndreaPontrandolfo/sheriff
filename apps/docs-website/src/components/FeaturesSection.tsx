@@ -73,6 +73,15 @@ const features = [
     description: 'Can be adopted incrementally with the "files" filter.',
   },
   {
+    title: 'Atomic no-restricted-syntax',
+    description:
+      'The pre-defined syntax restrictions can be disabled individually.',
+  },
+  {
+    title: 'Typescript guidance',
+    description: 'Detailed Typescript configuration guidance.',
+  },
+  {
     title: 'Comprehensive',
     description: 'Supports up to 10 different technologies.',
   },
