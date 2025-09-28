@@ -10,10 +10,10 @@ export const getPlaywrightConfig = (
     {
       ...playwright.configs['flat/recommended'],
       files: pathsOverrides ?? [`**/*{${allJsExtensions}}`],
-    },
-    {
-      files: pathsOverrides ?? [`**/*{${allJsExtensions}}`],
-      rules: playwrightHandPickedRules,
+      rules: {
+        ...playwright.configs['flat/recommended'].rules,
+        ...playwrightHandPickedRules,
+      },
     },
   ];
 };
