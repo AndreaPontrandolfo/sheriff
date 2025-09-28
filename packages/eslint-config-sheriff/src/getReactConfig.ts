@@ -81,9 +81,7 @@ export const getReactConfig = (
       plugins: {
         'react-you-might-not-need-an-effect': reactYouMightNotNeedAnEffect,
       },
-      rules: {
-        'react-you-might-not-need-an-effect/you-might-not-need-an-effect': 2,
-      },
+      rules: reactYouMightNotNeedAnEffect.configs.recommended.rules,
     },
     {
       files: [supportedFileTypes],

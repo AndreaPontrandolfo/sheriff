@@ -1,5 +1,4 @@
-import { rehypeCodeDefaultOptions } from 'fumadocs-core/mdx-plugins';
-import { remarkInstall } from 'fumadocs-docgen';
+import { rehypeCodeDefaultOptions, remarkNpm } from 'fumadocs-core/mdx-plugins';
 import { remarkTypeScriptToJavaScript } from 'fumadocs-docgen/remark-ts2js';
 import {
   defineCollections,
@@ -16,6 +15,11 @@ import { z } from 'zod';
 // Options: https://fumadocs.vercel.app/docs/mdx/collections#define-docs
 export const docs = defineDocs({
   dir: 'content/docs',
+  docs: {
+    postprocess: {
+      includeProcessedMarkdown: true,
+    },
+  },
 });
 
 export const blogPosts = defineCollections({
@@ -23,7 +27,7 @@ export const blogPosts = defineCollections({
   dir: 'content/blog',
   schema: frontmatterSchema.extend({
     author: z.string(),
-    date: z.string().date().or(z.date()),
+    date: z.iso.date().or(z.date()),
     image: z.string().optional(),
     readingTime: z
       .object({
@@ -37,7 +41,7 @@ export default defineConfig({
   mdxOptions: {
     remarkPlugins: [
       [
-        remarkInstall,
+        remarkNpm,
         {
           persist: {
             id: 'packagemanagers',

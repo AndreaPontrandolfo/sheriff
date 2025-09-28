@@ -9,4 +9,5 @@ export const playwrightHandPickedRules = {
   'playwright/prefer-to-have-count': 2,
   'playwright/prefer-to-contain': 2,
   'playwright/prefer-strict-equal': 2,
+  'playwright/prefer-native-locators': 2,
 } as const satisfies TSESLint.FlatConfig.Rules;
