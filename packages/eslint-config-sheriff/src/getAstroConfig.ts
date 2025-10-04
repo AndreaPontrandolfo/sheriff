@@ -61,6 +61,15 @@ export const getAstroConfig = (
       rules: getTsNamingConventionRule({ isTsx: true }),
     },
     {
+      files: ['**/*.astro/*.ts'], // Virtual files created by eslint-plugin-astro.
+      languageOptions: {
+        parserOptions: {
+          parser: tseslint.parser,
+          project: customTSConfigPath || true,
+        },
+      },
+    },
+    {
       files: [`**/src/pages/**/*.{${allJsExtensions}}`],
       rules: getTsNamingConventionRule({ isTsx: false, isAstroEndpoint: true }),
     },
