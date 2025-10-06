@@ -7,11 +7,8 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
-    }
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
   },
   "files": [
     "dist",
@@ -111,7 +108,7 @@
     "@typescript-eslint/utils": "^8.34.1",
     "eslint": "^9.29.0",
     "jiti": "^2.4.2",
-    "publint": "^0.3.12",
+    "publint": "^0.3.14",
     "tsconfig": "workspace:*",
     "tsdown": "^0.15.6",
     "typescript": "^5.8.3"
