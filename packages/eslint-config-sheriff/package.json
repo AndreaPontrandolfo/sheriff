@@ -3,6 +3,9 @@
   "version": "29.0.0",
   "description": "A comprehensive and opinionated TypeScript-first ESLint configuration.",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -12,7 +15,9 @@
   },
   "files": [
     "dist",
-    "CHANGELOG.md"
+    "package.json",
+    "CHANGELOG.md",
+    "README.md"
   ],
   "author": {
     "name": "Andrea Pontrandolfo",
@@ -45,13 +50,10 @@
   "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "scripts": {
     "clean": "rm -rf .turbo dist node_modules/.cache",
-    "re-bundle-types": "dts-bundle-generator --config dts-config.json",
-    "are-the-types-wrong": "attw --pack --profile=esm-only",
-    "build": "tsup && pnpm re-bundle-types",
-    "build:watch": "tsup --watch",
+    "build": "tsdown",
+    "build:watch": "tsdown --watch",
     "typecheck": "tsc",
-    "lint": "eslint src --max-warnings=0",
-    "publint": "publint"
+    "lint": "eslint src --max-warnings=0"
   },
   "dependencies": {
     "@eslint-react/eslint-plugin": "^1.10.1",
@@ -98,7 +100,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.17.4",
+    "@arethetypeswrong/core": "^0.18.2",
     "@sherifforg/constants": "workspace:*",
     "@sherifforg/types": "workspace:*",
     "@types/confusing-browser-globals": "^1.0.3",
@@ -107,12 +109,11 @@
     "@types/node": "^22.10.3",
     "@typescript-eslint/parser": "^8.34.1",
     "@typescript-eslint/utils": "^8.34.1",
-    "dts-bundle-generator": "^9.5.1",
     "eslint": "^9.29.0",
     "jiti": "^2.4.2",
-    "publint": "^0.3.11",
+    "publint": "^0.3.12",
     "tsconfig": "workspace:*",
-    "tsup": "^8.3.0",
+    "tsdown": "^0.15.6",
     "typescript": "^5.8.3"
   },
   "publishConfig": {

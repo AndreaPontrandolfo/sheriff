@@ -11,18 +11,12 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-export default tseslint.config(
-  sheriff(sheriffOptions),
-  {
-    rules: {
-      'fsecond/prefer-destructured-optionals': 0,
-      '@typescript-eslint/no-unsafe-return': 0,
-      '@typescript-eslint/no-unsafe-member-access': 0,
-      '@typescript-eslint/no-unsafe-argument': 0,
-      'lodash-f/import-scope': 0,
-    },
+export default tseslint.config(sheriff(sheriffOptions), {
+  rules: {
+    'fsecond/prefer-destructured-optionals': 0,
+    '@typescript-eslint/no-unsafe-return': 0,
+    '@typescript-eslint/no-unsafe-member-access': 0,
+    '@typescript-eslint/no-unsafe-argument': 0,
+    'lodash-f/import-scope': 0,
   },
-  {
-    ignores: ['tsup.config.js'],
-  },
-);
+});

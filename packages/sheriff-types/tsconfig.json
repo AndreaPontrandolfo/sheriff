@@ -5,6 +5,9 @@
   "extends": "tsconfig/base.json",
   "compilerOptions": {
     "module": "ESNext",
-    "incremental": true
+    "incremental": true,
+    "noEmit": false,
+    "outDir": "./dist",
+    "declaration": true
   }
 }
