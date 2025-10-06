@@ -1,5 +1,11 @@
 # eslint-config-sheriff
 
+## 29.0.1
+
+### Patch Changes
+
+- 5537e88: fix(config): add support for typed rules in Astro and fix naming convention rule for Astro endpoints
+
 ## 29.0.0
 
 ### Major Changes
