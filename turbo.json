@@ -32,9 +32,6 @@
     "validate-config": {
       "dependsOn": ["^topo", "^build"]
     },
-    "publint": {
-      "dependsOn": ["build"]
-    },
     "//#manypkg": {
       "inputs": ["**/package.json"]
     },

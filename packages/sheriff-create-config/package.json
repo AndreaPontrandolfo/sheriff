@@ -6,11 +6,10 @@
   "scripts": {
     "dev": "tsx ./src/index.ts",
     "clean": "rm -rf .turbo dist node_modules/.cache",
-    "build": "tsup",
-    "build:watch": "tsup --watch",
+    "build": "tsdown",
+    "build:watch": "tsdown --watch",
     "typecheck": "tsc",
-    "lint": "eslint ./src --max-warnings=0",
-    "publint": "publint"
+    "lint": "eslint ./src --max-warnings=0"
   },
   "license": "MIT",
   "dependencies": {
@@ -38,7 +37,7 @@
     "jiti": "^2.4.2",
     "publint": "^0.3.14",
     "tsconfig": "workspace:*",
-    "tsup": "^8.3.0",
+    "tsdown": "^0.15.6",
     "tsx": "^4.16.2"
   },
   "repository": {
