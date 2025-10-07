@@ -3,6 +3,18 @@
   "version": "9.10.0",
   "type": "module",
   "description": "This package creates new Sheriff configs.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "dist",
+    "package.json"
+  ],
   "scripts": {
     "dev": "tsx ./src/index.ts",
     "clean": "rm -rf .turbo dist node_modules/.cache",
