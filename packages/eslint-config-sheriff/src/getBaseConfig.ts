@@ -14,6 +14,7 @@ import eslintJs from '@eslint/js';
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import {
   allJsExtensions,
+  allJsxExtensions,
   supportedFileTypes,
   tsExtensions,
   tsxExtensions,
@@ -221,9 +222,22 @@ export const getBaseConfig = (
       },
     },
     {
+      // @ts-expect-error
+      extends: [fsecond.configs.recommended],
       files: [supportedFileTypes],
+      rules: {
+        'fsecond/valid-event-listener': 0,
+      },
+    },
+    {
+      files: [allJsxExtensions],
       plugins: { fsecond },
-      rules: { 'fsecond/prefer-destructured-optionals': 2 },
+      rules: {
+        'fsecond/valid-event-listener': [
+          2,
+          { requireUseEventListenerHook: true },
+        ],
+      },
     },
     {
       files: [`**/*.config.{${allJsExtensions}}`],
