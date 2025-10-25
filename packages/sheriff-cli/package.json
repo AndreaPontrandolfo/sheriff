@@ -42,7 +42,7 @@
     "eslint-config-sheriff": "workspace:*",
     "publint": "^0.3.14",
     "tsconfig": "workspace:*",
-    "tsdown": "^0.15.6",
+    "tsdown": "^0.15.9",
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
