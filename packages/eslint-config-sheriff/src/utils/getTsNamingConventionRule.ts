@@ -59,7 +59,8 @@ export const getTsNamingConventionRule = ({
   // Allow Astro endpoints: https://docs.astro.build/en/guides/endpoints/
   if (isAstroEndpoint) {
     options.push({
-      selector: 'function',
+      selector: ['variable', 'function'],
+      types: ['function'],
       modifiers: ['exported'],
       format: null,
       filter: '^(GET|HEAD|POST|PUT|PATCH|DELETE|OPTIONS|CONNECT|TRACE|ALL)$',
