@@ -12,7 +12,6 @@
     "format": "prettier . --write --cache --cache-location=node_modules/.cache/.prettiercache --log-level=warn",
     "format:check": "prettier . --check --cache --cache-location=node_modules/.cache/.prettiercache",
     "lint": "turbo run lint",
-    "are-the-types-wrong": "turbo run are-the-types-wrong",
     "manypkg": "manypkg check",
     "typesync": "typesync --dry=fail",
     "typecheck": "turbo run typecheck",
