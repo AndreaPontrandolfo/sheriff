@@ -1,5 +1,16 @@
 # eslint-config-sheriff
 
+## 29.1.0
+
+### Minor Changes
+
+- faf2881: chore(internal): tsup > tsdown
+  Closes [#388](https://github.com/AndreaPontrandolfo/sheriff/issues/388)
+
+### Patch Changes
+
+- 5537e88: fix(config): add support for typed rules in Astro and fix naming convention rule for Astro endpoints
+
 ## 29.0.0
 
 ### Major Changes

@@ -1,5 +1,12 @@
 # @sherifforg/cli
 
+## 9.11.0
+
+### Minor Changes
+
+- faf2881: chore(internal): tsup > tsdown
+  Closes [#388](https://github.com/AndreaPontrandolfo/sheriff/issues/388)
+
 ## 9.10.0
 
 ### Minor Changes
