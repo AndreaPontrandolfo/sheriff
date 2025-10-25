@@ -6,7 +6,6 @@ export default defineConfig({
   publint: { strict: true },
   shims: true,
   sourcemap: true,
-  exports: true,
   dts: {
     resolve: ['@sherifforg/types'],
   },

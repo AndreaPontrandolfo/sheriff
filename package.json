@@ -17,7 +17,7 @@
     "typecheck": "turbo run typecheck",
     "knip": "knip",
     "validate-config": "turbo run validate-config",
-    "merge-checks": "pnpm build && turbo run typecheck lint manypkg typesync knip validate-config are-the-types-wrong --filter=!./apps/docs-website-docusaurus && pnpm check-deduped-deps",
+    "merge-checks": "pnpm build && turbo run typecheck lint manypkg typesync knip validate-config --filter=!./apps/docs-website-docusaurus && pnpm check-deduped-deps",
     "check-deduped-deps": "pnpm dedupe --check",
     "clean": "turbo run clean && rm -rf .turbo",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",

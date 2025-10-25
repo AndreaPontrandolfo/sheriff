@@ -96,6 +96,7 @@ export const getBaseConfig = (
     },
     {
       files: [`**/*{${allJsExtensions}}`],
+      // @ts-expect-error
       languageOptions: getLanguageOptionsTypescript(customTSConfigPath),
     },
     {

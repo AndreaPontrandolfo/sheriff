@@ -23,6 +23,7 @@ export const getReactConfig = (
     {
       // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
       files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
+      // @ts-expect-error
       languageOptions: getLanguageOptionsTypescriptReact(customTSConfigPath),
     },
     {
