@@ -32,18 +32,12 @@
     "validate-config": {
       "dependsOn": ["^topo", "^build"]
     },
-    "publint": {
-      "dependsOn": ["build"]
-    },
     "//#manypkg": {
       "inputs": ["**/package.json"]
     },
     "//#knip": {},
     "//#typesync": {
       "inputs": ["**/package.json"]
-    },
-    "are-the-types-wrong": {
-      "dependsOn": ["build"]
     },
     "clean": {
       "cache": false
@@ -54,8 +48,7 @@
       "dependsOn": ["build"]
     },
     "//#format": {
-      "outputs": ["node_modules/.cache/.prettiercache"],
-      "cache": false
+      "outputs": ["node_modules/.cache/.prettiercache"]
     },
     "//#format:check": {
       "outputs": ["node_modules/.cache/.prettiercache"]

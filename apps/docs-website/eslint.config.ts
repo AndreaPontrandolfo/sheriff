@@ -13,6 +13,7 @@ const sheriffOptions: SheriffSettings = {
 };
 
 export default tseslint.config(
+  // @ts-expect-error
   sheriff(sheriffOptions),
   {
     rules: {
@@ -32,6 +33,7 @@ export default tseslint.config(
       '@typescript-eslint/no-unnecessary-condition': 0,
       'react/function-component-definition': 0,
       'lodash-f/prefer-lodash-typecheck': 0,
+      'fsecond/no-inline-interfaces': 0,
     },
   },
   {

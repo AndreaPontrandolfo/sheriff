@@ -55,7 +55,7 @@
     "astro"
   ],
   "homepage": "https://www.eslint-config-sheriff.dev",
-  "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
+  "bugs": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@octokit/rest": "^22.0.0",

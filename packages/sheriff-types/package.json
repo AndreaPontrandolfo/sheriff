@@ -3,15 +3,17 @@
   "description": "Sheriff types.",
   "version": "0.0.0",
   "type": "module",
-  "exports": {
-    ".": "./src/index.ts"
-  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
     "clean": "rm -rf .turbo dist node_modules/.cache",
-    "typecheck": "tsc"
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "build:watch": "tsc --watch"
   },
   "devDependencies": {
     "@types/node": "^22.10.3",

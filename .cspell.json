@@ -52,7 +52,7 @@
     "tanstack",
     "tsbuildinfo",
     "tsdoc",
-    "tsup",
+    "tsdown",
     "typecheck",
     "vercel"
   ],

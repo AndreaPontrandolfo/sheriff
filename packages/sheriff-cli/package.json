@@ -3,18 +3,30 @@
   "version": "8.6.0",
   "type": "module",
   "description": "The Sheriff CLI. Used to manage Sheriff-based ESLint configs.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "dist",
+    "package.json"
+  ],
   "scripts": {
     "clean": "rm -rf .turbo dist node_modules/.cache",
-    "build": "tsup",
-    "build:watch": "tsup --watch",
+    "build": "tsdown",
+    "build:watch": "tsdown --watch",
     "typecheck": "tsc",
-    "lint": "eslint ./src --max-warnings=0",
-    "publint": "publint"
+    "lint": "eslint src --max-warnings=0"
   },
   "license": "MIT",
   "dependencies": {
     "@typescript-eslint/typescript-estree": "^8.34.1",
     "consola": "^3.3.3",
+    "eslint": "^9.29.0",
     "read-pkg": "^9.0.1",
     "remeda": "^2.19.0",
     "yargs": "^17.7.2"
@@ -27,11 +39,10 @@
     "@sherifforg/types": "workspace:*",
     "@types/node": "^22.10.3",
     "@types/yargs": "^17.0.33",
-    "eslint": "^9.29.0",
     "eslint-config-sheriff": "workspace:*",
-    "publint": "^0.3.11",
+    "publint": "^0.3.14",
     "tsconfig": "workspace:*",
-    "tsup": "^8.3.0",
+    "tsdown": "^0.15.9",
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
@@ -56,7 +67,7 @@
     "cli"
   ],
   "homepage": "https://www.eslint-config-sheriff.dev",
-  "bug": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
+  "bugs": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "publishConfig": {
     "access": "public"
   }

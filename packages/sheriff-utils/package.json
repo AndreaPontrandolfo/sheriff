@@ -24,7 +24,7 @@
     "eslint": "^9.29.0",
     "eslint-config-sheriff": "workspace:*",
     "lodash-es": "^4.17.21",
-    "publint": "^0.3.11",
+    "publint": "^0.3.14",
     "tsconfig": "workspace:*",
     "tsx": "^4.16.2",
     "typescript": "^5.8.3"
