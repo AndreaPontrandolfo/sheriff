@@ -2,12 +2,12 @@ import type { TSESLint } from '@typescript-eslint/utils';
 
 interface GetTsNamingConventionRuleOptions {
   isTsx: boolean;
-  isAstroEndpoint?: boolean;
+  isAstroRoute?: boolean;
 }
 
 export const getTsNamingConventionRule = ({
   isTsx,
-  isAstroEndpoint,
+  isAstroRoute,
 }: GetTsNamingConventionRuleOptions): TSESLint.FlatConfig.Rules => {
   const options: unknown[] = [
     {
@@ -56,15 +56,24 @@ export const getTsNamingConventionRule = ({
     },
   ];
 
-  // Allow Astro endpoints: https://docs.astro.build/en/guides/endpoints/
-  if (isAstroEndpoint) {
-    options.push({
-      selector: ['variable', 'function'],
-      types: ['function'],
-      modifiers: ['exported'],
-      format: null,
-      filter: '^(GET|HEAD|POST|PUT|PATCH|DELETE|OPTIONS|CONNECT|TRACE|ALL)$',
-    });
+  if (isAstroRoute) {
+    options.push(
+      // Allow Astro endpoints: https://docs.astro.build/en/guides/endpoints/
+      {
+        selector: ['variable', 'function'],
+        types: ['function'],
+        modifiers: ['exported'],
+        format: null,
+        filter: '^(GET|HEAD|POST|PUT|PATCH|DELETE|OPTIONS|CONNECT|TRACE|ALL)$',
+      },
+      // Allow Astro route config: https://docs.astro.build/en/reference/routing-reference/
+      {
+        selector: 'variable',
+        modifiers: ['exported'],
+        format: null,
+        filter: '^(prerender|partial)$',
+      },
+    );
   }
 
   return {

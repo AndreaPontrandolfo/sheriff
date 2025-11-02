@@ -71,7 +71,7 @@ export const getAstroConfig = (
     },
     {
       files: [`**/src/pages/**/*.{${allJsExtensions}}`],
-      rules: getTsNamingConventionRule({ isTsx: false, isAstroEndpoint: true }),
+      rules: getTsNamingConventionRule({ isTsx: false, isAstroRoute: true }),
     },
   );
 };
