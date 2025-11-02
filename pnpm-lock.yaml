@@ -487,8 +487,8 @@ importers:
         specifier: ^2.7.0
         version: 2.7.0(eslint@9.29.0(jiti@2.6.1))
       eslint-plugin-remeda:
-        specifier: 1.8.1
-        version: 1.8.1(eslint@9.29.0(jiti@2.6.1))
+        specifier: 2.1.0
+        version: 2.1.0(eslint@9.29.0(jiti@2.6.1))
       eslint-plugin-simple-import-sort:
         specifier: ^12.1.0
         version: 12.1.1(eslint@9.29.0(jiti@2.6.1))
@@ -614,8 +614,8 @@ importers:
         specifier: ^2.7.0
         version: 2.7.0(eslint@9.29.0(jiti@2.6.1))
       eslint-plugin-remeda:
-        specifier: 1.8.1
-        version: 1.8.1(eslint@9.29.0(jiti@2.6.1))
+        specifier: 2.1.0
+        version: 2.1.0(eslint@9.29.0(jiti@2.6.1))
       eslint-plugin-simple-import-sort:
         specifier: ^12.1.0
         version: 12.1.1(eslint@9.29.0(jiti@2.6.1))
@@ -6206,6 +6206,9 @@ packages:
   caniuse-lite@1.0.30001751:
     resolution: {integrity: sha512-A0QJhug0Ly64Ii3eIqHu5X51ebln3k4yTUkY1j8drqpWHVreg/VLijN48cZ1bYPiqOQuqpkIKnzr/Ul8V+p6Cw==}
 
+  caniuse-lite@1.0.30001753:
+    resolution: {integrity: sha512-Bj5H35MD/ebaOV4iDLqPEtiliTN29qkGtEHCwawWn4cYm+bPJM2NsaP30vtZcnERClMzp52J4+aw2UNbK4o+zw==}
+
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
 
@@ -7378,9 +7381,9 @@ packages:
     peerDependencies:
       eslint: '>=8.44.0'
 
-  eslint-plugin-remeda@1.8.1:
-    resolution: {integrity: sha512-ASaFh6ag/m9NeO96MSpeVRqwKqQiGZqDppqSyPM9ElJmy2rOtercS+v/cj03suDHSnEZFTi2xr6jUf+I2zMEcg==}
-    engines: {node: '>=20'}
+  eslint-plugin-remeda@2.1.0:
+    resolution: {integrity: sha512-gWOlc1TbfHotomle0/QyRdIy+VU5cNn0HqtsAUjRshv3TKavptXPscLojVJJG20s6tF0hkuLmUbIpuVZ4xo6EA==}
+    engines: {node: '>=22'}
     peerDependencies:
       eslint: '>=9.0.0'
 
@@ -17290,7 +17293,7 @@ snapshots:
       '@module-federation/runtime-tools': 0.5.1
       '@rspack/binding': 1.1.8
       '@rspack/lite-tapable': 1.0.1
-      caniuse-lite: 1.0.30001751
+      caniuse-lite: 1.0.30001753
     optionalDependencies:
       '@swc/helpers': 0.5.15
     optional: true
@@ -19362,6 +19365,9 @@ snapshots:
 
   caniuse-lite@1.0.30001751: {}
 
+  caniuse-lite@1.0.30001753:
+    optional: true
+
   ccount@2.0.1: {}
 
   chai@5.1.2:
@@ -20875,9 +20881,10 @@ snapshots:
       regexp-ast-analysis: 0.7.1
       scslre: 0.3.0
 
-  eslint-plugin-remeda@1.8.1(eslint@9.29.0(jiti@2.6.1)):
+  eslint-plugin-remeda@2.1.0(eslint@9.29.0(jiti@2.6.1)):
     dependencies:
       eslint: 9.29.0(jiti@2.6.1)
+      lodash-es: 4.17.21
 
   eslint-plugin-simple-import-sort@12.1.1(eslint@9.29.0(jiti@2.6.1)):
     dependencies:
