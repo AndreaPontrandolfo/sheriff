@@ -32,13 +32,11 @@ export const autoInstallPackages = async (
     }
 
     if (selectedProject) {
-      consola.start(
-        `Installing dependendencies in project ${selectedProject}...`,
-      );
+      consola.start(`Installing dependencies in project ${selectedProject}...`);
     }
 
     if (!selectedProject) {
-      consola.start(`Installing dependendencies...`);
+      consola.start(`Installing dependencies...`);
     }
 
     try {
