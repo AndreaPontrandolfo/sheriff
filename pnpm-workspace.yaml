@@ -2,3 +2,20 @@ packages:
   - 'apps/*'
   - 'packages/*'
 verifyDepsBeforeRun: warn
+peerDependencyRules:
+  allowedVersions:
+    eslint: ^9.0.0
+    typescript: ^5.0.0
+  ignoreMissing:
+    - vitest
+onlyBuiltDependencies:
+  - '@swc/core'
+  - '@tailwindcss/oxide'
+  - '@vercel/speed-insights'
+  - 'core-js'
+  - 'core-js-pure'
+  - 'esbuild'
+  - 'sharp'
+  - 'unrs-resolver'
+disallowWorkspaceCycles: true
+shellEmulator: true
