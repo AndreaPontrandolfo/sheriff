@@ -1,33 +1,22 @@
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import type { TSESLint } from '@typescript-eslint/utils';
-import type { TsProjectType } from '@sherifforg/types';
-import { isNull } from 'lodash';
+import type { TsProjectType, TsProjectTypeResolution } from '@sherifforg/types';
 
 export const getLanguageOptionsTypescriptReact = (
-  tsProjectType: TsProjectType,
+  tsProjectType: TsProjectType = 'projectService',
 ): TSESLint.FlatConfig.LanguageOptions => {
-  if (isNull(tsProjectType) || tsProjectType === false) {
-    return {
-      parser: tseslint.parser,
-      parserOptions: {
-        ecmaFeatures: { modules: true, jsx: true },
-        jsxPragma: null, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
-      },
-      globals: globals.browser,
+  let tsProjectTypeResolution: TsProjectTypeResolution = {};
+
+  if (tsProjectType === 'project') {
+    tsProjectTypeResolution = {
+      project: true,
     };
   }
 
-  if (tsProjectType === 'project') {
-    return {
-      parser: tseslint.parser,
-      parserOptions: {
-        ecmaFeatures: { modules: true, jsx: true },
-        project: true,
-        tsconfigRootDir: import.meta.dirname,
-        jsxPragma: null, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
-      },
-      globals: globals.browser,
+  if (tsProjectType === 'projectService') {
+    tsProjectTypeResolution = {
+      projectService: true,
     };
   }
 
@@ -35,7 +24,7 @@ export const getLanguageOptionsTypescriptReact = (
     parser: tseslint.parser,
     parserOptions: {
       ecmaFeatures: { modules: true, jsx: true },
-      projectService: true,
+      ...tsProjectTypeResolution,
       tsconfigRootDir: import.meta.dirname,
       jsxPragma: null, // useful for typescript x react@17 https://github.com/jsx-eslint/eslint-plugin-react/blob/8cf47a8ac2242ee00ea36eac4b6ae51956ba4411/index.js#L165-L179
     },

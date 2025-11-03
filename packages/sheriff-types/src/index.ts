@@ -67,6 +67,11 @@ export interface SheriffConfigurablePlugins {
 
 export type TsProjectType = 'projectService' | 'project' | false | null;
 
+export interface TsProjectTypeResolution {
+  project?: boolean;
+  projectService?: boolean;
+}
+
 export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
   /**
    * This parameter allows you to override the paths for some Sheriff settings.

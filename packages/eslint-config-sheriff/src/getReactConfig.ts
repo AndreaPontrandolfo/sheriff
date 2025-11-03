@@ -11,20 +11,21 @@ import {
   allJsxExtensions,
   supportedFileTypes,
 } from '@sherifforg/constants';
+import type { TsProjectType } from '@sherifforg/types';
 import type { TSESLint } from '@typescript-eslint/utils';
 import { reactHandPickedRules } from './handpickedRules/reactHandPickedRules';
 import { getLanguageOptionsTypescriptReact } from './utils/getLanguageOptionsTypescriptReact';
 import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 
 export const getReactConfig = (
-  customTSConfigPath?: string | string[],
+  tsProjectType?: TsProjectType,
 ): TSESLint.FlatConfig.ConfigArray => {
   return tseslint.config(
     {
       // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
       files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
       // @ts-expect-error
-      languageOptions: getLanguageOptionsTypescriptReact(customTSConfigPath),
+      languageOptions: getLanguageOptionsTypescriptReact(tsProjectType),
     },
     {
       files: [supportedFileTypes],
