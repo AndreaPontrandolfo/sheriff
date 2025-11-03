@@ -65,6 +65,8 @@ export interface SheriffConfigurablePlugins {
   vitest: boolean;
 }
 
+export type TsProjectType = 'projectService' | 'project' | false | null;
+
 export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
   /**
    * This parameter allows you to override the paths for some Sheriff settings.
@@ -72,6 +74,8 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
   pathsOverrides?: {
     /**
      * With this setting, if you have multiple tsconfig.json files in your project (like tsconfig.json, tsconfig.eslint.json, tsconfig.node.json, etc...) you can specify which config Sheriff will pickup. You can also specify a list of paths, see: https://typescript-eslint.io/linting/typed-linting/monorepos/#one-tsconfigjson-per-package-and-an-optional-one-in-the-root.
+     *
+     * @deprecated This setting is now unsupported. `projectService` is now enabled by default. If you need to specify a custom `tsconfig.json` file, set `tsProjectType` to false or null and define a new configuration object with the `project`: /path/to/tsconfig.json property.
      */
     tsconfigLocation?: string | string[];
     /**
@@ -97,9 +101,20 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
     inheritedFromGitignore?: boolean;
   };
   /**
-   * This setting accepts an array of filepaths, dictaced by minimatch syntax. Only the matching files found in this array will be linted. All other files will be ignored. This is useful if you want to lint only a subset of your project.
+   * This setting accepts an array of filepaths, described by minimatch syntax. Only the matching files found in this array will be linted. All other files will be ignored. This is useful if you want to lint only a subset of your project.
    */
   files?: string[];
+  /**
+   * This setting allows you to specify the typescript-eslint parserOption "project type" that Sheriff will use.
+   * In line with typescript-eslint specifications, `projectService` is enabled by default, but you can fallback to `project` or disable the setting entirely, if you want. This can be especially useful if you want to use a custom `tsconfig.json` file for any reason.
+   *
+   * See: https://typescript-eslint.io/packages/parser/#projectservice
+   *
+   * **WARNING**: setting this option to false or null will disable every type-aware linting rule and will possibly break Sheriff in multiple ways. Only disable this if you want to manually re-configure the typescript-eslint parserOptions.
+   *
+   * @default 'projectService'
+   */
+  tsProjectType?: TsProjectType;
 }
 
 export interface ServerResponse {
