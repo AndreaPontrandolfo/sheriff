@@ -1,5 +1,5 @@
-import tseslint from 'typescript-eslint';
-import type { TSESLint } from '@typescript-eslint/utils';
+import tseslint from "typescript-eslint";
+import type { TSESLint } from "@typescript-eslint/utils";
 
 export const getLanguageOptionsTypescript = (
   userChosenTSConfig?: string | string[],

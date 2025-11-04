@@ -1,28 +1,28 @@
-import createNoRestrictedSyntax from 'eslint-no-restricted/syntax';
+import createNoRestrictedSyntax from "eslint-no-restricted/syntax";
 
 const baseNoRestrictedSyntaxRules = [
   {
-    selector: 'LabeledStatement',
-    name: 'noLabels',
+    selector: "LabeledStatement",
+    name: "noLabels",
     message:
-      'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+      "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
   },
   {
-    selector: 'ForInStatement',
-    name: 'noForInLoops',
+    selector: "ForInStatement",
+    name: "noForInLoops",
     message:
-      'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+      "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",
   },
   {
     selector: "Identifier[name='Reflect']",
-    name: 'noReflect',
+    name: "noReflect",
     message:
-      'Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development.',
+      "Avoid the Reflect API. It is a very low-level feature that has only rare and specific use-cases if building complex and hacky libraries. There is no need to use this feature for any kind of normal development.",
   },
   {
     selector: "Identifier[name='Proxy']",
-    name: 'noProxy',
-    message: 'Avoid Proxy.',
+    name: "noProxy",
+    message: "Avoid Proxy.",
   },
   // this needs to be temporarily disabled because of a Typescript limitation with discriminated unions. See: https://github.com/microsoft/TypeScript/issues/44253.
   // {
@@ -37,29 +37,29 @@ const baseNoRestrictedSyntaxRules = [
       "PropertyDefinition[accessibility='protected']",
       "PropertyDefinition[accessibility='private']",
     ],
-    name: 'noAccessModifiers',
+    name: "noAccessModifiers",
     message:
-      'Avoid access modifiers. In Javascript modules there is no need to limit developer access to properties.',
+      "Avoid access modifiers. In Javascript modules there is no need to limit developer access to properties.",
   },
   {
     selector: ["Identifier[name='PropTypes']", "Identifier[name='propTypes']"],
-    name: 'noPropTypes',
-    message: 'Avoid PropTypes. Use Typescript instead.',
+    name: "noPropTypes",
+    message: "Avoid PropTypes. Use Typescript instead.",
   },
   {
     selector: "UnaryExpression[operator='delete']",
-    name: 'noDeleteOperator',
+    name: "noDeleteOperator",
     message: 'Avoid the "delete" operator. Use omit() instead.',
   },
   {
-    selector: 'TSEnumDeclaration',
-    name: 'noEnums',
-    message: 'Avoid enums.',
+    selector: "TSEnumDeclaration",
+    name: "noEnums",
+    message: "Avoid enums.",
   },
   {
-    selector: ['ClassDeclaration', 'ClassExpression'],
-    name: 'noClasses',
-    message: 'Avoid classes. Use functions and objects instead.',
+    selector: ["ClassDeclaration", "ClassExpression"],
+    name: "noClasses",
+    message: "Avoid classes. Use functions and objects instead.",
   },
 ];
 

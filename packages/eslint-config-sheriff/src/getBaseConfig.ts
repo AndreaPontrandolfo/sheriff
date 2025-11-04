@@ -1,72 +1,72 @@
-import createNoRestrictedProperties from 'eslint-no-restricted/properties';
-import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
-import fsecond from 'eslint-plugin-fsecond';
-import pluginImport from 'eslint-plugin-import';
-import jsdoc from 'eslint-plugin-jsdoc';
-import * as regexpPlugin from 'eslint-plugin-regexp';
-import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import sonarjs from 'eslint-plugin-sonarjs';
-import tsdoc from 'eslint-plugin-tsdoc';
-import unicorn from 'eslint-plugin-unicorn';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
-import eslintJs from '@eslint/js';
-import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
+import createNoRestrictedProperties from "eslint-no-restricted/properties";
+import arrowReturnStyle from "eslint-plugin-arrow-return-style";
+import fsecond from "eslint-plugin-fsecond";
+import pluginImport from "eslint-plugin-import";
+import jsdoc from "eslint-plugin-jsdoc";
+import * as regexpPlugin from "eslint-plugin-regexp";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import sonarjs from "eslint-plugin-sonarjs";
+import tsdoc from "eslint-plugin-tsdoc";
+import unicorn from "eslint-plugin-unicorn";
+import globals from "globals";
+import tseslint from "typescript-eslint";
+import eslintJs from "@eslint/js";
+import preferEarlyReturn from "@regru/eslint-plugin-prefer-early-return";
 import {
   allJsExtensions,
   allJsxExtensions,
   supportedFileTypes,
   tsExtensions,
   tsxExtensions,
-} from '@sherifforg/constants';
-import type { SheriffSettings } from '@sherifforg/types';
-import stylistic from '@stylistic/eslint-plugin';
-import type { TSESLint } from '@typescript-eslint/utils';
-import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
-import { importHandPickedRules } from './handpickedRules/importHandPickedRules';
-import { jsdocHandPickedRules } from './handpickedRules/jsdocHandPickedRules';
-import { sonarjsHandPickedRules } from './handpickedRules/sonarjsHandPickedRules';
-import { stylisticHandPickedRules } from './handpickedRules/stylisticHandPickedRules';
-import { typescriptHandPickedRules } from './handpickedRules/typescriptHandPickedRules';
-import { unicornHandPickedRules } from './handpickedRules/unicornHandPickedRules';
-import { getLanguageOptionsTypescript } from './utils/getLanguageOptionsTypescript';
-import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
-import { noRestrictedSyntax } from './utils/noRestrictedSyntax';
+} from "@sherifforg/constants";
+import type { SheriffSettings } from "@sherifforg/types";
+import stylistic from "@stylistic/eslint-plugin";
+import type { TSESLint } from "@typescript-eslint/utils";
+import { getBaseEslintHandPickedRules } from "./handpickedRules/getBaseEslintHandPickedRules";
+import { importHandPickedRules } from "./handpickedRules/importHandPickedRules";
+import { jsdocHandPickedRules } from "./handpickedRules/jsdocHandPickedRules";
+import { sonarjsHandPickedRules } from "./handpickedRules/sonarjsHandPickedRules";
+import { stylisticHandPickedRules } from "./handpickedRules/stylisticHandPickedRules";
+import { typescriptHandPickedRules } from "./handpickedRules/typescriptHandPickedRules";
+import { unicornHandPickedRules } from "./handpickedRules/unicornHandPickedRules";
+import { getLanguageOptionsTypescript } from "./utils/getLanguageOptionsTypescript";
+import { getTsNamingConventionRule } from "./utils/getTsNamingConventionRule";
+import { noRestrictedSyntax } from "./utils/noRestrictedSyntax";
 
 const baseNoRestrictedPropertiesRules = [
   {
-    name: 'isFinite',
-    message: 'Please use Number.isFinite instead',
+    name: "isFinite",
+    message: "Please use Number.isFinite instead",
     property: [
       {
-        object: 'global',
-        property: 'isFinite',
+        object: "global",
+        property: "isFinite",
       },
       {
-        object: 'self',
-        property: 'isFinite',
+        object: "self",
+        property: "isFinite",
       },
       {
-        object: 'window',
-        property: 'isFinite',
+        object: "window",
+        property: "isFinite",
       },
     ],
   },
   {
-    name: 'isNaN',
-    message: 'Please use Number.isNaN instead',
+    name: "isNaN",
+    message: "Please use Number.isNaN instead",
     property: [
       {
-        object: 'global',
-        property: 'isNaN',
+        object: "global",
+        property: "isNaN",
       },
       {
-        object: 'self',
-        property: 'isNaN',
+        object: "self",
+        property: "isNaN",
       },
       {
-        object: 'window',
-        property: 'isNaN',
+        object: "window",
+        property: "isNaN",
       },
     ],
   },
@@ -120,19 +120,19 @@ export const getBaseConfig = (
         tsdoc,
       },
       rules: {
-        'tsdoc/syntax': 2,
+        "tsdoc/syntax": 2,
       },
     },
     {
       files: [supportedFileTypes],
-      plugins: { '@stylistic': stylistic },
+      plugins: { "@stylistic": stylistic },
       rules: stylisticHandPickedRules,
     },
     {
       files: [supportedFileTypes],
-      plugins: { '@regru/prefer-early-return': preferEarlyReturn },
+      plugins: { "@regru/prefer-early-return": preferEarlyReturn },
       rules: {
-        '@regru/prefer-early-return/prefer-early-return': [
+        "@regru/prefer-early-return/prefer-early-return": [
           2,
           {
             maximumStatements: 1,
@@ -151,7 +151,7 @@ export const getBaseConfig = (
     {
       files: [supportedFileTypes],
       plugins: { regexp: regexpPlugin },
-      rules: regexpPlugin.configs['flat/recommended'].rules,
+      rules: regexpPlugin.configs["flat/recommended"].rules,
     },
     {
       files: [supportedFileTypes],
@@ -163,30 +163,30 @@ export const getBaseConfig = (
     },
     {
       files: [supportedFileTypes],
-      plugins: { 'arrow-return-style': arrowReturnStyle },
+      plugins: { "arrow-return-style": arrowReturnStyle },
       rules: {
-        'arrow-return-style/arrow-return-style': [
+        "arrow-return-style/arrow-return-style": [
           2,
           { namedExportsAlwaysUseExplicitReturn: false },
         ],
-        'arrow-return-style/no-export-default-arrow': 2,
+        "arrow-return-style/no-export-default-arrow": 2,
       },
     },
     {
       files: [supportedFileTypes],
       plugins: {
-        'simple-import-sort': simpleImportSort,
+        "simple-import-sort": simpleImportSort,
       },
       rules: {
-        'simple-import-sort/imports': [
+        "simple-import-sort/imports": [
           2,
           {
             groups: [
-              ['^\\u0000', '^node:', '^', '^@', '^@/', '^#', '^~', '^\\.'],
+              ["^\\u0000", "^node:", "^", "^@", "^@/", "^#", "^~", "^\\."],
             ],
           },
         ],
-        'simple-import-sort/exports': 2,
+        "simple-import-sort/exports": 2,
       },
     },
     {
@@ -194,11 +194,11 @@ export const getBaseConfig = (
       plugins: { import: pluginImport },
       rules: importHandPickedRules,
       settings: {
-        'import/parsers': {
-          '@typescript-eslint/parser': ['.ts', '.tsx', '.mts', 'cts'],
-          espree: ['.js'],
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts", ".tsx", ".mts", "cts"],
+          espree: [".js"],
         },
-        'import/resolver': {
+        "import/resolver": {
           typescript: {
             alwaysTryTypes: true,
           },
@@ -207,9 +207,9 @@ export const getBaseConfig = (
       },
     },
     {
-      files: ['**/*.d.ts'],
+      files: ["**/*.d.ts"],
       rules: {
-        'import/no-default-export': 0,
+        "import/no-default-export": 0,
       },
     },
     {
@@ -218,7 +218,7 @@ export const getBaseConfig = (
       rules: jsdocHandPickedRules,
       settings: {
         jsdoc: {
-          mode: 'typescript',
+          mode: "typescript",
         },
       },
     },
@@ -227,14 +227,14 @@ export const getBaseConfig = (
       extends: [fsecond.configs.recommended],
       files: [supportedFileTypes],
       rules: {
-        'fsecond/valid-event-listener': 0,
+        "fsecond/valid-event-listener": 0,
       },
     },
     {
       files: [allJsxExtensions],
       plugins: { fsecond },
       rules: {
-        'fsecond/valid-event-listener': [
+        "fsecond/valid-event-listener": [
           2,
           { requireUseEventListenerHook: true },
         ],
@@ -243,15 +243,15 @@ export const getBaseConfig = (
     {
       files: [`**/*.config.{${allJsExtensions}}`],
       rules: {
-        'import/no-default-export': 0,
-        'import/no-anonymous-default-export': 0,
-        'arrow-return-style/no-export-default-arrow': 0,
+        "import/no-default-export": 0,
+        "import/no-anonymous-default-export": 0,
+        "arrow-return-style/no-export-default-arrow": 0,
       },
     },
     {
       files: [supportedFileTypes],
       linterOptions: {
-        reportUnusedDisableDirectives: 'error',
+        reportUnusedDisableDirectives: "error",
       },
     },
   );

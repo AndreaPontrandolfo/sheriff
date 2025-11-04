@@ -1,5 +1,6 @@
-import { sheriff, type SheriffSettings, tseslint } from './src';
-
+import { sheriff, type SheriffSettings } from "./src";
+const { defineConfig } = require("eslint");
+// Using ESLint's built-in defineConfig instead of deprecated tseslint.config
 const sheriffOptions: SheriffSettings = {
   react: false,
   next: false,
@@ -11,13 +12,15 @@ const sheriffOptions: SheriffSettings = {
   vitest: false,
 };
 
-// @ts-expect-error
-export default tseslint.config(sheriff(sheriffOptions), {
-  rules: {
-    'fsecond/prefer-destructured-optionals': 0,
-    '@typescript-eslint/no-unsafe-return': 0,
-    '@typescript-eslint/no-unsafe-member-access': 0,
-    '@typescript-eslint/no-unsafe-argument': 0,
-    'lodash-f/import-scope': 0,
+export default defineConfig([
+  sheriff(sheriffOptions),
+  {
+    rules: {
+      "fsecond/prefer-destructured-optionals": 0,
+      "@typescript-eslint/no-unsafe-return": 0,
+      "@typescript-eslint/no-unsafe-member-access": 0,
+      "@typescript-eslint/no-unsafe-argument": 0,
+      "lodash-f/import-scope": 0,
+    },
   },
-});
+]);

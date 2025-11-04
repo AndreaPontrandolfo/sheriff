@@ -1,20 +1,20 @@
-import fsecond from 'eslint-plugin-fsecond';
-import reactAccessibility from 'eslint-plugin-jsx-a11y';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import reactYouMightNotNeedAnEffect from 'eslint-plugin-react-you-might-not-need-an-effect';
-import tseslint from 'typescript-eslint';
-import rel1cxReact from '@eslint-react/eslint-plugin';
+import fsecond from "eslint-plugin-fsecond";
+import reactAccessibility from "eslint-plugin-jsx-a11y";
+import react from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
+import reactYouMightNotNeedAnEffect from "eslint-plugin-react-you-might-not-need-an-effect";
+import tseslint from "typescript-eslint";
+import rel1cxReact from "@eslint-react/eslint-plugin";
 import {
   allJsExtensions,
   allJsxExtensions,
   supportedFileTypes,
-} from '@sherifforg/constants';
-import type { TSESLint } from '@typescript-eslint/utils';
-import { reactHandPickedRules } from './handpickedRules/reactHandPickedRules';
-import { getLanguageOptionsTypescriptReact } from './utils/getLanguageOptionsTypescriptReact';
-import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
+} from "@sherifforg/constants";
+import type { TSESLint } from "@typescript-eslint/utils";
+import { reactHandPickedRules } from "./handpickedRules/reactHandPickedRules";
+import { getLanguageOptionsTypescriptReact } from "./utils/getLanguageOptionsTypescriptReact";
+import { getTsNamingConventionRule } from "./utils/getTsNamingConventionRule";
 
 export const getReactConfig = (
   customTSConfigPath?: string | string[],
@@ -31,12 +31,12 @@ export const getReactConfig = (
       plugins: { react },
       settings: {
         react: {
-          version: 'detect',
+          version: "detect",
         },
       },
       rules: {
         ...react.configs.flat.recommended.rules,
-        ...react.configs.flat['jsx-runtime'].rules,
+        ...react.configs.flat["jsx-runtime"].rules,
         ...reactHandPickedRules,
       },
     },
@@ -46,11 +46,11 @@ export const getReactConfig = (
     },
     {
       files: [`**/*{${allJsxExtensions}}`],
-      plugins: { 'react-refresh': reactRefresh },
+      plugins: { "react-refresh": reactRefresh },
       rules: {
-        'react-refresh/only-export-components': [
+        "react-refresh/only-export-components": [
           2,
-          { allowExportNames: ['loader'] },
+          { allowExportNames: ["loader"] },
         ],
       },
     },
@@ -61,26 +61,26 @@ export const getReactConfig = (
     {
       files: [supportedFileTypes],
       plugins: {
-        'react-hooks': reactHooks,
+        "react-hooks": reactHooks,
       },
-      rules: reactHooks.configs['recommended-latest'].rules,
+      rules: reactHooks.configs["recommended-latest"].rules,
     },
     {
       files: [supportedFileTypes],
       plugins: {
-        '@eslint-react': rel1cxReact.configs.all.plugins['@eslint-react'],
-        '@eslint-react/hooks-extra':
-          rel1cxReact.configs.all.plugins['@eslint-react/hooks-extra'],
+        "@eslint-react": rel1cxReact.configs.all.plugins["@eslint-react"],
+        "@eslint-react/hooks-extra":
+          rel1cxReact.configs.all.plugins["@eslint-react/hooks-extra"],
       },
       rules: {
-        '@eslint-react/no-leaked-conditional-rendering': 2,
-        '@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks': 2,
+        "@eslint-react/no-leaked-conditional-rendering": 2,
+        "@eslint-react/hooks-extra/ensure-custom-hooks-using-other-hooks": 2,
       },
     },
     {
       files: [supportedFileTypes],
       plugins: {
-        'react-you-might-not-need-an-effect': reactYouMightNotNeedAnEffect,
+        "react-you-might-not-need-an-effect": reactYouMightNotNeedAnEffect,
       },
       rules: reactYouMightNotNeedAnEffect.configs.recommended.rules,
     },
@@ -90,19 +90,19 @@ export const getReactConfig = (
         fsecond,
       },
       rules: {
-        'fsecond/valid-event-listener': 2,
+        "fsecond/valid-event-listener": 2,
       },
     },
     // Specific overrides for astro
     {
-      files: ['**/*.astro'],
+      files: ["**/*.astro"],
       rules: {
-        'react/no-unknown-property': 0,
-        'react/jsx-filename-extension': [
+        "react/no-unknown-property": 0,
+        "react/jsx-filename-extension": [
           2,
           {
-            allow: 'always',
-            extensions: ['.jsx', '.tsx', '.mtsx', '.mjsx', '.astro'],
+            allow: "always",
+            extensions: [".jsx", ".tsx", ".mtsx", ".mjsx", ".astro"],
           },
         ],
       },

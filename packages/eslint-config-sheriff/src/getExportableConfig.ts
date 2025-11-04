@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-import { globalIgnores } from 'eslint/config';
-import getGitignorePatterns from 'eslint-config-flat-gitignore';
-import lodash from 'lodash';
-import { ignores, sheriffStartingOptions } from '@sherifforg/constants';
-import type { SheriffSettings } from '@sherifforg/types';
-import type { TSESLint } from '@typescript-eslint/utils';
-import { getAstroConfig } from './getAstroConfig';
-import { getBaseConfig } from './getBaseConfig';
-import { getJestConfig } from './getJestConfig';
-import { getReactConfig } from './getReactConfig';
-import { getStorybookConfig } from './getStorybookConfig';
-import { getVitestConfig } from './getVitestConfig';
-import { lodashConfig } from './lodashConfig';
-import { nextjsConfig } from './nextjsConfig';
-import { getPlaywrightConfig } from './playwrightConfig';
-import { remedaConfig } from './remedaConfig';
+import { globalIgnores } from "eslint/config";
+import getGitignorePatterns from "eslint-config-flat-gitignore";
+import lodash from "lodash";
+import { ignores, sheriffStartingOptions } from "@sherifforg/constants";
+import type { SheriffSettings } from "@sherifforg/types";
+import type { TSESLint } from "@typescript-eslint/utils";
+import { getAstroConfig } from "./getAstroConfig";
+import { getBaseConfig } from "./getBaseConfig";
+import { getJestConfig } from "./getJestConfig";
+import { getReactConfig } from "./getReactConfig";
+import { getStorybookConfig } from "./getStorybookConfig";
+import { getVitestConfig } from "./getVitestConfig";
+import { lodashConfig } from "./lodashConfig";
+import { nextjsConfig } from "./nextjsConfig";
+import { getPlaywrightConfig } from "./playwrightConfig";
+import { remedaConfig } from "./remedaConfig";
 
 export const getExportableConfig = (
   userConfigChoices: SheriffSettings = sheriffStartingOptions,
@@ -39,7 +39,7 @@ export const getExportableConfig = (
     userConfigChoices.vitest
   ) {
     throw new Error(
-      'Jest and Vitest support cannot be activated at once. Please choose one or the other.',
+      "Jest and Vitest support cannot be activated at once. Please choose one or the other.",
     );
   }
 
@@ -96,7 +96,7 @@ export const getExportableConfig = (
 
       return {
         ...configSlice,
-        ignores: ['**/*', ...allowedPatterns],
+        ignores: ["**/*", ...allowedPatterns],
       };
     });
   }

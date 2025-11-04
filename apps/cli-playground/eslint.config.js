@@ -1,4 +1,4 @@
-import { sheriff, tseslint } from 'eslint-config-sheriff';
+import { sheriff, tseslint } from "eslint-config-sheriff";
 
 const sheriffOptions = {
   react: true,

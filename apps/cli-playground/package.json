@@ -19,6 +19,10 @@
   "devDependencies": {
     "@types/lodash": "^4.17.13",
     "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.6"
+    "@types/react-dom": "^19.1.6",
+    "eslint": "^9.39.1",
+    "eslint-config-sheriff": "^29.1.0",
+    "jiti": "^2.6.1",
+    "prettier": "^3.6.2"
   }
 }
