@@ -1,7 +1,7 @@
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import type { TSESLint } from '@typescript-eslint/utils';
 import type { TsProjectType, TsProjectTypeResolution } from '@sherifforg/types';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 export const getLanguageOptionsTypescriptReact = (
   tsProjectType: TsProjectType = 'projectService',

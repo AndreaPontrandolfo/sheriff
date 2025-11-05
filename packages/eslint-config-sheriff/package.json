@@ -90,7 +90,7 @@
     "eslint-plugin-unicorn": "^56.0.1",
     "globals": "^15.11.0",
     "lodash": "^4.17.21",
-    "typescript-eslint": "^8.34.1"
+    "typescript-eslint": "^8.46.3"
   },
   "peerDependencies": {
     "eslint": ">=9.15.0",
@@ -108,8 +108,8 @@
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/lodash": "^4.17.13",
     "@types/node": "^22.10.3",
-    "@typescript-eslint/parser": "^8.34.1",
-    "@typescript-eslint/utils": "^8.34.1",
+    "@typescript-eslint/parser": "^8.46.3",
+    "@typescript-eslint/utils": "^8.46.3",
     "eslint": "^9.29.0",
     "jiti": "^2.4.2",
     "publint": "^0.3.14",
