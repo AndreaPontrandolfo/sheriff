@@ -28,7 +28,12 @@ export const getExportableConfig = (
 
   if (hasReact || userConfigChoices.next) {
     // we insert reactConfig this way because it's an array. It's an array because it contains multiple configs, currently: react, react-hooks, react-a11y and react-refresh.
-    exportableConfig.push(...getReactConfig(userConfigChoices.tsProjectType));
+    exportableConfig.push(
+      ...getReactConfig(
+        userConfigChoices.tsProjectType,
+        userConfigChoices.tsconfigRootDir,
+      ),
+    );
   }
 
   if (
@@ -67,7 +72,11 @@ export const getExportableConfig = (
 
   if (userConfigChoices.astro) {
     exportableConfig.push(
-      ...getAstroConfig(hasReact, userConfigChoices.tsProjectType),
+      ...getAstroConfig(
+        hasReact,
+        userConfigChoices.tsProjectType,
+        userConfigChoices.tsconfigRootDir,
+      ),
     );
   }
 

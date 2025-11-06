@@ -1,4 +1,5 @@
 import astro from 'eslint-plugin-astro';
+import { isUndefined } from 'lodash';
 import tseslint from 'typescript-eslint';
 import { allJsExtensions } from '@sherifforg/constants';
 import type { TsProjectType, TsProjectTypeResolution } from '@sherifforg/types';
@@ -19,6 +20,7 @@ const astroJsxA11yRules = astroJsxA11yConfig?.rules ?? {};
 export const getAstroConfig = (
   hasReact: boolean,
   tsProjectType: TsProjectType = 'projectService',
+  tsconfigRootDir?: string,
 ): TSESLint.FlatConfig.ConfigArray => {
   let tsProjectTypeResolution: TsProjectTypeResolution = {};
 
@@ -52,7 +54,7 @@ export const getAstroConfig = (
           parser: tseslint.parser,
           ...tsProjectTypeResolution,
           ecmaFeatures: { modules: true },
-          tsconfigRootDir: import.meta.dirname,
+          ...(isUndefined(tsconfigRootDir) ? {} : { tsconfigRootDir }),
           extraFileExtensions: ['.astro'], // this is probably already included in the recommended preset, but we are keeping it for safety.
         },
       },
@@ -72,7 +74,7 @@ export const getAstroConfig = (
           parser: tseslint.parser,
           ecmaFeatures: { modules: true },
           ...tsProjectTypeResolution,
-          tsconfigRootDir: import.meta.dirname,
+          ...(isUndefined(tsconfigRootDir) ? {} : { tsconfigRootDir }),
         },
       },
     },

@@ -9,9 +9,9 @@ const sheriffOptions: SheriffSettings = {
   playwright: false,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
-// @ts-expect-error
 export default tseslint.config(sheriff(sheriffOptions), {
   rules: {
     'fsecond/prefer-destructured-optionals': 0,

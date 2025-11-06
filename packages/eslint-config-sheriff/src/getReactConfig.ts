@@ -19,13 +19,16 @@ import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 
 export const getReactConfig = (
   tsProjectType?: TsProjectType,
+  tsconfigRootDir?: string,
 ): TSESLint.FlatConfig.ConfigArray => {
   return tseslint.config(
     {
       // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
       files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
-      // @ts-expect-error
-      languageOptions: getLanguageOptionsTypescriptReact(tsProjectType),
+      languageOptions: getLanguageOptionsTypescriptReact(
+        tsProjectType,
+        tsconfigRootDir,
+      ),
     },
     {
       files: [supportedFileTypes],

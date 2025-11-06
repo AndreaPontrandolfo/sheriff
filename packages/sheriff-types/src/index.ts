@@ -107,6 +107,8 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
   };
   /**
    * This setting accepts an array of filepaths, described by minimatch syntax. Only the matching files found in this array will be linted. All other files will be ignored. This is useful if you want to lint only a subset of your project.
+   *
+   * @default undefined
    */
   files?: string[];
   /**
@@ -120,6 +122,15 @@ export interface SheriffSettings extends Partial<SheriffConfigurablePlugins> {
    * @default 'projectService'
    */
   tsProjectType?: TsProjectType;
+  /**
+   * This setting allows you to override the root directory that typescript-eslint' parser uses to resolve tsconfig.json files.
+   * It's usually better to set this explicitly to `import.meta.dirname` (the directory of the current file).
+   *
+   * See: https://typescript-eslint.io/packages/parser/#tsconfigrootdir
+   *
+   * @default undefined
+   */
+  tsconfigRootDir?: string;
 }
 
 export interface ServerResponse {

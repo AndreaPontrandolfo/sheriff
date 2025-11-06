@@ -79,7 +79,7 @@ const noRestrictedProperties = createNoRestrictedProperties(
 export const getBaseConfig = (
   userConfigChoices: SheriffSettings,
 ): TSESLint.FlatConfig.ConfigArray => {
-  const { tsProjectType } = userConfigChoices;
+  const { tsProjectType, tsconfigRootDir } = userConfigChoices;
 
   return tseslint.config(
     {
@@ -96,8 +96,10 @@ export const getBaseConfig = (
     },
     {
       files: [`**/*{${allJsExtensions}}`],
-      // @ts-expect-error
-      languageOptions: getLanguageOptionsTypescript(tsProjectType),
+      languageOptions: getLanguageOptionsTypescript(
+        tsProjectType,
+        tsconfigRootDir,
+      ),
     },
     {
       files: [supportedFileTypes],

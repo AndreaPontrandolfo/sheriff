@@ -9,6 +9,7 @@ const sheriffOptions = {
   playwright: false,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions), {
