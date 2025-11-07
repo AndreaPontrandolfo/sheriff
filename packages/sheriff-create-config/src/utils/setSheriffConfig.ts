@@ -11,7 +11,8 @@ export const setSheriffConfig = async (
   const finalPluginsConfigurationSetup: SheriffSettings =
     sheriffStartingOptions;
 
-  finalPluginsConfigurationSetup.tsconfigRootDir = 'import.meta.dirname';
+  // '__IMPORT_META_DIRNAME__' is a placeholder that will be replaced later with import.meta.dirname variable.
+  finalPluginsConfigurationSetup.tsconfigRootDir = '__IMPORT_META_DIRNAME__';
 
   const root = await getPackageJsonContents(customProjectRootPath);
 
@@ -90,7 +91,12 @@ export const setSheriffConfig = async (
 
   consola.info('Setting Sheriff with options:');
   consola.box(
-    highlight(JSON.stringify(finalPluginsConfigurationSetup, null, 2)),
+    highlight(
+      JSON.stringify(finalPluginsConfigurationSetup, null, 2).replace(
+        '"__IMPORT_META_DIRNAME__"',
+        'import.meta.dirname',
+      ),
+    ),
   );
 
   return finalPluginsConfigurationSetup;

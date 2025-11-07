@@ -25,13 +25,16 @@ const sheriffOptions: SheriffSettings = ${JSON.stringify(
       sheriffConfig,
       null,
       2,
-    )};
+    ).replace('"__IMPORT_META_DIRNAME__"', 'import.meta.dirname')};
 
 export default tseslint.config(sheriff(sheriffOptions));`,
 
     esm: `import { sheriff, tseslint  } from 'eslint-config-sheriff';
 
-const sheriffOptions = ${JSON.stringify(sheriffConfig, null, 2)};
+const sheriffOptions = ${JSON.stringify(sheriffConfig, null, 2).replace(
+      '"__IMPORT_META_DIRNAME__"',
+      'import.meta.dirname',
+    )};
 
 export default tseslint.config(sheriff(sheriffOptions));`,
   };
