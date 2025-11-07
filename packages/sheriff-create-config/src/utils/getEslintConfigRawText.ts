@@ -1,3 +1,4 @@
+import type { SheriffSettings } from 'eslint-config-sheriff';
 import { sheriffStartingOptions } from '@sherifforg/constants';
 import { setSheriffConfig } from './setSheriffConfig';
 import { throwError } from './throwError';
@@ -6,13 +7,13 @@ export const getEslintConfigRawText = async (
   fileType: 'ts' | 'esm',
   customProjectRootPath: string | null,
 ): Promise<string> => {
-  let sheriffConfig = sheriffStartingOptions;
+  let sheriffConfig: SheriffSettings = sheriffStartingOptions;
 
   try {
     sheriffConfig = await setSheriffConfig(customProjectRootPath);
   } catch (error) {
     throwError(
-      "Couldn't infer Sheriff user preferences automatically. Setting every option to false...",
+      "Couldn't infer Sheriff user preferences automatically. Setting every option to default values...",
       { error },
     );
   }

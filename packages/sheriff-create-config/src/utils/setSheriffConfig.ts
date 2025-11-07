@@ -1,14 +1,18 @@
 import { highlight } from 'cli-highlight';
 import { consola } from 'consola';
 import { sheriffStartingOptions } from '@sherifforg/constants';
-import type { SheriffConfigurablePlugins } from '@sherifforg/types';
+import type { SheriffSettings } from '@sherifforg/types';
 import { getPackageJsonContents } from './getPackageJsonContents';
 import { throwError } from './throwError';
 
 export const setSheriffConfig = async (
   customProjectRootPath: string | null,
-): Promise<SheriffConfigurablePlugins> => {
-  const finalPluginsConfigurationSetup = sheriffStartingOptions;
+): Promise<SheriffSettings> => {
+  const finalPluginsConfigurationSetup: SheriffSettings =
+    sheriffStartingOptions;
+
+  finalPluginsConfigurationSetup.tsconfigRootDir = 'import.meta.dirname';
+
   const root = await getPackageJsonContents(customProjectRootPath);
 
   if (!root) {
