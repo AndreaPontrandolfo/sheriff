@@ -1,5 +1,21 @@
 # eslint-config-sheriff
 
+## 30.0.0
+
+### Major Changes
+
+- a3a8f91: feat(config): enable projectService by default
+  Closes #203
+
+### Minor Changes
+
+- 0fc6d5f: feat: updated eslint-plugin-remeda
+  Closes [#422](https://github.com/AndreaPontrandolfo/sheriff/issues/422)
+
+### Patch Changes
+
+- d7badb8: fix(config): add support for Astro vars prerender & partial
+
 ## 29.1.0
 
 ### Minor Changes
