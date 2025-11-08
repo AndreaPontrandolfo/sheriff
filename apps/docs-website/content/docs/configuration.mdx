@@ -36,6 +36,7 @@ const sheriffOptions = { // [!code highlight]
   storybook: true, // [!code highlight]
   jest: false, // [!code highlight]
   vitest: false, // [!code highlight]
+  tsconfigRootDir: import.meta.dirname, // [!code highlight]
 }; // [!code highlight]
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -56,6 +57,7 @@ const sheriffOptions: SheriffSettings = { // [!code highlight]
   storybook: true, // [!code highlight]
   jest: false, // [!code highlight]
   vitest: false, // [!code highlight]
+  tsconfigRootDir: import.meta.dirname, // [!code highlight]
 }; // [!code highlight]
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -84,6 +86,7 @@ const sheriffOptions = {
   storybook: true,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions),
@@ -109,6 +112,7 @@ const sheriffOptions: SheriffSettings = {
   storybook: true,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions),
@@ -139,6 +143,7 @@ const sheriffOptions = {
   storybook: true,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions),
@@ -164,6 +169,7 @@ const sheriffOptions: SheriffSettings = {
   storybook: true,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions),
@@ -228,6 +234,7 @@ const sheriffOptions = {
   ignores: {
     recommended: true, // [!code highlight] true by default. False to disable.
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -250,6 +257,7 @@ const sheriffOptions: SheriffSettings = {
   ignores: {
     recommended: true, // [!code highlight] true by default. False to disable.
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -281,6 +289,7 @@ const sheriffOptions = {
   ignores: {
     inheritedFromGitignore: true, // [!code highlight] true by default. False to disable.
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -303,6 +312,7 @@ const sheriffOptions: SheriffSettings = {
   ignores: {
     inheritedFromGitignore: true, // [!code highlight] true by default. False to disable.
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -349,6 +359,7 @@ const sheriffOptions = {
   pathsOverrides: {
     tsconfigLocation: "./tsconfig.eslint.json", // [!code highlight]
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -371,6 +382,7 @@ const sheriffOptions: SheriffSettings = {
   pathsOverrides: {
     tsconfigLocation: "./tsconfig.eslint.json", // [!code highlight]
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -412,6 +424,7 @@ const sheriffOptions = {
       "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
     ], // [!code highlight]
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -438,6 +451,7 @@ const sheriffOptions: SheriffSettings = {
       "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
     ], // [!code highlight]
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -479,6 +493,7 @@ const sheriffOptions = {
       "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
     ], // [!code highlight]
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -505,6 +520,7 @@ const sheriffOptions: SheriffSettings = {
       "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
     ], // [!code highlight]
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));

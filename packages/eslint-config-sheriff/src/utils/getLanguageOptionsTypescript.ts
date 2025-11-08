@@ -1,4 +1,4 @@
-import { isUndefined } from 'lodash';
+import lodash from 'lodash';
 import tseslint from 'typescript-eslint';
 import type { TsProjectType, TsProjectTypeResolution } from '@sherifforg/types';
 import type { TSESLint } from '@typescript-eslint/utils';
@@ -26,7 +26,7 @@ export const getLanguageOptionsTypescript = (
     parserOptions: {
       ecmaFeatures: { modules: true },
       ...tsProjectTypeResolution,
-      ...(isUndefined(tsconfigRootDir) ? {} : { tsconfigRootDir }),
+      ...(lodash.isUndefined(tsconfigRootDir) ? {} : { tsconfigRootDir }),
     },
   };
 };
