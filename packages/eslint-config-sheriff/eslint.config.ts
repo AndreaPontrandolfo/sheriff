@@ -9,9 +9,9 @@ const sheriffOptions: SheriffSettings = {
   playwright: false,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
-// @ts-expect-error
 export default tseslint.config(sheriff(sheriffOptions), {
   rules: {
     'fsecond/prefer-destructured-optionals': 0,
@@ -19,5 +19,6 @@ export default tseslint.config(sheriff(sheriffOptions), {
     '@typescript-eslint/no-unsafe-member-access': 0,
     '@typescript-eslint/no-unsafe-argument': 0,
     'lodash-f/import-scope': 0,
+    '@typescript-eslint/no-deprecated': 0,
   },
 });

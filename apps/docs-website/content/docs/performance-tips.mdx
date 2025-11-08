@@ -54,6 +54,7 @@ const sheriffOptions = {
   storybook: true,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions),

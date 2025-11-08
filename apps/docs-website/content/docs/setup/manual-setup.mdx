@@ -35,6 +35,7 @@ Follow these steps:
       storybook: true,
       jest: false,
       vitest: false,
+      tsconfigRootDir: import.meta.dirname,
     };
 
     export default tseslint.config(sheriff(sheriffOptions));
@@ -58,6 +59,7 @@ Follow these steps:
       storybook: true,
       jest: false,
       vitest: false,
+      tsconfigRootDir: import.meta.dirname,
     };
 
 
@@ -95,6 +97,7 @@ Follow these steps:
           storybook: true,
           jest: false,
           vitest: false,
+          tsconfigRootDir: import.meta.dirname,
         };
 
         export default tseslint.config(sheriff(sheriffOptions));

@@ -1,6 +1,8 @@
 import astro from 'eslint-plugin-astro';
+import lodash from 'lodash';
 import tseslint from 'typescript-eslint';
 import { allJsExtensions } from '@sherifforg/constants';
+import type { TsProjectType, TsProjectTypeResolution } from '@sherifforg/types';
 import type { TSESLint } from '@typescript-eslint/utils';
 import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 
@@ -17,8 +19,23 @@ const astroJsxA11yRules = astroJsxA11yConfig?.rules ?? {};
 
 export const getAstroConfig = (
   hasReact: boolean,
-  customTSConfigPath: string | string[] | undefined,
+  tsProjectType: TsProjectType = 'projectService',
+  tsconfigRootDir?: string,
 ): TSESLint.FlatConfig.ConfigArray => {
+  let tsProjectTypeResolution: TsProjectTypeResolution = {};
+
+  if (tsProjectType === 'project') {
+    tsProjectTypeResolution = {
+      project: true,
+    };
+  }
+
+  if (tsProjectType === 'projectService') {
+    tsProjectTypeResolution = {
+      projectService: true,
+    };
+  }
+
   return tseslint.config(
     astro.configs['flat/recommended'],
     hasReact
@@ -35,23 +52,13 @@ export const getAstroConfig = (
       languageOptions: {
         parserOptions: {
           parser: tseslint.parser,
-          project: customTSConfigPath || true,
+          ...tsProjectTypeResolution,
+          ecmaFeatures: { modules: true },
+          ...(lodash.isUndefined(tsconfigRootDir) ? {} : { tsconfigRootDir }),
           extraFileExtensions: ['.astro'], // this is probably already included in the recommended preset, but we are keeping it for safety.
         },
       },
       settings: {
-        // 'import/core-modules': [
-        //   'astro:actions',
-        //   'astro:assets',
-        //   'astro:db',
-        //   'astro:content',
-        //   'astro:container',
-        //   'astro:env',
-        //   'astro:i18n',
-        //   'astro:middleware',
-        //   'astro:transitions',
-        //   'astro:transitions/client',
-        // ],
         'import/parsers': {
           'astro-eslint-parser': ['.astro'],
           '@typescript-eslint/parser': ['.ts', '.tsx', 'mts', 'cts'],
@@ -65,7 +72,9 @@ export const getAstroConfig = (
       languageOptions: {
         parserOptions: {
           parser: tseslint.parser,
-          project: customTSConfigPath || true,
+          ecmaFeatures: { modules: true },
+          ...tsProjectTypeResolution,
+          ...(lodash.isUndefined(tsconfigRootDir) ? {} : { tsconfigRootDir }),
         },
       },
     },

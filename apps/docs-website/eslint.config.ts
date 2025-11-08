@@ -10,10 +10,11 @@ const sheriffOptions: SheriffSettings = {
   storybook: true,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-deprecated
 export default tseslint.config(
-  // @ts-expect-error
   sheriff(sheriffOptions),
   {
     rules: {

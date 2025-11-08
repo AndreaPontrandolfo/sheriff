@@ -61,14 +61,14 @@ export const getAllRules = (
     ...eslintJs.configs.all.rules,
     ...prependRulesWithPluginName(
       //@ts-expect-error
-      tseslint.plugin.rules ?? [],
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+      tseslint.plugin.rules ?? {},
       '@typescript-eslint',
     ),
     ...prependRulesWithPluginName(unicorn.rules, 'unicorn'),
     //@ts-expect-error
     ...prependRulesWithPluginName(sonarjs.rules, 'sonarjs'),
     ...prependRulesWithPluginName(jsdoc.rules, 'jsdoc'),
-    //@ts-expect-error
     ...prependRulesWithPluginName(tsdoc.rules, 'tsdoc'),
     ...prependRulesWithPluginName(
       preferEarlyReturn.rules,

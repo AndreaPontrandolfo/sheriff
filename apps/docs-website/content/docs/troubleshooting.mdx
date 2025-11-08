@@ -4,6 +4,8 @@ description: Having unexpected issues? Checkout this section
 icon: MdTroubleshoot
 ---
 
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
 ## The Scaffolder fails when using yarn
 
 Depending on the context and under specific conditions, the [Scaffolder](/docs/cli-usage/scaffolder) may fail to install the dependencies when using `yarn`. <br />
@@ -16,6 +18,49 @@ Alternatively, consider switching package manager to [pnpm](https://pnpm.io/).
 In a Nextjs project, you shouldn't follow any of Nextjs' ESLint instructions, including the usage of the command `next lint`. Just use the basic ESlint command `eslint`.
 
 Refer to the [Nextjs compatibility documentation](./faq.mdx#is-sheriff-compatible-with-x).
+
+## I'm getting the error: Parsing error: No tsconfigRootDir was set, and multiple candidate TSConfigRootDirs are present
+
+If you are getting the error:
+
+```
+Parsing error: No tsconfigRootDir was set, and multiple candidate TSConfigRootDirs are present:
+
+...
+
+You'll need to explicitly set tsconfigRootDir in your parser options.
+
+See: https://typescript-eslint.io/packages/parser/#tsconfigrootdireslint
+```
+
+It means that the `typescript-eslint` parser is unsure about the location of the `tsconfig.json` file.
+
+Just add this to your ESLint config:
+
+<Tabs items={["JS", "TS"]}>
+  <Tab value="JS">
+```js title="eslint.config.mjs"
+import { sheriff, tseslint } from "eslint-config-sheriff";
+
+const sheriffOptions = {
+  tsconfigRootDir: import.meta.dirname // [!code highlight]
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+  <Tab value="TS">
+```ts twoslash title="eslint.config.ts"
+import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
+
+const sheriffOptions: SheriffSettings = {
+  tsconfigRootDir: import.meta.dirname // [!code highlight]
+};
+
+export default tseslint.config(sheriff(sheriffOptions));
+```
+  </Tab>
+</Tabs>
 
 ## My editor feels slow
 

@@ -8,7 +8,6 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 import { DynamicSnippetsList } from "../../src/components/DynamicSnippetsList";
 import {
   ignores,
-  sheriffStartingOptions,
   testsFilePatterns,
   allJsExtensions
 } from "@sherifforg/constants";
@@ -37,6 +36,7 @@ const sheriffOptions = { // [!code highlight]
   storybook: true, // [!code highlight]
   jest: false, // [!code highlight]
   vitest: false, // [!code highlight]
+  tsconfigRootDir: import.meta.dirname, // [!code highlight]
 }; // [!code highlight]
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -57,6 +57,7 @@ const sheriffOptions: SheriffSettings = { // [!code highlight]
   storybook: true, // [!code highlight]
   jest: false, // [!code highlight]
   vitest: false, // [!code highlight]
+  tsconfigRootDir: import.meta.dirname, // [!code highlight]
 }; // [!code highlight]
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -85,6 +86,7 @@ const sheriffOptions = {
   storybook: true,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions),
@@ -110,6 +112,7 @@ const sheriffOptions: SheriffSettings = {
   storybook: true,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions),
@@ -140,6 +143,7 @@ const sheriffOptions = {
   storybook: true,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions),
@@ -165,6 +169,7 @@ const sheriffOptions: SheriffSettings = {
   storybook: true,
   jest: false,
   vitest: false,
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions),
@@ -229,6 +234,7 @@ const sheriffOptions = {
   ignores: {
     recommended: true, // [!code highlight] true by default. False to disable.
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -251,6 +257,7 @@ const sheriffOptions: SheriffSettings = {
   ignores: {
     recommended: true, // [!code highlight] true by default. False to disable.
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -282,6 +289,7 @@ const sheriffOptions = {
   ignores: {
     inheritedFromGitignore: true, // [!code highlight] true by default. False to disable.
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -304,6 +312,7 @@ const sheriffOptions: SheriffSettings = {
   ignores: {
     inheritedFromGitignore: true, // [!code highlight] true by default. False to disable.
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -317,67 +326,9 @@ As outlined in the [criteria](./core-philosophy/criteria.mdx) page, Sheriff come
 
 ```ts twoslash
 pathsOverrides: {
-  tsconfigLocation: string | string[];
   tests: string[];
 }
 ```
-
-#### `pathsOverrides.tsconfigLocation`
-
-By default, Sheriff will use the `project: true` option to locate the `tsconfig.json` of your project.
-
-But, if you have multiple `tsconfig.json` files in your project (like `tsconfig.json`, `tsconfig.eslint.json`, `tsconfig.node.json`, etc...), you can use this parameter to specify which config Sheriff will pickup.
-
-You can pass it a path as a string (or a list of paths as a array of strings, see: [one-tsconfigjson-per-package](https://typescript-eslint.io/troubleshooting/typed-linting/monorepos#one-tsconfigjson-per-package-and-an-optional-one-in-the-root)).
-
-Example:
-
-<Tabs items={["JS", "TS"]}>
-  <Tab value="JS">
-```js title="eslint.config.mjs"
-import { sheriff, tseslint } from "eslint-config-sheriff";
-
-const sheriffOptions = {
-  react: false,
-  next: false,
-  astro: false,
-  lodash: false,
-  remeda: false,
-  playwright: false,
-  storybook: true,
-  jest: false,
-  vitest: false,
-  pathsOverrides: {
-    tsconfigLocation: "./tsconfig.eslint.json", // [!code highlight]
-  },
-};
-
-export default tseslint.config(sheriff(sheriffOptions));
-```
-  </Tab>
-  <Tab value="TS">
-```ts twoslash title="eslint.config.ts"
-import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff";
-
-const sheriffOptions: SheriffSettings = {
-  react: false,
-  next: false,
-  astro: false,
-  lodash: false,
-  remeda: false,
-  playwright: false,
-  storybook: true,
-  jest: false,
-  vitest: false,
-  pathsOverrides: {
-    tsconfigLocation: "./tsconfig.eslint.json", // [!code highlight]
-  },
-};
-
-export default tseslint.config(sheriff(sheriffOptions));
-```
-  </Tab>
-</Tabs>
 
 #### `pathsOverrides.tests`
 
@@ -413,6 +364,7 @@ const sheriffOptions = {
       "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
     ], // [!code highlight]
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -439,6 +391,7 @@ const sheriffOptions: SheriffSettings = {
       "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
     ], // [!code highlight]
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -480,6 +433,7 @@ const sheriffOptions = {
       "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
     ], // [!code highlight]
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
@@ -506,6 +460,7 @@ const sheriffOptions: SheriffSettings = {
       "**/__mySpecialFolder__/**/*.{js,mjs,cjs,ts,mts,cts}", // [!code highlight]
     ], // [!code highlight]
   },
+  tsconfigRootDir: import.meta.dirname,
 };
 
 export default tseslint.config(sheriff(sheriffOptions));
