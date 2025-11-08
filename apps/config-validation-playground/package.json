@@ -22,7 +22,7 @@
     "@types/node": "^22.10.3",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
-    "eslint": "9.15.0",
+    "eslint": "9.39.1",
     "eslint-config-sheriff": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^5.8.3"
