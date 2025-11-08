@@ -65,7 +65,7 @@ export function DataTablePagination<TData>({
                           key={size}
                           value={String(size)}
                           onSelect={() => {
-                            table.setPageSize(Number(size));
+                            table.setPageSize(size);
                             setIsPageSizePopoverOpen(false);
                           }}
                         >
