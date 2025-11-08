@@ -1,5 +1,12 @@
 # @sherifforg/cli
 
+## 10.0.0
+
+### Major Changes
+
+- a3a8f91: feat(config): enable projectService by default
+  Closes #203
+
 ## 9.11.0
 
 ### Minor Changes
