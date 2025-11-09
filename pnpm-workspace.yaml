@@ -18,4 +18,3 @@ onlyBuiltDependencies:
   - 'sharp'
   - 'unrs-resolver'
 disallowWorkspaceCycles: true
-shellEmulator: true
