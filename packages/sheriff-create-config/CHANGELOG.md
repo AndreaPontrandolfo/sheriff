@@ -1,5 +1,11 @@
 # @sherifforg/cli
 
+## 11.0.0
+
+### Major Changes
+
+- 8554daa: feat: fixed release flow
+
 ## 10.0.0
 
 ### Major Changes
