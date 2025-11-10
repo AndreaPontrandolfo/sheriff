@@ -1,6 +1,6 @@
 {
   "name": "@sherifforg/create-config",
-  "version": "10.0.0",
+  "version": "11.0.0",
   "type": "module",
   "description": "This package creates new Sheriff configs.",
   "main": "./dist/index.js",
