@@ -65,7 +65,6 @@ export function ConfigCombinationForm({
   setTableData,
 }: ConfigCombinationFormProps) {
   const form = useForm<z.infer<typeof FormSchema>>({
-    // @ts-expect-error
     resolver: zodResolver(FormSchema),
     defaultValues: {
       items: initialSelectedItems,
