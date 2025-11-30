@@ -19,7 +19,7 @@ The `eslint-config-sheriff` package exports a `sheriff` function.<br />
 You can configure Sheriff as desired using a simple javascript object as the first input parameter of the `sheriff` function.<br />
 Every config option can be set on/off (you just pass them a boolean value). As they are all opt-in, they are all disabled by default. If you bootstrapped the config with the [Scaffolder](/docs/cli-usage/scaffolder) some of these values will be inferred automatically from your project.
 
-<Tabs items={["JS", "TS"]}>
+<Tabs groupId="tsorjs" items={['JS', 'TS']} persist>
   <Tab value="JS">
 ```js title="eslint.config.mjs"
 import { sheriff } from "eslint-config-sheriff";
@@ -72,7 +72,7 @@ You can override any Sheriff rule as desired in the `eslint.config.mjs` file.
 
 For example, let's say you want to disable a Sheriff rule, like `import/first`:
 
-<Tabs items={["JS", "TS"]}>
+<Tabs groupId="tsorjs" items={['JS', 'TS']} persist>
   <Tab value="JS">
 ```js title="eslint.config.mjs"
 import { sheriff } from "eslint-config-sheriff";
@@ -131,7 +131,7 @@ export default defineConfig(sheriff(sheriffOptions),
 
 Likewise, let's say you want to enable a new rule:
 
-<Tabs items={["JS", "TS"]}>
+<Tabs groupId="tsorjs" items={['JS', 'TS']} persist>
   <Tab value="JS">
 ```js title="eslint.config.mjs"
 import { sheriff } from "eslint-config-sheriff";
@@ -221,7 +221,7 @@ With this option, Sheriff will ignore a list of commonly ignored folders:
 
 Example:
 
-<Tabs items={["JS", "TS"]}>
+<Tabs groupId="tsorjs" items={['JS', 'TS']} persist>
   <Tab value="JS">
 ```js title="eslint.config.mjs"
 import { sheriff } from "eslint-config-sheriff";
@@ -278,7 +278,7 @@ With this option, Sheriff will ignore the same filepaths specified in your `.git
 
 Example:
 
-<Tabs items={["JS", "TS"]}>
+<Tabs groupId="tsorjs" items={['JS', 'TS']} persist>
   <Tab value="JS">
 ```js title="eslint.config.mjs"
 import { sheriff } from "eslint-config-sheriff";
@@ -351,7 +351,7 @@ It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isa
 
 Example:
 
-<Tabs items={["JS", "TS"]}>
+<Tabs groupId="tsorjs" items={['JS', 'TS']} persist>
   <Tab value="JS">
 ```js title="eslint.config.mjs"
 import { sheriff } from "eslint-config-sheriff";
@@ -422,7 +422,7 @@ It accepts an array of filepaths, dictaced by [minimatch](https://github.com/isa
 
 Example:
 
-<Tabs items={["JS", "TS"]}>
+<Tabs groupId="tsorjs" items={['JS', 'TS']} persist>
   <Tab value="JS">
 ```js title="eslint.config.mjs"
 import { sheriff } from "eslint-config-sheriff";
