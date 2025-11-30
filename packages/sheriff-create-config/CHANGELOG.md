@@ -1,5 +1,12 @@
 # @sherifforg/cli
 
+## 11.1.0
+
+### Minor Changes
+
+- 9ff5542: feat: Replace typescript-eslint config() with ESLint built-in defineConfig()
+  Closes [#418](https://github.com/AndreaPontrandolfo/sheriff/issues/418)
+
 ## 11.0.0
 
 ### Major Changes
