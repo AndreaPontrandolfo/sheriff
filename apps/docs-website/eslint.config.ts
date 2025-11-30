@@ -15,7 +15,6 @@ const sheriffOptions: SheriffSettings = {
 };
 
 export default defineConfig(
-  // @ts-expect-error
   sheriff(sheriffOptions),
   {
     rules: {

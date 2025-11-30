@@ -13,7 +13,6 @@ const sheriffOptions: SheriffSettings = {
   tsconfigRootDir: import.meta.dirname,
 };
 
-// @ts-expect-error
 export default defineConfig(sheriff(sheriffOptions), {
   rules: {
     'fsecond/prefer-destructured-optionals': 0,

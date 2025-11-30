@@ -13,7 +13,6 @@ const sheriffOptions = {
   tsconfigRootDir: import.meta.dirname,
 };
 
-// @ts-expect-error
 export default defineConfig(sheriff(sheriffOptions), {
   ignores: [
     '**/dist/**/*',
