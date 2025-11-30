@@ -1,10 +1,10 @@
+import { type Config, defineConfig } from 'eslint/config';
 import fsecond from 'eslint-plugin-fsecond';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import reactYouMightNotNeedAnEffect from 'eslint-plugin-react-you-might-not-need-an-effect';
-import tseslint from 'typescript-eslint';
 import rel1cxReact from '@eslint-react/eslint-plugin';
 import {
   allJsExtensions,
@@ -12,7 +12,6 @@ import {
   supportedFileTypes,
 } from '@sherifforg/constants';
 import type { TsProjectType } from '@sherifforg/types';
-import type { TSESLint } from '@typescript-eslint/utils';
 import { reactHandPickedRules } from './handpickedRules/reactHandPickedRules';
 import { getLanguageOptionsTypescriptReact } from './utils/getLanguageOptionsTypescriptReact';
 import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
@@ -20,8 +19,8 @@ import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 export const getReactConfig = (
   tsProjectType?: TsProjectType,
   tsconfigRootDir?: string,
-): TSESLint.FlatConfig.ConfigArray => {
-  return tseslint.config(
+): Config[] => {
+  return defineConfig(
     {
       // we are specifically not including .astro files here, to not overwrite astro-eslint-parser.
       files: [`**/*{${allJsExtensions},${allJsxExtensions}}`],
@@ -59,6 +58,7 @@ export const getReactConfig = (
       },
     },
     {
+      // @ts-expect-error
       extends: [reactAccessibility.flatConfigs.recommended],
       files: [`**/*{${allJsxExtensions}}`],
     },

@@ -24,9 +24,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@typescript-eslint/typescript-estree": "^8.46.3",
+    "@typescript-eslint/typescript-estree": "^8.46.4",
     "consola": "^3.3.3",
-    "eslint": "^9.29.0",
+    "eslint": "^9.39.1",
     "read-pkg": "^9.0.1",
     "remeda": "^2.19.0",
     "yargs": "^17.7.2"
@@ -40,10 +40,10 @@
     "@types/node": "^22.10.3",
     "@types/yargs": "^17.0.33",
     "eslint-config-sheriff": "workspace:*",
-    "publint": "^0.3.14",
+    "publint": "^0.3.15",
     "tsconfig": "workspace:*",
-    "tsdown": "^0.15.9",
-    "typescript": "^5.8.3"
+    "tsdown": "^0.16.1",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "eslint": ">=9.18.0"

@@ -1,3 +1,4 @@
+import { type Config, defineConfig } from 'eslint/config';
 import createNoRestrictedProperties from 'eslint-no-restricted/properties';
 import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import fsecond from 'eslint-plugin-fsecond';
@@ -21,7 +22,6 @@ import {
 } from '@sherifforg/constants';
 import type { SheriffSettings } from '@sherifforg/types';
 import stylistic from '@stylistic/eslint-plugin';
-import type { TSESLint } from '@typescript-eslint/utils';
 import { getBaseEslintHandPickedRules } from './handpickedRules/getBaseEslintHandPickedRules';
 import { importHandPickedRules } from './handpickedRules/importHandPickedRules';
 import { jsdocHandPickedRules } from './handpickedRules/jsdocHandPickedRules';
@@ -76,12 +76,10 @@ const noRestrictedProperties = createNoRestrictedProperties(
   ...baseNoRestrictedPropertiesRules,
 );
 
-export const getBaseConfig = (
-  userConfigChoices: SheriffSettings,
-): TSESLint.FlatConfig.ConfigArray => {
+export const getBaseConfig = (userConfigChoices: SheriffSettings): Config[] => {
   const { tsProjectType, tsconfigRootDir } = userConfigChoices;
 
-  return tseslint.config(
+  return defineConfig(
     {
       extends: [eslintJs.configs.recommended],
       files: [supportedFileTypes],
@@ -109,6 +107,7 @@ export const getBaseConfig = (
       },
     },
     {
+      // @ts-expect-error
       extends: [noRestrictedSyntax.configs.recommended],
       files: [supportedFileTypes],
     },

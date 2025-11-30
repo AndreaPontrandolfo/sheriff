@@ -21,12 +21,12 @@
     "@sherifforg/types": "workspace:*",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^22.10.3",
-    "eslint": "^9.29.0",
+    "eslint": "^9.39.1",
     "eslint-config-sheriff": "workspace:*",
     "lodash-es": "^4.17.21",
-    "publint": "^0.3.14",
+    "publint": "^0.3.15",
     "tsconfig": "workspace:*",
     "tsx": "^4.16.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   }
 }

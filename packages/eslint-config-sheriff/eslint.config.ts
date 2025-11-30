@@ -1,4 +1,5 @@
-import { sheriff, type SheriffSettings, tseslint } from './src';
+import { defineConfig } from 'eslint/config';
+import { sheriff, type SheriffSettings } from './src';
 
 const sheriffOptions: SheriffSettings = {
   react: false,
@@ -12,7 +13,7 @@ const sheriffOptions: SheriffSettings = {
   tsconfigRootDir: import.meta.dirname,
 };
 
-export default tseslint.config(sheriff(sheriffOptions), {
+export default defineConfig(sheriff(sheriffOptions), {
   rules: {
     'fsecond/prefer-destructured-optionals': 0,
     '@typescript-eslint/no-unsafe-return': 0,

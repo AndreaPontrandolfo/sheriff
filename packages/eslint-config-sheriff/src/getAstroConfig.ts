@@ -1,9 +1,9 @@
+import { type Config, defineConfig } from 'eslint/config';
 import astro from 'eslint-plugin-astro';
 import lodash from 'lodash';
 import tseslint from 'typescript-eslint';
 import { allJsExtensions } from '@sherifforg/constants';
 import type { TsProjectType, TsProjectTypeResolution } from '@sherifforg/types';
-import type { TSESLint } from '@typescript-eslint/utils';
 import { getTsNamingConventionRule } from './utils/getTsNamingConventionRule';
 
 // eslint-plugin-astro defines the "jsx-a11y" plugin which conflicts with the original plugin
@@ -21,7 +21,7 @@ export const getAstroConfig = (
   hasReact: boolean,
   tsProjectType: TsProjectType = 'projectService',
   tsconfigRootDir?: string,
-): TSESLint.FlatConfig.ConfigArray => {
+): Config[] => {
   let tsProjectTypeResolution: TsProjectTypeResolution = {};
 
   if (tsProjectType === 'project') {
@@ -36,7 +36,7 @@ export const getAstroConfig = (
     };
   }
 
-  return tseslint.config(
+  return defineConfig(
     astro.configs['flat/recommended'],
     hasReact
       ? {

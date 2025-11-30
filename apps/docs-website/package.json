@@ -104,10 +104,10 @@
     "@types/node": "22.15.2",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.6",
-    "eslint": "^9.29.0",
+    "eslint": "^9.39.1",
     "eslint-config-sheriff": "workspace:*",
     "fumadocs-docgen": "^3.0.1",
-    "jiti": "^2.4.2",
+    "jiti": "^2.6.1",
     "oxc-transform": "^0.93.0",
     "postcss": "^8.5.4",
     "remark": "^15.0.1",
@@ -118,6 +118,6 @@
     "tailwindcss": "^4.1.8",
     "tsconfig": "workspace:*",
     "tw-animate-css": "^1.3.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   }
 }

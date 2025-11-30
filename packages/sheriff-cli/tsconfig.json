@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "include": ["src", "tsdown.config.ts"],
+  "include": ["src", "tsdown.config.ts", "eslint.config.ts"],
   "exclude": ["dist", "build", "node_modules"],
   "extends": "tsconfig/base.json",
   "compilerOptions": {

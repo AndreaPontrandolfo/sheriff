@@ -1,13 +1,10 @@
+import { type Config, defineConfig } from 'eslint/config';
 import jest from 'eslint-plugin-jest';
-import tseslint from 'typescript-eslint';
 import { allJsExtensions } from '@sherifforg/constants';
-import type { TSESLint } from '@typescript-eslint/utils';
 import { jestHandPickedRules } from './handpickedRules/jestHandPickedRules';
 
-export const getJestConfig = (
-  pathsOverrides?: string[],
-): TSESLint.FlatConfig.ConfigArray => {
-  return tseslint.config({
+export const getJestConfig = (pathsOverrides?: string[]): Config[] => {
+  return defineConfig({
     files: pathsOverrides ?? [
       `**/*.{test,spec}.{${allJsExtensions}}`,
       `**/tests/**/*.{${allJsExtensions}}`,

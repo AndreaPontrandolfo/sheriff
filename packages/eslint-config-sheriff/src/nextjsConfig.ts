@@ -1,9 +1,9 @@
+import type { Config } from 'eslint/config';
 import { fixupPluginRules } from '@eslint/compat';
 import nextjs from '@next/eslint-plugin-next';
 import { allJsExtensions, allJsxExtensions } from '@sherifforg/constants';
-import type { TSESLint } from '@typescript-eslint/utils';
 
-export const nextjsConfig: TSESLint.FlatConfig.ConfigArray = [
+export const nextjsConfig: Config[] = [
   {
     files: [`**/*.{${allJsExtensions},${allJsxExtensions}}`],
     plugins: {

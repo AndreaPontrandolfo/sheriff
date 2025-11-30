@@ -1,9 +1,8 @@
+import { type Config, defineConfig } from 'eslint/config';
 import storybook from 'eslint-plugin-storybook';
-import tseslint from 'typescript-eslint';
-import type { TSESLint } from '@typescript-eslint/utils';
 
-export const getStorybookConfig = (): TSESLint.FlatConfig.ConfigArray => {
-  return tseslint.config({
+export const getStorybookConfig = (): Config[] => {
+  return defineConfig({
     extends: [
       storybook.configs['flat/recommended'],
       storybook.configs['flat/csf'],
