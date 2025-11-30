@@ -1,4 +1,5 @@
-import { sheriff, tseslint } from 'eslint-config-sheriff';
+import { defineConfig } from 'eslint/config';
+import { sheriff } from 'eslint-config-sheriff';
 
 const sheriffOptions = {
   react: false,
@@ -12,7 +13,8 @@ const sheriffOptions = {
   tsconfigRootDir: import.meta.dirname,
 };
 
-export default tseslint.config(sheriff(sheriffOptions), {
+// @ts-expect-error
+export default defineConfig(sheriff(sheriffOptions), {
   ignores: [
     '**/dist/**/*',
     '**/node_modules/**/*',

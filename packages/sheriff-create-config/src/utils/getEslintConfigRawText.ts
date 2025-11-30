@@ -19,7 +19,8 @@ export const getEslintConfigRawText = async (
   }
 
   const eslintConfigRawText = {
-    ts: `import { sheriff, type SheriffSettings, tseslint } from 'eslint-config-sheriff';
+    ts: `import { defineConfig } from 'eslint/config';
+import { sheriff, type SheriffSettings } from 'eslint-config-sheriff';
 
 const sheriffOptions: SheriffSettings = ${JSON.stringify(
       sheriffConfig,
@@ -27,16 +28,17 @@ const sheriffOptions: SheriffSettings = ${JSON.stringify(
       2,
     ).replace('"__IMPORT_META_DIRNAME__"', 'import.meta.dirname')};
 
-export default tseslint.config(sheriff(sheriffOptions));`,
+export default defineConfig(sheriff(sheriffOptions));`,
 
-    esm: `import { sheriff, tseslint  } from 'eslint-config-sheriff';
+    esm: `import { defineConfig } from 'eslint/config';
+import { sheriff } from 'eslint-config-sheriff';
 
 const sheriffOptions = ${JSON.stringify(sheriffConfig, null, 2).replace(
       '"__IMPORT_META_DIRNAME__"',
       'import.meta.dirname',
     )};
 
-export default tseslint.config(sheriff(sheriffOptions));`,
+export default defineConfig(sheriff(sheriffOptions));`,
   };
 
   if (fileType === 'ts') {

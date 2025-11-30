@@ -2,12 +2,12 @@ import globals from 'globals';
 import lodash from 'lodash';
 import tseslint from 'typescript-eslint';
 import type { TsProjectType, TsProjectTypeResolution } from '@sherifforg/types';
-import type { TSESLint } from '@typescript-eslint/utils';
 
 export const getLanguageOptionsTypescriptReact = (
   tsProjectType: TsProjectType = 'projectService',
   tsconfigRootDir?: string,
-): TSESLint.FlatConfig.LanguageOptions => {
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+) => {
   let tsProjectTypeResolution: TsProjectTypeResolution = {};
 
   if (tsProjectType === 'project') {
