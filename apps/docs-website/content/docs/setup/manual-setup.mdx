@@ -23,7 +23,8 @@ Follow these steps:
     Create a `eslint.config.mjs` file at the root of your project and copy/paste the contents of the following snippet of code:
 
     ```js title="eslint.config.mjs"
-    import { sheriff, tseslint } from "eslint-config-sheriff";
+    import { sheriff } from "eslint-config-sheriff";
+    import { defineConfig } from "eslint/config";
 
     const sheriffOptions = {
       react: false,
@@ -38,17 +39,17 @@ Follow these steps:
       tsconfigRootDir: import.meta.dirname,
     };
 
-    export default tseslint.config(sheriff(sheriffOptions));
+    export default defineConfig(sheriff(sheriffOptions));
     ```
 
     or, if you already have a `eslint.config.mjs` in your project, just append Sheriff to the configs array, like this:
 
     ```js title="eslint.config.mjs"
-    import { tseslint } from "eslint-config-sheriff"; // [!code --]
-    import { sheriff, tseslint } from "eslint-config-sheriff"; // [!code ++]
+    import { sheriff } from "eslint-config-sheriff"; // [!code ++]
+    import { defineConfig } from "eslint/config";
     // my other imports...
 
-    // [!code ++:11]
+    // [!code ++:12]
     const sheriffOptions = {
       react: false,
       next: false,
@@ -63,7 +64,7 @@ Follow these steps:
     };
 
 
-    export default tseslint.config(
+    export default defineConfig(
       sheriff(sheriffOptions), // [!code ++]
       // my other configurations...
     );
@@ -84,9 +85,11 @@ Follow these steps:
       4. define the types of the `sheriffOptions` object:
 
         ```ts twoslash title="eslint.config.ts"
-        import { sheriff, tseslint } from "eslint-config-sheriff"; // [!code --]
-        import { sheriff, type SheriffSettings, tseslint } from "eslint-config-sheriff"; // [!code ++]
+        import { sheriff } from "eslint-config-sheriff"; // [!code --]
+        import { sheriff, type SheriffSettings } from "eslint-config-sheriff"; // [!code ++]
+        import { defineConfig } from "eslint/config";
 
+        const sheriffOptions = { // [!code --]
         const sheriffOptions: SheriffSettings = { // [!code ++] [!code word:SheriffSettings]
           react: false,
           next: false,
@@ -100,7 +103,7 @@ Follow these steps:
           tsconfigRootDir: import.meta.dirname,
         };
 
-        export default tseslint.config(sheriff(sheriffOptions));
+        export default defineConfig(sheriff(sheriffOptions));
         ```
 </Step>
 

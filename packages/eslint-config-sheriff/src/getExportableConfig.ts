@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
-import { globalIgnores } from 'eslint/config';
+import { type Config, globalIgnores } from 'eslint/config';
 import getGitignorePatterns from 'eslint-config-flat-gitignore';
 import lodash from 'lodash';
 import { ignores, sheriffStartingOptions } from '@sherifforg/constants';
 import type { SheriffSettings } from '@sherifforg/types';
-import type { TSESLint } from '@typescript-eslint/utils';
 import { getAstroConfig } from './getAstroConfig';
 import { getBaseConfig } from './getBaseConfig';
 import { getJestConfig } from './getJestConfig';
@@ -20,9 +19,8 @@ export const getExportableConfig = (
   userConfigChoices: SheriffSettings = sheriffStartingOptions,
   /** @internal */
   areAllRulesForced?: boolean,
-): TSESLint.FlatConfig.ConfigArray => {
-  let exportableConfig: TSESLint.FlatConfig.ConfigArray =
-    getBaseConfig(userConfigChoices);
+): Config[] => {
+  let exportableConfig: Config[] = getBaseConfig(userConfigChoices);
 
   const hasReact = Boolean(userConfigChoices.react);
 

@@ -1,11 +1,9 @@
+import type { Config } from 'eslint/config';
 import playwright from 'eslint-plugin-playwright';
 import { allJsExtensions } from '@sherifforg/constants';
-import type { TSESLint } from '@typescript-eslint/utils';
 import { playwrightHandPickedRules } from './handpickedRules/playwrightHandPickedRules';
 
-export const getPlaywrightConfig = (
-  pathsOverrides?: string[],
-): TSESLint.FlatConfig.ConfigArray => {
+export const getPlaywrightConfig = (pathsOverrides?: string[]): Config[] => {
   return [
     {
       ...playwright.configs['flat/recommended'],

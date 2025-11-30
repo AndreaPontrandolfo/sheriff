@@ -41,7 +41,8 @@ You can achieve this by leveraging a few techniques:
   <Tab value="JS">
 
 ```js title="eslint.config.mjs"
-import { sheriff, tseslint } from "eslint-config-sheriff";
+import { sheriff } from "eslint-config-sheriff";
+import { defineConfig } from "eslint/config";
 
 const sheriffOptions = {
   files: ["src/**/*"], // Only the files in the src directory will be linted. [!code highlight]
@@ -57,14 +58,15 @@ const sheriffOptions = {
   tsconfigRootDir: import.meta.dirname,
 };
 
-export default tseslint.config(sheriff(sheriffOptions));
+export default defineConfig(sheriff(sheriffOptions));
 ```
 
 </Tab>
 <Tab value="TS">
 
 ```ts twoslash title="eslint.config.ts"
-import { sheriff, type SheriffSettings, tseslint  } from "eslint-config-sheriff";
+import { sheriff, type SheriffSettings } from "eslint-config-sheriff";
+import { defineConfig } from "eslint/config";
 
 const sheriffOptions: SheriffSettings = {
   files: ["src/**/*"], // Only the files in the src directory will be linted. [!code highlight]
@@ -80,7 +82,7 @@ const sheriffOptions: SheriffSettings = {
   tsconfigRootDir: import.meta.dirname,
 };
 
-export default tseslint.config(sheriff(sheriffOptions));
+export default defineConfig(sheriff(sheriffOptions));
 ```
 
   </Tab>
