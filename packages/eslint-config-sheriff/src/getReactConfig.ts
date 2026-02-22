@@ -86,15 +86,14 @@ export const getReactConfig = (
       plugins: {
         'react-you-might-not-need-an-effect': reactYouMightNotNeedAnEffect,
       },
-      rules: reactYouMightNotNeedAnEffect.configs.recommended.rules,
+      rules: reactYouMightNotNeedAnEffect.configs.strict.rules,
     },
     {
       files: [supportedFileTypes],
-      plugins: {
-        fsecond,
-      },
+      plugins: { fsecond },
       rules: {
         'fsecond/valid-event-listener': 2,
+        'fsecond/no-redundant-jsx-prop-usage': 2,
       },
     },
     // Specific overrides for astro
