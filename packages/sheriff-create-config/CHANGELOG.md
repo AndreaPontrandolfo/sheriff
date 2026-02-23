@@ -1,5 +1,13 @@
 # @sherifforg/cli
 
+## 11.2.0
+
+### Minor Changes
+
+- a47eef0: feat(config): updated some deps and added a few new rules
+  Closes #433
+  Closes #383
+
 ## 11.1.0
 
 ### Minor Changes
