@@ -1,13 +1,38 @@
 {
   "name": "@sherifforg/create-config",
   "version": "11.1.0",
-  "type": "module",
   "description": "This package creates new Sheriff configs.",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "keywords": [
+    "javascript",
+    "eslint",
+    "prettier",
+    "cli",
+    "generator",
+    "scaffolding",
+    "starter"
+  ],
+  "homepage": "https://www.eslint-config-sheriff.dev",
+  "bugs": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaPontrandolfo/sheriff.git",
+    "directory": "packages/sheriff-create-config"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Andrea Pontrandolfo",
+    "email": "andrea.pontra@gmail.com",
+    "url": "https://github.com/AndreaPontrandolfo"
+  },
+  "type": "module",
   "exports": {
     ".": "./dist/index.js",
     "./package.json": "./package.json"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "bin": {
+    "create-config": "dist/index.js"
   },
   "files": [
     "README.md",
@@ -16,14 +41,13 @@
     "package.json"
   ],
   "scripts": {
-    "dev": "tsx ./src/index.ts",
-    "clean": "rm -rf .turbo dist node_modules/.cache",
     "build": "tsdown",
     "build:watch": "tsdown --watch",
-    "typecheck": "tsc",
-    "lint": "eslint ./src --max-warnings=0"
+    "clean": "rm -rf .turbo dist node_modules/.cache",
+    "dev": "tsx ./src/index.ts",
+    "lint": "eslint ./src --max-warnings=0",
+    "typecheck": "tsc"
   },
-  "license": "MIT",
   "dependencies": {
     "cli-highlight": "^2.1.11",
     "consola": "^3.3.3",
@@ -34,9 +58,6 @@
     "read-pkg-up": "9.1.0",
     "typescript": "^5.9.3",
     "yargs": "^17.7.2"
-  },
-  "bin": {
-    "create-config": "dist/index.js"
   },
   "devDependencies": {
     "@sherifforg/constants": "workspace:*",
@@ -52,30 +73,9 @@
     "tsdown": "0.17.0-beta.3",
     "tsx": "^4.16.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AndreaPontrandolfo/sheriff.git",
-    "directory": "packages/sheriff-create-config"
-  },
-  "author": {
-    "name": "Andrea Pontrandolfo",
-    "email": "andrea.pontra@gmail.com",
-    "url": "https://github.com/AndreaPontrandolfo"
-  },
   "engines": {
     "node": ">=22.21.1"
   },
-  "keywords": [
-    "javascript",
-    "eslint",
-    "prettier",
-    "cli",
-    "generator",
-    "scaffolding",
-    "starter"
-  ],
-  "homepage": "https://www.eslint-config-sheriff.dev",
-  "bugs": "https://github.com/AndreaPontrandolfo/sheriff/labels/bug",
   "publishConfig": {
     "access": "public"
   }

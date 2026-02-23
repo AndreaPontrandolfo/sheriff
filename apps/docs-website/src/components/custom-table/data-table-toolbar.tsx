@@ -1,8 +1,8 @@
 'use client';
 
-import { debounce, isEmpty } from 'lodash-es';
+import { isEmpty } from 'lodash-es';
 import { Filter, XIcon } from 'lucide-react';
-import * as React from 'react';
+import type { ChangeEvent } from 'react';
 import type { Table } from '@tanstack/react-table';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -14,6 +14,11 @@ interface DataTableToolbarProps<TData> {
    * For the plugin filter combobox.
    */
   pluginsNames: string[];
+  /**
+   * Filter input value (displayed in search box) and setter.
+   */
+  filterInputValue: string;
+  setFilterInputValue: (value: string) => void;
   /**
    * Global filter state and setter if managed outside DataTable component itself.
    */
@@ -28,44 +33,21 @@ interface DataTableToolbarProps<TData> {
 
 export function DataTableToolbar<TData>({
   pluginsNames,
+  filterInputValue,
+  setFilterInputValue,
   globalFilter,
   setGlobalFilter,
   selectedPlugins,
   setSelectedPlugins,
 }: DataTableToolbarProps<TData>) {
-  const [inputValue, setInputValue] = React.useState(globalFilter ?? '');
-
   // Combined filter check: global filter or plugin filter
   const isFiltered =
     globalFilter || (selectedPlugins && !isEmpty(selectedPlugins));
 
-  React.useEffect(() => {
-    setInputValue(globalFilter ?? '');
-  }, [globalFilter]);
-
-  // Debounced version of setGlobalFilter
-  const debouncedSetGlobalFilter = React.useMemo(
-    () => debounce(setGlobalFilter, 300),
-    [setGlobalFilter],
-  );
-
-  React.useEffect(() => {
-    debouncedSetGlobalFilter(inputValue);
-
-    /**
-     * Cleanup on unmount or if debouncedSetGlobalFilter changes.
-     */
-    return () => {
-      debouncedSetGlobalFilter.cancel();
-    };
-  }, [inputValue, debouncedSetGlobalFilter]);
-
   const resetFilters = () => {
     setGlobalFilter('');
+    setFilterInputValue('');
     setSelectedPlugins([]);
-    setInputValue(''); // Reset input value as well
-    // table.resetGlobalFilter(); // Handled by parent
-    // table.getColumn("parentPluginName")?.setFilterValue(undefined); // Handled by parent
   };
 
   return (
@@ -75,10 +57,10 @@ export function DataTableToolbar<TData>({
       </div>
       <Input
         placeholder="Filter rules, docs..."
-        value={inputValue}
+        value={filterInputValue}
         className="min-h-10 w-[150px] text-base md:text-base lg:w-[250px]"
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-          setInputValue(event.target.value);
+        onChange={(event: ChangeEvent<HTMLInputElement>) => {
+          setFilterInputValue(event.target.value);
         }}
       />
       <DataTableMultiSelectPlugins

@@ -15,7 +15,6 @@ import eslintJs from '@eslint/js';
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import {
   allJsExtensions,
-  allJsxExtensions,
   supportedFileTypes,
   tsExtensions,
   tsxExtensions,
@@ -152,7 +151,7 @@ export const getBaseConfig = (userConfigChoices: SheriffSettings): Config[] => {
     {
       files: [supportedFileTypes],
       plugins: { regexp: regexpPlugin },
-      rules: regexpPlugin.configs['flat/recommended'].rules,
+      rules: regexpPlugin.configs.recommended.rules,
     },
     {
       files: [supportedFileTypes],
@@ -224,21 +223,11 @@ export const getBaseConfig = (userConfigChoices: SheriffSettings): Config[] => {
       },
     },
     {
-      // @ts-expect-error
-      extends: [fsecond.configs.recommended],
+      plugins: { fsecond },
       files: [supportedFileTypes],
       rules: {
-        'fsecond/valid-event-listener': 0,
-      },
-    },
-    {
-      files: [allJsxExtensions],
-      plugins: { fsecond },
-      rules: {
-        'fsecond/valid-event-listener': [
-          2,
-          { requireUseEventListenerHook: true },
-        ],
+        'fsecond/prefer-destructured-optionals': 2,
+        'fsecond/no-inline-interfaces': 2,
       },
     },
     {

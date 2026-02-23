@@ -44,4 +44,9 @@ export const unicornHandPickedRules = {
   'unicorn/no-single-promise-in-promise-methods': 2,
   'unicorn/consistent-empty-array-spread': 2,
   'unicorn/no-unused-properties': 2,
+  'unicorn/consistent-date-clone': 2,
+  'unicorn/no-array-reverse': 2,
+  'unicorn/no-array-sort': 2,
+  'unicorn/no-immediate-mutation': 2,
+  'unicorn/prefer-response-static-json': 2,
 } as const satisfies TSESLint.FlatConfig.Rules;

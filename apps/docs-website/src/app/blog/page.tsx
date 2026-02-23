@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const posts = blog.getPages().reverse();
+  const posts = blog.getPages().toReversed();
 
   return (
     <section className="container mx-auto grow px-4 py-8 pb-36">

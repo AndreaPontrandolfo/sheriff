@@ -1,7 +1,17 @@
 {
   "name": "@sherifforg/constants",
-  "description": "Sheriff constants.",
   "version": "0.0.0",
+  "description": "Sheriff constants.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaPontrandolfo/sheriff.git",
+    "directory": "packages/sheriff-constants"
+  },
+  "author": {
+    "name": "Andrea Pontrandolfo",
+    "email": "andrea.pontra@gmail.com",
+    "url": "https://github.com/AndreaPontrandolfo"
+  },
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
@@ -19,15 +29,5 @@
   },
   "engines": {
     "node": ">=22.21.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AndreaPontrandolfo/sheriff.git",
-    "directory": "packages/sheriff-constants"
-  },
-  "author": {
-    "name": "Andrea Pontrandolfo",
-    "email": "andrea.pontra@gmail.com",
-    "url": "https://github.com/AndreaPontrandolfo"
   }
 }
