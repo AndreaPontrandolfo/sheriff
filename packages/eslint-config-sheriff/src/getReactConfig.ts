@@ -1,5 +1,4 @@
 import { type Config, defineConfig } from 'eslint/config';
-import fsecond from 'eslint-plugin-fsecond';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
@@ -90,7 +89,6 @@ export const getReactConfig = (
     },
     {
       files: [supportedFileTypes],
-      plugins: { fsecond },
       rules: {
         'fsecond/valid-event-listener': 2,
         'fsecond/no-redundant-jsx-prop-usage': 2,

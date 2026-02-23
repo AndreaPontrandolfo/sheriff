@@ -15,7 +15,6 @@ import eslintJs from '@eslint/js';
 import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import {
   allJsExtensions,
-  allJsxExtensions,
   supportedFileTypes,
   tsExtensions,
   tsxExtensions,
