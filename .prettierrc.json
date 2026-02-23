@@ -8,7 +8,7 @@
   "tailwindFunctions": ["cn"],
   "overrides": [
     {
-      "files": ["*/.jsonc"],
+      "files": ["**/*.jsonc"],
       "options": {
         "trailingComma": "none"
       }

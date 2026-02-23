@@ -1,6 +1,6 @@
 'use client';
 
-import { isEmpty } from 'lodash-es';
+import { debounce, isEmpty } from 'lodash-es';
 import * as React from 'react';
 import {
   type ColumnDef,
@@ -48,31 +48,67 @@ export function DataTable<TData extends RuleEntry, TValue>({
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    [],
-  );
+  const [baseColumnFilters, setBaseColumnFilters] =
+    React.useState<ColumnFiltersState>([]);
   const [sorting, setSorting] = React.useState<SortingState>([
     { id: 'severity', desc: true },
   ]);
   const [globalFilter, setGlobalFilter] = React.useState<string>('');
+  const [filterInputValue, setFilterInputValue] = React.useState<string>('');
   const [selectedPlugins, setSelectedPlugins] = React.useState<string[]>([]);
 
+  const debouncedSetGlobalFilter = React.useMemo(
+    () => debounce(setGlobalFilter, 300),
+    [setGlobalFilter],
+  );
+
   React.useEffect(() => {
-    setColumnFilters((prevFilters) => {
-      const otherFilters = prevFilters.filter(
-        (f) => f.id !== 'parentPluginName',
-      );
+    debouncedSetGlobalFilter(filterInputValue);
 
-      if (!isEmpty(selectedPlugins)) {
-        return [
-          ...otherFilters,
-          { id: 'parentPluginName', value: selectedPlugins },
-        ];
-      }
+    return () => {
+      debouncedSetGlobalFilter.cancel();
+    };
+  }, [filterInputValue, debouncedSetGlobalFilter]);
 
-      return otherFilters;
-    });
-  }, [selectedPlugins]);
+  const columnFilters = React.useMemo(() => {
+    const otherFilters = baseColumnFilters.filter(
+      (filter) => filter.id !== 'parentPluginName',
+    );
+
+    if (!isEmpty(selectedPlugins)) {
+      return [
+        ...otherFilters,
+        { id: 'parentPluginName', value: selectedPlugins },
+      ];
+    }
+
+    return otherFilters;
+  }, [baseColumnFilters, selectedPlugins]);
+
+  const handleColumnFiltersChange = React.useCallback(
+    (updater: React.SetStateAction<ColumnFiltersState>) => {
+      setBaseColumnFilters((prevBase) => {
+        const otherFilters = prevBase.filter(
+          (filter) => filter.id !== 'parentPluginName',
+        );
+        const currentColumnFilters = isEmpty(selectedPlugins)
+          ? otherFilters
+          : [
+              ...otherFilters,
+              { id: 'parentPluginName', value: selectedPlugins },
+            ];
+        const nextFilters =
+          typeof updater === 'function'
+            ? updater(currentColumnFilters)
+            : updater;
+
+        return nextFilters.filter(
+          (filter) => filter.id !== 'parentPluginName',
+        );
+      });
+    },
+    [selectedPlugins],
+  );
 
   const table = useReactTable<TData>({
     data,
@@ -87,7 +123,7 @@ export function DataTable<TData extends RuleEntry, TValue>({
     enableRowSelection: true,
     onRowSelectionChange: setRowSelection,
     onSortingChange: setSorting,
-    onColumnFiltersChange: setColumnFilters,
+    onColumnFiltersChange: handleColumnFiltersChange,
     onColumnVisibilityChange: setColumnVisibility,
     onGlobalFilterChange: setGlobalFilter,
     getCoreRowModel: getCoreRowModel(),
@@ -103,6 +139,8 @@ export function DataTable<TData extends RuleEntry, TValue>({
       <DataTableToolbar
         table={table}
         pluginsNames={pluginsNames}
+        filterInputValue={filterInputValue}
+        setFilterInputValue={setFilterInputValue}
         globalFilter={globalFilter}
         setGlobalFilter={setGlobalFilter}
         selectedPlugins={selectedPlugins}

@@ -19,7 +19,9 @@ function getBlogTree() {
     postsByYear[year].push(post);
   }
 
-  const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
+  const years = Object.keys(postsByYear).toSorted(
+    (a, b) => Number(b) - Number(a),
+  );
 
   return {
     name: 'Blog',
@@ -29,7 +31,7 @@ function getBlogTree() {
         name: year,
         defaultOpen: true,
         children: postsByYear[year]
-          .sort((a, b) => {
+          .toSorted((a, b) => {
             return (
               new Date(b.data.date as string | number).getTime() -
               new Date(a.data.date as string | number).getTime()
