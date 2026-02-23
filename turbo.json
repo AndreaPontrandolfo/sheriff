@@ -35,7 +35,9 @@
     "//#manypkg": {
       "inputs": ["**/package.json"]
     },
-    "//#knip": {},
+    "//#knip": {
+      "outputs": ["node_modules/.cache/knip/**"]
+    },
     "clean": {
       "cache": false
     },
