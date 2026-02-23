@@ -36,9 +36,6 @@
       "inputs": ["**/package.json"]
     },
     "//#knip": {},
-    "//#typesync": {
-      "inputs": ["**/package.json"]
-    },
     "clean": {
       "cache": false
     },
