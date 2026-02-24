@@ -1,5 +1,12 @@
 # eslint-config-sheriff
 
+## 31.3.0
+
+### Minor Changes
+
+- 0f4b223: fix: Fix CI workflow for OICD trusted publishing workflow
+  Fixes #436
+
 ## 31.2.0
 
 ### Minor Changes

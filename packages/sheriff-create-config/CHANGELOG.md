@@ -1,5 +1,12 @@
 # @sherifforg/cli
 
+## 11.3.0
+
+### Minor Changes
+
+- 0f4b223: fix: Fix CI workflow for OICD trusted publishing workflow
+  Fixes #436
+
 ## 11.2.0
 
 ### Minor Changes
