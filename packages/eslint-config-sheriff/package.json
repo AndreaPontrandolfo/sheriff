@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-sheriff",
-  "version": "31.2.0",
+  "version": "31.3.0",
   "description": "A comprehensive and opinionated TypeScript-first ESLint configuration.",
   "keywords": [
     "javascript",
