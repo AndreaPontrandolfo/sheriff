@@ -100,7 +100,7 @@
     "@types/confusing-browser-globals": "^1.0.3",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
     "@types/lodash": "^4.17.13",
-    "@types/node": "^22.10.3",
+    "@types/node": "^25.3.0",
     "@typescript-eslint/parser": "^8.46.4",
     "@typescript-eslint/utils": "^8.46.4",
     "eslint": "^9.39.1",
