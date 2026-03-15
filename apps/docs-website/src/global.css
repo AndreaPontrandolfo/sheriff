@@ -222,6 +222,6 @@ button[role='tab'] {
   cursor: pointer;
 }
 
-#nd-page > article:first-of-type {
-  @apply pb-50;
+#nd-page {
+  padding-bottom: 6rem;
 }

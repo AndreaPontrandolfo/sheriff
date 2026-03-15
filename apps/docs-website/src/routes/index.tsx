@@ -1,6 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router';
 import { HomeLayout } from 'fumadocs-ui/layouts/home';
-import { baseOptions } from '@/lib/layout.shared';
+import { createFileRoute } from '@tanstack/react-router';
 import { ComparisonsSection } from '@/components/ComparisonsSection';
 import { EcosystemSection } from '@/components/EcosystemSection';
 import { FeaturesSection } from '@/components/FeaturesSection';
@@ -8,6 +7,7 @@ import { HeroSection } from '@/components/HeroSection';
 import { IntegrationsSection } from '@/components/IntegrationsSection';
 import { JoinUsSection } from '@/components/JoinUsSection';
 import { StatsSection } from '@/components/StatsSection';
+import { baseOptions } from '@/lib/layout.shared';
 
 function HomePage() {
   // bg-background and text-foreground were added here because of shadcn compatibility. Reference: https://github.com/fuma-nama/fumadocs-shadcn?tab=readme-ov-file#with-shadcn-ui

@@ -34,11 +34,9 @@ export default defineConfig(
       '@typescript-eslint/restrict-plus-operands': 0,
       '@typescript-eslint/naming-convention': 0,
       '@typescript-eslint/no-unnecessary-condition': 0,
-      '@stylistic/padding-line-between-statements': 0,
       'react/function-component-definition': 0,
       'react/no-multi-comp': 0,
       'lodash-f/prefer-lodash-typecheck': 0,
-      'fsecond/no-inline-interfaces': 0,
     },
   },
   {

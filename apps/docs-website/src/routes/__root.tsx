@@ -1,12 +1,17 @@
 /// <reference types="vite/client" />
 
-import type { ReactNode } from 'react';
-import { createRootRoute, HeadContent, Outlet, Scripts } from '@tanstack/react-router';
-import { RootProvider } from 'fumadocs-ui/provider/tanstack';
-import QueryProvider from '@/components/QueryProvider';
-import { Footer } from '@/components/Footer';
-import { getPageTree } from '@/lib/serverFns';
 import '@/global.css';
+import { RootProvider } from 'fumadocs-ui/provider/tanstack';
+import type { ReactNode } from 'react';
+import {
+  createRootRoute,
+  HeadContent,
+  Outlet,
+  Scripts,
+} from '@tanstack/react-router';
+import { Footer } from '@/components/Footer';
+import QueryProvider from '@/components/QueryProvider';
+import { getPageTree } from '@/lib/serverFns';
 
 function RootComponent() {
   return (
@@ -16,7 +21,10 @@ function RootComponent() {
   );
 }
 
-function RootDocument({ children }: { children: ReactNode }) {
+interface RootDocumentProps {
+  children: ReactNode;
+}
+function RootDocument({ children }: RootDocumentProps) {
   return (
     <html suppressHydrationWarning lang="en">
       <head>
@@ -43,6 +51,7 @@ export const Route = createRootRoute({
   component: RootComponent,
   loader: async () => {
     const pageTree = await getPageTree();
+
     return { pageTree };
   },
 });
