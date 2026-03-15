@@ -7,6 +7,7 @@ import {
 } from 'fumadocs-ui/layouts/docs/page';
 import { Suspense } from 'react';
 import { createFileRoute, notFound } from '@tanstack/react-router';
+import { createServerFn } from '@tanstack/react-start';
 import { getMDXComponents } from '@/components/mdx';
 import { SharedDocsLayout } from '@/components/SharedDocsLayout';
 import { blog } from '@/lib/source';
@@ -57,6 +58,18 @@ const blogClientLoader = browserCollections.blogPosts.createClientLoader({
   },
 });
 
+const getBlogPage = createServerFn({ method: 'GET' })
+  .inputValidator((slug: string) => slug)
+  .handler(async ({ data: slug }) => {
+    const page = blog.getPage([slug]);
+
+    if (!page) {
+      throw notFound();
+    }
+
+    return { path: page.path };
+  });
+
 function BlogSlugRoute() {
   const loaderData = Route.useLoaderData();
 
@@ -70,17 +83,10 @@ function BlogSlugRoute() {
 export const Route = createFileRoute('/blog/$slug')({
   component: BlogSlugRoute,
   loader: async ({ params }) => {
-    const pageSlug = params.slug;
-    const page = blog.getPage([pageSlug]);
+    const data = await getBlogPage({ data: params.slug });
 
-    if (!page) {
-      throw notFound();
-    }
+    await blogClientLoader.preload(data.path);
 
-    await blogClientLoader.preload(page.path);
-
-    return {
-      path: page.path,
-    };
+    return { path: data.path };
   },
 });

@@ -5,6 +5,7 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from '@tanstack/react-r
 import { RootProvider } from 'fumadocs-ui/provider/tanstack';
 import QueryProvider from '@/components/QueryProvider';
 import { Footer } from '@/components/Footer';
+import { getPageTree } from '@/lib/serverFns';
 import '@/global.css';
 
 function RootComponent() {
@@ -40,4 +41,8 @@ function RootDocument({ children }: { children: ReactNode }) {
 
 export const Route = createRootRoute({
   component: RootComponent,
+  loader: async () => {
+    const pageTree = await getPageTree();
+    return { pageTree };
+  },
 });

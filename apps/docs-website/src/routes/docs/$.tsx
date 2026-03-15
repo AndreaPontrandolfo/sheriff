@@ -7,6 +7,7 @@ import {
 } from 'fumadocs-ui/layouts/docs/page';
 import { Suspense } from 'react';
 import { createFileRoute, notFound } from '@tanstack/react-router';
+import { createServerFn } from '@tanstack/react-start';
 import { getMDXComponents } from '@/components/mdx';
 import { SharedDocsLayout } from '@/components/SharedDocsLayout';
 import { source } from '@/lib/source';
@@ -27,6 +28,18 @@ const docsClientLoader = browserCollections.docs.createClientLoader({
   },
 });
 
+const getDocsPage = createServerFn({ method: 'GET' })
+  .inputValidator((slugs: string[]) => slugs)
+  .handler(async ({ data: slugs }) => {
+    const page = source.getPage(slugs);
+
+    if (!page) {
+      throw notFound();
+    }
+
+    return { path: page.path };
+  });
+
 function DocsPageRoute() {
   const loaderData = Route.useLoaderData();
 
@@ -41,16 +54,10 @@ export const Route = createFileRoute('/docs/$')({
   component: DocsPageRoute,
   loader: async ({ params }) => {
     const slugPath = params._splat?.split('/').filter(Boolean) ?? [];
-    const page = source.getPage(slugPath);
+    const data = await getDocsPage({ data: slugPath });
 
-    if (!page) {
-      throw notFound();
-    }
+    await docsClientLoader.preload(data.path);
 
-    await docsClientLoader.preload(page.path);
-
-    return {
-      path: page.path,
-    };
+    return { path: data.path };
   },
 });
