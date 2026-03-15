@@ -5,8 +5,6 @@ import { Button } from '@/components/ui/button';
 import { CopyToClipboard } from '@/components/ui/copy-to-clipboard';
 import { GridBackground } from '@/components/ui/grid-background';
 
-// TODO: these fade-in animation destroys SEO ranking especially on mobile. Should remove them.
-
 export function HeroSection() {
   return (
     <section className="relative pt-12 md:pt-24">
