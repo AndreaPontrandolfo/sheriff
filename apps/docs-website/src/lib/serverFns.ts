@@ -1,89 +1,122 @@
+import type { PageTree } from 'fumadocs-core/server';
 import { createServerFn } from '@tanstack/react-start';
 import { blog, source } from '@/lib/source';
-import type { PageTree } from 'fumadocs-core/server';
 
-export type BlogPost = {
+export interface BlogPost {
   url: string;
   title: string;
   description: string | undefined;
   date: string;
-};
+}
 
-// Recursively strip icon (React element) from page tree nodes so the tree
+// Recursively replace icon (React element) with icon name string so the tree
 // is serializable across the server→client boundary.
-function stripIcons(node: PageTree.Node): PageTree.Node {
+/**
+ * The icon name is extracted from the element's type (the component function name).
+ */
+function replaceIconsWithNames(node: PageTree.Node): PageTree.Node {
   if (node.type === 'page') {
-    const { icon: _icon, ...rest } = node;
-    return rest as PageTree.Node;
-  }
-  if (node.type === 'folder') {
-    const { icon: _icon, ...rest } = node;
+    const { icon, ...rest } = node;
+    const iconName =
+      icon && typeof icon === 'object' && 'type' in icon
+        ? (icon as { type?: { name?: string } }).type?.name
+        : undefined;
     return {
       ...rest,
-      children: rest.children.map(stripIcons),
-      ...(rest.index ? { index: stripIcons(rest.index) as PageTree.Item } : {}),
+      ...(iconName
+        ? { icon: iconName as unknown as PageTree.Node['icon'] }
+        : {}),
+    } as PageTree.Node;
+  }
+  if (node.type === 'folder') {
+    const { icon, ...rest } = node;
+    const iconName =
+      icon && typeof icon === 'object' && 'type' in icon
+        ? (icon as { type?: { name?: string } }).type?.name
+        : undefined;
+    return {
+      ...rest,
+      ...(iconName
+        ? { icon: iconName as unknown as PageTree.Node['icon'] }
+        : {}),
+      children: rest.children.map(replaceIconsWithNames),
+      ...(rest.index
+        ? { index: replaceIconsWithNames(rest.index) as PageTree.Item }
+        : {}),
     } as PageTree.Node;
   }
   return node;
 }
 
-export const getPageTree = createServerFn({ method: 'GET' }).handler(async () => {
-  const posts = blog.getPages();
-  const postsByYear: Record<string, BlogPost[]> = {};
+export const getPageTree = createServerFn({ method: 'GET' }).handler(
+  async () => {
+    const posts = blog.getPages();
+    const postsByYear: Record<string, BlogPost[]> = {};
 
-  for (const post of posts) {
-    const postDate = new Date(String(Reflect.get(post.data, 'date')));
-    const year = postDate.getFullYear().toString();
+    for (const post of posts) {
+      const postDate = new Date(String(Reflect.get(post.data, 'date')));
+      const year = postDate.getFullYear().toString();
 
-    if (!postsByYear[year]) {
-      postsByYear[year] = [];
+      if (!postsByYear[year]) {
+        postsByYear[year] = [];
+      }
+      postsByYear[year].push({
+        url: post.url,
+        title: post.data.title,
+        description: post.data.description,
+        date: String(Reflect.get(post.data, 'date')),
+      });
     }
-    postsByYear[year].push({
-      url: post.url,
-      title: post.data.title,
-      description: post.data.description,
-      date: String(Reflect.get(post.data, 'date')),
-    });
-  }
 
-  const years = Object.keys(postsByYear).toSorted((a, b) => Number(b) - Number(a));
+    const years = Object.keys(postsByYear).toSorted(
+      (a, b) => Number(b) - Number(a),
+    );
 
-  const blogTree = {
-    name: 'Blog',
-    children: years.map((year) => ({
-      type: 'folder' as const,
-      name: year,
-      defaultOpen: true,
-      children: postsByYear[year]
-        .toSorted((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-        .map((post) => ({
-          type: 'page' as const,
-          name: post.title,
-          url: post.url,
-        })),
-    })),
-  };
+    const blogTree = {
+      name: 'Blog',
+      children: years.map((year) => {
+        return {
+          type: 'folder' as const,
+          name: year,
+          defaultOpen: true,
+          children: postsByYear[year]
+            .toSorted(
+              (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+            )
+            .map((post) => {
+              return {
+                type: 'page' as const,
+                name: post.title,
+                url: post.url,
+              };
+            }),
+        };
+      }),
+    };
 
-  const strippedDocChildren = source.pageTree.children.map(stripIcons);
+    const strippedDocChildren = source.pageTree.children.map(
+      replaceIconsWithNames,
+    );
 
-  return {
-    name: 'Root',
-    children: [
-      {
-        type: 'folder' as const,
-        name: 'Documentation',
-        children: strippedDocChildren,
-      },
-      {
-        type: 'folder' as const,
-        name: 'Blog',
-        children: blogTree.children,
-        index: {
-          type: 'page' as const,
-          name: 'Blog',
-          url: '/blog',
+    return {
+      name: 'Root',
+      children: [
+        {
+          type: 'folder' as const,
+          name: 'Documentation',
+          children: strippedDocChildren,
         },
-      },
-    ],
-  };
-});
+        {
+          type: 'folder' as const,
+          name: 'Blog',
+          children: blogTree.children,
+          index: {
+            type: 'page' as const,
+            name: 'Blog',
+            url: '/blog',
+          },
+        },
+      ],
+    };
+  },
+);
