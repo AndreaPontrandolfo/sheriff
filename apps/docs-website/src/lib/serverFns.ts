@@ -1,6 +1,6 @@
 import type * as PageTree from 'fumadocs-core/page-tree';
 import { createServerFn } from '@tanstack/react-start';
-import { blog, source } from '@/lib/source';
+import { blog, source } from '@/lib/source.server';
 
 export interface BlogPost {
   url: string;

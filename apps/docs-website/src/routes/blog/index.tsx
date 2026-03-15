@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
 import { Image } from '@unpic/react';
 import { createServerFn } from '@tanstack/react-start';
-import { blog } from '@/lib/source';
+import { blog } from '@/lib/source.server';
 import { SharedDocsLayout } from '@/components/SharedDocsLayout';
 
 const getBlogPosts = createServerFn({ method: 'GET' }).handler(async () => {

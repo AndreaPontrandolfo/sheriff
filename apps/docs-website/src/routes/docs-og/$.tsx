@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from '@tanstack/react-router';
-import { source } from '@/lib/source';
+import { source } from '@/lib/source.server';
 
 export const Route = createFileRoute('/docs-og/$')({
   server: {

@@ -10,7 +10,7 @@ import { createFileRoute, notFound } from '@tanstack/react-router';
 import { createServerFn } from '@tanstack/react-start';
 import { getMDXComponents } from '@/components/mdx';
 import { SharedDocsLayout } from '@/components/SharedDocsLayout';
-import { blog } from '@/lib/source';
+import { blog } from '@/lib/source.server';
 
 const blogClientLoader = browserCollections.blogPosts.createClientLoader({
   component(

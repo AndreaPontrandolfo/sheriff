@@ -10,7 +10,7 @@ import { createFileRoute, notFound } from '@tanstack/react-router';
 import { createServerFn } from '@tanstack/react-start';
 import { getMDXComponents } from '@/components/mdx';
 import { SharedDocsLayout } from '@/components/SharedDocsLayout';
-import { source } from '@/lib/source';
+import { source } from '@/lib/source.server';
 
 const docsClientLoader = browserCollections.docs.createClientLoader({
   component({ toc, frontmatter, default: MDX }, _props: undefined) {

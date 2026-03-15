@@ -19,8 +19,10 @@ export default defineConfig({
       projects: ['./tsconfig.json'],
     }),
     tanstackStart({
-      spa: {
+      prerender: {
         enabled: true,
+        crawlLinks: true,
+        filter: ({ path }) => path !== '/' && path !== '/docs/rules',
       },
     }),
     react(),

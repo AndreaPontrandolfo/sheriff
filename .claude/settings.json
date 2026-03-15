@@ -3,7 +3,9 @@
     "allow": [
       "WebFetch(domain:www.fumadocs.dev)",
       "WebFetch(domain:tanstack.com)",
-      "WebFetch(domain:www.fumadocs.dev)"
+      "WebFetch(domain:www.fumadocs.dev)",
+      "WebSearch",
+      "WebFetch(domain:developers.cloudflare.com)"
     ]
   }
 }
