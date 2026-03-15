@@ -1,4 +1,4 @@
-import type { PageTree } from 'fumadocs-core/server';
+import type * as PageTree from 'fumadocs-core/page-tree';
 import { DocsLayout, type DocsLayoutProps } from 'fumadocs-ui/layouts/docs';
 import { CalendarDays } from 'lucide-react';
 import { createElement, type ReactNode, useMemo } from 'react';
@@ -82,7 +82,8 @@ export function SharedDocsLayout({ children }: { children: ReactNode }) {
 
   const docsOptions: DocsLayoutProps = {
     ...baseOptions(),
-    tree: pageTree!,
+    links: [],
+    tree: pageTree,
     githubUrl: 'https://github.com/AndreaPontrandolfo/sheriff',
   };
 
