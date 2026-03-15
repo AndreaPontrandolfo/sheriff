@@ -30,5 +30,4 @@ function HomePage() {
 
 export const Route = createFileRoute('/')({
   component: HomePage,
-  ssr: false,
 });
