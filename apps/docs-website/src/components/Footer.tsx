@@ -1,10 +1,12 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { useRouterState } from '@tanstack/react-router';
 import { cn } from '@/lib/utils';
 
 function Footer() {
-  const pathname = usePathname();
+  const pathname = useRouterState({
+    select: (state) => state.location.pathname,
+  });
   const isHomepage = pathname === '/';
 
   return (

@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronRight } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@tanstack/react-router';
 import { RainbowButton } from '@/components/magicui/rainbow-button';
 import { Button } from '@/components/ui/button';
 import { CopyToClipboard } from '@/components/ui/copy-to-clipboard';
@@ -33,7 +33,7 @@ export function HeroSection() {
           <div className="mt-12 flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2">
               <RainbowButton className="rounded-xl text-base" size="lg">
-                <Link href="/docs/introduction">
+                <Link to="/docs/introduction">
                   <div className="flex items-center gap-2 text-nowrap">
                     Get started
                     <ChevronRight />
@@ -46,7 +46,7 @@ export function HeroSection() {
                 variant="outline"
                 className="dark:bg-background z-1 h-11 rounded-xl px-10 py-2 text-base dark:hover:bg-zinc-800"
               >
-                <Link href="/docs/rules">
+                <Link to="/docs/rules">
                   <div className="flex items-center gap-2 text-nowrap">
                     Rules
                     <ChevronRight />

@@ -1,7 +1,14 @@
-import Image from 'next/image';
+import { Image } from '@unpic/react';
 
 export function Logo({ size = 24 }: { size?: number }) {
   return (
-    <Image priority src="/icon.svg" alt="Logo" width={size} height={size} />
+    <Image
+      priority
+      alt="Logo"
+      height={size}
+      layout="fixed"
+      src="/icon.svg"
+      width={size}
+    />
   );
 }

@@ -8,12 +8,12 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "outputs": [".output/**", "dist/**"]
     },
     "build:watch": {
       "cache": false,
       "persistent": true,
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "outputs": [".output/**", "dist/**"]
     },
     "dev": {
       "cache": false,

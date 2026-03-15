@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:tanstack.com)",
+      "WebFetch(domain:www.fumadocs.dev)"
+    ]
+  }
+}

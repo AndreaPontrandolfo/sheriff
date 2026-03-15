@@ -1,22 +1,16 @@
-import { getGithubLastEdit } from 'fumadocs-core/server';
 import type { Page } from 'fumadocs-core/source';
 
 type ContentType = 'docs' | 'blog';
 
 export async function getLastUpdate(
-  page: Page,
+  _page: Page,
   contentType: ContentType,
 ): Promise<Date | null> {
   try {
-    const lastUpdate = await getGithubLastEdit({
-      owner: 'AndreaPontrandolfo',
-      repo: 'sheriff',
-      path: `apps/docs-website/content/${contentType}/${page.path}`,
-      sha: 'master',
-      token: process.env.GITHUB_TOKEN,
-    });
-
-    return lastUpdate;
+    // Disabled during migration to TanStack Start.
+    // This can be re-enabled when a compatible "last edit" API is wired.
+    void contentType;
+    return null;
   } catch (error) {
     console.error('Failed to get last update time from GitHub:', error);
 

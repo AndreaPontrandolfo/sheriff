@@ -1,5 +1,6 @@
+import { blogPosts, docs } from 'collections/server';
 import { loader } from 'fumadocs-core/source';
-import { createMDXSource } from 'fumadocs-mdx';
+import { toFumadocsSource } from 'fumadocs-mdx/runtime/server';
 import { CalendarDays } from 'lucide-react';
 import { createElement } from 'react';
 import { BiLogoTypescript } from 'react-icons/bi';
@@ -15,7 +16,6 @@ import { RiTerminalBoxFill } from 'react-icons/ri';
 import { SiPrettier } from 'react-icons/si';
 import { SlSpeech } from 'react-icons/sl';
 import { VscVscode } from 'react-icons/vsc';
-import { blogPosts, docs } from '@/.source';
 
 const icons = {
   BsStars,
@@ -62,5 +62,5 @@ export const source = loader({
 // Loader for the blog posts, exported as 'blog'
 export const blog = loader({
   baseUrl: '/blog',
-  source: createMDXSource(blogPosts),
+  source: toFumadocsSource(blogPosts, []),
 });

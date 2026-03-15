@@ -1,7 +1,7 @@
 'use client';
 
 import { ChevronRight } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { HPSectionTitle } from './HPSectionTitle';
@@ -41,7 +41,7 @@ export function HPSectionStart({
             className="w-full rounded-md"
           />
           <Button asChild variant="outline" size="sm" className="rounded-md">
-            <Link href={buttonLink}>
+            <Link to={buttonLink}>
               {buttonText} <ChevronRight />
             </Link>
           </Button>

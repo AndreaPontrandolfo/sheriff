@@ -6,8 +6,6 @@ import {
   defineDocs,
   frontmatterSchema,
 } from 'fumadocs-mdx/config';
-import { transformerTwoslash } from 'fumadocs-twoslash';
-import { createFileSystemTypesCache } from 'fumadocs-twoslash/cache-fs';
 import remarkReadingTime from 'remark-reading-time';
 import readingMdxTime from 'remark-reading-time/mdx.js';
 import { z } from 'zod';
@@ -61,11 +59,6 @@ export default defineConfig({
       },
       transformers: [
         ...(rehypeCodeDefaultOptions.transformers ?? []),
-        transformerTwoslash({
-          langs: ['ts', 'js'],
-          throws: false,
-          typesCache: createFileSystemTypesCache(),
-        }),
       ],
     },
   },

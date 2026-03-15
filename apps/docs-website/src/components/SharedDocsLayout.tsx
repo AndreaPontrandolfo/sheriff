@@ -1,9 +1,8 @@
-import type { PageTree } from 'fumadocs-core/server';
 import { GithubInfo } from 'fumadocs-ui/components/github-info';
 import { DocsLayout, type DocsLayoutProps } from 'fumadocs-ui/layouts/docs';
 import type { ReactNode } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { baseOptions } from '@/app/layout.config';
+import { baseOptions } from '@/lib/layout.shared';
 import { blog, source } from '@/lib/source';
 
 function getBlogTree() {
@@ -11,7 +10,8 @@ function getBlogTree() {
   const postsByYear: Record<string, typeof posts> = {};
 
   for (const post of posts) {
-    const year = new Date(post.data.date as string | number).getFullYear();
+    const postDate = new Date(String(Reflect.get(post.data, 'date')));
+    const year = postDate.getFullYear().toString();
 
     if (!postsByYear[year]) {
       postsByYear[year] = [];
@@ -32,9 +32,15 @@ function getBlogTree() {
         defaultOpen: true,
         children: postsByYear[year]
           .toSorted((a, b) => {
+            const secondDate = new Date(
+              String(Reflect.get(b.data, 'date')),
+            ).getTime();
+            const firstDate = new Date(
+              String(Reflect.get(a.data, 'date')),
+            ).getTime();
+
             return (
-              new Date(b.data.date as string | number).getTime() -
-              new Date(a.data.date as string | number).getTime()
+              secondDate - firstDate
             );
           })
           .map((post) => {
@@ -49,7 +55,7 @@ function getBlogTree() {
   };
 }
 
-const pageTreeWithCustomRoot: PageTree.Root = {
+const pageTreeWithCustomRoot = {
   name: 'Root',
   children: [
     {
@@ -71,7 +77,7 @@ const pageTreeWithCustomRoot: PageTree.Root = {
 };
 
 const docsOptions: DocsLayoutProps = {
-  ...baseOptions,
+  ...baseOptions(),
   tree: pageTreeWithCustomRoot,
   githubUrl: 'https://github.com/AndreaPontrandolfo/sheriff',
   links: [

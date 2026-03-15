@@ -1,12 +1,13 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.mts"],
   "exclude": [
     "dist",
     "build",
     "node_modules",
     "src/components/ui",
-    "src/components/magicui"
+    "src/components/magicui",
+    ".output"
   ],
   "extends": "tsconfig/base.json",
   "compilerOptions": {
@@ -17,13 +18,8 @@
     "incremental": true,
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     "paths": {
-      "@/.source": ["./.source/index.ts"],
+      "collections/*": [".source/*"],
       "@/*": ["./src/*"]
-    },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    }
   }
 }
