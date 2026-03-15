@@ -1,5 +1,3 @@
-'use client';
-
 import { isEmpty } from 'lodash-es';
 import { Filter, XIcon } from 'lucide-react';
 import type { ChangeEvent } from 'react';

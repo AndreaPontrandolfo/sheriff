@@ -1,5 +1,3 @@
-'use client';
-
 import { isArray, isEmpty } from 'lodash-es';
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import React, { useState } from 'react';

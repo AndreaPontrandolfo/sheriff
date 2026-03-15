@@ -1,5 +1,3 @@
-'use client';
-
 import { Image } from '@unpic/react';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef, useState } from 'react';

@@ -1,5 +1,3 @@
-'use client';
-
 import { ChevronRight } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 import { RainbowButton } from '@/components/magicui/rainbow-button';

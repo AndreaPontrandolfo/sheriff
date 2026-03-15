@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-'use client';
 
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';

@@ -1,5 +1,3 @@
-'use client';
-
 import { debounce, isEmpty } from 'lodash-es';
 import * as React from 'react';
 import {
@@ -102,9 +100,7 @@ export function DataTable<TData extends RuleEntry, TValue>({
             ? updater(currentColumnFilters)
             : updater;
 
-        return nextFilters.filter(
-          (filter) => filter.id !== 'parentPluginName',
-        );
+        return nextFilters.filter((filter) => filter.id !== 'parentPluginName');
       });
     },
     [selectedPlugins],

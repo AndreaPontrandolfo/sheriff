@@ -1,5 +1,4 @@
 /* eslint-disable react/no-array-index-key */
-'use client';
 import { Star } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';

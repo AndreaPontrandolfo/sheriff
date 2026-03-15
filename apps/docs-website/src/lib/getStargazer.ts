@@ -1,4 +1,3 @@
-'use server';
 import { Octokit } from '@octokit/rest';
 
 const octokit = new Octokit({
@@ -16,13 +15,14 @@ interface GithubResponse {
   stargazerCount: number;
 }
 
+interface InlineInterface {
+  owner: string;
+  repo: string;
+}
 export const getStargazers = async ({
   owner,
   repo,
-}: {
-  owner: string;
-  repo: string;
-}): Promise<GithubResponse> => {
+}: InlineInterface): Promise<GithubResponse> => {
   try {
     const [resStargazers, resCount] = await Promise.all([
       octokit.rest.activity.listStargazersForRepo({

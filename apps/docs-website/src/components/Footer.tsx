@@ -1,5 +1,3 @@
-'use client';
-
 import { useRouterState } from '@tanstack/react-router';
 import { cn } from '@/lib/utils';
 
@@ -30,7 +28,7 @@ function Footer() {
               : 'min(var(--fd-page-width),calc(var(--fd-layout-width) - var(--fd-sidebar-width)))',
           }}
         >
-          <div className="mx-6 w-full border-t py-6 md:mx-auto md:w-[calc(100%_-_6rem)]">
+          <div className="mx-6 w-full py-6 md:mx-auto md:w-[calc(100%_-_6rem)]">
             <p className="text-muted-foreground flex flex-col items-center justify-center gap-1 text-sm sm:flex-row">
               <span>
                 Copyright © {new Date().getFullYear().toString()}{' '}
