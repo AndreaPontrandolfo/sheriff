@@ -29,6 +29,7 @@ function RootDocument({ children }: RootDocumentProps) {
     <html suppressHydrationWarning lang="en">
       <head>
         <HeadContent />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
