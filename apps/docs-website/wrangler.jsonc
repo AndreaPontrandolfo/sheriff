@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "docs-website",
+  "compatibility_date": "2025-01-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "@tanstack/react-start/server-entry",
+  "routes": [
+    {
+      "pattern": "eslint-config-sheriff.dev",
+      "custom_domain": true
+    }
+  ]
+}

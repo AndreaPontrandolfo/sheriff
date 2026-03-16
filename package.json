@@ -8,6 +8,8 @@
     "clean": "turbo run clean && rm -rf .turbo",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",
     "dev": "turbo run build:watch docs-website#dev sheriff-webservices#dev",
+    "docs:build": "turbo run build --filter=docs-website",
+    "docs:deploy": "turbo run deploy --filter=docs-website",
     "format": "prettier . --write --experimental-cli --cache --cache-location=node_modules/.cache/.prettiercache --log-level=warn",
     "format:check": "prettier . --check --experimental-cli --cache --cache-location=node_modules/.cache/.prettiercache",
     "knip": "knip --cache",

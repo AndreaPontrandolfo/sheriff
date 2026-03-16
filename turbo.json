@@ -8,7 +8,7 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".output/**", "dist/**"]
+      "outputs": [".output/**", "dist/**", ".source/**"]
     },
     "build:watch": {
       "cache": false,
@@ -18,6 +18,9 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "deploy": {
+      "outputs": [".wrangler/**"]
     },
     "typecheck": {
       "dependsOn": ["^topo", "^build"],

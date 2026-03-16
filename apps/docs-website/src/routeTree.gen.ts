@@ -11,8 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
-import { Route as LlmsTxtRouteImport } from './routes/llms.txt'
-import { Route as LlmsFullTxtRouteImport } from './routes/llms-full.txt'
 import { Route as DocsSplatRouteImport } from './routes/docs/$'
 import { Route as DocsOgSplatRouteImport } from './routes/docs-og/$'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
@@ -29,16 +27,6 @@ const IndexRoute = IndexRouteImport.update({
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LlmsTxtRoute = LlmsTxtRouteImport.update({
-  id: '/llms/txt',
-  path: '/llms/txt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LlmsFullTxtRoute = LlmsFullTxtRouteImport.update({
-  id: '/llms-full/txt',
-  path: '/llms-full/txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsSplatRoute = DocsSplatRouteImport.update({
@@ -85,8 +73,6 @@ export interface FileRoutesByFullPath {
   '/blog/$slug': typeof BlogSlugRoute
   '/docs-og/$': typeof DocsOgSplatRoute
   '/docs/$': typeof DocsSplatRoute
-  '/llms-full/txt': typeof LlmsFullTxtRoute
-  '/llms/txt': typeof LlmsTxtRoute
   '/blog/': typeof BlogIndexRoute
   '/llms/mdx/$': typeof LlmsMdxSplatRoute
 }
@@ -98,8 +84,6 @@ export interface FileRoutesByTo {
   '/blog/$slug': typeof BlogSlugRoute
   '/docs-og/$': typeof DocsOgSplatRoute
   '/docs/$': typeof DocsSplatRoute
-  '/llms-full/txt': typeof LlmsFullTxtRoute
-  '/llms/txt': typeof LlmsTxtRoute
   '/blog': typeof BlogIndexRoute
   '/llms/mdx/$': typeof LlmsMdxSplatRoute
 }
@@ -112,8 +96,6 @@ export interface FileRoutesById {
   '/blog/$slug': typeof BlogSlugRoute
   '/docs-og/$': typeof DocsOgSplatRoute
   '/docs/$': typeof DocsSplatRoute
-  '/llms-full/txt': typeof LlmsFullTxtRoute
-  '/llms/txt': typeof LlmsTxtRoute
   '/blog/': typeof BlogIndexRoute
   '/llms/mdx/$': typeof LlmsMdxSplatRoute
 }
@@ -127,8 +109,6 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/docs-og/$'
     | '/docs/$'
-    | '/llms-full/txt'
-    | '/llms/txt'
     | '/blog/'
     | '/llms/mdx/$'
   fileRoutesByTo: FileRoutesByTo
@@ -140,8 +120,6 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/docs-og/$'
     | '/docs/$'
-    | '/llms-full/txt'
-    | '/llms/txt'
     | '/blog'
     | '/llms/mdx/$'
   id:
@@ -153,8 +131,6 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/docs-og/$'
     | '/docs/$'
-    | '/llms-full/txt'
-    | '/llms/txt'
     | '/blog/'
     | '/llms/mdx/$'
   fileRoutesById: FileRoutesById
@@ -167,8 +143,6 @@ export interface RootRouteChildren {
   BlogSlugRoute: typeof BlogSlugRoute
   DocsOgSplatRoute: typeof DocsOgSplatRoute
   DocsSplatRoute: typeof DocsSplatRoute
-  LlmsFullTxtRoute: typeof LlmsFullTxtRoute
-  LlmsTxtRoute: typeof LlmsTxtRoute
   BlogIndexRoute: typeof BlogIndexRoute
   LlmsMdxSplatRoute: typeof LlmsMdxSplatRoute
 }
@@ -187,20 +161,6 @@ declare module '@tanstack/react-router' {
       path: '/blog'
       fullPath: '/blog/'
       preLoaderRoute: typeof BlogIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/llms/txt': {
-      id: '/llms/txt'
-      path: '/llms/txt'
-      fullPath: '/llms/txt'
-      preLoaderRoute: typeof LlmsTxtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/llms-full/txt': {
-      id: '/llms-full/txt'
-      path: '/llms-full/txt'
-      fullPath: '/llms-full/txt'
-      preLoaderRoute: typeof LlmsFullTxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/$': {
@@ -263,8 +223,6 @@ const rootRouteChildren: RootRouteChildren = {
   BlogSlugRoute: BlogSlugRoute,
   DocsOgSplatRoute: DocsOgSplatRoute,
   DocsSplatRoute: DocsSplatRoute,
-  LlmsFullTxtRoute: LlmsFullTxtRoute,
-  LlmsTxtRoute: LlmsTxtRoute,
   BlogIndexRoute: BlogIndexRoute,
   LlmsMdxSplatRoute: LlmsMdxSplatRoute,
 }
