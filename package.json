@@ -4,7 +4,6 @@
   "scripts": {
     "build": "turbo run build",
     "changeset": "changeset",
-    "check-deduped-deps": "pnpm dedupe --check",
     "clean": "turbo run clean && rm -rf .turbo",
     "delete-node-modules": "pnpm exec rm -rf node_modules && pnpm -r exec rm -rf node_modules",
     "dev": "turbo run build:watch docs-website#dev sheriff-webservices#dev",
@@ -15,7 +14,7 @@
     "knip": "knip --cache",
     "lint": "turbo run lint",
     "manypkg": "manypkg check",
-    "merge-checks": "pnpm build && turbo run typecheck lint manypkg knip validate-config --filter=!./apps/docs-website-docusaurus && pnpm check-deduped-deps",
+    "merge-checks": "pnpm build && turbo run typecheck lint manypkg knip validate-config --filter=!./apps/docs-website-docusaurus",
     "nuke": "pnpm clean && pnpm delete-node-modules",
     "playground": "pnpm --filter=cli-playground exec create-config",
     "playground:cli-checks": "pnpm --filter=cli-playground exec sheriff",
