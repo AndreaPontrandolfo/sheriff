@@ -15,7 +15,7 @@ export const Route = createFileRoute('/api/stargazers')({
         } catch (error) {
           console.error('Unable to fetch stargazers:', error);
 
-          return Response.json({ count: 0 });
+          return Response.json({ stargazers: [], stargazerCount: 0 }, { status: 500 });
         }
       },
     },
