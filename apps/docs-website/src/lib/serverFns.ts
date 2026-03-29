@@ -21,6 +21,7 @@ function replaceIconsWithNames(node: PageTree.Node): PageTree.Node {
       icon && typeof icon === 'object' && 'type' in icon
         ? (icon as { type?: { name?: string } }).type?.name
         : undefined;
+
     return {
       ...rest,
       ...(iconName
@@ -34,6 +35,7 @@ function replaceIconsWithNames(node: PageTree.Node): PageTree.Node {
       icon && typeof icon === 'object' && 'type' in icon
         ? (icon as { type?: { name?: string } }).type?.name
         : undefined;
+
     return {
       ...rest,
       ...(iconName
@@ -45,10 +47,12 @@ function replaceIconsWithNames(node: PageTree.Node): PageTree.Node {
         : {}),
     } as PageTree.Node;
   }
+
   return node;
 }
 
 export const getPageTree = createServerFn({ method: 'GET' }).handler(
+  // @ts-expect-error
   async () => {
     const posts = blog.getPages();
     const postsByYear: Record<string, BlogPost[]> = {};

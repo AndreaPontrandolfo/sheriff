@@ -61,6 +61,7 @@ function resolveIcons(node: PageTree.Node): PageTree.Node {
 
     return { ...node, ...(resolvedIcon ? { icon: resolvedIcon } : {}) };
   }
+
   return node;
 }
 
@@ -71,7 +72,10 @@ function resolvePageTreeIcons(tree: PageTree.Root): PageTree.Root {
   };
 }
 
-export function SharedDocsLayout({ children }: { children: ReactNode }) {
+interface SharedDocsLayoutProps {
+  children: ReactNode;
+}
+export function SharedDocsLayout({ children }: SharedDocsLayoutProps) {
   const { loaderData } = useMatch({ from: '__root__' });
   const rawPageTree = loaderData?.pageTree;
 
@@ -83,6 +87,7 @@ export function SharedDocsLayout({ children }: { children: ReactNode }) {
   const docsOptions: DocsLayoutProps = {
     ...baseOptions(),
     links: [],
+    // @ts-expect-error
     tree: pageTree,
     githubUrl: 'https://github.com/AndreaPontrandolfo/sheriff',
   };

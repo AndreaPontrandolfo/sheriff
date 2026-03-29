@@ -8,6 +8,10 @@
     {
       "pattern": "eslint-config-sheriff.dev",
       "custom_domain": true
+    },
+    {
+      "pattern": "www.eslint-config-sheriff.dev",
+      "custom_domain": true
     }
   ]
 }

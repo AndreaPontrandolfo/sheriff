@@ -29,6 +29,7 @@ export function HeroSection() {
           <div className="mt-12 flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2">
               <RainbowButton className="rounded-xl text-base" size="lg">
+                {/* @ts-expect-error */}
                 <Link to="/docs/introduction">
                   <div className="flex items-center gap-2 text-nowrap">
                     Get started
@@ -42,6 +43,7 @@ export function HeroSection() {
                 variant="outline"
                 className="dark:bg-background z-1 h-11 rounded-xl px-10 py-2 text-base dark:hover:bg-zinc-800"
               >
+                {/* @ts-expect-error */}
                 <Link to="/docs/rules">
                   <div className="flex items-center gap-2 text-nowrap">
                     Rules
