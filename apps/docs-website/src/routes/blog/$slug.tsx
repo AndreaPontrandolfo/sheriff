@@ -40,6 +40,7 @@ const blogClientLoader = browserCollections.blogPosts.createClientLoader({
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
+                timeZone: 'UTC',
               })}
             </p>
           ) : null}
