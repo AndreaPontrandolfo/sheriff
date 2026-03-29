@@ -58,7 +58,7 @@ export const getPageTree = createServerFn({ method: 'GET' }).handler(
     const postsByYear: Record<string, BlogPost[]> = {};
 
     for (const post of posts) {
-      const postDate = new Date(String(Reflect.get(post.data, 'date')));
+      const postDate = new Date(String(post.data.date));
       const year = postDate.getFullYear().toString();
 
       if (!postsByYear[year]) {
@@ -68,7 +68,7 @@ export const getPageTree = createServerFn({ method: 'GET' }).handler(
         url: post.url,
         title: post.data.title,
         description: post.data.description,
-        date: String(Reflect.get(post.data, 'date')),
+        date: String(post.data.date),
       });
     }
 

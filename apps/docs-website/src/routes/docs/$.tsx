@@ -14,7 +14,7 @@ import { source } from '@/lib/source.server';
 
 const docsClientLoader = browserCollections.docs.createClientLoader({
   component({ toc, frontmatter, default: MDX }) {
-    const pageIsFull = Reflect.get(frontmatter, 'full');
+    const pageIsFull = frontmatter.full;
 
     return (
       <DocsPage toc={toc} full={Boolean(pageIsFull)}>

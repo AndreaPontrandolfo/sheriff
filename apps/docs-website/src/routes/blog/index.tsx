@@ -5,12 +5,18 @@ import { blog } from '@/lib/source.server';
 import { SharedDocsLayout } from '@/components/SharedDocsLayout';
 
 const getBlogPosts = createServerFn({ method: 'GET' }).handler(async () => {
-  return blog.getPages().map((post) => ({
-    url: post.url,
-    title: post.data.title,
-    description: post.data.description,
-    image: Reflect.get(post.data, 'image') as string | undefined,
-  }));
+  return blog
+    .getPages()
+    .sort(
+      (a, b) =>
+        new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+    )
+    .map((post) => ({
+      url: post.url,
+      title: post.data.title,
+      description: post.data.description,
+      image: post.data.image,
+    }));
 });
 
 function BlogPage() {
@@ -22,7 +28,7 @@ function BlogPage() {
         <h1 className="mb-8 text-4xl font-bold">Blog</h1>
         <h2 className="mb-4 text-2xl font-semibold">Latest Posts</h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {posts.toReversed().map((post) => (
+          {posts.map((post) => (
             <Link
               key={post.url}
               to={post.url}

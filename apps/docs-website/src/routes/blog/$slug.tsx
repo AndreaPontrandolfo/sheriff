@@ -17,8 +17,8 @@ const blogClientLoader = browserCollections.blogPosts.createClientLoader({
     { toc, frontmatter, default: MDX },
     _props: undefined,
   ) {
-    const publishedDate = Reflect.get(frontmatter, 'date');
-    const readingTimeValue = Reflect.get(frontmatter, 'readingTime');
+    const publishedDate = frontmatter.date;
+    const readingTimeValue = frontmatter.readingTime;
     const hasReadingTime =
       typeof readingTimeValue === 'object' &&
       readingTimeValue !== null &&
@@ -45,7 +45,7 @@ const blogClientLoader = browserCollections.blogPosts.createClientLoader({
           ) : null}
           {hasReadingTime ? (
             <p>
-              <strong>Reading time:</strong> {String(Reflect.get(readingTimeValue, 'text'))}
+              <strong>Reading time:</strong> {String(readingTimeValue.text)}
             </p>
           ) : null}
         </div>
