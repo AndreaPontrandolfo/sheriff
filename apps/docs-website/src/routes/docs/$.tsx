@@ -13,7 +13,7 @@ import { SharedDocsLayout } from '@/components/SharedDocsLayout';
 import { source } from '@/lib/source.server';
 
 const docsClientLoader = browserCollections.docs.createClientLoader({
-  component({ toc, frontmatter, default: MDX }, _props: undefined) {
+  component({ toc, frontmatter, default: MDX }) {
     const pageIsFull = Reflect.get(frontmatter, 'full');
 
     return (
