@@ -1,6 +1,9 @@
 import { Image } from '@unpic/react';
 
-export function Logo({ size = 24 }: { size?: number }) {
+interface LogoProps {
+  size?: number;
+}
+export function Logo({ size = 24 }: LogoProps) {
   return (
     <Image
       priority

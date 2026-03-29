@@ -1,19 +1,24 @@
 packages:
-  - 'apps/*'
-  - 'packages/*'
-verifyDepsBeforeRun: warn
+  - apps/*
+  - packages/*
+
+disallowWorkspaceCycles: true
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - '@tailwindcss/oxide'
+  - core-js
+  - core-js-pure
+  - esbuild
+  - sharp
+  - unrs-resolver
+  - workerd
+
 peerDependencyRules:
   allowedVersions:
     eslint: ^9.0.0
     typescript: ^5.0.0
   ignoreMissing:
     - vitest
-onlyBuiltDependencies:
-  - '@swc/core'
-  - '@tailwindcss/oxide'
-  - 'core-js'
-  - 'core-js-pure'
-  - 'esbuild'
-  - 'sharp'
-  - 'unrs-resolver'
-disallowWorkspaceCycles: true
+
+verifyDepsBeforeRun: warn

@@ -13,10 +13,7 @@ import { SharedDocsLayout } from '@/components/SharedDocsLayout';
 import { blog } from '@/lib/source.server';
 
 const blogClientLoader = browserCollections.blogPosts.createClientLoader({
-  component(
-    { toc, frontmatter, default: MDX },
-    _props: undefined,
-  ) {
+  component({ toc, frontmatter, default: MDX }) {
     const publishedDate = frontmatter.date;
     const readingTimeValue = frontmatter.readingTime;
     const hasReadingTime =
@@ -46,7 +43,7 @@ const blogClientLoader = browserCollections.blogPosts.createClientLoader({
           ) : null}
           {hasReadingTime ? (
             <p>
-              <strong>Reading time:</strong> {String(readingTimeValue.text)}
+              <strong>Reading time:</strong> {readingTimeValue.text}
             </p>
           ) : null}
         </div>

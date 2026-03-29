@@ -77,6 +77,7 @@ export const getPageTree = createServerFn({ method: 'GET' }).handler(
     );
 
     const blogTree = {
+      // eslint-disable-next-line unicorn/no-unused-properties
       name: 'Blog',
       children: years.map((year) => {
         return {

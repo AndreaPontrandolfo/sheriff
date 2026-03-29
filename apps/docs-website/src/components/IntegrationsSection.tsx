@@ -1,6 +1,6 @@
-import { Image } from '@unpic/react';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef, useState } from 'react';
+import { Image } from '@unpic/react';
 import AstroDarkLogo from '@/assets/logos/astro-icon-dark.svg?url';
 import AstroLightLogo from '@/assets/logos/astro-icon-light.svg?url';
 import EslintLogo from '@/assets/logos/eslint.svg?url';

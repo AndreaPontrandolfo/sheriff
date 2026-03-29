@@ -23,6 +23,11 @@ export const StargazerSection = () => {
       )
     : '...';
 
+  interface StargazerSectionProps {
+    id: number;
+    login: string;
+  }
+
   return (
     <div className="relative">
       <div className="flex w-full flex-col items-center gap-8 px-4 pt-2 sm:px-0">
@@ -47,7 +52,7 @@ export const StargazerSection = () => {
               </>
             ) : (
               <>
-                {data?.stargazers.map((o: { id: number; login: string }) => {
+                {data?.stargazers.map((o: StargazerSectionProps) => {
                   return (
                     <TooltipProvider key={o.id}>
                       <Tooltip delayDuration={0} key={o.login}>
