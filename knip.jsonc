@@ -3,15 +3,14 @@
   "ignoreWorkspaces": [
     "packages/sheriff-utils",
     "apps/config-validation-playground",
-    "apps/cli-playground",
-    "apps/docs-website-docusaurus",
+    "apps/cli-playground"
   ],
   "ignoreDependencies": [
     "@turbo/gen",
     "eslint-import-resolver-typescript",
     "@typescript-eslint/parser",
     "@sherifforg/cli",
-    "@sherifforg/create-config",
+    "@sherifforg/create-config"
   ],
-  "treatConfigHintsAsErrors": true,
+  "treatConfigHintsAsErrors": true
 }

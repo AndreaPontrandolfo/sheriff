@@ -21,7 +21,6 @@ next-env.d.ts
 /build
 
 # Generated files
-.docusaurus
 .cache-loader
 
 # misc

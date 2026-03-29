@@ -14,7 +14,7 @@
     "knip": "knip --cache",
     "lint": "turbo run lint",
     "manypkg": "manypkg check",
-    "merge-checks": "pnpm build && turbo run typecheck lint manypkg knip validate-config --filter=!./apps/docs-website-docusaurus",
+    "merge-checks": "pnpm build && turbo run typecheck lint manypkg knip validate-config",
     "nuke": "pnpm clean && pnpm delete-node-modules",
     "playground": "pnpm --filter=cli-playground exec create-config",
     "playground:cli-checks": "pnpm --filter=cli-playground exec sheriff",
