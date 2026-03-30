@@ -43,7 +43,7 @@ const getDocsPage = createServerFn({ method: 'GET' })
 
 function DocsPageRoute() {
   const loaderData = Route.useLoaderData();
-  const markdownUrl = `${loaderData.url}.mdx`;
+  const markdownUrl = `/llms.mdx/${loaderData.path.replace(/\.mdx?$/, '')}`;
   const githubUrl = `https://github.com/AndreaPontrandolfo/sheriff/blob/master/apps/docs-website/content/docs/${loaderData.path}`;
 
   return (
