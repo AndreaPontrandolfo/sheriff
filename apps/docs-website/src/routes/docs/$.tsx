@@ -9,6 +9,7 @@ import { Suspense } from 'react';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { createServerFn } from '@tanstack/react-start';
 import { getMDXComponents } from '@/components/mdx';
+import { LLMCopyButton, ViewOptions } from '@/components/PageActions';
 import { SharedDocsLayout } from '@/components/SharedDocsLayout';
 import { source } from '@/lib/source.server';
 
@@ -37,14 +38,20 @@ const getDocsPage = createServerFn({ method: 'GET' })
       throw notFound();
     }
 
-    return { path: page.path };
+    return { path: page.path, url: page.url };
   });
 
 function DocsPageRoute() {
   const loaderData = Route.useLoaderData();
+  const markdownUrl = `${loaderData.url}.mdx`;
+  const githubUrl = `https://github.com/AndreaPontrandolfo/sheriff/blob/master/apps/docs-website/content/docs/${loaderData.path}`;
 
   return (
     <SharedDocsLayout>
+      <div className="flex flex-row gap-1 items-center border-b pt-2 pb-4">
+        <LLMCopyButton markdownUrl={markdownUrl} />
+        <ViewOptions markdownUrl={markdownUrl} githubUrl={githubUrl} />
+      </div>
       <Suspense>{docsClientLoader.useContent(loaderData.path)}</Suspense>
     </SharedDocsLayout>
   );
@@ -58,6 +65,6 @@ export const Route = createFileRoute('/docs/$')({
 
     await docsClientLoader.preload(data.path);
 
-    return { path: data.path };
+    return { path: data.path, url: data.url };
   },
 });

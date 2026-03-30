@@ -2,7 +2,7 @@ import { createFileRoute, notFound } from '@tanstack/react-router';
 import { getLLMText } from '@/lib/get-llm-text';
 import { source } from '@/lib/source.server';
 
-export const Route = createFileRoute('/llms/mdx/$')({
+export const Route = createFileRoute('/llms.mdx/$')({
   server: {
     handlers: {
       GET: async ({ params }) => {
@@ -15,7 +15,7 @@ export const Route = createFileRoute('/llms/mdx/$')({
 
         return new Response(await getLLMText(page), {
           headers: {
-            'Content-Type': 'text/plain',
+            'Content-Type': 'text/markdown',
           },
         });
       },
