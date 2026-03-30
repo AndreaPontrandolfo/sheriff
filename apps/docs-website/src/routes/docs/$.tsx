@@ -5,7 +5,7 @@ import {
   DocsPage,
   DocsTitle,
 } from 'fumadocs-ui/layouts/docs/page';
-import { Suspense } from 'react';
+import { createContext, Suspense, useContext } from 'react';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { createServerFn } from '@tanstack/react-start';
 import { getMDXComponents } from '@/components/mdx';
@@ -13,14 +13,31 @@ import { LLMCopyButton, ViewOptions } from '@/components/PageActions';
 import { SharedDocsLayout } from '@/components/SharedDocsLayout';
 import { source } from '@/lib/source.server';
 
+const PageActionsContext = createContext<{
+  markdownUrl: string;
+  githubUrl: string;
+} | null>(null);
+
 const docsClientLoader = browserCollections.docs.createClientLoader({
   component({ toc, frontmatter, default: MDX }) {
     const pageIsFull = frontmatter.full;
+    const ctx = useContext(PageActionsContext);
 
     return (
       <DocsPage toc={toc} full={Boolean(pageIsFull)}>
         <DocsTitle>{frontmatter.title}</DocsTitle>
-        <DocsDescription>{frontmatter.description}</DocsDescription>
+        <DocsDescription className="mb-4">
+          {frontmatter.description}
+        </DocsDescription>
+        {ctx && (
+          <div className="flex flex-row gap-1 items-center pb-6 border-b mb-6">
+            <LLMCopyButton markdownUrl={ctx.markdownUrl} />
+            <ViewOptions
+              markdownUrl={ctx.markdownUrl}
+              githubUrl={ctx.githubUrl}
+            />
+          </div>
+        )}
         <DocsBody>
           <MDX components={getMDXComponents()} />
         </DocsBody>
@@ -43,16 +60,15 @@ const getDocsPage = createServerFn({ method: 'GET' })
 
 function DocsPageRoute() {
   const loaderData = Route.useLoaderData();
-  const markdownUrl = `/llms.mdx/${loaderData.path.replace(/\.mdx?$/, '')}`;
+  const slug = loaderData.path.replace(/\.mdx?$/, '');
+  const markdownUrl = `/llms.mdx/${slug}`;
   const githubUrl = `https://github.com/AndreaPontrandolfo/sheriff/blob/master/apps/docs-website/content/docs/${loaderData.path}`;
 
   return (
     <SharedDocsLayout>
-      <div className="flex flex-row gap-1 items-center border-b pt-2 pb-4">
-        <LLMCopyButton markdownUrl={markdownUrl} />
-        <ViewOptions markdownUrl={markdownUrl} githubUrl={githubUrl} />
-      </div>
-      <Suspense>{docsClientLoader.useContent(loaderData.path)}</Suspense>
+      <PageActionsContext.Provider value={{ markdownUrl, githubUrl }}>
+        <Suspense>{docsClientLoader.useContent(loaderData.path)}</Suspense>
+      </PageActionsContext.Provider>
     </SharedDocsLayout>
   );
 }

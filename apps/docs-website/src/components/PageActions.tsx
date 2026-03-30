@@ -1,29 +1,39 @@
-'use client';
-import { type ComponentProps, useMemo, useState } from 'react';
-import { Check, ChevronDown, Copy, ExternalLinkIcon, TextIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { useCopyButton } from 'fumadocs-ui/utils/use-copy-button';
-import { Popover, PopoverTrigger, PopoverContent } from './ui/popover';
-import { buttonVariants } from './ui/button';
 import { usePathname } from 'fumadocs-core/framework';
+import { useCopyButton } from 'fumadocs-ui/utils/use-copy-button';
+import {
+  Check,
+  ChevronDown,
+  Copy,
+  ExternalLinkIcon,
+  TextIcon,
+} from 'lucide-react';
+import { type ComponentProps, useMemo, useState } from 'react';
+import { cn } from '@/lib/utils';
+import { buttonVariants } from './ui/button';
+import { Popover, PopoverContent, PopoverTrigger } from './ui/popover';
 
 const cache = new Map<string, Promise<string>>();
 
+interface InlineInterface {
+  markdownUrl: string;
+}
 export function LLMCopyButton({
   markdownUrl,
   ...props
-}: ComponentProps<'button'> & {
-  markdownUrl: string;
-}) {
+}: ComponentProps<'button'> & InlineInterface) {
   const [isLoading, setLoading] = useState(false);
   const [checked, onClick] = useCopyButton(async () => {
     const cached = cache.get(markdownUrl);
-    if (cached) return navigator.clipboard.writeText(await cached);
+
+    if (cached) {
+      return navigator.clipboard.writeText(await cached);
+    }
 
     setLoading(true);
 
     try {
       const promise = fetch(markdownUrl).then((res) => res.text());
+
       cache.set(markdownUrl, promise);
       await navigator.clipboard.write([
         new ClipboardItem({
@@ -44,7 +54,8 @@ export function LLMCopyButton({
         buttonVariants({
           color: 'secondary',
           size: 'sm',
-          className: 'gap-2 [&_svg]:size-3.5 [&_svg]:text-fd-muted-foreground',
+          className:
+            'gap-2 [&_svg]:size-3.5 [&_svg]:text-fd-muted-foreground cursor-pointer',
         }),
         props.className,
       )}
@@ -55,18 +66,21 @@ export function LLMCopyButton({
   );
 }
 
+interface InlineInterface2 {
+  markdownUrl?: string;
+  githubUrl?: string;
+}
 export function ViewOptions({
   markdownUrl,
   githubUrl,
   ...props
-}: ComponentProps<typeof PopoverTrigger> & {
-  markdownUrl?: string;
-  githubUrl?: string;
-}) {
+}: ComponentProps<typeof PopoverTrigger> & InlineInterface2) {
   const pathname = usePathname();
   const items = useMemo(() => {
     const pageUrl =
-      typeof window === 'undefined' ? pathname : new URL(pathname, window.location.origin);
+      typeof window === 'undefined'
+        ? pathname
+        : new URL(pathname, window.location.origin);
     const q = `Read ${pageUrl}, I want to ask questions about it.`;
 
     return [
@@ -137,7 +151,7 @@ export function ViewOptions({
           text: q,
         })}`,
       },
-    ].filter((v) => !!v);
+    ].filter(Boolean);
   }, [githubUrl, markdownUrl, pathname]);
 
   return (
@@ -157,19 +171,21 @@ export function ViewOptions({
         <ChevronDown className="size-3.5 text-fd-muted-foreground" />
       </PopoverTrigger>
       <PopoverContent className="flex flex-col">
-        {items.map((item) => (
-          <a
-            key={item.href}
-            href={item.href}
-            rel="noreferrer noopener"
-            target="_blank"
-            className="text-sm p-2 rounded-lg inline-flex items-center gap-2 hover:text-fd-accent-foreground hover:bg-fd-accent [&_svg]:size-4"
-          >
-            {item.icon}
-            {item.title}
-            <ExternalLinkIcon className="text-fd-muted-foreground size-3.5 ms-auto" />
-          </a>
-        ))}
+        {items.map((item) => {
+          return (
+            <a
+              key={item.href}
+              href={item.href}
+              rel="noreferrer noopener"
+              target="_blank"
+              className="text-sm p-2 rounded-lg inline-flex items-center gap-2 hover:text-fd-accent-foreground hover:bg-fd-accent [&_svg]:size-4"
+            >
+              {item.icon}
+              {item.title}
+              <ExternalLinkIcon className="text-fd-muted-foreground size-3.5 ms-auto" />
+            </a>
+          );
+        })}
       </PopoverContent>
     </Popover>
   );
