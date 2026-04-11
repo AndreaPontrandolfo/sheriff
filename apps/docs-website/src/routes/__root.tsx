@@ -2,16 +2,52 @@
 
 import '@/global.css';
 import { RootProvider } from 'fumadocs-ui/provider/tanstack';
-import type { ReactNode } from 'react';
+import type { ComponentProps, ReactNode } from 'react';
 import {
   createRootRoute,
   HeadContent,
+  Link,
   Outlet,
   Scripts,
 } from '@tanstack/react-router';
 import { Footer } from '@/components/Footer';
 import QueryProvider from '@/components/QueryProvider';
 import { getPageTree } from '@/lib/serverFns';
+
+// Fumadocs' tanstack adapter passes `href` straight into `<Link to={href}>`,
+// which means same-page anchor links like `#section-id` get treated as a
+// route path and navigate to the current route without the hash. We override
+// the Link so hash-only hrefs render as a plain anchor (preserving native
+/**
+ * Scroll behavior), while normal links keep using TanStack Router's Link.
+ */
+interface InlineInterface {
+  prefetch?: boolean;
+}
+function FumadocsLink({
+  href = '#',
+  prefetch = true,
+  children,
+  ...props
+}: ComponentProps<'a'> & InlineInterface) {
+  if (href.startsWith('#')) {
+    return (
+      <a href={href} {...props}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link
+      {...(props as ComponentProps<typeof Link>)}
+      to={href}
+      preload={prefetch ? 'intent' : false}
+    >
+      {children}
+    </Link>
+  );
+}
 
 function RootComponent() {
   return (
@@ -38,7 +74,7 @@ function RootDocument({ children }: RootDocumentProps) {
         />
       </head>
       <body className="flex flex-col min-h-screen">
-        <RootProvider>
+        <RootProvider components={{ Link: FumadocsLink }}>
           <QueryProvider>{children}</QueryProvider>
           <Footer />
         </RootProvider>
