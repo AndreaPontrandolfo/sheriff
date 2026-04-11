@@ -19,7 +19,8 @@ function replaceIconsWithNames(node: PageTree.Node): PageTree.Node {
     const { icon, ...rest } = node;
     const iconName =
       icon && typeof icon === 'object' && 'type' in icon
-        ? (icon as { type?: { name?: string } }).type?.name
+        ? ((icon as { type?: { name?: string; displayName?: string } }).type?.name ||
+           (icon as { type?: { name?: string; displayName?: string } }).type?.displayName)
         : undefined;
 
     return {
@@ -33,7 +34,8 @@ function replaceIconsWithNames(node: PageTree.Node): PageTree.Node {
     const { icon, ...rest } = node;
     const iconName =
       icon && typeof icon === 'object' && 'type' in icon
-        ? (icon as { type?: { name?: string } }).type?.name
+        ? ((icon as { type?: { name?: string; displayName?: string } }).type?.name ||
+           (icon as { type?: { name?: string; displayName?: string } }).type?.displayName)
         : undefined;
 
     return {
