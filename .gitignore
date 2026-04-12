@@ -21,7 +21,6 @@ next-env.d.ts
 /build
 
 # Generated files
-.docusaurus
 .cache-loader
 
 # misc
@@ -74,3 +73,5 @@ apps/sheriff-webservices/undefined
 
 # others
 .env*.local
+
+.wrangler

@@ -1,5 +1,3 @@
-'use client';
-
 import { Check, Settings2 } from 'lucide-react';
 import * as React from 'react';
 import type { Column, Table } from '@tanstack/react-table';

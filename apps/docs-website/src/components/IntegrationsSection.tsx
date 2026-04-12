@@ -1,8 +1,6 @@
-'use client';
-
-import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef, useState } from 'react';
+import { Image } from '@unpic/react';
 import AstroDarkLogo from '@/assets/logos/astro-icon-dark.svg?url';
 import AstroLightLogo from '@/assets/logos/astro-icon-light.svg?url';
 import EslintLogo from '@/assets/logos/eslint.svg?url';
@@ -79,6 +77,7 @@ export function IntegrationsSection() {
                 alt="TypeScript Logo"
                 width={iconSize}
                 height={iconSize}
+                layout="fixed"
               />
             </IntegrationCard>
             <IntegrationCard ref={leftTop1Ref}>
@@ -87,6 +86,7 @@ export function IntegrationsSection() {
                 alt="React Logo"
                 width={iconSize}
                 height={iconSize}
+                layout="fixed"
               />
             </IntegrationCard>
             <IntegrationCard ref={leftMiddleRef}>
@@ -95,6 +95,7 @@ export function IntegrationsSection() {
                 alt="Next.js Logo"
                 width={iconSize}
                 height={iconSize}
+                layout="fixed"
               />
             </IntegrationCard>
             <IntegrationCard ref={leftBottom1Ref}>
@@ -103,6 +104,7 @@ export function IntegrationsSection() {
                 alt="Storybook Logo"
                 width={iconSize}
                 height={iconSize}
+                layout="fixed"
               />
             </IntegrationCard>
             <IntegrationCard ref={leftBottom2Ref}>
@@ -112,6 +114,7 @@ export function IntegrationsSection() {
                   alt="Astro Logo"
                   width={iconSize}
                   height={iconSize}
+                  layout="fixed"
                 />
               )}
             </IntegrationCard>
@@ -128,6 +131,7 @@ export function IntegrationsSection() {
                   alt="ESLint Logo"
                   width={centerIconSize}
                   height={centerIconSize}
+                  layout="fixed"
                 />
               </IntegrationCard>
             </div>
@@ -144,6 +148,7 @@ export function IntegrationsSection() {
                 alt="Jest Logo"
                 width={iconSize}
                 height={iconSize}
+                layout="fixed"
               />
             </IntegrationCard>
             <IntegrationCard ref={rightTop2Ref}>
@@ -152,6 +157,7 @@ export function IntegrationsSection() {
                 alt="Vitest Logo"
                 width={iconSize}
                 height={iconSize}
+                layout="fixed"
               />
             </IntegrationCard>
             <IntegrationCard ref={rightMiddleRef}>
@@ -160,6 +166,7 @@ export function IntegrationsSection() {
                 alt="Playwright Logo"
                 width={iconSize}
                 height={iconSize}
+                layout="fixed"
               />
             </IntegrationCard>
             <IntegrationCard ref={rightBottom1Ref}>
@@ -168,6 +175,7 @@ export function IntegrationsSection() {
                 alt="Ramda Logo"
                 width={iconSize}
                 height={iconSize}
+                layout="fixed"
               />
             </IntegrationCard>
             <IntegrationCard ref={rightBottom2Ref}>
@@ -176,6 +184,7 @@ export function IntegrationsSection() {
                 alt="Lodash Logo"
                 width={iconSize}
                 height={iconSize}
+                layout="fixed"
               />
             </IntegrationCard>
           </div>

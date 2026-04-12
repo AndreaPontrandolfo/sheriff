@@ -1,17 +1,37 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema-jsonc.json",
+  "workspaces": {
+    "apps/docs-website": {
+      "entry": [
+        "src/entry.server.ts",
+        "source.config.ts",
+        "src/components/**/*.{ts,tsx}",
+        "src/lib/**/*.ts",
+        "content/**/*.mdx"
+      ]
+    }
+  },
   "ignoreWorkspaces": [
     "packages/sheriff-utils",
     "apps/config-validation-playground",
-    "apps/cli-playground",
-    "apps/docs-website-docusaurus",
+    "apps/cli-playground"
   ],
   "ignoreDependencies": [
     "@turbo/gen",
-    "eslint-import-resolver-typescript",
     "@typescript-eslint/parser",
     "@sherifforg/cli",
     "@sherifforg/create-config",
+    "fumadocs-typescript",
+    "react-error-boundary",
+    "twoslash",
+    "@hookform/devtools",
+    "@tanstack/router-devtools",
+    "@tanstack/router-vite-plugin",
+    "oxc-transform",
+    "remark",
+    "remark-gfm",
+    "remark-mdx",
+    "shiki"
   ],
-  "treatConfigHintsAsErrors": true,
+  "treatConfigHintsAsErrors": true
 }

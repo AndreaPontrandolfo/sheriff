@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.fumadocs.dev)",
+      "WebFetch(domain:tanstack.com)",
+      "WebFetch(domain:www.fumadocs.dev)",
+      "WebSearch",
+      "WebFetch(domain:developers.cloudflare.com)",
+      "Bash(gh issue:*)",
+      "Bash(pnpm typecheck:*)",
+      "Bash(pnpm knip:*)",
+      "WebFetch(domain:fumadocs.dev)",
+      "Bash(pnpm lint:*)"
+    ]
+  }
+}

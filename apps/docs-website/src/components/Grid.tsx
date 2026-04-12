@@ -1,12 +1,10 @@
 import { GridPattern } from './GridPattern';
 
-export function Grid({
-  pattern,
-  size,
-}: {
+interface GridProps {
   pattern?: number[][];
   size?: number;
-}) {
+}
+export function Grid({ pattern, size }: GridProps) {
   const p = pattern ?? [
     [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],
     [Math.floor(Math.random() * 4) + 7, Math.floor(Math.random() * 6) + 1],

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
 /* eslint-disable @typescript-eslint/no-base-to-string */
-'use client';
 
 import { isEmpty, isNil, isString } from 'lodash-es';
 import type { JSX } from 'react';

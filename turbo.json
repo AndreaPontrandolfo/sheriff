@@ -8,16 +8,19 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "outputs": [".output/**", "dist/**", ".source/**"]
     },
     "build:watch": {
       "cache": false,
       "persistent": true,
-      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+      "outputs": [".output/**", "dist/**"]
     },
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "deploy": {
+      "outputs": [".wrangler/**"]
     },
     "typecheck": {
       "dependsOn": ["^topo", "^build"],

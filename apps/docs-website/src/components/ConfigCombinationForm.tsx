@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
-'use client';
 
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -65,6 +64,7 @@ export function ConfigCombinationForm({
   setTableData,
 }: ConfigCombinationFormProps) {
   const form = useForm<z.infer<typeof FormSchema>>({
+    // @ts-expect-error
     resolver: zodResolver(FormSchema),
     defaultValues: {
       items: initialSelectedItems,

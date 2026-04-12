@@ -1,96 +1,96 @@
-import type { PageTree } from 'fumadocs-core/server';
-import { GithubInfo } from 'fumadocs-ui/components/github-info';
+import type * as PageTree from 'fumadocs-core/page-tree';
 import { DocsLayout, type DocsLayoutProps } from 'fumadocs-ui/layouts/docs';
-import type { ReactNode } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
-import { baseOptions } from '@/app/layout.config';
-import { blog, source } from '@/lib/source';
+import { CalendarDays } from 'lucide-react';
+import { createElement, type ReactNode, useMemo } from 'react';
+import { BiLogoTypescript } from 'react-icons/bi';
+import { BsFillGearFill, BsStack, BsStars } from 'react-icons/bs';
+import { FaClipboardList, FaKey, FaRegCompass, FaWrench } from 'react-icons/fa';
+import { FaTruck } from 'react-icons/fa6';
+import { GrUpdate } from 'react-icons/gr';
+import { HiMiniCpuChip, HiOutlineBarsArrowDown } from 'react-icons/hi2';
+import { IoExtensionPuzzleSharp, IoFlash } from 'react-icons/io5';
+import { MdTroubleshoot } from 'react-icons/md';
+import { PiListMagnifyingGlassBold } from 'react-icons/pi';
+import { RiTerminalBoxFill } from 'react-icons/ri';
+import { SiPrettier } from 'react-icons/si';
+import { SlSpeech } from 'react-icons/sl';
+import { VscVscode } from 'react-icons/vsc';
+import { useMatch } from '@tanstack/react-router';
+import { baseOptions } from '@/lib/layout.shared';
 
-function getBlogTree() {
-  const posts = blog.getPages();
-  const postsByYear: Record<string, typeof posts> = {};
+const icons: Record<string, React.ComponentType> = {
+  BsStars,
+  FaRegCompass,
+  CalendarDays,
+  HiMiniCpuChip,
+  FaWrench,
+  FaKey,
+  IoExtensionPuzzleSharp,
+  BsFillGearFill,
+  SiPrettier,
+  VscVscode,
+  BsStack,
+  BiLogoTypescript,
+  RiTerminalBoxFill,
+  IoFlash,
+  GrUpdate,
+  FaTruck,
+  PiListMagnifyingGlassBold,
+  SlSpeech,
+  MdTroubleshoot,
+  HiOutlineBarsArrowDown,
+  FaClipboardList,
+};
 
-  for (const post of posts) {
-    const year = new Date(post.data.date as string | number).getFullYear();
+function resolveIcons(node: PageTree.Node): PageTree.Node {
+  if (node.type === 'page' || node.type === 'folder') {
+    const iconName = node.icon as unknown as string | undefined;
+    const resolvedIcon =
+      iconName && icons[iconName] ? createElement(icons[iconName]) : undefined;
 
-    if (!postsByYear[year]) {
-      postsByYear[year] = [];
+    if (node.type === 'folder') {
+      return {
+        ...node,
+        ...(resolvedIcon ? { icon: resolvedIcon } : {}),
+        children: node.children.map(resolveIcons),
+        ...(node.index
+          ? { index: resolveIcons(node.index) as PageTree.Item }
+          : {}),
+      };
     }
-    postsByYear[year].push(post);
+
+    return { ...node, ...(resolvedIcon ? { icon: resolvedIcon } : {}) };
   }
 
-  const years = Object.keys(postsByYear).toSorted(
-    (a, b) => Number(b) - Number(a),
-  );
+  return node;
+}
 
+function resolvePageTreeIcons(tree: PageTree.Root): PageTree.Root {
   return {
-    name: 'Blog',
-    children: years.map((year) => {
-      return {
-        type: 'folder' as const,
-        name: year,
-        defaultOpen: true,
-        children: postsByYear[year]
-          .toSorted((a, b) => {
-            return (
-              new Date(b.data.date as string | number).getTime() -
-              new Date(a.data.date as string | number).getTime()
-            );
-          })
-          .map((post) => {
-            return {
-              type: 'page' as const,
-              name: post.data.title,
-              url: post.url,
-            };
-          }),
-      };
-    }),
+    ...tree,
+    children: tree.children.map(resolveIcons),
   };
 }
 
-const pageTreeWithCustomRoot: PageTree.Root = {
-  name: 'Root',
-  children: [
-    {
-      type: 'folder',
-      name: 'Documentation',
-      children: source.pageTree.children,
-    },
-    {
-      type: 'folder',
-      name: 'Blog',
-      children: getBlogTree().children,
-      index: {
-        type: 'page',
-        name: 'Blog',
-        url: '/blog',
-      },
-    },
-  ],
-};
+interface SharedDocsLayoutProps {
+  children: ReactNode;
+}
+export function SharedDocsLayout({ children }: SharedDocsLayoutProps) {
+  const { loaderData } = useMatch({ from: '__root__' });
+  const rawPageTree = loaderData?.pageTree;
 
-const docsOptions: DocsLayoutProps = {
-  ...baseOptions,
-  tree: pageTreeWithCustomRoot,
-  githubUrl: 'https://github.com/AndreaPontrandolfo/sheriff',
-  links: [
-    {
-      type: 'custom',
-      children: (
-        <ErrorBoundary fallback={null}>
-          <GithubInfo
-            owner="AndreaPontrandolfo"
-            repo="sheriff"
-            token={process.env.GITHUB_TOKEN}
-            className="flex-row lg:-mx-2"
-          />
-        </ErrorBoundary>
-      ),
-    },
-  ],
-};
+  const pageTree = useMemo(
+    () => (rawPageTree ? resolvePageTreeIcons(rawPageTree) : rawPageTree),
+    [rawPageTree],
+  );
 
-export function SharedDocsLayout({ children }: { children: ReactNode }) {
+  const docsOptions: DocsLayoutProps = {
+    ...baseOptions(),
+    links: [],
+    // @ts-expect-error
+    tree: pageTree,
+    githubUrl: 'https://github.com/AndreaPontrandolfo/sheriff',
+  };
+
   return <DocsLayout {...docsOptions}>{children}</DocsLayout>;
 }

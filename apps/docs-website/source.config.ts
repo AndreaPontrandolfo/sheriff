@@ -54,7 +54,7 @@ export default defineConfig({
     ],
     rehypeCodeOptions: {
       ...rehypeCodeDefaultOptions,
-      langs: ['js', 'ts', 'bash', 'json'],
+      langs: ['js', 'jsx', 'ts', 'tsx', 'bash', 'json'],
       themes: {
         light: 'github-light',
         dark: 'github-dark',

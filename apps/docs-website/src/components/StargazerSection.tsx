@@ -1,5 +1,4 @@
 /* eslint-disable react/no-array-index-key */
-'use client';
 import { Star } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
@@ -23,6 +22,11 @@ export const StargazerSection = () => {
         data.stargazerCount,
       )
     : '...';
+
+  interface StargazerSectionProps {
+    id: number;
+    login: string;
+  }
 
   return (
     <div className="relative">
@@ -48,7 +52,7 @@ export const StargazerSection = () => {
               </>
             ) : (
               <>
-                {data?.stargazers.map((o: { id: number; login: string }) => {
+                {data?.stargazers.map((o: StargazerSectionProps) => {
                   return (
                     <TooltipProvider key={o.id}>
                       <Tooltip delayDuration={0} key={o.login}>

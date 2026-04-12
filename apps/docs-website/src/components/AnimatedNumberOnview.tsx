@@ -1,4 +1,3 @@
-'use client';
 import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
 import { AnimatedNumber } from '@/components/AnimatedNumber';
