@@ -1,5 +1,6 @@
 import type * as PageTree from 'fumadocs-core/page-tree';
 import { DocsLayout, type DocsLayoutProps } from 'fumadocs-ui/layouts/docs';
+import { GithubInfo } from 'fumadocs-ui/components/github-info';
 import { CalendarDays } from 'lucide-react';
 import { createElement, type ReactNode, useMemo } from 'react';
 import { BiLogoTypescript } from 'react-icons/bi';
@@ -86,7 +87,14 @@ export function SharedDocsLayout({ children }: SharedDocsLayoutProps) {
 
   const docsOptions: DocsLayoutProps = {
     ...baseOptions(),
-    links: [],
+    links: [
+      {
+        type: 'custom',
+        children: (
+          <GithubInfo owner="AndreaPontrandolfo" repo="sheriff" />
+        ),
+      },
+    ],
     // @ts-expect-error
     tree: pageTree,
     githubUrl: 'https://github.com/AndreaPontrandolfo/sheriff',
