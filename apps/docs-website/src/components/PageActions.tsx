@@ -21,7 +21,7 @@ export function LLMCopyButton({
   markdownUrl,
   ...props
 }: ComponentProps<'button'> & InlineInterface) {
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [checked, onClick] = useCopyButton(async () => {
     const cached = cache.get(markdownUrl);
 
@@ -29,7 +29,7 @@ export function LLMCopyButton({
       return navigator.clipboard.writeText(await cached);
     }
 
-    setLoading(true);
+    setIsLoading(true);
 
     try {
       const promise = fetch(markdownUrl).then((res) => res.text());
@@ -41,7 +41,7 @@ export function LLMCopyButton({
         }),
       ]);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   });
 
