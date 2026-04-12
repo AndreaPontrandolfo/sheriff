@@ -6,21 +6,21 @@ import {
 
 const fetchHandler = createStartHandler(defaultStreamHandler);
 
-const { rewrite: rewriteMdxExtension } = rewritePath(
+const mdxExtensionRewriter = rewritePath(
   '/docs{/*path}.mdx',
   '/llms.mdx/docs{/*path}',
 );
-const { rewrite: rewriteAcceptHeader } = rewritePath(
+const acceptHeaderRewriter = rewritePath(
   '/docs{/*path}',
   '/llms.mdx/docs{/*path}',
 );
 
-export default {
+const server = {
   async fetch(request: Request) {
     const url = new URL(request.url);
 
     // Rewrite /docs/path.mdx → /llms.mdx/docs/path
-    const mdxTarget = rewriteMdxExtension(url.pathname);
+    const mdxTarget = mdxExtensionRewriter.rewrite(url.pathname);
 
     if (mdxTarget) {
       const newUrl = new URL(mdxTarget, url);
@@ -30,7 +30,7 @@ export default {
 
     // Rewrite for AI agents that send Accept: text/markdown
     if (url.pathname.startsWith('/docs') && isMarkdownPreferred(request)) {
-      const acceptTarget = rewriteAcceptHeader(url.pathname);
+      const acceptTarget = acceptHeaderRewriter.rewrite(url.pathname);
 
       if (acceptTarget) {
         const newUrl = new URL(acceptTarget, url);
@@ -42,3 +42,5 @@ export default {
     return fetchHandler(request);
   },
 };
+
+export default server;

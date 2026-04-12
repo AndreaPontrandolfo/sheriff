@@ -18,6 +18,7 @@ const PageActionsContext = createContext<{
   githubUrl: string;
 } | null>(null);
 
+/* eslint-disable react-hooks/rules-of-hooks -- fumadocs API requires lowercase `component` property name */
 const docsClientLoader = browserCollections.docs.createClientLoader({
   component({ toc, frontmatter, default: MDX }) {
     const pageIsFull = frontmatter.full;
@@ -45,6 +46,7 @@ const docsClientLoader = browserCollections.docs.createClientLoader({
     );
   },
 });
+/* eslint-enable react-hooks/rules-of-hooks */
 
 const getDocsPage = createServerFn({ method: 'GET' })
   .inputValidator((slugs: string[]) => slugs)

@@ -9,7 +9,8 @@
       "Bash(gh issue:*)",
       "Bash(pnpm typecheck:*)",
       "Bash(pnpm knip:*)",
-      "WebFetch(domain:fumadocs.dev)"
+      "WebFetch(domain:fumadocs.dev)",
+      "Bash(pnpm lint:*)"
     ]
   }
 }
