@@ -66,7 +66,7 @@ const getDocsPage = createServerFn({ method: 'GET' })
     return {
       path: page.path,
       url: page.url,
-      lastModified: (page.data as { lastModified?: Date }).lastModified,
+      lastModified: page.data.lastModified,
     };
   });
 
