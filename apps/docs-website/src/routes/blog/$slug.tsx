@@ -17,14 +17,13 @@ const LastModifiedContext = createContext<Date | undefined>(undefined);
 
 /* eslint-disable react-hooks/rules-of-hooks -- fumadocs API requires lowercase `component` property name */
 const blogClientLoader = browserCollections.blogPosts.createClientLoader({
-  component({ toc, frontmatter, default: MDX }) {
+  component({ toc, frontmatter, readingTime, default: MDX }) {
     const lastModified = useContext(LastModifiedContext);
     const publishedDate = frontmatter.date;
-    const readingTimeValue = frontmatter.readingTime;
     const hasReadingTime =
-      typeof readingTimeValue === 'object' &&
-      readingTimeValue !== null &&
-      'text' in readingTimeValue;
+      typeof readingTime === 'object' &&
+      readingTime !== null &&
+      'text' in readingTime;
 
     return (
       <DocsPage toc={toc}>
@@ -48,7 +47,7 @@ const blogClientLoader = browserCollections.blogPosts.createClientLoader({
           ) : null}
           {hasReadingTime ? (
             <p>
-              <strong>Reading time:</strong> {readingTimeValue.text}
+              <strong>Reading time:</strong> {readingTime.text}
             </p>
           ) : null}
         </div>
