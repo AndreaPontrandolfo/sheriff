@@ -1,5 +1,3 @@
-/// <reference types="vite/client" />
-
 import '@/global.css';
 import { RootProvider } from 'fumadocs-ui/provider/tanstack';
 import type { ComponentProps, ReactNode } from 'react';
