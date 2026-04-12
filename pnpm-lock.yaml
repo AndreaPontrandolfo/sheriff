@@ -276,7 +276,7 @@ importers:
         specifier: ^2.0.13
         version: 2.0.13
       '@types/node':
-        specifier: 25.3.0
+        specifier: ^25.3.0
         version: 25.3.0
       '@types/react':
         specifier: ^19.2.14
@@ -622,9 +622,6 @@ importers:
       consola:
         specifier: ^3.3.3
         version: 3.4.2
-      eslint:
-        specifier: ^9.39.1
-        version: 9.39.1(jiti@2.6.1)
       read-pkg:
         specifier: ^9.0.1
         version: 9.0.1
@@ -647,6 +644,9 @@ importers:
       '@types/yargs':
         specifier: ^17.0.33
         version: 17.0.33
+      eslint:
+        specifier: ^9.39.1
+        version: 9.39.1(jiti@2.6.1)
       eslint-config-sheriff:
         specifier: workspace:*
         version: link:../eslint-config-sheriff

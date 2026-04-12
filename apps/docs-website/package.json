@@ -104,7 +104,7 @@
     "@tanstack/router-vite-plugin": "^1.166.9",
     "@types/lodash-es": "^4.17.12",
     "@types/mdx": "^2.0.13",
-    "@types/node": "25.3.0",
+    "@types/node": "^25.3.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "5.2.0",

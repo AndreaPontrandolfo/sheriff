@@ -1,9 +1,8 @@
 {
   "name": "config-validation-playground",
-  "description": "Playground for validating eslint-config-sheriff.",
   "private": true,
+  "description": "Playground for validating eslint-config-sheriff.",
   "type": "module",
-  "packageManager": "pnpm@10.12.1",
   "scripts": {
     "validate-config": "eslint --max-warnings=0"
   },
@@ -22,9 +21,10 @@
     "@types/node": "^25.3.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "eslint": "9.39.1",
+    "eslint": "^9.39.1",
     "eslint-config-sheriff": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^5.9.3"
-  }
+  },
+  "packageManager": "pnpm@10.12.1"
 }
