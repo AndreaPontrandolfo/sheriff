@@ -4,6 +4,7 @@ import {
   DocsDescription,
   DocsPage,
   DocsTitle,
+  PageLastUpdate,
 } from 'fumadocs-ui/layouts/docs/page';
 import { createContext, Suspense, useContext } from 'react';
 import { createFileRoute, notFound } from '@tanstack/react-router';
@@ -16,12 +17,14 @@ import { source } from '@/lib/source.server';
 const PageActionsContext = createContext<{
   markdownUrl: string;
   githubUrl: string;
+  lastModified: Date | undefined;
 } | null>(null);
 
 /* eslint-disable react-hooks/rules-of-hooks -- fumadocs API requires lowercase `component` property name */
 const docsClientLoader = browserCollections.docs.createClientLoader({
   component({ toc, frontmatter, default: MDX }) {
     const pageIsFull = frontmatter.full;
+
     const ctx = useContext(PageActionsContext);
 
     return (
@@ -42,6 +45,9 @@ const docsClientLoader = browserCollections.docs.createClientLoader({
         <DocsBody>
           <MDX components={getMDXComponents()} />
         </DocsBody>
+        <div className="mt-12">
+          {ctx?.lastModified && <PageLastUpdate date={ctx.lastModified} />}
+        </div>
       </DocsPage>
     );
   },
@@ -57,7 +63,11 @@ const getDocsPage = createServerFn({ method: 'GET' })
       throw notFound();
     }
 
-    return { path: page.path, url: page.url };
+    return {
+      path: page.path,
+      url: page.url,
+      lastModified: (page.data as { lastModified?: Date }).lastModified,
+    };
   });
 
 function DocsPageRoute() {
@@ -68,7 +78,13 @@ function DocsPageRoute() {
 
   return (
     <SharedDocsLayout>
-      <PageActionsContext.Provider value={{ markdownUrl, githubUrl }}>
+      <PageActionsContext.Provider
+        value={{
+          markdownUrl,
+          githubUrl,
+          lastModified: loaderData.lastModified,
+        }}
+      >
         <Suspense>{docsClientLoader.useContent(loaderData.path)}</Suspense>
       </PageActionsContext.Provider>
     </SharedDocsLayout>
@@ -83,6 +99,6 @@ export const Route = createFileRoute('/docs/$')({
 
     await docsClientLoader.preload(data.path);
 
-    return { path: data.path, url: data.url };
+    return { path: data.path, url: data.url, lastModified: data.lastModified };
   },
 });

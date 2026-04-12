@@ -6,6 +6,7 @@ import {
   defineDocs,
   frontmatterSchema,
 } from 'fumadocs-mdx/config';
+import lastModified from 'fumadocs-mdx/plugins/last-modified';
 import { transformerTwoslash } from 'fumadocs-twoslash';
 import { createFileSystemTypesCache } from 'fumadocs-twoslash/cache-fs';
 import remarkReadingTime from 'remark-reading-time';
@@ -38,6 +39,7 @@ export const blogPosts = defineCollections({
 });
 
 export default defineConfig({
+  plugins: [lastModified()],
   mdxOptions: {
     remarkPlugins: [
       [
