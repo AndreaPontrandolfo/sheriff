@@ -172,6 +172,10 @@ export function ViewOptions({
       </PopoverTrigger>
       <PopoverContent className="flex flex-col">
         {items.map((item) => {
+          if (!item) {
+            return <div key="no-content">No content.</div>;
+          }
+
           return (
             <a
               key={item.href}

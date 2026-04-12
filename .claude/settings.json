@@ -6,7 +6,8 @@
       "WebFetch(domain:www.fumadocs.dev)",
       "WebSearch",
       "WebFetch(domain:developers.cloudflare.com)",
-      "Bash(gh issue:*)"
+      "Bash(gh issue:*)",
+      "Bash(pnpm typecheck:*)"
     ]
   }
 }
