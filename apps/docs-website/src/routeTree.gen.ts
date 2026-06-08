@@ -20,6 +20,7 @@ import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as BlogOgSlugRouteImport } from './routes/blog-og/$slug'
 import { Route as ApiStargazersRouteImport } from './routes/api/stargazers'
 import { Route as ApiSearchRouteImport } from './routes/api/search'
+import { Route as ApiContributorsRouteImport } from './routes/api/contributors'
 
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   id: '/llms.txt',
@@ -76,11 +77,17 @@ const ApiSearchRoute = ApiSearchRouteImport.update({
   path: '/api/search',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiContributorsRoute = ApiContributorsRouteImport.update({
+  id: '/api/contributors',
+  path: '/api/contributors',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/llms-full.txt': typeof LlmsFullDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/api/contributors': typeof ApiContributorsRoute
   '/api/search': typeof ApiSearchRoute
   '/api/stargazers': typeof ApiStargazersRoute
   '/blog-og/$slug': typeof BlogOgSlugRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/llms-full.txt': typeof LlmsFullDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/api/contributors': typeof ApiContributorsRoute
   '/api/search': typeof ApiSearchRoute
   '/api/stargazers': typeof ApiStargazersRoute
   '/blog-og/$slug': typeof BlogOgSlugRoute
@@ -108,6 +116,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/llms-full.txt': typeof LlmsFullDottxtRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/api/contributors': typeof ApiContributorsRoute
   '/api/search': typeof ApiSearchRoute
   '/api/stargazers': typeof ApiStargazersRoute
   '/blog-og/$slug': typeof BlogOgSlugRoute
@@ -123,6 +132,7 @@ export interface FileRouteTypes {
     | '/'
     | '/llms-full.txt'
     | '/llms.txt'
+    | '/api/contributors'
     | '/api/search'
     | '/api/stargazers'
     | '/blog-og/$slug'
@@ -136,6 +146,7 @@ export interface FileRouteTypes {
     | '/'
     | '/llms-full.txt'
     | '/llms.txt'
+    | '/api/contributors'
     | '/api/search'
     | '/api/stargazers'
     | '/blog-og/$slug'
@@ -149,6 +160,7 @@ export interface FileRouteTypes {
     | '/'
     | '/llms-full.txt'
     | '/llms.txt'
+    | '/api/contributors'
     | '/api/search'
     | '/api/stargazers'
     | '/blog-og/$slug'
@@ -163,6 +175,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LlmsFullDottxtRoute: typeof LlmsFullDottxtRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
+  ApiContributorsRoute: typeof ApiContributorsRoute
   ApiSearchRoute: typeof ApiSearchRoute
   ApiStargazersRoute: typeof ApiStargazersRoute
   BlogOgSlugRoute: typeof BlogOgSlugRoute
@@ -252,6 +265,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSearchRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/contributors': {
+      id: '/api/contributors'
+      path: '/api/contributors'
+      fullPath: '/api/contributors'
+      preLoaderRoute: typeof ApiContributorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -259,6 +279,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LlmsFullDottxtRoute: LlmsFullDottxtRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
+  ApiContributorsRoute: ApiContributorsRoute,
   ApiSearchRoute: ApiSearchRoute,
   ApiStargazersRoute: ApiStargazersRoute,
   BlogOgSlugRoute: BlogOgSlugRoute,
