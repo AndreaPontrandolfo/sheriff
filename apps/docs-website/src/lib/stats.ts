@@ -11,8 +11,8 @@ const fallbackStats: Stats = {
   technologies: technologiesAmount,
   plugins: 27,
   rules: 1332,
-  githubStars: 155,
-  monthlyDownloadsInThousands: 70,
+  githubStars: 179,
+  monthlyDownloadsInThousands: 80,
   contributors: 10,
 };
 

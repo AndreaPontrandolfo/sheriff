@@ -6,7 +6,6 @@ interface LogoProps {
 export function Logo({ size = 24 }: LogoProps) {
   return (
     <Image
-      priority
       alt="Logo"
       height={size}
       layout="fixed"
