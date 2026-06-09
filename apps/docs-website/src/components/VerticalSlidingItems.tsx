@@ -1,5 +1,4 @@
 /* eslint-disable react/no-array-index-key */
-'use client';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 

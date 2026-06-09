@@ -1,8 +1,8 @@
-import type React from 'react';
+import type { ComponentPropsWithRef, ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
-export interface IntegrationCardProps {
-  children: React.ReactNode;
+export interface IntegrationCardProps extends ComponentPropsWithRef<'div'> {
+  children: ReactNode;
   className?: string;
   isCenter?: boolean;
 }
@@ -12,7 +12,7 @@ export function IntegrationCard({
   className,
   isCenter = false,
   ref,
-}: IntegrationCardProps & { ref?: React.Ref<HTMLDivElement> }) {
+}: IntegrationCardProps) {
   return (
     <div
       ref={ref}

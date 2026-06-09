@@ -1,0 +1,108 @@
+import browserCollections from 'collections/browser';
+import {
+  DocsBody,
+  DocsDescription,
+  DocsPage,
+  DocsTitle,
+  PageLastUpdate,
+} from 'fumadocs-ui/layouts/docs/page';
+import { createContext, Suspense, useContext } from 'react';
+import { createFileRoute, notFound } from '@tanstack/react-router';
+import { createServerFn } from '@tanstack/react-start';
+import { getMDXComponents } from '@/components/mdx';
+import { SharedDocsLayout } from '@/components/SharedDocsLayout';
+import { blog } from '@/lib/source.server';
+
+const LastModifiedContext = createContext<Date | undefined>(undefined);
+
+/* eslint-disable react-hooks/rules-of-hooks -- fumadocs API requires lowercase `component` property name */
+const blogClientLoader = browserCollections.blogPosts.createClientLoader({
+  component({ toc, frontmatter, readingTime, default: MDX }) {
+    const lastModified = useContext(LastModifiedContext);
+    const publishedDate = frontmatter.date;
+    const readingTimeText =
+      typeof readingTime === 'object' &&
+      readingTime !== null &&
+      'text' in readingTime &&
+      typeof readingTime.text === 'string'
+        ? readingTime.text
+        : undefined;
+
+    return (
+      <DocsPage toc={toc}>
+        <DocsTitle>{frontmatter.title}</DocsTitle>
+        {frontmatter.description && (
+          <DocsDescription>{frontmatter.description}</DocsDescription>
+        )}
+
+        {/* Author and Date information */}
+        <div className="text-muted-foreground text-sm">
+          {publishedDate ? (
+            <p>
+              <strong>Published:</strong>{' '}
+              {new Date(String(publishedDate)).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                timeZone: 'UTC',
+              })}
+            </p>
+          ) : null}
+          {readingTimeText ? (
+            <p>
+              <strong>Reading time:</strong> {readingTimeText}
+            </p>
+          ) : null}
+        </div>
+
+        <DocsBody>
+          <MDX components={getMDXComponents()} />
+        </DocsBody>
+        {lastModified && (
+          <div className="mt-12">
+            <PageLastUpdate date={lastModified} />
+          </div>
+        )}
+      </DocsPage>
+    );
+  },
+});
+/* eslint-enable react-hooks/rules-of-hooks */
+
+const getBlogPage = createServerFn({ method: 'GET' })
+  .inputValidator((slug: string) => slug)
+  .handler(async ({ data: slug }) => {
+    const page = blog.getPage([slug]);
+
+    if (!page) {
+      throw notFound();
+    }
+
+    return {
+      path: page.path,
+      lastModified: (page.data as { lastModified?: Date }).lastModified,
+    };
+  });
+
+function BlogSlugRoute() {
+  const loaderData = Route.useLoaderData();
+
+  return (
+    <SharedDocsLayout>
+      <LastModifiedContext.Provider value={loaderData.lastModified}>
+        <Suspense>{blogClientLoader.useContent(loaderData.path)}</Suspense>
+      </LastModifiedContext.Provider>
+    </SharedDocsLayout>
+  );
+}
+
+export const Route = createFileRoute('/blog/$slug')({
+  component: BlogSlugRoute,
+  loader: async ({ params }) => {
+    const data = await getBlogPage({ data: params.slug });
+
+    await blogClientLoader.preload(data.path);
+
+    return { path: data.path, lastModified: data.lastModified };
+  },
+});

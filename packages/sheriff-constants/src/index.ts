@@ -130,3 +130,5 @@ export const createConfigOptionsReference = {
     default: true,
   },
 } as const;
+
+export const LOCAL_PORT = 5001;

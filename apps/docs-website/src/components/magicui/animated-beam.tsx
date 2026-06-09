@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'motion/react';
 import { type RefObject, useEffect, useId, useState } from 'react';
 
