@@ -20,7 +20,13 @@
       "persistent": true
     },
     "deploy": {
-      "outputs": [".wrangler/**"]
+      "outputs": [".wrangler/**"],
+      "passThroughEnv": [
+        "CLOUDFLARE_ACCOUNT_ID",
+        "CLOUDFLARE_API_TOKEN",
+        "CLOUDFLARE_API_KEY",
+        "CLOUDFLARE_EMAIL"
+      ]
     },
     "typecheck": {
       "dependsOn": ["^topo", "^build"],
