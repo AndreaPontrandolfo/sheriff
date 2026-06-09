@@ -30,8 +30,7 @@
     "oxc-transform",
     "remark",
     "remark-gfm",
-    "remark-mdx",
-    "shiki"
+    "remark-mdx"
   ],
   "treatConfigHintsAsErrors": true
 }

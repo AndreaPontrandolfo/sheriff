@@ -20,10 +20,13 @@ const blogClientLoader = browserCollections.blogPosts.createClientLoader({
   component({ toc, frontmatter, readingTime, default: MDX }) {
     const lastModified = useContext(LastModifiedContext);
     const publishedDate = frontmatter.date;
-    const hasReadingTime =
+    const readingTimeText =
       typeof readingTime === 'object' &&
       readingTime !== null &&
-      'text' in readingTime;
+      'text' in readingTime &&
+      typeof readingTime.text === 'string'
+        ? readingTime.text
+        : undefined;
 
     return (
       <DocsPage toc={toc}>
@@ -45,9 +48,9 @@ const blogClientLoader = browserCollections.blogPosts.createClientLoader({
               })}
             </p>
           ) : null}
-          {hasReadingTime ? (
+          {readingTimeText ? (
             <p>
-              <strong>Reading time:</strong> {readingTime.text}
+              <strong>Reading time:</strong> {readingTimeText}
             </p>
           ) : null}
         </div>
