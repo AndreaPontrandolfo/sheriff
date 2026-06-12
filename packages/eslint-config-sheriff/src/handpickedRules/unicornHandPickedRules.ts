@@ -49,4 +49,10 @@ export const unicornHandPickedRules = {
   'unicorn/no-array-sort': 2,
   'unicorn/no-immediate-mutation': 2,
   'unicorn/prefer-response-static-json': 2,
+  'unicorn/require-passive-events': 2,
+  'unicorn/prefer-includes-over-repeated-comparisons': 2,
+  'unicorn/prefer-array-last-methods': 2,
+  'unicorn/no-unnecessary-nested-ternary': 2,
+  'unicorn/no-invalid-file-input-accept': 2,
+  'unicorn/error-message': 2,
 } as const satisfies TSESLint.FlatConfig.Rules;
