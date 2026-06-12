@@ -66,7 +66,7 @@ export const getReactConfig = (
       plugins: {
         'react-hooks': reactHooks,
       },
-      rules: reactHooks.configs['recommended-latest'].rules,
+      rules: reactHooks.configs.flat['recommended-latest'].rules,
     },
     {
       files: [supportedFileTypes],
