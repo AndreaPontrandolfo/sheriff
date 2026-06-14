@@ -2,6 +2,7 @@ import type { Config } from 'eslint/config';
 import { fixupPluginRules } from '@eslint/compat';
 import nextjs from '@next/eslint-plugin-next';
 import { allJsExtensions, allJsxExtensions } from '@sherifforg/constants';
+import reactRefresh from 'eslint-plugin-react-refresh';
 
 export const nextjsConfig: Config[] = [
   {
@@ -29,16 +30,7 @@ export const nextjsConfig: Config[] = [
       `**/layout.{${allJsExtensions},${allJsxExtensions}}`,
     ],
     rules: {
-      'react-refresh/only-export-components': [
-        2,
-        {
-          allowExportNames: [
-            'metadata',
-            'generateMetadata',
-            'generateStaticParams',
-          ],
-        },
-      ],
+      ...reactRefresh.configs.next.rules,
     },
   },
 ];
