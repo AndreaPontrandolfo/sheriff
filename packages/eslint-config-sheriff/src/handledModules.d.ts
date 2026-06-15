@@ -1,4 +1,3 @@
-declare module '@next/eslint-plugin-next';
 declare module '@regru/eslint-plugin-prefer-early-return';
 declare module 'eslint-plugin-lodash-f';
 declare module 'eslint-plugin-import';
