@@ -417,8 +417,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-simple-import-sort:
-        specifier: ^12.1.0
-        version: 12.1.1(eslint@9.39.1(jiti@2.6.1))
+        specifier: ^13.0.0
+        version: 13.0.0(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-sonarjs:
         specifier: ^1.0.4
         version: 1.0.4(eslint@9.39.1(jiti@2.6.1))
@@ -544,8 +544,8 @@ importers:
         specifier: 2.1.0
         version: 2.1.0(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-simple-import-sort:
-        specifier: ^12.1.0
-        version: 12.1.1(eslint@9.39.1(jiti@2.6.1))
+        specifier: ^13.0.0
+        version: 13.0.0(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-sonarjs:
         specifier: ^1.0.4
         version: 1.0.4(eslint@9.39.1(jiti@2.6.1))
@@ -4581,8 +4581,8 @@ packages:
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
 
-  '@swc/types@0.1.26':
-    resolution: {integrity: sha512-lyMwd7WGgG79RS7EERZV3T8wMdmPq3xwyg+1nmAM64kIhx5yl+juO2PYIHb7vTiPgPCj8LYjsNV2T5wiQHUEaw==}
+  '@swc/types@0.1.27':
+    resolution: {integrity: sha512-K6h3iUlqeM946U4sXFYeahefR1YBbXJvko+hv8WS8/0BNJ4OHiHRywMnQUJCqkR7Y9+hqQ1TvEpiKqUhz7NEFg==}
 
   '@szmarczak/http-timer@5.0.1':
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
@@ -6744,8 +6744,8 @@ packages:
     peerDependencies:
       eslint: '>=9.0.0'
 
-  eslint-plugin-simple-import-sort@12.1.1:
-    resolution: {integrity: sha512-6nuzu4xwQtE3332Uz0to+TxDQYRLTKRESSc2hefVT48Zc8JthmN23Gx9lnYhu0FtkRSL1oxny3kJ2aveVhmOVA==}
+  eslint-plugin-simple-import-sort@13.0.0:
+    resolution: {integrity: sha512-McAc+/Nlvcg4byY/CABGH8kqnefWBj8s3JA2okEtz8ixbECQgU46p0HkTUKa4YS7wvgGceimlc34p1nXqbWqtA==}
     peerDependencies:
       eslint: '>=5.0.0'
 
@@ -14434,7 +14434,7 @@ snapshots:
   '@swc/core@1.10.1(@swc/helpers@0.5.15)':
     dependencies:
       '@swc/counter': 0.1.3
-      '@swc/types': 0.1.26
+      '@swc/types': 0.1.27
     optionalDependencies:
       '@swc/core-darwin-arm64': 1.10.1
       '@swc/core-darwin-x64': 1.10.1
@@ -14456,7 +14456,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@swc/types@0.1.26':
+  '@swc/types@0.1.27':
     dependencies:
       '@swc/counter': 0.1.3
     optional: true
@@ -17338,7 +17338,7 @@ snapshots:
       eslint: 9.39.1(jiti@2.6.1)
       lodash-es: 4.17.21
 
-  eslint-plugin-simple-import-sort@12.1.1(eslint@9.39.1(jiti@2.6.1)):
+  eslint-plugin-simple-import-sort@13.0.0(eslint@9.39.1(jiti@2.6.1)):
     dependencies:
       eslint: 9.39.1(jiti@2.6.1)
 
