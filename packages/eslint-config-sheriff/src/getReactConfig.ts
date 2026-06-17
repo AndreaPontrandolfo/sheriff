@@ -2,7 +2,7 @@ import { type Config, defineConfig } from 'eslint/config';
 import reactAccessibility from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
+import { reactRefresh } from 'eslint-plugin-react-refresh';
 import reactYouMightNotNeedAnEffect from 'eslint-plugin-react-you-might-not-need-an-effect';
 import rel1cxReact from '@eslint-react/eslint-plugin';
 import {
@@ -48,11 +48,25 @@ export const getReactConfig = (
     },
     {
       files: [`**/*{${allJsxExtensions}}`],
-      plugins: { 'react-refresh': reactRefresh },
+      plugins: { 'react-refresh': reactRefresh.plugin },
       rules: {
         'react-refresh/only-export-components': [
           2,
-          { allowExportNames: ['loader'] },
+          {
+            allowExportNames: ['loader'],
+            extraHOCs: [
+              // @tanstack/react-router HOCs. Related issue: https://github.com/ArnaudBarre/eslint-plugin-react-refresh/issues/102#issuecomment-3881982814
+              // Start
+              'createFileRoute',
+              'createLazyFileRoute',
+              'createRootRoute',
+              'createRootRouteWithContext',
+              'createLink',
+              'createRoute',
+              'createLazyRoute',
+              // End
+            ],
+          },
         ],
       },
     },

@@ -151,11 +151,7 @@ async function main() {
         if (dependency === 'remeda') {
           isRemeda = true;
         }
-        if (
-          dependency === 'react' ||
-          dependency === 'react-dom' ||
-          dependency === 'next'
-        ) {
+        if (['react', 'react-dom', 'next'].includes(dependency)) {
           isReact = true;
         }
         if (dependency === 'next') {
@@ -250,6 +246,7 @@ async function main() {
     }
 
     if (
+      // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
       !sheriffOptionsVariableDeclaration.declarations[0].init ||
       sheriffOptionsVariableDeclaration.declarations[0].init.type !==
         AST_NODE_TYPES.ObjectExpression

@@ -1,7 +1,7 @@
 import type { Config } from 'eslint/config';
+import { reactRefresh } from 'eslint-plugin-react-refresh';
 import nextjs from '@next/eslint-plugin-next';
 import { allJsExtensions, allJsxExtensions } from '@sherifforg/constants';
-import reactRefresh from 'eslint-plugin-react-refresh';
 
 export const nextjsConfig: Config[] = [
   {
@@ -28,7 +28,7 @@ export const nextjsConfig: Config[] = [
       `**/layout.{${allJsExtensions},${allJsxExtensions}}`,
     ],
     rules: {
-      ...reactRefresh.configs.next.rules,
+      ...reactRefresh.configs.next().rules,
     },
   },
 ];

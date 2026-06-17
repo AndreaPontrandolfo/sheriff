@@ -1,5 +1,5 @@
 import { useInView } from 'motion/react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useQueries } from '@tanstack/react-query';
 import { getStats } from '@/lib/stats';
 import type { StargazersResponse, Stats } from '@/types/stats';
@@ -123,20 +123,13 @@ const StatsGridWithQueries = () => {
 
 export const StatsSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef);
-  const [hasReachedStatsSection, setHasReachedStatsSection] = useState(false);
-
-  useEffect(() => {
-    if (isInView) {
-      setHasReachedStatsSection(true);
-    }
-  }, [isInView]);
+  const isInView = useInView(sectionRef, { once: true });
 
   return (
     <section className="py-20" ref={sectionRef}>
       <HPSectionStart title="Sheriff in numbers" />
       <div className="mx-auto max-w-2xl space-y-8 px-6 md:max-w-5xl md:space-y-16">
-        {hasReachedStatsSection ? (
+        {isInView ? (
           <StatsGridWithQueries />
         ) : (
           <StatsGrid stats={fallbackStats} />

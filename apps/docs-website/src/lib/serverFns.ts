@@ -19,8 +19,10 @@ function replaceIconsWithNames(node: PageTree.Node): PageTree.Node {
     const { icon, ...rest } = node;
     const iconName =
       icon && typeof icon === 'object' && 'type' in icon
-        ? ((icon as { type?: { name?: string; displayName?: string } }).type?.name ||
-           (icon as { type?: { name?: string; displayName?: string } }).type?.displayName)
+        ? (icon as { type?: { name?: string; displayName?: string } }).type
+            ?.name ||
+          (icon as { type?: { name?: string; displayName?: string } }).type
+            ?.displayName
         : undefined;
 
     return {
@@ -28,14 +30,16 @@ function replaceIconsWithNames(node: PageTree.Node): PageTree.Node {
       ...(iconName
         ? { icon: iconName as unknown as PageTree.Node['icon'] }
         : {}),
-    } as PageTree.Node;
+    };
   }
   if (node.type === 'folder') {
     const { icon, ...rest } = node;
     const iconName =
       icon && typeof icon === 'object' && 'type' in icon
-        ? ((icon as { type?: { name?: string; displayName?: string } }).type?.name ||
-           (icon as { type?: { name?: string; displayName?: string } }).type?.displayName)
+        ? (icon as { type?: { name?: string; displayName?: string } }).type
+            ?.name ||
+          (icon as { type?: { name?: string; displayName?: string } }).type
+            ?.displayName
         : undefined;
 
     return {
@@ -47,7 +51,7 @@ function replaceIconsWithNames(node: PageTree.Node): PageTree.Node {
       ...(rest.index
         ? { index: replaceIconsWithNames(rest.index) as PageTree.Item }
         : {}),
-    } as PageTree.Node;
+    };
   }
 
   return node;

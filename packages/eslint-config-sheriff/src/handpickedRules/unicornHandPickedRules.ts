@@ -31,7 +31,7 @@ export const unicornHandPickedRules = {
   'unicorn/prefer-prototype-methods': 2,
   'unicorn/prefer-date-now': 2,
   'unicorn/prefer-node-protocol': 2,
-  'unicorn/prefer-export-from': [2, { ignoreUsedVariables: true }],
+  'unicorn/prefer-export-from': [2, { checkUsedVariables: false }],
   'unicorn/no-new-buffer': 2,
   'unicorn/prefer-query-selector': 2,
   'unicorn/prefer-string-replace-all': 2,
