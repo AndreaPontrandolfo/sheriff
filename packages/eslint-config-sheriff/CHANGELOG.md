@@ -1,5 +1,11 @@
 # eslint-config-sheriff
 
+## 31.4.0
+
+### Minor Changes
+
+- 4990e70: feat(config): added some rules and updated eslint-plugin-react-hooks
+
 ## 31.3.0
 
 ### Minor Changes
