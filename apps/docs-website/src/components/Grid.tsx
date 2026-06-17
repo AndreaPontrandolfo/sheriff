@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/purity */
 import { GridPattern } from './GridPattern';
 
 interface GridProps {

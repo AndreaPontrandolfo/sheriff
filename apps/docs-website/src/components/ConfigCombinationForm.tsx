@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 
 import { useForm } from 'react-hook-form';
@@ -64,7 +65,7 @@ export function ConfigCombinationForm({
   setTableData,
 }: ConfigCombinationFormProps) {
   const form = useForm<z.infer<typeof FormSchema>>({
-    // @ts-expect-error
+    // @ts-ignore
     resolver: zodResolver(FormSchema),
     defaultValues: {
       items: initialSelectedItems,

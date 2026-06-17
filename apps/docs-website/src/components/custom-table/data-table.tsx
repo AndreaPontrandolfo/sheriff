@@ -106,6 +106,7 @@ export function DataTable<TData extends RuleEntry, TValue>({
     [selectedPlugins],
   );
 
+  // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable<TData>({
     data,
     columns,

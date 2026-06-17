@@ -1,5 +1,5 @@
 import type { Config } from 'eslint/config';
-import { fixupPluginRules } from '@eslint/compat';
+import { reactRefresh } from 'eslint-plugin-react-refresh';
 import nextjs from '@next/eslint-plugin-next';
 import { allJsExtensions, allJsxExtensions } from '@sherifforg/constants';
 
@@ -7,7 +7,7 @@ export const nextjsConfig: Config[] = [
   {
     files: [`**/*.{${allJsExtensions},${allJsxExtensions}}`],
     plugins: {
-      '@next/next': fixupPluginRules(nextjs),
+      '@next/next': nextjs,
     },
     rules: {
       ...nextjs.configs.recommended.rules,
@@ -20,7 +20,6 @@ export const nextjsConfig: Config[] = [
           unnamedComponents: 'function-expression',
         },
       ],
-      '@next/next/no-html-link-for-pages': 0, // pages router is legacy at this point. We don't need to support this rule anymore.
     },
   },
   {
@@ -29,16 +28,7 @@ export const nextjsConfig: Config[] = [
       `**/layout.{${allJsExtensions},${allJsxExtensions}}`,
     ],
     rules: {
-      'react-refresh/only-export-components': [
-        2,
-        {
-          allowExportNames: [
-            'metadata',
-            'generateMetadata',
-            'generateStaticParams',
-          ],
-        },
-      ],
+      ...reactRefresh.configs.next().rules,
     },
   },
 ];

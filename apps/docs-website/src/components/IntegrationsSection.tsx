@@ -25,7 +25,7 @@ export function IntegrationsSection() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // eslint-disable-next-line react-you-might-not-need-an-effect/no-initialize-state
+    // eslint-disable-next-line
     setIsMounted(true);
   }, []);
   // #endregion

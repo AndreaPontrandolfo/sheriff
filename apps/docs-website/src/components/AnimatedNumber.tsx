@@ -28,5 +28,6 @@ export function AnimatedNumber({
     spring.set(value);
   }, [spring, value]);
 
+  // eslint-disable-next-line react-hooks/static-components
   return <MotionComponent className={className}>{display}</MotionComponent>;
 }

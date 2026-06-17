@@ -90,7 +90,7 @@ export const DataTableMultiSelectPlugins = ({
                     asChild
                     aria-label={`Remove ${pluginName}`}
                     onClick={(event) => {
-                      handleClearPlugin(pluginName, event as any);
+                      handleClearPlugin(pluginName, event);
                     }}
                     onKeyDown={(event) => {
                       if (event.key === 'Enter' || event.key === ' ') {
@@ -125,7 +125,7 @@ export const DataTableMultiSelectPlugins = ({
                 asChild
                 aria-label="Clear all selected plugins"
                 onClick={(event) => {
-                  handleClearAll(event as any);
+                  handleClearAll(event);
                 }}
                 onKeyDown={(event) => {
                   if (event.key === 'Enter' || event.key === ' ') {

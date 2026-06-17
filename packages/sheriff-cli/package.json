@@ -44,7 +44,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@typescript-eslint/typescript-estree": "^8.46.4",
+    "@typescript-eslint/typescript-estree": "^8.61.0",
     "consola": "^3.3.3",
     "read-pkg": "^9.0.1",
     "remeda": "^2.19.0",
