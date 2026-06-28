@@ -61,7 +61,6 @@
     "@eslint-react/eslint-plugin": "^1.10.1",
     "@eslint/js": "^9.39.1",
     "@next/eslint-plugin-next": "^16.2.9",
-    "@regru/eslint-plugin-prefer-early-return": "^1.0.0",
     "@stylistic/eslint-plugin": "^2.6.4",
     "@vitest/eslint-plugin": "^1.1.25",
     "confusing-browser-globals": "^1.0.11",
@@ -87,7 +86,7 @@
     "eslint-plugin-sonarjs": "^1.0.4",
     "eslint-plugin-storybook": "^0.11.4",
     "eslint-plugin-tsdoc": "^0.5.0",
-    "eslint-plugin-unicorn": "^65.0.1",
+    "eslint-plugin-unicorn": "^69.0.0",
     "globals": "^17.3.0",
     "lodash": "^4.17.21",
     "typescript-eslint": "^8.61.0"

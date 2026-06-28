@@ -24,7 +24,6 @@ import tseslint from 'typescript-eslint';
 import eslintJs from '@eslint/js';
 import rel1cxReact from '@eslint-react/eslint-plugin';
 import nextjs from '@next/eslint-plugin-next';
-import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import type { RuleOptions, SheriffSettings } from '@sherifforg/types';
 import stylistic from '@stylistic/eslint-plugin';
 import vitest from '@vitest/eslint-plugin';
@@ -70,10 +69,6 @@ export const getAllRules = (
     ...prependRulesWithPluginName(sonarjs.rules, 'sonarjs'),
     ...prependRulesWithPluginName(jsdoc.rules, 'jsdoc'),
     ...prependRulesWithPluginName(tsdoc.rules, 'tsdoc'),
-    ...prependRulesWithPluginName(
-      preferEarlyReturn.rules,
-      '@regru/prefer-early-return',
-    ),
     ...prependRulesWithPluginName(regexpPlugin.rules, 'regexp'),
     ...prependRulesWithPluginName(arrowReturnStyle.rules, 'arrow-return-style'),
     // Stylistic's types are wrong, `default` should not be needed.
