@@ -25,7 +25,7 @@ importers:
         version: link:packages/sheriff-create-config
       '@turbo/gen':
         specifier: ^2.2.3
-        version: 2.5.1(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/node@25.9.3)(typescript@5.9.3)
+        version: 2.5.1(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/node@25.9.4)(typescript@5.9.3)
       knip:
         specifier: ^6.4.0
         version: 6.4.0
@@ -356,9 +356,6 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^16.2.9
         version: 16.2.9
-      '@regru/eslint-plugin-prefer-early-return':
-        specifier: ^1.0.0
-        version: 1.0.0
       '@stylistic/eslint-plugin':
         specifier: ^2.6.4
         version: 2.13.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
@@ -474,9 +471,6 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^16.2.9
         version: 16.2.9
-      '@regru/eslint-plugin-prefer-early-return':
-        specifier: ^1.0.0
-        version: 1.0.0
       '@stylistic/eslint-plugin':
         specifier: ^2.6.4
         version: 2.13.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
@@ -4029,9 +4023,6 @@ packages:
   '@radix-ui/rect@1.1.1':
     resolution: {integrity: sha512-HPwpGIzkl28mWyZqG52jiqDJ12waP11Pa1lGoiyUkIEuMLBP0oeK/C89esbXrxsky5we7dfd8U58nm0SgAWpVw==}
 
-  '@regru/eslint-plugin-prefer-early-return@1.0.0':
-    resolution: {integrity: sha512-rOIjKi/npfNcunmrakkKQAolX/qakY8DUkp/P0PeSmQ0xnTNT6CCTHcMHxhFEvLRlrIBY3gJkUwh5rt9Z+GTyg==}
-
   '@rolldown/binding-android-arm64@1.0.0-beta.52':
     resolution: {integrity: sha512-MBGIgysimZPqTDcLXI+i9VveijkP5C3EAncEogXhqfax6YXj1Tr2LY3DVuEOMIjWfMPMhtQSPup4fSTAmgjqIw==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -4999,9 +4990,6 @@ packages:
 
   '@types/node@25.3.0':
     resolution: {integrity: sha512-4K3bqJpXpqfg2XKGK9bpDTc6xO/xoUP/RBWS7AtRMug6zZFaRekiLzjVtAoZMquxoAbzBvy5nxQ7veS5eYzf8A==}
-
-  '@types/node@25.9.3':
-    resolution: {integrity: sha512-603BddQMv3pUcr4U2dhujk83N2tTDVr/34wII2B6bJy6g+8WD6yUb11jszNs0gdi4PesVWl7ABt8nYMVpnLUcg==}
 
   '@types/node@25.9.4':
     resolution: {integrity: sha512-dszCsrKb5U7ZsVZBWiHFklTloVl0mSEnWH/iZXfZUlI4rzCUnsvGmgqfuVRHL54ugE7/wRuxEIXRa2iMZ+BG6g==}
@@ -13955,8 +13943,6 @@ snapshots:
 
   '@radix-ui/rect@1.1.1': {}
 
-  '@regru/eslint-plugin-prefer-early-return@1.0.0': {}
-
   '@rolldown/binding-android-arm64@1.0.0-beta.52':
     optional: true
 
@@ -14807,7 +14793,7 @@ snapshots:
 
   '@tsconfig/node16@1.0.4': {}
 
-  '@turbo/gen@2.5.1(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/node@25.9.3)(typescript@5.9.3)':
+  '@turbo/gen@2.5.1(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/node@25.9.4)(typescript@5.9.3)':
     dependencies:
       '@turbo/workspaces': 2.5.1
       commander: 10.0.1
@@ -14817,7 +14803,7 @@ snapshots:
       node-plop: 0.26.3
       picocolors: 1.0.1
       proxy-agent: 6.5.0
-      ts-node: 10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/node@25.9.3)(typescript@5.9.3)
+      ts-node: 10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/node@25.9.4)(typescript@5.9.3)
       update-check: 1.5.4
       validate-npm-package-name: 5.0.1
     transitivePeerDependencies:
@@ -15002,14 +14988,9 @@ snapshots:
     dependencies:
       undici-types: 7.18.2
 
-  '@types/node@25.9.3':
-    dependencies:
-      undici-types: 7.24.6
-
   '@types/node@25.9.4':
     dependencies:
       undici-types: 7.24.6
-    optional: true
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -21841,14 +21822,14 @@ snapshots:
       '@swc/core': 1.10.1(@swc/helpers@0.5.15)
     optional: true
 
-  ts-node@10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/node@25.9.3)(typescript@5.9.3):
+  ts-node@10.9.2(@swc/core@1.10.1(@swc/helpers@0.5.15))(@types/node@25.9.4)(typescript@5.9.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 25.9.3
+      '@types/node': 25.9.4
       acorn: 8.15.0
       acorn-walk: 8.3.4
       arg: 4.1.3

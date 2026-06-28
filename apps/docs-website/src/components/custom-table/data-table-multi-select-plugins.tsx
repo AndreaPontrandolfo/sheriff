@@ -1,4 +1,3 @@
-/* eslint-disable @regru/prefer-early-return/prefer-early-return */
 /* eslint-disable react/jsx-sort-props */
 import { isEmpty } from 'lodash-es';
 import { Check, ChevronsUpDown, X } from 'lucide-react';

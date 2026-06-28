@@ -5,13 +5,6 @@ declare module '@next/eslint-plugin-next' {
 
   export default config;
 }
-declare module '@regru/eslint-plugin-prefer-early-return' {
-  const config: {
-    rules: Record<string, import('@sherifforg/types').RuleOptions>;
-  };
-
-  export default config;
-}
 declare module 'eslint-plugin-lodash-f' {
   const config: {
     rules: Record<string, import('@sherifforg/types').RuleOptions>;

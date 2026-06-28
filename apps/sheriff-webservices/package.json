@@ -1,32 +1,22 @@
 {
   "name": "sheriff-webservices",
-  "description": "Sheriff webservices.",
   "private": true,
+  "description": "Sheriff webservices.",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch ./src/index.ts",
-    "start": "tsx watch ./src/index.ts",
     "build": "tsc",
-    "typecheck": "tsc",
+    "clean": "rm -rf .turbo dist node_modules/.cache",
+    "dev": "tsx watch ./src/index.ts",
     "lint": "eslint --max-warnings=0",
     "serve": "node ./dist/index.js",
-    "clean": "rm -rf .turbo dist node_modules/.cache"
-  },
-  "devDependencies": {
-    "@sherifforg/types": "workspace:*",
-    "@tsconfig/node-lts": "^22.0.0",
-    "@types/eslint-plugin-jsx-a11y": "^6.10.0",
-    "@types/lodash": "^4.17.13",
-    "@types/node": "^25.3.0",
-    "tsx": "^4.16.2",
-    "typescript": "^5.9.3"
+    "start": "tsx watch ./src/index.ts",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@eslint-react/eslint-plugin": "^1.10.1",
     "@eslint/js": "^9.39.1",
     "@hono/node-server": "^1.7.0",
     "@next/eslint-plugin-next": "^16.2.9",
-    "@regru/eslint-plugin-prefer-early-return": "^1.0.0",
     "@stylistic/eslint-plugin": "^2.6.4",
     "@vitest/eslint-plugin": "^1.1.25",
     "eslint": "^9.39.1",
@@ -54,6 +44,15 @@
     "hono": "^3.12.0",
     "lodash": "^4.17.21",
     "typescript-eslint": "^8.61.0"
+  },
+  "devDependencies": {
+    "@sherifforg/types": "workspace:*",
+    "@tsconfig/node-lts": "^22.0.0",
+    "@types/eslint-plugin-jsx-a11y": "^6.10.0",
+    "@types/lodash": "^4.17.13",
+    "@types/node": "^25.3.0",
+    "tsx": "^4.16.2",
+    "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.12.1",
   "engines": {

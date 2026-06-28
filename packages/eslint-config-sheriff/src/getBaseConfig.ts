@@ -12,7 +12,6 @@ import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import eslintJs from '@eslint/js';
-import preferEarlyReturn from '@regru/eslint-plugin-prefer-early-return';
 import {
   allJsExtensions,
   supportedFileTypes,
@@ -127,18 +126,6 @@ export const getBaseConfig = (userConfigChoices: SheriffSettings): Config[] => {
       files: [supportedFileTypes],
       plugins: { '@stylistic': stylistic },
       rules: stylisticHandPickedRules,
-    },
-    {
-      files: [supportedFileTypes],
-      plugins: { '@regru/prefer-early-return': preferEarlyReturn },
-      rules: {
-        '@regru/prefer-early-return/prefer-early-return': [
-          2,
-          {
-            maximumStatements: 1,
-          },
-        ],
-      },
     },
     {
       files: [supportedFileTypes],
