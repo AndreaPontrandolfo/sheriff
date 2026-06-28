@@ -1,6 +1,5 @@
 import { type Config, defineConfig } from 'eslint/config';
 import createNoRestrictedProperties from 'eslint-no-restricted/properties';
-import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import fsecond from 'eslint-plugin-fsecond';
 import pluginImport from 'eslint-plugin-import';
 import jsdoc from 'eslint-plugin-jsdoc';
@@ -159,17 +158,6 @@ export const getBaseConfig = (userConfigChoices: SheriffSettings): Config[] => {
       rules: {
         ...sonarjs.configs.recommended.rules,
         ...sonarjsHandPickedRules,
-      },
-    },
-    {
-      files: [supportedFileTypes],
-      plugins: { 'arrow-return-style': arrowReturnStyle },
-      rules: {
-        'arrow-return-style/arrow-return-style': [
-          2,
-          { namedExportsAlwaysUseExplicitReturn: false },
-        ],
-        'arrow-return-style/no-export-default-arrow': 2,
       },
     },
     {

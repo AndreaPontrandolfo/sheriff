@@ -1,6 +1,5 @@
 import type { ESLint } from 'eslint';
 import type { TSESLint } from 'eslint-config-sheriff';
-import arrowReturnStyle from 'eslint-plugin-arrow-return-style';
 import astro from 'eslint-plugin-astro';
 import fsecond from 'eslint-plugin-fsecond';
 import pluginImport from 'eslint-plugin-import';
@@ -75,7 +74,6 @@ export const getAllRules = (
       '@regru/prefer-early-return',
     ),
     ...prependRulesWithPluginName(regexpPlugin.rules, 'regexp'),
-    ...prependRulesWithPluginName(arrowReturnStyle.rules, 'arrow-return-style'),
     // Stylistic's types are wrong, `default` should not be needed.
     ...prependRulesWithPluginName(
       (stylistic as unknown as Plugin).rules,

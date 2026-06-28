@@ -108,7 +108,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "5.2.0",
-    "eslint": "^9.39.1",
+    "eslint": "^10.5.0",
     "eslint-config-sheriff": "workspace:*",
     "fumadocs-docgen": "^3.0.10",
     "jiti": "^2.6.1",
