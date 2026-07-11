@@ -46,10 +46,7 @@ export const getAllRules = (
     ...prependRulesWithPluginName(reactAccessibility.rules, 'jsx-a11y'),
     ...prependRulesWithPluginName(reactHooks.rules, 'react-hooks'),
     ...prependRulesWithPluginName(reactRefresh.plugin.rules, 'react-refresh'),
-    ...prependRulesWithPluginName(
-      (rel1cxReact as unknown as Plugin).rules,
-      '@eslint-react',
-    ),
+    ...prependRulesWithPluginName(rel1cxReact.rules, '@eslint-react'),
     ...prependRulesWithPluginName(
       reactYouMightNotNeedAnEffect.rules,
       'react-you-might-not-need-an-effect',
